@@ -1,0 +1,6 @@
+Les 3 fichiers ne sont pas suffisants pour utiliser cette bibliotheque sous WINDOWS. Pour que le programme se lance il faut suivre la démarche suivante sur CodeBlocks:
+
+->Project->Build Options->Debug->Linker settings
+Cliquer sur "Add" et entrer "libwsock32.a" puis ok
+
+Le programme devrait se lancer et les 3 test devraient s'afficher avec un COMPLETE(x bytes) à la fin de chaque test
