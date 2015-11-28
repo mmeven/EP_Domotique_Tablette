@@ -1,0 +1,18 @@
+#ifndef REQUETE_H
+#define REQUETE_H
+
+
+class Requete
+{
+    public:
+        Requete(String);
+        virtual ~Requete();
+        String Getadresse() { return m_adresse; }
+        void Setadresse(String val) { m_adresse = val; }
+        
+    protected:
+    private:
+        String m_adresse;
+};
+
+#endif // REQUETE_H
