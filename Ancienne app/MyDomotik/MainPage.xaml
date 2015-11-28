@@ -1,0 +1,116 @@
+﻿<Page
+    x:Class="MyDomotik.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyDomotik"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  
+    mc:Ignorable="d">
+
+    <Grid x:Name="MainGrid" Background="{ThemeResource SearchBoxForegroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85*"/>
+            <RowDefinition Height="510*"/>
+            <RowDefinition Height="173*"/>
+
+        </Grid.RowDefinitions>
+
+        <!--Barre d'information située en haut de page-->
+        <Rectangle x:Name="barreMenu" Stroke="Black" VerticalAlignment="Top" Grid.Row="2" Height="153" Margin="10,10,10,0">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="DarkMagenta"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="270*"/>
+                <ColumnDefinition Width="845*"/>
+                <ColumnDefinition Width="251*"/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="center" Height="65" Grid.Row="0" Grid.Column="1" Stroke="Black" VerticalAlignment="Center" Width="832"/>
+
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0" Stroke="Black" VerticalAlignment="Center" Width="252"/>
+
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" Stroke="Black" VerticalAlignment="Center" Width="241"/>
+
+            <TextBlock x:Name="TimeBox" HorizontalAlignment="Center" Height="65" TextWrapping="Wrap" VerticalAlignment="Center" Width="252" FontSize="24" FontWeight="Bold" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="0" Foreground="Black" Margin="9,19,9,1"/>
+
+            <TextBlock x:Name="page_title" HorizontalAlignment="Center" FontWeight="Bold" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="832" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="1" Margin="7,21,6,16" Foreground="Black" Text="Pièces de la maison"/>
+
+            <Button x:Name="configButton"  Height="64" Width="238" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Grid.Column="2" FontSize="18" DoubleTapped="adminSelect" Margin="7,11,0,10">
+                <TextBlock TextWrapping="Wrap" Text="Configuration" FontWeight="Bold" Foreground="Black" FontSize="24"/>
+            </Button>
+            
+        </Grid>
+        
+        
+        <!--Grille des icones -->
+        <Grid x:Name="cadre" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF0D1F91"  Width="1346" Height="500" Grid.Row="1">
+
+           <!--   affichage dynamique grâce au x:Name="cadre"
+
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Button x:Name="icon3" Grid.Row="0" Grid.Column="2" Height="236" Margin="6,7,0,7" Width="323" Background="{ThemeResource AppBarItemPointerOverForegroundThemeBrush}">
+                <Image x:Name="test">
+                    <Image.Source>
+                        <BitmapImage UriSource="Assets/suivant.PNG"/>
+                    </Image.Source>
+                </Image>
+            </Button>
+            
+            <Button x:Name="icon3_Copy" Grid.Row="0" Grid.Column="1" Height="236" Margin="7,7,0,7" Width="323" Background="{ThemeResource AppBarItemPointerOverForegroundThemeBrush}"/>
+            <Button x:Name="icon3_Copy1" Grid.Row="0" Height="236" Margin="7,7,0,7" Width="323" Background="{ThemeResource AppBarItemPointerOverForegroundThemeBrush}"/>
+            <Button x:Name="icon3_Copy2" Grid.Row="1" Height="236" Margin="7,7,0,7" Width="323" Background="{ThemeResource AppBarItemPointerOverForegroundThemeBrush}" Grid.Column="1"/>
+            <Button x:Name="icon3_Copy3" Grid.Row="1" Height="236" Margin="7,7,0,7" Width="323" Background="{ThemeResource AppBarItemPointerOverForegroundThemeBrush}"/>
+            <Button x:Name="icon3_Copy4" Grid.Row="1" Height="236" Margin="6,7,0,7" Width="323" Background="{ThemeResource AppBarItemPointerOverForegroundThemeBrush}" Grid.Column="2"/>
+            <Button x:Name="icon3_Copy5" Grid.Row="0" Height="236" Margin="7,7,0,7" Width="323" Background="{ThemeResource AppBarItemPointerOverForegroundThemeBrush}" Grid.Column="3"/>
+            <Button x:Name="icon3_Copy6" Grid.Row="1" Height="236" Margin="6,7,0,7" Width="323" Background="{ThemeResource AppBarItemPointerOverForegroundThemeBrush}" Grid.Column="3"/>
+            -->
+
+        </Grid>
+        
+        <!--Barre de navigation -->
+        <Grid HorizontalAlignment="Center" Height="153" Grid.Row="2" VerticalAlignment="Center" Width="1346">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="accueil" Grid.Column="0" Height="139" Margin="7" Width="435" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF47CB16" Click="PageAccueil">
+                <Image Height="137" Width="272" Source="Assets/acceuil.PNG"/>
+            </Button>
+
+            <Button x:Name="precedent" Grid.Column="1" Height="139" Margin="7" Width="435" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF47CB16" Click="PagePrecedente">
+                <Image Height="116.145" Width="341.828" Source="Assets/suivant.PNG" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                    <Image.RenderTransform>
+                        <CompositeTransform Rotation="-180"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Button>
+
+            <Button x:Name="suivant" Grid.Column="2" Height="139" Margin="7" Width="434" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF47CB16" Click="PageSuivante">
+                <Image Height="119" Width="292" Source="Assets/suivant.PNG"/>
+            </Button>
+            
+        </Grid>
+
+    </Grid>
+</Page>
