@@ -25,7 +25,7 @@ using Windows.UI.Xaml.Shapes;
 
 namespace MyDomotik
 {
-    public sealed partial class GestionEquipements : Page
+    public sealed partial class GestionIcones2 : Page
     {
         private Vue pageCourante;
         private Image image;
@@ -45,13 +45,13 @@ namespace MyDomotik
 
         private List<Button> listeBoutons;
 
-        public GestionEquipements()
+        public GestionIcones2()
         {
             this.InitializeComponent();
 
             afficherPage();
 
-            page_title2.Text = GestionPieces.nomPiece;
+            page_title2.Text = GestionIcones.nomPiece;
             Brush brush = new SolidColorBrush(Colors.Black);
             page_title2.Foreground = brush;
 
@@ -77,20 +77,20 @@ namespace MyDomotik
             // il faut mémoriser la grille dans config avant de quitter
             MainPage.Configuration.arbre.PageCourante.Grille.NumGrille = 0;
             MainPage.Configuration.arbre.retourAccueil();
-            this.Frame.Navigate(typeof(MainPage));
+            this.Frame.Navigate(typeof(MainPage));     
 
         }
-
+        
 
         public void menuAdmin2(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(GestionPieces));
+            this.Frame.Navigate(typeof(GestionIcones));
 
         }
 
         private void goToIcones(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(GestionEquipements));
+            this.Frame.Navigate(typeof(GestionIcones2));
         }
 
         //événement qui gère le double click sur une icone
@@ -108,7 +108,7 @@ namespace MyDomotik
             this.nom = image.Name.Replace("é", ".");
         }
 
-        //événement qui gère le click sur un bouton de la grille
+        //événement qui gère le click sur un bouton
         //affiche l'icone double clickée sur le bouton
         private void choixPositionIcone2(object sender, RoutedEventArgs e)
         {
@@ -146,7 +146,7 @@ namespace MyDomotik
         // évenement qui gère la validation de saisie du nom de l'icone
         private void Validation2(object sender, RoutedEventArgs e)
         {
-            if (this.choixPosition) // Si un logo est selectionne, alors création d'une nouvelle icone
+            if (this.choixPosition) // création d'une nouvelle icone
             {
                 // efface message
                 message2.Text = "";
@@ -158,11 +158,12 @@ namespace MyDomotik
                 // attribution du nom à l'icone mémorisée et ajout de la nouvelle icone à la configuration
 
                 ajouterIcone(nomIcone2.Text);
+                this.Frame.Navigate(typeof(GestionIcones2));
             }
-            else // Sinon, changement du nom de l'icone : mémorisation dans la configuration
+            else // Changement du nom de l'icone : mémorisation dans la configuration
             {
-                MainPage.Configuration.arbre.PageCourante.Grille.setNomIcone(indexNouvelleIcone, g.NumGrille, nomIcone2.Text);
-                this.Frame.Navigate(typeof(GestionEquipements));
+                MainPage.Configuration.arbre.Racine.Grille.setNomIcone(indexNouvelleIcone, g.NumGrille, nomIcone2.Text);
+                this.Frame.Navigate(typeof(GestionIcones2));
             }
         }
 
@@ -175,7 +176,7 @@ namespace MyDomotik
             //création de la page associée à l'icone
             MainPage.Configuration.ajouterEquipement(this.pageCourante, iconeAjout, indexNouvelleIcone, this.g.NumGrille);
             //this.choixPosition = false;
-            this.Frame.Navigate(typeof(GestionEquipements));
+            this.Frame.Navigate(typeof(GestionIcones));
 
         }
 
@@ -210,7 +211,7 @@ namespace MyDomotik
                     // retire l'icone de la grille et la remplace par une icone vide
                     g.pageGrille()[this.indexNouvelleIcone] = Icone.IconeVide();
                     MainPage.Configuration.enleverEquip(this.pageCourante, indexNouvelleIcone, this.g.NumGrille);
-                    this.Frame.Navigate(typeof(GestionEquipements));
+                    this.Frame.Navigate(typeof(GestionIcones));
                 }
             }
 

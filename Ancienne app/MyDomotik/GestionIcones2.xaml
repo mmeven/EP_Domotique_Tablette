@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="MyDomotik.GestionEquipements"
+    x:Class="MyDomotik.GestionIcones2"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MyDomotik"
@@ -46,7 +46,7 @@
                 	<Run FontSize="30" Text="Retour"/>
                 </TextBlock>
             </Button>
-
+            
         </Grid>
 
         <!-- Grille des icônes -->
@@ -138,4 +138,4 @@
 
         </GridView>
     </Grid>
-</Page>
+    </Page>

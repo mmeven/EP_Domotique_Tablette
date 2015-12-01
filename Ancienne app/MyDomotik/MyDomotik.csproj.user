@@ -3,7 +3,4 @@
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <UseSimulator>false</UseSimulator>
-  </PropertyGroup>
 </Project>

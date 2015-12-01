@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+//﻿using InstanceFactory.MessageBoxSample.UI.Popups;
 using System.Threading.Tasks;
 using System.Windows;
 using Windows.Foundation;
@@ -24,7 +25,7 @@ using Windows.UI.Xaml.Shapes;
 
 namespace MyDomotik
 {
-    public sealed partial class GestionPieces : Page
+    public sealed partial class GestionIcones : Page
     {
        private Vue pageAccueil;
        private Image image;
@@ -46,7 +47,7 @@ namespace MyDomotik
 
        private List<Button> listeBoutons;
 
-        public GestionPieces()
+        public GestionIcones()
         {
             this.InitializeComponent();
             afficherPage();
@@ -85,7 +86,7 @@ namespace MyDomotik
 
         private void goToIcones(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(GestionEquipements));
+            this.Frame.Navigate(typeof(GestionIcones2));
         }
 
         //événement qui gère le double click sur une icone
@@ -93,6 +94,7 @@ namespace MyDomotik
         private void choixImage(object sender, DoubleTappedRoutedEventArgs e)
         {
             // Message 
+            messageBox.Visibility = Visibility.Visible;
             message.Text = "Veuillez cliquer sur l'endroit où vous souhaitez inserer l'icone";
 
             this.choixPosition = true;
@@ -122,6 +124,7 @@ namespace MyDomotik
                 {
                     // Message
                     message.Text =  "Il y a déjà une icône sur cet emplacement. Veuillez choisir un emplacement libre.";
+                    messageBox.Visibility = Visibility.Visible;  
                 }
 
                 // Sinon : click sur icone vide, l'icone peut être ajoutée
@@ -143,31 +146,34 @@ namespace MyDomotik
             {
                 // efface message
                 message.Text = "";
+                messageBox.Visibility = Visibility.Collapsed;
                 nomIcone.Visibility = Visibility.Collapsed;
                 Valider.Visibility = Visibility.Collapsed;
 
                 // mémorise une nouvelle icone dans la grille temporaire
-                // attribution du nom à l'icone mémorisée et ajout de la nouvelle icone à la configuration              
+                // attribution du nom à l'icone mémorisée et ajout de la nouvelle icone à la configuration
+               
                 ajouterIcone(nomIcone.Text);
                 nomPiece = nomIcone.Text;
+
             }
             else // Changement du nom de l'icone : mémorisation dans la configuration
             {
                 MainPage.Configuration.arbre.Racine.Grille.setNomIcone(indexNouvelleIcone, g.NumGrille, nomIcone.Text);
-                this.Frame.Navigate(typeof(GestionPieces));
+                this.Frame.Navigate(typeof(GestionIcones));
                 nomPiece = nomIcone.Text;
             }
         }
             
-           //ajout de l'icone (attribut de classe) dans la grille de la page d'accueil
+        // ajout de l'icone (attribut de classe) dans la grille de la page d'accueil
        private void ajouterIcone(String nomIcone){
 
            Icone iconeAjout = new Icone(nomIcone, this.nom, 64);
 
-           //création de la piece associée à l'icone
+           //création de la page associée à l'icone
            MainPage.Configuration.ajouterPiece(iconeAjout, indexNouvelleIcone, this.g.NumGrille); 
            //this.choixPosition = false;
-           this.Frame.Navigate(typeof(GestionPieces));
+           this.Frame.Navigate(typeof(GestionIcones));
 
         }
 
@@ -177,8 +183,8 @@ namespace MyDomotik
        {
            if (!this.choixPosition)
            {
-               this.b = sender as Button; //Enregistrement du bouton choisi
-                
+               this.b = sender as Button;
+
                Options.Visibility = Visibility.Visible;
                Supprimer.IsEnabled = true;
                ChangerNom.IsEnabled = true;
@@ -204,7 +210,7 @@ namespace MyDomotik
                     // retire l'icone de la grille et la remplace par une icone vide
                      g.pageGrille()[this.indexNouvelleIcone] = Icone.IconeVide();
                      MainPage.Configuration.enleverPiece(this.pageAccueil, indexNouvelleIcone, this.g.NumGrille);
-                     this.Frame.Navigate(typeof(GestionPieces));
+                     this.Frame.Navigate(typeof(GestionIcones));
                 }
             }
            
@@ -238,18 +244,18 @@ namespace MyDomotik
         {
            
 
-            int indexClick = (int)b.Tag; //Recupere l'indice du bouton cliqué, precedemment initialise dans Menu
-            Icone icone = g.pageGrille()[indexClick]; //Recupere l'icone associe
+            int indexClick = (int)b.Tag;
+            Icone icone = g.pageGrille()[indexClick];
 
-            if (icone.Navigation != null) //si la piece a bien une vue associee
+            if (icone.Navigation != null)
             {
-               MainPage.Configuration.arbre.PageCourante = icone.Navigation.PageFils; //Alors la page courante devient la vue de la piece
-               this.Frame.Navigate(typeof(GestionEquipements));
+
+               MainPage.Configuration.arbre.PageCourante = icone.Navigation.PageFils;
+                this.Frame.Navigate(typeof(GestionIcones2));
             }
           
         }
 
-        //Lorsqu'on appue sur la grille, si le bouton est vide alors aller dans choixPositionIcone, sinon aller dans Menu
         private void attribueHandler()
         {
             foreach (Button bouton in this.listeBoutons)

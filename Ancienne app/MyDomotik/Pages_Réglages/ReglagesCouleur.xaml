@@ -47,6 +47,8 @@
 
         <Button Content="Thème 1" HorizontalAlignment="Left" Height="84" Margin="347,60,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36" Click="choixTheme1"/>
         <Button Content="Thème 2" HorizontalAlignment="Left" Height="84" Margin="347,174,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36" Click="choixTheme2"/>
+
+
         <Button Content="Thème 3" HorizontalAlignment="Left" Height="84" Margin="347,289,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36" Click="choixTheme3" />
         <Button Content="Thème 7" HorizontalAlignment="Left" Height="84" Margin="750,174,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36" Click="choixTheme7" />
         <Button Content="Thème 4" HorizontalAlignment="Left" Height="84" Margin="347,404,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36" Click="choixTheme4" />
