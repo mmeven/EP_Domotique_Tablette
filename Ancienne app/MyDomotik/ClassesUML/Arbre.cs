@@ -8,6 +8,7 @@ namespace MyDomotik
 {
     class Arbre
     {
+
         // champs
         private Vue racine;
         private List<Arbre> fils;
@@ -44,7 +45,7 @@ namespace MyDomotik
         public Arbre(Vue v)
         {
             Racine = v;
-            Fils = null;
+            Fils = new List<Arbre>();
             pageCourante = v;
         }
 
@@ -131,7 +132,7 @@ namespace MyDomotik
             }
             return aTemp;
         }
-        
+
         public void retourAccueil()
         {
             pageCourante = Racine;
