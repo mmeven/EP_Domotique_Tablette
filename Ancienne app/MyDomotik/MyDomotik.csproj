@@ -105,26 +105,26 @@
     <Compile Include="AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ClassesUML\Affichage.cs" />
+    <Compile Include="bin\ClassesUML\Affichage.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ClassesUML\Action.cs" />
-    <Compile Include="ClassesUML\Arbre.cs" />
-    <Compile Include="ClassesUML\Configuration.cs" />
-    <Compile Include="ClassesUML\Couleur.cs" />
-    <Compile Include="ClassesUML\Enregistrement.cs" />
-    <Compile Include="ClassesUML\Equipement.cs" />
-    <Compile Include="ClassesUML\Format.cs" />
-    <Compile Include="ClassesUML\Grille.cs" />
-    <Compile Include="ClassesUML\Icone.cs" />
-    <Compile Include="ClassesUML\Modalite.cs" />
-    <Compile Include="ClassesUML\Navigation.cs" />
-    <Compile Include="ClassesUML\Piece.cs" />
-    <Compile Include="ClassesUML\Theme.cs" />
-    <Compile Include="ClassesUML\Vue.cs" />
-    <Compile Include="GestionIcones2.xaml.cs">
-      <DependentUpon>GestionIcones2.xaml</DependentUpon>
+    <Compile Include="bin\ClassesUML\Action.cs" />
+    <Compile Include="bin\ClassesUML\Arbre.cs" />
+    <Compile Include="bin\ClassesUML\Configuration.cs" />
+    <Compile Include="bin\ClassesUML\Couleur.cs" />
+    <Compile Include="bin\ClassesUML\Enregistrement.cs" />
+    <Compile Include="bin\ClassesUML\Equipement.cs" />
+    <Compile Include="bin\ClassesUML\Format.cs" />
+    <Compile Include="bin\ClassesUML\Grille.cs" />
+    <Compile Include="bin\ClassesUML\Icone.cs" />
+    <Compile Include="bin\ClassesUML\Modalite.cs" />
+    <Compile Include="bin\ClassesUML\Navigation.cs" />
+    <Compile Include="bin\ClassesUML\Piece.cs" />
+    <Compile Include="bin\ClassesUML\Theme.cs" />
+    <Compile Include="bin\ClassesUML\Vue.cs" />
+    <Compile Include="GestionEquipement.xaml.cs">
+      <DependentUpon>GestionEquipement.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages_Réglages\ReglagesCouleur.xaml.cs">
       <DependentUpon>ReglagesCouleur.xaml</DependentUpon>
@@ -133,8 +133,8 @@
       <DependentUpon>ReglagesTailleIcones.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages_Réglages\ReglReseau.cs" />
-    <Compile Include="GestionIcones.xaml.cs">
-      <DependentUpon>GestionIcones.xaml</DependentUpon>
+    <Compile Include="GestionPieces.xaml.cs">
+      <DependentUpon>GestionPieces.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -168,11 +168,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GestionIcones.xaml">
+    <Page Include="GestionPieces.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GestionIcones2.xaml">
+    <Page Include="GestionEquipement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

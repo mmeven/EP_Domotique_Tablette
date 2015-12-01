@@ -60,12 +60,12 @@ namespace MyDomotik
         public void afficherPage()
         {
             // création de la grille d'affichage des icones
-            this.grille = configuration.arbre.PageCourante.Grille;
+            this.grille = configuration.arbre.PageCourante.Grille; //grille est la grille de la page courante de la configuration
             affichage = new Affichage(this.grille, configuration.theme);
             affichage.creerGrille(cadre);
 
             // affichage des couleurs
-            affichage.afficheCouleur(barreMenu, cadre, accueil, precedent, suivant);
+            affichage.afficheCouleur(Rect1, Rect2, Rect3, MainGrid, barreMenu, cadre, accueil, precedent, suivant);
 
             affichePageGrille();
             afficheHeure();
@@ -84,7 +84,14 @@ namespace MyDomotik
 
         public void afficheHeure()
         {
-            TimeBox.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
+            if (DateTime.Now.Minute < 10)
+            {
+                TimeBox.Text = DateTime.Now.Hour.ToString() + ": 0" + DateTime.Now.Minute.ToString();
+            }
+            else
+            {
+                TimeBox.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
+            }
         }
         // retour à la page précédente
         public void retourPere(object sender, RoutedEventArgs e)
@@ -163,8 +170,11 @@ namespace MyDomotik
             if (icone.Action != null) { }
         }
 
+        private void page_title_SelectionChanged(object sender, RoutedEventArgs e)
+        {
 
-}
+        }
+    }
 
   
 }
