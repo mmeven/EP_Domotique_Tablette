@@ -35,7 +35,7 @@ namespace MyDomotik
 
         private void gestionIcones(object sender, RoutedEventArgs e)  // remplace les boutons du menu Menu par le menu Gestion icônes
         {
-            Frame.Navigate(typeof(GestionIcones));
+            Frame.Navigate(typeof(GestionPieces));
         }
 
         private void accesParamInterface(object sender, RoutedEventArgs e)

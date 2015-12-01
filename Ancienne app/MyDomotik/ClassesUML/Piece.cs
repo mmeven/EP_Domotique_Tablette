@@ -8,7 +8,7 @@ namespace MyDomotik
 {
     class Piece
     {
-         //champs
+        //champs
 
         private string nom;                 // Nom de la pièce
         public List<Equipement> devices;    // Equipements de la pièces 
@@ -46,23 +46,23 @@ namespace MyDomotik
         /** boolean removeDevice : enlève l'appareil de nom "name" s'il existe et retourne vrai. 
         * Retourne faux sinon.
         **/
-       public bool removeDevice(Equipement e)
+        public bool removeDevice(Equipement e)
         {
             if (!this.devices.Contains(e))
             {
-                  return false;
+                return false;
             }
             else
             {
                 this.devices.Remove(e);
                 e.Piece = null;
                 return true;
-            } 
+            }
         }
 
-       public void afficheEquipement()
-       {
+        public void afficheEquipement()
+        {
 
-       }
+        }
     }
 }

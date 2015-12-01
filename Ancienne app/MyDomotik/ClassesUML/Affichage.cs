@@ -62,17 +62,25 @@ namespace MyDomotik
         //méthodes
 
         //Affiche les couleurs de la grille, la barre de menu et ses boutons en fonction du thème de couleurs passé en paramètre
-        public void afficheCouleur(Rectangle barreMenu, Grid cadre, Button accueil, Button precedent, Button suivant)
+        public void afficheCouleur(Rectangle rect1, Rectangle rect2, Rectangle rect3, Grid fond, Rectangle barreMenu, Grid cadre, Button accueil, Button precedent, Button suivant)
         {
+            Brush fond2 = new SolidColorBrush(theme.Couleur.CouleurFond);
             Brush grille = new SolidColorBrush(theme.Couleur.CouleurGrille);
             Brush barre = new SolidColorBrush(theme.Couleur.CouleurBarre);
             Brush boutons = new SolidColorBrush(theme.Couleur.CouleurBoutons);
+            Brush rectangle = new SolidColorBrush(theme.Couleur.Rectangle);
 
+
+
+            fond.Background = fond2;
             barreMenu.Fill = barre;
             cadre.Background = grille;
             accueil.Background = boutons;
             precedent.Background = boutons;
             suivant.Background = boutons;
+            rect1.Fill = rectangle;
+            rect2.Fill = rectangle;
+            rect3.Fill = rectangle;
         }
 
         // création de la grid dans la page xaml
@@ -132,13 +140,13 @@ namespace MyDomotik
 
                         cadre.Children.Add(bouton);
                         listeBoutons.Add(bouton);
-                       
+
                         cpt++;
                     }
                 }
-                
+
             }
-            
+
             return listeBoutons;
         }
 
@@ -148,15 +156,15 @@ namespace MyDomotik
          * Button bouton : bouton où l'afficher
          * **/
         public void afficherIcone(Icone icone, Button bouton)
-        {      
+        {
             Image image = creerImage(icone, bouton);
             TextBlock labelIcone = creerLabel(icone);
-            ajouterImageBouton(bouton, image, labelIcone); 
-            
+            ajouterImageBouton(bouton, image, labelIcone);
+
             Brush boutonActif = new SolidColorBrush(theme.Couleur.CouleurBoutonActif);
             bouton.SetValue(Button.BackgroundProperty, boutonActif);
         }
-        
+
 
         /**A partir de l'icone, crée l'image adapté à la taille du Bouton**/
         public Image creerImage(Icone icone, Button bouton)
@@ -199,7 +207,7 @@ namespace MyDomotik
             labelIcone.TextWrapping = TextWrapping.Wrap;
 
 
-           // labelIcone.SetValue(TextBlock.FontWeightProperty, "Bold");
+            // labelIcone.SetValue(TextBlock.FontWeightProperty, "Bold");
             //labelIcone.SetValue(TextBlock.ForegroundProperty, "Black");
             labelIcone.SetValue(TextBlock.FontSizeProperty, 24);
 
@@ -216,7 +224,7 @@ namespace MyDomotik
 
             image.SetValue(Grid.RowProperty, 0);
             labelIcone.SetValue(Grid.RowProperty, 1);
-          
+
             grilleBouton.Children.Add(image);
             grilleBouton.Children.Add(labelIcone);
             bouton.Content = grilleBouton;

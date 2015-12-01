@@ -101,14 +101,16 @@ namespace MyDomotik
             return page.getIcone(index);
         }
 
-        public void enleverPiece(Vue page, int index, int numPage){
+        public void enleverPiece(Vue page, int index, int numPage)
+        {
 
             // ajoute une icone (associee à la pièce) à la grille de la mainPage + à la liste Configuration.pieces
             enleverIcone(page, index, numPage);
             // Pieces.Remove(); // Comment savoir quelle pièce retirer ?
 
         }
-        public void enleverEquip(Vue page, int index, int numPage){
+        public void enleverEquip(Vue page, int index, int numPage)
+        {
 
             // ajoute une icone (associee à la pièce) à la grille de la mainPage + à la liste Configuration.pieces
             enleverIcone(page, index, numPage);
@@ -118,10 +120,8 @@ namespace MyDomotik
         public void ajouterPiece(Icone icone, int index, int numPage)
         {
 
-           // Piece piece = new Piece(icone.NomIcone);
-
-            //Piece piece = new Piece(icone.NomIcone);
-
+            Piece piece = new Piece(icone.NomIcone);
+            Pieces.Add(piece); //Ajout dans la liste des pieces de la config
 
             // on associe une nouvelle page à l'icone et on l'ajoute à l'arbre
             Vue pagePiece = new Vue(icone.NomIcone);
@@ -130,7 +130,7 @@ namespace MyDomotik
             icone.Action = (Action)null;
 
 
-           // arbre.ajouterVue(arbre.Racine, pagePiece);
+            // arbre.ajouterVue(arbre.Racine, pagePiece);
 
             //arbre.ajouterVue(arbre.Racine, pagePiece);
 
@@ -141,28 +141,48 @@ namespace MyDomotik
 
         }
 
+        //Renvoie la piece dont le nom est name
+        public Piece getPiece(string name)
+        {
+            Piece res = null;
+            foreach (Piece p in Pieces)
+            {
+                if (string.Compare(p.Nom, name) == 0)
+                {
+                    res = p;
+                }
+            }
+            return res;
+        }
+
         public void ajouterEquipement(Vue pagePiece, Icone icone, int index, int numPage)
         {
-           // Equipement equip = new Equipement(icone.nomIcone);
-           Vue pageEquip = new Vue(icone.NomIcone);
+            // Equipement equip = new Equipement(icone.nomIcone);
+            Vue pageEquip = new Vue(icone.NomIcone);
+
+            icone.Navigation = new Navigation(pagePiece);
+            icone.Action = (Action)null;
+
+            ajouterIcone(arbre.PageCourante, icone, index, numPage);
+
 
             // ajoute une page (associée à l'équipement)  à l'arbre
-           // Arbre a = Arbre.arbreVue(pagePiece);  // on trouve la pièce dans l'arbre global grâce à la Vue pagePiece de la pièce dans laquelle on souhaite mettre l'équipement
+            // Arbre a = Arbre.arbreVue(pagePiece);  // on trouve la pièce dans l'arbre global grâce à la Vue pagePiece de la pièce dans laquelle on souhaite mettre l'équipement
 
 
-           // ajoute une page (associée à l'équipement)  à l'arbre
+            // ajoute une page (associée à l'équipement)  à l'arbre
             //Arbre a = Arbre.arbreVue(pagePiece);  // on trouve la pièce dans l'arbre global grâce à la Vue pagePiece de la pièce dans laquelle on souhaite mettre l'équipement
 
             //a.Fils.Add(new Arbre(pageEquip));  // on ajoute l'équipement à la liste des fils de la Vue pagePiece
 
-           arbre.ajouterVue(pagePiece, pageEquip);
+            //arbre.ajouterVue(pagePiece, pageEquip);
 
             // ajoute une icone (associee à l'equipement) a la grille de la page de la piece + à la liste Configuration.equipements
-            pagePiece.ajouterIcone(icone, index, numPage);  // on ajoute l'icone à la grille de la Vue de la pièce
+            // pagePiece.ajouterIcone(icone, index, numPage);  // on ajoute l'icone à la grille de la Vue de la pièce
             //Equipements.Add(equipmt);  // on ajoute l'équipement à la liste globale des équipements
 
             // ajoute l'équipement à la liste des équipements de la pièce associée
-           // piece.addDevice(equipmt);
+            // piece.addDevice(equipmt);
         }
 
         public void ajouterAction(Vue pageEquip, Vue pageAction, Equipement equipmt, Action action, Icone icone, int index)
@@ -177,4 +197,3 @@ namespace MyDomotik
     }
 
 }
-

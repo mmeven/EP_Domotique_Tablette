@@ -123,8 +123,8 @@
     <Compile Include="ClassesUML\Piece.cs" />
     <Compile Include="ClassesUML\Theme.cs" />
     <Compile Include="ClassesUML\Vue.cs" />
-    <Compile Include="GestionIcones2.xaml.cs">
-      <DependentUpon>GestionIcones2.xaml</DependentUpon>
+    <Compile Include="GestionEquipements.xaml.cs">
+      <DependentUpon>GestionEquipements.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages_Réglages\ReglagesCouleur.xaml.cs">
       <DependentUpon>ReglagesCouleur.xaml</DependentUpon>
@@ -133,8 +133,8 @@
       <DependentUpon>ReglagesTailleIcones.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages_Réglages\ReglReseau.cs" />
-    <Compile Include="GestionIcones.xaml.cs">
-      <DependentUpon>GestionIcones.xaml</DependentUpon>
+    <Compile Include="GestionPieces.xaml.cs">
+      <DependentUpon>GestionPieces.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -168,11 +168,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GestionIcones.xaml">
+    <Page Include="GestionPieces.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GestionIcones2.xaml">
+    <Page Include="GestionEquipements.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -11,13 +11,15 @@ namespace MyDomotik
 {
     class Couleur
     {
+        private Color couleurFond;
         private Color couleurGrille;
         private Color couleurBarre;
         private Color couleurBoutons;
         private Color couleurBoutonActif;
         private Color couleurBoutonVide;
+        private Color rectangle;
 
-      
+
 
         Brush boutonActif = new SolidColorBrush(Colors.Red);
         Brush boutonVide = new SolidColorBrush(Colors.White);
@@ -38,12 +40,13 @@ namespace MyDomotik
        Colors.Pink,
        Colors.Coral,
        Colors.OrangeRed,
-       Colors.Plum, 
+       Colors.Plum,
        Colors.Violet, //15
        Colors.Purple,
-       Colors.Yellow //17
-   }; 
-        
+       Colors.Yellow, //17
+       Colors.PapayaWhip
+   };
+
         public Color CouleurBoutonVide
         {
             get { return couleurBoutonVide; }
@@ -72,15 +75,45 @@ namespace MyDomotik
             set { couleurBoutons = value; }
         }
 
+        public Color CouleurFond
+        {
+            get { return couleurFond; }
+            set { couleurFond = value; }
+        }
+
         public Color[] ListeCouleurs
         {
             get { return listeCouleurs; }
         }
 
+        public Color Rectangle
+        {
+            get
+            {
+                return rectangle;
+            }
+
+            set
+            {
+                rectangle = value;
+            }
+        }
+
+        public Couleur()  // créé la couleur avec le i-ème thème de la liste de couleurs
+        {
+            CouleurGrille = ListeCouleurs[9];
+            CouleurBarre = ListeCouleurs[4];
+            CouleurBoutons = ListeCouleurs[11];
+            CouleurBoutonActif = ListeCouleurs[3];
+            CouleurBoutonVide = ListeCouleurs[0];
+            CouleurFond = ListeCouleurs[18];
+            Rectangle = ListeCouleurs[1];
+        }
+
         // constructeurs
         public Couleur(int i)  // créé la couleur avec le i-ème thème de la liste de couleurs
         {
-            if(i < listeCouleurs.Length)
+            if (i < listeCouleurs.Length - 6)
             {
 
                 CouleurGrille = ListeCouleurs[i];
@@ -88,13 +121,9 @@ namespace MyDomotik
                 CouleurBoutons = ListeCouleurs[i + 2];
                 CouleurBoutonActif = ListeCouleurs[i + 3];
                 CouleurBoutonVide = ListeCouleurs[i + 4];
+                CouleurFond = ListeCouleurs[i + 5];
+                Rectangle = ListeCouleurs[i + 6];
 
-                /*
-                CouleurGrille = ListeCouleurs[5 * i];
-                CouleurBarre = ListeCouleurs[5 * i + 1];
-                CouleurBoutons = ListeCouleurs[5 * i + 2];
-                CouleurBoutonActif = ListeCouleurs[5 * i + 3];
-                CouleurBoutonVide = ListeCouleurs[5 * i + 4];*/
 
             }
             else
@@ -104,16 +133,10 @@ namespace MyDomotik
                 CouleurBoutons = ListeCouleurs[11];
                 CouleurBoutonActif = ListeCouleurs[3];
                 CouleurBoutonVide = ListeCouleurs[0];
+                CouleurFond = ListeCouleurs[18];
             }
-            
+
         }
-        public Couleur()  // créé la couleur avec le i-ème thème de la liste de couleurs
-        {
-            CouleurGrille = ListeCouleurs[9];
-            CouleurBarre = ListeCouleurs[4];
-            CouleurBoutons = ListeCouleurs[11];
-            CouleurBoutonActif = ListeCouleurs[3];
-            CouleurBoutonVide = ListeCouleurs[0];
-        }
+
     }
 }
