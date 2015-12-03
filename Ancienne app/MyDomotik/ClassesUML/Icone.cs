@@ -66,16 +66,12 @@ namespace MyDomotik
         public Icone(String nom, String nomFichier, int taille, Action action)
         {
             this.taille = taille;
-
             // création de la source
             this.SourceImage(nomFichier);
-
             // création de l'image à partir de la source
             this.image = new Image();
             //this.image.Source = this.sourceBi;
-
             this.nomIcone = nom;
-
             this.action = action;
             this.navigation = null;
         }

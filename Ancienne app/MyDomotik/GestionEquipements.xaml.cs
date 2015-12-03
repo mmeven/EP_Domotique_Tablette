@@ -33,27 +33,20 @@ namespace MyDomotik
         // private Affichage affich = new Affichage(g, new Theme());
         private Icone icone;
         public String nom;
-
         public Button b;
         private int indexNouvelleIcone;
-
-
         private Grille g;
         private Affichage affich;
         private Boolean choixPosition = false;
-
         private List<Button> listeBoutons;
 
         public GestionEquipements()
         {
             this.InitializeComponent();
-
             afficherPage();
-
             page_title2.Text = GestionPieces.nomPiece;
             Brush brush = new SolidColorBrush(Colors.Black);
             page_title2.Foreground = brush;
-
         }
 
         public void afficherPage()
@@ -63,28 +56,23 @@ namespace MyDomotik
             this.g = this.pageCourante.Grille;
             this.affich = new Affichage(this.g, MainPage.Configuration.theme);
             this.affich.creerGrille(cadre2);
-
             // création et affichage de la liste des boutons et des Icones associées
             this.listeBoutons = this.affich.afficheGrille(cadre2);
             this.attribueHandler();
-
         }
 
         private void exitAdmin2(object sender, RoutedEventArgs e)
         {
-
             // il faut mémoriser la grille dans config avant de quitter
             MainPage.Configuration.arbre.PageCourante.Grille.NumGrille = 0;
             MainPage.Configuration.arbre.retourAccueil();
             this.Frame.Navigate(typeof(MainPage));
-
         }
 
 
         public void menuAdmin2(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(GestionPieces));
-
         }
 
         private void goToIcones(object sender, RoutedEventArgs e)
@@ -93,14 +81,12 @@ namespace MyDomotik
         }
 
         //événement qui gère le double click sur une icone
-        //affiche un mesage pour le choix de l'emplacement de l'icone dans la grille et récupère les informations sur l'icone
+        //affiche un message pour le choix de l'emplacement de l'icone dans la grille et récupère les informations sur l'icone
         private void choixImage2(object sender, DoubleTappedRoutedEventArgs e)
         {
             // Message 
-            message2.Text = "Veuillez cliquer sur l'endroit où vous souhaitez inserer l'icone";
-
+            message2.Text = "Veuillez cliquer sur l'endroit où vous souhaitez insérer l'icone";
             this.choixPosition = true;
-
             // mémorise l'image cliquée
             this.image = sender as Image;
             this.nom = image.Name.Replace("é", ".");
@@ -119,8 +105,6 @@ namespace MyDomotik
                 // icone : icone correspondant au bouton cliqué
                 this.indexNouvelleIcone = (int)b.Tag;
                 Icone icone0 = g.pageGrille()[this.indexNouvelleIcone];
-
-
                 // Si il y a déjà une icone dans la case :
                 if (!(icone0.EstVide()))
                 {
@@ -128,7 +112,7 @@ namespace MyDomotik
                     message2.Text = "Il y a déjà une icône sur cet emplacement. Veuillez choisir un emplacement libre.";
                 }
 
-                // Sinon : click sur icone vide, l'icone peut être ajoutée
+                // Sinon : clic sur icone vide, l'icone peut être ajoutée
                 else
                 {
                     // affiche la boite de dialogue permettant à l'utilisateur d'entrer le nom de l'icone
@@ -136,7 +120,6 @@ namespace MyDomotik
                     nomIcone2.Visibility = Visibility.Visible;
                     Valider2.Visibility = Visibility.Visible;
                 }
-
             }
         }
 
@@ -166,7 +149,6 @@ namespace MyDomotik
         private void ajouterIcone(String nomIcone)
         {
             Icone iconeAjout = new Icone(nomIcone, this.nom, 64);//changer le constructeur
-
             //création de la page associée à l'icone
             MainPage.Configuration.ajouterEquipement(this.pageCourante, iconeAjout, indexNouvelleIcone, this.g.NumGrille);
             //this.choixPosition = false;
@@ -174,14 +156,13 @@ namespace MyDomotik
 
         }
 
-        // évenement qui gère le click sur un bouton (en dehors du cas où l'utilisateur ajoute une icone)
-        // affiche un menu de deux boutons : supprimer l'icone ou modifier le nom de l'icone
+        // évenement qui gère le clic sur un bouton (en dehors du cas où l'utilisateur ajoute une icone)
+        // affiche un menu de deux-3 boutons : supprimer l'icone, modifier le nom de l'icone, ajouter adresse bluetooth
         private void Menu2(object sender, RoutedEventArgs e)
         {
             if (!this.choixPosition)
             {
                 this.b = sender as Button;
-
                 Options2.Visibility = Visibility.Visible;
                 Supprimer2.IsEnabled = true;
                 ChangerNom2.IsEnabled = true;
@@ -211,6 +192,9 @@ namespace MyDomotik
 
 
         }
+        /**private void ajouterAdresseBluetooth(object sender, ){
+        
+            }**/
         private void changerNomIcone2(object sender, RoutedEventArgs e)
         {
             if (!choixPosition)

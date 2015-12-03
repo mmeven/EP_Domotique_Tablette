@@ -28,22 +28,16 @@ namespace MyDomotik
     {
         private Vue pageAccueil;
         private Image image;
-        
         //private static Grille g = new Grille(Format.MOYEN); 
         // private Affichage affich = new Affichage(g, new Theme());
         private Icone icone;
         public String nom;
-
         public Button b;
         private int indexNouvelleIcone;
-
         public static String nomPiece;
-
-
         private Grille g;
         private Affichage affich;
         private Boolean choixPosition = false;
-
         private List<Button> listeBoutons;
 
         public GestionPieces()
@@ -59,7 +53,6 @@ namespace MyDomotik
             this.g = this.pageAccueil.Grille;
             this.affich = new Affichage(this.g, MainPage.Configuration.theme);
             this.affich.creerGrille(cadre);
-
             // création et affichage de la liste des boutons et des Icones associées
             this.listeBoutons = this.affich.afficheGrille(cadre);
             this.attribueHandler();
@@ -67,20 +60,15 @@ namespace MyDomotik
 
         private void exitAdmin(object sender, RoutedEventArgs e)
         {
-
             // il faut mémoriser la grille dans config avant de quitter
             MainPage.Configuration.arbre.PageCourante.Grille.NumGrille = 0;
             MainPage.Configuration.arbre.retourAccueil();
-
-
             this.Frame.Navigate(typeof(MainPage));
         }
-
 
         public void menuAdmin(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AdminPage));
-
         }
 
         private void goToIcones(object sender, RoutedEventArgs e)
@@ -89,14 +77,12 @@ namespace MyDomotik
         }
 
         //événement qui gère le double click sur une icone
-        //affiche un mesage pour le choix de l'emplacement de l'icone dans la grille et récupère les informations sur l'icone
+        //affiche un message pour le choix de l'emplacement de l'icone dans la grille et récupère les informations sur l'icone
         private void choixImage(object sender, DoubleTappedRoutedEventArgs e)
         {
             // Message 
             message.Text = "Veuillez cliquer sur l'endroit où vous souhaitez inserer l'icone";
-
             this.choixPosition = true;
-
             // mémorise l'image cliquée
             this.image = sender as Image;
             this.nom = image.Name.Replace("é", ".");
@@ -111,19 +97,15 @@ namespace MyDomotik
                 // mémorise le bouton et le nom de fichier de l'image sélectionnée
                 this.b = sender as Button;
                 //this.nom = image.Name.Replace("é", ".");
-
                 // icone : icone correspondant au bouton cliqué
                 this.indexNouvelleIcone = (int)b.Tag;
                 Icone icone0 = g.pageGrille()[this.indexNouvelleIcone];
-
-
                 // Si il y a déjà une icone dans la case :
                 if (!(icone0.EstVide()))
                 {
                     // Message
                     message.Text = "Il y a déjà une icône sur cet emplacement. Veuillez choisir un emplacement libre.";
                 }
-
                 // Sinon : click sur icone vide, l'icone peut être ajoutée
                 else
                 {
@@ -145,7 +127,6 @@ namespace MyDomotik
                 message.Text = "";
                 nomIcone.Visibility = Visibility.Collapsed;
                 Valider.Visibility = Visibility.Collapsed;
-
                 // mémorise une nouvelle icone dans la grille temporaire
                 // attribution du nom à l'icone mémorisée et ajout de la nouvelle icone à la configuration              
                 ajouterIcone(nomIcone.Text);
@@ -164,7 +145,6 @@ namespace MyDomotik
         {
 
             Icone iconeAjout = new Icone(nomIcone, this.nom, 64);
-
             //création de la piece associée à l'icone
             MainPage.Configuration.ajouterPiece(iconeAjout, indexNouvelleIcone, this.g.NumGrille);
             //this.choixPosition = false;
@@ -208,9 +188,8 @@ namespace MyDomotik
                     this.Frame.Navigate(typeof(GestionPieces));
                 }
             }
-
-
         }
+
         private void changerNomIcone(object sender, RoutedEventArgs e)
         {
             if (!choixPosition)
@@ -219,11 +198,9 @@ namespace MyDomotik
                 Supprimer.IsEnabled = false;
                 ChangerNom.IsEnabled = false;
                 AjouterEquipements.IsEnabled = false;
-
                 // mémorise l'index de l'icone à créer (ou changer de nom)
                 this.indexNouvelleIcone = (int)b.Tag;
                 this.icone = g.pageGrille()[this.indexNouvelleIcone];
-
                 if (!this.icone.EstVide()) // click sur icone existante : on peut changer son nom
                 {
                     // Message
@@ -232,37 +209,33 @@ namespace MyDomotik
                     Valider.Visibility = Visibility.Visible;
                 }
             }
-
         }
 
         private void ajouterEquip(object sender, RoutedEventArgs e)
         {
-
-
-            int indexClick = (int)b.Tag; //Recupere l'indice du bouton cliqué, precedemment initialise dans Menu
-            Icone icone = g.pageGrille()[indexClick]; //Recupere l'icone associe
-
-            if (icone.Navigation != null) //si la piece a bien une vue associee
+            //Recupere l'indice du bouton cliqué, precedemment initialise dans Menu
+            int indexClick = (int)b.Tag;
+            // Recupere l'icone associe
+            Icone icone = g.pageGrille()[indexClick]; 
+            //si la piece a bien une vue associee
+            if (icone.Navigation != null) 
             {
                 MainPage.Configuration.arbre.PageCourante = icone.Navigation.PageFils; //Alors la page courante devient la vue de la piece
                 this.Frame.Navigate(typeof(GestionEquipements));
             }
-
         }
 
-        //Lorsqu'on appue sur la grille, si le bouton est vide alors aller dans choixPositionIcone, sinon aller dans Menu
+        //Lorsqu'on appuie sur la grille, si le bouton est vide alors aller dans choixPositionIcone, sinon aller dans Menu
         private void attribueHandler()
         {
             foreach (Button bouton in this.listeBoutons)
             {
                 int indexClick = (int)bouton.Tag;
                 Icone icone = g.pageGrille()[indexClick];
-
                 if (!(icone.EstVide()))
                 {
                     bouton.Click += Menu;
                 }
-
                 bouton.Click += choixPositionIcone;
             }
         }
@@ -275,7 +248,6 @@ namespace MyDomotik
                 this.listeBoutons = affich.afficheGrille(cadre);
                 this.attribueHandler();
             }
-
         }
 
         // accès à la page suivante de la grille
