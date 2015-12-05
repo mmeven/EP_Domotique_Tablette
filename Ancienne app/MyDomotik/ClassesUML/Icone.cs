@@ -17,7 +17,10 @@ namespace MyDomotik
         private String nomIcone;
         private Image image;
         private Uri uri;
-        //ajouter 2 arguments //private sting arg1 et 2
+        private String adr1;
+        private String adr2;
+        public enum TypeIcone { Piece, Equipement };
+        private TypeIcone typeIcone;
         private int taille;
         private String chaineSource;
 
@@ -36,9 +39,10 @@ namespace MyDomotik
             this.Uri = new Uri(this.chaineSource, UriKind.Absolute);
         }
 
-        // Création d'une nouvelle icone à partir du nom
+        // Création de l'icone d'une pièce
         public Icone(String nom, String nomFichier, int taille)
         {
+            TypeIcone1 = TypeIcone.Piece;
             this.vide = false;
             this.taille = taille;
 
@@ -53,8 +57,29 @@ namespace MyDomotik
 
             this.navigation = null;
             this.action = null;
+           
+          }
+        //Constructeur pour les équipements
+        public Icone(String nom, String nomFichier, int taille, String adresse1,String adresse2)
+        {
+            this.TypeIcone1 = TypeIcone.Equipement;
+            this.vide = false;
+            this.taille = taille;
+            this.adr1 = adresse1;
+            this.adr2 = adresse2;
+            // création de la source
+            this.SourceImage(nomFichier);
+
+            // création de l'image à partir de la source
+            this.image = new Image();
+            //this.image.Source = this.sourceBi;
+
+            this.nomIcone = nom;
+
+            this.navigation = null;
+            this.action = null;
         }
-        //Créer un constructeur avec 2arg en plus, pour ajouter icone dans gestion equipements
+
         public Icone()
         {
             this.image = null;
@@ -179,5 +204,17 @@ namespace MyDomotik
             set { bouton = value; }
         }
 
+        public TypeIcone TypeIcone1
+        {
+            get
+            {
+                return typeIcone;
+            }
+
+            set
+            {
+                typeIcone = value;
+            }
+        }
     }
 }
