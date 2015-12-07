@@ -17,7 +17,6 @@
         </Grid.RowDefinitions>
 
 
-
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="270*"/>
@@ -38,7 +37,6 @@
             <Button x:Name="configButton"  Height="64" Width="238" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Grid.Row="0" Grid.Column="2" FontSize="24" DoubleTapped="adminSelect" Margin="7,11,0,10">
                 <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Text="Configuration" FontWeight="Bold" Foreground="Black" FontSize="30" TextAlignment="Center"/>
             </Button>
-
         </Grid>
 
 

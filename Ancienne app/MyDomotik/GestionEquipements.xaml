@@ -10,7 +10,6 @@
     <Grid x:Name="MainGrid2" Background="{ThemeResource SearchBoxForegroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="85*"/>
-            <RowDefinition Height="85*"/> <!-- Champ pour la kira-->
             <RowDefinition Height="510*"/>
             <RowDefinition Height="173*"/>
 
@@ -49,28 +48,14 @@
 
         </Grid>
 
-        <!-- Kira-->
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50*"/> <!-- premier champ-->
-                <ColumnDefinition Width="50*"/> <!-- deuxieme champ-->
-            </Grid.ColumnDefinitions>
-            <!-- Premier champ de l'adresse pour la kira-->
-          <!-- Champ pour écrire-->  <TextBox x:Name="nomChamp1" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center"  Grid.Column="0" Height="42" Width="370" Background="#FFA49090" FontSize="24" FontWeight="Bold" Text=""/>
-          <!-- Affichage de "Adresse 1"-->  <TextBlock x:Name="champ1" Text="Adresse 1:"  TextWrapping="Wrap"  Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold" Grid.Column="0" TextAlignment="Center"/>
-            <!-- Deuxième champ de l'adresse pour la kira-->
-            <!-- Champ pour écrire-->
-            <TextBox x:Name="nomChamp2" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center"  Grid.Column="1" Height="42" Width="370" Background="#FFA49090" FontSize="24" FontWeight="Bold" Text=""/>
-            <!-- Affichage de "Adresse 2"-->
-            <TextBlock x:Name="champ2" Text="Adresse 2:" TextWrapping="Wrap"  Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold" Grid.Column="1" TextAlignment="Center"/>
-        </Grid>
+        
         <!-- Grille des icônes -->
                 
-        <Grid x:Name="cadre2" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF0D1F91"  Width="1346" Height="500" Grid.Row="2" Margin="10,0,10,10"/>
+        <Grid x:Name="cadre2" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF0D1F91"  Width="1346" Height="500" Grid.Row="1" Margin="10,0,10,10"/>
        
 
         <!-- Boutons Précédent & Suivant -->
-        <Button x:Name="previous2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF47CB16" BorderBrush="{x:Null}" Height="59" Width="79" Click="pagePrecedente2" Margin="0,222,0,229">
+        <Button x:Name="previous2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF47CB16" BorderBrush="{x:Null}" Height="59" Width="79" Click="pagePrecedente2" Margin="0,222,0,229">
             <Grid>
                 <Rectangle Fill="#FF47CB16" Margin="-9,-2"/>
                 <Image Source="Assets/suivant.PNG" Width="52" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -81,7 +66,7 @@
             </Grid>
         </Button>
 
-        <Button x:Name="next2" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" BorderBrush="{x:Null}" Background="#FF47CB16" Height="59" Width="79" Click="pageSuivante2" Margin="0,222,0,229">
+        <Button x:Name="next2" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" BorderBrush="{x:Null}" Background="#FF47CB16" Height="59" Width="79" Click="pageSuivante2" Margin="0,222,0,229">
             <Grid>
                 <Rectangle Fill="#FF47CB16" Margin="-9,-2"/>
                 <Image Source="Assets/suivant.PNG" Width="52" HorizontalAlignment="Center" VerticalAlignment="Center" />
@@ -90,13 +75,13 @@
 
 
         <!-- Popup supprimer/renommer icône -->
-        <TextBox x:Name="nomIcone2" HorizontalAlignment="Center" Height="42" Margin="0,0,0,400" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Width="446" Grid.Row="2" Background="#FFA49090" FontSize="24" FontWeight="Bold" Visibility="Collapsed"/>
+        <TextBox x:Name="nomIcone2" HorizontalAlignment="Center" Height="42" Margin="0,0,0,400" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Width="446" Grid.Row="1" Background="#FFA49090" FontSize="24" FontWeight="Bold" Visibility="Collapsed"/>
         <!-- Popup supprimer/renommer icône -->
-        <TextBlock x:Name="message2" Text=""  TextWrapping="Wrap"  VerticalAlignment="Top" Margin="0,0,0,0" HorizontalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold"  Grid.Row="2" TextAlignment="Center"/>
-        <Button x:Name="Valider2" Content="VALIDER" Height="52" Width="234" Margin="0,0,0,400" VerticalAlignment="Bottom"  HorizontalAlignment="Center" Grid.Row="2" Visibility="Collapsed" Background="#FF7E7E83" FontSize="20" Click="Validation2" BorderBrush="#FF7C7272"/>
+        <TextBlock x:Name="message2" Text=""  TextWrapping="Wrap"  VerticalAlignment="Top" Margin="0,0,0,0" HorizontalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold"  Grid.Row="1" TextAlignment="Center"/>
+        <Button x:Name="Valider2" Content="VALIDER" Height="52" Width="234" Margin="0,0,0,400" VerticalAlignment="Bottom"  HorizontalAlignment="Center" Grid.Row="1" Visibility="Collapsed" Background="#FF7E7E83" FontSize="20" Click="Validation2" BorderBrush="#FF7C7272"/>
 
         <!-- Popup supprimer/renommer icône -->
-        <Grid x:Name="Options2" Grid.Row="2" Background="#FF7E7E83" HorizontalAlignment="Center" Height="75"  VerticalAlignment="Center" Width="385" Visibility="Collapsed">
+        <Grid x:Name="Options2" Grid.Row="1" Background="#FF7E7E83" HorizontalAlignment="Center" Height="75"  VerticalAlignment="Center" Width="385" Visibility="Collapsed">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -110,7 +95,7 @@
 
 
 
-        <GridView x:Name="ItemGridView" Foreground="White" BorderBrush="LightGray" VerticalAlignment="Top" BorderThickness="1" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" SelectionMode="None" Margin="31,24,19,0" Height="130" Grid.Row="3">
+        <GridView x:Name="ItemGridView" Foreground="White" BorderBrush="LightGray" VerticalAlignment="Top" BorderThickness="1" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" SelectionMode="None" Margin="31,24,19,0" Height="130" Grid.Row="2">
             <Image x:Name="agenda_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/agenda_0.png" DoubleTapped="choixImage2"/>
             <Image x:Name="airco_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/airco_0.png" DoubleTapped="choixImage2"/>
             <Image x:Name="backlight_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/backlight_0.png" DoubleTapped="choixImage2"/>

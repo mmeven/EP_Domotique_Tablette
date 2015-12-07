@@ -156,11 +156,12 @@ namespace MyDomotik
             }
         }
 
-        //Lors de l'appui sur un équipement
+        //Lors du click sur un équipement
         private void EquipementClick(object sender, RoutedEventArgs e)
         {
             //TODO - Code C++
         }
+
         //Lors du clique sur une piece
         private void IconeClick(object sender, RoutedEventArgs e)
         {
