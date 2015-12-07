@@ -145,14 +145,23 @@ namespace MyDomotik
                 int indexClick = (int)bouton.Tag;
                 Icone icone = grille.pageGrille()[indexClick];
 
-                if (!(icone.EstVide()))
+                if (!(icone.EstVide()) && icone.TypeIcone1 == Icone.TypeIcone.Piece)
                 {
                     bouton.Click += IconeClick;
+                }
+                if( !(icone.EstVide()) && icone.TypeIcone1== Icone.TypeIcone.Equipement)
+                {
+                    bouton.Click += EquipementClick; // Lors de l'appui sur l'icone d'un équipement, lance la méthode EquipementClick
                 }
             }
         }
 
-        //
+        //Lors de l'appui sur un équipement
+        private void EquipementClick(object sender, RoutedEventArgs e)
+        {
+            //TODO - Code C++
+        }
+        //Lors du clique sur une piece
         private void IconeClick(object sender, RoutedEventArgs e)
         {
             Button boutonClick = sender as Button;
