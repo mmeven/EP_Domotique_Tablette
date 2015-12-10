@@ -18,7 +18,7 @@
       <m2:VisualElements DisplayName="MyDomotique" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="MyDomotique" ForegroundText="dark" BackgroundColor="transparent">
         <m2:DefaultTile ShortName="MyDomotique">
         </m2:DefaultTile>
-        <m2:SplashScreen Image="Assets\Splashscreen.png" BackgroundColor="#FFFFFF" />
+        <m2:SplashScreen Image="Assets\Splashscreen(2).png" BackgroundColor="#FFFFFF" />
       </m2:VisualElements>
     </Application>
   </Applications>
