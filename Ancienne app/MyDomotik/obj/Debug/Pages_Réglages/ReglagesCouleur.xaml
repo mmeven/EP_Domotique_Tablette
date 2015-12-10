@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="MyDomotik.ReglagesCouleur"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyDomotik"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="MainGrid" Background="#FF3C4093" Height="757">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85*"/>
+            <RowDefinition Height="683*"/>
+
+        </Grid.RowDefinitions>
+
+
+        <Grid Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="270*"/>
+                <ColumnDefinition Width="845*"/>
+                <ColumnDefinition Width="251*"/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0" Stroke="Black" VerticalAlignment="Center" Width="252"/>
+
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="center" Height="65" Grid.Row="0" Grid.Column="1" Stroke="Black" VerticalAlignment="Center" Width="832"/>
+
+            <Button x:ConnectionId='11' x:Name="retourMenuAdmin" HorizontalAlignment="Center" VerticalAlignment="Center"  BorderBrush="{x:Null}"  Foreground="#FF060606" FontWeight="Bold" Grid.Row="0" Grid.Column="0" FontSize="30" Height="71" Margin="6,7,6,6" Width="258" Background="#FFF8FF61"                  >
+                <TextBlock x:ConnectionId='13' TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold"                                              >
+                	<Run FontSize="30" Text="Menu"/>
+                </TextBlock>
+            </Button>
+
+            <TextBlock x:Name="page_title" HorizontalAlignment="Center" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="832" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Foreground="Black" Grid.Row="0" Grid.Column="1" FontWeight="Bold">
+    			<Run Foreground="Black" Text="Menu"/>
+            </TextBlock>
+
+            <Button x:ConnectionId='12' x:Name="quitterAdmin" BorderBrush="{x:Null}" Background="#FFE04214" Foreground="#FFF7EEEE" FontSize="18" Margin="2,7,0,0" Grid.Row="0" Grid.Column="2"                   HorizontalAlignment="Left" VerticalAlignment="Top" Width="247" Height="71">
+                <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Quitter"/>
+                </TextBlock>
+            </Button>
+
+        </Grid>
+
+
+        <Button x:ConnectionId='1' Content="Thème 1" HorizontalAlignment="Left" Height="84" Margin="347,60,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                    />
+        <Button x:ConnectionId='2' Content="Thème 2" HorizontalAlignment="Left" Height="84" Margin="347,174,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                    />
+
+
+        <Button x:ConnectionId='3' Content="Thème 3" HorizontalAlignment="Left" Height="84" Margin="347,289,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                     />
+        <Button x:ConnectionId='4' Content="Thème 7" HorizontalAlignment="Left" Height="84" Margin="750,174,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                     />
+        <Button x:ConnectionId='5' Content="Thème 4" HorizontalAlignment="Left" Height="84" Margin="347,404,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                     />
+        <Button x:ConnectionId='6' Content="Thème 5" HorizontalAlignment="Left" Height="84" Margin="347,522,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                     />
+        <Button x:ConnectionId='7' Content="Thème 6" HorizontalAlignment="Left" Height="84" Margin="750,60,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                     />
+        <Button x:ConnectionId='8' Content="Thème 8" HorizontalAlignment="Left" Height="84" Margin="750,289,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                     />
+        <Button x:ConnectionId='9' Content="Thème 9" HorizontalAlignment="Left" Height="84" Margin="750,404,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                     />
+        <Button x:ConnectionId='10' Content="Thème 10" HorizontalAlignment="Left" Height="84" Margin="750,522,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                      />
+
+    </Grid>
+</Page>
+

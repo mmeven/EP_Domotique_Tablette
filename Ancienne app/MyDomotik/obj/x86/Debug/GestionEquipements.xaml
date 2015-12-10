@@ -1,0 +1,160 @@
+﻿<Page
+    x:Class="MyDomotik.GestionEquipements"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyDomotik"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="MainGrid2" Background="{ThemeResource SearchBoxForegroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85*"/>
+            <RowDefinition Height="85*"/> <!-- Champ pour la kira-->
+            <RowDefinition Height="510*"/>
+            <RowDefinition Height="173*"/>
+
+        </Grid.RowDefinitions>
+
+
+        <!-- En-tête -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="270*"/>
+                <ColumnDefinition Width="845*"/>
+                <ColumnDefinition Width="251*"/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="center" Height="65" Grid.Row="0" Grid.Column="1" Stroke="Black" VerticalAlignment="Center" Width="832"/>
+
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0" Stroke="Black" VerticalAlignment="Center" Width="252"/>
+
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" Stroke="Black" VerticalAlignment="Center" Width="241"/>
+
+            <TextBlock x:Name="page_title2" HorizontalAlignment="Center" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" FontWeight="Bold"  Width="832" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="1" >
+    			<Run Foreground="#FF060606" Text="" FontWeight="Normal"/>
+            </TextBlock>
+
+            <Button x:ConnectionId='44' x:Name="quitterAdmin2"  Height="71" Width="247" BorderBrush="{x:Null}" Background="#FFE04214" Foreground="#FFF7EEEE" Grid.Column="2" FontSize="18"                    Margin="2,7,0,6">
+                <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Quitter"/>
+                </TextBlock>
+            </Button>
+
+            <Button x:ConnectionId='45' HorizontalAlignment="Center" VerticalAlignment="Center"  BorderBrush="{x:Null}"  Foreground="#FF060606" FontWeight="Bold" Grid.Row="0" Grid.Column="0" FontSize="30" Height="71" Margin="6,7,6,6" Width="258" Background="#FFF8FF61"                   >
+                <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Retour"/>
+                </TextBlock>
+            </Button>
+
+        </Grid>
+
+        <!-- Kira-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/> <!-- premier champ-->
+                <ColumnDefinition Width="50*"/> <!-- deuxieme champ-->
+            </Grid.ColumnDefinitions>
+            <!-- Premier champ de l'adresse pour la kira-->
+          <!-- Champ pour écrire-->  <TextBox x:Name="nomChamp1" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center"  Grid.Column="0" Height="42" Width="370" Background="#FFA49090" FontSize="24" FontWeight="Bold" Text=""/>
+          <!-- Affichage de "Adresse 1"-->  <TextBlock x:Name="champ1" Text="Adresse 1:"  TextWrapping="Wrap"  Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold" Grid.Column="0" TextAlignment="Center"/>
+            <!-- Deuxième champ de l'adresse pour la kira-->
+            <!-- Champ pour écrire-->
+            <TextBox x:Name="nomChamp2" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center"  Grid.Column="1" Height="42" Width="370" Background="#FFA49090" FontSize="24" FontWeight="Bold" Text=""/>
+            <!-- Affichage de "Adresse 2"-->
+            <TextBlock x:Name="champ2" Text="Adresse 2:" TextWrapping="Wrap"  Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold" Grid.Column="1" TextAlignment="Center"/>
+        </Grid>
+        <!-- Grille des icônes -->
+                
+        <Grid x:Name="cadre2" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF0D1F91"  Width="1346" Height="500" Grid.Row="2" Margin="10,0,10,10"/>
+       
+
+        <!-- Boutons Précédent & Suivant -->
+        <Button x:ConnectionId='1' x:Name="previous2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF47CB16" BorderBrush="{x:Null}" Height="59" Width="79"                         Margin="0,222,0,229">
+            <Grid>
+                <Rectangle Fill="#FF47CB16" Margin="-9,-2"/>
+                <Image Source="Assets/suivant.PNG" Width="52" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image.RenderTransform>
+                        <CompositeTransform Rotation="-180"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Grid>
+        </Button>
+
+        <Button x:ConnectionId='2' x:Name="next2" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" BorderBrush="{x:Null}" Background="#FF47CB16" Height="59" Width="79"                       Margin="0,222,0,229">
+            <Grid>
+                <Rectangle Fill="#FF47CB16" Margin="-9,-2"/>
+                <Image Source="Assets/suivant.PNG" Width="52" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Grid>
+        </Button>
+
+
+        <!-- Popup supprimer/renommer icône -->
+        <TextBox x:Name="nomIcone2" HorizontalAlignment="Center" Height="42" Margin="0,0,0,400" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Width="446" Grid.Row="2" Background="#FFA49090" FontSize="24" FontWeight="Bold" Visibility="Collapsed"/>
+        <!-- Popup supprimer/renommer icône -->
+        <TextBlock x:Name="message2" Text=""  TextWrapping="Wrap"  VerticalAlignment="Top" Margin="0,0,0,0" HorizontalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold"  Grid.Row="2" TextAlignment="Center"/>
+        <Button x:ConnectionId='3' x:Name="Valider2" Content="VALIDER" Height="52" Width="234" Margin="0,0,0,400" VerticalAlignment="Bottom"  HorizontalAlignment="Center" Grid.Row="2" Visibility="Collapsed" Background="#FF7E7E83" FontSize="20"                     BorderBrush="#FF7C7272"/>
+
+        <!-- Popup supprimer/renommer icône -->
+        <Grid x:Name="Options2" Grid.Row="2" Background="#FF7E7E83" HorizontalAlignment="Center" Height="75"  VerticalAlignment="Center" Width="385" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:ConnectionId='42' x:Name ="Supprimer2" Content="Supprimer l'icône" HorizontalAlignment="Center" Grid.Row="0" Width="391" Foreground="Black"                         IsEnabled="True"/>
+
+            <Button x:ConnectionId='43' x:Name="ChangerNom2" Content="Modifier le nom de l'icône" HorizontalAlignment="Center" Grid.Row="1" Width="391" Height="40" Foreground="Black"                            IsEnabled="True"/>
+        </Grid>
+
+
+
+
+        <GridView x:Name="ItemGridView" Foreground="White" BorderBrush="LightGray" VerticalAlignment="Top" BorderThickness="1" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" SelectionMode="None" Margin="31,24,19,0" Height="130" Grid.Row="3">
+            <Image x:ConnectionId='4' x:Name="agenda_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/agenda_0.png"                           />
+            <Image x:ConnectionId='5' x:Name="airco_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/airco_0.png"                           />
+            <Image x:ConnectionId='6' x:Name="backlight_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/backlight_0.png"                           />
+            <Image x:ConnectionId='7' x:Name="bbq_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/bbq_0.png"                           />
+            <Image x:ConnectionId='8' x:Name="bedfeetup_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/bedfeetup_0.png"                            />
+            <Image x:ConnectionId='9' x:Name="bedheaddown_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/bedheaddown_0.png"                           />
+            <Image x:ConnectionId='10' x:Name="bedheadup_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/bedheadup_0.png"                           />
+            <Image x:ConnectionId='11' x:Name="bedup_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/bedup_0.png"                           />
+
+            <Image x:ConnectionId='12' x:Name="blinds_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/blinds_0.png"                           />
+            <Image x:ConnectionId='13' x:Name="bluetooth_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/bluetooth_0.png"                           />
+            <Image x:ConnectionId='14' x:Name="clock_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/clock_0.png"                           />
+            <Image x:ConnectionId='15' x:Name="contacts_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/contacts_0.png"                           />
+            <Image x:ConnectionId='16' x:Name="door_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/door_0.png"                           />
+            <Image x:ConnectionId='17' x:Name="easyphone_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/easyphone_0.png"                           />
+            <Image x:ConnectionId='18' x:Name="eject_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/eject_0.png"                           />
+            <Image x:ConnectionId='19' x:Name="games_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/games_0.png"                           />
+            <Image x:ConnectionId='20' x:Name="lamp_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/lamp_0.png"                           />
+            <Image x:ConnectionId='21' x:Name="lampexternal_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/lampexternal_0.png"                           />
+
+            <Image x:ConnectionId='22' x:Name="lights_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/lights_0.png"                           />
+            <Image x:ConnectionId='23' x:Name="lock_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/lock_0.png"                           />
+            <Image x:ConnectionId='24' x:Name="No0_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/No0_0.png"                           />
+            <Image x:ConnectionId='25' x:Name="No1_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/No1_0.png"                           />
+            <Image x:ConnectionId='26' x:Name="No2_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/No2_0.png"                           />
+            <Image x:ConnectionId='27' x:Name="No3_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/No3_0.png"                           />
+            <Image x:ConnectionId='28' x:Name="No4_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/No4_0.png"                           />
+            <Image x:ConnectionId='29' x:Name="numberone_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/numberone_0.png"                           />
+
+            <Image x:ConnectionId='30' x:Name="numberseven_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/numberseven_0.png"                           />
+            <Image x:ConnectionId='31' x:Name="pc_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/pc_0.png"                           />
+            <Image x:ConnectionId='32' x:Name="play_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/play_0.png"                           />
+            <Image x:ConnectionId='33' x:Name="pool_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/pool_0.png"                           />
+            <Image x:ConnectionId='34' x:Name="previous_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/previous_0.png"                           />
+            <Image x:ConnectionId='35' x:Name="remote_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/remote_0.png"                           />
+            <Image x:ConnectionId='36' x:Name="security_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/security_0.png"                           />
+            <Image x:ConnectionId='37' x:Name="shop_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/shop_0.png"                           />
+            <Image x:ConnectionId='38' x:Name="stereo_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/stereo_0.png"                           />
+            <Image x:ConnectionId='39' x:Name="tv1_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/tv1_0.png"                           />
+            <Image x:ConnectionId='40' x:Name="wheelchair_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/wheelchair_0.png"                           />
+            <Image x:ConnectionId='41' x:Name="window_0épng" Height="100" Width="100" Source="Assets/ICONS_MDTOUCH/size_64x64/window_0.png"                           />
+
+        </GridView>
+    </Grid>
+</Page>
+
+
