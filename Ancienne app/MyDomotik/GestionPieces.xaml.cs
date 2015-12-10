@@ -144,11 +144,12 @@ namespace MyDomotik
         private void ajouterIcone(String nomIcone)
         {
 
-            Icone iconeAjout = new Icone(nomIcone, this.nom, 64, Icone.TypeIcone.Piece);
+            Icone iconeAjout = new Icone(nomIcone, this.nom, 64);
             //création de la piece associée à l'icone
             MainPage.Configuration.ajouterPiece(iconeAjout, indexNouvelleIcone, this.g.NumGrille);
             //this.choixPosition = false;
             this.Frame.Navigate(typeof(GestionPieces));
+
         }
 
         // évenement qui gère le click sur un bouton (en dehors du cas où l'utilisateur ajoute une icone)

@@ -12,6 +12,7 @@ using Windows.UI;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
@@ -147,11 +148,16 @@ namespace MyDomotik
         // ajout de l'icone (attribut de classe) dans la grille de la page d'accueil
         private void ajouterIcone(String nomIcone)
         {
-            Icone iconeAjout = new Icone(nomIcone, this.nom, 64,Icone.TypeIcone.Equipement);
+            String s1 = nomChamp1.Text;  //première partie de l'adresse
+            String s2 = nomChamp2.Text;  //Deuxième partie de l'adresse
+            Icone iconeAjout = new Icone(nomIcone, this.nom, 64,s1,s2);
             //création de la page associée à l'icone
             MainPage.Configuration.ajouterEquipement(this.pageCourante, iconeAjout, indexNouvelleIcone, this.g.NumGrille);
             //this.choixPosition = false;
+            nomChamp1.Text = "";
+            nomChamp2.Text = "";
             this.Frame.Navigate(typeof(GestionEquipements));
+
         }
 
         // évenement qui gère le clic sur un bouton (en dehors du cas où l'utilisateur ajoute une icone)

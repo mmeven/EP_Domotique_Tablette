@@ -17,6 +17,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using System.Runtime.InteropServices;
+
 
 
 namespace MyDomotik
@@ -156,14 +158,19 @@ namespace MyDomotik
             }
         }
 
-        //Lors du click sur un équipement
+        //Lors de l'appui sur un équipement
+       
+        [DllImport("RequeteHttp.dll", CallingConvention=CallingConvention.Cdecl)]
+        public static extern void requeteHttp(string s1, string s2 );
+
         private void EquipementClick(object sender, RoutedEventArgs e)
         {
-            //TODO - Code C++
+            requeteHttp("192.168.1.31", "/remote2.htm?button001");
         }
 
-        //Lors du clique sur une piece
-        private void IconeClick(object sender, RoutedEventArgs e)
+
+    //Lors du clique sur une piece
+    private void IconeClick(object sender, RoutedEventArgs e)
         {
             Button boutonClick = sender as Button;
 

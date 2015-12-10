@@ -17,10 +17,10 @@ namespace MyDomotik
         private String nomIcone;
         private Image image;
         private Uri uri;
-
+        private String adr1;
+        private String adr2;
         public enum TypeIcone { Piece, Equipement };
         private TypeIcone typeIcone;
-
         private int taille;
         private String chaineSource;
 
@@ -39,10 +39,10 @@ namespace MyDomotik
             this.Uri = new Uri(this.chaineSource, UriKind.Absolute);
         }
 
-        // Création de l'icone 
-        public Icone(String nom, String nomFichier, int taille, TypeIcone tp)
+        // Création de l'icone d'une pièce
+        public Icone(String nom, String nomFichier, int taille)
         {
-            TypeIcone1 = tp;
+            TypeIcone1 = TypeIcone.Piece;
             this.vide = false;
             this.taille = taille;
 
@@ -59,14 +59,33 @@ namespace MyDomotik
             this.action = null;
            
           }
-   
+        //Constructeur pour les équipements
+        public Icone(String nom, String nomFichier, int taille, String adresse1,String adresse2)
+        {
+            this.TypeIcone1 = TypeIcone.Equipement;
+            this.vide = false;
+            this.taille = taille;
+            this.adr1 = adresse1;
+            this.adr2 = adresse2;
+            // création de la source
+            this.SourceImage(nomFichier);
+
+            // création de l'image à partir de la source
+            this.image = new Image();
+            //this.image.Source = this.sourceBi;
+
+            this.nomIcone = nom;
+
+            this.navigation = null;
+            this.action = null;
+        }
+
         public Icone()
         {
             this.image = null;
             this.nomIcone = null;
             this.action = null;
             this.navigation = null;
-
         }
         // constructeur d'icone associée à une action
         public Icone(String nom, String nomFichier, int taille, Action action)
