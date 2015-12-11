@@ -22,13 +22,13 @@
     <AppXManifest Include="G:\Informatique\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-10T14:29:18.306</Modified>
+      <Modified>2015-12-11T17:34:46.766</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="G:\Informatique\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\MyDomotik.exe">
       <PackagePath>MyDomotik.exe</PackagePath>
-      <Modified>2015-12-10T14:29:13.562</Modified>
+      <Modified>2015-12-11T17:34:41.743</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="G:\Informatique\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\Assets\acceuil.PNG">
       <PackagePath>Assets\acceuil.PNG</PackagePath>
@@ -10512,7 +10512,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="G:\Informatique\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\AdminPage.xbf">
       <PackagePath>AdminPage.xbf</PackagePath>
-      <Modified>2015-12-10T14:29:12.268</Modified>
+      <Modified>2015-12-11T17:34:40.961</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="G:\Informatique\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\GestionPieces.xbf">
       <PackagePath>GestionPieces.xbf</PackagePath>
