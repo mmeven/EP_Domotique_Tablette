@@ -17,7 +17,7 @@ namespace MyDomotik
         private Color couleurBoutons;
         private Color couleurBoutonActif;
         private Color couleurBoutonVide;
-        private Color rectangle;
+        private Color couleurRectangleEnTete;
 
 
 
@@ -34,17 +34,24 @@ namespace MyDomotik
        Colors.Turquoise, //5
        Colors.Yellow,
        Colors.White,
-       Colors.Beige,
+       Colors.Beige, //8
        Colors.Cyan,
        Colors.Plum, //10
        Colors.Pink,
-       Colors.Coral,
+       Colors.Coral, //12
        Colors.OrangeRed,
        Colors.Plum,
        Colors.Violet, //15
        Colors.Purple,
        Colors.Yellow, //17
-       Colors.PapayaWhip
+       Colors.PapayaWhip,
+       Colors.Tomato,
+       Colors.Gold, //20
+       Colors.LightSalmon,
+       Colors.DarkOrange,
+       Colors.LightYellow, //23
+       Colors.Orange,
+
    };
 
         public Color CouleurBoutonVide
@@ -86,34 +93,34 @@ namespace MyDomotik
             get { return listeCouleurs; }
         }
 
-        public Color Rectangle
+        public Color CouleurRectangleEnTete
         {
             get
             {
-                return rectangle;
+                return couleurRectangleEnTete;
             }
 
             set
             {
-                rectangle = value;
+                couleurRectangleEnTete = value;
             }
         }
 
-        public Couleur()  // créé la couleur avec le i-ème thème de la liste de couleurs
+        public Couleur()  // créé la couleur avec le thème par défaut de la liste de couleurs
         {
-            CouleurGrille = ListeCouleurs[9];
-            CouleurBarre = ListeCouleurs[4];
-            CouleurBoutons = ListeCouleurs[11];
-            CouleurBoutonActif = ListeCouleurs[3];
-            CouleurBoutonVide = ListeCouleurs[0];
-            CouleurFond = ListeCouleurs[18];
-            Rectangle = ListeCouleurs[1];
+            CouleurGrille = ListeCouleurs[6]; //Fond Grille: yellow
+            CouleurBarre = ListeCouleurs[23]; //Barre en bas : light yellow
+            CouleurBoutons = ListeCouleurs[22]; //Boutons en bas lorsque la souris n'est pas dessus: DarkOrange
+            CouleurBoutonActif = ListeCouleurs[24]; //Boutons en bas lorsque la souris est dessus: Orange
+            CouleurBoutonVide = ListeCouleurs[20]; //Bouton Grille: Gold
+            CouleurFond = ListeCouleurs[23]; //Fond: Light Yellow
+            CouleurRectangleEnTete = ListeCouleurs[22]; // Couleur en tête : DarkOrange
         }
 
         // constructeurs
         public Couleur(int i)  // créé la couleur avec le i-ème thème de la liste de couleurs
         {
-            if (i < listeCouleurs.Length - 6)
+            if (i < listeCouleurs.Length - 6 && i>1)
             {
 
                 CouleurGrille = ListeCouleurs[i];
@@ -122,18 +129,11 @@ namespace MyDomotik
                 CouleurBoutonActif = ListeCouleurs[i + 3];
                 CouleurBoutonVide = ListeCouleurs[i + 4];
                 CouleurFond = ListeCouleurs[i + 5];
-                Rectangle = ListeCouleurs[i + 6];
-
-
-            }
+                CouleurRectangleEnTete = ListeCouleurs[i + 6];
+             }
             else
             {
-                CouleurGrille = ListeCouleurs[9];
-                CouleurBarre = ListeCouleurs[4];
-                CouleurBoutons = ListeCouleurs[11];
-                CouleurBoutonActif = ListeCouleurs[3];
-                CouleurBoutonVide = ListeCouleurs[0];
-                CouleurFond = ListeCouleurs[18];
+                new Couleur();
             }
 
         }

@@ -1,7 +1,23 @@
-﻿using Windows.UI;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
+using System.Windows;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
+using Windows.UI.Xaml.Navigation;
+using System.Runtime.InteropServices;
 
 
 // Pour en savoir plus sur le modèle d'élément Page vierge, consultez la page http://go.microsoft.com/fwlink/?LinkId=234238
@@ -17,8 +33,19 @@ namespace MyDomotik
         public AdminPage()
         {
             this.InitializeComponent();
+            afficheHeure();
         }
-
+        public void afficheHeure()
+        {
+            if (DateTime.Now.Minute < 10)
+            {
+                TimeBox.Text = DateTime.Now.Hour.ToString() + ":0" + DateTime.Now.Minute.ToString();
+            }
+            else
+            {
+                TimeBox.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
+            }
+        }
         private void exitAdmin(object sender, RoutedEventArgs e)
         {
 
@@ -45,9 +72,9 @@ namespace MyDomotik
             RowDefinitionCollection defs = admin_buttons_grid.RowDefinitions;
             defs.RemoveAt(2);
 
-            admin_button_1.Content = "Couleurs";
-            admin_button_2.Content = "Tailles icônes";
-            admin_button_3.Content = "Mode défilement";
+            admin_1.Text = "Couleurs";
+            admin_2.Text= "Tailles icônes";
+            admin_3.Text = "Mode défilement";
 
             admin_button_1.Click -= accesParamInterface;
             admin_button_1.Click += accesParamCouleur;
@@ -59,13 +86,7 @@ namespace MyDomotik
             admin_button_3.Click += accesParamDefil;
 
             page_title.Text = "Paramètres de l'interface";
-            
-            TextBlock t = new TextBlock();
-            t.Foreground = new SolidColorBrush(Colors.Black);
-            t.Text = "Menu";
-
-            retourMenuAdmin.Content = t;
-            retourMenuAdmin.IsEnabled = true;
+                       
         }
 
         private void accesParamCouleur(object sender, RoutedEventArgs e)

@@ -36,7 +36,6 @@ namespace MyDomotik
         private void menuAdmin(object sender, RoutedEventArgs e)
         {
             Frame.GoBack();
-//            this.Frame.Navigate(typeof(ParamInterface));
         }
 
         private void choixTheme1(object sender, RoutedEventArgs e)

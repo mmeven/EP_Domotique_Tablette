@@ -62,25 +62,32 @@ namespace MyDomotik
         //méthodes
 
         //Affiche les couleurs de la grille, la barre de menu et ses boutons en fonction du thème de couleurs passé en paramètre
-        public void afficheCouleur(Rectangle rect1, Rectangle rect2, Rectangle rect3, Grid fond, Rectangle barreMenu, Grid cadre, Button accueil, Button precedent, Button suivant)
+        public void afficheCouleur(Rectangle rect1, Rectangle rect2, Rectangle rect3, Rectangle rect4, Rectangle rect5, Rectangle rect6, Grid fond, Rectangle barreMenu, Grid cadre, Button accueil, Button precedent, Button suivant)
         {
             Brush fond2 = new SolidColorBrush(theme.Couleur.CouleurFond);
             Brush grille = new SolidColorBrush(theme.Couleur.CouleurGrille);
             Brush barre = new SolidColorBrush(theme.Couleur.CouleurBarre);
             Brush boutons = new SolidColorBrush(theme.Couleur.CouleurBoutons);
-            Brush rectangle = new SolidColorBrush(theme.Couleur.Rectangle);
+            Brush rectangleHaut = new SolidColorBrush(theme.Couleur.CouleurRectangleEnTete);
+            Brush boutonsBasActifs = new SolidColorBrush(theme.Couleur.CouleurBoutonActif);
 
 
-
-            fond.Background = fond2;
-            barreMenu.Fill = barre;
-            cadre.Background = grille;
+            fond.Background = fond2; //Fond
+            barreMenu.Stroke = barre; //Barre en bas
+            barreMenu.Fill = barre; //Barre en bas
+            cadre.Background = grille;  //grille
             accueil.Background = boutons;
+            accueil.BorderBrush = boutons;
             precedent.Background = boutons;
+            precedent.BorderBrush = boutons;
             suivant.Background = boutons;
-            rect1.Fill = rectangle;
-            rect2.Fill = rectangle;
-            rect3.Fill = rectangle;
+            suivant.BorderBrush = boutons;
+            rect1.Fill = rectangleHaut;
+            rect2.Fill = rectangleHaut;
+            rect3.Fill = rectangleHaut;
+            rect4.Fill = boutonsBasActifs;
+            rect5.Fill = boutonsBasActifs;
+            rect6.Fill = boutonsBasActifs;
         }
 
         // création de la grid dans la page xaml

@@ -67,7 +67,7 @@ namespace MyDomotik
             affichage.creerGrille(cadre);
 
             // affichage des couleurs
-            affichage.afficheCouleur(Rect1, Rect2, Rect3, MainGrid, barreMenu, cadre, accueil, precedent, suivant);
+            affichage.afficheCouleur(Rect1, Rect2, Rect3, RectAccueil, RectPrecedent, RectSuivant, MainGrid, barreMenu, cadre, accueil, precedent, suivant);
 
             affichePageGrille();
             afficheHeure();
