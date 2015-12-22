@@ -55,19 +55,19 @@
                 <RowDefinition Height="100*"/>
             </Grid.RowDefinitions>
 
-            <Button x:ConnectionId='1'  HorizontalAlignment="Center" Height="84" Grid.Row="0"  Width="802" BorderBrush="{x:Null}" Background="#FFFFD700" FontSize="36"                   >
+            <Button x:ConnectionId='1'  HorizontalAlignment="Center" Height="150" Grid.Row="0"  Width="802" BorderBrush="{x:Null}" Background="#FFFFD700" FontSize="36"                   >
                 <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
                 	<Run FontSize="30" Text="Petit"/>
                 </TextBlock>
             </Button>
             
-            <Button x:ConnectionId='2' HorizontalAlignment="Center" Height="84" Grid.Row="1"  Width="802" BorderBrush="{x:Null}" Background="#FFFFD700" FontSize="36"                   >
+            <Button x:ConnectionId='2' HorizontalAlignment="Center" Height="150" Grid.Row="1"  Width="802" BorderBrush="{x:Null}" Background="#FFFFD700" FontSize="36"                   >
             <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
                 	<Run FontSize="30" Text="Moyen"/>
             </TextBlock>
             </Button>
             
-            <Button x:ConnectionId='3' HorizontalAlignment="Center" Height="84" Grid.Row="2"  Width="802" BorderBrush="{x:Null}"  Background="#FFFFD700" FontSize="36"                   >
+            <Button x:ConnectionId='3' HorizontalAlignment="Center" Height="150" Grid.Row="2"  Width="802" BorderBrush="{x:Null}"  Background="#FFFFD700" FontSize="36"                   >
             <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
                 	<Run FontSize="30" Text="Grand"/>
             </TextBlock>

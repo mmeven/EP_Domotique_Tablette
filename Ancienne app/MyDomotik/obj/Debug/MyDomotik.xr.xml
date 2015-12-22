@@ -32,12 +32,12 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Width" />
       <RootProperty Name="Background" />
-      <RootProperty Name="Foreground" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Content" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Visibility" />
+      <RootProperty Name="Foreground" />
       <RootProperty Name="IsEnabled" />
       <RootProperty Name="FontWeight" />
       <RootEvent Name="Click" />
@@ -48,12 +48,12 @@
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="FontSize" />
-      <RootProperty Name="FontWeight" />
       <RootProperty Name="Inlines" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Height" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Width" />
+      <RootProperty Name="FontWeight" />
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="FontFamily" />
       <RootProperty Name="Margin" />
@@ -126,20 +126,8 @@
     <RootType FullName="MyDomotik.GestionEquipements" />
     <RootType FullName="MyDomotik.MainPage" />
     <RootType FullName="MyDomotik.ReglagesCouleur" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Canvas">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="ManipulationMode" />
-      <RootProperty Name="Children" />
-      <RootMethod Name="GetLeft" />
-      <RootMethod Name="SetLeft" />
-      <RootMethod Name="GetTop" />
-      <RootMethod Name="SetTop" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
+      <RootProperty Name="Foreground" />
       <RootProperty Name="Content" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
@@ -148,6 +136,7 @@
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Slider">
+      <RootProperty Name="Foreground" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="TickPlacement" />
