@@ -35,9 +35,9 @@
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Content" />
+      <RootProperty Name="Foreground" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Visibility" />
-      <RootProperty Name="Foreground" />
       <RootProperty Name="IsEnabled" />
       <RootProperty Name="FontWeight" />
       <RootEvent Name="Click" />
@@ -78,7 +78,6 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="MyDomotik.AdminPage" />
-    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Height" />
@@ -117,12 +116,14 @@
       <RootProperty Name="RenderTransformOrigin" />
       <RootProperty Name="RenderTransform" />
       <RootProperty Name="UseLayoutRounding" />
+      <RootEvent Name="Tapped" />
       <RootEvent Name="DoubleTapped" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.CompositeTransform">
       <RootProperty Name="Rotation" />
     </RootType>
     <RootType FullName="MyDomotik.GestionPieces" />
+    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="MyDomotik.GestionEquipements" />
     <RootType FullName="MyDomotik.MainPage" />
     <RootType FullName="MyDomotik.ReglagesCouleur" />

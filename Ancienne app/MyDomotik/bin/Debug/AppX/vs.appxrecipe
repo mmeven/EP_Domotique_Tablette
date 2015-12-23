@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\Iman\EP\Ancienne app\MyDomotik\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-22T21:00:54.935</Modified>
+      <Modified>2015-12-23T11:30:53.304</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Iman\EP\Ancienne app\MyDomotik\bin\Debug\MyDomotik.exe">
       <PackagePath>MyDomotik.exe</PackagePath>
-      <Modified>2015-12-22T21:00:46.801</Modified>
+      <Modified>2015-12-23T11:30:44.856</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Iman\EP\Ancienne app\MyDomotik\Assets\acceuil.PNG">
       <PackagePath>Assets\acceuil.PNG</PackagePath>
@@ -10504,7 +10504,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Iman\EP\Ancienne app\MyDomotik\bin\Debug\MyDomotik.xr.xml">
       <PackagePath>MyDomotik.xr.xml</PackagePath>
-      <Modified>2015-12-22T21:00:44.971</Modified>
+      <Modified>2015-12-23T01:11:32.511</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Iman\EP\Ancienne app\MyDomotik\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
@@ -10516,7 +10516,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Iman\EP\Ancienne app\MyDomotik\bin\Debug\GestionPieces.xbf">
       <PackagePath>GestionPieces.xbf</PackagePath>
-      <Modified>2015-12-22T14:34:43.947</Modified>
+      <Modified>2015-12-23T11:30:43.258</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Iman\EP\Ancienne app\MyDomotik\bin\Debug\GestionEquipements.xbf">
       <PackagePath>GestionEquipements.xbf</PackagePath>

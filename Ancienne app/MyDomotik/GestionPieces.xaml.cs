@@ -51,11 +51,12 @@ namespace MyDomotik
             this.pageAccueil = MainPage.Configuration.arbre.Racine;
             // création de la grille d'affichage des icones
             this.g = this.pageAccueil.Grille;
-            this.affich = new Affichage(this.g, MainPage.Configuration.theme);
+            this.affich = new Affichage(this.g, new Theme());
             this.affich.creerGrille(cadre);
             // création et affichage de la liste des boutons et des Icones associées
             this.listeBoutons = this.affich.afficheGrille(cadre);
             this.attribueHandler();
+            this.message2.Text = "Veuillez choisir une icône ou une pièce";
         }
 
         private void exitAdmin(object sender, RoutedEventArgs e)
@@ -78,44 +79,62 @@ namespace MyDomotik
 
         //événement qui gère le double click sur une icone
         //affiche un message pour le choix de l'emplacement de l'icone dans la grille et récupère les informations sur l'icone
-        private void choixImage(object sender, DoubleTappedRoutedEventArgs e)
+        private void choixImage(object sender, RoutedEventArgs e)
         {
             // Message 
-            message.Text = "Veuillez cliquer sur l'endroit où vous souhaitez inserer l'icone";
+            message1.Text = "";
+            nomIcone.Visibility = Visibility.Collapsed;
+            Valider.Visibility = Visibility.Collapsed;
+            Options.Visibility = Visibility.Collapsed;
+            Supprimer.IsEnabled = false;
+            ChangerNom.IsEnabled = false;
+            AjouterEquipements.IsEnabled = false;
+            message2.Text = "Veuillez cliquer sur l'endroit où vous souhaitez inserer l'icone";
             this.choixPosition = true;
             // mémorise l'image cliquée
             this.image = sender as Image;
             this.nom = image.Name.Replace("é", ".");
         }
 
-        //événement qui gère le click sur un bouton
+        //événement qui gère le click sur un bouton de la grille
         //affiche l'icone double clickée sur le bouton
         private void choixPositionIcone(object sender, RoutedEventArgs e)
         {
+            // mémorise le bouton et le nom de fichier de l'image sélectionnée
+            this.b = sender as Button;
+            //this.nom = image.Name.Replace("é", ".");
+            // icone : icone correspondant au bouton cliqué
+            this.indexNouvelleIcone = (int)b.Tag;
+            Icone icone0 = g.pageGrille()[this.indexNouvelleIcone];
             if (this.choixPosition) // si l'utilisateur est en train d'ajouter une nouvelle icone
             {
-                // mémorise le bouton et le nom de fichier de l'image sélectionnée
-                this.b = sender as Button;
-                //this.nom = image.Name.Replace("é", ".");
-                // icone : icone correspondant au bouton cliqué
-                this.indexNouvelleIcone = (int)b.Tag;
-                Icone icone0 = g.pageGrille()[this.indexNouvelleIcone];
                 // Si il y a déjà une icone dans la case :
                 if (!(icone0.EstVide()))
                 {
                     // Message
-                    message.Text = "Il y a déjà une icône sur cet emplacement. Veuillez choisir un emplacement libre.";
+                    message1.Text = "";
+                    nomIcone.Visibility = Visibility.Collapsed;
+                    Valider.Visibility = Visibility.Collapsed;
+                    message2.Text = "Il y a déjà une icône sur cet emplacement. Veuillez choisir un emplacement libre.";
                 }
                 // Sinon : click sur icone vide, l'icone peut être ajoutée
                 else
                 {
                     // affiche la boite de dialogue permettant à l'utilisateur d'entrer le nom de l'icone
-                    message.Text = "Veuillez attribuer un nom à l'icone.";
+                    message2.Text = "";
+                    message1.Text = "Veuillez attribuer un nom à l'icone:";
                     nomIcone.Visibility = Visibility.Visible;
                     Valider.Visibility = Visibility.Visible;
                 }
-
             }
+            if (icone0.EstVide())
+            {
+                // Message 
+                Options.Visibility = Visibility.Collapsed;
+                Supprimer.IsEnabled = false;
+                ChangerNom.IsEnabled = false;
+                AjouterEquipements.IsEnabled = false;
+            }          
         }
 
         // évenement qui gère la validation de saisie du nom de l'icone
@@ -124,7 +143,8 @@ namespace MyDomotik
             if (this.choixPosition) // création d'une nouvelle icone
             {
                 // efface message
-                message.Text = "";
+                message1.Text = "";
+                message2.Text = "";
                 nomIcone.Visibility = Visibility.Collapsed;
                 Valider.Visibility = Visibility.Collapsed;
                 // mémorise une nouvelle icone dans la grille temporaire
@@ -204,7 +224,8 @@ namespace MyDomotik
                 if (!this.icone.EstVide()) // click sur icone existante : on peut changer son nom
                 {
                     // Message
-                    message.Text = "Veuillez attribuer un nom à l'icone.";
+                    message2.Text = "";
+                    message1.Text = "Veuillez attribuer un nom à l'icone:";
                     nomIcone.Visibility = Visibility.Visible;
                     Valider.Visibility = Visibility.Visible;
                 }
@@ -242,6 +263,10 @@ namespace MyDomotik
 
         private void pagePrecedente(object sender, RoutedEventArgs e)
         {
+            Options.Visibility = Visibility.Collapsed;
+            Supprimer.IsEnabled = false;
+            ChangerNom.IsEnabled = false;
+            AjouterEquipements.IsEnabled = false;
             if (!MainPage.Configuration.theme.ModeDefilement && this.g.pagePrecedente())
             {
                 affich.nettoieGrille(cadre);
@@ -253,6 +278,10 @@ namespace MyDomotik
         // accès à la page suivante de la grille
         private void pageSuivante(object sender, RoutedEventArgs e)
         {
+            Options.Visibility = Visibility.Collapsed;
+            Supprimer.IsEnabled = false;
+            ChangerNom.IsEnabled = false;
+            AjouterEquipements.IsEnabled = false;
             g.CreepageSuivante();
             affich.nettoieGrille(cadre);
             this.listeBoutons = affich.afficheGrille(cadre);
