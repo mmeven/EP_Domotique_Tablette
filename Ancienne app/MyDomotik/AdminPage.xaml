@@ -20,11 +20,11 @@
                 <ColumnDefinition Width="251*"/>
             </Grid.ColumnDefinitions>
 
-            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" Width="252"/>
+            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0" Margin="5,0,0,0" VerticalAlignment="Center" Width="252"/>
 
-            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Width="832"/>
+            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Width="700"/>
 
-            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Width="241"/>
+            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" Margin="0,0,5,0" VerticalAlignment="Center" Width="241"/>
 
              <!-- Rectangle heure, en haut à gauche -->
             <TextBlock x:Name="TimeBox" HorizontalAlignment="Center" Height="65" TextWrapping="Wrap" VerticalAlignment="Center" Width="252" FontSize="30" FontWeight="Bold" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="0" Foreground="Black" Margin="9,19,9,1"/>

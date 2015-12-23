@@ -7,46 +7,72 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid x:Name="MainGrid" Background="#FF3C4093" Height="757">
+    <Grid x:Name="MainGrid" Background="#FFFFFFE0" >
         <Grid.RowDefinitions>
             <RowDefinition Height="85*"/>
             <RowDefinition Height="683*"/>
-
         </Grid.RowDefinitions>
 
-        <Grid Background="Black">
+        <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="270*"/>
                 <ColumnDefinition Width="845*"/>
                 <ColumnDefinition Width="251*"/>
             </Grid.ColumnDefinitions>
 
-            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="center" Height="65" Grid.Row="0" Grid.Column="1" Stroke="Black" VerticalAlignment="Center" Width="832"/>
 
-            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0" Stroke="Black" VerticalAlignment="Center" Width="252"/>
+            <Rectangle Fill="Orange" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" Width="252"/>
 
-            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" Stroke="Black" VerticalAlignment="Center" Width="241"/>
+            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Width="832"/>
 
-            <TextBlock x:Name="page_title" HorizontalAlignment="Center" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="832" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="1" FontWeight="Bold" >
-    			<Run Foreground="Black" Text="Paramètres interface\Taille Icônes"/>
-            </TextBlock>
+            <Rectangle Fill="Orange" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Width="241"/>
 
-            <Button x:ConnectionId='4' x:Name="quitterAdmin"  Height="71" Width="247" BorderBrush="{x:Null}" Background="#FFE04214" Foreground="#FFF7EEEE" Grid.Column="2" FontSize="18"                   Margin="2,7,0,6">
+            <!-- Rectangle Retour, en haut à droite -->
+            <Button x:ConnectionId='4' x:Name="retourMenu" BorderBrush="{x:Null}" Background="#FFFF8C00" Foreground="#FFF7EEEE" FontSize="18"  Grid.Row="0" Grid.Column="0"                   HorizontalAlignment="Center" VerticalAlignment="Center" Width="252" Height="65">
                 <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
-                	<Run FontSize="30" Text="Quitter"/>
+                	<Run FontSize="30" Text="Retour"/>
                 </TextBlock>
             </Button>
-            <Button x:ConnectionId='5' x:Name="retourMenuAdmin" Content="Menu" HorizontalAlignment="Center" Height="53" Margin="19,16,15,15" VerticalAlignment="Center" Width="236" FontSize="30" Foreground="#FF060606" FontWeight="Bold"                  />
+
+            <!-- Rectangle Titre, en haut a centre -->
+            <TextBlock x:Name="page_title" HorizontalAlignment="Center" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="832" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Foreground="Black" Grid.Row="0" Grid.Column="1" FontWeight="Bold">
+    			<Run Foreground="Black" Text="Choix de la taille des icônes"/>
+            </TextBlock>
 
 
+            <!-- Rectangle Accueil, en haut à droite -->
+            <Button x:ConnectionId='5' x:Name="quitterAdmin" BorderBrush="{x:Null}" Background="#FFFF8C00" Foreground="#FFF7EEEE" FontSize="18"  Grid.Row="0" Grid.Column="2"                   HorizontalAlignment="Center" VerticalAlignment="Center" Width="241" Height="65">
+                <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Accueil"/>
+                </TextBlock>
+            </Button>
 
         </Grid>
-        <Button x:ConnectionId='1' Content="Petit" HorizontalAlignment="Left" Height="84" Margin="302,113,0,0" Grid.Row="1" VerticalAlignment="Top" Width="802" Background="#FFFFA200" FontSize="36"                   />
-        <Button x:ConnectionId='2' Content="Moyen" HorizontalAlignment="Left" Height="84" Margin="302,281,0,0" Grid.Row="1" VerticalAlignment="Top" Width="802" Background="#FFFFA200" FontSize="36"                   />
+        <Grid  Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="100*"/>
+            </Grid.RowDefinitions>
 
-
-        <Button x:ConnectionId='3' Content="Grand" HorizontalAlignment="Left" Height="84" Margin="302,451,0,0" Grid.Row="1" VerticalAlignment="Top" Width="802" Background="#FFFFA200" FontSize="36"                    />
-
+            <Button x:ConnectionId='1'  HorizontalAlignment="Center" Height="150" Grid.Row="0"  Width="802" BorderBrush="{x:Null}" Background="#FFFFD700" FontSize="36"                   >
+                <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Petit"/>
+                </TextBlock>
+            </Button>
+            
+            <Button x:ConnectionId='2' HorizontalAlignment="Center" Height="150" Grid.Row="1"  Width="802" BorderBrush="{x:Null}" Background="#FFFFD700" FontSize="36"                   >
+            <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Moyen"/>
+            </TextBlock>
+            </Button>
+            
+            <Button x:ConnectionId='3' HorizontalAlignment="Center" Height="150" Grid.Row="2"  Width="802" BorderBrush="{x:Null}"  Background="#FFFFD700" FontSize="36"                   >
+            <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Grand"/>
+            </TextBlock>
+            </Button>
+        </Grid>
     </Grid>
 </Page>
 

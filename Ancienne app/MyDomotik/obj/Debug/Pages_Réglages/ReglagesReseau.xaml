@@ -22,11 +22,11 @@
             </Grid.ColumnDefinitions>
 
 
-            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="center" Height="65" Grid.Row="0" Grid.Column="1" Stroke="Black" VerticalAlignment="Center" Width="832"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="center" Height="65" Grid.Row="0" Grid.Column="1" Stroke="Black" VerticalAlignment="Center" Width="700"/>
 
-            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0" Stroke="Black" VerticalAlignment="Center" Width="252"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0" Stroke="Black" VerticalAlignment="Center" Margin="5,0,0,0" Width="252"/>
 
-            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" Stroke="Black" VerticalAlignment="Center" Width="241"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" Stroke="Black" VerticalAlignment="Center" Margin="0,0,5,0" Width="252"/>
 
             <TextBlock x:Name="page_title1" HorizontalAlignment="Center" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="832" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="1" FontWeight="Bold" >
             	<Run Foreground="Black" Text="Réglages réseaux"/>

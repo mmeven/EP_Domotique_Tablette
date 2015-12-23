@@ -24,23 +24,23 @@
                 <ColumnDefinition Width="251*"/>
             </Grid.ColumnDefinitions>
 
-            <Rectangle Fill="DarkOrange" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0" Stroke="Black" VerticalAlignment="Center" Width="252"/>
+            <Rectangle Fill="DarkOrange" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0" Margin="5,0,0,0" VerticalAlignment="Center" Width="252"/>
 
-            <Rectangle Fill="DarkOrange" HorizontalAlignment="center" Height="65" Grid.Row="0" Grid.Column="1" Stroke="Black" VerticalAlignment="Center" Width="832"/>
+            <Rectangle Fill="DarkOrange" HorizontalAlignment="center" Height="65" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Width="700"/>
 
-            <Rectangle Fill="DarkOrange" HorizontalAlignment="center" Height="65" Grid.Row="0" Grid.Column="2" Stroke="Black" VerticalAlignment="Center" Width="252"/>
+            <Rectangle Fill="DarkOrange" HorizontalAlignment="center" Height="65" Grid.Row="0" Grid.Column="2" Margin="0,0,5,0"  VerticalAlignment="Center" Width="252"/>
 
             <TextBlock x:Name="page_title" HorizontalAlignment="Center" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="832" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Foreground="Black" Grid.Row="0" Grid.Column="1" FontWeight="Bold">
     			<Run Foreground="Black" Text="Choix des pièces"/>
             </TextBlock>
 
-            <Button x:Name="quitterAdmin" BorderBrush="{x:Null}" Background="Transparent" Foreground="Black" FontSize="18" Margin="2,7,0,0" Grid.Row="0" Grid.Column="2" Click="exitAdmin" HorizontalAlignment="Center" VerticalAlignment="Top" Width="258" Height="71">
+            <Button x:Name="quitterAdmin" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}" Background="Transparent" Foreground="Black" FontSize="18" Margin="0,0,10,0" Grid.Row="0" Grid.Column="2" Click="exitAdmin" Width="240" Height="65">
                 <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
                 	<Run FontSize="30" Text="Quitter"/>
                 </TextBlock>
             </Button>
 
-            <Button HorizontalAlignment="Center" VerticalAlignment="Center"  BorderBrush="{x:Null}"  Foreground="Black" FontWeight="Bold" Grid.Row="0" Grid.Column="0" FontSize="30" Height="71" Margin="6,7,6,6" Width="258" Background="Transparent" Click="menuAdmin">
+            <Button HorizontalAlignment="Center" VerticalAlignment="Center"  BorderBrush="{x:Null}"  Foreground="Black" FontWeight="Bold" Grid.Row="0" Grid.Column="0" FontSize="30" Height="65" Margin="10,0,0,0" Width="240" Background="Transparent" Click="menuAdmin">
                 <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
                 	<Run FontSize="30" Text="Retour"/>
                 </TextBlock>
@@ -49,51 +49,59 @@
 
         <!-- Popup Valider pour nommer icône -->
         <!-- Message indiquant d'entrer le nom-->
-        <TextBlock x:Name="message1" Text=""  TextWrapping="Wrap"  VerticalAlignment="Center" Margin="50,0,0,0" HorizontalAlignment="Left" Foreground="Red" FontSize="32" FontWeight="Bold"  Grid.Row="1" TextAlignment="Center"/>
+        <TextBlock x:Name="message1" Text=""  TextWrapping="Wrap"  VerticalAlignment="Center" Margin="40,0,0,0" HorizontalAlignment="Left" Foreground="Red" FontSize="24" FontWeight="Bold"  Grid.Row="1" TextAlignment="Center"/>
         <!-- Champ pour rentrer le  nom d'icone-->
-        <TextBox x:Name="nomIcone" HorizontalAlignment="Center" Height="42" Margin="50,0,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Width="446" Grid.Row="1" Background="#FFA49090" FontSize="24" FontWeight="Bold" Visibility="Collapsed"/>
+        <TextBox x:Name="nomIcone" HorizontalAlignment="Center" Height="42" Margin="50,0,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Width="350" Grid.Row="1" Background="#FFA49090" FontSize="24" FontWeight="Bold" Visibility="Collapsed"/>
         <!-- Bouton valider -->
-        <Button x:Name="Valider" Content="VALIDER" Height="42" Width="234" Foreground="Black" Margin="0,0,280,0" VerticalAlignment="Center"  HorizontalAlignment="Right" Grid.Row="1" Visibility="Collapsed" Background="#FFA49090" FontSize="20" Click="Validation" BorderBrush="#FFA49090"/>
+        <Button x:Name="Valider" Content="VALIDER" Height="42" Width="234" Foreground="Black" Margin="0,0,120,0" VerticalAlignment="Center"  HorizontalAlignment="Right" Grid.Row="1" Visibility="Collapsed" Background="#FFA49090" FontSize="20" Click="Validation" BorderBrush="#FFA49090"/>
 
         <!-- Message donnant les instructions -->
-        <TextBlock x:Name="message2" Text=""  TextWrapping="Wrap"  VerticalAlignment="Center" Margin="0,0,0,000" HorizontalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold"  Grid.Row="1" TextAlignment="Center"/>
+        <TextBlock x:Name="message2" Text=""  TextWrapping="Wrap"  VerticalAlignment="Center" Margin="0,0,0,0" HorizontalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold"  Grid.Row="1" TextAlignment="Center"/>
+       
         <!-- Grille d'icônes -->
-        <Grid x:Name="cadre" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="Yellow"  Width="1346" Height="500" Grid.Row="2" Margin="10,0,10,10"/>
+        <Grid x:Name="PartieCentrale" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <!--Grille: cadre initialisé dans la partie C# -->
+            <Grid x:Name="cadre" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="1050" Height="450" Background="Yellow"  Grid.Row="2" Margin="10,0,10,10"/>
 
-        <Grid x:Name="Options" Grid.Row="2" Background="#FF7E7E83" HorizontalAlignment="Center" Height="150"  VerticalAlignment="Center" Width="395" Margin="487,231,500,156" Visibility="Collapsed">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+            <Grid x:Name="Options" Grid.Row="2" Grid.Column="1" Background="#FF7E7E83" HorizontalAlignment="Center"  Width="390" Height="170" VerticalAlignment="Center" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-            <Button x:Name ="Supprimer" Content="Supprimer l'icône" HorizontalAlignment="Center" Grid.Row="0" Width="385" Background="LightYellow" Foreground="Black" Click = "enleverIcone" IsEnabled="True" Margin="0,0,0,0"/>
+                <Button x:Name ="Supprimer" Content="Supprimer l'icône" HorizontalAlignment="Center" Grid.Row="0" Width="385" Height="50" Background="LightYellow" Foreground="Black" Click = "enleverIcone" IsEnabled="True" Margin="0,0,0,10"/>
 
-            <Button x:Name="ChangerNom" Content="Modifier le nom de l'icône" HorizontalAlignment="Center" Width="385" Height="40" Background="LightYellow" Foreground="Black" Click = "changerNomIcone" IsEnabled="True"  Grid.RowSpan="2"/>
+                <Button x:Name="ChangerNom" Content="Modifier le nom de l'icône" HorizontalAlignment="Center" Width="385" Height="50" Background="LightYellow" Foreground="Black" Click = "changerNomIcone" IsEnabled="True"  Grid.RowSpan="2"/>
 
-            <Button x:Name="AjouterEquipements" Content="Ajouter des équipements à cette pièce" HorizontalAlignment="Center" Width="384" Height="40" Background="LightYellow" Foreground="Black" Click = "ajouterEquip" IsEnabled="True" Margin="0,0,0,0" Grid.Row="1"/>
+                <Button x:Name="AjouterEquipements" Content="Ajouter des équipements à cette pièce" HorizontalAlignment="Center" Width="385" Height="50" Background="LightYellow" Foreground="Black" Click = "ajouterEquip" IsEnabled="True" Margin="0,10,0,0" Grid.Row="1"/>
 
-       </Grid>
+            </Grid>
 
 
             <!-- Boutons Précédent & Suivant -->
-        <Button x:Name="previous" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Background="Gold" BorderBrush="{x:Null}" Height="59" Width="79" Click="pagePrecedente" Margin="0,222,0,229">
-            <Grid>
-                <Rectangle Fill="Gold" Margin="-9,-2"/>
-                <Image Source="Assets/suivant.PNG" Width="52" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image.RenderTransform>
-                        <CompositeTransform Rotation="-180"/>
-                    </Image.RenderTransform>
-                </Image>
-            </Grid>
-        </Button>
+                <Button x:Name="previous" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Gold" BorderBrush="{x:Null}" Height="59" Width="79" Click="pagePrecedente" >
+                <Grid>
+                    <Rectangle Fill="Gold"/>
+                    <Image Source="Assets/suivant.PNG" Width="52" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image.RenderTransform>
+                            <CompositeTransform Rotation="-180"/>
+                        </Image.RenderTransform>
+                    </Image>
+                </Grid>
+            </Button>
 
-        <Button x:Name="next" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" BorderBrush="{x:Null}" Background="Gold" Height="59" Width="79" Click="pageSuivante" Margin="0,222,0,229">
-            <Grid>
-                <Rectangle Fill="Gold" Margin="-9,-2"/>
-                <Image Source="Assets/suivant.PNG" Width="52" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            </Grid>
-        </Button>
-
+                <Button x:Name="next" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}" Background="Gold" Height="59" Width="79" Click="pageSuivante" >
+                <Grid>
+                    <Rectangle Fill="Gold" Margin="-9,-2"/>
+                    <Image Source="Assets/suivant.PNG" Width="52" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>
+            </Button>
+        </Grid>
 
         <!-- Barre de choix des icônes-->
         <Rectangle Fill="DarkOrange" Stroke="Black" VerticalAlignment="Top" Grid.Row="3" Height="153" Margin="10,10,10,0"/>

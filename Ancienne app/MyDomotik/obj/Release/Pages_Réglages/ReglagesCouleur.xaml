@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid x:Name="MainGrid" Background="#FF3C4093" Height="757">
+    <Grid x:Name="MainGrid" Background="#FFFFFFE0" >
         <Grid.RowDefinitions>
             <RowDefinition Height="85*"/>
             <RowDefinition Height="683*"/>
@@ -15,49 +15,124 @@
         </Grid.RowDefinitions>
 
 
-        <Grid Background="White">
+        <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="270*"/>
                 <ColumnDefinition Width="845*"/>
                 <ColumnDefinition Width="251*"/>
             </Grid.ColumnDefinitions>
 
-            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0" Stroke="Black" VerticalAlignment="Center" Width="252"/>
+            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" Width="252"/>
 
-            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="center" Height="65" Grid.Row="0" Grid.Column="1" Stroke="Black" VerticalAlignment="Center" Width="832"/>
+            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Width="832"/>
 
-            <Button x:ConnectionId='11' x:Name="retourMenuAdmin" HorizontalAlignment="Center" VerticalAlignment="Center"  BorderBrush="{x:Null}"  Foreground="#FF060606" FontWeight="Bold" Grid.Row="0" Grid.Column="0" FontSize="30" Height="71" Margin="6,7,6,6" Width="258" Background="#FFF8FF61"                  >
-                <TextBlock x:ConnectionId='13' TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold"                                              >
-                	<Run FontSize="30" Text="Menu"/>
+            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Width="241"/>
+            
+            <!-- Rectangle Retour, en haut à droite -->
+            <Button x:ConnectionId='11' x:Name="retourMenu" BorderBrush="{x:Null}" Background="#FFFF8C00" Foreground="#FFF7EEEE" FontSize="18"  Grid.Row="0" Grid.Column="0"                   HorizontalAlignment="Center" VerticalAlignment="Center" Width="247" Height="71">
+                <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Retour"/>
                 </TextBlock>
             </Button>
 
+            <!-- Rectangle Titre, en haut a centre -->
             <TextBlock x:Name="page_title" HorizontalAlignment="Center" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="832" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Foreground="Black" Grid.Row="0" Grid.Column="1" FontWeight="Bold">
-    			<Run Foreground="Black" Text="Menu"/>
+    			<Run Foreground="Black" Text="Choix du thème"/>
             </TextBlock>
 
-            <Button x:ConnectionId='12' x:Name="quitterAdmin" BorderBrush="{x:Null}" Background="#FFE04214" Foreground="#FFF7EEEE" FontSize="18" Margin="2,7,0,0" Grid.Row="0" Grid.Column="2"                   HorizontalAlignment="Left" VerticalAlignment="Top" Width="247" Height="71">
+
+            <!-- Rectangle Accueil, en haut à droite -->
+            <Button x:ConnectionId='12' x:Name="quitterAdmin" BorderBrush="{x:Null}" Background="#FFFF8C00" Foreground="#FFF7EEEE" FontSize="18"  Grid.Row="0" Grid.Column="2"                   HorizontalAlignment="Center" VerticalAlignment="Center" Width="247" Height="71">
                 <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
-                	<Run FontSize="30" Text="Quitter"/>
+                	<Run FontSize="30" Text="Accueil"/>
                 </TextBlock>
             </Button>
 
         </Grid>
 
+        <Grid x:Name="admin_theme_grid" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500*"/>
+                <ColumnDefinition Width="500*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300*"/>
+                <RowDefinition Height="300*"/>
+                <RowDefinition Height="300*"/>
+                <RowDefinition Height="300*"/>
+                <RowDefinition Height="300*"/> 
+            </Grid.RowDefinitions>
 
-        <Button x:ConnectionId='1' Content="Thème 1" HorizontalAlignment="Left" Height="84" Margin="347,60,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                    />
-        <Button x:ConnectionId='2' Content="Thème 2" HorizontalAlignment="Left" Height="84" Margin="347,174,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                    />
+            <Rectangle Fill="Yellow" HorizontalAlignment="Left" Height="120" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" Width="500"/>
+            <Button x:ConnectionId='1'  HorizontalAlignment="Left" Height="120" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Width="500" Background="#FFFFD700" Foreground="Black" BorderBrush="{x:Null}" FontSize="36"                    >
+                <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Thème 1"/>
+                </TextBlock>
+            </Button>
 
+            <Rectangle Fill="Yellow" HorizontalAlignment="Left" Height="120" Grid.Row="1" Grid.Column="0"  VerticalAlignment="Center" Width="500"/>
+            <Button x:ConnectionId='2' HorizontalAlignment="Left" Height="120" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Width="500" Background="#FFFFD700" Foreground="Black" BorderBrush="{x:Null}" FontSize="36"                    >
+                <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	    <Run FontSize="30" Text="Thème 2"/>
+                </TextBlock>
+            </Button>
 
-        <Button x:ConnectionId='3' Content="Thème 3" HorizontalAlignment="Left" Height="84" Margin="347,289,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                     />
-        <Button x:ConnectionId='4' Content="Thème 7" HorizontalAlignment="Left" Height="84" Margin="750,174,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                     />
-        <Button x:ConnectionId='5' Content="Thème 4" HorizontalAlignment="Left" Height="84" Margin="347,404,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                     />
-        <Button x:ConnectionId='6' Content="Thème 5" HorizontalAlignment="Left" Height="84" Margin="347,522,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                     />
-        <Button x:ConnectionId='7' Content="Thème 6" HorizontalAlignment="Left" Height="84" Margin="750,60,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                     />
-        <Button x:ConnectionId='8' Content="Thème 8" HorizontalAlignment="Left" Height="84" Margin="750,289,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                     />
-        <Button x:ConnectionId='9' Content="Thème 9" HorizontalAlignment="Left" Height="84" Margin="750,404,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                     />
-        <Button x:ConnectionId='10' Content="Thème 10" HorizontalAlignment="Left" Height="84" Margin="750,522,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFA200" FontSize="36"                      />
-
+            <Rectangle Fill="Yellow" HorizontalAlignment="Left" Height="120" Grid.Row="2" Grid.Column="0"  VerticalAlignment="Center" Width="500"/>
+            <Button x:ConnectionId='3' HorizontalAlignment="Left" Height="120" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Width="500" Background="#FFFFD700" Foreground="Black" BorderBrush="{x:Null}" FontSize="36"                     >
+                <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Thème 3"/>
+                </TextBlock>
+            </Button>
+            
+            <Rectangle Fill="Yellow" HorizontalAlignment="Left" Height="120" Grid.Row="3" Grid.Column="0"  VerticalAlignment="Center" Width="500"/>
+            <Button x:ConnectionId='4' HorizontalAlignment="Left" Height="120" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Width="500" Background="#FFFFD700" Foreground="Black" BorderBrush="{x:Null}" FontSize="36"                     >
+            <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Thème 4"/>
+            </TextBlock>
+            </Button>
+        
+            <Rectangle Fill="Yellow" HorizontalAlignment="Left" Height="120" Grid.Row="4" Grid.Column="0"  VerticalAlignment="Center" Width="500"/>
+            <Button x:ConnectionId='5' HorizontalAlignment="Left" Height="120" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Width="500" Background="#FFFFD700" Foreground="Black" BorderBrush="{x:Null}" FontSize="36"                     >
+            <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Thème 5"/>
+            </TextBlock>
+            </Button>
+    
+            <Rectangle Fill="Yellow" HorizontalAlignment="Left" Height="120" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Width="500"/>
+            <Button x:ConnectionId='6' HorizontalAlignment="Right" Height="120" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Width="500" Background="#FFFFD700" Foreground="Black" BorderBrush="{x:Null}" FontSize="36"                     >
+            <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Thème 6"/>
+            </TextBlock>
+            </Button>
+    
+            <Rectangle Fill="Yellow" HorizontalAlignment="Left" Height="120" Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center" Width="500"/>
+            <Button x:ConnectionId='7' HorizontalAlignment="Right" Height="120" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Width="500" Background="#FFFFD700" Foreground="Black" BorderBrush="{x:Null}" FontSize="36"                     >
+            <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Thème 7"/>
+            </TextBlock>
+            </Button>
+    
+            <Rectangle Fill="Yellow" HorizontalAlignment="Left" Height="120" Grid.Row="2" Grid.Column="1"  VerticalAlignment="Center" Width="500"/>
+            <Button x:ConnectionId='8' HorizontalAlignment="Right" Height="120" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Width="500" Background="#FFFFD700" Foreground="Black" BorderBrush="{x:Null}" FontSize="36"                     >
+            <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Thème 8"/>
+            </TextBlock>
+            </Button>
+    
+            <Rectangle Fill="Yellow" HorizontalAlignment="Left" Height="120" Grid.Row="3" Grid.Column="1"  VerticalAlignment="Center" Width="500"/>
+            <Button x:ConnectionId='9' HorizontalAlignment="Right" Height="120" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Width="500" Background="#FFFFD700" Foreground="Black" BorderBrush="{x:Null}" FontSize="36"                     >
+            <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Thème 9"/>
+            </TextBlock>
+            </Button>
+    
+            <Rectangle Fill="Yellow" HorizontalAlignment="Left" Height="120" Grid.Row="4" Grid.Column="1"  VerticalAlignment="Center" Width="500"/>
+            <Button x:ConnectionId='10' HorizontalAlignment="Right" Height="120" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Width="500" Background="#FFFFD700" Foreground="Black" BorderBrush="{x:Null}" FontSize="36"                      >
+            <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Thème 10"/>
+            </TextBlock>
+            </Button>
+        </Grid>
     </Grid>
 </Page>
 

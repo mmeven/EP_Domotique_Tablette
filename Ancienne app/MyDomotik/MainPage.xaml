@@ -15,9 +15,6 @@
             <RowDefinition Height="173*"/>
 
         </Grid.RowDefinitions>
-
-
-
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="270*"/>
@@ -25,17 +22,17 @@
                 <ColumnDefinition Width="251*"/>
             </Grid.ColumnDefinitions>
 
-            <Rectangle x:Name="Rect1" HorizontalAlignment="center" Height="65" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Width="832"/>
+            <Rectangle x:Name="Rect1" HorizontalAlignment="center" Height="65" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Width="700"/>
 
-            <Rectangle x:Name="Rect2" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" Width="252"/>
+            <Rectangle x:Name="Rect2"  HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" Margin="5,0,0,0" Width="252"/>
 
-            <Rectangle x:Name ="Rect3"  HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Width="241"/>
+            <Rectangle x:Name ="Rect3"  HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="0,0,5,0" Width="252"/>
 
             <TextBlock x:Name="TimeBox" HorizontalAlignment="Center" Height="65" TextWrapping="Wrap" VerticalAlignment="Center" Width="252" FontSize="30" FontWeight="Bold" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="0" Foreground="Black" Margin="9,19,9,1"/>
 
             <TextBlock x:Name="page_title" HorizontalAlignment="Center" FontWeight="Bold" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="832" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="1" Margin="7,21,6,16" Foreground="Black" Text="Pièces de la maison"/>
 
-            <Button x:Name="configButton"  Height="67" Width="247" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}" Grid.Row="0" Grid.Column="2" FontSize="24" DoubleTapped="adminSelect" >
+            <Button x:Name="configButton"  Height="65" Width="252" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}" Grid.Row="0" Grid.Column="2" FontSize="24" DoubleTapped="adminSelect" >
                 <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Text="Configuration" FontWeight="Bold" Foreground="Black" FontSize="30" TextAlignment="Center"/>
             </Button>
 
@@ -43,7 +40,7 @@
 
 
         <!--Grille des icones -->
-        <Grid x:Name="cadre" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="1346" Height="500" Grid.Row="1">
+        <Grid x:Name="cadre" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="1200" Height="500" Grid.Row="1">
 
             <!--   affichage dynamique grâce au x:Name="cadre" -->
 
@@ -51,12 +48,12 @@
 
 
         <!--Barre de navigation située en bas de page-->
-        <Rectangle x:Name="barreMenu"  VerticalAlignment="Top" Grid.Row="2" Height="153" Margin="10,10,10,0">
+        <Rectangle x:Name="barreMenu"  VerticalAlignment="Top" Grid.Row="2" Height="140" Margin="10,10,10,0">
 
         </Rectangle>
 
 
-        <Grid HorizontalAlignment="Center" Height="153" Grid.Row="2" VerticalAlignment="Center" Width="1346">
+        <Grid HorizontalAlignment="Center" Height="130" Grid.Row="2" VerticalAlignment="Center" Width="1346">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -65,13 +62,13 @@
 
             </Grid.ColumnDefinitions>
 
-            <Rectangle x:Name ="RectAccueil" Height="139" Width="435"  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Button x:Name="accueil" Grid.Column="1" Height="139"  Width="435" HorizontalAlignment="Center" VerticalAlignment="Center"  Click="PageAccueil">
-                <Image Height="137" Width="272" Source="Assets/acceuil.PNG"/>
+            <Rectangle x:Name ="RectAccueil" Height="130" Width="430"  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Button x:Name="accueil"  Background="Transparent" Grid.Column="1" Height="130"  Width="430" HorizontalAlignment="Center" VerticalAlignment="Center"  Click="PageAccueil">
+                <Image Height="129" Width="272" Source="Assets/acceuil.PNG"/>
             </Button>
 
-            <Rectangle x:Name ="RectPrecedent" Height="139" Width="435"  Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Button x:Name="precedent" Grid.Column="0" Height="139"  Width="435"  HorizontalAlignment="Center" VerticalAlignment="Center"  Click="PagePrecedente">
+            <Rectangle x:Name ="RectPrecedent"  Height="130" Width="430"  Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Button x:Name="precedent" Grid.Column="0" Height="130"  Width="430"  HorizontalAlignment="Center" VerticalAlignment="Center"  Click="PagePrecedente">
                 <Image Height="116.145" Width="341.828" Source="Assets/suivant.PNG" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
                     <Image.RenderTransform>
                         <CompositeTransform Rotation="-180"/>
@@ -79,8 +76,8 @@
                 </Image>
             </Button>
 
-            <Rectangle x:Name ="RectSuivant" Height="139" Width="435"  Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Button x:Name="suivant" Grid.Column="2" Height="139"  Width="434"  HorizontalAlignment="Center" VerticalAlignment="Center"   Click="PageSuivante">
+            <Rectangle x:Name ="RectSuivant" Height="130" Width="430"  Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Button x:Name="suivant" Grid.Column="2" Height="130"  Width="430"  HorizontalAlignment="Center" VerticalAlignment="Center"   Click="PageSuivante">
                 <Image Height="119" Width="292" Source="Assets/suivant.PNG"/>
             </Button>
 
