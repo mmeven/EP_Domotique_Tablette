@@ -17,8 +17,8 @@ namespace MyDomotik
         private String nomIcone;
         private Image image;
         private Uri uri;
-        private String adr1;
-        private String adr2;
+        private Equipement equip;
+        private Piece piece;
         public enum TypeIcone { Piece, Equipement };
         private TypeIcone typeIcone;
         private int taille;
@@ -40,8 +40,10 @@ namespace MyDomotik
         }
 
         // Création de l'icone d'une pièce
-        public Icone(String nom, String nomFichier, int taille)
+        public Icone(String nom, String nomFichier, int taille, Piece p)
         {
+            this.Piece = p;
+            this.Equip = null;
             TypeIcone1 = TypeIcone.Piece;
             this.vide = false;
             this.taille = taille;
@@ -59,14 +61,13 @@ namespace MyDomotik
             this.action = null;
            
           }
-        //Constructeur pour les équipements
-        public Icone(String nom, String nomFichier, int taille, String adresse1,String adresse2)
+        //Constructeur pour les équipements 
+        public Icone(String nom, String nomFichier, int taille, Equipement eq)
         {
             this.TypeIcone1 = TypeIcone.Equipement;
+            this.equip = eq;
             this.vide = false;
             this.taille = taille;
-            this.adr1 = adresse1;
-            this.adr2 = adresse2;
             // création de la source
             this.SourceImage(nomFichier);
 
@@ -214,6 +215,32 @@ namespace MyDomotik
             set
             {
                 typeIcone = value;
+            }
+        }
+
+        internal Equipement Equip
+        {
+            get
+            {
+                return equip;
+            }
+
+            set
+            {
+                equip = value;
+            }
+        }
+
+        internal Piece Piece
+        {
+            get
+            {
+                return piece;
+            }
+
+            set
+            {
+                piece = value;
             }
         }
     }

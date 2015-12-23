@@ -165,7 +165,17 @@ namespace MyDomotik
 
         private void EquipementClick(object sender, RoutedEventArgs e)
         {
-            requeteHttp("192.168.1.31", "/remote2.htm?button001");
+            Button boutonClick = sender as Button;
+
+            // icone : icone correspondant au bouton cliqué
+            int indexClick = (int)boutonClick.Tag;
+            Icone icone = grille.pageGrille()[indexClick];
+
+            //Récupération des caractéristiques de l'icone (qui contient notre équipement)
+            String add = icone.Equip.AdresseIp;
+            String btt = icone.Equip.NumBoutton;
+            String adresse = "/remote2.htm?button"+btt;
+            requeteHttp(add, adresse);
         }
 
 

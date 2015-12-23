@@ -120,8 +120,7 @@ namespace MyDomotik
         public void ajouterPiece(Icone icone, int index, int numPage)
         {
 
-            Piece piece = new Piece(icone.NomIcone);
-            Pieces.Add(piece); //Ajout dans la liste des pieces de la config
+            Pieces.Add(icone.Piece); //Ajout dans la liste des pieces de la config
 
             // on associe une nouvelle page à l'icone et on l'ajoute à l'arbre
             Vue pagePiece = new Vue(icone.NomIcone);
@@ -157,7 +156,7 @@ namespace MyDomotik
 
         public void ajouterEquipement(Vue pagePiece, Icone icone, int index, int numPage)
         {
-            // Equipement equip = new Equipement(icone.nomIcone);
+            equipements.Add(icone.Equip);
             Vue pageEquip = new Vue(icone.NomIcone);
 
             icone.Navigation = new Navigation(pagePiece);

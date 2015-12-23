@@ -39,6 +39,8 @@ namespace MyDomotik
         private Affichage affich;
         private Boolean choixPosition = false;
         private List<Button> listeBoutons;
+        private Equipement.TypeEquipement typeEq;
+        private Boolean choixType = false;
 
         public GestionEquipements()
         {
@@ -80,46 +82,98 @@ namespace MyDomotik
             this.Frame.Navigate(typeof(GestionEquipements));
         }
 
+        private void kira(object sender, RoutedEventArgs e)
+        {
+            typeEq = Equipement.TypeEquipement.Kira;
+            Fibaro.Visibility = Visibility.Collapsed;
+            Kira.Visibility = Visibility.Collapsed;
+            message1.Text = "Veuillez compléter les champs pour la kira puis choisir une icône";
+            nomChamp1.Visibility = Visibility.Visible;
+            champ1.Visibility = Visibility.Visible;
+            nomChamp2.Visibility = Visibility.Visible;
+            champ2.Visibility = Visibility.Visible;
+            choixType = true;
+        }
+
+        private void fibaro(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(GestionPieces)); //Non codé pour le moment
+        }
+
+
         //événement qui gère le double click sur une icone
         //affiche un message pour le choix de l'emplacement de l'icone dans la grille et récupère les informations sur l'icone
-        private void choixImage2(object sender, DoubleTappedRoutedEventArgs e)
+        private void choixImage2(object sender, RoutedEventArgs e)
         {
-            // Message 
-            message2.Text = "Veuillez cliquer sur l'endroit où vous souhaitez insérer l'icone";
-            this.choixPosition = true;
-            // mémorise l'image cliquée
-            this.image = sender as Image;
-            this.nom = image.Name.Replace("é", ".");
+            if (choixType)
+            {
+                // Disparition du menu options lors de l'appui sur un logo
+                Options2.Visibility = Visibility.Collapsed;
+                Supprimer2.IsEnabled = false;
+                ChangerNom2.IsEnabled = false;
+
+                // Disparition du message pour renommer icone
+                message2.Text = "";
+                nomIcone2.Visibility = Visibility.Collapsed;
+                Valider2.Visibility = Visibility.Collapsed;
+                message1.Text = "Veuillez cliquer sur l'endroit où vous souhaitez insérer l'icône";
+
+                //Disparition champs kira
+                nomChamp1.Visibility = Visibility.Collapsed;
+                champ1.Visibility = Visibility.Collapsed;
+                nomChamp2.Visibility = Visibility.Collapsed;
+                champ2.Visibility = Visibility.Collapsed;
+
+                this.choixPosition = true;
+                // mémorise l'image cliquée
+                this.image = sender as Image;
+                this.nom = image.Name.Replace("é", ".");
+            }
+            else{
+                message1.Text = "Veuillez d'abord choisir le type d'équipement";
+            }
         }
 
         //événement qui gère le click sur un bouton de la grille
         //affiche l'icone double clickée sur le bouton
         private void choixPositionIcone2(object sender, RoutedEventArgs e)
         {
+            // mémorise le bouton et le nom de fichier de l'image sélectionnée
+            this.b = sender as Button;
+            //this.nom = image.Name.Replace("é", ".");
+
+            // icone : icone correspondant au bouton cliqué
+            this.indexNouvelleIcone = (int)b.Tag;
+            Icone icone0 = g.pageGrille()[this.indexNouvelleIcone];
+            // Si il y a déjà une icone dans la case :
             if (this.choixPosition) // si l'utilisateur est en train d'ajouter une nouvelle icone
             {
-                // mémorise le bouton et le nom de fichier de l'image sélectionnée
-                this.b = sender as Button;
-                //this.nom = image.Name.Replace("é", ".");
-
-                // icone : icone correspondant au bouton cliqué
-                this.indexNouvelleIcone = (int)b.Tag;
-                Icone icone0 = g.pageGrille()[this.indexNouvelleIcone];
-                // Si il y a déjà une icone dans la case :
                 if (!(icone0.EstVide()))
                 {
                     // Message
-                    message2.Text = "Il y a déjà une icône sur cet emplacement. Veuillez choisir un emplacement libre.";
+
+                    message2.Text = "";
+                    nomIcone2.Visibility = Visibility.Collapsed;
+                    Valider2.Visibility = Visibility.Collapsed;
+                    message1.Text = "Il y a déjà une icône sur cet emplacement. Veuillez choisir un emplacement libre.";
                 }
 
                 // Sinon : clic sur icone vide, l'icone peut être ajoutée
                 else
                 {
                     // affiche la boite de dialogue permettant à l'utilisateur d'entrer le nom de l'icone
+                    message1.Text = "";
                     message2.Text = "Veuillez attribuer un nom à l'icone.";
                     nomIcone2.Visibility = Visibility.Visible;
                     Valider2.Visibility = Visibility.Visible;
                 }
+            }
+            if (icone0.EstVide())
+            {
+                // Disparition du menu options lors de l'appui sur une case vide 
+                Options2.Visibility = Visibility.Collapsed;
+                Supprimer2.IsEnabled = false;
+                ChangerNom2.IsEnabled = false;
             }
         }
 
@@ -129,6 +183,7 @@ namespace MyDomotik
             if (this.choixPosition) // Si un logo est selectionne, alors création d'une nouvelle icone
             {
                 // efface message
+                message1.Text = "";
                 message2.Text = "";
                 nomIcone2.Visibility = Visibility.Collapsed;
                 Valider2.Visibility = Visibility.Collapsed;
@@ -148,15 +203,19 @@ namespace MyDomotik
         // ajout de l'icone (attribut de classe) dans la grille de la page d'accueil
         private void ajouterIcone(String nomIcone)
         {
-            String s1 = nomChamp1.Text;  //première partie de l'adresse
-            String s2 = nomChamp2.Text;  //Deuxième partie de l'adresse
-            Icone iconeAjout = new Icone(nomIcone, this.nom, 64,s1,s2);
-            //création de la page associée à l'icone
-            MainPage.Configuration.ajouterEquipement(this.pageCourante, iconeAjout, indexNouvelleIcone, this.g.NumGrille);
-            //this.choixPosition = false;
-            nomChamp1.Text = "";
-            nomChamp2.Text = "";
-            this.Frame.Navigate(typeof(GestionEquipements));
+            if (this.typeEq == Equipement.TypeEquipement.Kira)
+            {
+                String s1 = nomChamp1.Text;  //adresseIP
+                String s2 = nomChamp2.Text;  //bouton
+                Equipement e = new Equipement(nomIcone, s1, s2);
+                Icone iconeAjout = new Icone(nomIcone, this.nom, 64,e);
+                //création de la page associée à l'icone
+                MainPage.Configuration.ajouterEquipement(this.pageCourante, iconeAjout, indexNouvelleIcone, this.g.NumGrille);
+                //this.choixPosition = false;
+                nomChamp1.Text = "";
+                nomChamp2.Text = "";
+                this.Frame.Navigate(typeof(GestionEquipements));
+            }
 
         }
 
@@ -177,6 +236,9 @@ namespace MyDomotik
         {
             if (!choixPosition)
             {
+                Fibaro.Visibility = Visibility.Collapsed;
+                Kira.Visibility = Visibility.Collapsed;
+                message1.Text = "";
                 Options2.Visibility = Visibility.Collapsed;
                 Supprimer2.IsEnabled = false;
                 ChangerNom2.IsEnabled = false;
@@ -203,6 +265,9 @@ namespace MyDomotik
         {
             if (!choixPosition)
             {
+                Fibaro.Visibility = Visibility.Collapsed;
+                Kira.Visibility = Visibility.Collapsed;
+                message1.Text = "";
                 Options2.Visibility = Visibility.Collapsed;
                 Supprimer2.IsEnabled = false;
                 ChangerNom2.IsEnabled = false;
@@ -214,6 +279,7 @@ namespace MyDomotik
                 if (!this.icone.EstVide()) // click sur icone existante : on peut changer son nom
                 {
                     // Message
+                    message1.Text = "";
                     message2.Text = "Veuillez attribuer un nom à l'icone.";
                     nomIcone2.Visibility = Visibility.Visible;
                     Valider2.Visibility = Visibility.Visible;

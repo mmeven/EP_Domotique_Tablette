@@ -58,12 +58,12 @@
       <RootProperty Name="FontFamily" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Text" />
+      <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Documents.Run">
       <RootProperty Name="FontSize" />
       <RootProperty Name="Text" />
       <RootProperty Name="Foreground" />
-      <RootProperty Name="FontWeight" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
@@ -99,6 +99,7 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Height" />
       <RootProperty Name="Items" />
+      <RootProperty Name="Background" />
       <RootProperty Name="Foreground" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
@@ -117,13 +118,11 @@
       <RootProperty Name="RenderTransform" />
       <RootProperty Name="UseLayoutRounding" />
       <RootEvent Name="Tapped" />
-      <RootEvent Name="DoubleTapped" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.CompositeTransform">
       <RootProperty Name="Rotation" />
     </RootType>
     <RootType FullName="MyDomotik.GestionPieces" />
-    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="MyDomotik.GestionEquipements" />
     <RootType FullName="MyDomotik.MainPage" />
     <RootType FullName="MyDomotik.ReglagesCouleur" />

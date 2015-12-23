@@ -36,7 +36,7 @@
 
             <Button x:ConnectionId='18' x:Name="quitterAdmin" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}" Background="Transparent" Foreground="Black" FontSize="18" Margin="0,0,10,0" Grid.Row="0" Grid.Column="2"                   Width="240" Height="65">
                 <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
-                	<Run FontSize="30" Text="Quitter"/>
+                	<Run FontSize="30" Text="Accueil"/>
                 </TextBlock>
             </Button>
 
@@ -47,13 +47,12 @@
             </Button>
         </Grid>
 
-        <!-- Popup Valider pour nommer icône -->
         <!-- Message indiquant d'entrer le nom-->
         <TextBlock x:Name="message1" Text=""  TextWrapping="Wrap"  VerticalAlignment="Center" Margin="40,0,0,0" HorizontalAlignment="Left" Foreground="Red" FontSize="24" FontWeight="Bold"  Grid.Row="1" TextAlignment="Center"/>
         <!-- Champ pour rentrer le  nom d'icone-->
         <TextBox x:Name="nomIcone" HorizontalAlignment="Center" Height="42" Margin="50,0,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Width="350" Grid.Row="1" Background="#FFA49090" FontSize="24" FontWeight="Bold" Visibility="Collapsed"/>
         <!-- Bouton valider -->
-        <Button x:ConnectionId='1' x:Name="Valider" Content="VALIDER" Height="42" Width="234" Foreground="Black" Margin="0,0,100,0" VerticalAlignment="Center"  HorizontalAlignment="Right" Grid.Row="1" Visibility="Collapsed" Background="#FFA49090" FontSize="20"                    BorderBrush="#FFA49090"/>
+        <Button x:ConnectionId='1' x:Name="Valider" Content="VALIDER" Height="42" Width="234" Foreground="Black" Margin="0,0,120,0" VerticalAlignment="Center"  HorizontalAlignment="Right" Grid.Row="1" Visibility="Collapsed" Background="#FFA49090" FontSize="20"                    BorderBrush="#FFA49090"/>
 
         <!-- Message donnant les instructions -->
         <TextBlock x:Name="message2" Text=""  TextWrapping="Wrap"  VerticalAlignment="Center" Margin="0,0,0,0" HorizontalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold"  Grid.Row="1" TextAlignment="Center"/>

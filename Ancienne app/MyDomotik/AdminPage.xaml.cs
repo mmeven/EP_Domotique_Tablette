@@ -67,14 +67,14 @@ namespace MyDomotik
 
         private void accesParamInterface(object sender, RoutedEventArgs e)
         {
-            admin_buttons_grid.Children.RemoveAt(3);
+           // admin_buttons_grid.Children.RemoveAt(3);
             
-            RowDefinitionCollection defs = admin_buttons_grid.RowDefinitions;
-            defs.RemoveAt(2);
+           // RowDefinitionCollection defs = admin_buttons_grid.RowDefinitions;
+            //defs.RemoveAt(2);
 
             admin_1.Text = "Couleurs";
             admin_2.Text= "Tailles icônes";
-            admin_3.Text = "Mode défilement";
+            admin_4.Text = "Mode défilement";
 
             admin_button_1.Click -= accesParamInterface;
             admin_button_1.Click += accesParamCouleur;
@@ -82,8 +82,8 @@ namespace MyDomotik
             admin_button_2.Click -= gestionIcones;
             admin_button_2.Click += accesParamTaille;
 
-            admin_button_3.Click -= accesParamInterface;
-            admin_button_3.Click += accesParamDefil;
+            admin_button_4.Click -= accesParamInterface;
+            admin_button_4.Click += accesParamDefil;
 
             page_title.Text = "Paramètres de l'interface";
                        

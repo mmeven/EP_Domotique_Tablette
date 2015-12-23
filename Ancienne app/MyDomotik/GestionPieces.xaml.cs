@@ -89,7 +89,7 @@ namespace MyDomotik
             Supprimer.IsEnabled = false;
             ChangerNom.IsEnabled = false;
             AjouterEquipements.IsEnabled = false;
-            message2.Text = "Veuillez cliquer sur l'endroit où vous souhaitez inserer l'icone";
+            message2.Text = "Veuillez cliquer sur l'endroit où vous souhaitez inserer l'icône";
             this.choixPosition = true;
             // mémorise l'image cliquée
             this.image = sender as Image;
@@ -163,8 +163,9 @@ namespace MyDomotik
         //ajout de l'icone (attribut de classe) dans la grille de la page d'accueil
         private void ajouterIcone(String nomIcone)
         {
-
-            Icone iconeAjout = new Icone(nomIcone, this.nom, 64);
+            Piece piece = new Piece(nomIcone);
+            Icone iconeAjout = new Icone(nomIcone, this.nom, 64, piece);
+            
             //création de la piece associée à l'icone
             MainPage.Configuration.ajouterPiece(iconeAjout, indexNouvelleIcone, this.g.NumGrille);
             //this.choixPosition = false;

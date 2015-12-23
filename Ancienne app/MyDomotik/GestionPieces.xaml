@@ -36,7 +36,7 @@
 
             <Button x:Name="quitterAdmin" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}" Background="Transparent" Foreground="Black" FontSize="18" Margin="0,0,10,0" Grid.Row="0" Grid.Column="2" Click="exitAdmin" Width="240" Height="65">
                 <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
-                	<Run FontSize="30" Text="Quitter"/>
+                	<Run FontSize="30" Text="Accueil"/>
                 </TextBlock>
             </Button>
 
@@ -47,7 +47,6 @@
             </Button>
         </Grid>
 
-        <!-- Popup Valider pour nommer icône -->
         <!-- Message indiquant d'entrer le nom-->
         <TextBlock x:Name="message1" Text=""  TextWrapping="Wrap"  VerticalAlignment="Center" Margin="40,0,0,0" HorizontalAlignment="Left" Foreground="Red" FontSize="24" FontWeight="Bold"  Grid.Row="1" TextAlignment="Center"/>
         <!-- Champ pour rentrer le  nom d'icone-->

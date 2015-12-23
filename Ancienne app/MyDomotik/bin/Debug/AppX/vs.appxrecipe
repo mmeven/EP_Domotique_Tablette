@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\Info\Documents\GitHub\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-23T17:46:03.582</Modified>
+      <Modified>2015-12-23T22:10:55.767</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Info\Documents\GitHub\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\MyDomotik.exe">
       <PackagePath>MyDomotik.exe</PackagePath>
-      <Modified>2015-12-23T17:45:57.212</Modified>
+      <Modified>2015-12-23T22:10:49.972</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Info\Documents\GitHub\EP_Domotique_Tablette\Ancienne app\MyDomotik\Assets\acceuil.PNG">
       <PackagePath>Assets\acceuil.PNG</PackagePath>
@@ -10504,7 +10504,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Info\Documents\GitHub\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\MyDomotik.xr.xml">
       <PackagePath>MyDomotik.xr.xml</PackagePath>
-      <Modified>2015-12-23T17:29:00.024</Modified>
+      <Modified>2015-12-23T20:34:04.598</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Info\Documents\GitHub\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
@@ -10512,19 +10512,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Info\Documents\GitHub\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\AdminPage.xbf">
       <PackagePath>AdminPage.xbf</PackagePath>
-      <Modified>2015-12-23T17:45:56.312</Modified>
+      <Modified>2015-12-23T22:05:00.665</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Info\Documents\GitHub\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\GestionPieces.xbf">
       <PackagePath>GestionPieces.xbf</PackagePath>
-      <Modified>2015-12-23T17:45:56.324</Modified>
+      <Modified>2015-12-23T19:04:00.873</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Info\Documents\GitHub\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\GestionEquipements.xbf">
       <PackagePath>GestionEquipements.xbf</PackagePath>
-      <Modified>2015-12-23T15:19:58.280</Modified>
+      <Modified>2015-12-23T22:10:49.336</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Info\Documents\GitHub\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-12-23T17:45:56.326</Modified>
+      <Modified>2015-12-23T22:05:00.682</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Info\Documents\GitHub\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\Pages_Réglages\ReglagesCouleur.xbf">
       <PackagePath>Pages_Réglages\ReglagesCouleur.xbf</PackagePath>
