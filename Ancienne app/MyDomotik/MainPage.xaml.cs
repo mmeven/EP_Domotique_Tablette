@@ -174,7 +174,7 @@ namespace MyDomotik
             //Récupération des caractéristiques de l'icone (qui contient notre équipement)
             String add = icone.Equip.AdresseIp;
             String btt = icone.Equip.NumBoutton;
-            String adresse = "/remote2.htm?button"+btt;
+            String adresse = "/remote2.htm?button"+btt+"#";
             requeteHttp(add, adresse);
         }
 
