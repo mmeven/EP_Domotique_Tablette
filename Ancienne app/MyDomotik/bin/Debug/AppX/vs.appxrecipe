@@ -10,25 +10,25 @@
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>97355aa4-2e3b-49ef-86e2-896c75849b35</PackageIdentityName>
     <IntermediateOutputPath>G:\Informatique\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\obj\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>7229DB0176180F0CB9F60B1D778CAF555D0BFD6014B27CDC19422CB1A93E2A7A</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>97355aa4-2e3b-49ef-86e2-896c75849b35_0.1.0.1_neutral__4swy4hy1fwxzg</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>76F7400AB91078545C41C7090341F834B9A4E0AAB22A35BFF54120F5E9B602F2</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>97355aa4-2e3b-49ef-86e2-896c75849b35_0.1.0.2_neutral__4swy4hy1fwxzg</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>97355aa4-2e3b-49ef-86e2-896c75849b35_4swy4hy1fwxzg!App</RegisteredUserModeAppID>
     <RegisteredPackageID>97355aa4-2e3b-49ef-86e2-896c75849b35</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=Diane</RegisteredPackagePublisher>
-    <RegisteredVersion>0.1.0.1</RegisteredVersion>
+    <RegisteredVersion>0.1.0.2</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="G:\Informatique\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-01-04T12:54:54.999</Modified>
+      <Modified>2016-01-04T13:07:08.984</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="G:\Informatique\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\MyDomotik.exe">
       <PackagePath>MyDomotik.exe</PackagePath>
-      <Modified>2016-01-04T12:54:51.120</Modified>
+      <Modified>2016-01-04T13:07:06.205</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="G:\Informatique\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\Assets\acceuil.PNG">
       <PackagePath>Assets\acceuil.PNG</PackagePath>
@@ -10544,7 +10544,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="G:\Informatique\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-01-04T12:54:53.889</Modified>
+      <Modified>2016-01-04T13:07:08.313</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
