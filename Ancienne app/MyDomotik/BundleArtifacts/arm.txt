@@ -1,0 +1,2 @@
+MainPackage=G:\Informatique\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\ARM\Release\MyDomotik_0.1.0.1_ARM.appx
+SymbolPackage=G:\Informatique\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\AppPackages\MyDomotik_0.1.0.1_Test\MyDomotik_0.1.0.1_ARM.appxsym

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="97355aa4-2e3b-49ef-86e2-896c75849b35" Publisher="CN=MarlèneRogère" Version="1.0.0.0" />
+  <Identity Name="97355aa4-2e3b-49ef-86e2-896c75849b35" Publisher="CN=Diane" Version="0.1.0.1" />
   <Properties>
     <DisplayName>MyDomotique</DisplayName>
-    <PublisherDisplayName>MarlèneRogère</PublisherDisplayName>
+    <PublisherDisplayName>Diane</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>
