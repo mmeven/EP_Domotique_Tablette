@@ -24,27 +24,27 @@
             </Grid.ColumnDefinitions>
 
 
-            <Rectangle HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" Width="252"/>
+            <Rectangle HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" Margin="5,0,0,0" Width="252"/>
 
-            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Width="832"/>
+            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Width="700"/>
 
-            <Rectangle HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Width="241"/>
+            <Rectangle HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="0,0,5,0" Width="252"/>
 
             <!-- Rectangle Retour, en haut à droite -->
-            <Button x:ConnectionId='3' x:Name="retourMenu" BorderBrush="{x:Null}" Background="#FFFF8C00" Foreground="#FFF7EEEE" FontSize="18"  Grid.Row="0" Grid.Column="0"                         HorizontalAlignment="Left" VerticalAlignment="Top" Width="247" Height="71">
+            <Button x:ConnectionId='3' x:Name="retourMenu" BorderBrush="{x:Null}" Background="#FFFF8C00" Foreground="#FFF7EEEE" FontSize="18"  Grid.Row="0" Grid.Column="0"                         HorizontalAlignment="Left" VerticalAlignment="Top" Width="252" Height="65">
                 <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
                 	<Run FontSize="30" Text="Retour"/>
                 </TextBlock>
             </Button>
 
             <!-- Rectangle Titre, en haut a centre -->
-            <TextBlock x:Name="page_title" HorizontalAlignment="Center" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="832" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Foreground="Black" Grid.Row="0" Grid.Column="1" FontWeight="Bold">
+            <TextBlock x:Name="page_title" HorizontalAlignment="Center" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="700" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Foreground="Black" Grid.Row="0" Grid.Column="1" FontWeight="Bold">
     			<Run Foreground="Black" Text="Choix du mode de sélection"/>
             </TextBlock>
 
 
             <!-- Rectangle Accueil, en haut à droite -->
-            <Button x:ConnectionId='4' x:Name="quitterAdmin" BorderBrush="{x:Null}" Background="#FFFF8C00" Foreground="#FFF7EEEE" FontSize="18"  Grid.Row="0" Grid.Column="2"                   HorizontalAlignment="Left" VerticalAlignment="Top" Width="247" Height="71">
+            <Button x:ConnectionId='4' x:Name="quitterAdmin" BorderBrush="{x:Null}" Background="Transparent" FontSize="18"  Grid.Row="0" Grid.Column="2"                   HorizontalAlignment="Left" VerticalAlignment="Top" Width="252" Height="65">
                 <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
                 	<Run FontSize="30" Text="Accueil"/>
                 </TextBlock>
