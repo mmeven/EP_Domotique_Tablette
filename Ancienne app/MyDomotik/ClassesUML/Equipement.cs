@@ -14,7 +14,7 @@ namespace MyDomotik
         private Piece piece;             // Pièce où se situe l'equipement
         public enum TypeEquipement { Kira, Fibaro};
         private string adresseIp;
-        private string numBoutton;
+        private string numBouton;
         private TypeEquipement type;
         public List<Action> action;     // Liste  d'action que l'on peut effectuer avec l'équipement
         
@@ -55,16 +55,16 @@ namespace MyDomotik
             }
         }
 
-        public string NumBoutton
+        public string NumBouton
         {
             get
             {
-                return numBoutton;
+                return numBouton;
             }
 
             set
             {
-                numBoutton = value;
+                numBouton = value;
             }
         }
 
@@ -73,7 +73,7 @@ namespace MyDomotik
         {
                 this.type = TypeEquipement.Kira;
                 this.AdresseIp = add;
-                this.NumBoutton = bt;
+                this.NumBouton = bt;
                 this.nom = name;
                 this.action = new List<Action>();
                 this.piece = null;
