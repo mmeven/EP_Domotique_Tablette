@@ -88,7 +88,7 @@
             <!-- Champ pour écrire le numéro du bouton-->
             <TextBox x:Name="nomChamp2" Visibility="Collapsed" HorizontalAlignment="Right" Margin="0,0,50,0" TextWrapping="Wrap" VerticalAlignment="Center"  Grid.Column="1" Height="42" Width="300" Background="#FFA49090" FontSize="24" FontWeight="Bold" Text=""/>
             <!-- Affichage de "Numéro du Bouton"-->
-            <TextBlock x:Name="champ2" Visibility="Collapsed" Text="Numéro boutton:" TextWrapping="Wrap"  Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold" Grid.Column="1" TextAlignment="Center"/>
+            <TextBlock x:Name="champ2" Visibility="Collapsed" Text="Numéro bouton:" TextWrapping="Wrap"  Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold" Grid.Column="1" TextAlignment="Center"/>
         </Grid>
 
         <!-- Grille d'icônes -->

@@ -18,30 +18,38 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="270*"/>
+                <ColumnDefinition Width="20*"/>
                 <ColumnDefinition Width="845*"/>
+                <ColumnDefinition Width="20*"/>
                 <ColumnDefinition Width="251*"/>
             </Grid.ColumnDefinitions>
 
-            <Rectangle x:Name="Rect1" HorizontalAlignment="center" Height="65" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Width="700"/>
+            <Rectangle x:Name="Rect1" HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="2"  VerticalAlignment="Stretch"/>
 
-            <Rectangle x:Name="Rect2"  HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" Margin="5,0,0,0" Width="252"/>
+            <Rectangle x:Name="Rect2"  HorizontalAlignment="Stretch" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Stretch" />
 
-            <Rectangle x:Name ="Rect3"  HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="0,0,5,0" Width="252"/>
+            <Rectangle x:Name ="Rect3"  HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="4" VerticalAlignment="Stretch" />
 
-            <TextBlock x:Name="TimeBox" HorizontalAlignment="Center" Height="65" TextWrapping="Wrap" VerticalAlignment="Center" Width="252" FontSize="30" FontWeight="Bold" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="0" Foreground="Black" Margin="9,19,9,1"/>
+            <TextBlock x:Name="TimeBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch"  FontSize="30" FontWeight="Bold" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="0" Foreground="Black" Margin="9,19,9,1"/>
 
-            <TextBlock x:Name="page_title" HorizontalAlignment="Center" FontWeight="Bold" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="832" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="1" Margin="7,21,6,16" Foreground="Black" Text="Pièces de la maison"/>
+            <TextBlock x:Name="page_title" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="2" Margin="7,21,6,16" Foreground="Black" Text="Pièces de la maison"/>
 
-            <Button x:ConnectionId='4' x:Name="configButton"  Height="65" Width="252" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}" Grid.Row="0" Grid.Column="2" FontSize="24"                            >
-                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Text="Configuration" FontWeight="Bold" Foreground="Black" FontSize="30" TextAlignment="Center"/>
+            <Button x:ConnectionId='4' x:Name="configButton" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="{x:Null}" Grid.Row="0" Grid.Column="4" FontSize="24"                            >
+                <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch" Text="Configuration" FontWeight="Bold" Foreground="Black" FontSize="30" TextAlignment="Center"/>
             </Button>
 
         </Grid>
 
 
         <!--Grille des icones -->
-        <Grid x:Name="cadre" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="1200" Height="500" Grid.Row="1">
-
+        <Grid  x:Name="cadre" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="1500" Height="500" Grid.Row="1">
+           <!--
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="800*"/>
+                <ColumnDefinition Width="100*"/>
+            </Grid.ColumnDefinitions> 
+            <Grid Grid.Column="1" x:Name="cadre" /> -->
             <!--   affichage dynamique grâce au x:Name="cadre" -->
 
         </Grid>
@@ -56,29 +64,34 @@
         <Grid HorizontalAlignment="Center" Height="130" Grid.Row="2" VerticalAlignment="Center" Width="1346">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition  Width="5*"/>
+                <ColumnDefinition  Width="60*"/>
+                <ColumnDefinition  Width="5*"/>
+                <ColumnDefinition  Width="60*"/>
+                <ColumnDefinition  Width="5*"/>
+                <ColumnDefinition  Width="60*"/>
+                <ColumnDefinition  Width="5*"/>
 
             </Grid.ColumnDefinitions>
 
-            <Rectangle x:Name ="RectAccueil" Height="130" Width="430"  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Button x:ConnectionId='1' x:Name="accueil"  Background="Transparent" Grid.Column="1" Height="130"  Width="430" HorizontalAlignment="Center" VerticalAlignment="Center"                     >
-                <Image Height="129" Width="272" Source="Assets/acceuil.PNG"/>
-            </Button>
-
-            <Rectangle x:Name ="RectPrecedent"  Height="130" Width="430"  Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Button x:ConnectionId='2' x:Name="precedent" Grid.Column="0" Height="130"  Width="430"  HorizontalAlignment="Center" VerticalAlignment="Center"                        >
-                <Image Height="116.145" Width="341.828" Source="Assets/suivant.PNG" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+            <Rectangle x:Name ="RectPrecedent"   Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button x:ConnectionId='1' x:Name="precedent" Grid.Column="1"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                        >
+                <Image  Source="Assets/suivant.PNG" UseLayoutRounding="False" d:LayoutRounding="Auto">
                     <Image.RenderTransform>
                         <CompositeTransform Rotation="-180"/>
                     </Image.RenderTransform>
                 </Image>
             </Button>
 
-            <Rectangle x:Name ="RectSuivant" Height="130" Width="430"  Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Button x:ConnectionId='3' x:Name="suivant" Grid.Column="2" Height="130"  Width="430"  HorizontalAlignment="Center" VerticalAlignment="Center"                       >
-                <Image Height="119" Width="292" Source="Assets/suivant.PNG"/>
+            <Rectangle x:Name ="RectAccueil"  Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button x:ConnectionId='2' x:Name="accueil"  Background="Transparent" Grid.Column="3"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                     >
+                <Image  Source="Assets/acceuil.PNG"/>
+            </Button>
+
+
+            <Rectangle x:Name ="RectSuivant"  Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button x:ConnectionId='3' x:Name="suivant" Grid.Column="5"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                       >
+                <Image  Source="Assets/suivant.PNG"/>
             </Button>
 
         </Grid>

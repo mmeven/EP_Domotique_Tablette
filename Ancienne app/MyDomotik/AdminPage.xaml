@@ -18,7 +18,7 @@
                 <ColumnDefinition Width="270*"/>
                 <ColumnDefinition Width="845*"/>
                 <ColumnDefinition Width="251*"/>
-            </Grid.ColumnDefinitions>
+            </Grid.ColumnDefinitions> 
 
             <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0" Margin="5,0,0,0" VerticalAlignment="Center" Width="252"/>
 
