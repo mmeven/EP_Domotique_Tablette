@@ -15,9 +15,8 @@ namespace MyDomotik
 
         private List<Action> actions;
         private List<Equipement> equipements;
-        private List<Modalite> modalites;
+       // private List<Modalite> modalites;
         private List<Piece> pieces;
-        private ReglReseau reglagesReseau;
 
         //getters et setters
         public List<Piece> Pieces
@@ -25,11 +24,11 @@ namespace MyDomotik
             get { return pieces; }
             set { pieces = value; }
         }
-        public List<Modalite> Modalites
+     /*   public List<Modalite> Modalites
         {
             get { return modalites; }
             set { modalites = value; }
-        }
+        }*/
         public List<Equipement> Equipements
         {
             get { return equipements; }
@@ -50,11 +49,7 @@ namespace MyDomotik
             get { return arbre; }
             set { arbre = value; }
         }
-        public ReglReseau ReglagesReseau
-        {
-            get { return reglagesReseau; }
-            set { reglagesReseau = value; }
-        }
+       
 
 
         //constructeur
@@ -65,23 +60,12 @@ namespace MyDomotik
             this.actions = new List<Action>();
             this.equipements = new List<Equipement>();
             this.pieces = new List<Piece>();
-            this.modalites = new List<Modalite>();
-            this.reglagesReseau = new ReglReseau();
 
             this.theme = new Theme();
             this.arbre = new Arbre(pageHome);
             Arbre.PagePrincipale = pageHome;
         }
-
-        public string toStringXML()
-        {  // retourne la configuration sous forme de balisage XML (plus simple pour sauvegarder dans un fichier)
-            string configXML = "";
-
-            // à compléter (William)
-
-            return configXML;
-
-        }
+        
 
         //retire l'icone situé à l'index index de la grille numPage de la Vue page
         public void enleverIcone(Vue page, int index, int numPage)
@@ -126,9 +110,6 @@ namespace MyDomotik
             Vue pagePiece = new Vue(icone.NomIcone);
 
             icone.Navigation = new Navigation(pagePiece);
-            icone.Action = (Action)null;
-
-
             // arbre.ajouterVue(arbre.Racine, pagePiece);
 
             //arbre.ajouterVue(arbre.Racine, pagePiece);
@@ -160,7 +141,6 @@ namespace MyDomotik
             Vue pageEquip = new Vue(icone.NomIcone);
 
             icone.Navigation = new Navigation(pagePiece);
-            icone.Action = (Action)null;
 
             ajouterIcone(arbre.PageCourante, icone, index, numPage);
 
@@ -184,15 +164,6 @@ namespace MyDomotik
             // piece.addDevice(equipmt);
         }
 
-        public void ajouterAction(Vue pageEquip, Vue pageAction, Equipement equipmt, Action action, Icone icone, int index)
-        {
-            // ajoute une icone (associee à l'action) a la grille de la page de l'equipement + + à la liste Configuration.actions
-            pageEquip.ajouterIcone(icone, index);  // on ajoute l'icone à la grille de la Vue de l'équipement
-            Actions.Add(action);  // on ajoute l'équipement à la liste globale des équipements
-
-            // ajoute l'action à la liste des action de l'équipement associé
-            equipmt.addAction(action);
-        }
     }
 
 }

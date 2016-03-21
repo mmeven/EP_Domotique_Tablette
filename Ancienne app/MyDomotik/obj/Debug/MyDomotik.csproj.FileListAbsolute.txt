@@ -409,7 +409,6 @@ C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\D
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\MainPage.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\Pages_Réglages\ReglagesCouleur.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\Pages_Réglages\ReglagesModeSelection.xbf
-C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\Pages_Réglages\ReglagesReseau.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\Pages_Réglages\ReglagesTailleIcones.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\MyDomotik.xr.xml
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\MyDomotik.exe
@@ -431,8 +430,6 @@ C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\D
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\Pages_Réglages\ReglagesCouleur.g.cs
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\Pages_Réglages\ReglagesModeSelection.g.i.cs
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\Pages_Réglages\ReglagesModeSelection.g.cs
-C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\Pages_Réglages\ReglagesReseau.g.i.cs
-C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\Pages_Réglages\ReglagesReseau.g.cs
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\Pages_Réglages\ReglagesTailleIcones.g.i.cs
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\Pages_Réglages\ReglagesTailleIcones.g.cs
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\XamlTypeInfo.g.cs
@@ -443,7 +440,6 @@ C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\D
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\MainPage.xaml
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\Pages_Réglages\ReglagesCouleur.xaml
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\Pages_Réglages\ReglagesModeSelection.xaml
-C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\Pages_Réglages\ReglagesReseau.xaml
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\Pages_Réglages\ReglagesTailleIcones.xaml
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\App.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\AdminPage.xbf
@@ -452,7 +448,6 @@ C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\D
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\MainPage.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\Pages_Réglages\ReglagesCouleur.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\Pages_Réglages\ReglagesModeSelection.xbf
-C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\Pages_Réglages\ReglagesReseau.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\Pages_Réglages\ReglagesTailleIcones.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\XamlSaveStateFile.xml
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Debug\MyDomotik.exe

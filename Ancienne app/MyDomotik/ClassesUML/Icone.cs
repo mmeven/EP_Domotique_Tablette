@@ -23,11 +23,9 @@ namespace MyDomotik
         private TypeIcone typeIcone;
         private int taille;
         private String chaineSource;
-
-        private Action action;
+        
         private Navigation navigation;
-
-        private Button bouton;
+        
 
         private Boolean vide;
 
@@ -58,7 +56,6 @@ namespace MyDomotik
             this.nomIcone = nom;
 
             this.navigation = null;
-            this.action = null;
            
           }
         //Constructeur pour les équipements 
@@ -78,14 +75,12 @@ namespace MyDomotik
             this.nomIcone = nom;
 
             this.navigation = null;
-            this.action = null;
         }
 
         public Icone()
         {
             this.image = null;
             this.nomIcone = null;
-            this.action = null;
             this.navigation = null;
         }
         // constructeur d'icone associée à une action
@@ -98,27 +93,7 @@ namespace MyDomotik
             this.image = new Image();
             //this.image.Source = this.sourceBi;
             this.nomIcone = nom;
-            this.action = action;
             this.navigation = null;
-        }
-
-        // constructeur d'icone associée à une navigation (icone menant à une nouvelle page)
-        public Icone(String nom, String nomFichier, int taille, Navigation navigation)
-        {
-            this.vide = false;
-            this.taille = taille;
-
-            // création de la source
-            this.SourceImage(nomFichier);
-
-            // création de l'image à partir de la source
-            this.image = new Image();
-            //this.image.Source = this.sourceBi;
-
-            this.nomIcone = nom;
-
-            this.navigation = navigation;
-            this.action = null;
         }
 
         public Icone(Image image, String nomIcone)
@@ -126,7 +101,6 @@ namespace MyDomotik
             this.vide = false;
             this.image = image;
             this.nomIcone = nomIcone;
-            this.action = null;
             this.navigation = null;
         }
 
@@ -146,11 +120,6 @@ namespace MyDomotik
         private Boolean navigue(int index)
         {
             return (this.Navigation != null);
-        }
-
-        private Boolean actionne(int index)
-        {
-            return (this.Action != null);
         }
 
         internal Image Image
@@ -178,14 +147,6 @@ namespace MyDomotik
             set { chaineSource = value; }
         }
 
-
-
-        public Action Action
-        {
-            get { return action; }
-            set { action = value; }
-        }
-
         internal Navigation Navigation
         {
             get { return navigation; }
@@ -198,11 +159,6 @@ namespace MyDomotik
         {
             get { return uri; }
             set { uri = value; }
-        }
-        public Button Bouton
-        {
-            get { return bouton; }
-            set { bouton = value; }
         }
 
         public TypeIcone TypeIcone1

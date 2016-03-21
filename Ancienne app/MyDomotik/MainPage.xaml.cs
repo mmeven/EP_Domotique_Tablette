@@ -194,7 +194,6 @@ namespace MyDomotik
                 configuration.arbre.PageCourante = icone.Navigation.PageFils;
                 this.Frame.Navigate(typeof(MainPage));
             }
-            if (icone.Action != null) { }
         }
 
         private void page_title_SelectionChanged(object sender, RoutedEventArgs e)

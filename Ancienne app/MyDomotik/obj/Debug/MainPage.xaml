@@ -76,7 +76,7 @@
 
             <Rectangle x:Name ="RectPrecedent"   Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
             <Button x:ConnectionId='1' x:Name="precedent" Grid.Column="1"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                        >
-                <Image  Source="Assets/suivant.PNG" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                <Image  Source="Assets/suivant.PNG" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
                     <Image.RenderTransform>
                         <CompositeTransform Rotation="-180"/>
                     </Image.RenderTransform>

@@ -105,9 +105,6 @@ namespace MyDomotik
             Frame.Navigate(typeof(ReglagesModeSelection));
         }
 
-        private void accesPageReseau(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(ReglagesReseau));
-        }
+       
     }
 }

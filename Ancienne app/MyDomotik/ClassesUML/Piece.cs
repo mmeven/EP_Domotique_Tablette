@@ -37,7 +37,6 @@ namespace MyDomotik
             if (!this.devices.Contains(e))
             {
                 this.devices.Add(e);
-                e.Piece = this;
                 return true;
             }
             return false;
@@ -55,14 +54,9 @@ namespace MyDomotik
             else
             {
                 this.devices.Remove(e);
-                e.Piece = null;
                 return true;
             }
         }
 
-        public void afficheEquipement()
-        {
-
-        }
     }
 }

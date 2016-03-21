@@ -115,16 +115,13 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ClassesUML\Action.cs" />
     <Compile Include="ClassesUML\Arbre.cs" />
     <Compile Include="ClassesUML\Configuration.cs" />
     <Compile Include="ClassesUML\Couleur.cs" />
-    <Compile Include="ClassesUML\Enregistrement.cs" />
     <Compile Include="ClassesUML\Equipement.cs" />
     <Compile Include="ClassesUML\Format.cs" />
     <Compile Include="ClassesUML\Grille.cs" />
     <Compile Include="ClassesUML\Icone.cs" />
-    <Compile Include="ClassesUML\Modalite.cs" />
     <Compile Include="ClassesUML\Navigation.cs" />
     <Compile Include="ClassesUML\Piece.cs" />
     <Compile Include="ClassesUML\Theme.cs" />
@@ -138,7 +135,6 @@
     <Compile Include="Pages_Réglages\ReglagesTailleIcones.xaml.cs">
       <DependentUpon>ReglagesTailleIcones.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages_Réglages\ReglReseau.cs" />
     <Compile Include="GestionPieces.xaml.cs">
       <DependentUpon>GestionPieces.xaml</DependentUpon>
     </Compile>
@@ -148,9 +144,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pages_Réglages\ReglagesModeSelection.xaml.cs">
       <DependentUpon>ReglagesModeSelection.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages_Réglages\ReglagesReseau.xaml.cs">
-      <DependentUpon>ReglagesReseau.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -192,10 +185,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages_Réglages\ReglagesModeSelection.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages_Réglages\ReglagesReseau.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

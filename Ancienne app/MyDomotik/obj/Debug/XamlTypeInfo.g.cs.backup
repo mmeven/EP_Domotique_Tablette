@@ -124,7 +124,7 @@ namespace MyDomotik.MyDomotik_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[10];
+            _typeNameTable = new string[9];
             _typeNameTable[0] = "MyDomotik.AdminPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -133,10 +133,9 @@ namespace MyDomotik.MyDomotik_XamlTypeInfo
             _typeNameTable[5] = "MyDomotik.MainPage";
             _typeNameTable[6] = "MyDomotik.ReglagesCouleur";
             _typeNameTable[7] = "MyDomotik.ReglagesModeSelection";
-            _typeNameTable[8] = "MyDomotik.ReglagesReseau";
-            _typeNameTable[9] = "MyDomotik.ReglagesTailleIcones";
+            _typeNameTable[8] = "MyDomotik.ReglagesTailleIcones";
 
-            _typeTable = new global::System.Type[10];
+            _typeTable = new global::System.Type[9];
             _typeTable[0] = typeof(global::MyDomotik.AdminPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -145,8 +144,7 @@ namespace MyDomotik.MyDomotik_XamlTypeInfo
             _typeTable[5] = typeof(global::MyDomotik.MainPage);
             _typeTable[6] = typeof(global::MyDomotik.ReglagesCouleur);
             _typeTable[7] = typeof(global::MyDomotik.ReglagesModeSelection);
-            _typeTable[8] = typeof(global::MyDomotik.ReglagesReseau);
-            _typeTable[9] = typeof(global::MyDomotik.ReglagesTailleIcones);
+            _typeTable[8] = typeof(global::MyDomotik.ReglagesTailleIcones);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -187,8 +185,7 @@ namespace MyDomotik.MyDomotik_XamlTypeInfo
         private object Activate_5_MainPage() { return new global::MyDomotik.MainPage(); }
         private object Activate_6_ReglagesCouleur() { return new global::MyDomotik.ReglagesCouleur(); }
         private object Activate_7_ReglagesModeSelection() { return new global::MyDomotik.ReglagesModeSelection(); }
-        private object Activate_8_ReglagesReseau() { return new global::MyDomotik.ReglagesReseau(); }
-        private object Activate_9_ReglagesTailleIcones() { return new global::MyDomotik.ReglagesTailleIcones(); }
+        private object Activate_8_ReglagesTailleIcones() { return new global::MyDomotik.ReglagesTailleIcones(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -250,16 +247,9 @@ namespace MyDomotik.MyDomotik_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 8:   //  MyDomotik.ReglagesReseau
+            case 8:   //  MyDomotik.ReglagesTailleIcones
                 userType = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_ReglagesReseau;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 9:   //  MyDomotik.ReglagesTailleIcones
-                userType = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_ReglagesTailleIcones;
+                userType.Activator = Activate_8_ReglagesTailleIcones;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
