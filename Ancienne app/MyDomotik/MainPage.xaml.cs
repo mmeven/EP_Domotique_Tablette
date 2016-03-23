@@ -210,10 +210,13 @@ namespace MyDomotik
             if (!IsValidIP(add))
             {
                 //TODO: générer une erreur ?
-                add = "0.0.0.0";
+                
             }
-            String adresse = "/remote2.htm?button"+btt+"#";
-            requeteHttp(add, adresse);
+            else
+            {
+                String adresse = "/remote2.htm?button" + btt + "#";
+                requeteHttp(add, adresse);
+            }
         }
 
 
