@@ -18,8 +18,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using System.Runtime.InteropServices;
-
-
+using System.Text.RegularExpressions;
 
 namespace MyDomotik
 {
@@ -102,6 +101,38 @@ namespace MyDomotik
             //affichePageGrille();
         }
 
+        /// <summary>
+        /// method to validate an IP address
+        /// using regular expressions. The pattern
+        /// being used will validate an ip address
+        /// with the range of 1.0.0.0 to 255.255.255.255
+        /// </summary>
+        /// <param name="addr">Address to validate</param>
+        /// <returns></returns>
+        public bool IsValidIP(string addr)
+        {
+            //create our match pattern
+            string pattern = @"^([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(\.
+    ([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3}$";
+            //create our Regular Expression object
+            Regex check = new Regex(pattern);
+            //boolean variable to hold the status
+            bool valid = false;
+            //check to make sure an ip address was provided
+            if (addr == "")
+            {
+                //no address provided so return false
+                valid = false;
+            }
+            else
+            {
+                //address provided so use the IsMatch Method
+                //of the Regular Expression object
+                valid = check.IsMatch(addr, 0);
+            }
+            //return the results
+            return valid;
+        }
         // accès au mode configuration
         private void adminSelect(object sender, DoubleTappedRoutedEventArgs e)
         {
@@ -174,6 +205,13 @@ namespace MyDomotik
             //Récupération des caractéristiques de l'icone (qui contient notre équipement)
             String add = icone.Equip.AdresseIp;
             String btt = icone.Equip.NumBouton;
+
+            //on vérifie que l'adresse ip de l'hote est correcte
+            if (!IsValidIP(add))
+            {
+                //TODO: générer une erreur ?
+                add = "0.0.0.0";
+            }
             String adresse = "/remote2.htm?button"+btt+"#";
             requeteHttp(add, adresse);
         }
