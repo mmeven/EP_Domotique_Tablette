@@ -19,11 +19,11 @@ namespace ModelDll_Test
 
         [DllImport("ModelDll.dll", EntryPoint = "?getName@Node@EP@@QAEPA_WXZ",
             CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
-        public static extern String Node_getName(IntPtr ptr);
+        public static extern IntPtr Node_getName(IntPtr ptr);
 
         [DllImport("ModelDll.dll", EntryPoint = "?setName@Node@EP@@QAEXPA_W@Z",
             CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
-        public static extern void Node_setName(IntPtr ptr, string name);
+        public static extern void Node_setName(IntPtr ptr, String name);
 
         static void Main(string[] args)
         {
@@ -32,9 +32,10 @@ namespace ModelDll_Test
                 IntPtr ab = Node_NewNoIco("ab");
                 IntPtr toast = EquipmentKira_New("Bonjour", "rien", ab, 1);
                 Node_setName(ab,"allez pls");
-                String mdr = Node_getName(ab);
+                String mdr = System.Runtime.InteropServices.Marshal.PtrToStringUni(Node_getName(ab));
                 Console.WriteLine(mdr);
-                //Console.WriteLine(Node_getName(toast));
+                mdr = System.Runtime.InteropServices.Marshal.PtrToStringUni(Node_getName(toast));
+                Console.WriteLine(mdr);
                 EquipmentKira_Delete(toast);
 
                 Node_Delete(ab);

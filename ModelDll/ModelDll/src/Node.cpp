@@ -20,7 +20,7 @@ namespace EP {
 	}
 
 	wchar_t* Node::getName(){
-		return L"Toast";
+		return m_name;
 	}
 
 	wchar_t* Node::getIco() {
