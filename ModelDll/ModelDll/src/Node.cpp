@@ -1,24 +1,26 @@
 #include "../include/Node.h"
-
+#include <iostream>
 namespace EP {
-	Node::Node(wchar_t* name) : m_ico(L""), m_parent(0)	{
+	Node::Node(wchar_t* name) : m_ico(L""), m_parent(0) {
 		wcscpy_s(m_name, name);
 	}
 
-	Node::Node(wchar_t* name, wchar_t* ico) :  m_parent(0)	{
-		wcscpy_s(m_name, name);
-		wcscpy_s(m_ico, ico);
-	}
-
-	Node::Node(wchar_t* name, wchar_t* ico, Node* parent) : m_parent(parent)	{
+	Node::Node(wchar_t* name, wchar_t* ico) : m_parent(0) {
 		wcscpy_s(m_name, name);
 		wcscpy_s(m_ico, ico);
 	}
 
-	Node::~Node(void) {}
+	Node::Node(wchar_t* name, wchar_t* ico, Node* parent) : m_parent(parent) {
+		wcscpy_s(m_name, name);
+		wcscpy_s(m_ico, ico);
+	}
 
-	wchar_t* Node::getName() {
-		return m_name;
+	Node::~Node(void) {
+		printf("Node detruit\n");
+	}
+
+	wchar_t* Node::getName(){
+		return L"Toast";
 	}
 
 	wchar_t* Node::getIco() {

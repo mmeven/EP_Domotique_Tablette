@@ -1,4 +1,5 @@
-#pragma once
+#ifndef NODE_H_INCLUDED
+#define NODE_H_INCLUDED
 #include <wchar.h>
 
 namespace EP {
@@ -17,7 +18,7 @@ namespace EP {
 		Node(wchar_t* name, wchar_t* ico, EP::Node* parent);
 
 		//Destructor
-		~Node(void);
+		virtual ~Node(void);
 
 		// Returns the name of the node
 		wchar_t* getName();
@@ -39,3 +40,4 @@ namespace EP {
 	extern "C" __declspec(dllexport) Node* Node_New(wchar_t* name, wchar_t* ico, EP::Node* parent);
 	extern "C" __declspec(dllexport) void Node_Delete(Node* node);
 }
+#endif
