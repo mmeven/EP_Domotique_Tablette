@@ -1,6 +1,8 @@
 #include "../include/Core.h"
 
 #include <fstream>
+#include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -8,7 +10,6 @@ namespace EP {
 	Core::Core(wchar_t* file) : m_currentRoom(0), m_iconSize(0), m_themeId(0)
 	{
 		wcscpy_s(m_coreSave, file);
-		//load();
 	}
 
 	Core::~Core() {
@@ -17,7 +18,7 @@ namespace EP {
 	}
 
 	int Core::save() {
-		wofstream file(m_coreSave, wofstream::out);
+		wofstream file("save.txt", wofstream::out);
 
 		// Core attributes
 		file << m_themeId << "," << m_iconSize << "," << getNumberRooms() << endl;
@@ -54,6 +55,75 @@ namespace EP {
 	}
 
 	int Core::load() {
+		wifstream file(m_coreSave, wifstream::in);
+
+		int nbRooms, nbEquip; // tmp vars
+		Room* room;
+		Equipment* eq;
+		int i, j; // loop variables
+
+		wchar_t tmp[300];
+		wchar_t roomName[100], roomIco[100];
+		wchar_t eqName[100], eqIco[100], eqAction[300];
+		int eqTypeOf, eqId;
+
+		// file >> m_themeId >> m_iconSize >> nbRooms;
+		file.getline(tmp, 100, ',');
+		m_themeId = wcstol(tmp, NULL, 10);
+
+		file.getline(tmp, 100, ',');
+		m_iconSize = wcstol(tmp, NULL, 10);
+
+		file.getline(tmp, 100);
+		nbRooms = wcstol(tmp, NULL, 10);
+
+		cout << nbRooms;
+		
+		for (i = 0; i < nbRooms; i++) {
+			//file >> roomName >> roomIco >> nbEquip;
+			file.getline(roomName, 100, ',');
+			file.getline(roomIco, 100, ',');
+			file.getline(tmp, 100);
+			nbEquip = wcstol(tmp, NULL, 10);
+
+			room = new Room(roomName, roomIco);
+
+			for (j = 0; j < nbEquip; j++) {
+				//file >> eqName >> eqIco >> eqTypeOf;
+
+				file.getline(eqName, 100, ',');
+				file.getline(eqIco, 100, ',');
+				file.getline(tmp, 100, ',');
+				eqTypeOf = wcstol(tmp, NULL, 10);
+
+				if (eqTypeOf == 1) {
+					//file >> eqId;
+
+					file.getline(tmp, 100);
+					eqId = wcstol(tmp, NULL, 10);
+
+					eq = new EquipmentKira(eqName, eqIco, room, eqId);
+
+					room->addEquipment(eq);
+				}
+				else if (eqTypeOf == 2) {
+					//file >> eqId >> eqAction;
+
+					file.getline(tmp, 100, ',');
+					eqId = wcstol(tmp, NULL, 10);
+					file.getline(eqAction, 100);
+
+					eq = new EquipmentFibaro(eqName, eqIco, room, eqId, eqAction);
+
+					room->addEquipment(eq);
+				}
+			}
+
+			addRoom(room);
+		}
+
+		file.close();
+
 		return 0;
 	}
 

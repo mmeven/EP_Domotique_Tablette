@@ -10,6 +10,10 @@ namespace ModelDll_Test
             CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr Core_New(String fileName);
 
+        [DllImport("ModelDll.dll", EntryPoint = "Core_NewFromSave",
+            CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr Core_NewFromSave(String fileName);
+
         [DllImport("ModelDll.dll", EntryPoint = "Core_SaveAndDelete",
             CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
         public static extern void Core_SaveAndDelete(IntPtr cp);
@@ -51,15 +55,15 @@ namespace ModelDll_Test
 
         static void Main(string[] args)
         {
-            IntPtr core = Core_New("./result.txt");
+            IntPtr core = Core_NewFromSave("./load.txt");
 
-            IntPtr room = Room_New("Piece", "un lit");
+           /* IntPtr room = Room_New("Piece", "un lit");
 
             IntPtr eq = EquipmentKira_New("toaster", "un grille-pain", room, 1);
 
             Core_addRoom(core, room);
 
-            Room_addEquipment(room, eq);
+            Room_addEquipment(room, eq);*/
 
             Core_SaveAndDelete(core);
         }

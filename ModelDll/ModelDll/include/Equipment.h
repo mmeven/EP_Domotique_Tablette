@@ -71,7 +71,7 @@ namespace EP {
 		int m_equipmentId;
 
 		// The action realized by sendRequest()
-		wchar_t m_action[100];
+		wchar_t m_action[300];
 	};
 
 	extern "C" __declspec(dllexport) EquipmentFibaro* EquipmentFibaro_New(wchar_t* name, wchar_t* ico, Node* parent, int equipmentId, wchar_t* action);
