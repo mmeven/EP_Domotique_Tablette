@@ -7,10 +7,10 @@
 namespace EP {
 	// Represents a node of the tree used to modelize the rooms
 	// and their equiments
-	class Room : public Node {
+	class __declspec(dllexport) Room : public Node {
 	public:
 		// See Node.h
-		Room(std::string name, std::string ico, Node * parent);
+		Room(wchar_t* name, wchar_t* ico);
 
 		// Deletes the list of Equipments
 		~Room();
@@ -26,18 +26,20 @@ namespace EP {
 
 		// Deletes the equipment with the given name.
 		// Returns 1 if the name given doesn't exist
-		int deleteEquipmentByName(std::string name);
+		int deleteEquipmentByName(wchar_t* name);
 
 		// Returns a pointer of the first element of an array containing all Equipments
 		// Use this in a C# code
-		Equipment* getEquipmentsAsArray();
+		// NOT IMPLEMENTED
+		//Equipment* getEquipmentsAsArray();
 
 		// Returns the vector containing all the Equipments of the Room
+		// Wont work in C#, or I haven't found out yet
 		std::vector<Equipment*>* getEquipments();
 
 		// Returns a pointer to the Equipment corresponding to the given name
 		// Returns NULL if it doesn't exist
-		Equipment* getEquipmentByName(std::string name);
+		Equipment* getEquipmentByName(wchar_t* name);
 
 		// Returns a pointer to the Equipment corresponding to the given index
 		// Returns NULL if the index is out of bounds
@@ -49,6 +51,9 @@ namespace EP {
 		// The list of all the Equipments contained by this Room
 		std::vector<Equipment*> m_listEquipments;
 	};
+
+	extern "C" __declspec(dllexport) Room* Room_New(wchar_t* name, wchar_t* ico);
+	extern "C" __declspec(dllexport) void Room_Delete(Room* room);
 }
 
 #endif ROOM_H_INCLUDED

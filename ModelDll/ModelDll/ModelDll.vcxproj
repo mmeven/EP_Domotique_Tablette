@@ -147,13 +147,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\Core.h" />
     <ClInclude Include="include\Equipment.h" />
     <ClInclude Include="include\Node.h" />
     <ClInclude Include="include\Room.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Core.cpp" />
     <ClCompile Include="src\Node.cpp" />
     <ClCompile Include="src\Equipment.cpp" />
+    <ClCompile Include="src\Room.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

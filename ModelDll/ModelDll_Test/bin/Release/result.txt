@@ -1,0 +1,3 @@
+0,0,1
+Piece,un lit,1
+toaster,un grille-pain,1,1

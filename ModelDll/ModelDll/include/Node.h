@@ -8,14 +8,8 @@ namespace EP {
 	// and their equiments
 	class __declspec(dllexport) Node {
 	public:
-		// Basic constructor used only for the root of the tree, which doesn't need any icon
-		Node(wchar_t* name);
-
-		// Not used
+		// Constructor
 		Node(wchar_t* name, wchar_t* ico);
-
-		// Used by Room, Equipment
-		Node(wchar_t* name, wchar_t* ico, EP::Node* parent);
 
 		//Destructor
 		virtual ~Node(void);
@@ -35,9 +29,7 @@ namespace EP {
 		EP::Node* m_parent; // Parent of the node
 	};
 
-	extern "C" __declspec(dllexport) Node* Node_NewNoIco(wchar_t* name);
-	extern "C" __declspec(dllexport) Node* Node_NewNoParent(wchar_t* name, wchar_t* ico);
-	extern "C" __declspec(dllexport) Node* Node_New(wchar_t* name, wchar_t* ico, EP::Node* parent);
+	extern "C" __declspec(dllexport) Node* Node_New(wchar_t* name, wchar_t* ico);
 	extern "C" __declspec(dllexport) void Node_Delete(Node* node);
 }
 #endif

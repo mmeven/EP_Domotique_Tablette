@@ -1,8 +1,18 @@
-﻿  Node.cpp
+﻿  Core.cpp
+d:\etudepratique3a\ep_domotique_tablette\modeldll\modeldll\include\Room.h(52): warning C4251: 'EP::Room::m_listEquipments' : class 'std::vector<EP::Equipment *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Room'
+          with
+          [
+              _Ty=EP::Equipment *
+          ]
+d:\etudepratique3a\ep_domotique_tablette\modeldll\modeldll\src\../include/Core.h(66): warning C4251: 'EP::Core::m_listRooms' : class 'std::vector<EP::Room *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Core'
+          with
+          [
+              _Ty=EP::Room *
+          ]
      Création de la bibliothèque D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll\Release\ModelDll.lib et de l'objet D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll\Release\ModelDll.exp
   Génération de code en cours
-  1 of 51 functions ( 2.0%) were compiled, the rest were copied from previous compilation.
+  2 of 454 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    24 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   ModelDll.vcxproj -> D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll\Release\ModelDll.dll

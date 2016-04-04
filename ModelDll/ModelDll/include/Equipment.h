@@ -10,7 +10,7 @@ namespace EP {
 	public:
 		// See Node.h
 		// Also initializes m_typeOf
-		Equipment(wchar_t* name, wchar_t* ico, Node* parent, int typeOf) : Node(name, ico, parent), m_typeOf(typeOf) {};
+		Equipment(wchar_t* name, wchar_t* ico, Node* parent, int typeOf) : Node(name, ico), m_roomParent(parent), m_typeOf(typeOf) {};
 		virtual ~Equipment() {};
 
 		// Sends the HTTP Request corresponding to the Equipment
@@ -19,6 +19,9 @@ namespace EP {
 		// Returns m_typeOf
 		int getTypeOf() { return m_typeOf; };
 	protected:
+		// The room containing the equipment
+		Node* m_roomParent;
+
 		// 1 : Kira
 		// 2 : Fibaro
 		int m_typeOf;
