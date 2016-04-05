@@ -23,6 +23,10 @@ namespace EP {
 		wcscpy_s(m_name, name);
 	}
 
+	void Node::setIco(wchar_t* ico) {
+		wcscpy_s(m_ico, ico);
+	}
+
 	extern "C" __declspec(dllexport) Node* Node_New(wchar_t* name, wchar_t* ico) {
 		return new Node(name, ico);
 	}

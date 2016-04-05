@@ -46,6 +46,7 @@ namespace EP {
 		// Returns NULL if the index is out of bounds
 		Room* getRoomByIndex(int index);
 
+		// Returns the name of the file used to load and save the application
 		wchar_t* getFileSave();
 
 		// Returns the number of equipments in the vector
@@ -59,6 +60,15 @@ namespace EP {
 
 		// Returns m_iconSize
 		int getIconSize();
+
+		// Sets m_currentRoom
+		void setCurrentRoom(Room* room);
+
+		// Sets m_themeId
+		void setThemeId(int id);
+
+		// Sets m_iconSize
+		void setIconSize(int size);
 	private:
 		wchar_t m_coreSave[FILESAVE_NAME_SIZE];
 
@@ -79,9 +89,13 @@ namespace EP {
 	};
 
 	extern "C" __declspec(dllexport) Core* Core_New(wchar_t* file);
+
+	// Charger l'appli via le fichier de sauvegarde
 	extern "C" __declspec(dllexport) Core* Core_NewFromSave(wchar_t* file);
 
 	extern "C" __declspec(dllexport) void Core_Delete(Core* core);
+
+	// Sauvegarder et quitter
 	extern "C" __declspec(dllexport) void Core_SaveAndDelete(Core* core);
 }
 

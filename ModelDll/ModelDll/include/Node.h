@@ -23,6 +23,9 @@ namespace EP {
 		// Returns the path to the icon used by this node
 		wchar_t* getIco();
 
+		// Sets m_ico
+		void setIco(wchar_t* ico);
+
 	protected:
 		wchar_t m_name[100]; // Name of the room/equipment
 		wchar_t m_ico[100]; // Name of the icone's file

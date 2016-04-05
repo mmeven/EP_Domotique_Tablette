@@ -7,18 +7,16 @@
 using namespace std;
 
 namespace EP {
-	Core::Core(wchar_t* file) : m_currentRoom(0), m_iconSize(0), m_themeId(0)
-	{
+	Core::Core(wchar_t* file) : m_currentRoom(0), m_iconSize(0), m_themeId(0)	{
 		wcscpy_s(m_coreSave, file);
 	}
 
 	Core::~Core() {
-		//save();
 		m_listRooms.clear();
 	}
 
 	int Core::save() {
-		wofstream file("save.txt", wofstream::out);
+		wofstream file(m_coreSave, wofstream::out);
 
 		// Core attributes
 		file << m_themeId << "," << m_iconSize << "," << getNumberRooms() << endl;
@@ -192,6 +190,18 @@ namespace EP {
 
 	int Core::getIconSize() {
 		return m_iconSize;
+	}
+
+	void Core::setCurrentRoom(Room* room) {
+		m_currentRoom = room;
+	}
+
+	void Core::setThemeId(int id) {
+		m_themeId = id;
+	}
+
+	void Core::setIconSize(int size) {
+		m_iconSize = size;
 	}
 
 	extern "C" __declspec(dllexport) Core* Core_New(wchar_t* file) {

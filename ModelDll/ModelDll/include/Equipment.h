@@ -18,6 +18,9 @@ namespace EP {
 
 		// Returns m_typeOf
 		int getTypeOf() { return m_typeOf; };
+
+		// Returns m_roomParent
+		Node* getNodeParent() { return m_roomParent; };
 	protected:
 		// The room containing the equipment
 		Node* m_roomParent;
