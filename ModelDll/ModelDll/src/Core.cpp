@@ -7,7 +7,7 @@
 using namespace std;
 
 namespace EP {
-	Core::Core(wchar_t* file) : m_currentRoom(0), m_iconSize(0), m_themeId(0)	{
+	Core::Core(wchar_t* file) : m_currentRoom(0), m_iconSize(3), m_themeId(1)	{
 		wcscpy_s(m_coreSave, file);
 	}
 
@@ -16,112 +16,115 @@ namespace EP {
 	}
 
 	int Core::save() {
-		wofstream file(m_coreSave, wofstream::out);
+		wofstream file(m_coreSave, wofstream::trunc);
 
-		// Core attributes
-		file << m_themeId << "," << m_iconSize << "," << getNumberRooms() << endl;
+		if (file) {
+			// Core attributes
+			file << m_themeId << "," << m_iconSize << "," << getNumberRooms() << endl;
 
-		// Tmp vars
-		int i,j;
-		Room* room;
-		Equipment* eq;
+			// Tmp vars
+			int i, j;
+			Room* room;
+			Equipment* eq;
 
 
-		for (i = 0; i < getNumberRooms(); i++) {
-			room = m_listRooms[i];
-			
-			// Room's attributes
-			file << room->getName() << "," << room->getIco() << "," << room->getNumberEquipments() << endl;
+			for (i = 0; i < getNumberRooms(); i++) {
+				room = m_listRooms[i];
 
-			// For each of its equipments
-			for (j = 0; j < room->getNumberEquipments(); j++) {
-				eq = room->getEquipmentByIndex(i);
+				// Room's attributes
+				file << room->getName() << "," << room->getIco() << "," << room->getNumberEquipments() << endl;
 
-				file << eq->getName() << "," << eq->getIco() << "," << eq->getTypeOf() << ",";
-				if (eq->getTypeOf() == 1) {
-					file << ((EquipmentKira*)eq)->getButtonId();
+				// For each of its equipments
+				for (j = 0; j < room->getNumberEquipments(); j++) {
+					eq = room->getEquipmentByIndex(i);
+
+					file << eq->getName() << "," << eq->getIco() << "," << eq->getTypeOf() << ",";
+					if (eq->getTypeOf() == 1) {
+						file << ((EquipmentKira*)eq)->getButtonId();
+					}
+					else if (eq->getTypeOf() == 2) {
+						file << ((EquipmentFibaro*)eq)->getEquipmentId() << "," << ((EquipmentFibaro*)eq)->getAction();
+					}
+
+					file << endl;
 				}
-				else if (eq->getTypeOf() == 2) {
-					file << ((EquipmentFibaro*)eq)->getEquipmentId() << "," << ((EquipmentFibaro*)eq)->getAction();
-				}
-
-				file << endl;
 			}
+			file.close();
 		}
-		file.close();
+
 		return 0;
 	}
 
 	int Core::load() {
 		wifstream file(m_coreSave, wifstream::in);
+		if (file) {
+			int nbRooms, nbEquip; // tmp vars
+			Room* room;
+			Equipment* eq;
+			int i, j; // loop variables
 
-		int nbRooms, nbEquip; // tmp vars
-		Room* room;
-		Equipment* eq;
-		int i, j; // loop variables
+			wchar_t tmp[300];
+			wchar_t roomName[100], roomIco[100];
+			wchar_t eqName[100], eqIco[100], eqAction[300];
+			int eqTypeOf, eqId;
 
-		wchar_t tmp[300];
-		wchar_t roomName[100], roomIco[100];
-		wchar_t eqName[100], eqIco[100], eqAction[300];
-		int eqTypeOf, eqId;
+			// file >> m_themeId >> m_iconSize >> nbRooms;
+			file.getline(tmp, 100, ',');
+			m_themeId = wcstol(tmp, NULL, 10);
 
-		// file >> m_themeId >> m_iconSize >> nbRooms;
-		file.getline(tmp, 100, ',');
-		m_themeId = wcstol(tmp, NULL, 10);
+			file.getline(tmp, 100, ',');
+			m_iconSize = wcstol(tmp, NULL, 10);
 
-		file.getline(tmp, 100, ',');
-		m_iconSize = wcstol(tmp, NULL, 10);
-
-		file.getline(tmp, 100);
-		nbRooms = wcstol(tmp, NULL, 10);
-
-		cout << nbRooms;
-		
-		for (i = 0; i < nbRooms; i++) {
-			//file >> roomName >> roomIco >> nbEquip;
-			file.getline(roomName, 100, ',');
-			file.getline(roomIco, 100, ',');
 			file.getline(tmp, 100);
-			nbEquip = wcstol(tmp, NULL, 10);
+			nbRooms = wcstol(tmp, NULL, 10);
 
-			room = new Room(roomName, roomIco);
+			cout << nbRooms;
 
-			for (j = 0; j < nbEquip; j++) {
-				//file >> eqName >> eqIco >> eqTypeOf;
+			for (i = 0; i < nbRooms; i++) {
+				//file >> roomName >> roomIco >> nbEquip;
+				file.getline(roomName, 100, ',');
+				file.getline(roomIco, 100, ',');
+				file.getline(tmp, 100);
+				nbEquip = wcstol(tmp, NULL, 10);
 
-				file.getline(eqName, 100, ',');
-				file.getline(eqIco, 100, ',');
-				file.getline(tmp, 100, ',');
-				eqTypeOf = wcstol(tmp, NULL, 10);
+				room = new Room(roomName, roomIco);
 
-				if (eqTypeOf == 1) {
-					//file >> eqId;
+				for (j = 0; j < nbEquip; j++) {
+					//file >> eqName >> eqIco >> eqTypeOf;
 
-					file.getline(tmp, 100);
-					eqId = wcstol(tmp, NULL, 10);
-
-					eq = new EquipmentKira(eqName, eqIco, room, eqId);
-
-					room->addEquipment(eq);
-				}
-				else if (eqTypeOf == 2) {
-					//file >> eqId >> eqAction;
-
+					file.getline(eqName, 100, ',');
+					file.getline(eqIco, 100, ',');
 					file.getline(tmp, 100, ',');
-					eqId = wcstol(tmp, NULL, 10);
-					file.getline(eqAction, 100);
+					eqTypeOf = wcstol(tmp, NULL, 10);
 
-					eq = new EquipmentFibaro(eqName, eqIco, room, eqId, eqAction);
+					if (eqTypeOf == 1) {
+						//file >> eqId;
 
-					room->addEquipment(eq);
+						file.getline(tmp, 100);
+						eqId = wcstol(tmp, NULL, 10);
+
+						eq = new EquipmentKira(eqName, eqIco, room, eqId);
+
+						room->addEquipment(eq);
+					}
+					else if (eqTypeOf == 2) {
+						//file >> eqId >> eqAction;
+
+						file.getline(tmp, 100, ',');
+						eqId = wcstol(tmp, NULL, 10);
+						file.getline(eqAction, 100);
+
+						eq = new EquipmentFibaro(eqName, eqIco, room, eqId, eqAction);
+
+						room->addEquipment(eq);
+					}
 				}
+
+				addRoom(room);
 			}
 
-			addRoom(room);
+			file.close();
 		}
-
-		file.close();
-
 		return 0;
 	}
 
