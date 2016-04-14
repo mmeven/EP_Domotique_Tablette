@@ -234,15 +234,16 @@ namespace ModelDll_Test
 
         static void Main(string[] args)
         {
-            IntPtr core = Core_New("./load.txt");
+            IntPtr core = Core_NewFromSave("./load.txt");
 
-            IntPtr room = Room_New("Piece", "un lit");
+            IntPtr room = Core_getRoomByName(core, "Piece");
+            if (room == IntPtr.Zero) Console.WriteLine("COCOCOOCOCO");
+            IntPtr tmp = Node_getName(room);
+            string name = System.Runtime.InteropServices.Marshal.PtrToStringUni(tmp);
 
-            IntPtr eq = EquipmentKira_New("toaster", "un grille-pain", room, 1);
+            Console.WriteLine(name);
 
-            Core_addRoom(core, room);
-
-            Room_addEquipment(room, eq);
+            Console.ReadKey();
 
             Core_Delete(core);
         }

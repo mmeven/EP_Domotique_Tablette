@@ -78,8 +78,6 @@ namespace EP {
 			file.getline(tmp, 100);
 			nbRooms = wcstol(tmp, NULL, 10);
 
-			cout << nbRooms;
-
 			for (i = 0; i < nbRooms; i++) {
 				//file >> roomName >> roomIco >> nbEquip;
 				file.getline(roomName, 100, ',');
@@ -119,7 +117,7 @@ namespace EP {
 						room->addEquipment(eq);
 					}
 				}
-
+				
 				addRoom(room);
 			}
 
@@ -129,7 +127,11 @@ namespace EP {
 	}
 
 	int Core::addRoom(Room* room) {
+		
 		m_listRooms.push_back(room);
+		vector<Room*>::iterator it = m_listRooms.end();
+		/*cout << "Ajout d'une piece de nom : ";
+		wcout << (*it)->getName() << endl;*/
 		return 0;
 	}
 
@@ -161,6 +163,7 @@ namespace EP {
 	}
 
 	Room* Core::getRoomByName(wchar_t* name) {
+		wcout << name << endl;
 		vector<Room*>::iterator it;
 		for (it = m_listRooms.begin(); it != m_listRooms.end(); it++) {
 			if (name == (*it)->getName()) {
