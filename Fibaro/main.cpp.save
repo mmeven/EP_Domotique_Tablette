@@ -1,0 +1,94 @@
+#include "happyhttp.h"
+#include "INCLUDE/Requete.h"
+#include <cstdio>
+#include <iostream>
+#include <cstring>
+#include "base64.h"
+#ifdef WIN32
+#include <winsock2.h>
+#endif // WIN32
+
+
+void Test3()
+{
+puts("-----------------Test3------------------------" );
+	// POST example using lower-level interface
+
+	const char* params = "deviceID=5&name=turnOn";
+	int l = strlen(params);
+	// création de la connexion conn(adresse,port)
+	happyhttp::Connection conn( "192.168.81.1", 80 );
+	conn.setcallbacks( OnBegin, OnData, OnComplete, 0 );
+
+	conn.putrequest( "POST", "/api/callAction" );
+	conn.putheader( "Connection", "close" );
+
+//encode la chaine “user:password” en base64, nécessaire pour l’authentification de type basic (https://en.wikipedia.org/wiki/Basic_access_authentication)
+
+  std::string user = "admin" ;
+  std::string pass="admin";
+   const std::string s = (user+":"+pass) ;
+  std::string encoded = base64_encode(reinterpret_cast<const unsigned char*>(s.c_str()), s.length());
+
+	conn.putheader( (char*)"Authorization:",("Basic "+s).c_str() );
+
+	conn.putheader( "Content-Length", l );
+
+	conn.putheader( "Content-type", "application/x-www-form-urlencoded" );
+	conn.putheader( "Accept", "text/plain" );
+
+	conn.endheaders();
+	conn.send( (const unsigned char*)params, l );
+
+	while( conn.outstanding() )
+		conn.pump();
+}
+
+
+int main( int argc, char* argv[] )
+{
+#ifdef WIN32
+    WSAData wsaData;
+    int code = WSAStartup(MAKEWORD(1, 1), &wsaData);
+	if( code != 0 )
+	{
+		fprintf(stderr, "shite. %d\n",code);
+		return 0;
+	}
+#endif //WIN32
+
+/*
+  const std::string s = "ADP GmbH\nAnalyse Design & Programmierung\nGesellschaft mit beschränkter Haftung" ;
+
+  std::string encoded = base64_encode(reinterpret_cast<const unsigned char*>(s.c_str()), s.length());
+  std::string decoded = base64_decode(encoded);
+
+  std::cout << "encoded: " << encoded << std::endl;
+  std::cout << "decoded: " << decoded << std::endl;
+*/
+
+	try
+	{
+        Requete requete1;
+		std::string s1("admin:admin@192.168.81.1"); //domaine, premiere partie de l'adree
+        std::string s2("/api/callAction?deviceID=5&name=turnOn");          //deuxieme partie de l'adresse
+		requete1.envoyerRequete(s1,s2);
+		Test3();
+	}
+
+	catch( happyhttp::Wobbly& e )
+	{
+		fprintf(stderr, "Exception:\n%s\n", e.what() );
+	}
+
+
+
+
+#ifdef WIN32
+    WSACleanup();
+#endif // WIN32
+
+	return 0;
+}
+
+
