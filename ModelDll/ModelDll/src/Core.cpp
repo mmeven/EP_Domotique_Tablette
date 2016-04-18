@@ -127,11 +127,8 @@ namespace EP {
 	}
 
 	int Core::addRoom(Room* room) {
-		
 		m_listRooms.push_back(room);
 		vector<Room*>::iterator it = m_listRooms.end();
-		/*cout << "Ajout d'une piece de nom : ";
-		wcout << (*it)->getName() << endl;*/
 		return 0;
 	}
 
@@ -150,7 +147,7 @@ namespace EP {
 
 		vector<Room*>::iterator it;
 		for (it = m_listRooms.begin(); it != m_listRooms.end(); it++) {
-			if (name == (*it)->getName()) break;
+			if (wcscmp(name, (*it)->getName()) == 0) break;
 		}
 
 		m_listRooms.erase(it);
@@ -166,7 +163,7 @@ namespace EP {
 		wcout << name << endl;
 		vector<Room*>::iterator it;
 		for (it = m_listRooms.begin(); it != m_listRooms.end(); it++) {
-			if (name == (*it)->getName()) {
+			if (wcscmp(name, (*it)->getName()) == 0) {
 				return (*it);
 			}
 		}

@@ -31,20 +31,13 @@ namespace EP {
 
 		vector<Equipment*>::iterator it;
 		for (it = m_listEquipments.begin(); it != m_listEquipments.end(); it++) {
-			if (name == (*it)->getName()) break;
+			if (wcscmp(name, (*it)->getName()) == 0) break;
 		}
 
 		m_listEquipments.erase(it);
 
 		return 0;
 	}
-
-	/*Equipment* Room::getEquipmentsAsArray() {
-		if(m_listEquipments != 0)
-			return &m_listEquipments[0];
-		else
-			return 0;
-	}*/
 
 	vector<Equipment*>* Room::getEquipments() {
 		return &m_listEquipments;
@@ -53,7 +46,7 @@ namespace EP {
 	Equipment* Room::getEquipmentByName(wchar_t* name) {
 		vector<Equipment*>::iterator it;
 		for (it = m_listEquipments.begin(); it != m_listEquipments.end(); it++) {
-			if (name == (*it)->getName()) {
+			if (wcscmp(name, (*it)->getName()) == 0) {
 				return (*it);
 			}
 		}
