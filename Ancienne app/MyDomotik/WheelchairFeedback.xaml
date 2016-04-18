@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="MyDomotik.WheelchairFeedback"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyDomotik"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85*"/>
+            <RowDefinition Height="510*"/>
+            <RowDefinition Height="173*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="270*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="845*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Première ligne -->
+        <!-- Bouton retour à la page principale -->
+        <Button x:Name="retour"  Height="71" Width="247" BorderBrush="{x:Null}" Background="#FFE04214" Foreground="#FFF7EEEE" Grid.Row="0" Grid.Column="0" FontSize="18" Click="exitAdmin2" Margin="2,7,0,6">
+            <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                <Run FontSize="30" Text="Retour"/>
+            </TextBlock>
+        </Button>
+
+        <!-- Titre de la page -->
+        <TextBlock x:Name="page_title" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="1" Margin="7,21,6,16" Foreground="Black" Text="Informations fauteuil"/>
+
+        <!-- Image batterie du fauteuil -->
+        <Image x:Name="battery" Source="/Assets/Images/..." Width="60" Height="60" Grid.Row="0" Grid.Column="2" />
+
+
+        <!-- Deuxième ligne -->
+        <!-- Image joystick -->
+        <Image x:Name="joystick" Source="/Assets/Images/..." Width="60" Height="60" Grid.Row="1" Grid.Column="1" />
+
+        <!-- Vitesse -->
+        <TextBlock x:Name="speed" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="1" Grid.Column="2" Margin="7,21,6,16" Foreground="Black" Text="5km/h"/>
+
+
+        <!-- Troisième ligne -->
+        <!-- Nb de km parcourus -->
+        <TextBlock x:Name="kilometers" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="2" Grid.Column="0" Margin="7,21,6,16" Foreground="Black" Text="50 kilomètres"/>
+
+
+    </Grid>
+
+</Page>
