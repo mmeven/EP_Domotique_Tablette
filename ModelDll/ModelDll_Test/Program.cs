@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Drawing;
 
 namespace ModelDll_Test
 {
@@ -242,6 +243,14 @@ namespace ModelDll_Test
             string name = System.Runtime.InteropServices.Marshal.PtrToStringUni(tmp);
 
             Console.WriteLine(name);
+
+            Core_deleteRoomByIndex(core, 0);
+
+            room = Core_getRoomByName(core, "Piece");
+            if (room == IntPtr.Zero) Console.WriteLine("COCOCOOCOCO");
+
+            int i = Core_getNumberRooms(core);
+            Console.WriteLine(i);
 
             Console.ReadKey();
 

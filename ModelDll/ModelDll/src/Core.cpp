@@ -133,11 +133,9 @@ namespace EP {
 	}
 
 	int Core::deleteRoomByIndex(int index) {
-		if (index < ((int)m_listRooms.size()) && index >= 0) return 1;
+		if (index >= ((int)m_listRooms.size()) || index < 0) return 1;
 
-		vector<Room*>::iterator it = m_listRooms.begin();
-		it += index;
-		m_listRooms.erase(it);
+		m_listRooms.erase(m_listRooms.begin()+index);
 
 		return 0;
 	}
@@ -160,7 +158,6 @@ namespace EP {
 	}
 
 	Room* Core::getRoomByName(wchar_t* name) {
-		wcout << name << endl;
 		vector<Room*>::iterator it;
 		for (it = m_listRooms.begin(); it != m_listRooms.end(); it++) {
 			if (wcscmp(name, (*it)->getName()) == 0) {

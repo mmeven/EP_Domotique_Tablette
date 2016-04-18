@@ -4,21 +4,20 @@ d:\etudepratique3a\ep_domotique_tablette\modeldll\modeldll\include\Room.h(52): w
           [
               _Ty=EP::Equipment *
           ]
-d:\etudepratique3a\ep_domotique_tablette\modeldll\modeldll\src\../include/Core.h(76): warning C4251: 'EP::Core::m_listRooms' : class 'std::vector<EP::Room *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Core'
+d:\etudepratique3a\ep_domotique_tablette\modeldll\modeldll\src\../include/Core.h(77): warning C4251: 'EP::Core::m_listRooms' : class 'std::vector<EP::Room *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Core'
           with
           [
               _Ty=EP::Room *
           ]
-  Room.cpp
-d:\etudepratique3a\ep_domotique_tablette\modeldll\modeldll\src\../include/Room.h(52): warning C4251: 'EP::Room::m_listEquipments' : class 'std::vector<EP::Equipment *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Room'
+d:\etudepratique3a\ep_domotique_tablette\modeldll\modeldll\src\../include/Core.h(92): warning C4251: 'EP::Core::m_themes' : class 'std::vector<EP::Theme *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Core'
           with
           [
-              _Ty=EP::Equipment *
+              _Ty=EP::Theme *
           ]
      Création de la bibliothèque D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll\Release\ModelDll.lib et de l'objet D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll\Release\ModelDll.exp
   Génération de code en cours
-  6 of 466 functions ( 1.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    14 functions had inline decision re-evaluated but remain unchanged
+  2 of 562 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    21 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   ModelDll.vcxproj -> D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll\Release\ModelDll.dll

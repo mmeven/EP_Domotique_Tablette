@@ -3,6 +3,7 @@
 
 #define FILESAVE_NAME_SIZE 300
 #include "Room.h"
+#include "Theme.h"
 
 namespace EP {
 
@@ -86,6 +87,12 @@ namespace EP {
 		// 2 : medium
 		// 3 : little
 		int m_iconSize;
+
+		// The list of all the Themes
+		std::vector<Theme*> m_themes;
+
+		// Pointer to the current Theme
+		Theme* currentTheme;
 	};
 
 	extern "C" __declspec(dllexport) Core* Core_New(wchar_t* file);
