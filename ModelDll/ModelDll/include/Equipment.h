@@ -28,7 +28,16 @@ namespace EP {
 		// 1 : Kira
 		// 2 : Fibaro
 		int m_typeOf;
-	};
+
+		//adresse ip
+		std::string getIp() { return m_ip };
+		
+		//0=ip non valide
+		//1=OK
+		int setIp(std::string new_ip);
+
+	private: 
+		std::string m_ip;
 
 	class __declspec(dllexport) EquipmentKira : public Equipment
 	{
@@ -44,10 +53,16 @@ namespace EP {
 
 		// Returns m_buttonId
 		int getButtonId();
+		int getPageNumber() { return m_pageNumber };
+		int setPagenumber(std::string new_PageNumber);
 	protected:
+
 	private:
 		// The id of the button which will be activated by sendRequest()
 		int m_buttonId;
+
+		//number of the page on wich the button corresponding to the equipment is on the Kira
+		int m_pageNumber;
 	};
 
 	extern "C" __declspec(dllexport) EquipmentKira* EquipmentKira_New(wchar_t* name, wchar_t* ico, Node* parent, int buttonId);
@@ -68,6 +83,12 @@ namespace EP {
 
 		// Returns m_action
 		wchar_t* getAction();
+
+		int getLogin() { return m_login };
+		int getPassword() { return m_password };
+		int setLogin(std::string new_login);
+		int setPassword(std::string new_password);
+
 	protected:
 	private:
 		// The id of the equipment which will be activated by sendRequest()
@@ -75,6 +96,12 @@ namespace EP {
 
 		// The action realized by sendRequest()
 		wchar_t m_action[300];
+
+		//login of the Fibaro
+		std::string m_login;
+
+		//password of the Fibaro
+		std::string m_password;
 	};
 
 	extern "C" __declspec(dllexport) EquipmentFibaro* EquipmentFibaro_New(wchar_t* name, wchar_t* ico, Node* parent, int equipmentId, wchar_t* action);
