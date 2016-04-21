@@ -30,14 +30,15 @@ namespace EP {
 		int m_typeOf;
 
 		//adresse ip
-		std::string getIp() { return m_ip };
-		
+		std::string getIp() { return m_ip; };
+
 		//0=ip non valide
 		//1=OK
 		int setIp(std::string new_ip);
 
-	private: 
+	private:
 		std::string m_ip;
+	};
 
 	class __declspec(dllexport) EquipmentKira : public Equipment
 	{
@@ -53,8 +54,8 @@ namespace EP {
 
 		// Returns m_buttonId
 		int getButtonId();
-		int getPageNumber() { return m_pageNumber };
-		int setPagenumber(std::string new_PageNumber);
+		int getPageNumber() { return m_pageNumber; };
+		int setPagenumber(int new_PageNumber);
 	protected:
 
 	private:
@@ -84,8 +85,8 @@ namespace EP {
 		// Returns m_action
 		wchar_t* getAction();
 
-		int getLogin() { return m_login };
-		int getPassword() { return m_password };
+		std::string  getLogin() { return m_login; };
+		std::string getPassword() { return m_password; };
 		int setLogin(std::string new_login);
 		int setPassword(std::string new_password);
 

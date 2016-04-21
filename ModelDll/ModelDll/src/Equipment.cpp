@@ -1,8 +1,7 @@
+#include "..\include\Equipment.h"
 #include "..\include\Requete.h"
 #include "..\include\base64.h"
 #include "..\include\happyhttp.h"
-#include "..\include\Equipment.h"
-
 #include <iostream>
 #include <string>
 
@@ -29,7 +28,7 @@ namespace EP {
 		}
 
 
-	}
+
 
 	EquipmentKira::EquipmentKira(wchar_t* name, wchar_t* ico, Node* parent, int buttonId) : Equipment(name, ico, parent, 1), m_buttonId(buttonId) {
 		// Nothing to do
@@ -40,8 +39,10 @@ namespace EP {
 	}
 
 	int EquipmentKira::sendRequest() {
-		std::string s1(m_ip); //domaine, premiere partie de l'adree
-		std::string s2("/remote"+ m_pageNumber +".htm?button" + m_buttonId + "#");          //deuxieme partie de l'adresse
+		std::string s1(getIp()); //domaine, premiere partie de l'adree
+		std::string s2;
+		std::string s3 = ".htm?button"; //impossible de le mettre directement dans la ligne suivante, je ne sais pas pourquoi
+		s2=("/remote" + m_pageNumber  + s3 + std::to_string(m_buttonId) + "#");          //deuxieme partie de l'adresse
 		void requeteHttp(std::string s1, std::string s2);
 		return 0;
 	}
@@ -50,7 +51,7 @@ namespace EP {
 		return m_buttonId;
 	}
 
-	int EquipmentKira::setPagenumber(std::string new_pageNumber){
+	int EquipmentKira::setPagenumber(int new_pageNumber){
 		m_pageNumber = new_pageNumber;
 	}
 
@@ -71,7 +72,7 @@ namespace EP {
 
 	int EquipmentFibaro::sendRequest() {
 		// simple simple GET
-		happyhttp::Connection conn(m_ip, 80);
+		happyhttp::Connection conn(getIp().c_str(), 80);
 		conn.setcallbacks(OnBegin, OnData, OnComplete, 0);
 		std::string user = m_login;
 		std::string pass = m_password;
@@ -85,7 +86,9 @@ namespace EP {
 			"Connection", "close",
 			0
 		};
-		conn.request("GET", "/api/callAction?deviceID="+ m_equipmentId+"&"+ m_action[300], headers, 0, 0);
+		std::string s6 = "&";//impossible de le mettre directement dans la ligne suivante, je ne sais pas pourquoi
+		std::string action = ("/api/callAction?deviceID=" + m_equipmentId + s6 + std::to_string(m_action[300]));
+		conn.request("GET", action.c_str(), headers, 0, 0);
 
 		while (conn.outstanding())
 			conn.pump();
