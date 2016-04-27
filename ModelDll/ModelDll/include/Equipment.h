@@ -81,7 +81,7 @@ namespace EP {
 		// Returns m_buttonId
 		int getButtonId();
 		int getPageNumber() { return m_pageNumber; };
-		int setPagenumber(int new_PageNumber);
+		int setPageNumber(int new_PageNumber);
 	protected:
 
 	private:

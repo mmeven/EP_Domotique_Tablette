@@ -81,7 +81,7 @@ namespace EP {
 		return m_buttonId;
 	}
 
-	int EquipmentKira::setPagenumber(int new_pageNumber){
+	int EquipmentKira::setPageNumber(int new_pageNumber){
 		m_pageNumber = new_pageNumber;
 		return 0;
 	}

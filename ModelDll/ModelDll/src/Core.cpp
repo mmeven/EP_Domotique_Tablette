@@ -16,7 +16,7 @@ namespace EP {
 	}
 
 	int Core::save() {
-		wofstream file(m_coreSave, wofstream::trunc);
+		ofstream file(m_coreSave, ofstream::trunc);
 
 		if (file) {
 			// Core attributes
@@ -40,7 +40,7 @@ namespace EP {
 
 					file << eq->getName() << "," << eq->getIco() << "," << eq->getTypeOf() << ",";
 					if (eq->getTypeOf() == 1) {
-						file << ((EquipmentKira*)eq)->getButtonId();
+						file << ((EquipmentKira*)eq)->getButtonId() << ((EquipmentKira*)eq)->getPageNumber();
 					}
 					else if (eq->getTypeOf() == 2) {
 						file << ((EquipmentFibaro*)eq)->getEquipmentId() << "," << ((EquipmentFibaro*)eq)->getAction();
