@@ -44,12 +44,12 @@ namespace MyDomotik
 
         private void SelectionClic_Click(object sender, RoutedEventArgs e)
         {
-            MainPage.Configuration.theme.ModeDefilement = false;
+          
         }
 
         private void SelectionParDefilement(object sender, RoutedEventArgs e)
         {
-            MainPage.Configuration.theme.ModeDefilement = true;
+          
         }
 
     }

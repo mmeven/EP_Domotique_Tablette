@@ -49,10 +49,7 @@ namespace MyDomotik
         private void exitAdmin(object sender, RoutedEventArgs e)
         {
 
-            MainPage.Configuration.arbre.PageCourante.Grille.NumGrille = 0;
-            MainPage.Configuration.arbre.retourAccueil();
-
-            this.Frame.Navigate(typeof(MainPage));
+            this.Frame.GoBack();
         }
 
         private void menuAdmin(object sender, RoutedEventArgs e)
