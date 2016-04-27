@@ -7,8 +7,8 @@
 using namespace std;
 
 namespace EP {
-	Core::Core(wchar_t* file) : m_currentRoom(0), m_iconSize(3), m_themeId(1)	{
-		wcscpy_s(m_coreSave, file);
+	Core::Core(char* file) : m_currentRoom(0), m_iconSize(3), m_themeId(1)	{
+		strcpy_s(m_coreSave, file);
 	}
 
 	Core::~Core() {
@@ -56,34 +56,34 @@ namespace EP {
 	}
 
 	int Core::load() {
-		wifstream file(m_coreSave, wifstream::in);
+		ifstream file(m_coreSave, wifstream::in);
 		if (file) {
 			int nbRooms, nbEquip; // tmp vars
 			Room* room;
 			Equipment* eq;
 			int i, j; // loop variables
 
-			wchar_t tmp[300];
-			wchar_t roomName[100], roomIco[100];
-			wchar_t eqName[100], eqIco[100], eqAction[300];
-			int eqTypeOf, eqId;
+			char tmp[300];
+			char roomName[100], roomIco[100];
+			char eqName[100], eqIco[100], eqAction[300];
+			int eqTypeOf, eqId, eqKiraPage;
 
 			// file >> m_themeId >> m_iconSize >> nbRooms;
 			file.getline(tmp, 100, ',');
-			m_themeId = wcstol(tmp, NULL, 10);
+			m_themeId = strtol(tmp, NULL, 10);
 
 			file.getline(tmp, 100, ',');
-			m_iconSize = wcstol(tmp, NULL, 10);
+			m_iconSize = strtol(tmp, NULL, 10);
 
 			file.getline(tmp, 100);
-			nbRooms = wcstol(tmp, NULL, 10);
+			nbRooms = strtol(tmp, NULL, 10);
 
 			for (i = 0; i < nbRooms; i++) {
 				//file >> roomName >> roomIco >> nbEquip;
 				file.getline(roomName, 100, ',');
 				file.getline(roomIco, 100, ',');
 				file.getline(tmp, 100);
-				nbEquip = wcstol(tmp, NULL, 10);
+				nbEquip = strtol(tmp, NULL, 10);
 
 				room = new Room(roomName, roomIco);
 
@@ -93,15 +93,17 @@ namespace EP {
 					file.getline(eqName, 100, ',');
 					file.getline(eqIco, 100, ',');
 					file.getline(tmp, 100, ',');
-					eqTypeOf = wcstol(tmp, NULL, 10);
+					eqTypeOf = strtol(tmp, NULL, 10);
 
 					if (eqTypeOf == 1) {
-						//file >> eqId;
+						//file >> eqId >> eqKiraPage;
 
-						file.getline(tmp, 100);
-						eqId = wcstol(tmp, NULL, 10);
+						file.getline(tmp, 100, ',');
+						eqId = strtol(tmp, NULL, 10);
+						file.getline(tmp, 100, ',');
+						eqKiraPage = strtol(tmp, NULL, 10);
 
-						eq = new EquipmentKira(eqName, eqIco, room, eqId);
+						eq = new EquipmentKira(eqName, eqIco, room, eqId, eqKiraPage);
 
 						room->addEquipment(eq);
 					}
@@ -109,7 +111,7 @@ namespace EP {
 						//file >> eqId >> eqAction;
 
 						file.getline(tmp, 100, ',');
-						eqId = wcstol(tmp, NULL, 10);
+						eqId = strtol(tmp, NULL, 10);
 						file.getline(eqAction, 100);
 
 						eq = new EquipmentFibaro(eqName, eqIco, room, eqId, eqAction);
@@ -140,12 +142,12 @@ namespace EP {
 		return 0;
 	}
 
-	int Core::deleteRoomByName(wchar_t* name) {
+	int Core::deleteRoomByName(char* name) {
 		if (getRoomByName(name) == NULL) return 1; // does not exist
 
 		vector<Room*>::iterator it;
 		for (it = m_listRooms.begin(); it != m_listRooms.end(); it++) {
-			if (wcscmp(name, (*it)->getName()) == 0) break;
+			if (strcmp(name, (*it)->getName()) == 0) break;
 		}
 
 		m_listRooms.erase(it);
@@ -157,10 +159,10 @@ namespace EP {
 		return &m_listRooms;
 	}
 
-	Room* Core::getRoomByName(wchar_t* name) {
+	Room* Core::getRoomByName(char* name) {
 		vector<Room*>::iterator it;
 		for (it = m_listRooms.begin(); it != m_listRooms.end(); it++) {
-			if (wcscmp(name, (*it)->getName()) == 0) {
+			if (strcmp(name, (*it)->getName()) == 0) {
 				return (*it);
 			}
 		}
@@ -172,7 +174,7 @@ namespace EP {
 		else return NULL;
 	}
 
-	wchar_t* Core::getFileSave() {
+	char* Core::getFileSave() {
 		return m_coreSave;
 	}
 
@@ -204,11 +206,11 @@ namespace EP {
 		m_iconSize = size;
 	}
 
-	extern "C" __declspec(dllexport) Core* Core_New(wchar_t* file) {
+	extern "C" __declspec(dllexport) Core* Core_New(char* file) {
 		return new Core(file);
 	}
 
-	extern "C" __declspec(dllexport) Core* Core_NewFromSave(wchar_t* file) {
+	extern "C" __declspec(dllexport) Core* Core_NewFromSave(char* file) {
 		Core* core = new Core(file);
 
 		core->load();

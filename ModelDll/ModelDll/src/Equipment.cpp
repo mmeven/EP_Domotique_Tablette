@@ -1,36 +1,65 @@
 #include "..\include\Equipment.h"
-#include "..\include\Requete.h"
-#include "..\include\base64.h"
-#include "..\include\happyhttp.h"
+
 #include <iostream>
-#include <string>
+
 
 #ifdef WIN32
 #include <winsock2.h>
 #endif // WIN32
 
+
+using namespace std;
+
 namespace EP {
 
-	int Equipment::setIp(std::string new_ip){
+	// STATIC METHODS
 
-		const char *cstr = new_ip.c_str();
+	int Equipment::setIpKira(char* new_ip){
 		int a = 0, b = 0, c = 0, d = 0;
-		int success = sscanf(cstr, "%i.%i.%i.%i", &a, &b, &c, &d);
+		int success = sscanf_s(new_ip, "%i.%i.%i.%i", &a, &b, &c, &d);
 		if (success == 4 && a >= 0 && b >= 0 && c >= 0 && d >= 0 && a<255 && b<255 && c<255 && d<255) {
 			success = 1;
-			m_ip = new_ip;
+			strcpy_s(IP_Kira, new_ip);
 		}
 		else {
 			success = 0;
 		}
 		return success;
+	}
 
+	int Equipment::setIpFibaro(char* new_ip) {
+		int a = 0, b = 0, c = 0, d = 0;
+		int success = sscanf_s(new_ip, "%i.%i.%i.%i", &a, &b, &c, &d);
+
+		if (success == 4 && a >= 0 && b >= 0 && c >= 0 && d >= 0 && a<255 && b<255 && c<255 && d<255) {
+			success = 1;
+			strcpy_s(IP_Fibaro, new_ip);
+		}
+		else {
+			success = 0;
 		}
 
+		return success;
+	}
 
+	int Equipment::setLoginFibaro(char* new_login) {
+		strcpy_s(Fibaro_login, new_login);
+		return 0;
+	}
 
+	int Equipment::setPasswordFibaro(char* new_password) {
+		strcpy_s(Fibaro_password, new_password);
+		return 0;
+	}
 
-	EquipmentKira::EquipmentKira(wchar_t* name, wchar_t* ico, Node* parent, int buttonId) : Equipment(name, ico, parent, 1), m_buttonId(buttonId) {
+	char Equipment::IP_Kira[15] = "192.168.1.31";
+	char Equipment::IP_Fibaro[15] = "192.168.81.1";
+	char Equipment::Fibaro_login[300] = "admin";
+	char Equipment::Fibaro_password[300] = "admin";
+
+	// KIRA
+
+	EquipmentKira::EquipmentKira(char* name, char* ico, Node* parent, int buttonId, int page) : Equipment(name, ico, parent, 1), m_buttonId(buttonId), m_pageNumber(page) {
 		// Nothing to do
 	}
 
@@ -39,11 +68,12 @@ namespace EP {
 	}
 
 	int EquipmentKira::sendRequest() {
-		std::string s1(getIp()); //domaine, premiere partie de l'adree
-		std::string s2;
-		std::string s3 = ".htm?button"; //impossible de le mettre directement dans la ligne suivante, je ne sais pas pourquoi
-		s2=("/remote" + m_pageNumber  + s3 + std::to_string(m_buttonId) + "#");          //deuxieme partie de l'adresse
-		void requeteHttp(std::string s1, std::string s2);
+		/*string s1(getIpKira()); //domaine, premiere partie de l'adree
+		string s2("/remote" + m_pageNumber);
+		string s3 = ".htm?button"; //impossible de le mettre directement dans la ligne suivante, je ne sais pas pourquoi
+
+		s2 += s3 + std::to_string(m_buttonId) + "#";     // deuxieme partie de l'adresse  + 
+		void requeteHttp(string s1, string s2);*/
 		return 0;
 	}
 
@@ -53,17 +83,20 @@ namespace EP {
 
 	int EquipmentKira::setPagenumber(int new_pageNumber){
 		m_pageNumber = new_pageNumber;
+		return 0;
 	}
 
-	extern "C" __declspec(dllexport) EquipmentKira* EquipmentKira_New(wchar_t* name, wchar_t* ico, Node* parent, int buttonId) {
-		return new EquipmentKira(name, ico, parent, buttonId);
+	extern "C" __declspec(dllexport) EquipmentKira* EquipmentKira_New(char* name, char* ico, Node* parent, int buttonId, int page) {
+		return new EquipmentKira(name, ico, parent, buttonId, page);
 	}
 	extern "C" __declspec(dllexport) void EquipmentKira_Delete(EquipmentKira* eq) {
 		delete eq;
 	}
 
-	EquipmentFibaro::EquipmentFibaro(wchar_t* name, wchar_t* ico, Node* parent, int equipmentId, wchar_t* action) : Equipment(name, ico, parent, 2), m_equipmentId(equipmentId) {
-		wcscpy_s(m_action, action);
+	// FIBARO
+
+	EquipmentFibaro::EquipmentFibaro(char* name, char* ico, Node* parent, int equipmentId, char* action) : Equipment(name, ico, parent, 2), m_equipmentId(equipmentId) {
+		strcpy_s(m_action, action);
 	}
 
 	EquipmentFibaro::~EquipmentFibaro() {
@@ -72,13 +105,13 @@ namespace EP {
 
 	int EquipmentFibaro::sendRequest() {
 		// simple simple GET
-		happyhttp::Connection conn(getIp().c_str(), 80);
+		/*happyhttp::Connection conn(getIpFibaro(), 80);
 		conn.setcallbacks(OnBegin, OnData, OnComplete, 0);
-		std::string user = m_login;
-		std::string pass = m_password;
-		const std::string s = (user + ":" + pass);
+		string user = Fibaro_login;
+		string pass = Fibaro_password;
+		const string s = (user + ":" + pass);
 
-		std::string encoded = "Basic " + base64_encode(reinterpret_cast<const unsigned char*>(s.c_str()), s.length());
+		string encoded = "Basic " + base64_encode(reinterpret_cast<const unsigned char*>(s.c_str()), s.length());
 		const char *auth = encoded.c_str();
 		const char* headers[] =
 		{
@@ -86,12 +119,12 @@ namespace EP {
 			"Connection", "close",
 			0
 		};
-		std::string s6 = "&";//impossible de le mettre directement dans la ligne suivante, je ne sais pas pourquoi
-		std::string action = ("/api/callAction?deviceID=" + m_equipmentId + s6 + std::to_string(m_action[300]));
+		string s6 = "&";//impossible de le mettre directement dans la ligne suivante, je ne sais pas pourquoi
+		string action = ("/api/callAction?deviceID=" + m_equipmentId + s6 + std::to_string(m_action[300]));
 		conn.request("GET", action.c_str(), headers, 0, 0);
 
 		while (conn.outstanding())
-			conn.pump();
+			conn.pump();*/
 		return 0;
 	}
 
@@ -99,19 +132,11 @@ namespace EP {
 		return m_equipmentId;
 	}
 
-	wchar_t* EquipmentFibaro::getAction() {
+	char* EquipmentFibaro::getAction() {
 		return m_action;
 	}
 
-	int EquipmentFibaro::setLogin(std::string new_login) {
-		m_login = new_login;
-	}
-
-	int EquipmentFibaro::setPassword(std::string new_password) {
-		m_password = new_password;
-	}
-
-	extern "C" __declspec(dllexport) EquipmentFibaro* EquipmentFibaro_New(wchar_t* name, wchar_t* ico, Node* parent, int equipmentId, wchar_t* action) {
+	extern "C" __declspec(dllexport) EquipmentFibaro* EquipmentFibaro_New(char* name, char* ico, Node* parent, int equipmentId, char* action) {
 		return new EquipmentFibaro(name, ico, parent, equipmentId, action);
 	}
 	extern "C" __declspec(dllexport) void EquipmentFibaro_Delete(EquipmentFibaro* eq) {

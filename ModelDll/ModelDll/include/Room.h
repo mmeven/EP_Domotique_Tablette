@@ -10,7 +10,7 @@ namespace EP {
 	class __declspec(dllexport) Room : public Node {
 	public:
 		// See Node.h
-		Room(wchar_t* name, wchar_t* ico);
+		Room(char* name, char* ico);
 
 		// Deletes the list of Equipments
 		~Room();
@@ -26,7 +26,7 @@ namespace EP {
 
 		// Deletes the equipment with the given name.
 		// Returns 1 if the name given doesn't exist
-		int deleteEquipmentByName(wchar_t* name);
+		int deleteEquipmentByName(char* name);
 
 		// Returns a pointer of the first element of an array containing all Equipments
 		// Use this in a C# code
@@ -39,7 +39,7 @@ namespace EP {
 
 		// Returns a pointer to the Equipment corresponding to the given name
 		// Returns NULL if it doesn't exist
-		Equipment* getEquipmentByName(wchar_t* name);
+		Equipment* getEquipmentByName(char* name);
 
 		// Returns a pointer to the Equipment corresponding to the given index
 		// Returns NULL if the index is out of bounds
@@ -52,7 +52,7 @@ namespace EP {
 		std::vector<Equipment*> m_listEquipments;
 	};
 
-	extern "C" __declspec(dllexport) Room* Room_New(wchar_t* name, wchar_t* ico);
+	extern "C" __declspec(dllexport) Room* Room_New(char* name, char* ico);
 	extern "C" __declspec(dllexport) void Room_Delete(Room* room);
 }
 

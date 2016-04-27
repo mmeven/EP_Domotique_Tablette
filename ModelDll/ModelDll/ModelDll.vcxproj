@@ -147,22 +147,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="include\base64.h" />
     <ClInclude Include="include\Core.h" />
     <ClInclude Include="include\Equipment.h" />
-    <ClInclude Include="include\happyhttp.h" />
     <ClInclude Include="include\Node.h" />
-    <ClInclude Include="include\Requete.h" />
     <ClInclude Include="include\Room.h" />
     <ClInclude Include="include\Theme.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\base64.cpp" />
     <ClCompile Include="src\Core.cpp" />
-    <ClCompile Include="src\happyhttp.cpp" />
     <ClCompile Include="src\Node.cpp" />
     <ClCompile Include="src\Equipment.cpp" />
-    <ClCompile Include="src\Requete.cpp" />
     <ClCompile Include="src\Room.cpp" />
     <ClCompile Include="src\Theme.cpp" />
   </ItemGroup>

@@ -1,5 +1,5 @@
-#include "INCLUDE/Requete.h"
-#include "happyhttp.h"
+#include "../include/Requete.h"
+#include "../include/happyhttp.h"
 #include <cstdio>
 #include <cstring>
 

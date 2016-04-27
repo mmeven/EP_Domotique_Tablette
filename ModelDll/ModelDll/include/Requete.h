@@ -1,5 +1,5 @@
 #ifndef REQUETE_H
-#include "../happyhttp.h"
+#include "happyhttp.h"
 #include <cstdio>
 #include <cstring>
 #include <stdlib.h>
@@ -7,6 +7,7 @@
 #include <stdarg.h>
 
 #define REQUETE_H
+
 void OnBegin( const happyhttp::Response* r, void* userdata );
 void OnData( const happyhttp::Response* r, void* userdata, const unsigned char* data, int n );
 void OnComplete( const happyhttp::Response* r, void* userdata );
