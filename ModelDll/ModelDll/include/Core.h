@@ -10,7 +10,7 @@ namespace EP {
 	// Contains the tree's root (Home) and the parameters
 	class __declspec(dllexport) Core {
 	public:
-		Core(wchar_t* file);
+		Core(char* file);
 		~Core();
 
 		// Saves the parameters and the tree into a file
@@ -32,7 +32,7 @@ namespace EP {
 
 		// Deletes the room with the given name.
 		// Returns 1 if the name given doesn't exist
-		int deleteRoomByName(wchar_t* name);
+		int deleteRoomByName(char* name);
 
 		// Returns the vector containing all the Rooms
 		// Wont work in C#, or I haven't found out yet
@@ -40,14 +40,14 @@ namespace EP {
 
 		// Returns a pointer to the Room corresponding to the given name
 		// Returns NULL if it doesn't exist
-		Room* getRoomByName(wchar_t* name);
+		Room* getRoomByName(char* name);
 
 		// Returns a pointer to the Room corresponding to the given index
 		// Returns NULL if the index is out of bounds
 		Room* getRoomByIndex(int index);
 
 		// Returns the name of the file used to load and save the application
-		wchar_t* getFileSave();
+		char* getFileSave();
 
 		// Returns the number of equipments in the vector
 		int getNumberRooms();
@@ -70,7 +70,7 @@ namespace EP {
 		// Sets m_iconSize
 		void setIconSize(int size);
 	private:
-		wchar_t m_coreSave[FILESAVE_NAME_SIZE];
+		char m_coreSave[FILESAVE_NAME_SIZE];
 
 		// The list of all the Rooms
 		std::vector<Room*> m_listRooms;
@@ -88,10 +88,10 @@ namespace EP {
 		int m_iconSize;
 	};
 
-	extern "C" __declspec(dllexport) Core* Core_New(wchar_t* file);
+	extern "C" __declspec(dllexport) Core* Core_New(char* file);
 
 	// Charger l'appli via le fichier de sauvegarde
-	extern "C" __declspec(dllexport) Core* Core_NewFromSave(wchar_t* file);
+	extern "C" __declspec(dllexport) Core* Core_NewFromSave(char* file);
 
 	extern "C" __declspec(dllexport) void Core_Delete(Core* core);
 

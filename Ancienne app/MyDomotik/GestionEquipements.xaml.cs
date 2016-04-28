@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -18,7 +17,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
-using Windows.UI.Xaml.Shapes;
+using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 // Pour en savoir plus sur le modèle d'élément Page vierge, consultez la page http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,48 +26,237 @@ namespace MyDomotik
 {
     public sealed partial class GestionEquipements : Page
     {
-        private Vue pageCourante;
         private Image image;
-
         //private static Grille g = new Grille(Format.MOYEN); 
         // private Affichage affich = new Affichage(g, new Theme());
-        private Icone icone;
         public String nom;
-        public Button b;
-        private int indexNouvelleIcone;
-        private Grille g;
-        private Affichage affich;
-        private Boolean choixPosition = false;
-        private List<Button> listeBoutons;
-        private Equipement.TypeEquipement typeEq;
-        private Boolean choixType = false;
+        private int indexIcone;
+        public static String nomPiece;
+        private Boolean nouvelleIcone = false;
+        private Boolean choixKira = false;
+        private Boolean choixFibaro = false;
+
+        private IntPtr core;
+        private int pageActuelle = 0;
 
         public GestionEquipements()
         {
             this.InitializeComponent();
+            core = Core_NewFromSave("./sauvegarde.txt");
             afficherPage();
-            page_title2.Text = GestionPieces.nomPiece;
-            Brush brush = new SolidColorBrush(Colors.Black);
-            page_title2.Foreground = brush;
         }
+
+        [DllImport("ModelDll.dll", EntryPoint = "Core_NewFromSave",
+          CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr Core_NewFromSave(String fileName);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getNumberRooms@Core@EP@@QAEHXZ",
+            CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Core_getNumberRooms(IntPtr core);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getRoomByIndex@Core@EP@@QAEPAVRoom@2@H@Z",
+        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        public static extern IntPtr Core_getRoomByIndex(IntPtr core, int index);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getEquipmentByIndex@Room@EP@@QAEPAVEquipment@2@H@Z",
+            CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        public static extern IntPtr Room_getEquipmentByIndex(IntPtr room, int index);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getName@Node@EP@@QAEPA_WXZ",
+        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        public static extern IntPtr Node_getName(IntPtr node);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getIconSize@Core@EP@@QAEHXZ",
+        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Core_getIconSize(IntPtr core);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getNumberEquipments@Room@EP@@QAEHXZ",
+          CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Room_getNumberEquiments(IntPtr room);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getIco@Node@EP@@QAEPA_WXZ",
+        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        public static extern IntPtr Node_getIco(IntPtr node);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?save@Core@EP@@QAEHXZ",
+        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Core_save(IntPtr core);
 
         public void afficherPage()
         {
-            this.pageCourante = MainPage.Configuration.arbre.PageCourante;
-            // création de la grille d'affichage des icones
-            this.g = this.pageCourante.Grille;
-            this.affich = new Affichage(this.g, MainPage.Configuration.theme);
-            this.affich.creerGrille(cadre2);
-            // création et affichage de la liste des boutons et des Icones associées
-            this.listeBoutons = this.affich.afficheGrille(cadre2);
-            this.attribueHandler();
+            nouvelleIcone = false;
+            IntPtr room = Core_getRoomByName(core, nomPiece);
+            int nbEquipement = Room_getNumberEquiments(room);
+            cadre2.Children.Clear();
+
+            //Créer bouton pour chaque piece dans la grille
+            for (int i = pageActuelle * 8; i < nbEquipement; i++)
+            {
+                IntPtr equ = Room_getEquipmentByIndex(room, i);
+
+                Button bouton = new Button();
+
+                bouton.Background = new SolidColorBrush(Colors.DarkSalmon);
+
+                bouton.Tag = i;
+
+                bouton.SetValue(Button.HorizontalAlignmentProperty, HorizontalAlignment.Stretch);
+                bouton.SetValue(Button.VerticalAlignmentProperty, VerticalAlignment.Stretch);
+
+                bouton.Click += Menu1;
+
+                //Affichage du nom de l'icone
+                IntPtr tmp = Node_getName(equ);
+                string equName = System.Runtime.InteropServices.Marshal.PtrToStringUni(tmp);
+                TextBlock nomIcone = creerLabel(equName);
+
+                //Création image de l'icone
+                IntPtr iconeName = Node_getIco(room);
+                string nameIc = System.Runtime.InteropServices.Marshal.PtrToStringUni(iconeName);
+
+                Image image = creerImageIcone(64, nameIc, bouton);
+
+
+                //Associe image et nom de l'icone au bouton
+                ajouterImageEtLabelAuBouton(image, nomIcone, bouton);
+
+                //Place le bouton dans la grille
+                if (i < pageActuelle * 8 + 4)
+                {
+                    bouton.SetValue(Grid.ColumnProperty, i % 8);
+                    bouton.SetValue(Grid.RowProperty, 0);
+                }
+                else
+                {
+                    bouton.SetValue(Grid.ColumnProperty, i % 8 - 4);
+                    bouton.SetValue(Grid.RowProperty, 1);
+                }
+                cadre2.Children.Add(bouton);
+            }
+
+            if (nbEquipement - 8 * pageActuelle < 0)
+            {
+                nbEquipement = 0;
+            }
+            else
+            {
+                nbEquipement = nbEquipement - 8 * pageActuelle;
+            }
+            //Création bouton vide (sans pièce)
+            for (int i = 8 * pageActuelle + ((nbEquipement % 8)); i < (8 * pageActuelle + 8); i++)
+            {
+                Button bouton = new Button();
+                bouton.BorderBrush = new SolidColorBrush(Colors.DarkSalmon);
+
+                bouton.Tag = -1;
+
+                bouton.SetValue(Button.HorizontalAlignmentProperty, HorizontalAlignment.Stretch);
+                bouton.SetValue(Button.VerticalAlignmentProperty, VerticalAlignment.Stretch);
+
+                bouton.Click += Menu2;
+
+                //Place le bouton dans la grille
+                if (i < (pageActuelle * 8 + 4))
+                {
+
+                    bouton.SetValue(Grid.ColumnProperty, i % 8);
+                    bouton.SetValue(Grid.RowProperty, 0);
+                }
+                else
+                {
+                    bouton.SetValue(Grid.ColumnProperty, i % 8 - 4);
+                    bouton.SetValue(Grid.RowProperty, 1);
+                }
+                cadre2.Children.Add(bouton);
+            }
+        }
+        public TextBlock creerLabel(String s)
+        {
+            // création label : nom de l'icone
+            TextBlock labelIcone = new TextBlock();
+            labelIcone.SetValue(TextBlock.TextProperty, s);
+
+            // police du label
+            labelIcone.FontFamily = new FontFamily("Segoe UI");
+            labelIcone.Foreground = new SolidColorBrush(Colors.Black);
+            labelIcone.FontSize = 24;
+
+            // positionnement du label
+
+            labelIcone.TextAlignment = TextAlignment.Center;
+            labelIcone.VerticalAlignment = VerticalAlignment.Stretch;
+            labelIcone.HorizontalAlignment = HorizontalAlignment.Stretch;
+            labelIcone.TextWrapping = TextWrapping.Wrap;
+
+
+            // labelIcone.SetValue(TextBlock.FontWeightProperty, "Bold");
+            //labelIcone.SetValue(TextBlock.ForegroundProperty, "Black");
+            labelIcone.SetValue(TextBlock.FontSizeProperty, 24);
+
+            return labelIcone;
         }
 
+        public Image creerImageIcone(int sizeIcone, string nameIc, Button bouton)
+        {
+            Image image = new Image();
+            BitmapImage SourceBi = new BitmapImage();
+
+
+            string chaineSource = "ms-appx:///Assets/ICONS_MDTOUCH/size_64x64/" + nameIc; // spécifie le dossier adéquat en fonction de la taille de l'image
+            Uri uri = new Uri(chaineSource, UriKind.Absolute);
+            SourceBi.UriSource = uri;
+            image.Source = SourceBi;
+
+            // empeche l'icone de depasser du contour du bouton
+
+            // image.SetValue(Image.HeightProperty, 100);
+            //  image.SetValue(Image.WidthProperty, 100);
+
+            return image;
+        }
+
+
+        public void ajouterImageEtLabelAuBouton(Image image, TextBlock nomIcone, Button bouton)
+        {
+            Grid grilleBouton = new Grid();
+            grilleBouton.RowDefinitions.Add(new RowDefinition());
+            grilleBouton.RowDefinitions.Add(new RowDefinition());
+
+            image.SetValue(Grid.RowProperty, 0);
+            nomIcone.SetValue(Grid.RowProperty, 1);
+
+            grilleBouton.Children.Add(image);
+            grilleBouton.Children.Add(nomIcone);
+            image.HorizontalAlignment = HorizontalAlignment.Stretch;
+            image.VerticalAlignment = VerticalAlignment.Stretch;
+            nomIcone.HorizontalAlignment = HorizontalAlignment.Stretch;
+            nomIcone.VerticalAlignment = VerticalAlignment.Stretch;
+            grilleBouton.HorizontalAlignment = HorizontalAlignment.Stretch;
+            grilleBouton.VerticalAlignment = VerticalAlignment.Stretch;
+            bouton.Content = grilleBouton;
+        }
+
+        // évenement qui gère le click sur un bouton (en dehors du cas où l'utilisateur ajoute une icone)
+        // affiche un menu de deux boutons : supprimer l'icone ou modifier le nom de l'icone
+        private void Menu1(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button; //Enregistrement du bouton choisi
+            indexIcone = (int)button.Tag;
+            Options2.Visibility = Visibility.Visible;
+            Supprimer2.IsEnabled = true;
+            ChangerNom2.IsEnabled = true;
+        }
+
+        //Permet de masquer le menu "options" lorsque l'on appuie sur un bouton vide de la grille
+        private void Menu2(object sender, RoutedEventArgs e)
+        {
+            Options2.Visibility = Visibility.Collapsed;
+            Supprimer2.IsEnabled = false;
+            ChangerNom2.IsEnabled = false;
+
+        }
         private void exitAdmin2(object sender, RoutedEventArgs e)
         {
-            // il faut mémoriser la grille dans config avant de quitter
-            MainPage.Configuration.arbre.PageCourante.Grille.NumGrille = 0;
-            MainPage.Configuration.arbre.retourAccueil();
             this.Frame.Navigate(typeof(MainPage));
         }
 
@@ -84,15 +273,14 @@ namespace MyDomotik
 
         private void kira(object sender, RoutedEventArgs e)
         {
-            typeEq = Equipement.TypeEquipement.Kira;
+
             Fibaro.Visibility = Visibility.Collapsed;
             Kira.Visibility = Visibility.Collapsed;
             message1.Text = "Veuillez compléter les champs pour la kira puis choisir une icône";
-            nomChamp1.Visibility = Visibility.Visible;
-            champ1.Visibility = Visibility.Visible;
-            nomChamp2.Visibility = Visibility.Visible;
-            champ2.Visibility = Visibility.Visible;
-            choixType = true;
+            numBouton.Visibility = Visibility.Visible;
+            champ.Visibility = Visibility.Visible;
+            choixKira = true;
+
         }
 
         private void fibaro(object sender, RoutedEventArgs e)
@@ -104,8 +292,8 @@ namespace MyDomotik
         //événement qui gère le double click sur une icone
         //affiche un message pour le choix de l'emplacement de l'icone dans la grille et récupère les informations sur l'icone
         private void choixImage2(object sender, RoutedEventArgs e)
-        {
-            if (choixType)
+        { 
+            if (choixKira || choixFibaro)
             {
                 // Disparition du menu options lors de l'appui sur un logo
                 Options2.Visibility = Visibility.Collapsed;
@@ -116,71 +304,44 @@ namespace MyDomotik
                 message2.Text = "";
                 nomIcone2.Visibility = Visibility.Collapsed;
                 Valider2.Visibility = Visibility.Collapsed;
-                message1.Text = "Veuillez cliquer sur l'endroit où vous souhaitez insérer l'icône";
 
                 //Disparition champs kira
-                nomChamp1.Visibility = Visibility.Collapsed;
-                champ1.Visibility = Visibility.Collapsed;
-                nomChamp2.Visibility = Visibility.Collapsed;
-                champ2.Visibility = Visibility.Collapsed;
+                numBouton.Visibility = Visibility.Collapsed;
+                champ.Visibility = Visibility.Collapsed;
 
-                this.choixPosition = true;
+                message1.Text = "";
+                message2.Text = "Veuillez attribuer un nom à l'icone.";
+                nomIcone2.Visibility = Visibility.Visible;
+                Valider2.Visibility = Visibility.Visible;
+
+                this.nouvelleIcone = true;
                 // mémorise l'image cliquée
                 this.image = sender as Image;
                 this.nom = image.Name.Replace("é", ".");
             }
             else{
                 message1.Text = "Veuillez d'abord choisir le type d'équipement";
-            }
+            } 
         }
 
-        //événement qui gère le click sur un bouton de la grille
-        //affiche l'icone double clickée sur le bouton
-        private void choixPositionIcone2(object sender, RoutedEventArgs e)
-        {
-            // mémorise le bouton et le nom de fichier de l'image sélectionnée
-            this.b = sender as Button;
-            //this.nom = image.Name.Replace("é", ".");
+       
 
-            // icone : icone correspondant au bouton cliqué
-            this.indexNouvelleIcone = (int)b.Tag;
-            Icone icone0 = g.pageGrille()[this.indexNouvelleIcone];
-            // Si il y a déjà une icone dans la case :
-            if (this.choixPosition) // si l'utilisateur est en train d'ajouter une nouvelle icone
-            {
-                if (!(icone0.EstVide()))
-                {
-                    // Message
+        [DllImport("ModelDll.dll", EntryPoint = "?getRoomByName@Core@EP@@QAEPAVRoom@2@PA_W@Z",
+        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        public static extern IntPtr Core_getRoomByName(IntPtr core, string name);
 
-                    message2.Text = "";
-                    nomIcone2.Visibility = Visibility.Collapsed;
-                    Valider2.Visibility = Visibility.Collapsed;
-                    message1.Text = "Il y a déjà une icône sur cet emplacement. Veuillez choisir un emplacement libre.";
-                }
+        [DllImport("ModelDll.dll", EntryPoint = "EquipmentKira_New",
+        CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
+        public static extern IntPtr EquipmentKira_New(String name, String ico, IntPtr parent, int buttonId);
 
-                // Sinon : clic sur icone vide, l'icone peut être ajoutée
-                else
-                {
-                    // affiche la boite de dialogue permettant à l'utilisateur d'entrer le nom de l'icone
-                    message1.Text = "";
-                    message2.Text = "Veuillez attribuer un nom à l'icone.";
-                    nomIcone2.Visibility = Visibility.Visible;
-                    Valider2.Visibility = Visibility.Visible;
-                }
-            }
-            if (icone0.EstVide())
-            {
-                // Disparition du menu options lors de l'appui sur une case vide 
-                Options2.Visibility = Visibility.Collapsed;
-                Supprimer2.IsEnabled = false;
-                ChangerNom2.IsEnabled = false;
-            }
-        }
+        [DllImport("ModelDll.dll", EntryPoint = "?addEquipment@Room@EP@@QAEHPAVEquipment@2@@Z",
+        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        public static extern IntPtr Room_addEquipment(IntPtr room, IntPtr eq);
 
         // évenement qui gère la validation de saisie du nom de l'icone
         private void Validation2(object sender, RoutedEventArgs e)
         {
-            if (this.choixPosition) // Si un logo est selectionne, alors création d'une nouvelle icone
+            if (this.nouvelleIcone) // Si un logo est selectionne, alors création d'une nouvelle icone
             {
                 // efface message
                 message1.Text = "";
@@ -188,53 +349,24 @@ namespace MyDomotik
                 nomIcone2.Visibility = Visibility.Collapsed;
                 Valider2.Visibility = Visibility.Collapsed;
 
-                // mémorise une nouvelle icone dans la grille temporaire
-                // attribution du nom à l'icone mémorisée et ajout de la nouvelle icone à la configuration
+                string nomPiece = GestionPieces.NomPieceSelectionee;
 
-                ajouterIcone(nomIcone2.Text);
+                IntPtr room = Core_getRoomByName(core, nomPiece);
+                int numeroBouton = Int32.Parse(numBouton.Text);
+                IntPtr equ = EquipmentKira_New(nomIcone2.Text, this.nom, room, numeroBouton);
+                Room_addEquipment(room, equ);
             }
             else // Sinon, changement du nom de l'icone : mémorisation dans la configuration
             {
-                MainPage.Configuration.arbre.PageCourante.Grille.setNomIcone(indexNouvelleIcone, g.NumGrille, nomIcone2.Text);
                 this.Frame.Navigate(typeof(GestionEquipements));
             }
         }
 
-        // ajout de l'icone (attribut de classe) dans la grille de la page d'accueil
-        private void ajouterIcone(String nomIcone)
-        {
-            if (this.typeEq == Equipement.TypeEquipement.Kira)
-            {
-                String s1 = nomChamp1.Text;  //adresseIP
-                String s2 = nomChamp2.Text;  //bouton
-                Equipement e = new Equipement(nomIcone, s1, s2);
-                Icone iconeAjout = new Icone(nomIcone, this.nom, 64,e);
-                //création de la page associée à l'icone
-                MainPage.Configuration.ajouterEquipement(this.pageCourante, iconeAjout, indexNouvelleIcone, this.g.NumGrille);
-                //this.choixPosition = false;
-                nomChamp1.Text = "";
-                nomChamp2.Text = "";
-                this.Frame.Navigate(typeof(GestionEquipements));
-            }
-
-        }
-
-        // évenement qui gère le clic sur un bouton (en dehors du cas où l'utilisateur ajoute une icone)
-        // affiche un menu de deux-3 boutons : supprimer l'icone, modifier le nom de l'icone, ajouter adresse bluetooth
-        private void Menu2(object sender, RoutedEventArgs e)
-        {
-            if (!this.choixPosition)
-            {
-                this.b = sender as Button;
-                Options2.Visibility = Visibility.Visible;
-                Supprimer2.IsEnabled = true;
-                ChangerNom2.IsEnabled = true;
-            }
-        }
-
+       
+       
         private void enleverIcone2(object sender, RoutedEventArgs e)
-        {
-            if (!choixPosition)
+        { /*
+            if (!nouvelleIcone)
             {
                 Fibaro.Visibility = Visibility.Collapsed;
                 Kira.Visibility = Visibility.Collapsed;
@@ -256,14 +388,14 @@ namespace MyDomotik
                 }
             }
 
-
+            */
         }
         /**private void ajouterAdresseBluetooth(object sender, ){
         
             }**/
         private void changerNomIcone2(object sender, RoutedEventArgs e)
-        {
-            if (!choixPosition)
+        { /*
+            if (!nouvelleIcone)
             {
                 Fibaro.Visibility = Visibility.Collapsed;
                 Kira.Visibility = Visibility.Collapsed;
@@ -285,49 +417,24 @@ namespace MyDomotik
                     Valider2.Visibility = Visibility.Visible;
                 }
             }
-
+            */
         }
 
-        private void attribueHandler()
-        {
-            foreach (Button bouton in this.listeBoutons)
-            {
-                int indexClick = (int)bouton.Tag;
-                Icone icone = g.pageGrille()[indexClick];
-
-                if (!(icone.EstVide()))
-                {
-                    bouton.Click += Menu2;
-                }
-
-                bouton.Click += choixPositionIcone2;
-            }
-        }
 
         private void pagePrecedente2(object sender, RoutedEventArgs e)
         {
-            if (!MainPage.Configuration.theme.ModeDefilement && this.g.pagePrecedente())
+            if (pageActuelle > 0)
             {
-                affich.nettoieGrille(cadre2);
-                this.listeBoutons = affich.afficheGrille(cadre2);
-                this.attribueHandler();
+                pageActuelle--;
+                afficherPage();
             }
-
         }
 
         // accès à la page suivante de la grille
         private void pageSuivante2(object sender, RoutedEventArgs e)
         {
-            g.CreepageSuivante();
-            affich.nettoieGrille(cadre2);
-            this.listeBoutons = affich.afficheGrille(cadre2);
-            this.attribueHandler();
-
-        }
-
-        private void nomChamp1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+                pageActuelle++;
+                afficherPage();
         }
     }
 }

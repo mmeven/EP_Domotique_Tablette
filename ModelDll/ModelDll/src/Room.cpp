@@ -3,7 +3,7 @@
 using namespace std;
 
 namespace EP {
-	Room::Room(wchar_t* name, wchar_t* ico) : Node(name, ico)
+	Room::Room(char* name, char* ico) : Node(name, ico)
 	{}
 
 	Room::~Room() {
@@ -26,12 +26,12 @@ namespace EP {
 		return 0;
 	}
 
-	int Room::deleteEquipmentByName(wchar_t* name) {
+	int Room::deleteEquipmentByName(char* name) {
 		if (Room::getEquipmentByName(name) == NULL) return 1; // does not exist
 
 		vector<Equipment*>::iterator it;
 		for (it = m_listEquipments.begin(); it != m_listEquipments.end(); it++) {
-			if (wcscmp(name, (*it)->getName()) == 0) break;
+			if (strcmp(name, (*it)->getName()) == 0) break;
 		}
 
 		m_listEquipments.erase(it);
@@ -43,10 +43,10 @@ namespace EP {
 		return &m_listEquipments;
 	}
 
-	Equipment* Room::getEquipmentByName(wchar_t* name) {
+	Equipment* Room::getEquipmentByName(char* name) {
 		vector<Equipment*>::iterator it;
 		for (it = m_listEquipments.begin(); it != m_listEquipments.end(); it++) {
-			if (wcscmp(name, (*it)->getName()) == 0) {
+			if (strcmp(name, (*it)->getName()) == 0) {
 				return (*it);
 			}
 		}
@@ -62,7 +62,7 @@ namespace EP {
 		return m_listEquipments.size();
 	}
 
-	extern "C" __declspec(dllexport) Room* Room_New(wchar_t* name, wchar_t* ico) {
+	extern "C" __declspec(dllexport) Room* Room_New(char* name, char* ico) {
 		return new Room(name, ico);
 	}
 

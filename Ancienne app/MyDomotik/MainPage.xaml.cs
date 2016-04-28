@@ -23,65 +23,240 @@ using System.Text.RegularExpressions;
 namespace MyDomotik
 {
 
+ 
     public sealed partial class MainPage : Page
     {
-        // Numéro de page de la grille : modifié lors d'une interaction avec la barre de navigation
-        private static Affichage affichage;
-        private Grille grille;
-        private List<Button> listeBoutons;
 
-        // L'attribut configuration de mainPage garde en mémoire toutes les informations concernant la configuration personnalisée de l'application
-        // (equipements, pieces de la maison, formats et couleurs d'affichage, etc ...) ainsi que l'arborescence des pages.
+        private static IntPtr core;
+        
+        private int pageActuelle = 0;
 
-        private static Configuration configuration = new Configuration();
-        internal static Configuration Configuration
-        {
-            get { return MainPage.configuration; }
-            set { MainPage.configuration = value; }
-        }
+        private int size;
+
+        [DllImport("ModelDll.dll", EntryPoint = "Core_NewFromSave",
+           CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr Core_NewFromSave(String fileName);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getNumberRooms@Core@EP@@QAEHXZ",
+            CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Core_getNumberRooms(IntPtr core);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getRoomByIndex@Core@EP@@QAEPAVRoom@2@H@Z",
+        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        public static extern IntPtr Core_getRoomByIndex(IntPtr core, int index);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getName@Node@EP@@QAEPA_WXZ",
+        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        public static extern IntPtr Node_getName(IntPtr node);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getIconSize@Core@EP@@QAEHXZ",
+        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Core_getIconSize(IntPtr core);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getIco@Node@EP@@QAEPA_WXZ",
+        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        public static extern IntPtr Node_getIco(IntPtr node);
+
+        [DllImport("ModelDll.dll", EntryPoint = "Room_New",
+            CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr Room_New(String name, String ico);
+
+
 
         // Méthode principale appelée lors de l'ouverture de l'application : initialisation et affichage de la page courante de l'arbre.
         public MainPage()
         {
             InitializeComponent();
-
+            size = Core_getIconSize(core);
+            core = Core_NewFromSave("./sauvegarde.txt");
             afficherPage();
+           
         }
-
-        internal static Affichage Affichage
-        {
-            get { return affichage; }
-            set { affichage = value; }
-        }
-
-        /** affichage de la page courante : 
-         * - crée la grille de boutons correspondant à la page courante et l'affiche.
-         * - 
-        **/
+        
         public void afficherPage()
         {
-            // création de la grille d'affichage des icones
-            this.grille = configuration.arbre.PageCourante.Grille; //grille est la grille de la page courante de la configuration
-            affichage = new Affichage(this.grille, configuration.theme);
-            affichage.creerGrille(cadre);
+            Brush fond2 = new SolidColorBrush(Colors.White);
+            Brush grille = new SolidColorBrush(Colors.Orange);
+            Brush barre = new SolidColorBrush(Colors.Red);
+            Brush boutons = new SolidColorBrush(Colors.Purple);
+            Brush rectangleHaut = new SolidColorBrush(Colors.Blue);
+            Brush boutonsBasActifs = new SolidColorBrush(Colors.Black);
+            
 
-            // affichage des couleurs
-            affichage.afficheCouleur(Rect1, Rect2, Rect3, RectAccueil, RectPrecedent, RectSuivant, MainGrid, barreMenu, cadre, accueil, precedent, suivant);
-
-            affichePageGrille();
+            MainGrid.Background = fond2; //Fond
+            barreMenu.Stroke = barre; //Barre en bas
+            barreMenu.Fill = barre; //Barre en bas
+            cadre.Background = grille;  //grille
+            accueil.Background = boutons;
+            accueil.BorderBrush = boutons;
+            precedent.Background = boutons;
+            precedent.BorderBrush = boutons;
+            suivant.Background = boutons;
+            suivant.BorderBrush = boutons;
+            Rect1.Fill = rectangleHaut;
+            Rect2.Fill = rectangleHaut;
+            Rect3.Fill = rectangleHaut;
+            RectAccueil.Fill = boutonsBasActifs;
+            RectPrecedent.Fill = boutonsBasActifs;
+            RectSuivant.Fill = boutonsBasActifs;
+            
             afficheHeure();
+
+            int nbRoom = Core_getNumberRooms(core);
+            cadre.Children.Clear();
+            int nbCases, nbColonnes, nbLignes;
+
+            switch (size)
+            {
+                case 1: nbCases = 4; nbColonnes = 2; nbLignes = 2; break;
+                case 2: nbCases = 8; nbColonnes = 4; nbLignes = 2; break;
+                case 3 : nbCases = 12; nbColonnes = 4; nbLignes = 3; break;
+            }
+
+            //Créer bouton pour chaque piece dans la grille
+            for (int i = pageActuelle * 8; i < nbRoom; i++)
+            {
+                IntPtr room = Core_getRoomByIndex(core, i);
+
+                Button bouton = new Button();
+
+                bouton.Background = new SolidColorBrush(Colors.DarkSalmon);
+
+                bouton.Tag = i;
+
+                bouton.SetValue(Button.HorizontalAlignmentProperty, HorizontalAlignment.Stretch);
+                bouton.SetValue(Button.VerticalAlignmentProperty, VerticalAlignment.Stretch);
+                
+                //Affichage du nom de l'icone
+                IntPtr roomName = Node_getName(room);
+                string nameRoom = System.Runtime.InteropServices.Marshal.PtrToStringUni(roomName);
+                TextBlock nomIcone = creerLabel(nameRoom);
+
+                //Création image de l'icone
+                int sizeIcone = Core_getIconSize(core);
+
+                IntPtr iconeName = Node_getIco(room);
+                string nameIc = System.Runtime.InteropServices.Marshal.PtrToStringUni(iconeName);
+
+                Image image = creerImageIcone(sizeIcone, nameIc, bouton);
+
+
+                //Associe image et nom de l'icone au bouton
+                ajouterImageEtLabelAuBouton(image, nomIcone, bouton);
+
+                //Place le bouton dans la grille
+                if (i < pageActuelle * 8 + 4)
+                {
+                    bouton.SetValue(Grid.ColumnProperty, i % 8);
+                    bouton.SetValue(Grid.RowProperty, 0);
+                }
+                else
+                {
+                    bouton.SetValue(Grid.ColumnProperty, i % 8 - 4);
+                    bouton.SetValue(Grid.RowProperty, 1);
+                }
+                cadre.Children.Add(bouton);
+            }
+
+            if (nbRoom - 8 * pageActuelle < 0)
+            {
+                nbRoom = 0;
+            }
+            else
+            {
+                nbRoom = nbRoom - 8 * pageActuelle;
+            }
+            //Création bouton vide (sans pièce)
+            for (int i = 8 * pageActuelle + ((nbRoom % 8)); i < (8 * pageActuelle + 8); i++)
+            {
+                Button bouton = new Button();
+                bouton.BorderBrush = new SolidColorBrush(Colors.DarkSalmon);
+
+                bouton.Tag = -1;
+
+                bouton.SetValue(Button.HorizontalAlignmentProperty, HorizontalAlignment.Stretch);
+                bouton.SetValue(Button.VerticalAlignmentProperty, VerticalAlignment.Stretch);
+                
+                //Place le bouton dans la grille
+                if (i < (pageActuelle * 8 + 4))
+                {
+
+                    bouton.SetValue(Grid.ColumnProperty, i % 8);
+                    bouton.SetValue(Grid.RowProperty, 0);
+                }
+                else
+                {
+                    bouton.SetValue(Grid.ColumnProperty, i % 8 - 4);
+                    bouton.SetValue(Grid.RowProperty, 1);
+                }
+                cadre.Children.Add(bouton);
+            }
         }
 
-        public void affichePageGrille()
+        public TextBlock creerLabel(String s)
         {
-            affichage.nettoieGrille(cadre);
-            // création et affichage de la liste des boutons et des Icones associées
-            this.listeBoutons = affichage.afficheGrille(cadre);
-            this.attribueHandler();
+            // création label : nom de l'icone
+            TextBlock labelIcone = new TextBlock();
+            labelIcone.SetValue(TextBlock.TextProperty, s);
 
-            // affichage du cadre supérieur de la page
-            page_title.Text = configuration.arbre.PageCourante.Nom;
+            // police du label
+            labelIcone.FontFamily = new FontFamily("Segoe UI");
+            labelIcone.Foreground = new SolidColorBrush(Colors.Black);
+            labelIcone.FontSize = 24;
+
+            // positionnement du label
+
+            labelIcone.TextAlignment = TextAlignment.Center;
+            labelIcone.VerticalAlignment = VerticalAlignment.Center;
+            labelIcone.HorizontalAlignment = HorizontalAlignment.Center;
+            labelIcone.TextWrapping = TextWrapping.Wrap;
+
+
+            // labelIcone.SetValue(TextBlock.FontWeightProperty, "Bold");
+            //labelIcone.SetValue(TextBlock.ForegroundProperty, "Black");
+            labelIcone.SetValue(TextBlock.FontSizeProperty, 24);
+
+            return labelIcone;
         }
+
+        public Image creerImageIcone(int sizeIcone, string nameIc, Button bouton)
+        {
+            Image image = new Image();
+            BitmapImage SourceBi = new BitmapImage();
+ 
+
+            string chaineSource = "ms-appx:///Assets/ICONS_MDTOUCH/size_" + sizeIcone + "x" + sizeIcone + "/" + nameIc; // spécifie le dossier adéquat en fonction de la taille de l'image
+            Uri uri = new Uri(chaineSource, UriKind.Absolute);
+
+            SourceBi.UriSource = uri;
+            image.Source = SourceBi;
+
+            // empeche l'icone de depasser du contour du bouton
+
+            double hauteur = bouton.Height;
+            double largeur = bouton.Width;
+
+            image.SetValue(Image.HeightProperty, 0.5 * hauteur);
+            image.SetValue(Image.WidthProperty, 0.5 * hauteur);
+
+            return image;
+        }
+
+
+        public void ajouterImageEtLabelAuBouton(Image image, TextBlock nomIcone, Button bouton)
+        {
+            Grid grilleBouton = new Grid();
+            grilleBouton.RowDefinitions.Add(new RowDefinition());
+            grilleBouton.RowDefinitions.Add(new RowDefinition());
+
+            image.SetValue(Grid.RowProperty, 0);
+            nomIcone.SetValue(Grid.RowProperty, 1);
+
+            grilleBouton.Children.Add(image);
+            grilleBouton.Children.Add(nomIcone);
+            bouton.Content = grilleBouton;
+        }
+        
 
         public void afficheHeure()
         {
@@ -93,12 +268,6 @@ namespace MyDomotik
             {
                 TimeBox.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
             }
-        }
-        // retour à la page précédente
-        public void retourPere(object sender, RoutedEventArgs e)
-        {
-            //configuration.Arbre.retourPere();
-            //affichePageGrille();
         }
 
         /// <summary>
@@ -136,35 +305,27 @@ namespace MyDomotik
         // accès au mode configuration
         private void adminSelect(object sender, DoubleTappedRoutedEventArgs e)
         {
-
-            configuration.arbre.PageCourante.Grille.NumGrille = 0;
-
             this.Frame.Navigate(typeof(AdminPage));
         }
 
         // accès à la page précédente de la grille
         private void PagePrecedente(object sender, RoutedEventArgs e)
         {
-            if (!configuration.theme.ModeDefilement && this.grille.pagePrecedente())
-            {
-                affichePageGrille();
-            }
-
+            pageActuelle--;
+            afficherPage();
         }
 
         // accès à la page suivante de la grille
         private void PageSuivante(object sender, RoutedEventArgs e)
         {
-            if (!configuration.theme.ModeDefilement && this.grille.pageSuivante())
-            {
-                affichePageGrille();
-            }
+            pageActuelle++;
+            afficherPage();
         }
 
         // accès à la page d'accueil
         private void PageAccueil(object sender, RoutedEventArgs e)
         {
-            configuration.arbre.retourAccueil();
+            pageActuelle = 0;
             this.Frame.Navigate(typeof(MainPage));
         }
 
@@ -173,20 +334,8 @@ namespace MyDomotik
         // Attribue le gestionnaire d'évenement IconeClick à tous les boutons de la grille
         private void attribueHandler()
         {
-            foreach (Button bouton in this.listeBoutons)
-            {
-                int indexClick = (int)bouton.Tag;
-                Icone icone = grille.pageGrille()[indexClick];
 
-                if (!(icone.EstVide()) && icone.TypeIcone1 == Icone.TypeIcone.Piece)
-                {
-                    bouton.Click += IconeClick;
-                }
-                if( !(icone.EstVide()) && icone.TypeIcone1== Icone.TypeIcone.Equipement)
-                {
-                    bouton.Click += EquipementClick; // Lors de l'appui sur l'icone d'un équipement, lance la méthode EquipementClick
-                }
-            }
+
         }
 
         //Lors de l'appui sur un équipement
@@ -196,51 +345,17 @@ namespace MyDomotik
 
         private void EquipementClick(object sender, RoutedEventArgs e)
         {
-            Button boutonClick = sender as Button;
-
-            // icone : icone correspondant au bouton cliqué
-            int indexClick = (int)boutonClick.Tag;
-            Icone icone = grille.pageGrille()[indexClick];
-
-            //Récupération des caractéristiques de l'icone (qui contient notre équipement)
-            String add = icone.Equip.AdresseIp;
-            String btt = icone.Equip.NumBouton;
-
-            //on vérifie que l'adresse ip de l'hote est correcte
-            if (!IsValidIP(add))
-            {
-                //TODO: générer une erreur ?
-                
-            }
-            else
-            {
-                String adresse = "/remote2.htm?button" + btt + "#";
-                requeteHttp(add, adresse);
-            }
+            
         }
 
 
     //Lors du clique sur une piece
     private void IconeClick(object sender, RoutedEventArgs e)
         {
-            Button boutonClick = sender as Button;
-
-            // icone : icone correspondant au bouton cliqué
-            int indexClick = (int)boutonClick.Tag;
-            Icone icone = grille.pageGrille()[indexClick];
-
-            // Si icone de navigation : changement de page
-            if (icone.Navigation != null)
-            {
-                configuration.arbre.PageCourante = icone.Navigation.PageFils;
-                this.Frame.Navigate(typeof(MainPage));
-            }
-        }
-
-        private void page_title_SelectionChanged(object sender, RoutedEventArgs e)
-        {
 
         }
+        
+
     }
 
 

@@ -40,52 +40,46 @@ namespace MyDomotik
 
         private void choixTheme1(object sender, RoutedEventArgs e)
         {
-           MainPage.Configuration.theme.Couleur = new Couleur();
         }
 
         private void choixTheme2(object sender, RoutedEventArgs e)
         {
-            MainPage.Configuration.theme.Couleur = new Couleur(1);
         }
 
         private void choixTheme3(object sender, RoutedEventArgs e)
         {
-            MainPage.Configuration.theme.Couleur = new Couleur(2);
         }
 
         private void choixTheme4(object sender, RoutedEventArgs e)
         {
-            MainPage.Configuration.theme.Couleur = new Couleur(3);
         }
 
         private void choixTheme5(object sender, RoutedEventArgs e)
         {
-            MainPage.Configuration.theme.Couleur = new Couleur(4);
         }
-
         private void choixTheme6(object sender, RoutedEventArgs e)
         {
-            MainPage.Configuration.theme.Couleur = new Couleur(5);
+         
         }
 
         private void choixTheme7(object sender, RoutedEventArgs e)
         {
-            MainPage.Configuration.theme.Couleur = new Couleur(6);
+         
         }
 
         private void choixTheme8(object sender, RoutedEventArgs e)
         {
-            MainPage.Configuration.theme.Couleur = new Couleur(7);
+         
         }
 
         private void choixTheme9(object sender, RoutedEventArgs e)
         {
-            MainPage.Configuration.theme.Couleur = new Couleur(8);
+         
         }
 
          private void choixTheme10(object sender, RoutedEventArgs e)
         {
-            MainPage.Configuration.theme.Couleur = new Couleur(9);
+         
         }
 
         private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)

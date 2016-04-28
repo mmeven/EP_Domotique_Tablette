@@ -55,7 +55,7 @@
         <Button x:ConnectionId='1' x:Name="Valider" Content="VALIDER" Height="42" Width="234" Foreground="Black" Margin="0,0,120,0" VerticalAlignment="Center"  HorizontalAlignment="Right" Grid.Row="1" Visibility="Collapsed" Background="#FFA49090" FontSize="20"                    BorderBrush="#FFA49090"/>
 
         <!-- Message donnant les instructions -->
-        <TextBlock x:Name="message2" Text=""  TextWrapping="Wrap"  VerticalAlignment="Center" Margin="0,0,0,0" HorizontalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold"  Grid.Row="1" TextAlignment="Center"/>
+        <TextBlock x:Name="message2" Text="Choisir une icône"  TextWrapping="Wrap"  VerticalAlignment="Center" Margin="0,0,0,0" HorizontalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold"  Grid.Row="1" TextAlignment="Center"/>
        
         <!-- Grille d'icônes -->
         <Grid x:Name="PartieCentrale" Grid.Row="2">
@@ -64,8 +64,21 @@
                 <ColumnDefinition Width="100*"/>
                 <ColumnDefinition Width="8*"/>
             </Grid.ColumnDefinitions>
+            
             <!--Grille: cadre initialisé dans la partie C# -->
-            <Grid x:Name="cadre" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="1050" Height="450" Background="Yellow"  Grid.Row="2" Margin="10,0,10,10"/>
+            <Grid x:Name="cadre" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="1050" Height="450" Background="Yellow"  Grid.Row="2" Margin="10,0,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100*"/>
+                    <RowDefinition Height="100*"/>
+                </Grid.RowDefinitions>
+            </Grid>
 
             <Grid x:Name="Options" Grid.Row="2" Grid.Column="1" Background="#FF7E7E83" HorizontalAlignment="Center"  Width="390" Height="170" VerticalAlignment="Center" Visibility="Collapsed">
                 <Grid.RowDefinitions>

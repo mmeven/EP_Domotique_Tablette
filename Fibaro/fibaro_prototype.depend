@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1458576379 source:/home/maki/Dropbox/3e_annee/Projet/tests/kira_prototype/base64.cpp
+	"base64.h"
+	<iostream>
+
+1458576454 /home/maki/Dropbox/3e_annee/Projet/tests/kira_prototype/base64.h
+	<string>
+
+1460987796 source:/home/maki/Dropbox/3e_annee/Projet/tests/kira_prototype/happyhttp.cpp
+	"happyhttp.h"
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<errno.h>
+	<unistd.h>
+	<WinSock2.h>
+	<cstdio>
+	<cstring>
+	<cstdarg>
+	<assert.h>
+	<string>
+	<vector>
+	<string>
+	<algorithm>
+
+1445048420 /home/maki/Dropbox/3e_annee/Projet/tests/kira_prototype/happyhttp.h
+	<string>
+	<map>
+	<vector>
+	<deque>
+
+1458573758 source:/home/maki/Dropbox/3e_annee/Projet/tests/kira_prototype/Requete.cpp
+	"INCLUDE/Requete.h"
+	"happyhttp.h"
+	<cstdio>
+	<cstring>
+	<winsock2.h>
+
+1458577587 /home/maki/Dropbox/3e_annee/Projet/tests/kira_prototype/INCLUDE/Requete.h
+	"../happyhttp.h"
+	<cstdio>
+	<cstring>
+	<stdlib.h>
+	<stdio.h>
+	<stdarg.h>
+
+1460991125 source:/home/maki/Dropbox/3e_annee/Projet/tests/kira_prototype/main.cpp
+	"happyhttp.h"
+	"INCLUDE/Requete.h"
+	<cstdio>
+	<iostream>
+	<cstring>
+	"base64.h"
+	<winsock2.h>
+

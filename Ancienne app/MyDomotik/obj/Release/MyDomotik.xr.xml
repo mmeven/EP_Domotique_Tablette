@@ -146,14 +146,6 @@
       <RootProperty Name="IsThumbToolTipEnabled" />
     </RootType>
     <RootType FullName="MyDomotik.ReglagesModeSelection" />
-    <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Icon" />
-      <RootProperty Name="Label" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootEvent Name="Click" />
-    </RootType>
-    <RootType FullName="MyDomotik.ReglagesReseau" />
     <RootType FullName="MyDomotik.ReglagesTailleIcones" />
   </Roots.RootTypes>
 </Roots>

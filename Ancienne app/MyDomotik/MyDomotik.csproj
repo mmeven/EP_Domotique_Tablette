@@ -111,21 +111,9 @@
     <Compile Include="AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ClassesUML\Affichage.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ClassesUML\Arbre.cs" />
-    <Compile Include="ClassesUML\Configuration.cs" />
-    <Compile Include="ClassesUML\Couleur.cs" />
-    <Compile Include="ClassesUML\Equipement.cs" />
-    <Compile Include="ClassesUML\Format.cs" />
-    <Compile Include="ClassesUML\Grille.cs" />
-    <Compile Include="ClassesUML\Icone.cs" />
-    <Compile Include="ClassesUML\Navigation.cs" />
-    <Compile Include="ClassesUML\Piece.cs" />
-    <Compile Include="ClassesUML\Theme.cs" />
-    <Compile Include="ClassesUML\Vue.cs" />
     <Compile Include="GestionEquipements.xaml.cs">
       <DependentUpon>GestionEquipements.xaml</DependentUpon>
     </Compile>
