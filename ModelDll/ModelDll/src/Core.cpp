@@ -56,8 +56,8 @@ namespace EP {
 	}
 
 	int Core::load() {
-		ifstream file(m_coreSave, wifstream::in);
-		if (file) {
+		ifstream file(m_coreSave, ifstream::in);
+		//if (file) {
 			int nbRooms, nbEquip; // tmp vars
 			Room* room;
 			Equipment* eq;
@@ -121,7 +121,7 @@ namespace EP {
 				}
 				
 				addRoom(room);
-			}
+			//}
 
 			file.close();
 		}
