@@ -33,42 +33,41 @@ namespace MyDomotik
 
         private int size;
 
+        private int nbCases;
         [DllImport("ModelDll.dll", EntryPoint = "Core_NewFromSave",
-           CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr Core_NewFromSave(String fileName);
 
-        [DllImport("ModelDll.dll", EntryPoint = "?getNumberRooms@Core@EP@@QAEHXZ",
-            CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
-        public static extern int Core_getNumberRooms(IntPtr core);
-
         [DllImport("ModelDll.dll", EntryPoint = "?getRoomByIndex@Core@EP@@QAEPAVRoom@2@H@Z",
-        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+         CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern IntPtr Core_getRoomByIndex(IntPtr core, int index);
 
-        [DllImport("ModelDll.dll", EntryPoint = "?getName@Node@EP@@QAEPA_WXZ",
-        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        [DllImport("ModelDll.dll", EntryPoint = "?getNumberRooms@Core@EP@@QAEHXZ",
+         CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Core_getNumberRooms(IntPtr core);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getName@Node@EP@@QAEPADXZ",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern IntPtr Node_getName(IntPtr node);
 
-        [DllImport("ModelDll.dll", EntryPoint = "?getIconSize@Core@EP@@QAEHXZ",
-        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
-        public static extern int Core_getIconSize(IntPtr core);
-
-        [DllImport("ModelDll.dll", EntryPoint = "?getIco@Node@EP@@QAEPA_WXZ",
-        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        [DllImport("ModelDll.dll", EntryPoint = "?getIco@Node@EP@@QAEPADXZ",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern IntPtr Node_getIco(IntPtr node);
 
-        [DllImport("ModelDll.dll", EntryPoint = "Room_New",
-            CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr Room_New(String name, String ico);
+        [DllImport("ModelDll.dll", EntryPoint = "?getIconSize@Core@EP@@QAEHXZ",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Core_getIconSize(IntPtr core);
 
-
+        [DllImport("ModelDll.dll", EntryPoint = "?save@Core@EP@@QAEHXZ",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Core_save(IntPtr core);
 
         // Méthode principale appelée lors de l'ouverture de l'application : initialisation et affichage de la page courante de l'arbre.
         public MainPage()
         {
             InitializeComponent();
-            size = Core_getIconSize(core);
-            core = Core_NewFromSave("./sauvegarde.txt");
+            Windows.Storage.StorageFolder sf = Windows.Storage.ApplicationData.Current.LocalFolder;
+            core = Core_NewFromSave(sf.Path + "\\save.txt");
             afficherPage();
            
         }
@@ -102,19 +101,13 @@ namespace MyDomotik
             
             afficheHeure();
 
-            int nbRoom = Core_getNumberRooms(core);
-            cadre.Children.Clear();
-            int nbCases, nbColonnes, nbLignes;
 
-            switch (size)
-            {
-                case 1: nbCases = 4; nbColonnes = 2; nbLignes = 2; break;
-                case 2: nbCases = 8; nbColonnes = 4; nbLignes = 2; break;
-                case 3 : nbCases = 12; nbColonnes = 4; nbLignes = 3; break;
-            }
+            creerGrille();
+
+            int nbRoom = Core_getNumberRooms(core);
 
             //Créer bouton pour chaque piece dans la grille
-            for (int i = pageActuelle * 8; i < nbRoom; i++)
+            for (int i = pageActuelle * nbCases; i < nbRoom; i++)
             {
                 IntPtr room = Core_getRoomByIndex(core, i);
 
@@ -129,14 +122,14 @@ namespace MyDomotik
                 
                 //Affichage du nom de l'icone
                 IntPtr roomName = Node_getName(room);
-                string nameRoom = System.Runtime.InteropServices.Marshal.PtrToStringUni(roomName);
+                string nameRoom = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(roomName);
                 TextBlock nomIcone = creerLabel(nameRoom);
 
                 //Création image de l'icone
                 int sizeIcone = Core_getIconSize(core);
 
                 IntPtr iconeName = Node_getIco(room);
-                string nameIc = System.Runtime.InteropServices.Marshal.PtrToStringUni(iconeName);
+                string nameIc = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(iconeName);
 
                 Image image = creerImageIcone(sizeIcone, nameIc, bouton);
 
@@ -145,29 +138,30 @@ namespace MyDomotik
                 ajouterImageEtLabelAuBouton(image, nomIcone, bouton);
 
                 //Place le bouton dans la grille
-                if (i < pageActuelle * 8 + 4)
+                if (i < pageActuelle * nbCases + nbCases/2)
                 {
-                    bouton.SetValue(Grid.ColumnProperty, i % 8);
+                    bouton.SetValue(Grid.ColumnProperty, i % nbCases);
                     bouton.SetValue(Grid.RowProperty, 0);
                 }
                 else
                 {
-                    bouton.SetValue(Grid.ColumnProperty, i % 8 - 4);
+                    bouton.SetValue(Grid.ColumnProperty, i % nbCases - nbCases/2);
                     bouton.SetValue(Grid.RowProperty, 1);
                 }
                 cadre.Children.Add(bouton);
             }
 
-            if (nbRoom - 8 * pageActuelle < 0)
+            //nbRoom : nombre de pièces qui reste à afficher
+            if (nbRoom - nbCases * pageActuelle < 0)
             {
                 nbRoom = 0;
             }
             else
             {
-                nbRoom = nbRoom - 8 * pageActuelle;
+                nbRoom = nbRoom - nbCases * pageActuelle;
             }
             //Création bouton vide (sans pièce)
-            for (int i = 8 * pageActuelle + ((nbRoom % 8)); i < (8 * pageActuelle + 8); i++)
+            for (int i = nbCases * pageActuelle + ((nbRoom % nbCases)); i < (nbCases * pageActuelle + nbCases); i++)
             {
                 Button bouton = new Button();
                 bouton.BorderBrush = new SolidColorBrush(Colors.DarkSalmon);
@@ -178,18 +172,40 @@ namespace MyDomotik
                 bouton.SetValue(Button.VerticalAlignmentProperty, VerticalAlignment.Stretch);
                 
                 //Place le bouton dans la grille
-                if (i < (pageActuelle * 8 + 4))
+                if (i < (pageActuelle * nbCases + nbCases/2))
                 {
-
-                    bouton.SetValue(Grid.ColumnProperty, i % 8);
+                    bouton.SetValue(Grid.ColumnProperty, i % nbCases);
                     bouton.SetValue(Grid.RowProperty, 0);
                 }
                 else
                 {
-                    bouton.SetValue(Grid.ColumnProperty, i % 8 - 4);
+                    bouton.SetValue(Grid.ColumnProperty, i % nbCases - nbCases/2);
                     bouton.SetValue(Grid.RowProperty, 1);
                 }
                 cadre.Children.Add(bouton);
+            }
+        }
+
+        //Creation de la grille : creation des cases de la grille en fonction de son format
+        public void creerGrille()
+        {
+            int nbRoom = Core_getNumberRooms(core);
+            cadre.Children.Clear();
+            int nbColonnes, nbLignes;
+            switch (size)
+            {
+                case 0: nbCases = 4; nbColonnes = 2; nbLignes = 2; break;
+                case 1: nbCases = 8; nbColonnes = 4; nbLignes = 2; break;
+                default: nbCases = 12; nbColonnes = 4; nbLignes = 3; break;
+            }
+
+            for(int i =0; i<nbLignes; i++)
+            {
+                cadre.RowDefinitions.Add(new RowDefinition());
+            }
+            for (int i = 0; i < nbColonnes; i++)
+            {
+                cadre.ColumnDefinitions.Add(new ColumnDefinition());
             }
         }
 
@@ -225,7 +241,7 @@ namespace MyDomotik
             BitmapImage SourceBi = new BitmapImage();
  
 
-            string chaineSource = "ms-appx:///Assets/ICONS_MDTOUCH/size_" + sizeIcone + "x" + sizeIcone + "/" + nameIc; // spécifie le dossier adéquat en fonction de la taille de l'image
+            string chaineSource = "ms-appx:///Assets/ICONS_MDTOUCH/size_64x64/" + nameIc; // spécifie le dossier adéquat en fonction de la taille de l'image
             Uri uri = new Uri(chaineSource, UriKind.Absolute);
 
             SourceBi.UriSource = uri;

@@ -43,18 +43,6 @@
 
         <!--Grille des icones -->
         <Grid  x:Name="cadre" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="1500" Height="500" Grid.Row="1">
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100*"/>
-                <ColumnDefinition Width="100*"/>
-                <ColumnDefinition Width="100*"/>
-                <ColumnDefinition Width="100*"/>
-            </Grid.ColumnDefinitions>
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="100*"/>
-                <RowDefinition Height="100*"/>
-            </Grid.RowDefinitions>
             
             <!--   affichage dynamique grâce au x:Name="cadre" -->
 

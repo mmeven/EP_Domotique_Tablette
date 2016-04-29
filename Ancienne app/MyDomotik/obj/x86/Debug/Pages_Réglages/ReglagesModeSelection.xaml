@@ -7,16 +7,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid x:Name="MainGrid" Background="#FF3C4093" Height="757">
+    <Grid x:Name="MainGrid" Background="#FFFFFFE0" >
         <Grid.RowDefinitions>
             <RowDefinition Height="85*"/>
             <RowDefinition Height="683*"/>
-
         </Grid.RowDefinitions>
 
 
         <!--  Cadre supérieur avec les boutons de navigation          -->
-        <Grid Background="Black">
+
+        <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="270*"/>
                 <ColumnDefinition Width="845*"/>
@@ -24,42 +24,51 @@
             </Grid.ColumnDefinitions>
 
 
+            <Rectangle HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" Margin="5,0,0,0" Width="252"/>
 
-            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="center" Height="65" Grid.Row="0" Grid.Column="1" Stroke="Black" VerticalAlignment="Center" Width="832"/>
+            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Width="700"/>
 
-            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0" Stroke="Black" VerticalAlignment="Center" Width="252"/>
+            <Rectangle HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="0,0,5,0" Width="252"/>
 
-            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" Stroke="Black" VerticalAlignment="Center" Width="241"/>
-
-            <TextBlock x:Name="page_title" HorizontalAlignment="Center" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="832" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="1" FontWeight="Bold" >
-    			<Run Foreground="Black" Text="Mode de sélection"/>
-            </TextBlock>
-
-            <Button x:ConnectionId='3' x:Name="quitterAdmin"  Height="71" Width="247" BorderBrush="{x:Null}" Background="#FFE04214" Foreground="#FFF7EEEE" Grid.Column="2" FontSize="18"                   Margin="2,7,0,6">
+            <!-- Rectangle Retour, en haut à droite -->
+            <Button x:ConnectionId='3' x:Name="retourMenu" BorderBrush="{x:Null}" Background="#FFFF8C00" Foreground="#FFF7EEEE" FontSize="18"  Grid.Row="0" Grid.Column="0"                         HorizontalAlignment="Left" VerticalAlignment="Top" Width="252" Height="65">
                 <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
-                	<Run FontSize="30" Text="Quitter"/>
+                	<Run FontSize="30" Text="Retour"/>
                 </TextBlock>
             </Button>
-            <Button x:ConnectionId='4' x:Name="retourMenu" Content="Menu" HorizontalAlignment="Center" Height="53" Margin="19,16,15,15" VerticalAlignment="Center" Width="236" FontSize="30" Foreground="#FF060606" FontWeight="Bold"                        />
+
+            <!-- Rectangle Titre, en haut a centre -->
+            <TextBlock x:Name="page_title" HorizontalAlignment="Center" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="700" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Foreground="Black" Grid.Row="0" Grid.Column="1" FontWeight="Bold">
+    			<Run Foreground="Black" Text="Choix du mode de sélection"/>
+            </TextBlock>
 
 
+            <!-- Rectangle Accueil, en haut à droite -->
+            <Button x:ConnectionId='4' x:Name="quitterAdmin" BorderBrush="{x:Null}" Background="Transparent" FontSize="18"  Grid.Row="0" Grid.Column="2"                   HorizontalAlignment="Left" VerticalAlignment="Top" Width="252" Height="65">
+                <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Accueil"/>
+                </TextBlock>
+            </Button>
 
         </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="100*"/>
+            </Grid.RowDefinitions>
 
+            <Rectangle Fill="Gold" HorizontalAlignment="Center" Height="65" Grid.Row="0"  VerticalAlignment="Center" Width="832"/>
+            <RadioButton x:ConnectionId='1' Foreground="Black" x:Name="SelectionClic" Grid.Row="0" Content="     Sélection par clic/tap" Height="40" Width="589"                     FontSize="24"                            />
+            
+            <Rectangle Fill="Gold" HorizontalAlignment="Center" Height="65" Grid.Row="1"  VerticalAlignment="Center" Width="832"/>
+            <RadioButton x:ConnectionId='2' Foreground="Black" x:Name="SelectionDefil" Grid.Row="1" Content="     Sélection par défilement"  Height="40" Width="589"                     FontSize="24"                               />
+            
+            <Rectangle Fill="Gold" HorizontalAlignment="Center" Height="120" Grid.Row="2"  VerticalAlignment="Center" Width="832"/>
+            <Slider  Foreground="Black" Height="50"  Width="412" Grid.Row="2" TickPlacement="None" Tag="Vitesse" LargeChange="8" FontSize="24" IsThumbToolTipEnabled="true"/>
+            <TextBlock Height="40" TextWrapping="Wrap" Grid.Row="2" Text="Vitesse:"  Width="589" Foreground="Black" FontSize="24" />
 
-        <Canvas HorizontalAlignment="Center" Height="663" Margin="9,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="1357" ManipulationMode="All">
-            <RadioButton x:ConnectionId='1' x:Name="SelectionClic" Content="     Sélection par clic/tap" Canvas.Left="358" Canvas.Top="183" Height="40" Width="589"                     FontSize="24"                            />
-            <RadioButton x:ConnectionId='2' x:Name="SelectionDefil" Content="     Sélection par défilement" Canvas.Left="358" Canvas.Top="280" Height="40" Width="589"                     FontSize="24"                               />
-            <Slider Height="50" Canvas.Left="451" Canvas.Top="403" Width="412" TickPlacement="None" Tag="Vitesse" LargeChange="8" FontSize="20" IsThumbToolTipEnabled="true"/>
-            <TextBlock Height="41" Canvas.Left="439" TextWrapping="Wrap" Text="Vitesse (Nombre de secondes par item)" Canvas.Top="326" Width="381" Foreground="White" FontSize="20" />
-        </Canvas>
-
-
-
-        <!--  Test     -->
-
-
-
+        </Grid>
     </Grid>
     <!-- Main Grid -->
 </Page>
