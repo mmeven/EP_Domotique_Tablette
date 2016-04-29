@@ -61,8 +61,6 @@ namespace EP {
 
 		// Password of the Fibaro
 		static char Fibaro_password[300];
-
-	private:
 		
 	};
 
