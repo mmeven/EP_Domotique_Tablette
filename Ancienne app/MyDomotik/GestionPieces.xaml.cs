@@ -20,24 +20,46 @@ using Windows.UI.Xaml.Navigation;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
-// Pour en savoir plus sur le modèle d'élément Page vierge, consultez la page http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace MyDomotik
 {
     public sealed partial class GestionPieces : Page
     {
-        private Image image;
-        //private static Grille g = new Grille(Format.MOYEN); 
-        // private Affichage affich = new Affichage(g, new Theme());
-        private String nom;
-        private int indexIcone;
-        public static String nomPiece;
-        private Boolean nouvelleIcone = false;
 
-        private IntPtr core;
-        private int pageActuelle = 0;
+        [DllImport("ModelDll.dll", EntryPoint = "Core_NewFromSave",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr Core_NewFromSave(String fileName);
 
-        private static string nomPieceSelectionee;
+        [DllImport("ModelDll.dll", EntryPoint = "?getRoomByIndex@Core@EP@@QAEPAVRoom@2@H@Z",
+         CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern IntPtr Core_getRoomByIndex(IntPtr core, int index);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getNumberRooms@Core@EP@@QAEHXZ",
+         CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Core_getNumberRooms(IntPtr core);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getName@Node@EP@@QAEPADXZ",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern IntPtr Node_getName(IntPtr node);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getIco@Node@EP@@QAEPADXZ",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern IntPtr Node_getIco(IntPtr node);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getIconSize@Core@EP@@QAEHXZ",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Core_getIconSize(IntPtr core);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?save@Core@EP@@QAEHXZ",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Core_save(IntPtr core);
+
+        private String nom; //nom de l'image choisie pour la nouvelle piece
+        private int indexPiece; //index de la piece que l'on souhaite rennomer/supprimer
+        private Boolean nouvellePiece = false; //vrai, lorsque l'utilisateur souhaite ajouter une piece. Faux si il veut renommer/suppro
+        private IntPtr core; 
+        private int pageActuelle = 0; //numéro de la page actuelle de la grille
+        private static string nomPieceSelectionee; //nom de la piece à laquelle on souhaite ajouter des equipements
 
         public static string NomPieceSelectionee
         {
@@ -55,41 +77,15 @@ namespace MyDomotik
         public GestionPieces()
         {
             this.InitializeComponent();
-            core = Core_NewFromSave("./sauvegarde.txt");
+            Windows.Storage.StorageFolder sf = Windows.Storage.ApplicationData.Current.LocalFolder;
+            core = Core_NewFromSave(sf.Path + "\\save.txt");
             afficherPage();
         }
-
-        [DllImport("ModelDll.dll", EntryPoint = "Core_NewFromSave",
-          CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr Core_NewFromSave(String fileName);
-
-        [DllImport("ModelDll.dll", EntryPoint = "?getNumberRooms@Core@EP@@QAEHXZ",
-            CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
-        public static extern int Core_getNumberRooms(IntPtr core);
-
-        [DllImport("ModelDll.dll", EntryPoint = "?getRoomByIndex@Core@EP@@QAEPAVRoom@2@H@Z",
-        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
-        public static extern IntPtr Core_getRoomByIndex(IntPtr core, int index);
-
-        [DllImport("ModelDll.dll", EntryPoint = "?getName@Node@EP@@QAEPA_WXZ",
-        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
-        public static extern IntPtr Node_getName(IntPtr node);
-
-        [DllImport("ModelDll.dll", EntryPoint = "?getIconSize@Core@EP@@QAEHXZ",
-        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
-        public static extern int Core_getIconSize(IntPtr core);
-
-        [DllImport("ModelDll.dll", EntryPoint = "?getIco@Node@EP@@QAEPA_WXZ",
-        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
-        public static extern IntPtr Node_getIco(IntPtr node);
-
-        [DllImport("ModelDll.dll", EntryPoint = "?save@Core@EP@@QAEHXZ",
-        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
-        public static extern int Core_save(IntPtr core);
-
+        
+        
         public void afficherPage()
         {
-            nouvelleIcone = false;
+            nouvellePiece = false;
             int nbRoom = Core_getNumberRooms(core);
             cadre.Children.Clear();
 
@@ -111,14 +107,13 @@ namespace MyDomotik
 
                 //Affichage du nom de l'icone
                 IntPtr roomName = Node_getName(room);
-                string nameRoom = System.Runtime.InteropServices.Marshal.PtrToStringUni(roomName);
+                string nameRoom = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(roomName);
                 TextBlock nomIcone = creerLabel(nameRoom);
-
                 //Création image de l'icone
                 int sizeIcone = Core_getIconSize(core);
                 
                 IntPtr iconeName = Node_getIco(room);
-                string nameIc = System.Runtime.InteropServices.Marshal.PtrToStringUni(iconeName);
+                string nameIc = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(iconeName);
               
                 Image image = creerImageIcone(sizeIcone, nameIc, bouton);
 
@@ -195,10 +190,6 @@ namespace MyDomotik
             labelIcone.VerticalAlignment = VerticalAlignment.Stretch;
             labelIcone.HorizontalAlignment = HorizontalAlignment.Stretch;
             labelIcone.TextWrapping = TextWrapping.Wrap;
-
-
-            // labelIcone.SetValue(TextBlock.FontWeightProperty, "Bold");
-            //labelIcone.SetValue(TextBlock.ForegroundProperty, "Black");
             labelIcone.SetValue(TextBlock.FontSizeProperty, 24);
 
             return labelIcone;
@@ -214,12 +205,6 @@ namespace MyDomotik
             Uri uri = new Uri(chaineSource, UriKind.Absolute);
             SourceBi.UriSource = uri;
             image.Source = SourceBi;
-
-            // empeche l'icone de depasser du contour du bouton
-
-           // image.SetValue(Image.HeightProperty, 100);
-          //  image.SetValue(Image.WidthProperty, 100);
-
             return image;
         }
 
@@ -277,38 +262,34 @@ namespace MyDomotik
             Valider.Visibility = Visibility.Visible;
 
             // mémorise l'image cliquée
-            this.image = sender as Image;
+            Image image = sender as Image;
             this.nom = image.Name.Replace("é", ".");
-
-            nouvelleIcone = true;
+            nouvellePiece = true;
         }
-        
 
-        [DllImport("ModelDll.dll", EntryPoint = "?setName@Node@EP@@QAEXPA_W@Z",
-            CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+        [DllImport("ModelDll.dll", EntryPoint = "?setName@Node@EP@@QAEXPAD@Z",
+        CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern void Node_setName(IntPtr node, String name);
 
         [DllImport("ModelDll.dll", EntryPoint = "Room_New",
-         CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
+         CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr Room_New(String name, String ico);
 
 
         [DllImport("ModelDll.dll", EntryPoint = "?addRoom@Core@EP@@QAEHPAVRoom@2@@Z",
-            CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern int Core_addRoom(IntPtr core, IntPtr room);
 
         // évenement qui gère la validation de saisie du nom de l'icone
         private void Validation(object sender, RoutedEventArgs e)
         {
-            if (this.nouvelleIcone) // création d'une nouvelle icone
+            if (this.nouvellePiece) // création d'une nouvelle icone
             {
                 // efface message
                 message1.Text = "";
                 message2.Text = "";
                 nomIcone.Visibility = Visibility.Collapsed;
                 Valider.Visibility = Visibility.Collapsed;
-
-                
                 IntPtr room = Room_New(nomIcone.Text, this.nom);
                 Core_addRoom(core, room);
                 Core_save(core);
@@ -316,16 +297,12 @@ namespace MyDomotik
             }
             else // Changement du nom de l'icone : mémorisation dans la configuration
             {              
-                nomPiece = nomIcone.Text;
-                IntPtr room = Core_getRoomByIndex(core, indexIcone);
-                Node_setName(room, nomPiece);
-
+                IntPtr room = Core_getRoomByIndex(core, indexPiece);
+                //Node_setName(room, nomIcone.Text);
                 message1.Text = "";
                 nomIcone.Visibility = Visibility.Collapsed;
                 Valider.Visibility = Visibility.Collapsed;
-
                 afficherPage();
-
             }
             nomIcone.Text = "";
             Core_save(core);
@@ -337,7 +314,7 @@ namespace MyDomotik
         private void Menu1(object sender, RoutedEventArgs e)
         {
                 Button button = sender as Button; //Enregistrement du bouton choisi
-                indexIcone = (int) button.Tag;
+                indexPiece = (int) button.Tag;
                 Options.Visibility = Visibility.Visible;
                 Supprimer.IsEnabled = true;
                 ChangerNom.IsEnabled = true;
@@ -355,13 +332,13 @@ namespace MyDomotik
         }
 
         [DllImport("ModelDll.dll", EntryPoint = "?deleteRoomByIndex@Core@EP@@QAEHH@Z",
-           CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
+           CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern int Core_deleteRoomByIndex(IntPtr core, int index);
        
 
         private void enleverIcone(object sender, RoutedEventArgs e)
         {
-            Core_deleteRoomByIndex(core,indexIcone);
+            Core_deleteRoomByIndex(core,indexPiece);
             Core_save(core);
             Options.Visibility = Visibility.Collapsed;
             Supprimer.IsEnabled = false;
@@ -385,9 +362,9 @@ namespace MyDomotik
         private void ajouterEquip(object sender, RoutedEventArgs e)
         {
             Core_save(core);
-            IntPtr room = Core_getRoomByIndex(core, indexIcone);
+            IntPtr room = Core_getRoomByIndex(core, indexPiece);
             IntPtr tmp = Node_getName(room);
-            nomPieceSelectionee = System.Runtime.InteropServices.Marshal.PtrToStringUni(tmp);
+            nomPieceSelectionee = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
 
 
             this.Frame.Navigate(typeof(GestionEquipements));

@@ -79,7 +79,7 @@ namespace ModelDll_Test
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern int Core_deleteRoomByIndex(IntPtr core, int index);
 
-        [DllImport("ModelDll.dll", EntryPoint = "?deleteRoomByName@Core@EP@@QAEHPA_W@Z",
+        [DllImport("ModelDll.dll", EntryPoint = "?deleteRoomByName@Core@EP@@QAEHPAD@Z",
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern int Core_deleteRoomByName(IntPtr core, string name);
 
@@ -92,7 +92,7 @@ namespace ModelDll_Test
         public static extern IntPtr Core_getRoomByName(IntPtr core, string name);
 
         // Retourne string
-        [DllImport("ModelDll.dll", EntryPoint = "?getFileSave@Core@EP@@QAEPA_WXZ",
+        [DllImport("ModelDll.dll", EntryPoint = "?getFileSave@Core@EP@@QAEPADXZ",
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern IntPtr Core_getFileSave(IntPtr core);
 
@@ -100,7 +100,7 @@ namespace ModelDll_Test
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern int Core_getNumberRooms(IntPtr core);
 
-        [DllImport("ModelDll.dll", EntryPoint = "?getNumberRooms@Core@EP@@QAEHXZ",
+        [DllImport("ModelDll.dll", EntryPoint = "?getCurrentRoom@Core@EP@@QAEPAVRoom@2@XZ",
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern int Core_getCurrentRoom(IntPtr core);
 
@@ -136,11 +136,11 @@ namespace ModelDll_Test
         public static extern void Node_setName(IntPtr node, String name);
 
         // Retourne string
-        [DllImport("ModelDll.dll", EntryPoint = "?getIco@Node@EP@@QAEPA_WXZ",
+        [DllImport("ModelDll.dll", EntryPoint = "?getIco@Node@EP@@QAEPADXZ",
         CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern IntPtr Node_getIco(IntPtr node);
 
-        [DllImport("ModelDll.dll", EntryPoint = "?setIco@Node@EP@@QAEXPA_W@Z",
+        [DllImport("ModelDll.dll", EntryPoint = "?setIco@Node@EP@@QAEXPAD@Z",
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern void Node_setIco(IntPtr node, String name);
 
@@ -159,11 +159,10 @@ namespace ModelDll_Test
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern IntPtr Room_addEquipment(IntPtr room, IntPtr eq);
 
-        [DllImport("ModelDll.dll", EntryPoint = "?deleteEquipmentByIndex@Room@EP@@QAEHH@Z",
-            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
-        public static extern int Room_deleteEquipmentByIndex(IntPtr room, int index);
 
-        [DllImport("ModelDll.dll", EntryPoint = "?deleteEquipmentByName@Room@EP@@QAEHPA_W@Z",
+     
+
+        [DllImport("ModelDll.dll", EntryPoint = "?deleteEquipmentByName@Room@EP@@QAEHPAD@Z",
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern int Room_deleteEquipmentByName(IntPtr room, string name);
 
@@ -171,7 +170,7 @@ namespace ModelDll_Test
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern IntPtr Room_getEquipmentByIndex(IntPtr room, int index);
 
-        [DllImport("ModelDll.dll", EntryPoint = "?getEquipmentByName@Room@EP@@QAEPAVEquipment@2@PA_W@Z",
+        [DllImport("ModelDll.dll", EntryPoint = "?getEquipmentByName@Room@EP@@QAEPAVEquipment@2@PAD@Z",
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern IntPtr Room_getEquipmentByName(IntPtr room, string name);
 
@@ -268,7 +267,7 @@ namespace ModelDll_Test
         public static extern int EquipmentFibaro_getEquipmentId(IntPtr eq);
 
         // Retourne string
-        [DllImport("ModelDll.dll", EntryPoint = "?getAction@EquipmentFibaro@EP@@QAEPA_WXZ",
+        [DllImport("ModelDll.dll", EntryPoint = "?getAction@EquipmentFibaro@EP@@QAEPADXZ",
             CallingConvention = CallingConvention.ThisCall, CharSet = CharSet.Ansi)]
         public static extern IntPtr EquipmentFibaro_getAction(IntPtr eq);
 
@@ -301,3 +300,10 @@ namespace ModelDll_Test
         }
     }   
 }
+
+
+
+
+   [DllImport("ModelDll.dll", EntryPoint = "?deleteEquipmentByIndex@Room@EP@@QAEHH@Z",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+   public static extern int Room_deleteEquipmentByIndex(IntPtr room, int index);
