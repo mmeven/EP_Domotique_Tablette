@@ -277,29 +277,27 @@ namespace ModelDll_Test
         {
             IntPtr core = Core_NewFromSave("./load.txt");
 
-            IntPtr room = Core_getRoomByName(core, "Piece");
+            /*IntPtr room1 = Room_New("P1","ico1");
+            IntPtr room2 = Room_New("P2", "ico2");
+            IntPtr room3 = Room_New("P3", "ico3");
+            IntPtr room4 = Room_New("P4", "ico4");
 
-            if (room == IntPtr.Zero) Console.WriteLine("COCOCOOCOCO");
+            Core_addRoom(core, room1);
+            Core_addRoom(core, room2);
+            Core_addRoom(core, room3);
+            Core_addRoom(core, room4);*/
 
-            int i = Core_getNumberRooms(core);
-            Console.WriteLine(i);
+            Console.WriteLine(Core_getNumberRooms(core));
 
-            IntPtr tmp = Node_getName(room);
+            IntPtr r = Core_getRoomByIndex(core, 2);
+            IntPtr tmp = Node_getName(r);
             string name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
 
             Console.WriteLine(name);
 
-            Core_deleteRoomByIndex(core, 0);
-
-            room = Core_getRoomByName(core, "Piece");
-            if (room == IntPtr.Zero) Console.WriteLine("COCOCOOCOCO");
-
-            i = Core_getNumberRooms(core);
-            Console.WriteLine(i);
-
             Console.ReadKey();
 
-            Core_Delete(core);
+            Core_SaveAndDelete(core);
         }
     }   
 }
