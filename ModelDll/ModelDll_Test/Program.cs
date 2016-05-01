@@ -300,10 +300,3 @@ namespace ModelDll_Test
         }
     }   
 }
-
-
-
-
-   [DllImport("ModelDll.dll", EntryPoint = "?deleteEquipmentByIndex@Room@EP@@QAEHH@Z",
-            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
-   public static extern int Room_deleteEquipmentByIndex(IntPtr room, int index);
