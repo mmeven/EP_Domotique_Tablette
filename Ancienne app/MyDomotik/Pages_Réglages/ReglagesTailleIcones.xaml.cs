@@ -30,43 +30,55 @@ namespace MyDomotik
     public sealed partial class ReglagesTailleIcones : Page
     {
         IntPtr core;
-        [DllImport("ModelDll.dll", EntryPoint = "?setIconSize@Core@EP@@QAEXH@Z",
-        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.ThisCall)]
-        public static extern void Core_setIconSize(IntPtr core, int size);
 
+        //DLL
         [DllImport("ModelDll.dll", EntryPoint = "Core_NewFromSave",
-        CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
+        CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr Core_NewFromSave(String fileName);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?save@Core@EP@@QAEHXZ",
+        CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Core_save(IntPtr core);
+        
+        [DllImport("ModelDll.dll", EntryPoint = "?setIconSize@Core@EP@@QAEXH@Z",
+        CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern void Core_setIconSize(IntPtr core, int size);
+        //FIN DLL
 
         public ReglagesTailleIcones()
         {
             this.InitializeComponent();
-            core = Core_NewFromSave("./sauvegarde.txt");
+            Windows.Storage.StorageFolder sf = Windows.Storage.ApplicationData.Current.LocalFolder;
+            core = Core_NewFromSave(sf.Path + "\\load.txt");
         }
 
         private void exitAdmin(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainPage));
+            this.Frame.GoBack();
+            this.Frame.GoBack();
         }
 
         private void menuAdmin(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AdminPage));
+            this.Frame.GoBack();
         }
 
         private void choixPetit(object sender, RoutedEventArgs e)
         {
-            Core_setIconSize(core, 1);
+            Core_setIconSize(core, 0);
+            Core_save(core);
         }
 
         private void choixMoyen(object sender, RoutedEventArgs e)
         {
-            Core_setIconSize(core, 2);
+            Core_setIconSize(core, 1);
+            Core_save(core);
         }
 
         private void choixGrand(object sender, RoutedEventArgs e)
         {
-            Core_setIconSize(core, 3);
+            Core_setIconSize(core, 2);
+            Core_save(core);
         }
     }
 }

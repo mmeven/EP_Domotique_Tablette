@@ -54,12 +54,31 @@ namespace MyDomotik
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern int Core_save(IntPtr core);
 
+        [DllImport("ModelDll.dll", EntryPoint = "?setName@Node@EP@@QAEXPAD@Z",
+        CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern void Node_setName(IntPtr node, String name);
+
+        [DllImport("ModelDll.dll", EntryPoint = "Room_New",
+         CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr Room_New(String name, String ico);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?deleteRoomByIndex@Core@EP@@QAEHH@Z",
+           CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Core_deleteRoomByIndex(IntPtr core, int index);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?addRoom@Core@EP@@QAEHPAVRoom@2@@Z",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Core_addRoom(IntPtr core, IntPtr room);
+        //FIN DLL
+
         private String nom; //nom de l'image choisie pour la nouvelle piece
-        private int indexPiece; //index de la piece que l'on souhaite rennomer/supprimer
+        private int indexPiece; //index de la piece que l'on souhaite rennomer/supprimer//y ajouter des equipements
         private Boolean nouvellePiece = false; //vrai, lorsque l'utilisateur souhaite ajouter une piece. Faux si il veut renommer/suppro
         private IntPtr core; 
         private int pageActuelle = 0; //numéro de la page actuelle de la grille
         private static string nomPieceSelectionee; //nom de la piece à laquelle on souhaite ajouter des equipements
+        private Affichage affichage; //permet d'afficher la grille
+
 
         public static string NomPieceSelectionee
         {
@@ -78,159 +97,27 @@ namespace MyDomotik
         {
             this.InitializeComponent();
             Windows.Storage.StorageFolder sf = Windows.Storage.ApplicationData.Current.LocalFolder;
-            core = Core_NewFromSave(sf.Path + "\\save.txt");
-            afficherPage();
+            core = Core_NewFromSave(sf.Path + "\\load.txt");
+
+            affichage = new Affichage();
+
+            afficherPage(); //gere l'affichage de la grille: boutons selon le format, affcihage des pieces...    
         }
         
         
         public void afficherPage()
         {
             nouvellePiece = false;
-            int nbRoom = Core_getNumberRooms(core);
-            cadre.Children.Clear();
+            message2.Text = "Choisir une icône";
+            List<Button> boutons = affichage.afficherPiecesGrille(pageActuelle, cadre, core);
 
-            //Créer bouton pour chaque piece dans la grille
-            for (int i = pageActuelle*8; i < nbRoom; i++)
+            //Lors de l'appui sur le bouton associe a une piece, lancer Menu1
+            foreach(Button b in boutons)
             {
-                IntPtr room = Core_getRoomByIndex(core, i);
-
-                Button bouton = new Button();
-
-                bouton.Background = new SolidColorBrush(Colors.DarkSalmon);
-
-                bouton.Tag = i;
-
-                bouton.SetValue(Button.HorizontalAlignmentProperty, HorizontalAlignment.Stretch);
-                bouton.SetValue(Button.VerticalAlignmentProperty, VerticalAlignment.Stretch);
-
-                bouton.Click += Menu1;
-
-                //Affichage du nom de l'icone
-                IntPtr roomName = Node_getName(room);
-                string nameRoom = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(roomName);
-                TextBlock nomIcone = creerLabel(nameRoom);
-                //Création image de l'icone
-                int sizeIcone = Core_getIconSize(core);
-                
-                IntPtr iconeName = Node_getIco(room);
-                string nameIc = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(iconeName);
-              
-                Image image = creerImageIcone(sizeIcone, nameIc, bouton);
-
-
-                //Associe image et nom de l'icone au bouton
-                ajouterImageEtLabelAuBouton(image, nomIcone, bouton);
-
-                //Place le bouton dans la grille
-                if (i < pageActuelle * 8 + 4)
-                {
-                    bouton.SetValue(Grid.ColumnProperty, i % 8);
-                    bouton.SetValue(Grid.RowProperty, 0);
-                }
-                else
-                {
-                    bouton.SetValue(Grid.ColumnProperty, i % 8 - 4);
-                    bouton.SetValue(Grid.RowProperty, 1);
-                }
-                cadre.Children.Add(bouton);
-            }
-
-            if (nbRoom - 8 * pageActuelle < 0)
-            {
-                nbRoom = 0;
-            }
-            else
-            {
-                nbRoom = nbRoom - 8 * pageActuelle;
-            }
-            //Création bouton vide (sans pièce)
-            for (int i = 8*pageActuelle+((nbRoom%8)); i < (8 * pageActuelle + 8); i++) 
-            {
-                Button bouton = new Button();
-                bouton.BorderBrush = new SolidColorBrush(Colors.DarkSalmon);
-
-                bouton.Tag = -1;
-
-                bouton.SetValue(Button.HorizontalAlignmentProperty, HorizontalAlignment.Stretch);
-                bouton.SetValue(Button.VerticalAlignmentProperty, VerticalAlignment.Stretch);
-
-                bouton.Click += Menu2;
-
-                //Place le bouton dans la grille
-                if (i < (pageActuelle * 8 + 4))
-                {
-
-                    bouton.SetValue(Grid.ColumnProperty, i % 8);
-                    bouton.SetValue(Grid.RowProperty, 0);
-                }
-                else
-                {
-                    bouton.SetValue(Grid.ColumnProperty, i % 8 - 4);
-                    bouton.SetValue(Grid.RowProperty, 1);
-                }
-                cadre.Children.Add(bouton);
+                b.Click += Menu1;
             }
         }
-
-
-        public TextBlock creerLabel(String s)
-        {
-            // création label : nom de l'icone
-            TextBlock labelIcone = new TextBlock();
-            labelIcone.SetValue(TextBlock.TextProperty, s);
-
-            // police du label
-            labelIcone.FontFamily = new FontFamily("Segoe UI");
-            labelIcone.Foreground = new SolidColorBrush(Colors.Black);
-            labelIcone.FontSize = 24;
-
-            // positionnement du label
-
-            labelIcone.TextAlignment = TextAlignment.Center;
-            labelIcone.VerticalAlignment = VerticalAlignment.Stretch;
-            labelIcone.HorizontalAlignment = HorizontalAlignment.Stretch;
-            labelIcone.TextWrapping = TextWrapping.Wrap;
-            labelIcone.SetValue(TextBlock.FontSizeProperty, 24);
-
-            return labelIcone;
-        }
-
-        public Image creerImageIcone(int sizeIcone, string nameIc, Button bouton)
-        {
-            Image image = new Image();
-            BitmapImage SourceBi = new BitmapImage();
-
-
-            string chaineSource = "ms-appx:///Assets/ICONS_MDTOUCH/size_64x64/" + nameIc; // spécifie le dossier adéquat en fonction de la taille de l'image
-            Uri uri = new Uri(chaineSource, UriKind.Absolute);
-            SourceBi.UriSource = uri;
-            image.Source = SourceBi;
-            return image;
-        }
-
-
-        public void ajouterImageEtLabelAuBouton(Image image, TextBlock nomIcone, Button bouton)
-        {
-            Grid grilleBouton = new Grid();
-            grilleBouton.RowDefinitions.Add(new RowDefinition());
-            grilleBouton.RowDefinitions.Add(new RowDefinition());
-
-            image.SetValue(Grid.RowProperty, 0);
-            nomIcone.SetValue(Grid.RowProperty, 1);
-
-            grilleBouton.Children.Add(image);
-            grilleBouton.Children.Add(nomIcone);
-            image.HorizontalAlignment = HorizontalAlignment.Stretch;
-            image.VerticalAlignment = VerticalAlignment.Stretch;
-            nomIcone.HorizontalAlignment = HorizontalAlignment.Stretch;
-            nomIcone.VerticalAlignment = VerticalAlignment.Stretch;
-            grilleBouton.HorizontalAlignment = HorizontalAlignment.Stretch;
-            grilleBouton.VerticalAlignment = VerticalAlignment.Stretch;
-            bouton.Content = grilleBouton;
-        }
-
-
-
+        
         private void exitAdmin(object sender, RoutedEventArgs e)
         {
             Core_save(core);
@@ -250,7 +137,7 @@ namespace MyDomotik
             this.Frame.Navigate(typeof(GestionEquipements));
         }
 
-        //événement qui gère le double click sur une icone
+        //événement qui gère le click sur une piece
         //affiche un message pour le choix de l'emplacement de l'icone dans la grille et récupère les informations sur l'icone
         private void choixImage(object sender, RoutedEventArgs e)
         {
@@ -267,23 +154,10 @@ namespace MyDomotik
             nouvellePiece = true;
         }
 
-        [DllImport("ModelDll.dll", EntryPoint = "?setName@Node@EP@@QAEXPAD@Z",
-        CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
-        public static extern void Node_setName(IntPtr node, String name);
-
-        [DllImport("ModelDll.dll", EntryPoint = "Room_New",
-         CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr Room_New(String name, String ico);
-
-
-        [DllImport("ModelDll.dll", EntryPoint = "?addRoom@Core@EP@@QAEHPAVRoom@2@@Z",
-            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
-        public static extern int Core_addRoom(IntPtr core, IntPtr room);
-
         // évenement qui gère la validation de saisie du nom de l'icone
         private void Validation(object sender, RoutedEventArgs e)
         {
-            if (this.nouvellePiece) // création d'une nouvelle icone
+            if (this.nouvellePiece) // création d'une nouvelle piece
             {
                 // efface message
                 message1.Text = "";
@@ -292,25 +166,24 @@ namespace MyDomotik
                 Valider.Visibility = Visibility.Collapsed;
                 IntPtr room = Room_New(nomIcone.Text, this.nom);
                 Core_addRoom(core, room);
-                Core_save(core);
-                afficherPage();
             }
-            else // Changement du nom de l'icone : mémorisation dans la configuration
+            else // Changement du nom de la piece : mémorisation dans la configuration
             {              
                 IntPtr room = Core_getRoomByIndex(core, indexPiece);
-                //Node_setName(room, nomIcone.Text);
+                Node_setName(room, nomIcone.Text);
                 message1.Text = "";
                 nomIcone.Visibility = Visibility.Collapsed;
                 Valider.Visibility = Visibility.Collapsed;
-                afficherPage();
             }
             nomIcone.Text = "";
             Core_save(core);
+            this.Frame.GoBack();
+            this.Frame.GoForward();
         }
 
       
         // évenement qui gère le click sur un bouton (en dehors du cas où l'utilisateur ajoute une icone)
-        // affiche un menu de deux boutons : supprimer l'icone ou modifier le nom de l'icone
+        // affiche un menu de 4 boutons : supprimer l'icone, modifier le nom de l'icone, ajouter des equipements, ou annuler
         private void Menu1(object sender, RoutedEventArgs e)
         {
                 Button button = sender as Button; //Enregistrement du bouton choisi
@@ -319,32 +192,31 @@ namespace MyDomotik
                 Supprimer.IsEnabled = true;
                 ChangerNom.IsEnabled = true;
                 AjouterEquipements.IsEnabled = true;
-
+                message1.Text = "";
         }
 
-        //Permet de masquer le menu "options" lorsque l'on appuie sur un bouton vide de la grille
-        private void Menu2(object sender, RoutedEventArgs e)
+        //Permet de masquer le menu "options"
+        private void annuler(object sender, RoutedEventArgs e)
         {
-            Options.Visibility = Visibility.Collapsed;
-            Supprimer.IsEnabled = false;
-            ChangerNom.IsEnabled = false;
-            AjouterEquipements.IsEnabled = false;
+            this.Frame.GoBack();
+            this.Frame.GoForward();
         }
-
-        [DllImport("ModelDll.dll", EntryPoint = "?deleteRoomByIndex@Core@EP@@QAEHH@Z",
-           CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
-        public static extern int Core_deleteRoomByIndex(IntPtr core, int index);
-       
+    
 
         private void enleverIcone(object sender, RoutedEventArgs e)
         {
             Core_deleteRoomByIndex(core,indexPiece);
             Core_save(core);
+            
             Options.Visibility = Visibility.Collapsed;
             Supprimer.IsEnabled = false;
             ChangerNom.IsEnabled = false;
             AjouterEquipements.IsEnabled = false;
-            afficherPage();
+            Annuler.IsEnabled = false;
+
+
+            this.Frame.GoBack();
+            this.Frame.GoForward();
         }
 
 
@@ -356,6 +228,7 @@ namespace MyDomotik
             Options.Visibility = Visibility.Collapsed;
             Supprimer.IsEnabled = false;
             ChangerNom.IsEnabled = false;
+            Annuler.IsEnabled = false;
             AjouterEquipements.IsEnabled = false;
         }
 
@@ -365,8 +238,6 @@ namespace MyDomotik
             IntPtr room = Core_getRoomByIndex(core, indexPiece);
             IntPtr tmp = Node_getName(room);
             nomPieceSelectionee = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
-
-
             this.Frame.Navigate(typeof(GestionEquipements));
         }
 
