@@ -32,21 +32,21 @@ namespace EP {
 				room = m_listRooms[i];
 
 				// Room's attributes
-				file << room->getName() << "," << room->getIco() << "," << room->getNumberEquipments() << endl;
+				file << room->getName() << "," << room->getIco() << "," << room->getNumberEquipments() << "\n";
 
 				// For each of its equipments
 				for (j = 0; j < room->getNumberEquipments(); j++) {
-					eq = room->getEquipmentByIndex(i);
+					eq = room->getEquipmentByIndex(j);
 
 					file << eq->getName() << "," << eq->getIco() << "," << eq->getTypeOf() << ",";
 					if (eq->getTypeOf() == 1) {
-						file << ((EquipmentKira*)eq)->getButtonId() << ((EquipmentKira*)eq)->getPageNumber();
+						file << ((EquipmentKira*)eq)->getButtonId() << "," << ((EquipmentKira*)eq)->getPageNumber();
 					}
 					else if (eq->getTypeOf() == 2) {
 						file << ((EquipmentFibaro*)eq)->getEquipmentId() << "," << ((EquipmentFibaro*)eq)->getAction();
 					}
 
-					file << endl;
+					file << "\n";
 				}
 			}
 			file.close();
@@ -57,7 +57,7 @@ namespace EP {
 
 	int Core::load() {
 		ifstream file(m_coreSave, ifstream::in);
-		//if (file) {
+		if (file) {
 			int nbRooms, nbEquip; // tmp vars
 			Room* room;
 			Equipment* eq;
@@ -80,15 +80,24 @@ namespace EP {
 
 			for (i = 0; i < nbRooms; i++) {
 				//file >> roomName >> roomIco >> nbEquip;
+
+				roomName[0] = '\0';
+				roomIco[0] = '\0';
+				tmp[0] = '\0';
+
 				file.getline(roomName, 100, ',');
 				file.getline(roomIco, 100, ',');
-				file.getline(tmp, 100);
+				file.getline(tmp, 100, '\n');
 				nbEquip = strtol(tmp, NULL, 10);
 
 				room = new Room(roomName, roomIco);
 
 				for (j = 0; j < nbEquip; j++) {
 					//file >> eqName >> eqIco >> eqTypeOf;
+					eqName[0] = '\0';
+					eqIco[0] = '\0';
+					eqAction[0] = '\0';
+					tmp[0] = '\0';
 
 					file.getline(eqName, 100, ',');
 					file.getline(eqIco, 100, ',');
@@ -121,7 +130,7 @@ namespace EP {
 				}
 				
 				addRoom(room);
-			//}
+			}
 
 			file.close();
 		}

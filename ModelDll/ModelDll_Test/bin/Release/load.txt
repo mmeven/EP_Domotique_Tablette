@@ -1,3 +1,7 @@
-0,0,1
-Piece,un lit,1
-toaster,un grille-pain,1,1,0
+0,0,4
+P1,ico1,0
+P2,ico2,0
+P3,ico3,2
+E1,ico,1,10,10
+E2,ico,1,10,10
+P4,ico4,0

@@ -34,9 +34,8 @@
 
             <TextBlock x:Name="page_title" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="2" Margin="7,21,6,16" Foreground="Black" Text="Pièces de la maison"/>
 
-            <Button x:Name="configButton" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="{x:Null}" Grid.Row="0" Grid.Column="4" FontSize="24" DoubleTapped="adminSelect" >
-                <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch" Text="Configuration" FontWeight="Bold" Foreground="Black" FontSize="30" TextAlignment="Center"/>
-            </Button>
+            <Button x:Name="configButton" Content ="Configuration" HorizontalContentAlignment="Center" Background="Transparent" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="{x:Null}" Grid.Row="0" Grid.Column="4" FontSize="30"  DoubleTapped="adminSelect" />
+
 
         </Grid>
 
@@ -48,11 +47,6 @@
 
         </Grid>
 
-
-        <!--Barre de navigation située en bas de page-->
-        <Rectangle x:Name="barreMenu"  VerticalAlignment="Top" Grid.Row="2" Height="140" Margin="10,10,10,0">
-
-        </Rectangle>
 
 
         <Grid HorizontalAlignment="Center" Height="130" Grid.Row="2" VerticalAlignment="Center" Width="1346">
@@ -68,8 +62,8 @@
 
             </Grid.ColumnDefinitions>
 
-            <Rectangle x:Name ="RectPrecedent"   Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-            <Button x:Name="precedent" Grid.Column="1"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Click="PagePrecedente">
+            <Rectangle x:Name ="RectPrecedent"  Stroke="Black" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button x:Name="precedent" Grid.Column="1" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Click="PagePrecedente">
                 <Image  Source="Assets/suivant.PNG" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
                     <Image.RenderTransform>
                         <CompositeTransform Rotation="-180"/>
@@ -77,14 +71,14 @@
                 </Image>
             </Button>
 
-            <Rectangle x:Name ="RectAccueil"  Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-            <Button x:Name="accueil"  Background="Transparent" Grid.Column="3"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Click="PageAccueil">
+            <Rectangle x:Name ="RectAccueil" Stroke="Black" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button x:Name="accueil" BorderBrush="Transparent" Background="Transparent" Grid.Column="3"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Click="PageAccueil">
                 <Image  Source="Assets/acceuil.PNG"/>
             </Button>
 
 
-            <Rectangle x:Name ="RectSuivant"  Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-            <Button x:Name="suivant" Grid.Column="5"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"   Click="PageSuivante">
+            <Rectangle x:Name ="RectSuivant" Stroke="Black" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button x:Name="suivant" Grid.Column="5" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"   Click="PageSuivante">
                 <Image  Source="Assets/suivant.PNG"/>
             </Button>
 

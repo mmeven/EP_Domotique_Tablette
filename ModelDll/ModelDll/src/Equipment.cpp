@@ -1,5 +1,5 @@
 #include "..\include\Equipment.h"
-
+#include "..\include\RequeteHttp.h"
 #include <iostream>
 
 
@@ -68,12 +68,16 @@ namespace EP {
 	}
 
 	int EquipmentKira::sendRequest() {
-		/*string s1(getIpKira()); //domaine, premiere partie de l'adree
+		string s1(getIpKira()); //domaine, premiere partie de l'adree
 		string s2("/remote" + m_pageNumber);
 		string s3 = ".htm?button"; //impossible de le mettre directement dans la ligne suivante, je ne sais pas pourquoi
 
-		s2 += s3 + std::to_string(m_buttonId) + "#";     // deuxieme partie de l'adresse  + 
-		void requeteHttp(string s1, string s2);*/
+		s2 += s3;
+		s2 += m_buttonId + "#";     // deuxieme partie de l'adresse  + 
+
+		char* c1((char *) s1.c_str());
+		char* c2((char *) s2.c_str());
+		requeteHttpKira(c1, c2);
 		return 0;
 	}
 
@@ -105,26 +109,14 @@ namespace EP {
 
 	int EquipmentFibaro::sendRequest() {
 		// simple simple GET
-		/*happyhttp::Connection conn(getIpFibaro(), 80);
-		conn.setcallbacks(OnBegin, OnData, OnComplete, 0);
-		string user = Fibaro_login;
-		string pass = Fibaro_password;
-		const string s = (user + ":" + pass);
 
-		string encoded = "Basic " + base64_encode(reinterpret_cast<const unsigned char*>(s.c_str()), s.length());
-		const char *auth = encoded.c_str();
-		const char* headers[] =
-		{
-			"Authorization",auth,
-			"Connection", "close",
-			0
-		};
-		string s6 = "&";//impossible de le mettre directement dans la ligne suivante, je ne sais pas pourquoi
-		string action = ("/api/callAction?deviceID=" + m_equipmentId + s6 + std::to_string(m_action[300]));
-		conn.request("GET", action.c_str(), headers, 0, 0);
+		char s6 = '&'; //impossible de le mettre directement dans la ligne suivante, je ne sais pas pourquoi
+		char* action("/api/callAction?deviceID=");
+		action += m_equipmentId;
+		action += s6 + m_action[300];
 
-		while (conn.outstanding())
-			conn.pump();*/
+		requeteHttpFibaro(getIpFibaro(), action, Fibaro_login, Fibaro_password);
+
 		return 0;
 	}
 
