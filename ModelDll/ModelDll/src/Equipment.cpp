@@ -43,12 +43,14 @@ namespace EP {
 	}
 
 	int Equipment::setLoginFibaro(char* new_login) {
-		strcpy_s(Fibaro_login, new_login);
+		if(new_login[0] != '\0')
+			strcpy_s(Fibaro_login, new_login);
 		return 0;
 	}
 
 	int Equipment::setPasswordFibaro(char* new_password) {
-		strcpy_s(Fibaro_password, new_password);
+		if (new_password[0] != '\0')
+			strcpy_s(Fibaro_password, new_password);
 		return 0;
 	}
 
