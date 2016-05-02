@@ -294,6 +294,13 @@ namespace ModelDll_Test
             string name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
             Console.WriteLine(name);
 
+            Core_SaveAndDelete(core);
+            core = Core_NewFromSave("./load.txt");
+
+            Console.ReadKey();
+
+            r = Core_getRoomByName(core, "P3");
+
             Room_addEquipment(r, EquipmentKira_New("E1", "ico", r, 10, 10));
             Room_addEquipment(r, EquipmentKira_New("E2", "ico", r, 10, 10));
 
@@ -309,9 +316,26 @@ namespace ModelDll_Test
             name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
             Console.WriteLine(name);
 
+            Core_SaveAndDelete(core);
+            core = Core_NewFromSave("./load.txt");
+
             Console.ReadKey();
 
-            Core_save(core);
+            r = Core_getRoomByName(core, "P3");
+
+            e1 = Room_getEquipmentByIndex(r, 0);
+            tmp = Node_getName(e1);
+            name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
+            Console.WriteLine(name);
+
+            e2 = Room_getEquipmentByName(r, "E2");
+            tmp = Node_getName(e2);
+            name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
+            Console.WriteLine(name);
+
+            Console.ReadKey();
+
+            Core_SaveAndDelete(core);
         }
     }   
 }

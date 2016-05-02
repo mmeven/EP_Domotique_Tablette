@@ -109,7 +109,7 @@ namespace EP {
 
 						file.getline(tmp, 100, ',');
 						eqId = strtol(tmp, NULL, 10);
-						file.getline(tmp, 100, ',');
+						file.getline(tmp, 100);
 						eqKiraPage = strtol(tmp, NULL, 10);
 
 						eq = new EquipmentKira(eqName, eqIco, room, eqId, eqKiraPage);
