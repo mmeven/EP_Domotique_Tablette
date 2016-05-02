@@ -36,11 +36,11 @@ namespace EP {
 
 				// For each of its equipments
 				for (j = 0; j < room->getNumberEquipments(); j++) {
-					eq = room->getEquipmentByIndex(i);
+					eq = room->getEquipmentByIndex(j);
 
 					file << eq->getName() << "," << eq->getIco() << "," << eq->getTypeOf() << ",";
 					if (eq->getTypeOf() == 1) {
-						file << ((EquipmentKira*)eq)->getButtonId() << ((EquipmentKira*)eq)->getPageNumber();
+						file << ((EquipmentKira*)eq)->getButtonId() << "," << ((EquipmentKira*)eq)->getPageNumber();
 					}
 					else if (eq->getTypeOf() == 2) {
 						file << ((EquipmentFibaro*)eq)->getEquipmentId() << "," << ((EquipmentFibaro*)eq)->getAction();

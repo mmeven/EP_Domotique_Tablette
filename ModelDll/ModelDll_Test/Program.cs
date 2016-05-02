@@ -276,7 +276,7 @@ namespace ModelDll_Test
         {
             IntPtr core = Core_NewFromSave("./load.txt");
 
-            /*IntPtr room1 = Room_New("P1","ico1");
+            IntPtr room1 = Room_New("P1","ico1");
             IntPtr room2 = Room_New("P2", "ico2");
             IntPtr room3 = Room_New("P3", "ico3");
             IntPtr room4 = Room_New("P4", "ico4");
@@ -284,19 +284,34 @@ namespace ModelDll_Test
             Core_addRoom(core, room1);
             Core_addRoom(core, room2);
             Core_addRoom(core, room3);
-            Core_addRoom(core, room4);*/
-
+            Core_addRoom(core, room4);
+            
             Console.WriteLine(Core_getNumberRooms(core));
 
-            IntPtr r = Core_getRoomByIndex(core, 2);
+            IntPtr r = Core_getRoomByName(core, "P3");
+
             IntPtr tmp = Node_getName(r);
             string name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
+            Console.WriteLine(name);
 
+            Room_addEquipment(r, EquipmentKira_New("E1", "ico", r, 10, 10));
+            Room_addEquipment(r, EquipmentKira_New("E2", "ico", r, 10, 10));
+
+            Console.WriteLine(Room_getNumberEquiments(r));
+
+            IntPtr e1 = Room_getEquipmentByIndex(r, 0);
+            tmp = Node_getName(e1);
+            name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
+            Console.WriteLine(name);
+
+            IntPtr e2 = Room_getEquipmentByName(r, "E2");
+            tmp = Node_getName(e2);
+            name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
             Console.WriteLine(name);
 
             Console.ReadKey();
 
-            Core_SaveAndDelete(core);
+            Core_save(core);
         }
     }   
 }
