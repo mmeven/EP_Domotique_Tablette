@@ -7,7 +7,7 @@
 using namespace std;
 
 namespace EP {
-	Core::Core(char* file) : m_currentRoom(0), m_iconSize(3), m_themeId(1)	{
+	Core::Core(char* file) : m_currentRoom(0), m_iconSize(2), m_themeId(1)	{
 		strcpy_s(m_coreSave, file);
 	}
 
@@ -109,7 +109,7 @@ namespace EP {
 
 						file.getline(tmp, 100, ',');
 						eqId = strtol(tmp, NULL, 10);
-						file.getline(tmp, 100, ',');
+						file.getline(tmp, 100);
 						eqKiraPage = strtol(tmp, NULL, 10);
 
 						eq = new EquipmentKira(eqName, eqIco, room, eqId, eqKiraPage);
