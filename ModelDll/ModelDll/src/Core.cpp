@@ -20,7 +20,9 @@ namespace EP {
 
 		if (file) {
 			// Core attributes
-			file << m_themeId << "," << m_iconSize << "," << getNumberRooms() << endl;
+			file << m_themeId << "," << m_iconSize << "," << getNumberRooms() << "\n";
+
+			file << Equipment::getIpKira() << "," << Equipment::getIpFibaro() << "," << Equipment::getLoginFibaro() << "," << Equipment::getPasswordFibaro() << "\n";
 
 			// Tmp vars
 			int i, j;
@@ -64,6 +66,7 @@ namespace EP {
 			int i, j; // loop variables
 
 			char tmp[300];
+			char ipKira[300], ipFibaro[300], login[300], passwd[300];
 			char roomName[100], roomIco[100];
 			char eqName[100], eqIco[100], eqAction[300];
 			int eqTypeOf, eqId, eqKiraPage;
@@ -77,6 +80,20 @@ namespace EP {
 
 			file.getline(tmp, 100);
 			nbRooms = strtol(tmp, NULL, 10);
+
+			// file >> ip kira >> ip fibaro >> login fibaro >> login mdp
+
+			file.getline(ipKira, 100, ',');
+			Equipment::setIpKira(ipKira);
+
+			file.getline(ipFibaro, 100, ',');
+			Equipment::setIpFibaro(ipFibaro);
+
+			file.getline(login, 100, ',');
+			Equipment::setLoginFibaro(login);
+
+			file.getline(passwd, 100);
+			Equipment::setPasswordFibaro(passwd);
 
 			for (i = 0; i < nbRooms; i++) {
 				//file >> roomName >> roomIco >> nbEquip;
