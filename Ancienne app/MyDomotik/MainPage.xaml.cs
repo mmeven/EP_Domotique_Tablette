@@ -78,7 +78,7 @@ namespace MyDomotik
             List<Button> ListeBoutons = affichage.afficherPiecesGrille(pageActuelle, cadre, core);
 
             int theme = Core_getThemeId(core);
-            affichage.afficherCouleur(theme, ListeBoutons, MainGrid, Rect1, Rect2, Rect3, cadre, RectAccueil, RectSuivant, RectPrecedent);
+            affichage.afficherCouleur(theme, ListeBoutons, MainGrid, Rect1, Rect2, Rect3, cadre, RectAccueil, RectSuivant, RectPrecedent, RectFauteuil);
 
             foreach (Button b in ListeBoutons)
             {
@@ -151,8 +151,14 @@ namespace MyDomotik
             this.Frame.Navigate(typeof(MainPage));
         }
 
+        // accès à la page fauteuil
+        private void PageFauteuil(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(WheelchairFeedback));
+        }
+
         //Lors de l'appui sur un équipement
-       
+
         [DllImport("RequeteHttp.dll", CallingConvention=CallingConvention.Cdecl)]
         public static extern void requeteHttp(string s1, string s2 );
 
