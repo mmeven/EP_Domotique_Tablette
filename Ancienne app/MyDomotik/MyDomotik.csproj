@@ -111,11 +111,15 @@
     <Compile Include="AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Affichage.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="GestionEquipements.xaml.cs">
       <DependentUpon>GestionEquipements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages_Réglages\ReglagesReseau.xaml.cs">
+      <DependentUpon>ReglagesReseau.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages_Réglages\ReglagesCouleur.xaml.cs">
       <DependentUpon>ReglagesCouleur.xaml</DependentUpon>
@@ -167,6 +171,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages_Réglages\ReglagesReseau.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages_Réglages\ReglagesCouleur.xaml">
       <Generator>MSBuild:Compile</Generator>

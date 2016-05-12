@@ -65,19 +65,19 @@ namespace MyDomotik
 
         private void choixPetit(object sender, RoutedEventArgs e)
         {
-            Core_setIconSize(core, 0);
+            Core_setIconSize(core, 3);
             Core_save(core);
         }
 
         private void choixMoyen(object sender, RoutedEventArgs e)
         {
-            Core_setIconSize(core, 1);
+            Core_setIconSize(core, 2);
             Core_save(core);
         }
 
         private void choixGrand(object sender, RoutedEventArgs e)
         {
-            Core_setIconSize(core, 2);
+            Core_setIconSize(core, 1);
             Core_save(core);
         }
     }

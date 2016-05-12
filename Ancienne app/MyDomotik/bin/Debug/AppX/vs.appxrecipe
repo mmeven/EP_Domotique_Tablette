@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-04-28T08:53:35.576</Modified>
+      <Modified>2016-05-02T12:49:15.619</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\MyDomotik.exe">
       <PackagePath>MyDomotik.exe</PackagePath>
-      <Modified>2016-04-28T15:08:35.998</Modified>
+      <Modified>2016-05-02T12:49:03.274</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\Assets\acceuil.PNG">
       <PackagePath>Assets\acceuil.PNG</PackagePath>
@@ -10504,43 +10504,43 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\MyDomotik.xr.xml">
       <PackagePath>MyDomotik.xr.xml</PackagePath>
-      <Modified>2016-03-21T14:50:27.095</Modified>
+      <Modified>2016-05-02T12:49:01.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2016-03-07T10:28:02.829</Modified>
+      <Modified>2016-05-02T12:49:01.784</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\AdminPage.xbf">
       <PackagePath>AdminPage.xbf</PackagePath>
-      <Modified>2016-03-07T10:47:10.228</Modified>
+      <Modified>2016-05-02T12:49:01.789</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\GestionPieces.xbf">
       <PackagePath>GestionPieces.xbf</PackagePath>
-      <Modified>2016-04-16T11:34:34.868</Modified>
+      <Modified>2016-05-02T12:49:01.792</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\GestionEquipements.xbf">
       <PackagePath>GestionEquipements.xbf</PackagePath>
-      <Modified>2016-04-18T14:49:04.558</Modified>
+      <Modified>2016-05-02T12:49:01.798</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2016-04-28T08:53:24.290</Modified>
+      <Modified>2016-05-02T12:49:01.805</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\Pages_Réglages\ReglagesCouleur.xbf">
       <PackagePath>Pages_Réglages\ReglagesCouleur.xbf</PackagePath>
-      <Modified>2016-03-07T10:28:02.829</Modified>
+      <Modified>2016-05-02T12:49:01.808</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\Pages_Réglages\ReglagesModeSelection.xbf">
       <PackagePath>Pages_Réglages\ReglagesModeSelection.xbf</PackagePath>
-      <Modified>2016-03-07T10:28:02.829</Modified>
+      <Modified>2016-05-02T12:49:01.811</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\Pages_Réglages\ReglagesTailleIcones.xbf">
       <PackagePath>Pages_Réglages\ReglagesTailleIcones.xbf</PackagePath>
-      <Modified>2016-03-07T10:28:02.829</Modified>
+      <Modified>2016-05-02T12:49:01.813</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-04-28T08:53:32.456</Modified>
+      <Modified>2016-05-02T12:49:11.691</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

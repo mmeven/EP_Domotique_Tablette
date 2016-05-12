@@ -64,11 +64,6 @@ namespace MyDomotik
 
         private void accesParamInterface(object sender, RoutedEventArgs e)
         {
-           // admin_buttons_grid.Children.RemoveAt(3);
-            
-           // RowDefinitionCollection defs = admin_buttons_grid.RowDefinitions;
-            //defs.RemoveAt(2);
-
             admin_1.Text = "Couleurs";
             admin_2.Text= "Tailles icônes";
             admin_4.Text = "Mode défilement";
@@ -82,8 +77,7 @@ namespace MyDomotik
             admin_button_4.Click -= accesParamInterface;
             admin_button_4.Click += accesParamDefil;
 
-            page_title.Text = "Paramètres de l'interface";
-                       
+            page_title.Text = "Paramètres de l'interface";                      
         }
 
         private void accesParamCouleur(object sender, RoutedEventArgs e)
@@ -100,6 +94,11 @@ namespace MyDomotik
         private void accesParamDefil(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(ReglagesModeSelection));
+        }
+
+        private void accesParamReseau(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Pages_Réglages.ReglagesReseau));
         }
 
        

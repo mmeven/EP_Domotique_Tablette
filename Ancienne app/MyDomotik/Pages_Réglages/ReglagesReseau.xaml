@@ -1,0 +1,96 @@
+﻿<Page
+    x:Class="MyDomotik.Pages_Réglages.ReglagesReseau"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyDomotik.Pages_Réglages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="MainGrid" Background="#FFFFFFE0" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="700*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="270*"/>
+                <ColumnDefinition Width="845*"/>
+                <ColumnDefinition Width="251*"/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" Margin="5,0,0,0" Width="252"/>
+
+            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Width="700"/>
+
+            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="0,0,5,0" Width="252"/>
+
+            <!-- Rectangle Retour, en haut à droite -->
+            <Button x:Name="retourMenu" BorderBrush="{x:Null}" Background="Transparent" FontSize="18"  Grid.Row="0" Grid.Column="0" Click="menuAdmin" HorizontalAlignment="Center" VerticalAlignment="Center" Width="252" Height="65">
+                <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Retour"/>
+                </TextBlock>
+            </Button>
+
+            <!-- Rectangle Titre, en haut a centre -->
+            <TextBlock x:Name="page_title" HorizontalAlignment="Center" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="832" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Foreground="Black" Grid.Row="0" Grid.Column="1" FontWeight="Bold">
+    			<Run Foreground="Black" Text="Paramètres réseau"/>
+            </TextBlock>
+
+
+            <!-- Rectangle Accueil, en haut à droite -->
+            <Button x:Name="quitterAdmin" BorderBrush="{x:Null}" Background="Transparent" FontSize="18"  Grid.Row="0" Grid.Column="2" Click="exitAdmin" HorizontalAlignment="Center" VerticalAlignment="Center" Width="252" Height="65">
+                <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Accueil"/>
+                </TextBlock>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="50*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Message indiquant d'entrer l'adresse IP Kira-->
+            <TextBlock x:Name="messageKira" Text="Adresse IP Kira" Grid.Row="0" TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="Red" FontSize="30" FontWeight="Bold"  Grid.Column="0" TextAlignment="Center"/>
+            <!-- Champ pour rentrer l'adresse IP Kira-->
+            <TextBox x:Name="champKira" HorizontalAlignment="Stretch" Height="65" Grid.Row ="0" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Grid.Column="1" Background="#FFA49090" FontSize="24" FontWeight="Bold" />
+            <!-- Bouton valider -->
+            <Button  Content="VALIDER" Height="65" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2"  Background="#FFA49090" FontSize="30" Click="validationIPKira" BorderBrush="#FFA49090"/>
+
+
+            <!-- Message indiquant d'entrer l'adresse IP Fibaro-->
+            <TextBlock x:Name="messageIPFibaro" Text="Adresse IP Fibaro" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="Red" FontSize="30" FontWeight="Bold"  Grid.Column="0" TextAlignment="Center"/>
+            <!-- Champ pour rentrer l'adresse IP Fibaro-->
+            <TextBox x:Name="champIPFibaro" HorizontalAlignment="Stretch" Height="65" Grid.Row ="1" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Grid.Column="1" Background="#FFA49090" FontSize="24" FontWeight="Bold" />
+            <!-- Bouton valider -->
+            <Button Content="VALIDER" Height="65" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"  Background="#FFA49090" FontSize="30" Click="validationIPFibaro" BorderBrush="#FFA49090"/>
+
+            <!-- Message indiquant d'entrer le login Fibaro-->
+            <TextBlock x:Name="messageLoginFibaro" Text="Login Fibaro" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="Red" FontSize="30" FontWeight="Bold"  Grid.Column="0" TextAlignment="Center"/>
+            <!-- Champ pour rentrer le login fibaro-->
+            <TextBox x:Name="champLoginFibaro" HorizontalAlignment="Stretch" Height="65" Grid.Row ="2" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Grid.Column="1" Background="#FFA49090" FontSize="24" FontWeight="Bold" />
+            <!-- Bouton valider -->
+            <Button Content="VALIDER" Height="65" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2"  Background="#FFA49090" FontSize="30" Click="validationLoginFibaro" BorderBrush="#FFA49090"/>
+
+            <!-- Message indiquant d'entrer le login Fibaro-->
+            <TextBlock x:Name="messageMDPFibaro" Text="Mot de passe Fibaro" Grid.Row="3" TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="Red" FontSize="30" FontWeight="Bold"  Grid.Column="0" TextAlignment="Center"/>
+            <!-- Champ pour rentrer le login fibaro-->
+            <TextBox x:Name="champMDPFibaro" HorizontalAlignment="Stretch" Height="65" Grid.Row ="3" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Grid.Column="1" Background="#FFA49090" FontSize="24" FontWeight="Bold" />
+            <!-- Bouton valider -->
+            <Button Content="VALIDER" Height="65" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="33   " Grid.Column="2"  Background="#FFA49090" FontSize="30" Click="validationMDPFibaro" BorderBrush="#FFA49090"/>
+
+        </Grid>
+
+    </Grid>
+</Page>

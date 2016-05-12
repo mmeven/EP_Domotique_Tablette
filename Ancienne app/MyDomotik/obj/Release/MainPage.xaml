@@ -34,37 +34,19 @@
 
             <TextBlock x:Name="page_title" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="2" Margin="7,21,6,16" Foreground="Black" Text="Pièces de la maison"/>
 
-            <Button x:ConnectionId='4' x:Name="configButton" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="{x:Null}" Grid.Row="0" Grid.Column="4" FontSize="24"                            >
-                <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch" Text="Configuration" FontWeight="Bold" Foreground="Black" FontSize="30" TextAlignment="Center"/>
-            </Button>
+            <Button x:ConnectionId='4' x:Name="configButton" Content ="Configuration" HorizontalContentAlignment="Center" Background="Transparent" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="{x:Null}" Grid.Row="0" Grid.Column="4" FontSize="30"                             />
+
 
         </Grid>
 
 
         <!--Grille des icones -->
         <Grid  x:Name="cadre" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="1500" Height="500" Grid.Row="1">
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100*"/>
-                <ColumnDefinition Width="100*"/>
-                <ColumnDefinition Width="100*"/>
-                <ColumnDefinition Width="100*"/>
-            </Grid.ColumnDefinitions>
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="100*"/>
-                <RowDefinition Height="100*"/>
-            </Grid.RowDefinitions>
             
             <!--   affichage dynamique grâce au x:Name="cadre" -->
 
         </Grid>
 
-
-        <!--Barre de navigation située en bas de page-->
-        <Rectangle x:Name="barreMenu"  VerticalAlignment="Top" Grid.Row="2" Height="140" Margin="10,10,10,0">
-
-        </Rectangle>
 
 
         <Grid HorizontalAlignment="Center" Height="130" Grid.Row="2" VerticalAlignment="Center" Width="1346">
@@ -80,8 +62,8 @@
 
             </Grid.ColumnDefinitions>
 
-            <Rectangle x:Name ="RectPrecedent"   Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-            <Button x:ConnectionId='1' x:Name="precedent" Grid.Column="1"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                        >
+            <Rectangle x:Name ="RectPrecedent"  Stroke="Black" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button x:ConnectionId='1' x:Name="precedent" Grid.Column="1" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                        >
                 <Image  Source="Assets/suivant.PNG" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
                     <Image.RenderTransform>
                         <CompositeTransform Rotation="-180"/>
@@ -89,14 +71,14 @@
                 </Image>
             </Button>
 
-            <Rectangle x:Name ="RectAccueil"  Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-            <Button x:ConnectionId='2' x:Name="accueil"  Background="Transparent" Grid.Column="3"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                     >
+            <Rectangle x:Name ="RectAccueil" Stroke="Black" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button x:ConnectionId='2' x:Name="accueil" BorderBrush="Transparent" Background="Transparent" Grid.Column="3"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                     >
                 <Image  Source="Assets/acceuil.PNG"/>
             </Button>
 
 
-            <Rectangle x:Name ="RectSuivant"  Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-            <Button x:ConnectionId='3' x:Name="suivant" Grid.Column="5"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                       >
+            <Rectangle x:Name ="RectSuivant" Stroke="Black" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button x:ConnectionId='3' x:Name="suivant" Grid.Column="5" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                       >
                 <Image  Source="Assets/suivant.PNG"/>
             </Button>
 

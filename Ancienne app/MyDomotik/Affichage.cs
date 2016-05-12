@@ -65,8 +65,8 @@ namespace MyDomotik
             int nbColonnes;
             switch (format)
             {
-                case 0: nbCases = 4; nbColonnes = 2; break;
-                case 1: nbCases = 6; nbColonnes = 3;  break;
+                case 3: nbCases = 4; nbColonnes = 2; break;
+                case 2: nbCases = 6; nbColonnes = 3;  break;
                 default: nbCases = 10; nbColonnes = 5;  break;
             }
             

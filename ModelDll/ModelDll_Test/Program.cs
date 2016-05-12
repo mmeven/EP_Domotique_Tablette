@@ -189,40 +189,40 @@ namespace ModelDll_Test
         public static extern IntPtr Equipment_getNodeParent(IntPtr eq);
 
         // Retourne string
-        [DllImport("ModelDll.dll", EntryPoint = "?getIpKira@Equipment@EP@@SAPADXZ",
+        [DllImport("ModelDll.dll", EntryPoint = "Equipment_getIpKira",
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
-        public static extern IntPtr Equipment_getIpKira(IntPtr eq);
+        public static extern IntPtr Equipment_getIpKira();
 
         // Retourne string
-        [DllImport("ModelDll.dll", EntryPoint = "?getIpFibaro@Equipment@EP@@SAPADXZ",
+        [DllImport("ModelDll.dll", EntryPoint = "Equipment_getIpFibaro",
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
-        public static extern IntPtr Equipment_getIpFibaro(IntPtr eq);
+        public static extern IntPtr Equipment_getIpFibaro();
 
         // Retourne string
-        [DllImport("ModelDll.dll", EntryPoint = "?getLoginFibaro@Equipment@EP@@SAPADXZ",
+        [DllImport("ModelDll.dll", EntryPoint = "Equipment_getLoginFibaro",
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
-        public static extern IntPtr Equipment_getLoginFibaro(IntPtr eq);
+        public static extern IntPtr Equipment_getLoginFibaro();
 
         // Retourne string
-        [DllImport("ModelDll.dll", EntryPoint = "?getPasswordFibaro@Equipment@EP@@SAPADXZ",
+        [DllImport("ModelDll.dll", EntryPoint = "Equipment_getPasswordFibaro",
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
-        public static extern IntPtr Equipment_getPasswordFibaro(IntPtr eq);
+        public static extern IntPtr Equipment_getPasswordFibaro();
 
-        [DllImport("ModelDll.dll", EntryPoint = "?setIpKira@Equipment@EP@@SAHPAD@Z",
-            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
-        public static extern int Equipment_setIpKira(IntPtr eq, String ip);
+        [DllImport("ModelDll.dll", EntryPoint = "Equipment_setIpKira",
+    CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Equipment_setIpKira(String new_ip);
 
-        [DllImport("ModelDll.dll", EntryPoint = "?setIpFibaro@Equipment@EP@@SAHPAD@Z",
+        [DllImport("ModelDll.dll", EntryPoint = "Equipment_setIpFibaro",
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
-        public static extern int Equipment_setIpFibaro(IntPtr eq, String ip);
+        public static extern int Equipment_setIpFibaro(String new_ip);
 
-        [DllImport("ModelDll.dll", EntryPoint = "?setLoginFibaro@Equipment@EP@@SAHPAD@Z",
+        [DllImport("ModelDll.dll", EntryPoint = "Equipment_setLoginFibaro",
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
-        public static extern int Equipment_setLoginFibaro(IntPtr eq, String login);
+        public static extern int Equipment_setLoginFibaro(String new_login);
 
-        [DllImport("ModelDll.dll", EntryPoint = "?setPasswordFibaro@Equipment@EP@@SAHPAD@Z",
+        [DllImport("ModelDll.dll", EntryPoint = "Equipment_setPasswordFibaro",
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
-        public static extern int Equipment_setPasswordFibaro(IntPtr eq, String pwd);
+        public static extern int Equipment_setPasswordFibaro(String new_passord);
 
         // ------------- EQUIPMENTKIRA -- Herite de EQUIPMENT
 

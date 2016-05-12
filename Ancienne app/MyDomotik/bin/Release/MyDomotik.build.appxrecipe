@@ -7894,6 +7894,9 @@
     <AppxPackagedFile Include="C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Release\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Release\Pages_Réglages\ReglagesReseau.xbf">
+      <PackagePath>Pages_Réglages\ReglagesReseau.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Release\Pages_Réglages\ReglagesCouleur.xbf">
       <PackagePath>Pages_Réglages\ReglagesCouleur.xbf</PackagePath>
     </AppxPackagedFile>

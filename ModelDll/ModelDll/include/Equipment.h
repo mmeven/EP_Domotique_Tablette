@@ -61,7 +61,6 @@ namespace EP {
 
 		// Password of the Fibaro
 		static char Fibaro_password[300];
-		
 	};
 
 	class __declspec(dllexport) EquipmentKira : public Equipment
@@ -92,6 +91,26 @@ namespace EP {
 
 	extern "C" __declspec(dllexport) EquipmentKira* EquipmentKira_New(char* name, char* ico, Node* parent, int buttonId, int page);
 	extern "C" __declspec(dllexport) void EquipmentKira_Delete(EquipmentKira* eq);
+
+	// To get the Kira's IP address
+	extern "C" __declspec(dllexport) char* Equipment_getIpKira();
+
+	// To get the Fibaro's IP address
+	extern "C" __declspec(dllexport) char* Equipment_getIpFibaro();
+
+	// To set the Kira's IP address (0 : ip incorrect, 1 : ok)
+	extern "C" __declspec(dllexport) int Equipment_setIpKira(char* new_ip);
+
+	// To set the Fibaro's IP address (0 : ip incorrect, 1 : ok)
+	extern "C" __declspec(dllexport) int Equipment_setIpFibaro(char* new_ip);
+
+	extern "C" __declspec(dllexport) char* Equipment_getLoginFibaro();
+
+	extern "C" __declspec(dllexport) char* Equipment_getPasswordFibaro();
+
+	extern "C" __declspec(dllexport) int Equipment_setLoginFibaro(char* new_login);
+
+	extern "C" __declspec(dllexport) int Equipment_setPasswordFibaro(char* new_password);
 
 	class __declspec(dllexport) EquipmentFibaro : public Equipment
 	{

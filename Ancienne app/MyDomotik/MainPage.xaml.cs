@@ -152,18 +152,42 @@ namespace MyDomotik
         }
 
         //Lors de l'appui sur un équipement
-       
-        [DllImport("RequeteHttp.dll", CallingConvention=CallingConvention.Cdecl)]
-        public static extern void requeteHttp(string s1, string s2 );
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getEquipmentByIndex@Room@EP@@QAEPAVEquipment@2@H@Z",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern IntPtr Room_getEquipmentByIndex(IntPtr room, int index);
+
+        [DllImport("ModelDll.dll", EntryPoint = "?getTypeOf@Equipment@EP@@QAEHXZ",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+        public static extern int Equipment_getTypeOf(IntPtr eq);
+
+        
+        [DllImport("ModelDll.dll", EntryPoint = "?sendRequest@EquipmentKira@EP@@UAEHXZ", 
+            CallingConvention = CallingConvention.ThisCall, CharSet = CharSet.Ansi)]
+        public static extern int EquipmentKira_sendRequest(IntPtr eq);
+        
+        [DllImport("ModelDll.dll", EntryPoint = "?sendRequest@EquipmentFibaro@EP@@UAEHXZ",
+            CallingConvention = CallingConvention.ThisCall, CharSet = CharSet.Ansi)]
+        public static extern int EquipmentFibaro_sendRequest(IntPtr eq);
 
         private void EquipementClick(object sender, RoutedEventArgs e)
         {
-            
+            Button button = sender as Button; //Enregistrement du bouton choisi
+            int indiceBouton = (int)button.Tag;
+            IntPtr equ = Room_getEquipmentByIndex(pieceSelectionnee, indiceBouton);
+            int type = Equipment_getTypeOf(equ);
+            if (type ==1)
+            {
+                EquipmentKira_sendRequest(equ);
+            }
+            if (type == 2)
+            {
+                EquipmentFibaro_sendRequest(equ);
+            }
         }
 
-
-    //Lors du clique sur une piece
-    private void IconeClick(object sender, RoutedEventArgs e)
+        //Lors du clique sur une piece
+        private void IconeClick(object sender, RoutedEventArgs e)
         {
             vueEquipement = true;
 
@@ -183,8 +207,11 @@ namespace MyDomotik
             page_title.Text = nomPiece;
             List<Button> ListeBoutons = affichage.afficherEquipementsGrille(pageActuelle, nomPiece, cadre, core);
             
-//            affichage.afficherCouleur(0, ListeBoutons, MainGrid, Rect1, Rect2, Rect3, cadre, RectAccueil, RectSuivant, RectPrecedent);
-
+            foreach(Button b in ListeBoutons)
+            {
+                b.Click += EquipementClick;
+            }
+            //affichage.afficherCouleur(0, ListeBoutons, MainGrid, Rect1, Rect2, Rect3, cadre, RectAccueil, RectSuivant, RectPrecedent);
         }
     }
 
