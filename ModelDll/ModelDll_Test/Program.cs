@@ -190,38 +190,38 @@ namespace ModelDll_Test
 
         // Retourne string
         [DllImport("ModelDll.dll", EntryPoint = "Equipment_getIpKira",
-            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr Equipment_getIpKira();
 
         // Retourne string
         [DllImport("ModelDll.dll", EntryPoint = "Equipment_getIpFibaro",
-            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr Equipment_getIpFibaro();
 
         // Retourne string
         [DllImport("ModelDll.dll", EntryPoint = "Equipment_getLoginFibaro",
-            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr Equipment_getLoginFibaro();
 
         // Retourne string
         [DllImport("ModelDll.dll", EntryPoint = "Equipment_getPasswordFibaro",
-            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr Equipment_getPasswordFibaro();
 
         [DllImport("ModelDll.dll", EntryPoint = "Equipment_setIpKira",
-    CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+    CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern int Equipment_setIpKira(String new_ip);
 
         [DllImport("ModelDll.dll", EntryPoint = "Equipment_setIpFibaro",
-            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern int Equipment_setIpFibaro(String new_ip);
 
         [DllImport("ModelDll.dll", EntryPoint = "Equipment_setLoginFibaro",
-            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern int Equipment_setLoginFibaro(String new_login);
 
         [DllImport("ModelDll.dll", EntryPoint = "Equipment_setPasswordFibaro",
-            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern int Equipment_setPasswordFibaro(String new_passord);
 
         // ------------- EQUIPMENTKIRA -- Herite de EQUIPMENT
@@ -276,7 +276,7 @@ namespace ModelDll_Test
         {
             IntPtr core = Core_NewFromSave("./load.txt");
 
-            IntPtr room1 = Room_New("P1","ico1");
+            /*IntPtr room1 = Room_New("P1","ico1");
             IntPtr room2 = Room_New("P2", "ico2");
             IntPtr room3 = Room_New("P3", "ico3");
             IntPtr room4 = Room_New("P4", "ico4");
@@ -288,50 +288,10 @@ namespace ModelDll_Test
             
             Console.WriteLine(Core_getNumberRooms(core));
 
-            IntPtr r = Core_getRoomByName(core, "P3");
-
-            IntPtr tmp = Node_getName(r);
-            string name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
-            Console.WriteLine(name);
-
-            Core_SaveAndDelete(core);
-            core = Core_NewFromSave("./load.txt");
-
-            Console.ReadKey();
-
-            r = Core_getRoomByName(core, "P3");
-
-            Room_addEquipment(r, EquipmentKira_New("E1", "ico", r, 10, 10));
-            Room_addEquipment(r, EquipmentKira_New("E2", "ico", r, 10, 10));
-
-            Console.WriteLine(Room_getNumberEquiments(r));
-
-            IntPtr e1 = Room_getEquipmentByIndex(r, 0);
-            tmp = Node_getName(e1);
             name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
-            Console.WriteLine(name);
+            Console.WriteLine(name);*/
 
-            IntPtr e2 = Room_getEquipmentByName(r, "E2");
-            tmp = Node_getName(e2);
-            name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
-            Console.WriteLine(name);
-
-            Core_SaveAndDelete(core);
-            core = Core_NewFromSave("./load.txt");
-
-            Console.ReadKey();
-
-            r = Core_getRoomByName(core, "P3");
-
-            e1 = Room_getEquipmentByIndex(r, 0);
-            tmp = Node_getName(e1);
-            name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
-            Console.WriteLine(name);
-
-            e2 = Room_getEquipmentByName(r, "E2");
-            tmp = Node_getName(e2);
-            name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
-            Console.WriteLine(name);
+            Equipment_setLoginFibaro("Toast");
 
             Console.ReadKey();
 
