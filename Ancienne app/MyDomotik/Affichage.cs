@@ -13,15 +13,14 @@ using Windows.UI.Xaml.Shapes;
 
 namespace MyDomotik
 {
+    /// <summary>
+    /// Cette classe gère la création et l'affichage des grilles de pièces et d'équipements, \n
+    /// l'affichage des couleurs selon le thème,  \n
+    /// la taille de la grille selon le format, \n
+    /// l'affichage de l'heure.
+    /// </summary>
     class Affichage
     {
-        int nbCases;
-
-        public Affichage()
-        {
-            nbCases = 1;
-        }
-
         //DLL
         [DllImport("ModelDll.dll", EntryPoint = "?getNumberRooms@Core@EP@@QAEHXZ",
          CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
@@ -54,8 +53,31 @@ namespace MyDomotik
         [DllImport("ModelDll.dll", EntryPoint = "?getEquipmentByIndex@Room@EP@@QAEPAVEquipment@2@H@Z",
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
         public static extern IntPtr Room_getEquipmentByIndex(IntPtr room, int index);
+        //FIN DLL
+
+
+
+        int nbCases; //nb de cases de la grille, est calculée en fonction du format
+
+        /// <summary>
+        /// Constructeur de la classe.
+        /// </summary>
+        public Affichage()
+        {
+            nbCases = 1;
+        }
+        
+
 
         //Creation de la grille : creation des "grid" en fonction du format, retourne le nombre de cases de la grille
+        /// <summary>
+        /// En fonction du format de la grille, cette méthode ajoute le bon nombre de colonnes et de lignes au layout placé en paramètres, afin de former une grille.
+        /// </summary>
+        /// <param name="cadre">Layout qui contiendra la grille.</param>
+        /// <param name="format">"3" pour une petite grille, 
+        /// "2" pour une grille moyenne, 
+        /// autre pour une grande grille.</param>
+        /// <returns></returns>
         public int creerGrille(Grid cadre, int format)
         {
             cadre.Children.Clear();
@@ -71,22 +93,27 @@ namespace MyDomotik
             }
             
             cadre.RowDefinitions.Add(new RowDefinition()); //nb de lignes toujours égale à 2
-            cadre.RowDefinitions.Add(new RowDefinition());
+            cadre.RowDefinitions.Add(new RowDefinition()); //nb de lignes toujours égale à 2
 
             for (int i = 0; i < nbColonnes; i++)
             {
                 cadre.ColumnDefinitions.Add(new ColumnDefinition());
-            }
-       
+            }       
             return nbCases;
         }
 
-        //Permet de créer le TextBlock avec le nom de l'equipement, apparait en desous de l'icone de l'equipement
-        public TextBlock creerLabel(String s)
+
+
+        /// <summary>
+        /// Cette méthode permet de créer le TextBlock composé du nom de l'equipement/de la pièce, et qui apparait en desous de l'icone de l'equipement/de la pièce.
+        /// </summary>
+        /// <param name="nom">Nom de l'equipement/de la pièce.</param>
+        /// <returns>TextBlock composé du nom.</returns>
+        public TextBlock creerLabel(String nom)
         {
             // création label : nom de l'icone
             TextBlock labelIcone = new TextBlock();
-            labelIcone.SetValue(TextBlock.TextProperty, s);
+            labelIcone.SetValue(TextBlock.TextProperty, nom);
 
             // police du label
             labelIcone.FontFamily = new FontFamily("Segoe UI");
@@ -102,7 +129,16 @@ namespace MyDomotik
             return labelIcone;
         }
 
+
+
         //Retourne l'image créé à partir du nom qu'on lui donne en paramètre
+        /// <summary>
+        /// Cette méthode génère un objet Image à partir d'un nom d'image placé en paramètres. \n
+        /// Les dimensions de l'image sont adaptées aux dimensions du bouton qui va la contenir et qui est placé en paramètres.
+        /// </summary>
+        /// <param name="nameIc">Nom de l'Image à générer.</param>
+        /// <param name="bouton">Bouton qui contiendra l'image à générer.</param>
+        /// <returns>Objet Image</returns>
         public Image creerImageIcone(string nameIc, Button bouton)
         {
             //Chargement de l'image: 
@@ -119,14 +155,21 @@ namespace MyDomotik
             double hauteur = bouton.Height;
             double largeur = bouton.Width;
 
-            image.SetValue(Image.HeightProperty, 0.5 * hauteur);
-            image.SetValue(Image.WidthProperty, 0.5 * hauteur);
+            image.SetValue(Image.HeightProperty, 0.75 * hauteur);
+            image.SetValue(Image.WidthProperty, 0.75 * largeur);
 
             return image;
         }
 
 
+
         //Associe au bouton placé en parametre: une image (icone de l'equipement) et le nom de l'equipement
+        /// <summary>
+        /// Cette méthode associe à un bouton, un TextBlock (nom de la pièce ou de l'équipement) et une Image (icône de la pièce ou de l'équipement).
+        /// </summary>
+        /// <param name="image">Image (icône de la pièce ou de l'équipement).</param>
+        /// <param name="nomIcone">TextBlock (nom de la pièce ou de l'équipement).</param>
+        /// <param name="bouton">Bouton qui sera associé à une pièce ou un équipement</param>
         public void ajouterImageEtLabelAuBouton(Image image, TextBlock nomIcone, Button bouton)
         {
             Grid grilleBouton = new Grid();
@@ -142,7 +185,12 @@ namespace MyDomotik
         }
 
 
+
         //permet d'afficher l'heure
+        /// <summary>
+        /// Cette méthode permet d'afficher l'heure dans le layout placé en paramètres.
+        /// </summary>
+        /// <param name="TimeBox">Layout dans lequel on souhaite afficher l'heure.</param>
         public void afficheHeure(TextBlock TimeBox)
         {
             if (DateTime.Now.Minute < 10)
@@ -155,7 +203,17 @@ namespace MyDomotik
             }
         }
 
+
+
         //Permet d'afficher les pieces dans la grille
+        /// <summary>
+        /// Cette méthode permet d'afficher toutes les pièces enregistrées dans le Core (cf DLL) sous forme d'icônes dans une grille. \n
+        /// Elle affiche la grille dans le layout placé en paramètres et l'affiche à la page demandée (pageActuelle).
+        /// </summary>
+        /// <param name="pageActuelle">Numéro de la page de la grille à afficher.</param>
+        /// <param name="cadre">Layout dans lequel la grille sera créé.</param>
+        /// <param name="core">Arbre (cf DLL) contenant les pièces à afficher.</param>
+        /// <returns>Liste des boutons associées aux pièces.</returns>
         public List<Button> afficherPiecesGrille(int pageActuelle, Grid cadre, IntPtr core)
         {
             int format = Core_getIconSize(core); //format de la grille, 0: grande, 1: moyenne, 2: petite
@@ -242,11 +300,18 @@ namespace MyDomotik
             }
             return boutons;
         }
-
-
+        
 
 
         //Permet d'afficher les equipements dans la grille
+        /// <summary>
+        /// Cette méthode permet d'afficher tous les équipements enregistrés dans le Core (cf DLL) sous forme d'icônes dans une grille. \n
+        /// Elle affiche la grille dans le layout placé en paramètres et l'affiche à la page demandée (pageActuelle).
+        /// </summary>
+        /// <param name="pageActuelle">Numéro de la page de la grille à afficher.</param>
+        /// <param name="cadre">Layout dans lequel la grille sera créé.</param>
+        /// <param name="core">Arbre (cf DLL) contenant les équipements à afficher.</param>
+        /// <returns>Liste des boutons associées aux pièces.</returns>
         public List<Button> afficherEquipementsGrille(int pageActuelle, String nomPiece, Grid cadre, IntPtr core)
         {
             int format = Core_getIconSize(core); //format de la grille, 0: grande, 1: moyenne, 2: petite
@@ -337,8 +402,25 @@ namespace MyDomotik
             return boutons;
         }
 
+
+
         //Choix couleurs aleatoires
-        public void afficherCouleur(int i, List<Button> boutons, Grid maingrid, Rectangle rect1, Rectangle rect2, Rectangle rect3, Grid cadre, Rectangle rectAccueil, Rectangle rectSuivant, Rectangle rectPrecedent )
+        /// <summary>
+        /// Cette méthode associe une couleur à chaque élément placé en paramètres, en fonction du thème. \n
+        /// Les couleurs sont associées aléatoirement sauf pour le thème 1.
+        /// </summary>
+        /// <param name="i">Numéro du thèmes</param>
+        /// <param name="boutons">Liste de boutons associés à des pièces ou à des équipements.</param>
+        /// <param name="maingrid">Layout dont il faut changer la couleur de fond.</param>
+        /// <param name="rect1">Rectangle dont il faut changer la couleur de fond.</param>
+        /// <param name="rect2">Rectangle dont il faut changer la couleur de fond.</param>
+        /// <param name="rect3">Rectangle dont il faut changer la couleur de fond.</param>
+        /// <param name="cadre">Layout dont il faut changer la couleur de fond.</param>
+        /// <param name="rectAccueil">Rectangle dont il faut changer la couleur de fond.</param>
+        /// <param name="rectSuivant">Rectangle dont il faut changer la couleur de fond.</param>
+        /// <param name="rectPrecedent">Rectangle dont il faut changer la couleur de fond.</param>
+        /// <param name="rectFauteuil">Rectangle dont il faut changer la couleur de fond.</param>
+        public void afficherCouleur(int i, List<Button> boutons, Grid maingrid, Rectangle rect1, Rectangle rect2, Rectangle rect3, Grid cadre, Rectangle rectAccueil, Rectangle rectSuivant, Rectangle rectPrecedent, Rectangle rectFauteuil )
         {
             Color[] listeCouleurs = new Color[]{ Colors.Blue, Colors.Violet, Colors.Lime,  Colors.Red, Colors.White, Colors.Turquoise, Colors.Yellow, Colors.White, Colors.Beige, Colors.Cyan, Colors.Plum, Colors.Pink, Colors.Coral, Colors.OrangeRed, Colors.Plum, Colors.Violet, Colors.Purple, Colors.Yellow, Colors.PapayaWhip, Colors.Tomato, Colors.Gold, Colors.LightSalmon, Colors.DarkOrange, Colors.LightYellow, Colors.Orange, Colors.DarkSalmon };
 
@@ -367,11 +449,9 @@ namespace MyDomotik
                 cadre.Background = grille;  //grille
 
                 rectAccueil.Fill = rectangleBas;
-                rectAccueil.Stroke = rectangleBas;
                 rectPrecedent.Fill = rectangleBas;
-                rectPrecedent.Stroke = rectangleBas;
                 rectSuivant.Fill = rectangleBas;
-                rectSuivant.Stroke = rectangleBas;
+                rectFauteuil.Fill = rectangleBas;
 
                 rect1.Fill = rectangleHaut;
                 rect2.Fill = rectangleHaut;

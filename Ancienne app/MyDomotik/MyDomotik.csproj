@@ -137,6 +137,9 @@
     <Compile Include="Pages_Réglages\ReglagesModeSelection.xaml.cs">
       <DependentUpon>ReglagesModeSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WheelchairFeedback.xaml.cs">
+      <DependentUpon>WheelchairFeedback.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Properties\Package.appxmanifest">
@@ -185,6 +188,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages_Réglages\ReglagesTailleIcones.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WheelchairFeedback.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

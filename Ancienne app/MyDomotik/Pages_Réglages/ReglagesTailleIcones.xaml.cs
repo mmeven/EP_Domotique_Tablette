@@ -20,12 +20,12 @@ using Windows.UI.Xaml.Navigation;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
-// Pour en savoir plus sur le modèle d'élément Page vierge, consultez la page http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace MyDomotik
 {
     /// <summary>
-    /// Une page vide peut être utilisée seule ou constituer une page de destination au sein d'un frame.
+    /// Cette page permet de définir la taille des icônes et donc le format de la grille. \n
+    /// Selon la taille du format choisi, la grille ne sera pas composé du même nombre de colonnes et donc du même nombre de cases.
     /// </summary>
     public sealed partial class ReglagesTailleIcones : Page
     {
@@ -45,6 +45,12 @@ namespace MyDomotik
         public static extern void Core_setIconSize(IntPtr core, int size);
         //FIN DLL
 
+
+            
+        /// <summary>
+        /// Méthode principale appelée lors de l'ouverture de la page : initialise les objets et le Core (cf DLL).
+        /// </summary>
+        /// <param></param>
         public ReglagesTailleIcones()
         {
             this.InitializeComponent();
@@ -52,29 +58,69 @@ namespace MyDomotik
             core = Core_NewFromSave(sf.Path + "\\load.txt");
         }
 
+
+
+        /// <summary>
+        /// Cette méthode est déclenchée lors du clic sur le bouton "Accueil". \n
+        /// Elle permet d'accéder à la page principale "Utilisateur".
+        /// </summary>
+        /// <param name="sender">Bouton "Accueil".</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param> 
         private void exitAdmin(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
             this.Frame.GoBack();
         }
 
+
+
+        /// <summary>
+        /// Cette méthode est déclenchée lors du clic sur le bouton "Retour". \n
+        /// Elle permet d'accéder à la page Admin.
+        /// </summary>
+        /// <param name="sender">Bouton "Retour".</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void menuAdmin(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
         }
 
+
+
+        /// <summary>
+        /// Cette méthode est déclenchée lors du clic sur le bouton "Petit" \n
+        /// Elle enregistre ce nouveau format (petit) dans le fichier de sauvegarde (cf DLL).
+        /// </summary>
+        /// <param name="sender">Bouton "Petit".</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void choixPetit(object sender, RoutedEventArgs e)
         {
             Core_setIconSize(core, 3);
             Core_save(core);
         }
 
+
+
+        /// <summary>
+        /// Cette méthode est déclenchée lors du clic sur le bouton "Moyen" \n
+        /// Elle enregistre ce nouveau format (moyyen) dans le fichier de sauvegarde (cf DLL).
+        /// </summary>
+        /// <param name="sender">Bouton "Moyen".</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void choixMoyen(object sender, RoutedEventArgs e)
         {
             Core_setIconSize(core, 2);
             Core_save(core);
         }
 
+
+
+        /// <summary>
+        /// Cette méthode est déclenchée lors du clic sur le bouton "Grand" \n
+        /// Elle enregistre ce nouveau format (grand) dans le fichier de sauvegarde (cf DLL).
+        /// </summary>
+        /// <param name="sender">Bouton "Grand".</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void choixGrand(object sender, RoutedEventArgs e)
         {
             Core_setIconSize(core, 1);
