@@ -59,6 +59,8 @@
                 <ColumnDefinition  Width="5*"/>
                 <ColumnDefinition  Width="60*"/>
                 <ColumnDefinition  Width="5*"/>
+                <ColumnDefinition  Width="60*"/>
+                <ColumnDefinition  Width="5*"/>
 
             </Grid.ColumnDefinitions>
 
@@ -75,13 +77,21 @@
             <Button x:Name="accueil" BorderBrush="Transparent" Background="Transparent" Grid.Column="3"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Click="PageAccueil">
                 <Image  Source="Assets/acceuil.PNG"/>
             </Button>
+            
+            <Rectangle x:Name ="RectFauteuil" Stroke="Black" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button x:Name="fauteuil" BorderBrush="Transparent" Background="Transparent" Grid.Column="5"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Click="PageFauteuil">
+                <Image  Source="Assets/wheelchair_0.PNG"/>
+            </Button>
 
-
-            <Rectangle x:Name ="RectSuivant" Stroke="Black" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-            <Button x:Name="suivant" Grid.Column="5" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"   Click="PageSuivante">
+            <Rectangle x:Name ="RectSuivant" Stroke="Black" Grid.Column="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button x:Name="suivant" Grid.Column="7" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"   Click="PageSuivante">
                 <Image  Source="Assets/suivant.PNG"/>
             </Button>
 
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <TextBlock x:Name="profil"> </TextBlock>
         </Grid>
 
     </Grid>

@@ -7,44 +7,62 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid x:Name="MainGrid">
+    <Grid x:Name="MainGrid"  Background="#FFFFFFE0">
         <Grid.RowDefinitions>
             <RowDefinition Height="85*"/>
             <RowDefinition Height="510*"/>
             <RowDefinition Height="173*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="270*"/>
-            <ColumnDefinition Width="20*"/>
-            <ColumnDefinition Width="845*"/>
-        </Grid.ColumnDefinitions>
+
 
         <!-- Première ligne -->
-        <!-- Bouton retour à la page principale -->
-        <Button x:Name="retour"  Height="71" Width="247" BorderBrush="{x:Null}" Background="#FFE04214" Foreground="#FFF7EEEE" Grid.Row="0" Grid.Column="0" FontSize="18" Click="exitAdmin2" Margin="2,7,0,6">
-            <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
-                <Run FontSize="30" Text="Retour"/>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="270*"/>
+                <ColumnDefinition Width="845*"/>
+                <ColumnDefinition Width="251*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Rectangle Fill="Orange" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" Margin="5,0,0,0" Width="252"/>
+
+            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Width="700"/>
+
+            <Rectangle Fill="Orange" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="0,0,5,0" Width="241"/>
+
+            <!-- Rectangle Retour, en haut à droite -->
+            <TextBlock x:Name="timeBox" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold"/>
+
+            <!-- Rectangle Titre, en haut a centre -->
+            <TextBlock x:Name="page_title" HorizontalAlignment="Center" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="700" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Foreground="Black" Grid.Row="0" Grid.Column="1" FontWeight="Bold">
+    			<Run Foreground="Black" Text="Informations fauteuil"/>
             </TextBlock>
-        </Button>
 
-        <!-- Titre de la page -->
-        <TextBlock x:Name="page_title" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="1" Margin="7,21,6,16" Foreground="Black" Text="Informations fauteuil"/>
 
-        <!-- Image batterie du fauteuil -->
-        <Image x:Name="battery" Source="/Assets/Images/..." Width="60" Height="60" Grid.Row="0" Grid.Column="2" />
+            <!-- Rectangle Accueil, en haut à droite -->
+            <Button x:Name="quitterAdmin" BorderBrush="{x:Null}" Background="Transparent" FontSize="18"  Grid.Row="0" Grid.Column="2" Click="exitAdmin" HorizontalAlignment="Center" VerticalAlignment="Center" Width="252" Height="65">
+                <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Accueil"/>
+                </TextBlock>
+            </Button>
+
+        </Grid>
+
+          <!-- Image batterie du fauteuil -->
+        <Image x:Name="battery" Source="/Assets/Images/..." Width="60" Height="60" Grid.Row="1" />
 
 
         <!-- Deuxième ligne -->
         <!-- Image joystick -->
-        <Image x:Name="joystick" Source="/Assets/Images/..." Width="60" Height="60" Grid.Row="1" Grid.Column="1" />
+        <Image x:Name="joystick" Source="/Assets/Images/..." Width="60" Height="60" Grid.Row="1"/>
 
         <!-- Vitesse -->
-        <TextBlock x:Name="speed" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="1" Grid.Column="2" Margin="7,21,6,16" Foreground="Black" Text="5km/h"/>
+        <TextBlock x:Name="speed" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="1"  Margin="7,21,6,16" Foreground="Black" />
 
 
         <!-- Troisième ligne -->
         <!-- Nb de km parcourus -->
-        <TextBlock x:Name="kilometers" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="2" Grid.Column="0" Margin="7,21,6,16" Foreground="Black" Text="50 kilomètres"/>
+        <TextBlock x:Name="kilometers" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="2"  Margin="7,21,6,16" Foreground="Black" Text="50 kilomètres"/>
 
 
     </Grid>

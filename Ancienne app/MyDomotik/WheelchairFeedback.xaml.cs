@@ -19,10 +19,19 @@ namespace MyDomotik
 {
     public sealed partial class WheelchairFeedback : Page
     {
+
+        Affichage affichage;
         public WheelchairFeedback()
         {
             this.InitializeComponent();
+            affichage = new Affichage();
+            affichage.afficheHeure(timeBox);
 
+        }
+
+        private void exitAdmin(object sender, RoutedEventArgs e)
+        {
+            this.Frame.GoBack();
         }
     }
 }

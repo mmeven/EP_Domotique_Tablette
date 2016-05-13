@@ -78,7 +78,7 @@ namespace MyDomotik
             List<Button> ListeBoutons = affichage.afficherPiecesGrille(pageActuelle, cadre, core);
 
             int theme = Core_getThemeId(core);
-            affichage.afficherCouleur(theme, ListeBoutons, MainGrid, Rect1, Rect2, Rect3, cadre, RectAccueil, RectSuivant, RectPrecedent);
+            affichage.afficherCouleur(theme, ListeBoutons, MainGrid, Rect1, Rect2, Rect3, cadre, RectAccueil, RectSuivant, RectPrecedent, RectFauteuil);
 
             foreach (Button b in ListeBoutons)
             {
@@ -151,7 +151,14 @@ namespace MyDomotik
             this.Frame.Navigate(typeof(MainPage));
         }
 
+        // accès à la page fauteuil
+        private void PageFauteuil(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(WheelchairFeedback));
+        }
+
         //Lors de l'appui sur un équipement
+
 
         [DllImport("ModelDll.dll", EntryPoint = "?getEquipmentByIndex@Room@EP@@QAEPAVEquipment@2@H@Z",
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
@@ -169,6 +176,7 @@ namespace MyDomotik
         [DllImport("ModelDll.dll", EntryPoint = "?sendRequest@EquipmentFibaro@EP@@UAEHXZ",
             CallingConvention = CallingConvention.ThisCall, CharSet = CharSet.Ansi)]
         public static extern int EquipmentFibaro_sendRequest(IntPtr eq);
+
 
         private void EquipementClick(object sender, RoutedEventArgs e)
         {
