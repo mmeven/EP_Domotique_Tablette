@@ -24,8 +24,8 @@ using System.Text.RegularExpressions;
 namespace MyDomotik
 {
     /// <summary>
-    /// Cette page permet de définir la taille des icônes et donc le format de la grille. \n
-    /// Selon la taille du format choisi, la grille ne sera pas composé du même nombre de colonnes et donc du même nombre de cases.
+    /// Page permettant de définir la taille des icônes et donc le format de la grille. \n
+    /// Selon la taille du format choisi, la grille ne sera pas composée du même nombre de colonnes et donc du même nombre de cases.
     /// </summary>
     public sealed partial class ReglagesTailleIcones : Page
     {
@@ -61,11 +61,11 @@ namespace MyDomotik
 
 
         /// <summary>
-        /// Cette méthode est déclenchée lors du clic sur le bouton "Accueil". \n
+        /// Méthode déclenchée lors du clic sur le bouton "Accueil". \n
         /// Elle permet d'accéder à la page principale "Utilisateur".
         /// </summary>
         /// <param name="sender">Bouton "Accueil".</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param> 
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param> 
         private void exitAdmin(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
@@ -75,11 +75,11 @@ namespace MyDomotik
 
 
         /// <summary>
-        /// Cette méthode est déclenchée lors du clic sur le bouton "Retour". \n
+        /// Méthode déclenchée lors du clic sur le bouton "Retour". \n
         /// Elle permet d'accéder à la page Admin.
         /// </summary>
         /// <param name="sender">Bouton "Retour".</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
         private void menuAdmin(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
@@ -88,11 +88,11 @@ namespace MyDomotik
 
 
         /// <summary>
-        /// Cette méthode est déclenchée lors du clic sur le bouton "Petit" \n
+        /// Méthode déclenchée lors du clic sur le bouton "Petit". \n
         /// Elle enregistre ce nouveau format (petit) dans le fichier de sauvegarde (cf DLL).
         /// </summary>
         /// <param name="sender">Bouton "Petit".</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
         private void choixPetit(object sender, RoutedEventArgs e)
         {
             Core_setIconSize(core, 3);
@@ -102,11 +102,11 @@ namespace MyDomotik
 
 
         /// <summary>
-        /// Cette méthode est déclenchée lors du clic sur le bouton "Moyen" \n
+        /// Méthode déclenchée lors du clic sur le bouton "Moyen". \n
         /// Elle enregistre ce nouveau format (moyyen) dans le fichier de sauvegarde (cf DLL).
         /// </summary>
         /// <param name="sender">Bouton "Moyen".</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
         private void choixMoyen(object sender, RoutedEventArgs e)
         {
             Core_setIconSize(core, 2);
@@ -116,11 +116,11 @@ namespace MyDomotik
 
 
         /// <summary>
-        /// Cette méthode est déclenchée lors du clic sur le bouton "Grand" \n
+        /// Méthode déclenchée lors du clic sur le bouton "Grand". \n
         /// Elle enregistre ce nouveau format (grand) dans le fichier de sauvegarde (cf DLL).
         /// </summary>
         /// <param name="sender">Bouton "Grand".</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
         private void choixGrand(object sender, RoutedEventArgs e)
         {
             Core_setIconSize(core, 1);

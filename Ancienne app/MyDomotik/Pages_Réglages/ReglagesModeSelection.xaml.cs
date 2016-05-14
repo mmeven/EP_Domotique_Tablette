@@ -18,8 +18,8 @@ using Windows.UI.Xaml.Navigation;
 namespace MyDomotik
 {
     /// <summary>
-    /// Cette page permet de choisir le mode de sélection. \n
-    /// Les différents modes de sélection ne sont pas opérationnelles pour le moment.
+    /// Page permettant de choisir le mode de sélection. \n
+    /// Les différents modes de sélection ne sont pas opérationnels pour le moment.
     /// </summary>
     public sealed partial class ReglagesModeSelection : Page
     {
@@ -37,11 +37,11 @@ namespace MyDomotik
 
 
         /// <summary>
-        /// Cette méthode est déclenchée lors du clic sur le bouton "Retour". \n
+        /// Méthode déclenchée lors du clic sur le bouton "Retour". \n
         /// Elle permet d'accéder à la page Admin.
         /// </summary>
-        /// <param name="sender">Bouton "etour".</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="sender">Bouton "Retour".</param>
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
         private void retourAdminPage(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
@@ -50,11 +50,11 @@ namespace MyDomotik
 
 
         /// <summary>
-        /// Cette méthode est déclenchée lors du clic sur le bouton "Accueil". \n
+        /// Méthode déclenchée lors du clic sur le bouton "Accueil". \n
         /// Elle permet d'accéder à la page principale "Utilisateur".
         /// </summary>
         /// <param name="sender">Bouton "Accueil".</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param> 
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param> 
         public void exitAdmin(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
@@ -63,11 +63,11 @@ namespace MyDomotik
 
 
         /// <summary>
-        /// Cette méthode est déclenchée lors du clic sur le bouton "Sélection par clic". \n
+        /// Méthode déclenchée lors du clic sur le bouton "Sélection par clic". \n
         /// Elle n'est pas encore codée.
         /// </summary>
         /// <param name="sender">Bouton ""Sélection par clic"".</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param> 
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param> 
         private void SelectionClic_Click(object sender, RoutedEventArgs e)
         {
           
@@ -76,11 +76,11 @@ namespace MyDomotik
 
 
         /// <summary>
-        /// Cette méthode est déclenchée lors du clic sur le bouton "Sélection par défilement". \n
+        /// Méthode déclenchée lors du clic sur le bouton "Sélection par défilement". \n
         /// Elle n'est pas encore codée.
         /// </summary>
         /// <param name="sender">Bouton "Sélection par défilement".</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param> 
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param> 
         private void SelectionParDefilement(object sender, RoutedEventArgs e)
         {
           

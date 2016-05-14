@@ -24,7 +24,7 @@ using System.Text.RegularExpressions;
 namespace MyDomotik
 {
     /// <summary>
-    /// Cette page permet de gérer les équipements d'une pièce. Elle permet notamment l'ajout d'équipements (selon type FIBARO ou KIRA) et de les renommer.
+    /// Page permettant de gérer les équipements d'une pièce. Elle permet notamment l'ajout d'équipements (selon son type: FIBARO ou KIRA), de les supprimer ou de les renommer.
     /// </summary>
     public sealed partial class GestionEquipements : Page
     {
@@ -97,11 +97,11 @@ namespace MyDomotik
 
 
         /// <summary>
-        /// Cette méthode est déclenchée lors du clic sur le bouton "Accueil". \n
+        /// Méthode déclenchée lors du clic sur le bouton "Accueil". \n
         /// Elle permet d'accéder à la page principale "Utilisateur".
         /// </summary>
         /// <param name="sender">Bouton "Accueil".</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param> 
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param> 
         private void exitAdmin(object sender, RoutedEventArgs e)
         {
             Core_save(core);
@@ -113,11 +113,11 @@ namespace MyDomotik
 
 
         /// <summary>
-        /// Cette méthode est déclenchée lors du clic sur le bouton "Retour". \n
+        /// Méthode déclenchée lors du clic sur le bouton "Retour". \n
         /// Elle permet d'accéder à la page Admin.
         /// </summary>
         /// <param name="sender">Bouton "Retour".</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
         public void menuAdmin(object sender, RoutedEventArgs e)
         {
             Core_save(core);
@@ -128,7 +128,7 @@ namespace MyDomotik
 
         /// <summary>
         /// Méthode permettant d'initialiser et d'afficher la grille d'équipements associés à la pièce choisie (variable piece). \n
-        /// Elle Associe au boutons non vides de la grille la méthode Menu1. \n
+        /// Elle associe la méthode Menu1 aux boutons non vides de la grille. \n
         /// </summary>
         public void afficherPage()
         {
@@ -149,11 +149,11 @@ namespace MyDomotik
         // évenement qui gère le click sur un bouton (en dehors du cas où l'utilisateur ajoute une icone)
         // affiche un menu de deux boutons : supprimer l'icone ou modifier le nom de l'icone
         /// <summary>
-        /// Cette methode est déclenchée lors du clic sur un équipement. \n
+        /// Méthode déclenchée lors du clic sur un équipement. \n
         /// Elle permet d'afficher les options telles que "Renommer" ou "Supprimer". 
         /// </summary>
         /// <param name="sender">Bouton associé à l'équipement choisi.</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
         private void Menu1(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button; //Enregistrement du bouton choisi
@@ -167,11 +167,11 @@ namespace MyDomotik
 
         //Permet de masquer le menu "options" 
         /// <summary>
-        /// Cette methode est déclenchée lors du clic sur le boutn "Annuler" du menu option. \n
-        /// Elle permet d'enlever l'affichage du menu options.
+        /// Méthode déclenchée lors du clic sur le bouton "Annuler" du menu option. \n
+        /// Elle permet d'enlever l'affichage du menu option.
         /// </summary>
         /// <param name="sender">Bouton "Annuler".</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
         private void annuler(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
@@ -182,11 +182,11 @@ namespace MyDomotik
 
         //Permet de supprimer equipements
         /// <summary>
-        /// Cette méthode est déclenchée lors du clic sur le bouton "Supprimer" du menu option. \n
+        /// Méthode déclenchée lors du clic sur le bouton "Supprimer" du menu option. \n
         /// Elle permet de supprimer l'équipement choisi et d'enregister ces modifications dans le Core (cf DLL).
         /// </summary>
         /// <param name="sender">Bouton "Supprimer".</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
         private void enleverIcone(object sender, RoutedEventArgs e)
         {
             Room_deleteEquipmentByIndex(core, indexEquipement);
@@ -205,8 +205,8 @@ namespace MyDomotik
 
         //Permet de renommer equipements 
         /// <summary>
-        /// Cette methode est déclenchée lors du clic sur le bouton "Renommer" du menu option. \n
-        /// Elle permet d'afficher les champs nécessaires pour que l'utilisateur puisse entrer le nouveau nom de l'équipements. \n
+        /// Méthode déclenchée lors du clic sur le bouton "Renommer" du menu option. \n
+        /// Elle permet d'afficher les champs nécessaires pour que l'utilisateur puisse entrer le nouveau nom de l'équipement. \n
         /// Le nouveau nom sera enregistré après le clic sur le bouton "Valider" (cf méthode validation).
         /// </summary>
         /// <param name="sender">Bouton "Renommer".</param>
@@ -226,13 +226,13 @@ namespace MyDomotik
 
         //Lorsque l'on choisi de creer equipements kira
         /// <summary>
-        /// Cette methode est déclenchée lors du clic sur le bouton "KIRA".  \n
+        /// Méthode déclenchée lors du clic sur le bouton "KIRA".  \n
         /// Elle permet d'afficher les paramètres propres à cet équipement KIRA, paramètres que l'utilisateur doit entrer: \n
         /// -Numéro du bouton, \n
         /// -Numéro de la page. \n
         /// </summary>
         /// <param name="sender">Bouton "KIRA".</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
         private void kira(object sender, RoutedEventArgs e)
         {
             Fibaro.Visibility = Visibility.Collapsed;
@@ -250,13 +250,13 @@ namespace MyDomotik
 
         //Lorsque l'on choisi de creer des equipements fibaro
         /// <summary>
-        /// Cette methode est déclenchée lors du clic sur le bouton "FIBARO".  \n
+        /// Méthode déclenchée lors du clic sur le bouton "FIBARO".  \n
         /// Elle permet d'afficher les paramètres propres à cet équipement FIBARO, paramètres que l'utilisateur doit entrer: \n
         /// -Action, \n
         /// -ID. \n
         /// </summary>
         /// <param name="sender">Bouton "FIBARO".</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
         private void fibaro(object sender, RoutedEventArgs e)
         {
             Fibaro.Visibility = Visibility.Collapsed;
@@ -277,11 +277,11 @@ namespace MyDomotik
         //événement qui gère le click sur une image
         //récupère les informations sur cet image
         /// <summary>
-        /// Cette méthode est déclenchée lors du clic sur une des images de la barre en bas de page.  \n
+        /// Méthode déclenchée lors du clic sur une des images de la barre en bas de page.  \n
         /// Elle permet d'enregistrer l'image que l'admin souhaite associer au nouvel équipement.
         /// </summary>
         /// <param name="sender">Image choisie pour représenter le nouvel équipement.</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
         private void choixImage(object sender, RoutedEventArgs e)
         { 
             if (choixKira || choixFibaro)
@@ -312,7 +312,7 @@ namespace MyDomotik
 
         // évenement qui gère la validation de saisie du nom de l'icone
         /// <summary>
-        /// Cette méthode est déclenchée lors du clic sur le bouton "Validation", et ceux après que l'utilisateur ait complété le champ "nom".  \n
+        /// Méthode déclenchée lors du clic sur le bouton "Validation", et cela après que l'utilisateur ait complété le champ "nom".  \n
         /// Ce bouton peut être enclenché dans deux cas: \n
         /// - Soit l'utilisateur souhaite renommer l'équipement qu'il a précédemment choisi, il suffit alors d'enregistrer le nouveau nom, \n
         /// - Soit l'utilisateur souhaite nommer un nouvel équipement qu'il est en train de créer, il faut alors créer cet équipement selon 
@@ -320,7 +320,7 @@ namespace MyDomotik
         /// Il faut ensuite enregistrer ce nouvel équipement dans le Core (cf DLL).
         /// </summary>
         /// <param name="sender">Image choisie pour représenter le nouvel équipement.</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
         private void Validation(object sender, RoutedEventArgs e)
         {
             if (this.nouvelleIcone) // Si une image est selectionne, alors création d'une nouvel equipement
@@ -364,12 +364,12 @@ namespace MyDomotik
         
         // accès à la page precedente de la grille
         /// <summary>
-        /// Cette méthode est déclenchée lors du clic sur le bouton "Précédent". \n
+        /// Méthode déclenchée lors du clic sur le bouton "Précédent". \n
         /// Elle permet de retourner à la page précdente de la grille d'icônes, en décrémentant la variable pageActuelle. \n
         /// Elle effectue un appel à la fonction afficherPieces ou afficherEquipements, pour raffraichir la grille. 
         /// </summary>
         /// <param name="sender">Bouton "Précédent."</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
         private void pagePrecedente(object sender, RoutedEventArgs e)
         {
             if (pageActuelle > 0)
@@ -383,12 +383,12 @@ namespace MyDomotik
 
         // accès à la page suivante de la grille
         /// <summary>
-        /// Cette méthode est déclenchée lors du clic sur le bouton "Suivant". \n
+        /// Méthode déclenchée lors du clic sur le bouton "Suivant". \n
         /// Elle permet d'avancer à la page suivante de la grille d'icônes, en incrémentant la variable pageActuelle. \n
         /// Elle effectue un appel à la fonction afficherPieces ou afficherEquipements pour raffraichir la grille.
         /// </summary>
         /// <param name="sender">Bouton "Suivant".</param>
-        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
         private void pageSuivante(object sender, RoutedEventArgs e)
         {
                 pageActuelle++;
