@@ -65,7 +65,7 @@ namespace MyDomotik
         /// Elle permet d'accéder à la page principale "Utilisateur".
         /// </summary>
         /// <param name="sender">Bouton "Accueil".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param> 
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param> 
         private void exitAdmin(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
@@ -79,7 +79,7 @@ namespace MyDomotik
         /// Elle permet d'accéder à la page Admin.
         /// </summary>
         /// <param name="sender">Bouton "Retour".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void menuAdmin(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
@@ -92,7 +92,7 @@ namespace MyDomotik
         /// Elle enregistre ce nouveau format (petit) dans le fichier de sauvegarde (cf DLL).
         /// </summary>
         /// <param name="sender">Bouton "Petit".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void choixPetit(object sender, RoutedEventArgs e)
         {
             Core_setIconSize(core, 3);
@@ -103,10 +103,10 @@ namespace MyDomotik
 
         /// <summary>
         /// Méthode déclenchée lors du clic sur le bouton "Moyen". \n
-        /// Elle enregistre ce nouveau format (moyyen) dans le fichier de sauvegarde (cf DLL).
+        /// Elle enregistre ce nouveau format (moyen) dans le fichier de sauvegarde (cf DLL).
         /// </summary>
         /// <param name="sender">Bouton "Moyen".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void choixMoyen(object sender, RoutedEventArgs e)
         {
             Core_setIconSize(core, 2);
@@ -120,7 +120,7 @@ namespace MyDomotik
         /// Elle enregistre ce nouveau format (grand) dans le fichier de sauvegarde (cf DLL).
         /// </summary>
         /// <param name="sender">Bouton "Grand".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void choixGrand(object sender, RoutedEventArgs e)
         {
             Core_setIconSize(core, 1);

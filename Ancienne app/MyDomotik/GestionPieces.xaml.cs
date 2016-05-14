@@ -76,11 +76,11 @@ namespace MyDomotik
         //FIN DLL
 
         private String nom; //nom de l'image choisie pour la nouvelle piece
-        private int indexPiece; //index de la piece que l'on souhaite rennomer/supprimer//y ajouter des equipements
-        private Boolean nouvellePiece = false; //vrai, lorsque l'utilisateur souhaite ajouter une piece. Faux si il veut renommer/suppro
+        private int indexPiece; //index de la pièce que l'on souhaite renommer/supprimer//y ajouter des equipements
+        private Boolean nouvellePiece = false; //vrai, lorsque l'utilisateur souhaite ajouter une pièce. Faux s'il veut renommer/supprimer
         private IntPtr core; 
         private int pageActuelle = 0; //numéro de la page actuelle de la grille
-        private static string nomPieceSelectionee; //nom de la piece à laquelle on souhaite ajouter des equipements
+        private static string nomPieceSelectionee; //nom de la pièce à laquelle on souhaite ajouter des équipements
         private Affichage affichage; //permet d'afficher la grille
 
 
@@ -111,7 +111,7 @@ namespace MyDomotik
 
             affichage = new Affichage();
 
-            afficherPage(); //gere l'affichage de la grille: boutons selon le format, affcihage des pieces...    
+            afficherPage(); //gère l'affichage de la grille: boutons selon le format, affichage des pièces...    
         }
 
 
@@ -121,7 +121,7 @@ namespace MyDomotik
         /// Elle permet d'accéder à la page principale "Utilisateur".
         /// </summary>
         /// <param name="sender">Bouton "Accueil".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param> 
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param> 
         private void exitAdmin(object sender, RoutedEventArgs e)
         {
             Core_save(core);
@@ -136,7 +136,7 @@ namespace MyDomotik
         /// Elle permet d'accéder à la page Admin.
         /// </summary>
         /// <param name="sender">Bouton "Retour".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param> 
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param> 
         public void menuAdmin(object sender, RoutedEventArgs e)
         {
             Core_save(core);
@@ -155,7 +155,7 @@ namespace MyDomotik
             message2.Text = "Choisir une icône";
             List<Button> boutons = affichage.afficherPiecesGrille(pageActuelle, cadre, core);
 
-            //Lors de l'appui sur le bouton associe a une piece, lancer Menu1
+            //Lors de l'appui sur le bouton associé a une piece, lance Menu1
             foreach(Button b in boutons)
             {
                 b.Click += Menu1;
@@ -164,14 +164,14 @@ namespace MyDomotik
 
 
 
-        // évenement qui gère le click sur un bouton (en dehors du cas où l'utilisateur ajoute une icone)
-        // affiche un menu de 4 boutons : supprimer l'icone, modifier le nom de l'icone, ajouter des equipements, ou annuler
+        // Evénement qui gère le clic sur un bouton (en dehors du cas où l'utilisateur ajoute une icône)
+        // Affiche un menu de 4 boutons : supprimer l'icône, modifier le nom de l'icône, ajouter des équipements, ou annuler
         /// <summary>
         /// Méthode déclenchée lors du clic sur une pièce. \n
         /// Elle permet d'afficher les options telles que "Renommer", "Supprimer" ou "Ajouter Equipements". 
         /// </summary>
         /// <param name="sender">Bouton associé à la pièce choisie.</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void Menu1(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button; //Enregistrement du bouton choisi
@@ -185,7 +185,7 @@ namespace MyDomotik
 
 
 
-        //Permet de masquer le menu "options"
+        // Permet de masquer le menu "options"
         /// <summary>
         /// Méthode déclenchée lors du clic sur le bouton "Annuler" du menu option. \n
         /// Elle permet d'enlever l'affichage du menu option.
@@ -203,7 +203,7 @@ namespace MyDomotik
         /// Elle permet de supprimer la pièce choisie et d'enregister ces modifications dans le Core (cf DLL).
         /// </summary>
         /// <param name="sender">Bouton "Supprimer".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void enleverIcone(object sender, RoutedEventArgs e)
         {
             Core_deleteRoomByIndex(core, indexPiece);
@@ -222,14 +222,14 @@ namespace MyDomotik
 
 
 
-        //Permet de renommer la piece choisie 
+        // Permet de renommer la pièce choisie 
         /// <summary>
-        /// Méthode déclenchée lors du clic sur le bouton "Renommer" du menu option. \n
+        /// Méthode déclenchée lors du clic sur le bouton "Renommer" du menu options. \n
         /// Elle permet d'afficher les champs nécessaires pour que l'utilisateur puisse entrer le nouveau nom de la pièce. \n
         /// Le nouveau nom sera enregistré après le clic sur le bouton "Valider" (cf méthode validation).
         /// </summary>
         /// <param name="sender">Bouton "Renommer".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void changerNomIcone(object sender, RoutedEventArgs e)
         {
             message1.Text = "Veuillez attribuer un nom à l'icone:";
@@ -245,8 +245,8 @@ namespace MyDomotik
 
 
         /// <summary>
-        /// Méthode déclenchée lors du clic sur le bouton "Ajouter équipements" du menu option. \n
-        /// Elle permet d'enregistrer le nom de la pièce choisie, puis d'accèder à la page Gestion Equipements afin d'ajouter/modifier des équipements à cette pièce.
+        /// Méthode déclenchée lors du clic sur le bouton "Ajouter équipements" du menu options. \n
+        /// Elle permet d'enregistrer le nom de la pièce choisie, puis d'accéder à la page Gestion Equipements afin d'ajouter/modifier des équipements à cette pièce.
         /// </summary>
         /// <param name="sender">Bouton "Ajouter équipements".</param>
         /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
@@ -261,24 +261,24 @@ namespace MyDomotik
 
 
 
-        //événement qui gère le click sur une piece
-        //affiche un message pour le choix de l'emplacement de l'icone dans la grille et récupère les informations sur l'icone
+        // Evénement qui gère le clic sur une piece
+        // Affiche un message pour le choix de l'emplacement de l'icône dans la grille et récupère les informations sur l'icône
         /// <summary>
         /// Méthode déclenchée lors du clic sur une des images de la barre en bas de page.  \n
         /// Elle permet d'enregistrer l'image que l'admin souhaite associer à la nouvelle pièce.
         /// </summary>
         /// <param name="sender">Image choisie pour représenter la nouvelle pièce.</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void choixImage(object sender, RoutedEventArgs e)
         {
 
-            // affiche la boite de dialogue permettant à l'utilisateur d'entrer le nom de l'icone
+            // Affiche la boîte de dialogue permettant à l'utilisateur d'entrer le nom de l'icône
             message2.Text = "";
             message1.Text = "Veuillez attribuer un nom à l'icone:";
             nomIcone.Visibility = Visibility.Visible;
             Valider.Visibility = Visibility.Visible;
 
-            // mémorise l'image cliquée
+            // Mémorise l'image sélectionnée
             Image image = sender as Image;
             this.nom = image.Name.Replace("é", ".");
             nouvellePiece = true;
@@ -286,22 +286,22 @@ namespace MyDomotik
 
 
 
-        // évenement qui gère la validation de saisie du nom de l'icone
+        // Evenement qui gère la validation de saisie du nom de l'icône
         /// <summary>
         /// Méthode déclenchée lors du clic sur le bouton "Valider", et cela après que l'utilisateur ait complété le champ "nom".  \n
         /// Ce bouton peut être enclenché dans deux cas: \n
-        /// - Soit l'utilisateur souhaite renommer la pièce qu'il a précédemment choisi, il suffit alors d'enregistrer le nouveau nom, \n
+        /// - Soit l'utilisateur souhaite renommer la pièce qu'il a précédemment choisi, il suffit alors d'enregistrer le nouveau nom \n
         /// - Soit l'utilisateur souhaite nommer une nouvelle pièce qu'il est en train de créer, il faut alors créer cette pièce,
         ///  la nommer, et lui associer une image. 
         /// Il faut ensuite enregistrer cette nouvelle pièce dans le Core (cf DLL).
         /// </summary>
         /// <param name="sender">Bouton "Valider".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void Validation(object sender, RoutedEventArgs e)
         {
-            if (this.nouvellePiece) // création d'une nouvelle piece
+            if (this.nouvellePiece) // Création d'une nouvelle piece
             {
-                // efface message
+                // Efface message
                 message1.Text = "";
                 message2.Text = "";
                 nomIcone.Visibility = Visibility.Collapsed;
@@ -309,7 +309,7 @@ namespace MyDomotik
                 IntPtr room = Room_New(nomIcone.Text, this.nom);
                 Core_addRoom(core, room);
             }
-            else // Changement du nom de la piece : mémorisation dans la configuration
+            else // Changement du nom de la pièce : mémorisation dans la configuration
             {              
                 IntPtr room = Core_getRoomByIndex(core, indexPiece);
                 Node_setName(room, nomIcone.Text);
@@ -325,14 +325,14 @@ namespace MyDomotik
 
       
         
-        // accès à la page precedente de la grille
+        // Accès à la page précédente de la grille
         /// <summary>
         /// Méthode déclenchée lors du clic sur le bouton "Précédent". \n
         /// Elle permet de retourner à la page précédente de la grille d'icônes, en décrémentant la variable pageActuelle. \n
-        /// Elle effectue un appel à la fonction afficherPieces ou afficherEquipements, pour raffraichir la grille. 
+        /// Elle effectue un appel à la fonction afficherPieces ou afficherEquipements, pour rafraîchir la grille. 
         /// </summary>
         /// <param name="sender">Bouton "Précédent."</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>                
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>                
         private void pagePrecedente(object sender, RoutedEventArgs e)
         {
             if (pageActuelle > 0)
@@ -344,14 +344,14 @@ namespace MyDomotik
 
 
 
-        // accès à la page suivante de la grille
+        // Accès à la page suivante de la grille
         /// <summary>
         /// Méthode déclenchée lors du clic sur le bouton "Suivant". \n
         /// Elle permet d'avancer à la page suivante de la grille d'icônes, en incrémentant la variable pageActuelle. \n
         /// Elle effectue un appel à la fonction afficherPieces ou afficherEquipements pour raffraichir la grille.
         /// </summary>
         /// <param name="sender">Bouton "Suivant".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void pageSuivante(object sender, RoutedEventArgs e)
         {
             pageActuelle++;

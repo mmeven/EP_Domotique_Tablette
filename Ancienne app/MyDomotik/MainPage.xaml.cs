@@ -27,14 +27,14 @@ namespace MyDomotik
     /// Initialement, on affiche une grille de pièces, composée de plusieurs pages 
     /// (pour naviguer entre ces pages, clic sur le bouton précédent ou suivant). \n
     /// Lors du clic sur une pièce, on affiche la grille des équipements associés à cette pièce. \n
-    /// Possibilité d'accèder à la page Admin (bouton Configuration).
+    /// Possibilité d'accéder à la page Admin (bouton Configuration).
     /// </summary> 
     public sealed partial class MainPage : Page
     {
         private static IntPtr core;       
         private int pageActuelle = 0; //indique le numéro de la page courante de la grille. Lorsque l'on appuie sur le bouton suivant : pageActuelle++
         private Boolean vueEquipement; //Lorsque vueEquipement=true il faut afficher une grille d'équipements, sinon afficher la grille des pièces
-        private IntPtr pieceSelectionnee; //Piece choisie et dont il faut afficher les équipements
+        private IntPtr pieceSelectionnee; //Pièce choisie et dont il faut afficher les équipements
         private Affichage affichage;
 
         //DLL
@@ -80,13 +80,13 @@ namespace MyDomotik
         public MainPage()
         {
             InitializeComponent();
-            //La sauvegarde de l'arbre est chargee a partir du dossier local de l'application
+            //La sauvegarde de l'arbre est chargée à partir du dossier local de l'application
             Windows.Storage.StorageFolder sf = Windows.Storage.ApplicationData.Current.LocalFolder;
             core = Core_NewFromSave(sf.Path + "\\load.txt");
 
             affichage = new Affichage();
 
-            afficherPieces(); //gere l'affichage de la grille: boutons selon le format, affcihages des pieces... 
+            afficherPieces(); //gère l'affichage de la grille: boutons selon le format, affichage des pièces... 
             affichage.afficheHeure(TimeBox); //affichage de l'heure en haut à gauche de la page d'accueil
         }
 
@@ -113,7 +113,7 @@ namespace MyDomotik
         /// <summary>
         /// Méthode permettant d'initialiser et d'afficher une grille d'équipements associés à la pièce choisie. \n
         /// Elle associe la méthode EquipementClick aux boutons non vides de la grille. \n
-        /// ELle permet aussi d'initialiser la couleur des divers éléments de la page (boutons de la grille, barre du bas, fond, etc...). \n
+        /// Elle permet aussi d'initialiser la couleur des divers éléments de la page (boutons de la grille, barre du bas, fond, etc...). \n
         /// </summary>
         private void afficherEquipements()
         {
@@ -136,7 +136,7 @@ namespace MyDomotik
         /// Selon le type de l'équipement choisi (Fibaro ou Kira), elle lance la requête adéquate. 
         /// </summary>
         /// <param name="sender">Bouton associé à l'équipement choisi.</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void EquipementClick(object sender, RoutedEventArgs e)         //Lors de l'appui sur un équipement
         {
             Button button = sender as Button; //Enregistrement du bouton choisi
@@ -160,7 +160,7 @@ namespace MyDomotik
         /// Elle permet d'afficher la grille des équipements associés à cette pièce, en faisant appel à la méthode afficherEquipements.
         /// </summary>
         /// <param name="sender">Bouton associé à la pièce choisie.</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void PieceClick(object sender, RoutedEventArgs e)
         {
             vueEquipement = true;
@@ -177,8 +177,8 @@ namespace MyDomotik
         /// Elle permet d'accéder à la page Admin.
         /// </summary>
         /// <param name="sender">Bouton "Configuration".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
-        private void adminSelect(object sender, DoubleTappedRoutedEventArgs e)         // accès au mode configuration
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
+        private void adminSelect(object sender, DoubleTappedRoutedEventArgs e)    // accès au mode configuration
 
         {
             this.Frame.Navigate(typeof(AdminPage));
@@ -189,10 +189,10 @@ namespace MyDomotik
         /// <summary>
         /// Méthode déclenchée lors du clic sur le bouton "Précédent". \n
         /// Elle permet de retourner à la page précédente de la grille d'icônes, en décrémentant la variable pageActuelle. \n
-        /// Elle effectue un appel à la fonction afficherPieces ou afficherEquipements, pour raffraichir la grille. 
+        /// Elle effectue un appel à la fonction afficherPieces ou afficherEquipements, pour rafraîchir la grille. 
         /// </summary>
         /// <param name="sender">Bouton "Précédent."</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void PagePrecedente(object sender, RoutedEventArgs e)        // accès à la page précédente de la grille
         {
             if (pageActuelle>0) pageActuelle--;
@@ -205,10 +205,10 @@ namespace MyDomotik
         /// <summary>
         /// Méthode déclenchée lors du clic sur le bouton "Suivant". \n
         /// Elle permet d'avancer à la page suivante de la grille d'icônes, en incrémentant la variable pageActuelle. \n
-        /// Elle effectue un appel à la fonction afficherPieces ou afficherEquipements pour raffraichir la grille.
+        /// Elle effectue un appel à la fonction afficherPieces ou afficherEquipements pour rafraîchir la grille.
         /// </summary>
         /// <param name="sender">Bouton "Suivant".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void PageSuivante(object sender, RoutedEventArgs e)             // accès à la page suivante de la grille
         {
             pageActuelle++;
@@ -223,7 +223,7 @@ namespace MyDomotik
         /// Elle permet de retourner à la page d'accueil, et notamment d'afficher la grille de pièces.
         /// </summary>
         /// <param name="sender">Bouton "Accueil".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void PageAccueil(object sender, RoutedEventArgs e)             // accès à la page d'accueil
         {
             pageActuelle = 0;
@@ -234,10 +234,10 @@ namespace MyDomotik
 
         /// <summary>
         /// Méthode déclenchée lors du clic sur le bouton "Fauteuil". \n
-        /// Elle permet d'accèder à la page WeelchairFeedBack.
+        /// Elle permet d'accéder à la page WeelchairFeedBack.
         /// </summary>
         /// <param name="sender">Bouton "Fauteuil".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void PageFauteuil(object sender, RoutedEventArgs e)             // accès à la page fauteuil
         {
             this.Frame.Navigate(typeof(WheelchairFeedback));
