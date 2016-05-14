@@ -5,54 +5,61 @@
 #include "Equipment.h"
 
 namespace EP {
-	// Represents a node of the tree used to modelize the rooms
-	// and their equiments
+	/// <summary>Représente une pièce de la maison ; Hérite de Node.
+	/// On peut y retrouver les différents équipements liés à une pièce et les gérer.</summary>
 	class __declspec(dllexport) Room : public Node {
 	public:
-		// See Node.h
+		///<summary>Appele le constructeur de Node</summary>
 		Room(char* name, char* ico);
 
-		// Deletes the list of Equipments
+		///<summary>Détruit la liste d'équipements</summary>
 		~Room();
 
-		// Adds the pointer of an given equipment into m_listEquipments
-		// The name of the Equipments must be unique
-		// Returns 1 if the name is already used
+		///<summary>Ajoute le pointeur d'un équipement donné dans m_listEquipments.
+		///Le nom d'un équipement doit être unique.</summary>
+		///<param name="equip">Le pointeur de l'équipement à ajouter.</param>
+		///<returns>0 si tout s'est bien passé, 1 si le nom est déjà pris.</returns>
 		int addEquipment(Equipment* equip);
 
-		// Deletes the equipment at the given position.
-		// Returns 1 if the index given is out of bounds
+		///<summary>Supprime l'équipement dont l'index est donné en paramètre.</summary>
+		///<param name="index">L'index de l'équipement à supprimer de m_listEquipments.</param>
+		///<returns>0 si tout s'est bien passé, 1 si l'index ne correspond à aucun équipement.</returns>
 		int deleteEquipmentByIndex(int index);
 
-		// Deletes the equipment with the given name.
-		// Returns 1 if the name given doesn't exist
+		///<summary>Supprime l'équipement dont le nom est donné en paramètre.</summary>
+		///<param name="name">Le nom de l'équipement à supprimer de m_listEquipments.</param>
+		///<returns>0 si tout s'est bien passé, 1 si le nom ne correspond à aucun équipement.</returns>
 		int deleteEquipmentByName(char* name);
 
-		// Returns a pointer of the first element of an array containing all Equipments
-		// Use this in a C# code
-		// NOT IMPLEMENTED
-		//Equipment* getEquipmentsAsArray();
-
-		// Returns the vector containing all the Equipments of the Room
-		// Wont work in C#, or I haven't found out yet
+		///<summary>Ne pas utiliser cette méthode à partir de la DLL. A la place on peut itérer avec
+		/// getNumberEquipments et getEquipmentByIndex.</summary>
+		///<returns>L'attribut m_listEquipments.</returns>
 		std::vector<Equipment*>* getEquipments();
 
-		// Returns a pointer to the Equipment corresponding to the given name
-		// Returns NULL if it doesn't exist
+		///<summary>Donne un pointeur vers l'équipement dont le nom est donné en paramètre.</summary>
+		///<param name="name">Le nom de l'équipement qu'on veut récupérer.</param>
+		///<returns>Un pointeur vers l'équipement demandé, NULL si aucun ne correspond.</returns>
 		Equipment* getEquipmentByName(char* name);
 
-		// Returns a pointer to the Equipment corresponding to the given index
-		// Returns NULL if the index is out of bounds
+		///<summary>Donne un pointeur vers l'équipement dont l'index est donné en paramètre.</summary>
+		///<param name="index">L'index de l'équipement qu'on veut récupérer.</param>
+		///<returns>Un pointeur vers l'équipement demandé, NULL si aucun ne correspond.</returns>
 		Equipment* getEquipmentByIndex(int index);
 
-		// Returns the number of Equipments in the vector
+		///<returns>Le nombre d'équipement que la pièce contient</returns>
 		int getNumberEquipments();
 	private:
-		// The list of all the Equipments contained by this Room
+		///<summary>La liste de tous les équipements contenus par cette pièce.</summary>
 		std::vector<Equipment*> m_listEquipments;
 	};
 
+	///<summary>Constructeur statique utilisé pour permettre l'utilisation des objets Room en
+	///passant par la DLL. Les paramètres sont les mêmes que ceux du constructeur.</summary>
+	///<returns>Un pointeur vers l'objet créé.</returns>
 	extern "C" __declspec(dllexport) Room* Room_New(char* name, char* ico);
+
+	///<summary>Destructeur statique, pour permettre la destruction des objets Room en passant par la DLL.</summary>
+	///<param name="room">Un pointeur vers l'objet à détruire.</returns>
 	extern "C" __declspec(dllexport) void Room_Delete(Room* room);
 }
 

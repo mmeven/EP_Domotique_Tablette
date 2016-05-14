@@ -87,6 +87,15 @@ namespace EP {
 		return m_buttonId;
 	}
 
+	int EquipmentKira::getPageNumber() {
+		return m_pageNumber;
+	}
+
+	int EquipmentKira::setButtonId(int new_id) {
+		m_buttonId = new_id;
+		return 0;
+	}
+
 	int EquipmentKira::setPageNumber(int new_pageNumber){
 		m_pageNumber = new_pageNumber;
 		return 0;

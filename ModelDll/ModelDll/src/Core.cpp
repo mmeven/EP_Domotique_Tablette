@@ -7,7 +7,7 @@
 using namespace std;
 
 namespace EP {
-	Core::Core(char* file) : m_currentRoom(0), m_iconSize(2), m_themeId(1)	{
+	Core::Core(char* file) : m_iconSize(2), m_themeId(1)	{
 		strcpy_s(m_coreSave, file);
 	}
 
@@ -208,20 +208,12 @@ namespace EP {
 		return m_listRooms.size();
 	}
 
-	Room* Core::getCurrentRoom() {
-		return m_currentRoom;
-	}
-
 	int Core::getThemeId() {
 		return m_themeId;
 	}
 
 	int Core::getIconSize() {
 		return m_iconSize;
-	}
-
-	void Core::setCurrentRoom(Room* room) {
-		m_currentRoom = room;
 	}
 
 	void Core::setThemeId(int id) {
