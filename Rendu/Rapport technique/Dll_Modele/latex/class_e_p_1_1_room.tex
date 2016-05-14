@@ -1,0 +1,204 @@
+\hypertarget{class_e_p_1_1_room}{}\section{Référence de la classe EP\+:\+:Room}
+\label{class_e_p_1_1_room}\index{E\+P\+::\+Room@{E\+P\+::\+Room}}
+
+
+Représente une pièce de la maison ; Hérite de \hyperlink{class_e_p_1_1_node}{Node}. On peut y retrouver les différents équipements liés à une pièce et les gérer.  
+
+
+
+
+{\ttfamily \#include $<$Room.\+h$>$}
+
+Graphe d\textquotesingle{}héritage de EP\+:\+:Room\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_e_p_1_1_room}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_e_p_1_1_room_aefc0919f87a1f6dcfde24923719e6b90}{Room} (char $\ast$name, char $\ast$ico)\hypertarget{class_e_p_1_1_room_aefc0919f87a1f6dcfde24923719e6b90}{}\label{class_e_p_1_1_room_aefc0919f87a1f6dcfde24923719e6b90}
+
+\begin{DoxyCompactList}\small\item\em Appele le constructeur de \hyperlink{class_e_p_1_1_node}{Node}. \end{DoxyCompactList}\item 
+\hyperlink{class_e_p_1_1_room_a1dba2dc4fdec31c930b5f538bb4018cf}{$\sim$\+Room} ()\hypertarget{class_e_p_1_1_room_a1dba2dc4fdec31c930b5f538bb4018cf}{}\label{class_e_p_1_1_room_a1dba2dc4fdec31c930b5f538bb4018cf}
+
+\begin{DoxyCompactList}\small\item\em Détruit la liste d\textquotesingle{}équipements. \end{DoxyCompactList}\item 
+int \hyperlink{class_e_p_1_1_room_a818eb638f5796bfc45a519ce503c30be}{add\+Equipment} (\hyperlink{class_e_p_1_1_equipment}{Equipment} $\ast$equip)
+\begin{DoxyCompactList}\small\item\em Ajoute le pointeur d\textquotesingle{}un équipement donné dans m\+\_\+list\+Equipments. Le nom d\textquotesingle{}un équipement doit être unique. \end{DoxyCompactList}\item 
+int \hyperlink{class_e_p_1_1_room_a9d9a93b373460edb886a05e8942aa589}{delete\+Equipment\+By\+Index} (int index)
+\begin{DoxyCompactList}\small\item\em Supprime l\textquotesingle{}équipement dont l\textquotesingle{}index est donné en paramètre. \end{DoxyCompactList}\item 
+int \hyperlink{class_e_p_1_1_room_a4879b1eeebccc1a3c2f5ece234f73da9}{delete\+Equipment\+By\+Name} (char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Supprime l\textquotesingle{}équipement dont le nom est donné en paramètre. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_e_p_1_1_equipment}{Equipment} $\ast$ $>$ $\ast$ \hyperlink{class_e_p_1_1_room_ad4993f6208f136a9f1bd082def0d53c0}{get\+Equipments} ()
+\begin{DoxyCompactList}\small\item\em Ne pas utiliser cette méthode à partir de la D\+LL. A la place on peut itérer avec get\+Number\+Equipments et get\+Equipment\+By\+Index. \end{DoxyCompactList}\item 
+\hyperlink{class_e_p_1_1_equipment}{Equipment} $\ast$ \hyperlink{class_e_p_1_1_room_a7f7aeb553f256013f1f54c245e238dfd}{get\+Equipment\+By\+Name} (char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Donne un pointeur vers l\textquotesingle{}équipement dont le nom est donné en paramètre. \end{DoxyCompactList}\item 
+\hyperlink{class_e_p_1_1_equipment}{Equipment} $\ast$ \hyperlink{class_e_p_1_1_room_a22185f0f9e75c03fe2fd61c958df3ead}{get\+Equipment\+By\+Index} (int index)
+\begin{DoxyCompactList}\small\item\em Donne un pointeur vers l\textquotesingle{}équipement dont l\textquotesingle{}index est donné en paramètre. \end{DoxyCompactList}\item 
+int \hyperlink{class_e_p_1_1_room_af66a08a85258e5da63a3684a9efc98ef}{get\+Number\+Equipments} ()
+\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+Représente une pièce de la maison ; Hérite de \hyperlink{class_e_p_1_1_node}{Node}. On peut y retrouver les différents équipements liés à une pièce et les gérer. 
+
+Définition à la ligne 15 du fichier Room.\+h.
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{E\+P\+::\+Room@{E\+P\+::\+Room}!add\+Equipment@{add\+Equipment}}
+\index{add\+Equipment@{add\+Equipment}!E\+P\+::\+Room@{E\+P\+::\+Room}}
+\subsubsection[{\texorpdfstring{add\+Equipment(\+Equipment $\ast$equip)}{addEquipment(Equipment *equip)}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Room\+::add\+Equipment (
+\begin{DoxyParamCaption}
+\item[{{\bf Equipment} $\ast$}]{equip}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_room_a818eb638f5796bfc45a519ce503c30be}{}\label{class_e_p_1_1_room_a818eb638f5796bfc45a519ce503c30be}
+
+
+Ajoute le pointeur d\textquotesingle{}un équipement donné dans m\+\_\+list\+Equipments. Le nom d\textquotesingle{}un équipement doit être unique. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em equip} & Le pointeur de l\textquotesingle{}équipement à ajouter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si tout s\textquotesingle{}est bien passé, 1 si le nom est déjà pris. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 13 du fichier Room.\+cpp.
+
+\index{E\+P\+::\+Room@{E\+P\+::\+Room}!delete\+Equipment\+By\+Index@{delete\+Equipment\+By\+Index}}
+\index{delete\+Equipment\+By\+Index@{delete\+Equipment\+By\+Index}!E\+P\+::\+Room@{E\+P\+::\+Room}}
+\subsubsection[{\texorpdfstring{delete\+Equipment\+By\+Index(int index)}{deleteEquipmentByIndex(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Room\+::delete\+Equipment\+By\+Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_room_a9d9a93b373460edb886a05e8942aa589}{}\label{class_e_p_1_1_room_a9d9a93b373460edb886a05e8942aa589}
+
+
+Supprime l\textquotesingle{}équipement dont l\textquotesingle{}index est donné en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em index} & L\textquotesingle{}index de l\textquotesingle{}équipement à supprimer de m\+\_\+list\+Equipments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si tout s\textquotesingle{}est bien passé, 1 si l\textquotesingle{}index ne correspond à aucun équipement. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 18 du fichier Room.\+cpp.
+
+\index{E\+P\+::\+Room@{E\+P\+::\+Room}!delete\+Equipment\+By\+Name@{delete\+Equipment\+By\+Name}}
+\index{delete\+Equipment\+By\+Name@{delete\+Equipment\+By\+Name}!E\+P\+::\+Room@{E\+P\+::\+Room}}
+\subsubsection[{\texorpdfstring{delete\+Equipment\+By\+Name(char $\ast$name)}{deleteEquipmentByName(char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Room\+::delete\+Equipment\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_room_a4879b1eeebccc1a3c2f5ece234f73da9}{}\label{class_e_p_1_1_room_a4879b1eeebccc1a3c2f5ece234f73da9}
+
+
+Supprime l\textquotesingle{}équipement dont le nom est donné en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em name} & Le nom de l\textquotesingle{}équipement à supprimer de m\+\_\+list\+Equipments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si tout s\textquotesingle{}est bien passé, 1 si le nom ne correspond à aucun équipement. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 29 du fichier Room.\+cpp.
+
+\index{E\+P\+::\+Room@{E\+P\+::\+Room}!get\+Equipment\+By\+Index@{get\+Equipment\+By\+Index}}
+\index{get\+Equipment\+By\+Index@{get\+Equipment\+By\+Index}!E\+P\+::\+Room@{E\+P\+::\+Room}}
+\subsubsection[{\texorpdfstring{get\+Equipment\+By\+Index(int index)}{getEquipmentByIndex(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Equipment} $\ast$ E\+P\+::\+Room\+::get\+Equipment\+By\+Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_room_a22185f0f9e75c03fe2fd61c958df3ead}{}\label{class_e_p_1_1_room_a22185f0f9e75c03fe2fd61c958df3ead}
+
+
+Donne un pointeur vers l\textquotesingle{}équipement dont l\textquotesingle{}index est donné en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em index} & L\textquotesingle{}index de l\textquotesingle{}équipement qu\textquotesingle{}on veut récupérer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un pointeur vers l\textquotesingle{}équipement demandé, N\+U\+LL si aucun ne correspond. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 56 du fichier Room.\+cpp.
+
+\index{E\+P\+::\+Room@{E\+P\+::\+Room}!get\+Equipment\+By\+Name@{get\+Equipment\+By\+Name}}
+\index{get\+Equipment\+By\+Name@{get\+Equipment\+By\+Name}!E\+P\+::\+Room@{E\+P\+::\+Room}}
+\subsubsection[{\texorpdfstring{get\+Equipment\+By\+Name(char $\ast$name)}{getEquipmentByName(char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Equipment} $\ast$ E\+P\+::\+Room\+::get\+Equipment\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_room_a7f7aeb553f256013f1f54c245e238dfd}{}\label{class_e_p_1_1_room_a7f7aeb553f256013f1f54c245e238dfd}
+
+
+Donne un pointeur vers l\textquotesingle{}équipement dont le nom est donné en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em name} & Le nom de l\textquotesingle{}équipement qu\textquotesingle{}on veut récupérer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un pointeur vers l\textquotesingle{}équipement demandé, N\+U\+LL si aucun ne correspond. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 46 du fichier Room.\+cpp.
+
+\index{E\+P\+::\+Room@{E\+P\+::\+Room}!get\+Equipments@{get\+Equipments}}
+\index{get\+Equipments@{get\+Equipments}!E\+P\+::\+Room@{E\+P\+::\+Room}}
+\subsubsection[{\texorpdfstring{get\+Equipments()}{getEquipments()}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Equipment} $\ast$ $>$ $\ast$ E\+P\+::\+Room\+::get\+Equipments (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_room_ad4993f6208f136a9f1bd082def0d53c0}{}\label{class_e_p_1_1_room_ad4993f6208f136a9f1bd082def0d53c0}
+
+
+Ne pas utiliser cette méthode à partir de la D\+LL. A la place on peut itérer avec get\+Number\+Equipments et get\+Equipment\+By\+Index. 
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}attribut m\+\_\+list\+Equipments. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 42 du fichier Room.\+cpp.
+
+\index{E\+P\+::\+Room@{E\+P\+::\+Room}!get\+Number\+Equipments@{get\+Number\+Equipments}}
+\index{get\+Number\+Equipments@{get\+Number\+Equipments}!E\+P\+::\+Room@{E\+P\+::\+Room}}
+\subsubsection[{\texorpdfstring{get\+Number\+Equipments()}{getNumberEquipments()}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Room\+::get\+Number\+Equipments (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_room_af66a08a85258e5da63a3684a9efc98ef}{}\label{class_e_p_1_1_room_af66a08a85258e5da63a3684a9efc98ef}
+\begin{DoxyReturn}{Renvoie}
+Le nombre d\textquotesingle{}équipement que la pièce contient 
+\end{DoxyReturn}
+
+
+Définition à la ligne 61 du fichier Room.\+cpp.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+include/Room.\+h\item 
+src/Room.\+cpp\end{DoxyCompactItemize}

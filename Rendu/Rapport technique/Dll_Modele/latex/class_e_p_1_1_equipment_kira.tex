@@ -1,0 +1,139 @@
+\hypertarget{class_e_p_1_1_equipment_kira}{}\section{Référence de la classe EP\+:\+:Equipment\+Kira}
+\label{class_e_p_1_1_equipment_kira}\index{E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}}
+
+
+Représente un équipement lié à une Kira, hérite de \hyperlink{class_e_p_1_1_equipment}{Equipment}.  
+
+
+
+
+{\ttfamily \#include $<$Equipment.\+h$>$}
+
+Graphe d\textquotesingle{}héritage de EP\+:\+:Equipment\+Kira\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_e_p_1_1_equipment_kira}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_e_p_1_1_equipment_kira_a7b96ccdab1a7d69e656c9602fce99213}{Equipment\+Kira} (char $\ast$name, char $\ast$ico, \hyperlink{class_e_p_1_1_node}{Node} $\ast$parent, int button\+Id, int page)
+\begin{DoxyCompactList}\small\item\em Appelle le constructeur de \hyperlink{class_e_p_1_1_equipment}{Equipment} et initialise m\+\_\+button\+Id et m\+\_\+page. \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_e_p_1_1_equipment_kira_ad59c93de1b98996ec273c5638cd7e47a}{send\+Request} ()\hypertarget{class_e_p_1_1_equipment_kira_ad59c93de1b98996ec273c5638cd7e47a}{}\label{class_e_p_1_1_equipment_kira_ad59c93de1b98996ec273c5638cd7e47a}
+
+\begin{DoxyCompactList}\small\item\em Exécute la requête H\+T\+TP correspondant à cet équipement. \end{DoxyCompactList}\item 
+int \hyperlink{class_e_p_1_1_equipment_kira_ae2ce7a10bf38a28b5c0c8f44420c3f10}{get\+Button\+Id} ()
+\item 
+int \hyperlink{class_e_p_1_1_equipment_kira_a689d07be3886b6b195e9c7bb3c20986d}{get\+Page\+Number} ()
+\item 
+int \hyperlink{class_e_p_1_1_equipment_kira_a1e695e63e1e736d1d107079a8277db2c}{set\+Button\+Id} (int new\+\_\+id)
+\item 
+int \hyperlink{class_e_p_1_1_equipment_kira_a788cf486ccf2652a40f4104f27478d74}{set\+Page\+Number} (int new\+\_\+\+Page\+Number)
+\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+Représente un équipement lié à une Kira, hérite de \hyperlink{class_e_p_1_1_equipment}{Equipment}. 
+
+Définition à la ligne 114 du fichier Equipment.\+h.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}!Equipment\+Kira@{Equipment\+Kira}}
+\index{Equipment\+Kira@{Equipment\+Kira}!E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}}
+\subsubsection[{\texorpdfstring{Equipment\+Kira(char $\ast$name, char $\ast$ico, Node $\ast$parent, int button\+Id, int page)}{EquipmentKira(char *name, char *ico, Node *parent, int buttonId, int page)}}]{\setlength{\rightskip}{0pt plus 5cm}E\+P\+::\+Equipment\+Kira\+::\+Equipment\+Kira (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{char $\ast$}]{ico, }
+\item[{{\bf Node} $\ast$}]{parent, }
+\item[{int}]{button\+Id, }
+\item[{int}]{page}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_equipment_kira_a7b96ccdab1a7d69e656c9602fce99213}{}\label{class_e_p_1_1_equipment_kira_a7b96ccdab1a7d69e656c9602fce99213}
+
+
+Appelle le constructeur de \hyperlink{class_e_p_1_1_equipment}{Equipment} et initialise m\+\_\+button\+Id et m\+\_\+page. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em button\+Id} & Le numéro du bouton correspondant à l\textquotesingle{}équipement dans l\textquotesingle{}interface web de la Kira. \\
+\hline
+{\em page} & La page du bouton correspondant à l\textquotesingle{}équipement dans l\textquotesingle{}interface web de la Kira. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 64 du fichier Equipment.\+cpp.
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}!get\+Button\+Id@{get\+Button\+Id}}
+\index{get\+Button\+Id@{get\+Button\+Id}!E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}}
+\subsubsection[{\texorpdfstring{get\+Button\+Id()}{getButtonId()}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Equipment\+Kira\+::get\+Button\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_equipment_kira_ae2ce7a10bf38a28b5c0c8f44420c3f10}{}\label{class_e_p_1_1_equipment_kira_ae2ce7a10bf38a28b5c0c8f44420c3f10}
+\begin{DoxyReturn}{Renvoie}
+Le numéro du bouton correspondant à l\textquotesingle{}équipement dans l\textquotesingle{}interface web de la Kira. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 86 du fichier Equipment.\+cpp.
+
+\index{E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}!get\+Page\+Number@{get\+Page\+Number}}
+\index{get\+Page\+Number@{get\+Page\+Number}!E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}}
+\subsubsection[{\texorpdfstring{get\+Page\+Number()}{getPageNumber()}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Equipment\+Kira\+::get\+Page\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_equipment_kira_a689d07be3886b6b195e9c7bb3c20986d}{}\label{class_e_p_1_1_equipment_kira_a689d07be3886b6b195e9c7bb3c20986d}
+\begin{DoxyReturn}{Renvoie}
+Le numéro de page du bouton correspondant à l\textquotesingle{}équipement dans l\textquotesingle{}interface web de la Kira. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 90 du fichier Equipment.\+cpp.
+
+\index{E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}!set\+Button\+Id@{set\+Button\+Id}}
+\index{set\+Button\+Id@{set\+Button\+Id}!E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}}
+\subsubsection[{\texorpdfstring{set\+Button\+Id(int new\+\_\+id)}{setButtonId(int new_id)}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Equipment\+Kira\+::set\+Button\+Id (
+\begin{DoxyParamCaption}
+\item[{int}]{new\+\_\+id}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_equipment_kira_a1e695e63e1e736d1d107079a8277db2c}{}\label{class_e_p_1_1_equipment_kira_a1e695e63e1e736d1d107079a8277db2c}
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+\_\+id} & Le nouveau numéro du bouton. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 94 du fichier Equipment.\+cpp.
+
+\index{E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}!set\+Page\+Number@{set\+Page\+Number}}
+\index{set\+Page\+Number@{set\+Page\+Number}!E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}}
+\subsubsection[{\texorpdfstring{set\+Page\+Number(int new\+\_\+\+Page\+Number)}{setPageNumber(int new_PageNumber)}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Equipment\+Kira\+::set\+Page\+Number (
+\begin{DoxyParamCaption}
+\item[{int}]{new\+\_\+\+Page\+Number}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_equipment_kira_a788cf486ccf2652a40f4104f27478d74}{}\label{class_e_p_1_1_equipment_kira_a788cf486ccf2652a40f4104f27478d74}
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+\_\+\+Page\+Number} & Le nouveau numéro de page du bouton. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 99 du fichier Equipment.\+cpp.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+include/Equipment.\+h\item 
+src/Equipment.\+cpp\end{DoxyCompactItemize}

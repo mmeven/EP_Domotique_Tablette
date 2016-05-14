@@ -1,0 +1,130 @@
+\hypertarget{class_e_p_1_1_node}{}\section{Référence de la classe EP\+:\+:Node}
+\label{class_e_p_1_1_node}\index{E\+P\+::\+Node@{E\+P\+::\+Node}}
+
+
+Représente un noeud de l\textquotesingle{}arbre (une pièce ou un équipement). Cette classe est spécialisée par les classes \hyperlink{class_e_p_1_1_equipment}{Equipment} et \hyperlink{class_e_p_1_1_room}{Room}, et n\textquotesingle{}est donc pas utilisée telle qu\textquotesingle{}elle.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Graphe d\textquotesingle{}héritage de EP\+:\+:Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_e_p_1_1_node}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_e_p_1_1_node_a9df197a78c36646fba1670935f5ea948}{Node} (char $\ast$name, char $\ast$ico)\hypertarget{class_e_p_1_1_node_a9df197a78c36646fba1670935f5ea948}{}\label{class_e_p_1_1_node_a9df197a78c36646fba1670935f5ea948}
+
+\begin{DoxyCompactList}\small\item\em Constructeur, initialise les attributs m\+\_\+name et m\+\_\+ico. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_e_p_1_1_node_a247e246a75f5b7111d53a1e4de19fb0b}{$\sim$\+Node} (void)\hypertarget{class_e_p_1_1_node_a247e246a75f5b7111d53a1e4de19fb0b}{}\label{class_e_p_1_1_node_a247e246a75f5b7111d53a1e4de19fb0b}
+
+\begin{DoxyCompactList}\small\item\em Destructeur, ne fait rien de particulier. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{class_e_p_1_1_node_ad5dd5dfbe1e26a22de54035a16ddb980}{get\+Name} ()
+\item 
+void \hyperlink{class_e_p_1_1_node_a27a879726020308b8fd47812ec4a8b86}{set\+Name} (char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Change le nom de ce noeud pour celui passé en paramètre. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{class_e_p_1_1_node_a7e29d725cfe687589f5668c9825fc303}{get\+Ico} ()
+\item 
+void \hyperlink{class_e_p_1_1_node_a0f1a35a7f9e6d18d38a17b591a130862}{set\+Ico} (char $\ast$ico)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}icône du noeud. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{class_e_p_1_1_node_a31312ed65b64cb081b4cbdf0acffa44f}{m\+\_\+name} \mbox{[}100\mbox{]}\hypertarget{class_e_p_1_1_node_a31312ed65b64cb081b4cbdf0acffa44f}{}\label{class_e_p_1_1_node_a31312ed65b64cb081b4cbdf0acffa44f}
+
+\begin{DoxyCompactList}\small\item\em Le nom du noeud. \end{DoxyCompactList}\item 
+char \hyperlink{class_e_p_1_1_node_a149cce768568286687e756c1f9dce2b4}{m\+\_\+ico} \mbox{[}100\mbox{]}\hypertarget{class_e_p_1_1_node_a149cce768568286687e756c1f9dce2b4}{}\label{class_e_p_1_1_node_a149cce768568286687e756c1f9dce2b4}
+
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}icône du noeud qui sera affichée dans l\textquotesingle{}application. \end{DoxyCompactList}\item 
+\hyperlink{class_e_p_1_1_node}{E\+P\+::\+Node} $\ast$ \hyperlink{class_e_p_1_1_node_ac61ce03b473134cb3cd4fcf33acc03f6}{m\+\_\+parent}\hypertarget{class_e_p_1_1_node_ac61ce03b473134cb3cd4fcf33acc03f6}{}\label{class_e_p_1_1_node_ac61ce03b473134cb3cd4fcf33acc03f6}
+
+\begin{DoxyCompactList}\small\item\em Le noeud parent de celui-\/ci. Sera nul pour les pièces (\hyperlink{class_e_p_1_1_room}{Room}), et correspondra à la pièce contenante dans le cas d\textquotesingle{}un équipement (\hyperlink{class_e_p_1_1_equipment}{Equipment}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Représente un noeud de l\textquotesingle{}arbre (une pièce ou un équipement). Cette classe est spécialisée par les classes \hyperlink{class_e_p_1_1_equipment}{Equipment} et \hyperlink{class_e_p_1_1_room}{Room}, et n\textquotesingle{}est donc pas utilisée telle qu\textquotesingle{}elle. 
+
+Définition à la ligne 14 du fichier Node.\+h.
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{E\+P\+::\+Node@{E\+P\+::\+Node}!get\+Ico@{get\+Ico}}
+\index{get\+Ico@{get\+Ico}!E\+P\+::\+Node@{E\+P\+::\+Node}}
+\subsubsection[{\texorpdfstring{get\+Ico()}{getIco()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ E\+P\+::\+Node\+::get\+Ico (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_node_a7e29d725cfe687589f5668c9825fc303}{}\label{class_e_p_1_1_node_a7e29d725cfe687589f5668c9825fc303}
+\begin{DoxyReturn}{Renvoie}
+Le nom du fichier correspondant à l\textquotesingle{}icône de ce noeud. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 18 du fichier Node.\+cpp.
+
+\index{E\+P\+::\+Node@{E\+P\+::\+Node}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!E\+P\+::\+Node@{E\+P\+::\+Node}}
+\subsubsection[{\texorpdfstring{get\+Name()}{getName()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ E\+P\+::\+Node\+::get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_node_ad5dd5dfbe1e26a22de54035a16ddb980}{}\label{class_e_p_1_1_node_ad5dd5dfbe1e26a22de54035a16ddb980}
+\begin{DoxyReturn}{Renvoie}
+Le nom du noeud. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 14 du fichier Node.\+cpp.
+
+\index{E\+P\+::\+Node@{E\+P\+::\+Node}!set\+Ico@{set\+Ico}}
+\index{set\+Ico@{set\+Ico}!E\+P\+::\+Node@{E\+P\+::\+Node}}
+\subsubsection[{\texorpdfstring{set\+Ico(char $\ast$ico)}{setIco(char *ico)}}]{\setlength{\rightskip}{0pt plus 5cm}void E\+P\+::\+Node\+::set\+Ico (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ico}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_node_a0f1a35a7f9e6d18d38a17b591a130862}{}\label{class_e_p_1_1_node_a0f1a35a7f9e6d18d38a17b591a130862}
+
+
+Change l\textquotesingle{}icône du noeud. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ico} & La nouvelle icône du noeud. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 26 du fichier Node.\+cpp.
+
+\index{E\+P\+::\+Node@{E\+P\+::\+Node}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!E\+P\+::\+Node@{E\+P\+::\+Node}}
+\subsubsection[{\texorpdfstring{set\+Name(char $\ast$name)}{setName(char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}void E\+P\+::\+Node\+::set\+Name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_node_a27a879726020308b8fd47812ec4a8b86}{}\label{class_e_p_1_1_node_a27a879726020308b8fd47812ec4a8b86}
+
+
+Change le nom de ce noeud pour celui passé en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em name} & Le nouveau nom du noeud. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 22 du fichier Node.\+cpp.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+include/Node.\+h\item 
+src/Node.\+cpp\end{DoxyCompactItemize}
