@@ -1,0 +1,71 @@
+# depslib dependency file v1.0
+1449505146 source:d:\users\corentin\dropbox\3e_annee\projet\tests\test_dll\dll\dll.cpp
+	"dll.h"
+	"happyhttp.h"
+	"Requete.h"
+	<winsock2.h>
+
+1449505314 d:\users\corentin\dropbox\3e_annee\projet\tests\test_dll\dll\dll.h
+
+1448741866 d:\users\corentin\dropbox\3e_annee\projet\tests\test_dll\dll\happyhttp.h
+	<string>
+	<map>
+	<vector>
+	<deque>
+
+1449508231 d:\users\corentin\dropbox\3e_annee\projet\tests\test_dll\dll\requete.h
+	"happyhttp.h"
+	<cstdio>
+	<cstring>
+	<stdlib.h>
+	<stdio.h>
+	<stdarg.h>
+	<wtypes.h>
+
+1461775738 source:d:\users\corentin\dropbox\3e_annee\projet\tests\test_dll\dll\requete.cpp
+	"Requete.h"
+	"happyhttp.h"
+	<cstdio>
+	<cstring>
+	<winsock2.h>
+
+1449048417 source:d:\users\corentin\dropbox\3e_annee\projet\tests\test_dll\dll\happyhttp.cpp
+	"happyhttp.h"
+	<cstdio>
+	<cstring>
+	<stdlib.h>
+	<stdio.h>
+	<Winsock2.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<errno.h>
+	<unistd.h>
+	<WinSock2.h>
+	<cstdio>
+	<cstring>
+	<cstdarg>
+	<assert.h>
+	<string>
+	<vector>
+	<string>
+	<algorithm>
+
+1461776469 source:d:\users\corentin\dropbox\3e_annee\projet\tests\test_dll\dll\requetehttp.cpp
+	"RequeteHttp.h"
+	"happyhttp.h"
+	"Requete.h"
+	"base64.h"
+	<winsock2.h>
+
+1461776518 d:\users\corentin\dropbox\3e_annee\projet\tests\test_dll\dll\requetehttp.h
+
+1458579979 source:d:\users\corentin\dropbox\3e_annee\projet\tests\test_dll\dll\base64.cpp
+	"base64.h"
+	<iostream>
+
+1458580054 d:\users\corentin\dropbox\3e_annee\projet\tests\test_dll\dll\base64.h
+	<string>
+

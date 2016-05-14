@@ -1,0 +1,84 @@
+\hypertarget{_requete_http_8h}{}\section{dll/\+Requete\+Http.h File Reference}
+\label{_requete_http_8h}\index{dll/\+Requete\+Http.\+h@{dll/\+Requete\+Http.\+h}}
+
+
+fonctions utilisables avec la D\+LL  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_requete_http_8h_a3432717bdefebf74b3c408f8169a2274}{Dll\+Import}~\+\_\+\+\_\+declspec(dllimport)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_requete_http_8h_a3432717bdefebf74b3c408f8169a2274}{Dll\+Import} \hyperlink{_requete_http_8h_aade1da46e511a08d213c2e2bc4533b43}{requete\+Http\+Kira} (char $\ast$s1, char $\ast$s2)
+\item 
+void \hyperlink{_requete_http_8h_a3432717bdefebf74b3c408f8169a2274}{Dll\+Import} \hyperlink{_requete_http_8h_a66d724ed666cdd836f78b75ba3fb0013}{requete\+Http\+Fibaro} (char $\ast$s1, char $\ast$s2, char $\ast$user, char $\ast$pass)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+fonctions utilisables avec la D\+LL 
+
+\begin{DoxyAuthor}{Author}
+Corentin Chatellier 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14/05/2016 
+\end{DoxyDate}
+
+
+\subsection{Macro Definition Documentation}
+\index{Requete\+Http.\+h@{Requete\+Http.\+h}!Dll\+Import@{Dll\+Import}}
+\index{Dll\+Import@{Dll\+Import}!Requete\+Http.\+h@{Requete\+Http.\+h}}
+\subsubsection[{\texorpdfstring{Dll\+Import}{DllImport}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Dll\+Import~\+\_\+\+\_\+declspec(dllimport)}\hypertarget{_requete_http_8h_a3432717bdefebf74b3c408f8169a2274}{}\label{_requete_http_8h_a3432717bdefebf74b3c408f8169a2274}
+
+
+\subsection{Function Documentation}
+\index{Requete\+Http.\+h@{Requete\+Http.\+h}!requete\+Http\+Fibaro@{requete\+Http\+Fibaro}}
+\index{requete\+Http\+Fibaro@{requete\+Http\+Fibaro}!Requete\+Http.\+h@{Requete\+Http.\+h}}
+\subsubsection[{\texorpdfstring{requete\+Http\+Fibaro(char $\ast$s1, char $\ast$s2, char $\ast$user, char $\ast$pass)}{requeteHttpFibaro(char *s1, char *s2, char *user, char *pass)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Dll\+Import} requete\+Http\+Fibaro (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{s1, }
+\item[{char $\ast$}]{s2, }
+\item[{char $\ast$}]{user, }
+\item[{char $\ast$}]{pass}
+\end{DoxyParamCaption}
+)}\hypertarget{_requete_http_8h_a66d724ed666cdd836f78b75ba3fb0013}{}\label{_requete_http_8h_a66d724ed666cdd836f78b75ba3fb0013}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em char$\ast$} & s1 \+: IP \\
+\hline
+\mbox{\tt in}  & {\em char$\ast$} & s2 \+: reste de l\textquotesingle{}adresse \\
+\hline
+\mbox{\tt in}  & {\em char$\ast$} & user \+: login de la fibaro \\
+\hline
+\mbox{\tt in}  & {\em char$\ast$} & pass \+: mot de passe de la fibaro\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{Requete\+Http.\+h@{Requete\+Http.\+h}!requete\+Http\+Kira@{requete\+Http\+Kira}}
+\index{requete\+Http\+Kira@{requete\+Http\+Kira}!Requete\+Http.\+h@{Requete\+Http.\+h}}
+\subsubsection[{\texorpdfstring{requete\+Http\+Kira(char $\ast$s1, char $\ast$s2)}{requeteHttpKira(char *s1, char *s2)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Dll\+Import} requete\+Http\+Kira (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{s1, }
+\item[{char $\ast$}]{s2}
+\end{DoxyParamCaption}
+)}\hypertarget{_requete_http_8h_aade1da46e511a08d213c2e2bc4533b43}{}\label{_requete_http_8h_aade1da46e511a08d213c2e2bc4533b43}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em char$\ast$} & s1 IP \\
+\hline
+\mbox{\tt in}  & {\em char$\ast$} & s2 reste de l\textquotesingle{}adresse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

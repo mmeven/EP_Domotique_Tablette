@@ -1,0 +1,45 @@
+\hypertarget{happyhttp_8cpp}{}\section{dll/happyhttp.cpp File Reference}
+\label{happyhttp_8cpp}\index{dll/happyhttp.\+cpp@{dll/happyhttp.\+cpp}}
+{\ttfamily \#include \char`\"{}happyhttp.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$cstdio$>$}\\*
+{\ttfamily \#include $<$cstring$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$Winsock2.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/in.\+h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\\*
+{\ttfamily \#include $<$netdb.\+h$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$cstdarg$>$}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacehappyhttp}{happyhttp}
+\begin{DoxyCompactList}\small\item\em faire des requêtes http, voir \href{https://github.com/Zintinio/HappyHTTP}{\tt https\+://github.\+com/\+Zintinio/\+Happy\+H\+T\+TP} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{happyhttp_8cpp_a3a35e08b2dedf0975d11794eb8de4805}{\+\_\+stricmp}~strcasecmp
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespacehappyhttp_a28d6e69df779b4079771aa26420078d1}{happyhttp\+::\+Bail\+On\+Socket\+Error} (const char $\ast$context)
+\item 
+bool \hyperlink{namespacehappyhttp_a6cda4ba9b251fc1140e89c1268d88bca}{happyhttp\+::datawaiting} (int sock)
+\item 
+struct in\+\_\+addr $\ast$ \hyperlink{namespacehappyhttp_ade5d16bd091558cb861802fbbfece7fd}{happyhttp\+::atoaddr} (const char $\ast$address)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{happyhttp.\+cpp@{happyhttp.\+cpp}!\+\_\+stricmp@{\+\_\+stricmp}}
+\index{\+\_\+stricmp@{\+\_\+stricmp}!happyhttp.\+cpp@{happyhttp.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+stricmp}{_stricmp}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+stricmp~strcasecmp}\hypertarget{happyhttp_8cpp_a3a35e08b2dedf0975d11794eb8de4805}{}\label{happyhttp_8cpp_a3a35e08b2dedf0975d11794eb8de4805}

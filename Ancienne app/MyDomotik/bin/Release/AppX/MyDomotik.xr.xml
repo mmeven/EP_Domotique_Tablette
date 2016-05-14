@@ -147,5 +147,6 @@
     </RootType>
     <RootType FullName="MyDomotik.ReglagesModeSelection" />
     <RootType FullName="MyDomotik.ReglagesTailleIcones" />
+    <RootType FullName="MyDomotik.WheelchairFeedback" />
   </Roots.RootTypes>
 </Roots>

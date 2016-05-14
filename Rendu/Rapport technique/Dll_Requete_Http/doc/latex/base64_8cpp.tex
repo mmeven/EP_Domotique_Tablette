@@ -1,0 +1,47 @@
+\hypertarget{base64_8cpp}{}\section{dll/base64.cpp File Reference}
+\label{base64_8cpp}\index{dll/base64.\+cpp@{dll/base64.\+cpp}}
+{\ttfamily \#include \char`\"{}base64.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{base64_8cpp_ae53b91e998c9ae57025ea32b44688988}{base64\+\_\+encode} (unsigned char const $\ast$bytes\+\_\+to\+\_\+encode, unsigned int in\+\_\+len)
+\item 
+std\+::string \hyperlink{base64_8cpp_a70c8cda20425a7870ddfb58ff3cff5eb}{base64\+\_\+decode} (std\+::string const \&encoded\+\_\+string)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{base64.\+cpp@{base64.\+cpp}!base64\+\_\+decode@{base64\+\_\+decode}}
+\index{base64\+\_\+decode@{base64\+\_\+decode}!base64.\+cpp@{base64.\+cpp}}
+\subsubsection[{\texorpdfstring{base64\+\_\+decode(std\+::string const \&encoded\+\_\+string)}{base64_decode(std::string const &encoded_string)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string base64\+\_\+decode (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{base64_8cpp_a70c8cda20425a7870ddfb58ff3cff5eb}{}\label{base64_8cpp_a70c8cda20425a7870ddfb58ff3cff5eb}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & const\& s \+: la chaine à décoder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string ret \+: la chaine décodée 
+\end{DoxyReturn}
+\index{base64.\+cpp@{base64.\+cpp}!base64\+\_\+encode@{base64\+\_\+encode}}
+\index{base64\+\_\+encode@{base64\+\_\+encode}!base64.\+cpp@{base64.\+cpp}}
+\subsubsection[{\texorpdfstring{base64\+\_\+encode(unsigned char const $\ast$bytes\+\_\+to\+\_\+encode, unsigned int in\+\_\+len)}{base64_encode(unsigned char const *bytes_to_encode, unsigned int in_len)}}]{\setlength{\rightskip}{0pt plus 5cm}string base64\+\_\+encode (
+\begin{DoxyParamCaption}
+\item[{unsigned char const $\ast$}]{bytes\+\_\+to\+\_\+encode, }
+\item[{unsigned int}]{in\+\_\+len}
+\end{DoxyParamCaption}
+)}\hypertarget{base64_8cpp_ae53b91e998c9ae57025ea32b44688988}{}\label{base64_8cpp_ae53b91e998c9ae57025ea32b44688988}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em unsigned} & char const$\ast$ bytes\+\_\+to\+\_\+encode \+: la chaine à encoder \\
+\hline
+\mbox{\tt in}  & {\em unsigned} & int in\+\_\+len \+: taille de la chaine à encoder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string ret \+: la chaine encodée 
+\end{DoxyReturn}

@@ -1,0 +1,109 @@
+\hypertarget{classhappyhttp_1_1_response}{}\section{happyhttp\+:\+:Response Class Reference}
+\label{classhappyhttp_1_1_response}\index{happyhttp\+::\+Response@{happyhttp\+::\+Response}}
+
+
+{\ttfamily \#include $<$happyhttp.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{classhappyhttp_1_1_response_a85d88da6b088e62d4fd48e5661e2813a}{getheader} (const char $\ast$name) const 
+\item 
+bool \hyperlink{classhappyhttp_1_1_response_a264d98ebc0faa6d2fa90ad39045d4e9c}{completed} () const 
+\item 
+int \hyperlink{classhappyhttp_1_1_response_abc705241686edcaa3beae49c7fe21dea}{getstatus} () const 
+\item 
+const char $\ast$ \hyperlink{classhappyhttp_1_1_response_a487fe77efd931d404f0da3f39e42827a}{getreason} () const 
+\item 
+bool \hyperlink{classhappyhttp_1_1_response_a9bfb1fbce588f7b64333e6d995c2177e}{willclose} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classhappyhttp_1_1_response_ad8db8db6628ad5a6a3ab978e5a668ae5}{Response} (const char $\ast$method, \hyperlink{classhappyhttp_1_1_connection}{Connection} \&conn)
+\item 
+int \hyperlink{classhappyhttp_1_1_response_a7f16643cb8cc14de614e7dd031e177a1}{pump} (const unsigned char $\ast$data, int datasize)
+\item 
+void \hyperlink{classhappyhttp_1_1_response_ab43d317331c9729e5d42bd920ad71a68}{notifyconnectionclosed} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classhappyhttp_1_1_response_a54a11fdc71e1679a42fa0c0e3856673d}{Connection}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{happyhttp\+::\+Response@{happyhttp\+::\+Response}!Response@{Response}}
+\index{Response@{Response}!happyhttp\+::\+Response@{happyhttp\+::\+Response}}
+\subsubsection[{\texorpdfstring{Response(const char $\ast$method, Connection \&conn)}{Response(const char *method, Connection &conn)}}]{\setlength{\rightskip}{0pt plus 5cm}happyhttp\+::\+Response\+::\+Response (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{method, }
+\item[{{\bf Connection} \&}]{conn}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classhappyhttp_1_1_response_ad8db8db6628ad5a6a3ab978e5a668ae5}{}\label{classhappyhttp_1_1_response_ad8db8db6628ad5a6a3ab978e5a668ae5}
+
+
+\subsection{Member Function Documentation}
+\index{happyhttp\+::\+Response@{happyhttp\+::\+Response}!completed@{completed}}
+\index{completed@{completed}!happyhttp\+::\+Response@{happyhttp\+::\+Response}}
+\subsubsection[{\texorpdfstring{completed() const }{completed() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool happyhttp\+::\+Response\+::completed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classhappyhttp_1_1_response_a264d98ebc0faa6d2fa90ad39045d4e9c}{}\label{classhappyhttp_1_1_response_a264d98ebc0faa6d2fa90ad39045d4e9c}
+\index{happyhttp\+::\+Response@{happyhttp\+::\+Response}!getheader@{getheader}}
+\index{getheader@{getheader}!happyhttp\+::\+Response@{happyhttp\+::\+Response}}
+\subsubsection[{\texorpdfstring{getheader(const char $\ast$name) const }{getheader(const char *name) const }}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ happyhttp\+::\+Response\+::getheader (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+) const}\hypertarget{classhappyhttp_1_1_response_a85d88da6b088e62d4fd48e5661e2813a}{}\label{classhappyhttp_1_1_response_a85d88da6b088e62d4fd48e5661e2813a}
+\index{happyhttp\+::\+Response@{happyhttp\+::\+Response}!getreason@{getreason}}
+\index{getreason@{getreason}!happyhttp\+::\+Response@{happyhttp\+::\+Response}}
+\subsubsection[{\texorpdfstring{getreason() const }{getreason() const }}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ happyhttp\+::\+Response\+::getreason (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classhappyhttp_1_1_response_a487fe77efd931d404f0da3f39e42827a}{}\label{classhappyhttp_1_1_response_a487fe77efd931d404f0da3f39e42827a}
+\index{happyhttp\+::\+Response@{happyhttp\+::\+Response}!getstatus@{getstatus}}
+\index{getstatus@{getstatus}!happyhttp\+::\+Response@{happyhttp\+::\+Response}}
+\subsubsection[{\texorpdfstring{getstatus() const }{getstatus() const }}]{\setlength{\rightskip}{0pt plus 5cm}int happyhttp\+::\+Response\+::getstatus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classhappyhttp_1_1_response_abc705241686edcaa3beae49c7fe21dea}{}\label{classhappyhttp_1_1_response_abc705241686edcaa3beae49c7fe21dea}
+\index{happyhttp\+::\+Response@{happyhttp\+::\+Response}!notifyconnectionclosed@{notifyconnectionclosed}}
+\index{notifyconnectionclosed@{notifyconnectionclosed}!happyhttp\+::\+Response@{happyhttp\+::\+Response}}
+\subsubsection[{\texorpdfstring{notifyconnectionclosed()}{notifyconnectionclosed()}}]{\setlength{\rightskip}{0pt plus 5cm}void happyhttp\+::\+Response\+::notifyconnectionclosed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classhappyhttp_1_1_response_ab43d317331c9729e5d42bd920ad71a68}{}\label{classhappyhttp_1_1_response_ab43d317331c9729e5d42bd920ad71a68}
+\index{happyhttp\+::\+Response@{happyhttp\+::\+Response}!pump@{pump}}
+\index{pump@{pump}!happyhttp\+::\+Response@{happyhttp\+::\+Response}}
+\subsubsection[{\texorpdfstring{pump(const unsigned char $\ast$data, int datasize)}{pump(const unsigned char *data, int datasize)}}]{\setlength{\rightskip}{0pt plus 5cm}int happyhttp\+::\+Response\+::pump (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{data, }
+\item[{int}]{datasize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classhappyhttp_1_1_response_a7f16643cb8cc14de614e7dd031e177a1}{}\label{classhappyhttp_1_1_response_a7f16643cb8cc14de614e7dd031e177a1}
+\index{happyhttp\+::\+Response@{happyhttp\+::\+Response}!willclose@{willclose}}
+\index{willclose@{willclose}!happyhttp\+::\+Response@{happyhttp\+::\+Response}}
+\subsubsection[{\texorpdfstring{willclose() const }{willclose() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool happyhttp\+::\+Response\+::willclose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classhappyhttp_1_1_response_a9bfb1fbce588f7b64333e6d995c2177e}{}\label{classhappyhttp_1_1_response_a9bfb1fbce588f7b64333e6d995c2177e}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{happyhttp\+::\+Response@{happyhttp\+::\+Response}!Connection@{Connection}}
+\index{Connection@{Connection}!happyhttp\+::\+Response@{happyhttp\+::\+Response}}
+\subsubsection[{\texorpdfstring{Connection}{Connection}}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Connection}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classhappyhttp_1_1_response_a54a11fdc71e1679a42fa0c0e3856673d}{}\label{classhappyhttp_1_1_response_a54a11fdc71e1679a42fa0c0e3856673d}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+dll/\hyperlink{happyhttp_8h}{happyhttp.\+h}\item 
+dll/\hyperlink{happyhttp_8cpp}{happyhttp.\+cpp}\end{DoxyCompactItemize}

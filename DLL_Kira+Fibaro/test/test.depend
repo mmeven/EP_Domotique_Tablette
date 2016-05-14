@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1461778518 source:d:\users\corentin\dropbox\3e_annee\projet\tests\test_dll\test\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	"RequeteHttp.h"
+
+1449428331 d:\users\corentin\dropbox\3e_annee\projet\tests\test_dll\dll\dll.h
+
+1449505561 d:\users\corentin\dropbox\3e_annee\projet\tests\test_dll\dll\requetehttp.h
+
+1461777579 d:\users\corentin\dropbox\3e_annee\projet\tests\test_dll\test\requetehttp.h
+
