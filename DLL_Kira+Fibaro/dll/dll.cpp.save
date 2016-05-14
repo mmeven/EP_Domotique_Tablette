@@ -1,0 +1,30 @@
+#include "dll.h"
+#define DllExport   __declspec(dllexport)
+
+void DLL_EXPORT requeteHttp(std::string s1, std::string s2){
+
+#ifdef WIN32
+    WSAData wsaData;
+    int code = WSAStartup(MAKEWORD(1, 1), &wsaData);
+	if( code != 0 )
+	{
+		fprintf(stderr, "shite. %d\n",code);
+		return ;
+	}
+#endif //WIN32
+	try
+	{
+        Requete requete1;
+		requete1.envoyerRequete(s1,s2);
+	}
+
+	catch( happyhttp::Wobbly& e )
+	{
+		fprintf(stderr, "Exception:\n%s\n", e.what() );
+	}
+	#ifdef WIN32
+    WSACleanup();
+#endif // WIN32
+	return;
+}
+

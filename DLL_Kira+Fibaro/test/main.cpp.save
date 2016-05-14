@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "RequeteHttp.h"
+
+int main(int argc, char *argv[]) {
+        char* s1("192.168.81.1");
+        char* s2("/api/callAction?deviceID=5&name=turnOff");
+        requeteHttpFibaro(s1,s2,user,pass);
+   return 0;
+}
+
+
