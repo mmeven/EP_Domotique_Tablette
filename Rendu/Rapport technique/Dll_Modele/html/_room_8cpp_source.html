@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>ModelDll:  Fichier source de src/Room.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ModelDll
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Room.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;../include/Room.h&quot;</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_e_p.html">EP</a> {</div><div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_e_p_1_1_room.html#aefc0919f87a1f6dcfde24923719e6b90">    6</a></span>&#160;    Room::Room(<span class="keywordtype">char</span>* name, <span class="keywordtype">char</span>* ico) : <a class="code" href="class_e_p_1_1_node.html">Node</a>(name, ico)</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    {}</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_e_p_1_1_room.html#a1dba2dc4fdec31c930b5f538bb4018cf">    9</a></span>&#160;    <a class="code" href="class_e_p_1_1_room.html#a1dba2dc4fdec31c930b5f538bb4018cf">Room::~Room</a>() {</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        m_listEquipments.clear();</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    }</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_e_p_1_1_room.html#a818eb638f5796bfc45a519ce503c30be">   13</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_e_p_1_1_room.html#a818eb638f5796bfc45a519ce503c30be">Room::addEquipment</a>(<a class="code" href="class_e_p_1_1_equipment.html">Equipment</a>* equip) {</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        m_listEquipments.push_back(equip);</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_e_p_1_1_room.html#a9d9a93b373460edb886a05e8942aa589">   18</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_e_p_1_1_room.html#a9d9a93b373460edb886a05e8942aa589">Room::deleteEquipmentByIndex</a>(<span class="keywordtype">int</span> index) {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span> (index &gt;= ((<span class="keywordtype">int</span>)m_listEquipments.size()) || index &lt; 0) <span class="keywordflow">return</span> 1; <span class="comment">// out of bounds</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        vector&lt;Equipment*&gt;::iterator it = m_listEquipments.begin();</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        it += index;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        m_listEquipments.erase(it);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_e_p_1_1_room.html#a4879b1eeebccc1a3c2f5ece234f73da9">   29</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_e_p_1_1_room.html#a4879b1eeebccc1a3c2f5ece234f73da9">Room::deleteEquipmentByName</a>(<span class="keywordtype">char</span>* name) {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_e_p_1_1_room.html#a7f7aeb553f256013f1f54c245e238dfd">Room::getEquipmentByName</a>(name) == NULL) <span class="keywordflow">return</span> 1; <span class="comment">// does not exist</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        vector&lt;Equipment*&gt;::iterator it;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">for</span> (it = m_listEquipments.begin(); it != m_listEquipments.end(); it++) {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">if</span> (strcmp(name, (*it)-&gt;getName()) == 0) <span class="keywordflow">break</span>;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        m_listEquipments.erase(it);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_e_p_1_1_room.html#ad4993f6208f136a9f1bd082def0d53c0">   42</a></span>&#160;    vector&lt;Equipment*&gt;* <a class="code" href="class_e_p_1_1_room.html#ad4993f6208f136a9f1bd082def0d53c0">Room::getEquipments</a>() {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> &amp;m_listEquipments;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_e_p_1_1_room.html#a7f7aeb553f256013f1f54c245e238dfd">   46</a></span>&#160;    <a class="code" href="class_e_p_1_1_equipment.html">Equipment</a>* <a class="code" href="class_e_p_1_1_room.html#a7f7aeb553f256013f1f54c245e238dfd">Room::getEquipmentByName</a>(<span class="keywordtype">char</span>* name) {</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        vector&lt;Equipment*&gt;::iterator it;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">for</span> (it = m_listEquipments.begin(); it != m_listEquipments.end(); it++) {</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span> (strcmp(name, (*it)-&gt;getName()) == 0) {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">return</span> (*it);</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            }</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_e_p_1_1_room.html#a22185f0f9e75c03fe2fd61c958df3ead">   56</a></span>&#160;    <a class="code" href="class_e_p_1_1_equipment.html">Equipment</a>* <a class="code" href="class_e_p_1_1_room.html#a22185f0f9e75c03fe2fd61c958df3ead">Room::getEquipmentByIndex</a>(<span class="keywordtype">int</span> index) {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">if</span> (index &lt; ((<span class="keywordtype">int</span>)m_listEquipments.size()) &amp;&amp; index &gt;= 0) <span class="keywordflow">return</span> m_listEquipments[index];</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_e_p_1_1_room.html#af66a08a85258e5da63a3684a9efc98ef">   61</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_e_p_1_1_room.html#af66a08a85258e5da63a3684a9efc98ef">Room::getNumberEquipments</a>() {</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">return</span> m_listEquipments.size();</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> __declspec(dllexport) <a class="code" href="class_e_p_1_1_room.html">Room</a>* Room_New(<span class="keywordtype">char</span>* name, <span class="keywordtype">char</span>* ico) {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_e_p_1_1_room.html#aefc0919f87a1f6dcfde24923719e6b90">Room</a>(name, ico);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> __declspec(dllexport) <span class="keywordtype">void</span> Room_Delete(<a class="code" href="class_e_p_1_1_room.html">Room</a>* room) {</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">delete</span> room;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div><div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
+<div class="ttc" id="class_e_p_1_1_room_html_aefc0919f87a1f6dcfde24923719e6b90"><div class="ttname"><a href="class_e_p_1_1_room.html#aefc0919f87a1f6dcfde24923719e6b90">EP::Room::Room</a></div><div class="ttdeci">Room(char *name, char *ico)</div><div class="ttdoc">Appele le constructeur de Node. </div><div class="ttdef"><b>Definition:</b> <a href="_room_8cpp_source.html#l00006">Room.cpp:6</a></div></div>
+<div class="ttc" id="class_e_p_1_1_room_html"><div class="ttname"><a href="class_e_p_1_1_room.html">EP::Room</a></div><div class="ttdoc">Représente une pièce de la maison ; Hérite de Node. On peut y retrouver les différents équipements li...</div><div class="ttdef"><b>Definition:</b> <a href="_room_8h_source.html#l00015">Room.h:15</a></div></div>
+<div class="ttc" id="class_e_p_1_1_room_html_a22185f0f9e75c03fe2fd61c958df3ead"><div class="ttname"><a href="class_e_p_1_1_room.html#a22185f0f9e75c03fe2fd61c958df3ead">EP::Room::getEquipmentByIndex</a></div><div class="ttdeci">Equipment * getEquipmentByIndex(int index)</div><div class="ttdoc">Donne un pointeur vers l&amp;#39;équipement dont l&amp;#39;index est donné en paramètre. </div><div class="ttdef"><b>Definition:</b> <a href="_room_8cpp_source.html#l00056">Room.cpp:56</a></div></div>
+<div class="ttc" id="class_e_p_1_1_room_html_a1dba2dc4fdec31c930b5f538bb4018cf"><div class="ttname"><a href="class_e_p_1_1_room.html#a1dba2dc4fdec31c930b5f538bb4018cf">EP::Room::~Room</a></div><div class="ttdeci">~Room()</div><div class="ttdoc">Détruit la liste d&amp;#39;équipements. </div><div class="ttdef"><b>Definition:</b> <a href="_room_8cpp_source.html#l00009">Room.cpp:9</a></div></div>
+<div class="ttc" id="class_e_p_1_1_equipment_html"><div class="ttname"><a href="class_e_p_1_1_equipment.html">EP::Equipment</a></div><div class="ttdoc">Représente un équipement. Cette classe abstraite est spécialisée par EquipmentKira et EquipmentFibaro...</div><div class="ttdef"><b>Definition:</b> <a href="_equipment_8h_source.html#l00014">Equipment.h:14</a></div></div>
+<div class="ttc" id="class_e_p_1_1_node_html"><div class="ttname"><a href="class_e_p_1_1_node.html">EP::Node</a></div><div class="ttdoc">Représente un noeud de l&amp;#39;arbre (une pièce ou un équipement). Cette classe est spécialisée par les cla...</div><div class="ttdef"><b>Definition:</b> <a href="_node_8h_source.html#l00014">Node.h:14</a></div></div>
+<div class="ttc" id="class_e_p_1_1_room_html_a9d9a93b373460edb886a05e8942aa589"><div class="ttname"><a href="class_e_p_1_1_room.html#a9d9a93b373460edb886a05e8942aa589">EP::Room::deleteEquipmentByIndex</a></div><div class="ttdeci">int deleteEquipmentByIndex(int index)</div><div class="ttdoc">Supprime l&amp;#39;équipement dont l&amp;#39;index est donné en paramètre. </div><div class="ttdef"><b>Definition:</b> <a href="_room_8cpp_source.html#l00018">Room.cpp:18</a></div></div>
+<div class="ttc" id="class_e_p_1_1_room_html_a7f7aeb553f256013f1f54c245e238dfd"><div class="ttname"><a href="class_e_p_1_1_room.html#a7f7aeb553f256013f1f54c245e238dfd">EP::Room::getEquipmentByName</a></div><div class="ttdeci">Equipment * getEquipmentByName(char *name)</div><div class="ttdoc">Donne un pointeur vers l&amp;#39;équipement dont le nom est donné en paramètre. </div><div class="ttdef"><b>Definition:</b> <a href="_room_8cpp_source.html#l00046">Room.cpp:46</a></div></div>
+<div class="ttc" id="class_e_p_1_1_room_html_a4879b1eeebccc1a3c2f5ece234f73da9"><div class="ttname"><a href="class_e_p_1_1_room.html#a4879b1eeebccc1a3c2f5ece234f73da9">EP::Room::deleteEquipmentByName</a></div><div class="ttdeci">int deleteEquipmentByName(char *name)</div><div class="ttdoc">Supprime l&amp;#39;équipement dont le nom est donné en paramètre. </div><div class="ttdef"><b>Definition:</b> <a href="_room_8cpp_source.html#l00029">Room.cpp:29</a></div></div>
+<div class="ttc" id="namespace_e_p_html"><div class="ttname"><a href="namespace_e_p.html">EP</a></div><div class="ttdef"><b>Definition:</b> <a href="_core_8h_source.html#l00008">Core.h:8</a></div></div>
+<div class="ttc" id="class_e_p_1_1_room_html_ad4993f6208f136a9f1bd082def0d53c0"><div class="ttname"><a href="class_e_p_1_1_room.html#ad4993f6208f136a9f1bd082def0d53c0">EP::Room::getEquipments</a></div><div class="ttdeci">std::vector&lt; Equipment * &gt; * getEquipments()</div><div class="ttdoc">Ne pas utiliser cette méthode à partir de la DLL. A la place on peut itérer avec getNumberEquipments ...</div><div class="ttdef"><b>Definition:</b> <a href="_room_8cpp_source.html#l00042">Room.cpp:42</a></div></div>
+<div class="ttc" id="class_e_p_1_1_room_html_a818eb638f5796bfc45a519ce503c30be"><div class="ttname"><a href="class_e_p_1_1_room.html#a818eb638f5796bfc45a519ce503c30be">EP::Room::addEquipment</a></div><div class="ttdeci">int addEquipment(Equipment *equip)</div><div class="ttdoc">Ajoute le pointeur d&amp;#39;un équipement donné dans m_listEquipments. Le nom d&amp;#39;un équipement doit être uniq...</div><div class="ttdef"><b>Definition:</b> <a href="_room_8cpp_source.html#l00013">Room.cpp:13</a></div></div>
+<div class="ttc" id="class_e_p_1_1_room_html_af66a08a85258e5da63a3684a9efc98ef"><div class="ttname"><a href="class_e_p_1_1_room.html#af66a08a85258e5da63a3684a9efc98ef">EP::Room::getNumberEquipments</a></div><div class="ttdeci">int getNumberEquipments()</div><div class="ttdef"><b>Definition:</b> <a href="_room_8cpp_source.html#l00061">Room.cpp:61</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

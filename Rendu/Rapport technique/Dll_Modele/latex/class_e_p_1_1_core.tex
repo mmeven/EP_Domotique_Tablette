@@ -1,0 +1,317 @@
+\hypertarget{class_e_p_1_1_core}{}\section{Référence de la classe EP\+:\+:Core}
+\label{class_e_p_1_1_core}\index{E\+P\+::\+Core@{E\+P\+::\+Core}}
+
+
+Le coeur de l\textquotesingle{}application, contient la liste des pièces, les paramètres de l\textquotesingle{}application ainsi que les méthodes pour gérer ceux-\/ci.  
+
+
+
+
+{\ttfamily \#include $<$Core.\+h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_e_p_1_1_core_acfb517a0b01ff278283e940b184fcea4}{Core} (char $\ast$file)
+\begin{DoxyCompactList}\small\item\em Le constructeur de Core.\+summary. \end{DoxyCompactList}\item 
+\hyperlink{class_e_p_1_1_core_a8e93bf6b84175f17fdbbce75f052a60a}{$\sim$\+Core} ()\hypertarget{class_e_p_1_1_core_a8e93bf6b84175f17fdbbce75f052a60a}{}\label{class_e_p_1_1_core_a8e93bf6b84175f17fdbbce75f052a60a}
+
+\begin{DoxyCompactList}\small\item\em Le destructeur de \hyperlink{class_e_p_1_1_core}{Core}. Vide la liste de pièces. \end{DoxyCompactList}\item 
+int \hyperlink{class_e_p_1_1_core_ab89918ae9811065fb1d7d6ff4521ed29}{save} ()\hypertarget{class_e_p_1_1_core_ab89918ae9811065fb1d7d6ff4521ed29}{}\label{class_e_p_1_1_core_ab89918ae9811065fb1d7d6ff4521ed29}
+
+\begin{DoxyCompactList}\small\item\em Sauvegarde l\textquotesingle{}état actuel de l\textquotesingle{}application dans le fichier de sauvegarde. \end{DoxyCompactList}\item 
+int \hyperlink{class_e_p_1_1_core_ad7adeeffabb5c616d24a66bb10955149}{load} ()\hypertarget{class_e_p_1_1_core_ad7adeeffabb5c616d24a66bb10955149}{}\label{class_e_p_1_1_core_ad7adeeffabb5c616d24a66bb10955149}
+
+\begin{DoxyCompactList}\small\item\em Charge l\textquotesingle{}application depuis le fichier de sauvegarde. \end{DoxyCompactList}\item 
+int \hyperlink{class_e_p_1_1_core_a881e587636b0333397101372d7c3f6d9}{add\+Room} (\hyperlink{class_e_p_1_1_room}{Room} $\ast$room)
+\begin{DoxyCompactList}\small\item\em Ajoute le pointeur d\textquotesingle{}une pièce donnée dans m\+\_\+list\+Rooms. Le nom d\textquotesingle{}une pièce doit être unique. \end{DoxyCompactList}\item 
+int \hyperlink{class_e_p_1_1_core_a64f97c800663db86fc7b3626b4ce7d0f}{delete\+Room\+By\+Index} (int index)
+\begin{DoxyCompactList}\small\item\em Supprime la pièce dont l\textquotesingle{}index est donné en paramètre. \end{DoxyCompactList}\item 
+int \hyperlink{class_e_p_1_1_core_a2cacc28f799c8bfbb5d9c50202346c55}{delete\+Room\+By\+Name} (char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Supprime la pièce dont le nom est donné en paramètre. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_e_p_1_1_room}{Room} $\ast$ $>$ $\ast$ \hyperlink{class_e_p_1_1_core_abbb72fd01eaa6e77f3fff6a4fe9f21c7}{get\+Rooms} ()
+\begin{DoxyCompactList}\small\item\em Ne pas utiliser cette méthode à partir de la D\+LL. A la place on peut itérer avec get\+Number\+Rooms et get\+Room\+By\+Index. \end{DoxyCompactList}\item 
+\hyperlink{class_e_p_1_1_room}{Room} $\ast$ \hyperlink{class_e_p_1_1_core_a4b4c84d507fe183c130faf32f345b0e1}{get\+Room\+By\+Name} (char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Donne un pointeur vers la pièce dont le nom est donné en paramètre. \end{DoxyCompactList}\item 
+\hyperlink{class_e_p_1_1_room}{Room} $\ast$ \hyperlink{class_e_p_1_1_core_a0914409b3e2d84fd68a6898cca18ffc6}{get\+Room\+By\+Index} (int index)
+\begin{DoxyCompactList}\small\item\em Donne un pointeur vers la pièce dont l\textquotesingle{}index est donné en paramètre. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{class_e_p_1_1_core_ad05dbd7220eed607ba316128c9ec7f3a}{get\+File\+Save} ()
+\item 
+int \hyperlink{class_e_p_1_1_core_a9fc190b88c92ee9844c59f840c3d8040}{get\+Number\+Rooms} ()
+\item 
+int \hyperlink{class_e_p_1_1_core_adb173042f0f6b4c3a5682d3d0830fb55}{get\+Theme\+Id} ()
+\item 
+int \hyperlink{class_e_p_1_1_core_ab87c0abca00a328cc8a49e44f167867d}{get\+Icon\+Size} ()
+\item 
+void \hyperlink{class_e_p_1_1_core_a2f0999bd55f0f1b8d8113423e371c98e}{set\+Theme\+Id} (int id)
+\begin{DoxyCompactList}\small\item\em Permet de changer le thème utilisé. \end{DoxyCompactList}\item 
+void \hyperlink{class_e_p_1_1_core_aa170368ee75cf89bcaa45031a750d894}{set\+Icon\+Size} (int size)
+\begin{DoxyCompactList}\small\item\em Permet de changer la taille des icônes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Le coeur de l\textquotesingle{}application, contient la liste des pièces, les paramètres de l\textquotesingle{}application ainsi que les méthodes pour gérer ceux-\/ci. 
+
+Définition à la ligne 13 du fichier Core.\+h.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{E\+P\+::\+Core@{E\+P\+::\+Core}!Core@{Core}}
+\index{Core@{Core}!E\+P\+::\+Core@{E\+P\+::\+Core}}
+\subsubsection[{\texorpdfstring{Core(char $\ast$file)}{Core(char *file)}}]{\setlength{\rightskip}{0pt plus 5cm}E\+P\+::\+Core\+::\+Core (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{file}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_core_acfb517a0b01ff278283e940b184fcea4}{}\label{class_e_p_1_1_core_acfb517a0b01ff278283e940b184fcea4}
+
+
+Le constructeur de Core.\+summary. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em file} & Le nom du fichier de sauvegarde. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 10 du fichier Core.\+cpp.
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{E\+P\+::\+Core@{E\+P\+::\+Core}!add\+Room@{add\+Room}}
+\index{add\+Room@{add\+Room}!E\+P\+::\+Core@{E\+P\+::\+Core}}
+\subsubsection[{\texorpdfstring{add\+Room(\+Room $\ast$room)}{addRoom(Room *room)}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Core\+::add\+Room (
+\begin{DoxyParamCaption}
+\item[{{\bf Room} $\ast$}]{room}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_core_a881e587636b0333397101372d7c3f6d9}{}\label{class_e_p_1_1_core_a881e587636b0333397101372d7c3f6d9}
+
+
+Ajoute le pointeur d\textquotesingle{}une pièce donnée dans m\+\_\+list\+Rooms. Le nom d\textquotesingle{}une pièce doit être unique. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em room} & Le pointeur de la pièce à ajouter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si tout s\textquotesingle{}est bien passé, 1 si le nom est déjà pris. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 157 du fichier Core.\+cpp.
+
+\index{E\+P\+::\+Core@{E\+P\+::\+Core}!delete\+Room\+By\+Index@{delete\+Room\+By\+Index}}
+\index{delete\+Room\+By\+Index@{delete\+Room\+By\+Index}!E\+P\+::\+Core@{E\+P\+::\+Core}}
+\subsubsection[{\texorpdfstring{delete\+Room\+By\+Index(int index)}{deleteRoomByIndex(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Core\+::delete\+Room\+By\+Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_core_a64f97c800663db86fc7b3626b4ce7d0f}{}\label{class_e_p_1_1_core_a64f97c800663db86fc7b3626b4ce7d0f}
+
+
+Supprime la pièce dont l\textquotesingle{}index est donné en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em index} & L\textquotesingle{}index de la pièce à supprimer de m\+\_\+list\+Rooms. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si tout s\textquotesingle{}est bien passé, 1 si l\textquotesingle{}index ne correspond à aucune pièce. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 163 du fichier Core.\+cpp.
+
+\index{E\+P\+::\+Core@{E\+P\+::\+Core}!delete\+Room\+By\+Name@{delete\+Room\+By\+Name}}
+\index{delete\+Room\+By\+Name@{delete\+Room\+By\+Name}!E\+P\+::\+Core@{E\+P\+::\+Core}}
+\subsubsection[{\texorpdfstring{delete\+Room\+By\+Name(char $\ast$name)}{deleteRoomByName(char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Core\+::delete\+Room\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_core_a2cacc28f799c8bfbb5d9c50202346c55}{}\label{class_e_p_1_1_core_a2cacc28f799c8bfbb5d9c50202346c55}
+
+
+Supprime la pièce dont le nom est donné en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em name} & Le nom de la pièce à supprimer de m\+\_\+list\+Rooms. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si tout s\textquotesingle{}est bien passé, 1 si le nom ne correspond à aucune pièce. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 171 du fichier Core.\+cpp.
+
+\index{E\+P\+::\+Core@{E\+P\+::\+Core}!get\+File\+Save@{get\+File\+Save}}
+\index{get\+File\+Save@{get\+File\+Save}!E\+P\+::\+Core@{E\+P\+::\+Core}}
+\subsubsection[{\texorpdfstring{get\+File\+Save()}{getFileSave()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ E\+P\+::\+Core\+::get\+File\+Save (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_core_ad05dbd7220eed607ba316128c9ec7f3a}{}\label{class_e_p_1_1_core_ad05dbd7220eed607ba316128c9ec7f3a}
+\begin{DoxyReturn}{Renvoie}
+Le nom du fichier de sauvegarde. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 203 du fichier Core.\+cpp.
+
+\index{E\+P\+::\+Core@{E\+P\+::\+Core}!get\+Icon\+Size@{get\+Icon\+Size}}
+\index{get\+Icon\+Size@{get\+Icon\+Size}!E\+P\+::\+Core@{E\+P\+::\+Core}}
+\subsubsection[{\texorpdfstring{get\+Icon\+Size()}{getIconSize()}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Core\+::get\+Icon\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_core_ab87c0abca00a328cc8a49e44f167867d}{}\label{class_e_p_1_1_core_ab87c0abca00a328cc8a49e44f167867d}
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}identifiant pour la taille des icônes. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 215 du fichier Core.\+cpp.
+
+\index{E\+P\+::\+Core@{E\+P\+::\+Core}!get\+Number\+Rooms@{get\+Number\+Rooms}}
+\index{get\+Number\+Rooms@{get\+Number\+Rooms}!E\+P\+::\+Core@{E\+P\+::\+Core}}
+\subsubsection[{\texorpdfstring{get\+Number\+Rooms()}{getNumberRooms()}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Core\+::get\+Number\+Rooms (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_core_a9fc190b88c92ee9844c59f840c3d8040}{}\label{class_e_p_1_1_core_a9fc190b88c92ee9844c59f840c3d8040}
+\begin{DoxyReturn}{Renvoie}
+Le nombre de pièces de m\+\_\+list\+Rooms. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 207 du fichier Core.\+cpp.
+
+\index{E\+P\+::\+Core@{E\+P\+::\+Core}!get\+Room\+By\+Index@{get\+Room\+By\+Index}}
+\index{get\+Room\+By\+Index@{get\+Room\+By\+Index}!E\+P\+::\+Core@{E\+P\+::\+Core}}
+\subsubsection[{\texorpdfstring{get\+Room\+By\+Index(int index)}{getRoomByIndex(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Room} $\ast$ E\+P\+::\+Core\+::get\+Room\+By\+Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_core_a0914409b3e2d84fd68a6898cca18ffc6}{}\label{class_e_p_1_1_core_a0914409b3e2d84fd68a6898cca18ffc6}
+
+
+Donne un pointeur vers la pièce dont l\textquotesingle{}index est donné en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em index} & L\textquotesingle{}index de la pièce qu\textquotesingle{}on veut récupérer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un pointeur vers l\textquotesingle{}équipement demandé, N\+U\+LL si aucun ne correspond. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 198 du fichier Core.\+cpp.
+
+\index{E\+P\+::\+Core@{E\+P\+::\+Core}!get\+Room\+By\+Name@{get\+Room\+By\+Name}}
+\index{get\+Room\+By\+Name@{get\+Room\+By\+Name}!E\+P\+::\+Core@{E\+P\+::\+Core}}
+\subsubsection[{\texorpdfstring{get\+Room\+By\+Name(char $\ast$name)}{getRoomByName(char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Room} $\ast$ E\+P\+::\+Core\+::get\+Room\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_core_a4b4c84d507fe183c130faf32f345b0e1}{}\label{class_e_p_1_1_core_a4b4c84d507fe183c130faf32f345b0e1}
+
+
+Donne un pointeur vers la pièce dont le nom est donné en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em name} & Le nom de la pièce qu\textquotesingle{}on veut récupérer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un pointeur vers l\textquotesingle{}équipement demandé, N\+U\+LL si aucun ne correspond. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 188 du fichier Core.\+cpp.
+
+\index{E\+P\+::\+Core@{E\+P\+::\+Core}!get\+Rooms@{get\+Rooms}}
+\index{get\+Rooms@{get\+Rooms}!E\+P\+::\+Core@{E\+P\+::\+Core}}
+\subsubsection[{\texorpdfstring{get\+Rooms()}{getRooms()}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Room} $\ast$ $>$ $\ast$ E\+P\+::\+Core\+::get\+Rooms (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_core_abbb72fd01eaa6e77f3fff6a4fe9f21c7}{}\label{class_e_p_1_1_core_abbb72fd01eaa6e77f3fff6a4fe9f21c7}
+
+
+Ne pas utiliser cette méthode à partir de la D\+LL. A la place on peut itérer avec get\+Number\+Rooms et get\+Room\+By\+Index. 
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}attribut m\+\_\+list\+Rooms. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 184 du fichier Core.\+cpp.
+
+\index{E\+P\+::\+Core@{E\+P\+::\+Core}!get\+Theme\+Id@{get\+Theme\+Id}}
+\index{get\+Theme\+Id@{get\+Theme\+Id}!E\+P\+::\+Core@{E\+P\+::\+Core}}
+\subsubsection[{\texorpdfstring{get\+Theme\+Id()}{getThemeId()}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Core\+::get\+Theme\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_core_adb173042f0f6b4c3a5682d3d0830fb55}{}\label{class_e_p_1_1_core_adb173042f0f6b4c3a5682d3d0830fb55}
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}identifiant du thème utilisé. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 211 du fichier Core.\+cpp.
+
+\index{E\+P\+::\+Core@{E\+P\+::\+Core}!set\+Icon\+Size@{set\+Icon\+Size}}
+\index{set\+Icon\+Size@{set\+Icon\+Size}!E\+P\+::\+Core@{E\+P\+::\+Core}}
+\subsubsection[{\texorpdfstring{set\+Icon\+Size(int size)}{setIconSize(int size)}}]{\setlength{\rightskip}{0pt plus 5cm}void E\+P\+::\+Core\+::set\+Icon\+Size (
+\begin{DoxyParamCaption}
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_core_aa170368ee75cf89bcaa45031a750d894}{}\label{class_e_p_1_1_core_aa170368ee75cf89bcaa45031a750d894}
+
+
+Permet de changer la taille des icônes. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em size} & Un chiffre correspondant à la nouvelle taille des icônes. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 223 du fichier Core.\+cpp.
+
+\index{E\+P\+::\+Core@{E\+P\+::\+Core}!set\+Theme\+Id@{set\+Theme\+Id}}
+\index{set\+Theme\+Id@{set\+Theme\+Id}!E\+P\+::\+Core@{E\+P\+::\+Core}}
+\subsubsection[{\texorpdfstring{set\+Theme\+Id(int id)}{setThemeId(int id)}}]{\setlength{\rightskip}{0pt plus 5cm}void E\+P\+::\+Core\+::set\+Theme\+Id (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_core_a2f0999bd55f0f1b8d8113423e371c98e}{}\label{class_e_p_1_1_core_a2f0999bd55f0f1b8d8113423e371c98e}
+
+
+Permet de changer le thème utilisé. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em id} & L\textquotesingle{}identifiant du nouveau thème. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 219 du fichier Core.\+cpp.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+include/Core.\+h\item 
+src/Core.\+cpp\end{DoxyCompactItemize}
