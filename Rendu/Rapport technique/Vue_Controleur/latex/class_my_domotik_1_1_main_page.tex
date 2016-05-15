@@ -1,0 +1,353 @@
+\hypertarget{class_my_domotik_1_1_main_page}{}\section{My\+Domotik.\+Main\+Page Class Reference}
+\label{class_my_domotik_1_1_main_page}\index{My\+Domotik.\+Main\+Page@{My\+Domotik.\+Main\+Page}}
+
+
+Page permettant d\textquotesingle{}afficher la page \char`\"{}\+Utilisateur\char`\"{} et notamment une grille de pièces ou d\textquotesingle{}équipements. ~\newline
+Initialement, on affiche une grille de pièces, composée de plusieurs pages (pour naviguer entre ces pages, clic sur le bouton précédent ou suivant). ~\newline
+Lors du clic sur une pièce, on affiche la grille des équipements associés à cette pièce. ~\newline
+Possibilité d\textquotesingle{}accéder à la page Admin (bouton Configuration).  
+
+
+Inheritance diagram for My\+Domotik.\+Main\+Page\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_my_domotik_1_1_main_page}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_my_domotik_1_1_main_page_a947aea957df3eb3208f574d7f8da3625}{Main\+Page} ()
+\begin{DoxyCompactList}\small\item\em Méthode principale appelée lors de l\textquotesingle{}ouverture de la page \+: initialise les objets, le Core (cf D\+LL) et appelle la fonction afficher\+Page. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_my_domotik_1_1_main_page_ace0e2623b105451a4ecce4725357e0d3}{afficher\+Pieces} ()
+\begin{DoxyCompactList}\small\item\em Méthode permettant d\textquotesingle{}initialiser et d\textquotesingle{}afficher la grille de pièces. ~\newline
+Elle associe la méthode Piece\+Click aux boutons non vides de la grille. ~\newline
+Elle permet aussi d\textquotesingle{}initialiser la couleur des divers éléments de la page (boutons de la grille, barre du bas, fond, etc...). \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_main_page_a277458cf599fde6ddd7752b21a926abf}{afficher\+Equipements} ()
+\begin{DoxyCompactList}\small\item\em Méthode permettant d\textquotesingle{}initialiser et d\textquotesingle{}afficher une grille d\textquotesingle{}équipements associés à la pièce choisie. ~\newline
+Elle associe la méthode Equipement\+Click aux boutons non vides de la grille. ~\newline
+Elle permet aussi d\textquotesingle{}initialiser la couleur des divers éléments de la page (boutons de la grille, barre du bas, fond, etc...). ~\newline
+\end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_main_page_a37d2eb04139c81a2f7ac428f9ee86659}{Equipement\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur un équipement. ~\newline
+Selon le type de l\textquotesingle{}équipement choisi (Fibaro ou Kira), elle lance la requête adéquate. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_main_page_a05eafbdab6af1857a7678ef57e8e8260}{Piece\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur une pièce. ~\newline
+Elle permet d\textquotesingle{}afficher la grille des équipements associés à cette pièce, en faisant appel à la méthode afficher\+Equipements. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_main_page_adce6e481d0b67c7fae1f60683e1acf7a}{admin\+Select} (object sender, Double\+Tapped\+Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Configuration\char`\"{}. ~\newline
+Elle permet d\textquotesingle{}accéder à la page Admin. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_main_page_ac05fbb555934f2d7df8378e19ce764e1}{Page\+Precedente} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Précédent\char`\"{}. ~\newline
+Elle permet de retourner à la page précédente de la grille d\textquotesingle{}icônes, en décrémentant la variable page\+Actuelle. ~\newline
+Elle effectue un appel à la fonction afficher\+Pieces ou afficher\+Equipements, pour rafraîchir la grille. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_main_page_aea16b19b6f9b7b0a1baed07c9887fb14}{Page\+Suivante} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Suivant\char`\"{}. ~\newline
+Elle permet d\textquotesingle{}avancer à la page suivante de la grille d\textquotesingle{}icônes, en incrémentant la variable page\+Actuelle. ~\newline
+Elle effectue un appel à la fonction afficher\+Pieces ou afficher\+Equipements pour rafraîchir la grille. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_main_page_a46510a49e17c5b0816bc02e8c96fd6e4}{Page\+Accueil} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Accueil\char`\"{}. ~\newline
+Elle permet de retourner à la page d\textquotesingle{}accueil, et notamment d\textquotesingle{}afficher la grille de pièces. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_main_page_a7e2002aa64ba732cbbe5a465e9ce70b2}{Page\+Fauteuil} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Fauteuil\char`\"{}. ~\newline
+Elle permet d\textquotesingle{}accéder à la page Weelchair\+Feed\+Back. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_my_domotik_1_1_main_page_a09f4e2e480f274465f901d18aa73e9fb}{page\+Actuelle} = 0
+\item 
+Boolean \hyperlink{class_my_domotik_1_1_main_page_aab5a1b90bbbf54d6daf2833f0aeb469e}{vue\+Equipement}
+\item 
+Int\+Ptr \hyperlink{class_my_domotik_1_1_main_page_a06add3e52fde0986ff8c8cb88cfd06c4}{piece\+Selectionnee}
+\item 
+\hyperlink{class_my_domotik_1_1_affichage}{Affichage} \hyperlink{class_my_domotik_1_1_main_page_abd8e223ae5a150fc8ef42fd884754cc6}{affichage}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Int\+Ptr \hyperlink{class_my_domotik_1_1_main_page_a8f9c79ea42dfcba7339767330afec556}{core}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Page permettant d\textquotesingle{}afficher la page \char`\"{}\+Utilisateur\char`\"{} et notamment une grille de pièces ou d\textquotesingle{}équipements. ~\newline
+Initialement, on affiche une grille de pièces, composée de plusieurs pages (pour naviguer entre ces pages, clic sur le bouton précédent ou suivant). ~\newline
+Lors du clic sur une pièce, on affiche la grille des équipements associés à cette pièce. ~\newline
+Possibilité d\textquotesingle{}accéder à la page Admin (bouton Configuration). 
+
+
+
+Definition at line 32 of file Main\+Page.\+xaml.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}!Main\+Page@{Main\+Page}}
+\index{Main\+Page@{Main\+Page}!My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}}
+\subsubsection[{\texorpdfstring{Main\+Page()}{MainPage()}}]{\setlength{\rightskip}{0pt plus 5cm}My\+Domotik.\+Main\+Page.\+Main\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_my_domotik_1_1_main_page_a947aea957df3eb3208f574d7f8da3625}{}\label{class_my_domotik_1_1_main_page_a947aea957df3eb3208f574d7f8da3625}
+
+
+Méthode principale appelée lors de l\textquotesingle{}ouverture de la page \+: initialise les objets, le Core (cf D\+LL) et appelle la fonction afficher\+Page. 
+
+
+
+Definition at line 44 of file Main\+Page.\+xaml.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}!admin\+Select@{admin\+Select}}
+\index{admin\+Select@{admin\+Select}!My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}}
+\subsubsection[{\texorpdfstring{admin\+Select(object sender, Double\+Tapped\+Routed\+Event\+Args e)}{adminSelect(object sender, DoubleTappedRoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Main\+Page.\+admin\+Select (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Double\+Tapped\+Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_main_page_adce6e481d0b67c7fae1f60683e1acf7a}{}\label{class_my_domotik_1_1_main_page_adce6e481d0b67c7fae1f60683e1acf7a}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Configuration\char`\"{}. ~\newline
+Elle permet d\textquotesingle{}accéder à la page Admin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Configuration\char`\"{}.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 145 of file Main\+Page.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}!afficher\+Equipements@{afficher\+Equipements}}
+\index{afficher\+Equipements@{afficher\+Equipements}!My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}}
+\subsubsection[{\texorpdfstring{afficher\+Equipements()}{afficherEquipements()}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Main\+Page.\+afficher\+Equipements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_main_page_a277458cf599fde6ddd7752b21a926abf}{}\label{class_my_domotik_1_1_main_page_a277458cf599fde6ddd7752b21a926abf}
+
+
+Méthode permettant d\textquotesingle{}initialiser et d\textquotesingle{}afficher une grille d\textquotesingle{}équipements associés à la pièce choisie. ~\newline
+Elle associe la méthode Equipement\+Click aux boutons non vides de la grille. ~\newline
+Elle permet aussi d\textquotesingle{}initialiser la couleur des divers éléments de la page (boutons de la grille, barre du bas, fond, etc...). ~\newline
+
+
+
+
+Definition at line 82 of file Main\+Page.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}!afficher\+Pieces@{afficher\+Pieces}}
+\index{afficher\+Pieces@{afficher\+Pieces}!My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}}
+\subsubsection[{\texorpdfstring{afficher\+Pieces()}{afficherPieces()}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Main\+Page.\+afficher\+Pieces (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_main_page_ace0e2623b105451a4ecce4725357e0d3}{}\label{class_my_domotik_1_1_main_page_ace0e2623b105451a4ecce4725357e0d3}
+
+
+Méthode permettant d\textquotesingle{}initialiser et d\textquotesingle{}afficher la grille de pièces. ~\newline
+Elle associe la méthode Piece\+Click aux boutons non vides de la grille. ~\newline
+Elle permet aussi d\textquotesingle{}initialiser la couleur des divers éléments de la page (boutons de la grille, barre du bas, fond, etc...). 
+
+
+
+Definition at line 64 of file Main\+Page.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}!Equipement\+Click@{Equipement\+Click}}
+\index{Equipement\+Click@{Equipement\+Click}!My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}}
+\subsubsection[{\texorpdfstring{Equipement\+Click(object sender, Routed\+Event\+Args e)}{EquipementClick(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Main\+Page.\+Equipement\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_main_page_a37d2eb04139c81a2f7ac428f9ee86659}{}\label{class_my_domotik_1_1_main_page_a37d2eb04139c81a2f7ac428f9ee86659}
+
+
+Méthode déclenchée lors du clic sur un équipement. ~\newline
+Selon le type de l\textquotesingle{}équipement choisi (Fibaro ou Kira), elle lance la requête adéquate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton associé à l\textquotesingle{}équipement choisi.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file Main\+Page.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}!Page\+Accueil@{Page\+Accueil}}
+\index{Page\+Accueil@{Page\+Accueil}!My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}}
+\subsubsection[{\texorpdfstring{Page\+Accueil(object sender, Routed\+Event\+Args e)}{PageAccueil(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Main\+Page.\+Page\+Accueil (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_main_page_a46510a49e17c5b0816bc02e8c96fd6e4}{}\label{class_my_domotik_1_1_main_page_a46510a49e17c5b0816bc02e8c96fd6e4}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Accueil\char`\"{}. ~\newline
+Elle permet de retourner à la page d\textquotesingle{}accueil, et notamment d\textquotesingle{}afficher la grille de pièces. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Accueil\char`\"{}.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 191 of file Main\+Page.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}!Page\+Fauteuil@{Page\+Fauteuil}}
+\index{Page\+Fauteuil@{Page\+Fauteuil}!My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}}
+\subsubsection[{\texorpdfstring{Page\+Fauteuil(object sender, Routed\+Event\+Args e)}{PageFauteuil(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Main\+Page.\+Page\+Fauteuil (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_main_page_a7e2002aa64ba732cbbe5a465e9ce70b2}{}\label{class_my_domotik_1_1_main_page_a7e2002aa64ba732cbbe5a465e9ce70b2}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Fauteuil\char`\"{}. ~\newline
+Elle permet d\textquotesingle{}accéder à la page Weelchair\+Feed\+Back. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Fauteuil\char`\"{}.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 205 of file Main\+Page.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}!Page\+Precedente@{Page\+Precedente}}
+\index{Page\+Precedente@{Page\+Precedente}!My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}}
+\subsubsection[{\texorpdfstring{Page\+Precedente(object sender, Routed\+Event\+Args e)}{PagePrecedente(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Main\+Page.\+Page\+Precedente (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_main_page_ac05fbb555934f2d7df8378e19ce764e1}{}\label{class_my_domotik_1_1_main_page_ac05fbb555934f2d7df8378e19ce764e1}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Précédent\char`\"{}. ~\newline
+Elle permet de retourner à la page précédente de la grille d\textquotesingle{}icônes, en décrémentant la variable page\+Actuelle. ~\newline
+Elle effectue un appel à la fonction afficher\+Pieces ou afficher\+Equipements, pour rafraîchir la grille. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Précédent.\char`\"{}\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 160 of file Main\+Page.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}!Page\+Suivante@{Page\+Suivante}}
+\index{Page\+Suivante@{Page\+Suivante}!My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}}
+\subsubsection[{\texorpdfstring{Page\+Suivante(object sender, Routed\+Event\+Args e)}{PageSuivante(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Main\+Page.\+Page\+Suivante (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_main_page_aea16b19b6f9b7b0a1baed07c9887fb14}{}\label{class_my_domotik_1_1_main_page_aea16b19b6f9b7b0a1baed07c9887fb14}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Suivant\char`\"{}. ~\newline
+Elle permet d\textquotesingle{}avancer à la page suivante de la grille d\textquotesingle{}icônes, en incrémentant la variable page\+Actuelle. ~\newline
+Elle effectue un appel à la fonction afficher\+Pieces ou afficher\+Equipements pour rafraîchir la grille. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Suivant\char`\"{}.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 176 of file Main\+Page.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}!Piece\+Click@{Piece\+Click}}
+\index{Piece\+Click@{Piece\+Click}!My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}}
+\subsubsection[{\texorpdfstring{Piece\+Click(object sender, Routed\+Event\+Args e)}{PieceClick(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Main\+Page.\+Piece\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_main_page_a05eafbdab6af1857a7678ef57e8e8260}{}\label{class_my_domotik_1_1_main_page_a05eafbdab6af1857a7678ef57e8e8260}
+
+
+Méthode déclenchée lors du clic sur une pièce. ~\newline
+Elle permet d\textquotesingle{}afficher la grille des équipements associés à cette pièce, en faisant appel à la méthode afficher\+Equipements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton associé à la pièce choisie.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 128 of file Main\+Page.\+xaml.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\index{My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}!affichage@{affichage}}
+\index{affichage@{affichage}!My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}}
+\subsubsection[{\texorpdfstring{affichage}{affichage}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Affichage} My\+Domotik.\+Main\+Page.\+affichage\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_main_page_abd8e223ae5a150fc8ef42fd884754cc6}{}\label{class_my_domotik_1_1_main_page_abd8e223ae5a150fc8ef42fd884754cc6}
+
+
+Definition at line 38 of file Main\+Page.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}!core@{core}}
+\index{core@{core}!My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}}
+\subsubsection[{\texorpdfstring{core}{core}}]{\setlength{\rightskip}{0pt plus 5cm}Int\+Ptr My\+Domotik.\+Main\+Page.\+core\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_main_page_a8f9c79ea42dfcba7339767330afec556}{}\label{class_my_domotik_1_1_main_page_a8f9c79ea42dfcba7339767330afec556}
+
+
+Definition at line 34 of file Main\+Page.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}!page\+Actuelle@{page\+Actuelle}}
+\index{page\+Actuelle@{page\+Actuelle}!My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}}
+\subsubsection[{\texorpdfstring{page\+Actuelle}{pageActuelle}}]{\setlength{\rightskip}{0pt plus 5cm}int My\+Domotik.\+Main\+Page.\+page\+Actuelle = 0\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_main_page_a09f4e2e480f274465f901d18aa73e9fb}{}\label{class_my_domotik_1_1_main_page_a09f4e2e480f274465f901d18aa73e9fb}
+
+
+Definition at line 35 of file Main\+Page.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}!piece\+Selectionnee@{piece\+Selectionnee}}
+\index{piece\+Selectionnee@{piece\+Selectionnee}!My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}}
+\subsubsection[{\texorpdfstring{piece\+Selectionnee}{pieceSelectionnee}}]{\setlength{\rightskip}{0pt plus 5cm}Int\+Ptr My\+Domotik.\+Main\+Page.\+piece\+Selectionnee\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_main_page_a06add3e52fde0986ff8c8cb88cfd06c4}{}\label{class_my_domotik_1_1_main_page_a06add3e52fde0986ff8c8cb88cfd06c4}
+
+
+Definition at line 37 of file Main\+Page.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}!vue\+Equipement@{vue\+Equipement}}
+\index{vue\+Equipement@{vue\+Equipement}!My\+Domotik\+::\+Main\+Page@{My\+Domotik\+::\+Main\+Page}}
+\subsubsection[{\texorpdfstring{vue\+Equipement}{vueEquipement}}]{\setlength{\rightskip}{0pt plus 5cm}Boolean My\+Domotik.\+Main\+Page.\+vue\+Equipement\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_main_page_aab5a1b90bbbf54d6daf2833f0aeb469e}{}\label{class_my_domotik_1_1_main_page_aab5a1b90bbbf54d6daf2833f0aeb469e}
+
+
+Definition at line 36 of file Main\+Page.\+xaml.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_main_page_8xaml_8cs}{Main\+Page.\+xaml.\+cs}\end{DoxyCompactItemize}

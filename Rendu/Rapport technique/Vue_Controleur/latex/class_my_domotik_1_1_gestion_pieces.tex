@@ -1,0 +1,469 @@
+\hypertarget{class_my_domotik_1_1_gestion_pieces}{}\section{My\+Domotik.\+Gestion\+Pieces Class Reference}
+\label{class_my_domotik_1_1_gestion_pieces}\index{My\+Domotik.\+Gestion\+Pieces@{My\+Domotik.\+Gestion\+Pieces}}
+
+
+Page permettant de gérer les pièces. Elle permet notamment d\textquotesingle{}ajouter des pièces, de les renommer, de les supprimer ou d\textquotesingle{}y ajouter des équipements.  
+
+
+Inheritance diagram for My\+Domotik.\+Gestion\+Pieces\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_my_domotik_1_1_gestion_pieces}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_my_domotik_1_1_gestion_pieces_a8ebf7bb45ced4d6fec2c9c756487c217}{Gestion\+Pieces} ()
+\begin{DoxyCompactList}\small\item\em Méthode principale appelée lors de l\textquotesingle{}ouverture de la page \+: initialise les objets, le Core (cf D\+LL) et appelle la fonction afficher\+Page. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static string \hyperlink{class_my_domotik_1_1_gestion_pieces_a67a89cb8b8c4baa3b965c1e0cd991d0f}{Nom\+Piece\+Selectionee}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_my_domotik_1_1_gestion_pieces_a6a74493d99b00d1213ac9da94d1e98b3}{exit\+Admin} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Accueil\char`\"{}. ~\newline
+Elle permet d\textquotesingle{}accéder à la page principale \char`\"{}\+Utilisateur\char`\"{}. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_gestion_pieces_a11bc8bd6ad99c1f9c56609e121be1e07}{menu\+Admin} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Retour\char`\"{}. ~\newline
+Elle permet d\textquotesingle{}accéder à la page Admin. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_gestion_pieces_a55b382336deb3025ebea60b5c8de1170}{afficher\+Page} ()
+\begin{DoxyCompactList}\small\item\em Méthode permettant d\textquotesingle{}initialiser et d\textquotesingle{}afficher la grille des pièces enregistrées dans le Core (cf D\+LL). ~\newline
+Elle associe la méthode Menu1 aux boutons non vides de la grille. ~\newline
+\end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_gestion_pieces_a155472278ec2a8a04f0c184e05d527a3}{Menu1} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur une pièce. ~\newline
+Elle permet d\textquotesingle{}afficher les options telles que \char`\"{}\+Renommer\char`\"{}, \char`\"{}\+Supprimer\char`\"{} ou \char`\"{}\+Ajouter Equipements\char`\"{}. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_gestion_pieces_af3d531ae74204ef6425071b274a476f3}{annuler} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Annuler\char`\"{} du menu option. ~\newline
+Elle permet d\textquotesingle{}enlever l\textquotesingle{}affichage du menu option. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_gestion_pieces_ac07436859798da0c8373b76255a9901c}{enlever\+Icone} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Supprimer\char`\"{} du menu option. ~\newline
+Elle permet de supprimer la pièce choisie et d\textquotesingle{}enregister ces modifications dans le Core (cf D\+LL). \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_gestion_pieces_ab6f674ac706fb592a1beb7cf3d44b50e}{changer\+Nom\+Icone} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Renommer\char`\"{} du menu options. ~\newline
+Elle permet d\textquotesingle{}afficher les champs nécessaires pour que l\textquotesingle{}utilisateur puisse entrer le nouveau nom de la pièce. ~\newline
+Le nouveau nom sera enregistré après le clic sur le bouton \char`\"{}\+Valider\char`\"{} (cf méthode validation). \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_gestion_pieces_a45262aa335e39a869ebe90036485f924}{ajouter\+Equip} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Ajouter équipements\char`\"{} du menu options. ~\newline
+Elle permet d\textquotesingle{}enregistrer le nom de la pièce choisie, puis d\textquotesingle{}accéder à la page Gestion Equipements afin d\textquotesingle{}ajouter/modifier des équipements à cette pièce. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_gestion_pieces_a1aba6ee1fd4d3e9010c63e94cee34972}{choix\+Image} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur une des images de la barre en bas de page. ~\newline
+Elle permet d\textquotesingle{}enregistrer l\textquotesingle{}image que l\textquotesingle{}admin souhaite associer à la nouvelle pièce. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_gestion_pieces_a86175c47096c64cb7e8d632470b24bea}{Validation} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Valider\char`\"{}, et cela après que l\textquotesingle{}utilisateur ait complété le champ \char`\"{}nom\char`\"{}. ~\newline
+Ce bouton peut être enclenché dans deux cas\+: ~\newline
+\end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_gestion_pieces_ad5792576098ea51af69b58c8585721a7}{page\+Precedente} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Précédent\char`\"{}. ~\newline
+Elle permet de retourner à la page précédente de la grille d\textquotesingle{}icônes, en décrémentant la variable page\+Actuelle. ~\newline
+Elle effectue un appel à la fonction afficher\+Pieces ou afficher\+Equipements, pour rafraîchir la grille. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_gestion_pieces_af7d90f9059ae38b539ed30f424790006}{page\+Suivante} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Suivant\char`\"{}. ~\newline
+Elle permet d\textquotesingle{}avancer à la page suivante de la grille d\textquotesingle{}icônes, en incrémentant la variable page\+Actuelle. ~\newline
+Elle effectue un appel à la fonction afficher\+Pieces ou afficher\+Equipements pour raffraichir la grille. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{class_my_domotik_1_1_gestion_pieces_ac20f326e4fe968c5b11c113c54410d43}{nom}
+\item 
+int \hyperlink{class_my_domotik_1_1_gestion_pieces_a3081b3a9bd790362ccede15eea02219e}{index\+Piece}
+\item 
+Boolean \hyperlink{class_my_domotik_1_1_gestion_pieces_ac4e1473aa5f93f19af5e8ba2bcfd084d}{nouvelle\+Piece} = false
+\item 
+Int\+Ptr \hyperlink{class_my_domotik_1_1_gestion_pieces_ac0413c01cf25731dce9798e61902127f}{core}
+\item 
+int \hyperlink{class_my_domotik_1_1_gestion_pieces_ad0c0449ca20cb4a76fc9d94dbe0a9791}{page\+Actuelle} = 0
+\item 
+\hyperlink{class_my_domotik_1_1_affichage}{Affichage} \hyperlink{class_my_domotik_1_1_gestion_pieces_a8b682065001015d7e8f9aed32eda4fd9}{affichage}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static string \hyperlink{class_my_domotik_1_1_gestion_pieces_a8a57be0f9bbf50e26f5d2719e8f877d0}{nom\+Piece\+Selectionee}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Page permettant de gérer les pièces. Elle permet notamment d\textquotesingle{}ajouter des pièces, de les renommer, de les supprimer ou d\textquotesingle{}y ajouter des équipements. 
+
+
+
+Definition at line 30 of file Gestion\+Pieces.\+xaml.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!Gestion\+Pieces@{Gestion\+Pieces}}
+\index{Gestion\+Pieces@{Gestion\+Pieces}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{Gestion\+Pieces()}{GestionPieces()}}]{\setlength{\rightskip}{0pt plus 5cm}My\+Domotik.\+Gestion\+Pieces.\+Gestion\+Pieces (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_my_domotik_1_1_gestion_pieces_a8ebf7bb45ced4d6fec2c9c756487c217}{}\label{class_my_domotik_1_1_gestion_pieces_a8ebf7bb45ced4d6fec2c9c756487c217}
+
+
+Méthode principale appelée lors de l\textquotesingle{}ouverture de la page \+: initialise les objets, le Core (cf D\+LL) et appelle la fonction afficher\+Page. 
+
+
+
+Definition at line 61 of file Gestion\+Pieces.\+xaml.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!afficher\+Page@{afficher\+Page}}
+\index{afficher\+Page@{afficher\+Page}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{afficher\+Page()}{afficherPage()}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Gestion\+Pieces.\+afficher\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_a55b382336deb3025ebea60b5c8de1170}{}\label{class_my_domotik_1_1_gestion_pieces_a55b382336deb3025ebea60b5c8de1170}
+
+
+Méthode permettant d\textquotesingle{}initialiser et d\textquotesingle{}afficher la grille des pièces enregistrées dans le Core (cf D\+LL). ~\newline
+Elle associe la méthode Menu1 aux boutons non vides de la grille. ~\newline
+
+
+
+
+Definition at line 107 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!ajouter\+Equip@{ajouter\+Equip}}
+\index{ajouter\+Equip@{ajouter\+Equip}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{ajouter\+Equip(object sender, Routed\+Event\+Args e)}{ajouterEquip(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Gestion\+Pieces.\+ajouter\+Equip (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_a45262aa335e39a869ebe90036485f924}{}\label{class_my_domotik_1_1_gestion_pieces_a45262aa335e39a869ebe90036485f924}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Ajouter équipements\char`\"{} du menu options. ~\newline
+Elle permet d\textquotesingle{}enregistrer le nom de la pièce choisie, puis d\textquotesingle{}accéder à la page Gestion Equipements afin d\textquotesingle{}ajouter/modifier des équipements à cette pièce. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Ajouter équipements\char`\"{}.\\
+\hline
+{\em e} & Evenement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 208 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!annuler@{annuler}}
+\index{annuler@{annuler}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{annuler(object sender, Routed\+Event\+Args e)}{annuler(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Gestion\+Pieces.\+annuler (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_af3d531ae74204ef6425071b274a476f3}{}\label{class_my_domotik_1_1_gestion_pieces_af3d531ae74204ef6425071b274a476f3}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Annuler\char`\"{} du menu option. ~\newline
+Elle permet d\textquotesingle{}enlever l\textquotesingle{}affichage du menu option. 
+
+
+
+Definition at line 148 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!changer\+Nom\+Icone@{changer\+Nom\+Icone}}
+\index{changer\+Nom\+Icone@{changer\+Nom\+Icone}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{changer\+Nom\+Icone(object sender, Routed\+Event\+Args e)}{changerNomIcone(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Gestion\+Pieces.\+changer\+Nom\+Icone (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_ab6f674ac706fb592a1beb7cf3d44b50e}{}\label{class_my_domotik_1_1_gestion_pieces_ab6f674ac706fb592a1beb7cf3d44b50e}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Renommer\char`\"{} du menu options. ~\newline
+Elle permet d\textquotesingle{}afficher les champs nécessaires pour que l\textquotesingle{}utilisateur puisse entrer le nouveau nom de la pièce. ~\newline
+Le nouveau nom sera enregistré après le clic sur le bouton \char`\"{}\+Valider\char`\"{} (cf méthode validation). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Renommer\char`\"{}.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 188 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!choix\+Image@{choix\+Image}}
+\index{choix\+Image@{choix\+Image}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{choix\+Image(object sender, Routed\+Event\+Args e)}{choixImage(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Gestion\+Pieces.\+choix\+Image (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_a1aba6ee1fd4d3e9010c63e94cee34972}{}\label{class_my_domotik_1_1_gestion_pieces_a1aba6ee1fd4d3e9010c63e94cee34972}
+
+
+Méthode déclenchée lors du clic sur une des images de la barre en bas de page. ~\newline
+Elle permet d\textquotesingle{}enregistrer l\textquotesingle{}image que l\textquotesingle{}admin souhaite associer à la nouvelle pièce. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Image choisie pour représenter la nouvelle pièce.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 227 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!enlever\+Icone@{enlever\+Icone}}
+\index{enlever\+Icone@{enlever\+Icone}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{enlever\+Icone(object sender, Routed\+Event\+Args e)}{enleverIcone(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Gestion\+Pieces.\+enlever\+Icone (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_ac07436859798da0c8373b76255a9901c}{}\label{class_my_domotik_1_1_gestion_pieces_ac07436859798da0c8373b76255a9901c}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Supprimer\char`\"{} du menu option. ~\newline
+Elle permet de supprimer la pièce choisie et d\textquotesingle{}enregister ces modifications dans le Core (cf D\+LL). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Supprimer\char`\"{}.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 162 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!exit\+Admin@{exit\+Admin}}
+\index{exit\+Admin@{exit\+Admin}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{exit\+Admin(object sender, Routed\+Event\+Args e)}{exitAdmin(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Gestion\+Pieces.\+exit\+Admin (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_a6a74493d99b00d1213ac9da94d1e98b3}{}\label{class_my_domotik_1_1_gestion_pieces_a6a74493d99b00d1213ac9da94d1e98b3}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Accueil\char`\"{}. ~\newline
+Elle permet d\textquotesingle{}accéder à la page principale \char`\"{}\+Utilisateur\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Accueil\char`\"{}.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!Menu1@{Menu1}}
+\index{Menu1@{Menu1}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{Menu1(object sender, Routed\+Event\+Args e)}{Menu1(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Gestion\+Pieces.\+Menu1 (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_a155472278ec2a8a04f0c184e05d527a3}{}\label{class_my_domotik_1_1_gestion_pieces_a155472278ec2a8a04f0c184e05d527a3}
+
+
+Méthode déclenchée lors du clic sur une pièce. ~\newline
+Elle permet d\textquotesingle{}afficher les options telles que \char`\"{}\+Renommer\char`\"{}, \char`\"{}\+Supprimer\char`\"{} ou \char`\"{}\+Ajouter Equipements\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton associé à la pièce choisie.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 130 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!menu\+Admin@{menu\+Admin}}
+\index{menu\+Admin@{menu\+Admin}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{menu\+Admin(object sender, Routed\+Event\+Args e)}{menuAdmin(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Gestion\+Pieces.\+menu\+Admin (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_a11bc8bd6ad99c1f9c56609e121be1e07}{}\label{class_my_domotik_1_1_gestion_pieces_a11bc8bd6ad99c1f9c56609e121be1e07}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Retour\char`\"{}. ~\newline
+Elle permet d\textquotesingle{}accéder à la page Admin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Retour\char`\"{}.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 95 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!page\+Precedente@{page\+Precedente}}
+\index{page\+Precedente@{page\+Precedente}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{page\+Precedente(object sender, Routed\+Event\+Args e)}{pagePrecedente(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Gestion\+Pieces.\+page\+Precedente (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_ad5792576098ea51af69b58c8585721a7}{}\label{class_my_domotik_1_1_gestion_pieces_ad5792576098ea51af69b58c8585721a7}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Précédent\char`\"{}. ~\newline
+Elle permet de retourner à la page précédente de la grille d\textquotesingle{}icônes, en décrémentant la variable page\+Actuelle. ~\newline
+Elle effectue un appel à la fonction afficher\+Pieces ou afficher\+Equipements, pour rafraîchir la grille. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Précédent.\char`\"{}\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 291 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!page\+Suivante@{page\+Suivante}}
+\index{page\+Suivante@{page\+Suivante}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{page\+Suivante(object sender, Routed\+Event\+Args e)}{pageSuivante(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Gestion\+Pieces.\+page\+Suivante (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_af7d90f9059ae38b539ed30f424790006}{}\label{class_my_domotik_1_1_gestion_pieces_af7d90f9059ae38b539ed30f424790006}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Suivant\char`\"{}. ~\newline
+Elle permet d\textquotesingle{}avancer à la page suivante de la grille d\textquotesingle{}icônes, en incrémentant la variable page\+Actuelle. ~\newline
+Elle effectue un appel à la fonction afficher\+Pieces ou afficher\+Equipements pour raffraichir la grille. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Suivant\char`\"{}.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 310 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!Validation@{Validation}}
+\index{Validation@{Validation}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{Validation(object sender, Routed\+Event\+Args e)}{Validation(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Gestion\+Pieces.\+Validation (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_a86175c47096c64cb7e8d632470b24bea}{}\label{class_my_domotik_1_1_gestion_pieces_a86175c47096c64cb7e8d632470b24bea}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Valider\char`\"{}, et cela après que l\textquotesingle{}utilisateur ait complété le champ \char`\"{}nom\char`\"{}. ~\newline
+Ce bouton peut être enclenché dans deux cas\+: ~\newline
+
+
+
+\begin{DoxyItemize}
+\item Soit l\textquotesingle{}utilisateur souhaite renommer la pièce qu\textquotesingle{}il a précédemment choisi, il suffit alors d\textquotesingle{}enregistrer le nouveau nom ~\newline
+
+\item Soit l\textquotesingle{}utilisateur souhaite nommer une nouvelle pièce qu\textquotesingle{}il est en train de créer, il faut alors créer cette pièce, la nommer, et lui associer une image. Il faut ensuite enregistrer cette nouvelle pièce dans le Core (cf D\+LL). 
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Valider\char`\"{}.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 255 of file Gestion\+Pieces.\+xaml.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!affichage@{affichage}}
+\index{affichage@{affichage}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{affichage}{affichage}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Affichage} My\+Domotik.\+Gestion\+Pieces.\+affichage\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_a8b682065001015d7e8f9aed32eda4fd9}{}\label{class_my_domotik_1_1_gestion_pieces_a8b682065001015d7e8f9aed32eda4fd9}
+
+
+Definition at line 39 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!core@{core}}
+\index{core@{core}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{core}{core}}]{\setlength{\rightskip}{0pt plus 5cm}Int\+Ptr My\+Domotik.\+Gestion\+Pieces.\+core\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_ac0413c01cf25731dce9798e61902127f}{}\label{class_my_domotik_1_1_gestion_pieces_ac0413c01cf25731dce9798e61902127f}
+
+
+Definition at line 36 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!index\+Piece@{index\+Piece}}
+\index{index\+Piece@{index\+Piece}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{index\+Piece}{indexPiece}}]{\setlength{\rightskip}{0pt plus 5cm}int My\+Domotik.\+Gestion\+Pieces.\+index\+Piece\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_a3081b3a9bd790362ccede15eea02219e}{}\label{class_my_domotik_1_1_gestion_pieces_a3081b3a9bd790362ccede15eea02219e}
+
+
+Definition at line 34 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!nom@{nom}}
+\index{nom@{nom}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{nom}{nom}}]{\setlength{\rightskip}{0pt plus 5cm}String My\+Domotik.\+Gestion\+Pieces.\+nom\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_ac20f326e4fe968c5b11c113c54410d43}{}\label{class_my_domotik_1_1_gestion_pieces_ac20f326e4fe968c5b11c113c54410d43}
+
+
+Definition at line 33 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!nom\+Piece\+Selectionee@{nom\+Piece\+Selectionee}}
+\index{nom\+Piece\+Selectionee@{nom\+Piece\+Selectionee}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{nom\+Piece\+Selectionee}{nomPieceSelectionee}}]{\setlength{\rightskip}{0pt plus 5cm}string My\+Domotik.\+Gestion\+Pieces.\+nom\+Piece\+Selectionee\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_a8a57be0f9bbf50e26f5d2719e8f877d0}{}\label{class_my_domotik_1_1_gestion_pieces_a8a57be0f9bbf50e26f5d2719e8f877d0}
+
+
+Definition at line 38 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!nouvelle\+Piece@{nouvelle\+Piece}}
+\index{nouvelle\+Piece@{nouvelle\+Piece}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{nouvelle\+Piece}{nouvellePiece}}]{\setlength{\rightskip}{0pt plus 5cm}Boolean My\+Domotik.\+Gestion\+Pieces.\+nouvelle\+Piece = false\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_ac4e1473aa5f93f19af5e8ba2bcfd084d}{}\label{class_my_domotik_1_1_gestion_pieces_ac4e1473aa5f93f19af5e8ba2bcfd084d}
+
+
+Definition at line 35 of file Gestion\+Pieces.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!page\+Actuelle@{page\+Actuelle}}
+\index{page\+Actuelle@{page\+Actuelle}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{page\+Actuelle}{pageActuelle}}]{\setlength{\rightskip}{0pt plus 5cm}int My\+Domotik.\+Gestion\+Pieces.\+page\+Actuelle = 0\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_ad0c0449ca20cb4a76fc9d94dbe0a9791}{}\label{class_my_domotik_1_1_gestion_pieces_ad0c0449ca20cb4a76fc9d94dbe0a9791}
+
+
+Definition at line 37 of file Gestion\+Pieces.\+xaml.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}!Nom\+Piece\+Selectionee@{Nom\+Piece\+Selectionee}}
+\index{Nom\+Piece\+Selectionee@{Nom\+Piece\+Selectionee}!My\+Domotik\+::\+Gestion\+Pieces@{My\+Domotik\+::\+Gestion\+Pieces}}
+\subsubsection[{\texorpdfstring{Nom\+Piece\+Selectionee}{NomPieceSelectionee}}]{\setlength{\rightskip}{0pt plus 5cm}string My\+Domotik.\+Gestion\+Pieces.\+Nom\+Piece\+Selectionee\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_my_domotik_1_1_gestion_pieces_a67a89cb8b8c4baa3b965c1e0cd991d0f}{}\label{class_my_domotik_1_1_gestion_pieces_a67a89cb8b8c4baa3b965c1e0cd991d0f}
+
+
+Definition at line 43 of file Gestion\+Pieces.\+xaml.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_gestion_pieces_8xaml_8cs}{Gestion\+Pieces.\+xaml.\+cs}\end{DoxyCompactItemize}
