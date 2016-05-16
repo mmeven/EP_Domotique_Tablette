@@ -57,30 +57,20 @@
 
   \indexspace
 
-  \item {D\+:/\+Users/\+Corentin/\+Dropbox/3e\+\_\+annee/\+Projet/tests/test\+\_\+dll/dll/\+Requete.\+cpp}, 
-		\hyperpage{24}
-  \item {D\+:/\+Users/\+Corentin/\+Dropbox/3e\+\_\+annee/\+Projet/tests/test\+\_\+dll/dll/\+Requete.\+h}, 
-		\hyperpage{25}
-  \item {D\+:/\+Users/\+Corentin/\+Dropbox/3e\+\_\+annee/\+Projet/tests/test\+\_\+dll/dll/\+Requete\+Http.\+cpp}, 
-		\hyperpage{26}
-  \item {D\+:/\+Users/\+Corentin/\+Dropbox/3e\+\_\+annee/\+Projet/tests/test\+\_\+dll/dll/\+Requete\+Http.\+h}, 
-		\hyperpage{27}
-  \item {D\+:/\+Users/\+Corentin/\+Dropbox/3e\+\_\+annee/\+Projet/tests/test\+\_\+dll/dll/base64.\+cpp}, 
-		\hyperpage{19}
-  \item {D\+:/\+Users/\+Corentin/\+Dropbox/3e\+\_\+annee/\+Projet/tests/test\+\_\+dll/dll/base64.\+h}, 
-		\hyperpage{20}
-  \item {D\+:/\+Users/\+Corentin/\+Dropbox/3e\+\_\+annee/\+Projet/tests/test\+\_\+dll/dll/happyhttp.\+cpp}, 
-		\hyperpage{21}
-  \item {D\+:/\+Users/\+Corentin/\+Dropbox/3e\+\_\+annee/\+Projet/tests/test\+\_\+dll/dll/happyhttp.\+h}, 
-		\hyperpage{22}
-  \item {D\+:/\+Users/\+Corentin/\+Dropbox/3e\+\_\+annee/\+Projet/tests/test\+\_\+dll/dll/main.\+cpp}, 
-		\hyperpage{23}
-  \item {D\+:/\+Users/\+Corentin/\+Dropbox/3e\+\_\+annee/\+Projet/tests/test\+\_\+dll/dll/main.\+h}, 
-		\hyperpage{23}
   \item {D\+L\+L\+\_\+\+E\+X\+P\+O\+RT}
     \subitem {main.\+h}, \hyperpage{24}
   \item {datawaiting}
     \subitem {happyhttp}, \hyperpage{11}
+  \item {dll/\+Requete.\+cpp}, \hyperpage{24}
+  \item {dll/\+Requete.\+h}, \hyperpage{25}
+  \item {dll/\+Requete\+Http.\+cpp}, \hyperpage{26}
+  \item {dll/\+Requete\+Http.\+h}, \hyperpage{27}
+  \item {dll/base64.\+cpp}, \hyperpage{19}
+  \item {dll/base64.\+h}, \hyperpage{20}
+  \item {dll/happyhttp.\+cpp}, \hyperpage{21}
+  \item {dll/happyhttp.\+h}, \hyperpage{22}
+  \item {dll/main.\+cpp}, \hyperpage{23}
+  \item {dll/main.\+h}, \hyperpage{24}
   \item {Dll\+Export}
     \subitem {Requete\+Http.\+cpp}, \hyperpage{26}
   \item {Dll\+Import}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.4.11)  16 MAY 2016 22:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.4.11)  16 MAY 2016 22:58
 entering extended mode
 **./refman.tex
 (refman.tex
@@ -950,7 +950,8 @@ Package caption Info: longtable package is loaded.
 
 ("C:\Program Files\MiKTex\tex\latex\caption\ltcaption.sty"
 Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
-)) (refman.aux)
+))
+No file refman.aux.
 \openout1 = `refman.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
@@ -967,7 +968,6 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
 LaTeX Font Info:    ... okay on input line 117.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 117.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 117.
-
 
 ("C:\Program Files\MiKTex\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -1047,8 +1047,6 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 117.
 LaTeX Info: Redefining \pageref on input line 117.
 LaTeX Info: Redefining \nameref on input line 117.
-
-(refman.out) (refman.out)
 \@outlinefile=\write4
 \openout4 = `refman.out'.
 
@@ -1063,11 +1061,13 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 6.29996pt on input line 128.
 LaTeX Font Info:    Try loading font information for U+wasy on input line 128.
- ("C:\Program Files\MiKTex\tex\latex\wasysym\uwasy.fd"
+
+("C:\Program Files\MiKTex\tex\latex\wasysym\uwasy.fd"
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 128.
- ("C:\Program Files\MiKTex\tex\latex\amsfonts\umsa.fd"
+
+("C:\Program Files\MiKTex\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 128.
@@ -1076,7 +1076,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 128.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 128.
+(Font)              scaled to size 10.79993pt on input line 130.
  [1
 
 
@@ -1091,24 +1091,12 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 22.39185pt on input line 134.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 22.39185pt on input line 134.
- (refman.toc
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 8.99994pt on input line 1.
- [3
-
-]
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 60.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.29996pt on input line 60.
- [4]
-[5] [6])
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
- [7] [8
+ [3
+
+] [4
 
 ]
 Package hyperref Info: Option `pageanchor' set `true' on input line 137.
@@ -1122,401 +1110,150 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 18.66588pt on input line 140.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 18.66588pt on input line 140.
-(index.tex
+(namespaces.tex
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 2.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 3.
+
+
+LaTeX Warning: Reference `namespace_my_domotik' on page 1 undefined on input li
+ne 3.
+
+) [1
+
+]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 142.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.29996pt on input line 142.
+ [2
+
+]
+Chapter 2.
+(hierarchy.tex
+
+LaTeX Warning: Reference `class_my_domotik_1_1_affichage' on page 3 undefined o
+n input line 3.
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_app' on page 3 undefined on inpu
+t line 5.
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_admin_page' on page 3 undefined 
+on input line 8.
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_gestion_equipements' on page 3 u
+ndefined on input line 9.
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_gestion_pieces' on page 3 undefi
+ned on input line 10.
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_main_page' on page 3 undefined o
+n input line 11.
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_reglages_couleur' on page 3 unde
+fined on input line 12.
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_reglages_mode_selection' on page
+ 3 undefined on input line 13.
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_reglages_reseau' on page 3 undef
+ined on input line 14.
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_reglages_taille_icones' on page 
+3 undefined on input line 15.
+
+) [3] [4
+
+]
+Chapter 3.
+(annotated.tex
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 4.
  ("C:\Program Files\MiKTex\tex\latex\psnfss\ts1phv.fd"
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 2.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 10.79993pt on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 6.29996pt on input line 3.
-) [1
+(Font)              scaled to size 8.99994pt on input line 4.
 
-] [2
 
-]
-Chapter 2.
-(namespaces.tex
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 3.
- ("C:\Program Files\MiKTex\tex\latex\psnfss\t1pcr.fd"
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)) [3]
-[4
+LaTeX Warning: Reference `class_my_domotik_1_1_admin_page' on page 5 undefined 
+on input line 4.
 
-]
-Chapter 3.
-(annotated.tex) [5] [6
+
+LaTeX Warning: Reference `class_my_domotik_1_1_affichage' on page 5 undefined o
+n input line 8.
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_app' on page 5 undefined on inpu
+t line 9.
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_gestion_equipements' on page 5 u
+ndefined on input line 10.
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_gestion_pieces' on page 5 undefi
+ned on input line 11.
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_main_page' on page 5 undefined o
+n input line 15.
+
+
+Underfull \hbox (badness 1466) in paragraph at lines 15--15
+ \T1/phv/m/n/10 Page per-me-t-tant d\TS1/phv/m/n/10 '\T1/phv/m/n/10 afficher la
+ page "[]Utilisateur" et no-tam-ment une grille de pièces ou 
+ []
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_reglages_couleur' on page 5 unde
+fined on input line 16.
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_reglages_mode_selection' on page
+ 5 undefined on input line 18.
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_reglages_reseau' on page 5 undef
+ined on input line 19.
+
+
+LaTeX Warning: Reference `class_my_domotik_1_1_reglages_taille_icones' on page 
+5 undefined on input line 21.
+
+) [5] [6
 
 ]
 Chapter 4.
-(files.tex) [7] [8
+(files.tex
 
-]
-Chapter 5.
-(namespacehappyhttp.tex [9]
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 110.
+LaTeX Warning: Reference `_admin_page_8xaml_8cs' on page 7 undefined on input l
+ine 3.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 110.
+LaTeX Warning: Reference `_affichage_8cs' on page 7 undefined on input line 4.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 113.
+LaTeX Warning: Reference `_app_8xaml_8cs' on page 7 undefined on input line 5.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 116.
+LaTeX Warning: Reference `_gestion_equipements_8xaml_8cs' on page 7 undefined o
+n input line 6.
 
 
-Underfull \hbox (badness 10000) detected at line 122
-[][][]
- []
-
-LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 126.
-LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 126.
-LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 8.99994pt on input line 126.
-LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <7> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 126.
-LaTeX Font Info:    Font shape `T1/phv/b/it' in size <7> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 126.
-LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 6.29996pt on input line 126.
-[10]
-LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <10> not available
-(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 233.
-LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
-(Font)              scaled to size 8.99994pt on input line 233.
-) [11] [12
-
-]
-Chapter 6.
-(classhappyhttp_1_1_connection.tex [13]
-
-LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 100.
-
-
-LaTeX Font Warning: Font shape `T1/pcr/bc/it' undefined
-(Font)              using `T1/pcr/bc/n' instead on input line 142.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 160.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 160.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 160.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 172.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 175.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 178.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 181.
-
-) (class_requete.tex [14]) (classhappyhttp_1_1_response.tex [15]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `alignment tab' on input line 44.
-
-) (classhappyhttp_1_1_wobbly.tex [16]
-Underfull \hbox (badness 10000) detected at line 30
-[][][]
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 62.
-
-) [17] [18
-
-]
-Chapter 7.
-(base64_8cpp.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--5
-
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 21.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `alignment tab' on input line 21.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 21.
-
-
-Underfull \hbox (badness 10000) detected at line 27
-[][][]
- []
-
-LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <7> not available
-(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 37.
-LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
-(Font)              scaled to size 6.29996pt on input line 37.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 37.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 37.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 37.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 37.
-
-[19]
-Underfull \hbox (badness 10000) detected at line 45
-[][][]
- []
-
-) (base64_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
-
- []
-
-
-Underfull \hbox (badness 10000) detected at line 21
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 24
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 27
-[][][]
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 39.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `alignment tab' on input line 39.
-
-
-Underfull \hbox (badness 10000) detected at line 45
-[][][]
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 55.
-
-[20]
-Underfull \hbox (badness 10000) detected at line 63
-[][][]
- []
-
-) (happyhttp_8cpp.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--21
-
- []
-
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 25.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 25.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 25.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 45.
-
-) (happyhttp_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--12
-
- []
-
-[21]
-Underfull \hbox (badness 2903) in paragraph at lines 38--101
-[][]\T1/phv/m/n/10 happyhttp[]::[]R[]E[]Q[]U[]E[]S[]T[]_[][]E[]N[]T[]I[]T[]Y[]_
-[][]T[]O[]O[]_[][]L[]A[]R[]GE[][] = 413, [][]happyhttp[]::[]R[]E[]Q[]U[]E[]S[]T
-[]_[][]U[]R[]I[]_[][]T[]O[]O[]_[][]L[]O[]NG[][] = 414,
- []
-
-
-Underfull \hbox (badness 3199) in paragraph at lines 38--101
-[][]\T1/phv/m/n/10 happyhttp[]::[]U[]N[]S[]U[]P[]P[]O[]R[]T[]E[]D[]_[][]M[]E[]D
-[]I[]A[]_[][]T[]Y[]PE[][] = 415, [][]happyhttp[]::[]R[]E[]Q[]U[]E[]S[]T[]E[]D[]
-_[][]R[]A[]N[]G[]E[]_[][]N[]O[]T[]_[][]S[]A[]T[]I[]S[]F[]I[]
- []
-
-[22]
-Underfull \hbox (badness 10000) detected at line 114
-[][][]
- []
-
-) (main_8cpp.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--6
-
- []
-
-) (main_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-
- []
-
-[23]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 19.
-
-) (_requete_8cpp.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--7
-
- []
-
-) (_requete_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--15
-
- []
-
-[24]
-Underfull \hbox (badness 10000) detected at line 30
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 33
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 36
-[][][]
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 44.
-
-) (_requete_http_8cpp.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--8
-
- []
-
-[25]
-Underfull \hbox (badness 10000) detected at line 50
-[][][]
- []
-
-[26]
-Underfull \hbox (badness 10000) detected at line 68
-[][][]
- []
-
-) (_requete_http_8h.tex
-Underfull \hbox (badness 10000) detected at line 25
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 28
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 31
-[][][]
- []
-
-[27]
-Underfull \hbox (badness 10000) detected at line 64
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 82
-[][][]
- []
-
-) [28] (refman.ind [29
-
-
-
-] [30] [31] [32
-
-])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 176.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 176.
- (refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 176.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 176.
-Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 7BDAAC98294458CE552796CBDD87A1FC;33404.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 176.
- ) 
-Here is how much of TeX's memory you used:
- 15254 strings out of 493634
- 227598 string characters out of 3145355
- 372446 words of memory out of 3000000
- 18006 multiletter control sequences out of 15000+200000
- 71983 words of font info for 86 fonts, out of 3000000 for 9000
- 1025 hyphenation exceptions out of 8191
- 53i,15n,92p,2063b,635s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTex/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/Mi
-KTex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTex/fonts/t
-ype1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTex/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb><C:/Program Files/MiKTex/fonts/type1/public/amsfonts/cm/c
-msy7.pfb><C:/Program Files/MiKTex/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/
-Program Files/MiKTex/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTe
-x/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTex/fonts/type1/urw/
-helvetic/uhvb8ac.pfb><C:/Program Files/MiKTex/fonts/type1/urw/helvetic/uhvbo8a.
-pfb><C:/Program Files/MiKTex/fonts/type1/urw/helvetic/uhvbo8ac.pfb><C:/Program 
-Files/MiKTex/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTex/fonts
-/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (40 pages, 409470 bytes).
-PDF statistics:
- 1637 PDF objects out of 1728 (max. 8388607)
- 351 named destinations out of 1000 (max. 500000)
- 1073 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+LaTeX Warning: Reference `_g
