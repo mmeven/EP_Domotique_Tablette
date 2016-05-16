@@ -1,0 +1,322 @@
+\hypertarget{class_my_domotik_1_1_affichage}{}\section{My\+Domotik.\+Affichage Class Reference}
+\label{class_my_domotik_1_1_affichage}\index{My\+Domotik.\+Affichage@{My\+Domotik.\+Affichage}}
+
+
+Cette classe gère la création et l\textquotesingle{}affichage des grilles de pièces et d\textquotesingle{}équipements, ~\newline
+l\textquotesingle{}affichage des couleurs selon le thème, ~\newline
+la taille de la grille selon le format, ~\newline
+l\textquotesingle{}affichage de l\textquotesingle{}heure.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_my_domotik_1_1_affichage_a968c2ddc894d6f891b87ea5ff5b70ddb}{Affichage} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+int \hyperlink{class_my_domotik_1_1_affichage_a30f15e20c10b05dbe0f1e23f3c643811}{creer\+Grille} (Grid cadre, int format)
+\begin{DoxyCompactList}\small\item\em En fonction du format de la grille, cette méthode ajoute le bon nombre de colonnes et de lignes au layout placé en paramètres, afin de former une grille. \end{DoxyCompactList}\item 
+Text\+Block \hyperlink{class_my_domotik_1_1_affichage_a3515202e920650f529f661ddcee4d165}{creer\+Label} (String nom)
+\begin{DoxyCompactList}\small\item\em Cette méthode permet de créer le Text\+Block composé du nom de l\textquotesingle{}équipement/de la pièce, et qui apparaît en dessous de l\textquotesingle{}icône de l\textquotesingle{}équipement/de la pièce. \end{DoxyCompactList}\item 
+Image \hyperlink{class_my_domotik_1_1_affichage_a3d4c5ed0d38562242c0ca3463add9947}{creer\+Image\+Icone} (string name\+Ic, Button bouton)
+\begin{DoxyCompactList}\small\item\em Cette méthode génère un objet Image à partir d\textquotesingle{}un nom d\textquotesingle{}image passé en paramètre. ~\newline
+Les dimensions de l\textquotesingle{}image sont adaptées aux dimensions du bouton qui va la contenir et qui est passé en paramètre. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_affichage_ac2c4053c17bc779af2b6cf55f0bcaafd}{ajouter\+Image\+Et\+Label\+Au\+Bouton} (Image image, Text\+Block nom\+Icone, Button bouton)
+\begin{DoxyCompactList}\small\item\em Cette méthode associe à un bouton, un Text\+Block (nom de la pièce ou de l\textquotesingle{}équipement) et une Image (icône de la pièce ou de l\textquotesingle{}équipement). \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_affichage_a1b41c3092451423dce76c336c1036b11}{affiche\+Heure} (Text\+Block Time\+Box)
+\begin{DoxyCompactList}\small\item\em Cette méthode permet d\textquotesingle{}afficher l\textquotesingle{}heure dans le layout passé en paramètres. \end{DoxyCompactList}\item 
+List$<$ Button $>$ \hyperlink{class_my_domotik_1_1_affichage_a3c73ff2b9b5837148829425f0da0297a}{afficher\+Pieces\+Grille} (int page\+Actuelle, Grid cadre, Int\+Ptr core)
+\begin{DoxyCompactList}\small\item\em Cette méthode permet d\textquotesingle{}afficher toutes les pièces enregistrées dans le Core (cf D\+LL) sous forme d\textquotesingle{}icônes dans une grille. ~\newline
+Elle affiche la grille dans le layout passé en paramètre et l\textquotesingle{}affiche à la page demandée (page\+Actuelle). \end{DoxyCompactList}\item 
+List$<$ Button $>$ \hyperlink{class_my_domotik_1_1_affichage_af33a1fbcfc31912bbdb419214d41f04e}{afficher\+Equipements\+Grille} (int page\+Actuelle, String nom\+Piece, Grid cadre, Int\+Ptr core)
+\begin{DoxyCompactList}\small\item\em Cette méthode permet d\textquotesingle{}afficher tous les équipements enregistrés dans le Core (cf D\+LL) sous forme d\textquotesingle{}icônes dans une grille. ~\newline
+Elle affiche la grille dans le layout passé en paramètre et l\textquotesingle{}affiche à la page demandée (page\+Actuelle). \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_affichage_a80ececacfa28945d11e443bd699c86b1}{afficher\+Couleur} (int i, List$<$ Button $>$ boutons, Grid maingrid, Rectangle rect1, Rectangle rect2, Rectangle rect3, Grid cadre, Rectangle rect\+Accueil, Rectangle rect\+Suivant, Rectangle rect\+Precedent, Rectangle rect\+Fauteuil)
+\begin{DoxyCompactList}\small\item\em Cette méthode associe une couleur à chaque élément passé en paramètre, en fonction du thème. ~\newline
+Les couleurs sont associées aléatoirement sauf pour le thème 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_my_domotik_1_1_affichage_a8a227cc856685b6daf0472277bccdfd3}{nb\+Cases}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cette classe gère la création et l\textquotesingle{}affichage des grilles de pièces et d\textquotesingle{}équipements, ~\newline
+l\textquotesingle{}affichage des couleurs selon le thème, ~\newline
+la taille de la grille selon le format, ~\newline
+l\textquotesingle{}affichage de l\textquotesingle{}heure. 
+
+
+
+Definition at line 22 of file Affichage.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}!Affichage@{Affichage}}
+\index{Affichage@{Affichage}!My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}}
+\subsubsection[{\texorpdfstring{Affichage()}{Affichage()}}]{\setlength{\rightskip}{0pt plus 5cm}My\+Domotik.\+Affichage.\+Affichage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_my_domotik_1_1_affichage_a968c2ddc894d6f891b87ea5ff5b70ddb}{}\label{class_my_domotik_1_1_affichage_a968c2ddc894d6f891b87ea5ff5b70ddb}
+
+
+Constructeur de la classe. 
+
+
+
+Definition at line 30 of file Affichage.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}!affiche\+Heure@{affiche\+Heure}}
+\index{affiche\+Heure@{affiche\+Heure}!My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}}
+\subsubsection[{\texorpdfstring{affiche\+Heure(\+Text\+Block Time\+Box)}{afficheHeure(TextBlock TimeBox)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Affichage.\+affiche\+Heure (
+\begin{DoxyParamCaption}
+\item[{Text\+Block}]{Time\+Box}
+\end{DoxyParamCaption}
+)}\hypertarget{class_my_domotik_1_1_affichage_a1b41c3092451423dce76c336c1036b11}{}\label{class_my_domotik_1_1_affichage_a1b41c3092451423dce76c336c1036b11}
+
+
+Cette méthode permet d\textquotesingle{}afficher l\textquotesingle{}heure dans le layout passé en paramètres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Time\+Box} & Layout dans lequel on souhaite afficher l\textquotesingle{}heure.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 159 of file Affichage.\+cs.
+
+\index{My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}!afficher\+Couleur@{afficher\+Couleur}}
+\index{afficher\+Couleur@{afficher\+Couleur}!My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}}
+\subsubsection[{\texorpdfstring{afficher\+Couleur(int i, List$<$ Button $>$ boutons, Grid maingrid, Rectangle rect1, Rectangle rect2, Rectangle rect3, Grid cadre, Rectangle rect\+Accueil, Rectangle rect\+Suivant, Rectangle rect\+Precedent, Rectangle rect\+Fauteuil)}{afficherCouleur(int i, List< Button > boutons, Grid maingrid, Rectangle rect1, Rectangle rect2, Rectangle rect3, Grid cadre, Rectangle rectAccueil, Rectangle rectSuivant, Rectangle rectPrecedent, Rectangle rectFauteuil)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Affichage.\+afficher\+Couleur (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{List$<$ Button $>$}]{boutons, }
+\item[{Grid}]{maingrid, }
+\item[{Rectangle}]{rect1, }
+\item[{Rectangle}]{rect2, }
+\item[{Rectangle}]{rect3, }
+\item[{Grid}]{cadre, }
+\item[{Rectangle}]{rect\+Accueil, }
+\item[{Rectangle}]{rect\+Suivant, }
+\item[{Rectangle}]{rect\+Precedent, }
+\item[{Rectangle}]{rect\+Fauteuil}
+\end{DoxyParamCaption}
+)}\hypertarget{class_my_domotik_1_1_affichage_a80ececacfa28945d11e443bd699c86b1}{}\label{class_my_domotik_1_1_affichage_a80ececacfa28945d11e443bd699c86b1}
+
+
+Cette méthode associe une couleur à chaque élément passé en paramètre, en fonction du thème. ~\newline
+Les couleurs sont associées aléatoirement sauf pour le thème 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Numéro du thème\\
+\hline
+{\em boutons} & Liste de boutons associés à des pièces ou à des équipements.\\
+\hline
+{\em maingrid} & Layout dont il faut changer la couleur de fond.\\
+\hline
+{\em rect1} & Rectangle dont il faut changer la couleur de fond.\\
+\hline
+{\em rect2} & Rectangle dont il faut changer la couleur de fond.\\
+\hline
+{\em rect3} & Rectangle dont il faut changer la couleur de fond.\\
+\hline
+{\em cadre} & Layout dont il faut changer la couleur de fond.\\
+\hline
+{\em rect\+Accueil} & Rectangle dont il faut changer la couleur de fond.\\
+\hline
+{\em rect\+Suivant} & Rectangle dont il faut changer la couleur de fond.\\
+\hline
+{\em rect\+Precedent} & Rectangle dont il faut changer la couleur de fond.\\
+\hline
+{\em rect\+Fauteuil} & Rectangle dont il faut changer la couleur de fond.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 388 of file Affichage.\+cs.
+
+\index{My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}!afficher\+Equipements\+Grille@{afficher\+Equipements\+Grille}}
+\index{afficher\+Equipements\+Grille@{afficher\+Equipements\+Grille}!My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}}
+\subsubsection[{\texorpdfstring{afficher\+Equipements\+Grille(int page\+Actuelle, String nom\+Piece, Grid cadre, Int\+Ptr core)}{afficherEquipementsGrille(int pageActuelle, String nomPiece, Grid cadre, IntPtr core)}}]{\setlength{\rightskip}{0pt plus 5cm}List$<$Button$>$ My\+Domotik.\+Affichage.\+afficher\+Equipements\+Grille (
+\begin{DoxyParamCaption}
+\item[{int}]{page\+Actuelle, }
+\item[{String}]{nom\+Piece, }
+\item[{Grid}]{cadre, }
+\item[{Int\+Ptr}]{core}
+\end{DoxyParamCaption}
+)}\hypertarget{class_my_domotik_1_1_affichage_af33a1fbcfc31912bbdb419214d41f04e}{}\label{class_my_domotik_1_1_affichage_af33a1fbcfc31912bbdb419214d41f04e}
+
+
+Cette méthode permet d\textquotesingle{}afficher tous les équipements enregistrés dans le Core (cf D\+LL) sous forme d\textquotesingle{}icônes dans une grille. ~\newline
+Elle affiche la grille dans le layout passé en paramètre et l\textquotesingle{}affiche à la page demandée (page\+Actuelle). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em page\+Actuelle} & Numéro de la page de la grille à afficher.\\
+\hline
+{\em cadre} & Layout dans lequel la grille sera créée.\\
+\hline
+{\em core} & Arbre (cf D\+LL) contenant les équipements à afficher.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Liste des boutons associés aux pièces.
+\end{DoxyReturn}
+
+
+Definition at line 280 of file Affichage.\+cs.
+
+\index{My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}!afficher\+Pieces\+Grille@{afficher\+Pieces\+Grille}}
+\index{afficher\+Pieces\+Grille@{afficher\+Pieces\+Grille}!My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}}
+\subsubsection[{\texorpdfstring{afficher\+Pieces\+Grille(int page\+Actuelle, Grid cadre, Int\+Ptr core)}{afficherPiecesGrille(int pageActuelle, Grid cadre, IntPtr core)}}]{\setlength{\rightskip}{0pt plus 5cm}List$<$Button$>$ My\+Domotik.\+Affichage.\+afficher\+Pieces\+Grille (
+\begin{DoxyParamCaption}
+\item[{int}]{page\+Actuelle, }
+\item[{Grid}]{cadre, }
+\item[{Int\+Ptr}]{core}
+\end{DoxyParamCaption}
+)}\hypertarget{class_my_domotik_1_1_affichage_a3c73ff2b9b5837148829425f0da0297a}{}\label{class_my_domotik_1_1_affichage_a3c73ff2b9b5837148829425f0da0297a}
+
+
+Cette méthode permet d\textquotesingle{}afficher toutes les pièces enregistrées dans le Core (cf D\+LL) sous forme d\textquotesingle{}icônes dans une grille. ~\newline
+Elle affiche la grille dans le layout passé en paramètre et l\textquotesingle{}affiche à la page demandée (page\+Actuelle). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em page\+Actuelle} & Numéro de la page de la grille à afficher.\\
+\hline
+{\em cadre} & Layout dans lequel la grille sera créée.\\
+\hline
+{\em core} & Arbre (cf D\+LL) contenant les pièces à afficher.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Liste des boutons associés aux pièces.
+\end{DoxyReturn}
+
+
+Definition at line 182 of file Affichage.\+cs.
+
+\index{My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}!ajouter\+Image\+Et\+Label\+Au\+Bouton@{ajouter\+Image\+Et\+Label\+Au\+Bouton}}
+\index{ajouter\+Image\+Et\+Label\+Au\+Bouton@{ajouter\+Image\+Et\+Label\+Au\+Bouton}!My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}}
+\subsubsection[{\texorpdfstring{ajouter\+Image\+Et\+Label\+Au\+Bouton(\+Image image, Text\+Block nom\+Icone, Button bouton)}{ajouterImageEtLabelAuBouton(Image image, TextBlock nomIcone, Button bouton)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Affichage.\+ajouter\+Image\+Et\+Label\+Au\+Bouton (
+\begin{DoxyParamCaption}
+\item[{Image}]{image, }
+\item[{Text\+Block}]{nom\+Icone, }
+\item[{Button}]{bouton}
+\end{DoxyParamCaption}
+)}\hypertarget{class_my_domotik_1_1_affichage_ac2c4053c17bc779af2b6cf55f0bcaafd}{}\label{class_my_domotik_1_1_affichage_ac2c4053c17bc779af2b6cf55f0bcaafd}
+
+
+Cette méthode associe à un bouton, un Text\+Block (nom de la pièce ou de l\textquotesingle{}équipement) et une Image (icône de la pièce ou de l\textquotesingle{}équipement). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image (icône de la pièce ou de l\textquotesingle{}équipement).\\
+\hline
+{\em nom\+Icone} & Text\+Block (nom de la pièce ou de l\textquotesingle{}équipement).\\
+\hline
+{\em bouton} & Bouton qui sera associé à une pièce ou un équipement\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 138 of file Affichage.\+cs.
+
+\index{My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}!creer\+Grille@{creer\+Grille}}
+\index{creer\+Grille@{creer\+Grille}!My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}}
+\subsubsection[{\texorpdfstring{creer\+Grille(\+Grid cadre, int format)}{creerGrille(Grid cadre, int format)}}]{\setlength{\rightskip}{0pt plus 5cm}int My\+Domotik.\+Affichage.\+creer\+Grille (
+\begin{DoxyParamCaption}
+\item[{Grid}]{cadre, }
+\item[{int}]{format}
+\end{DoxyParamCaption}
+)}\hypertarget{class_my_domotik_1_1_affichage_a30f15e20c10b05dbe0f1e23f3c643811}{}\label{class_my_domotik_1_1_affichage_a30f15e20c10b05dbe0f1e23f3c643811}
+
+
+En fonction du format de la grille, cette méthode ajoute le bon nombre de colonnes et de lignes au layout placé en paramètres, afin de former une grille. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cadre} & Layout qui contiendra la grille.\\
+\hline
+{\em format} & \char`\"{}3\char`\"{} pour une petite grille, \char`\"{}2\char`\"{} pour une grille moyenne, autre pour une grande grille.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 46 of file Affichage.\+cs.
+
+\index{My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}!creer\+Image\+Icone@{creer\+Image\+Icone}}
+\index{creer\+Image\+Icone@{creer\+Image\+Icone}!My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}}
+\subsubsection[{\texorpdfstring{creer\+Image\+Icone(string name\+Ic, Button bouton)}{creerImageIcone(string nameIc, Button bouton)}}]{\setlength{\rightskip}{0pt plus 5cm}Image My\+Domotik.\+Affichage.\+creer\+Image\+Icone (
+\begin{DoxyParamCaption}
+\item[{string}]{name\+Ic, }
+\item[{Button}]{bouton}
+\end{DoxyParamCaption}
+)}\hypertarget{class_my_domotik_1_1_affichage_a3d4c5ed0d38562242c0ca3463add9947}{}\label{class_my_domotik_1_1_affichage_a3d4c5ed0d38562242c0ca3463add9947}
+
+
+Cette méthode génère un objet Image à partir d\textquotesingle{}un nom d\textquotesingle{}image passé en paramètre. ~\newline
+Les dimensions de l\textquotesingle{}image sont adaptées aux dimensions du bouton qui va la contenir et qui est passé en paramètre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\+Ic} & Nom de l\textquotesingle{}Image à générer.\\
+\hline
+{\em bouton} & Bouton qui contiendra l\textquotesingle{}image à générer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Objet Image
+\end{DoxyReturn}
+
+
+Definition at line 107 of file Affichage.\+cs.
+
+\index{My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}!creer\+Label@{creer\+Label}}
+\index{creer\+Label@{creer\+Label}!My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}}
+\subsubsection[{\texorpdfstring{creer\+Label(\+String nom)}{creerLabel(String nom)}}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Block My\+Domotik.\+Affichage.\+creer\+Label (
+\begin{DoxyParamCaption}
+\item[{String}]{nom}
+\end{DoxyParamCaption}
+)}\hypertarget{class_my_domotik_1_1_affichage_a3515202e920650f529f661ddcee4d165}{}\label{class_my_domotik_1_1_affichage_a3515202e920650f529f661ddcee4d165}
+
+
+Cette méthode permet de créer le Text\+Block composé du nom de l\textquotesingle{}équipement/de la pièce, et qui apparaît en dessous de l\textquotesingle{}icône de l\textquotesingle{}équipement/de la pièce. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Nom de l\textquotesingle{}équipement/de la pièce.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Text\+Block composé du nom.
+\end{DoxyReturn}
+
+
+Definition at line 77 of file Affichage.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\index{My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}!nb\+Cases@{nb\+Cases}}
+\index{nb\+Cases@{nb\+Cases}!My\+Domotik\+::\+Affichage@{My\+Domotik\+::\+Affichage}}
+\subsubsection[{\texorpdfstring{nb\+Cases}{nbCases}}]{\setlength{\rightskip}{0pt plus 5cm}int My\+Domotik.\+Affichage.\+nb\+Cases\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_affichage_a8a227cc856685b6daf0472277bccdfd3}{}\label{class_my_domotik_1_1_affichage_a8a227cc856685b6daf0472277bccdfd3}
+
+
+Definition at line 25 of file Affichage.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_affichage_8cs}{Affichage.\+cs}\end{DoxyCompactItemize}

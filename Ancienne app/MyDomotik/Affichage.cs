@@ -57,7 +57,7 @@ namespace MyDomotik
 
 
 
-        int nbCases; //nb de cases de la grille, est calculée en fonction du format
+        int nbCases; //nb de cases de la grille, il est calculé en fonction du format
 
         /// <summary>
         /// Constructeur de la classe.
@@ -69,7 +69,7 @@ namespace MyDomotik
         
 
 
-        //Creation de la grille : creation des "grid" en fonction du format, retourne le nombre de cases de la grille
+        // Création de la grille : création des "grid" en fonction du format, retourne le nombre de cases de la grille
         /// <summary>
         /// En fonction du format de la grille, cette méthode ajoute le bon nombre de colonnes et de lignes au layout placé en paramètres, afin de former une grille.
         /// </summary>
@@ -92,8 +92,8 @@ namespace MyDomotik
                 default: nbCases = 10; nbColonnes = 5;  break;
             }
             
-            cadre.RowDefinitions.Add(new RowDefinition()); //nb de lignes toujours égale à 2
-            cadre.RowDefinitions.Add(new RowDefinition()); //nb de lignes toujours égale à 2
+            cadre.RowDefinitions.Add(new RowDefinition()); //nb de lignes toujours égal à 2
+            cadre.RowDefinitions.Add(new RowDefinition()); //nb de lignes toujours égal à 2
 
             for (int i = 0; i < nbColonnes; i++)
             {
@@ -105,13 +105,13 @@ namespace MyDomotik
 
 
         /// <summary>
-        /// Cette méthode permet de créer le TextBlock composé du nom de l'equipement/de la pièce, et qui apparait en desous de l'icone de l'equipement/de la pièce.
+        /// Cette méthode permet de créer le TextBlock composé du nom de l'équipement/de la pièce, et qui apparaît en dessous de l'icône de l'équipement/de la pièce.
         /// </summary>
-        /// <param name="nom">Nom de l'equipement/de la pièce.</param>
+        /// <param name="nom">Nom de l'équipement/de la pièce.</param>
         /// <returns>TextBlock composé du nom.</returns>
         public TextBlock creerLabel(String nom)
         {
-            // création label : nom de l'icone
+            // création label : nom de l'icône
             TextBlock labelIcone = new TextBlock();
             labelIcone.SetValue(TextBlock.TextProperty, nom);
 
@@ -131,10 +131,10 @@ namespace MyDomotik
 
 
 
-        //Retourne l'image créé à partir du nom qu'on lui donne en paramètre
+        //Retourne l'image créée à partir du nom qu'on lui donne en paramètre
         /// <summary>
-        /// Cette méthode génère un objet Image à partir d'un nom d'image placé en paramètres. \n
-        /// Les dimensions de l'image sont adaptées aux dimensions du bouton qui va la contenir et qui est placé en paramètres.
+        /// Cette méthode génère un objet Image à partir d'un nom d'image passé en paramètre. \n
+        /// Les dimensions de l'image sont adaptées aux dimensions du bouton qui va la contenir et qui est passé en paramètre.
         /// </summary>
         /// <param name="nameIc">Nom de l'Image à générer.</param>
         /// <param name="bouton">Bouton qui contiendra l'image à générer.</param>
@@ -146,12 +146,12 @@ namespace MyDomotik
             BitmapImage SourceBi = new BitmapImage();
 
             string chaineSource = "ms-appx:///Assets/ICONS_MDTOUCH/size_64x64/" + nameIc; // spécifie le dossier adéquat où charger l'image
-            Uri uri = new Uri(chaineSource, UriKind.Absolute); //objet specifiant le chemin de l'image
+            Uri uri = new Uri(chaineSource, UriKind.Absolute); //objet spécifiant le chemin de l'image
 
             SourceBi.UriSource = uri;
             image.Source = SourceBi;
 
-            // empeche l'icone de depasser du contour du bouton
+            // empêche l'icône de dépasser du contour du bouton
             double hauteur = bouton.Height;
             double largeur = bouton.Width;
 
@@ -163,7 +163,7 @@ namespace MyDomotik
 
 
 
-        //Associe au bouton placé en parametre: une image (icone de l'equipement) et le nom de l'equipement
+        // Associe au bouton passé en paramètre: une image (icône de l'équipement) et le nom de l'équipement
         /// <summary>
         /// Cette méthode associe à un bouton, un TextBlock (nom de la pièce ou de l'équipement) et une Image (icône de la pièce ou de l'équipement).
         /// </summary>
@@ -176,8 +176,8 @@ namespace MyDomotik
             grilleBouton.RowDefinitions.Add(new RowDefinition());
             grilleBouton.RowDefinitions.Add(new RowDefinition());
 
-            image.SetValue(Grid.RowProperty, 0); //image sur la partie superieur du bouton
-            nomIcone.SetValue(Grid.RowProperty, 1); //textblock sur la partie inferieur du bouton
+            image.SetValue(Grid.RowProperty, 0); //image sur la partie supérieure du bouton
+            nomIcone.SetValue(Grid.RowProperty, 1); //textblock sur la partie inférieure du bouton
 
             grilleBouton.Children.Add(image);
             grilleBouton.Children.Add(nomIcone);
@@ -186,9 +186,9 @@ namespace MyDomotik
 
 
 
-        //permet d'afficher l'heure
+        // Permet d'afficher l'heure
         /// <summary>
-        /// Cette méthode permet d'afficher l'heure dans le layout placé en paramètres.
+        /// Cette méthode permet d'afficher l'heure dans le layout passé en paramètres.
         /// </summary>
         /// <param name="TimeBox">Layout dans lequel on souhaite afficher l'heure.</param>
         public void afficheHeure(TextBlock TimeBox)
@@ -205,32 +205,32 @@ namespace MyDomotik
 
 
 
-        //Permet d'afficher les pieces dans la grille
+        // Permet d'afficher les pièces dans la grille
         /// <summary>
         /// Cette méthode permet d'afficher toutes les pièces enregistrées dans le Core (cf DLL) sous forme d'icônes dans une grille. \n
-        /// Elle affiche la grille dans le layout placé en paramètres et l'affiche à la page demandée (pageActuelle).
+        /// Elle affiche la grille dans le layout passé en paramètre et l'affiche à la page demandée (pageActuelle).
         /// </summary>
         /// <param name="pageActuelle">Numéro de la page de la grille à afficher.</param>
-        /// <param name="cadre">Layout dans lequel la grille sera créé.</param>
+        /// <param name="cadre">Layout dans lequel la grille sera créée.</param>
         /// <param name="core">Arbre (cf DLL) contenant les pièces à afficher.</param>
-        /// <returns>Liste des boutons associées aux pièces.</returns>
+        /// <returns>Liste des boutons associés aux pièces.</returns>
         public List<Button> afficherPiecesGrille(int pageActuelle, Grid cadre, IntPtr core)
         {
             int format = Core_getIconSize(core); //format de la grille, 0: grande, 1: moyenne, 2: petite
-            nbCases = creerGrille(cadre, format); //cree le bon nombre de "grid" selon le format et retourne le nb de cases
+            nbCases = creerGrille(cadre, format); //crée le bon nombre de "grid" selon le format et retourne le nb de cases
 
             int nbRoom = Core_getNumberRooms(core);
 
             List<Button> boutons = new List<Button>();
 
-            //Cree un bouton pour chaque piece et l'affiche dans la grille
+            //Crée un bouton pour chaque pièce et l'affiche dans la grille
             for (int i = pageActuelle * nbCases; i < nbRoom && i<nbCases*(pageActuelle+1); i++)
             {
-                IntPtr room = Core_getRoomByIndex(core, i);  //piece a afficher
+                IntPtr room = Core_getRoomByIndex(core, i);  //pièce a afficher
   
-                Button bouton = new Button(); //bouton associe a cette piece
+                Button bouton = new Button(); //bouton associé a cette pièce
 
-                bouton.Tag = i; //tag permet de recuperer facilement l'indice de la piece 
+                bouton.Tag = i; //tag permet de récupérer facilement l'indice de la pièce 
 
                 bouton.SetValue(Button.HorizontalAlignmentProperty, HorizontalAlignment.Stretch);
                 bouton.SetValue(Button.VerticalAlignmentProperty, VerticalAlignment.Stretch);
@@ -240,7 +240,7 @@ namespace MyDomotik
                 string nameRoom = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(roomName);
                 TextBlock nomIcone = creerLabel(nameRoom);
 
-                //Création image (icone de la piece)
+                //Création image (icône de la piece)
                 IntPtr iconeName = Node_getIco(room);
                 string nameIc = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(iconeName);
                 Image image = creerImageIcone(nameIc, bouton);
@@ -264,7 +264,7 @@ namespace MyDomotik
                 boutons.Add(bouton);
             }
 
-            //nbRoom : nombre de pièces qui reste à afficher
+            //nbRoom : nombre de pièces qu'il reste à afficher
             if (nbRoom - nbCases * pageActuelle < 0)
             {
                 nbRoom = 0;
@@ -274,7 +274,7 @@ namespace MyDomotik
                 nbRoom = nbRoom - nbCases * pageActuelle;
             }
 
-            //Complete la grille avec des boutons vides (sans pièce)
+            //Complète la grille avec des boutons vides (sans pièce)
             for (int i = nbCases * pageActuelle + ((nbRoom % nbCases)); i < (nbCases * pageActuelle + nbCases); i++)
             {
                 Button bouton = new Button();
@@ -303,19 +303,19 @@ namespace MyDomotik
         
 
 
-        //Permet d'afficher les equipements dans la grille
+        //Permet d'afficher les équipements dans la grille
         /// <summary>
         /// Cette méthode permet d'afficher tous les équipements enregistrés dans le Core (cf DLL) sous forme d'icônes dans une grille. \n
-        /// Elle affiche la grille dans le layout placé en paramètres et l'affiche à la page demandée (pageActuelle).
+        /// Elle affiche la grille dans le layout passé en paramètre et l'affiche à la page demandée (pageActuelle).
         /// </summary>
         /// <param name="pageActuelle">Numéro de la page de la grille à afficher.</param>
-        /// <param name="cadre">Layout dans lequel la grille sera créé.</param>
+        /// <param name="cadre">Layout dans lequel la grille sera créée.</param>
         /// <param name="core">Arbre (cf DLL) contenant les équipements à afficher.</param>
-        /// <returns>Liste des boutons associées aux pièces.</returns>
+        /// <returns>Liste des boutons associés aux pièces.</returns>
         public List<Button> afficherEquipementsGrille(int pageActuelle, String nomPiece, Grid cadre, IntPtr core)
         {
             int format = Core_getIconSize(core); //format de la grille, 0: grande, 1: moyenne, 2: petite
-            nbCases = creerGrille(cadre, format); //cree le bon nombre de "grid" selon le format et retourne le nb de cases
+            nbCases = creerGrille(cadre, format); //crée le bon nombre de "grid" selon le format et retourne le nb de cases
 
             IntPtr room = Core_getRoomByName(core,nomPiece);
            
@@ -323,30 +323,30 @@ namespace MyDomotik
             
             List<Button> boutons = new List<Button>();
             
-            //Cree un bouton pour chaque equipement et l'affiche dans la grille
+            //Crée un bouton pour chaque équipement et l'affiche dans la grille
             for (int i = pageActuelle * nbCases; i < nbEquip && i < nbCases * (pageActuelle + 1); i++)
             {
-                IntPtr equ = Room_getEquipmentByIndex(room, i);  //equipement a afficher
+                IntPtr equ = Room_getEquipmentByIndex(room, i);  //équipement à afficher
 
-                Button bouton = new Button(); //bouton associe a cet equipement
+                Button bouton = new Button(); //bouton associé a cet equipement
             
-                bouton.Tag = i; //tag permet de recuperer facilement l'indice de l'equipement 
+                bouton.Tag = i; //tag qui permet de récuperer facilement l'indice de l'équipement 
 
                 bouton.SetValue(Button.HorizontalAlignmentProperty, HorizontalAlignment.Stretch);
                 bouton.SetValue(Button.VerticalAlignmentProperty, VerticalAlignment.Stretch);
 
-                //Affichage du nom de l'equipement dans la grille
+                //Affichage du nom de l'équipement dans la grille
                 IntPtr tmp = Node_getName(equ);
                 string nomEqu = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
                 TextBlock nomIcone = creerLabel(nomEqu);
 
-                //Création image (icone de l'equipement)
+                //Création image (icône de l'equipement)
                 IntPtr iconeName = Node_getIco(equ);
                 string nameIc = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(iconeName);
                 Image image = creerImageIcone(nameIc, bouton);
 
 
-                //Associe image et nom de l'equipement au bouton
+                //Associe image et nom de l'équipement au bouton
                 ajouterImageEtLabelAuBouton(image, nomIcone, bouton);
 
                 //Place le bouton dans la grille
@@ -364,7 +364,7 @@ namespace MyDomotik
                 boutons.Add(bouton);
             }
 
-            //nbRoom : nombre de pièces qui reste à afficher
+            //nbRoom : nombre de pièces qu'il reste à afficher
             if (nbEquip - nbCases * pageActuelle < 0)
             {
                 nbEquip = 0;
@@ -374,7 +374,7 @@ namespace MyDomotik
                 nbEquip = nbEquip - nbCases * pageActuelle;
             }
 
-            //Complete la grille avec des boutons vides (sans pièce)
+            //Complète la grille avec des boutons vides (sans pièce)
             for (int i = nbCases * pageActuelle + ((nbEquip % nbCases)); i < (nbCases * pageActuelle + nbCases); i++)
             {
                 Button bouton = new Button();
@@ -404,12 +404,12 @@ namespace MyDomotik
 
 
 
-        //Choix couleurs aleatoires
+        //Choix des couleurs aléatoires
         /// <summary>
-        /// Cette méthode associe une couleur à chaque élément placé en paramètres, en fonction du thème. \n
+        /// Cette méthode associe une couleur à chaque élément passé en paramètre, en fonction du thème. \n
         /// Les couleurs sont associées aléatoirement sauf pour le thème 1.
         /// </summary>
-        /// <param name="i">Numéro du thèmes</param>
+        /// <param name="i">Numéro du thème</param>
         /// <param name="boutons">Liste de boutons associés à des pièces ou à des équipements.</param>
         /// <param name="maingrid">Layout dont il faut changer la couleur de fond.</param>
         /// <param name="rect1">Rectangle dont il faut changer la couleur de fond.</param>
@@ -430,8 +430,8 @@ namespace MyDomotik
                 grille = new SolidColorBrush(listeCouleurs[i]); //Fond Grille
                 fond = new SolidColorBrush(listeCouleurs[i+3]); //Fond general
                 boutonsGrille = new SolidColorBrush(listeCouleurs[i + 4]); //Bouton grille
-                rectangleHaut = new SolidColorBrush(listeCouleurs[i + 6]); //Rectangle du haut: page configuratio, titre, heure
-                rectangleBas = new SolidColorBrush(listeCouleurs[i + 2]); //Rectangle en bas : page accueil, suivante, precedente
+                rectangleHaut = new SolidColorBrush(listeCouleurs[i + 6]); //Rectangle du haut: page configuration, titre, heure
+                rectangleBas = new SolidColorBrush(listeCouleurs[i + 2]); //Rectangle en bas : page accueil, suivante, précédente
                 boutonsGrilleContour = new SolidColorBrush(listeCouleurs[25]); //Contour boutons grille
             }
             else
@@ -440,13 +440,13 @@ namespace MyDomotik
                 fond = new SolidColorBrush(listeCouleurs[23]); //Fond general
                 boutonsGrille = new SolidColorBrush(listeCouleurs[20]); //Boutons grille
                 boutonsGrilleContour = new SolidColorBrush(listeCouleurs[25]); //Contour boutons grille
-                rectangleHaut = new SolidColorBrush(listeCouleurs[22]); //Rectangle du haut: page configuratio, titre, heure
-                rectangleBas = new SolidColorBrush(listeCouleurs[22]); //Rectangle en bas : page accueil, suivante, precedente
+                rectangleHaut = new SolidColorBrush(listeCouleurs[22]); //Rectangle du haut: page configuration, titre, heure
+                rectangleBas = new SolidColorBrush(listeCouleurs[22]); //Rectangle en bas : page accueil, suivante, précédente
 
             }
             
                 maingrid.Background = fond; //Fond
-                cadre.Background = grille;  //grille
+                cadre.Background = grille;  //Grille
 
                 rectAccueil.Fill = rectangleBas;
                 rectPrecedent.Fill = rectangleBas;

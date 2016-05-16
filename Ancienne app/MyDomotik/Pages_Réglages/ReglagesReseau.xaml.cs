@@ -69,7 +69,7 @@ namespace MyDomotik.Pages_Réglages
         /// Elle permet d'accéder à la page principale "Utilisateur".
         /// </summary>
         /// <param name="sender">Bouton "Accueil".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param> 
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param> 
         private void exitAdmin(object sender, RoutedEventArgs e)
         {
             Core_save(core);
@@ -83,7 +83,7 @@ namespace MyDomotik.Pages_Réglages
         /// Elle permet d'accéder à la page Admin.
         /// </summary>
         /// <param name="sender">Bouton "Retour".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void menuAdmin(object sender, RoutedEventArgs e)
         {
             Core_save(core);
@@ -92,11 +92,11 @@ namespace MyDomotik.Pages_Réglages
 
 
         /// <summary>
-        /// Méthode déclenchée lors du clic sur le bouton "Validation", et cela apprès que l'utilisateur ait entré la nouvelle adresse IP KIRA. \n
+        /// Méthode déclenchée lors du clic sur le bouton "Validation", et cela après que l'utilisateur ait entré la nouvelle adresse IP KIRA. \n
         /// Elle enregistre cette nouvelle adresse dans le fichier de sauvegarde (cf DLL).
         /// </summary>
         /// <param name="sender">Bouton "Validation".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void validationIPKira(object sender, RoutedEventArgs e)
         {
             Equipment_setIpKira(champKira.Text);
@@ -106,11 +106,11 @@ namespace MyDomotik.Pages_Réglages
 
 
         /// <summary>
-        /// Méthode déclenchée lors du clic sur le bouton "Validation", et cela apprès que l'utilisateur ait entré la nouvelle adresse IP FIBARO. \n
+        /// Méthode déclenchée lors du clic sur le bouton "Validation", et cela après que l'utilisateur ait entré la nouvelle adresse IP FIBARO. \n
         /// Elle enregistre cette nouvelle adresse dans le fichier de sauvegarde (cf DLL).
         /// </summary>
         /// <param name="sender">Bouton "Validation".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void validationIPFibaro(object sender, RoutedEventArgs e)
         {
             Equipment_setIpFibaro(champIPFibaro.Text);
@@ -120,11 +120,11 @@ namespace MyDomotik.Pages_Réglages
 
 
         /// <summary>
-        /// Méthode déclenchée lors du clic sur le bouton "Validation", et cela apprès que l'utilisateur ait entré le nouveau login FIBARO. \n
+        /// Méthode déclenchée lors du clic sur le bouton "Validation", et cela après que l'utilisateur ait entré le nouveau login FIBARO. \n
         /// Elle enregistre ce nouveau login dans le fichier de sauvegarde (cf DLL).
         /// </summary>
         /// <param name="sender">Bouton "Validation".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void validationLoginFibaro(object sender, RoutedEventArgs e)
         {
             Equipment_setLoginFibaro(champLoginFibaro.Text);
@@ -134,11 +134,11 @@ namespace MyDomotik.Pages_Réglages
 
 
         /// <summary>
-        /// Méthode déclenchée lors du clic sur le bouton "Validation", et cela apprès que l'utilisateur ait entré la nouveau mot de passe FIBARO. \n
+        /// Méthode déclenchée lors du clic sur le bouton "Validation", et cela après que l'utilisateur ait entré la nouveau mot de passe FIBARO. \n
         /// Elle enregistre cette nouvelle adresse dans le fichier de sauvegarde (cf DLL).
         /// </summary>
         /// <param name="sender">Bouton "Validation".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void validationMDPFibaro(object sender, RoutedEventArgs e)
         {
             Equipment_setPasswordFibaro(champMDPFibaro.Text);

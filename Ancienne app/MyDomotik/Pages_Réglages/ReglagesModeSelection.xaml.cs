@@ -41,7 +41,7 @@ namespace MyDomotik
         /// Elle permet d'accéder à la page Admin.
         /// </summary>
         /// <param name="sender">Bouton "Retour".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void retourAdminPage(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
@@ -54,7 +54,7 @@ namespace MyDomotik
         /// Elle permet d'accéder à la page principale "Utilisateur".
         /// </summary>
         /// <param name="sender">Bouton "Accueil".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param> 
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param> 
         public void exitAdmin(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
@@ -67,7 +67,7 @@ namespace MyDomotik
         /// Elle n'est pas encore codée.
         /// </summary>
         /// <param name="sender">Bouton ""Sélection par clic"".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param> 
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param> 
         private void SelectionClic_Click(object sender, RoutedEventArgs e)
         {
           

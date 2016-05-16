@@ -23,7 +23,7 @@ using System.Runtime.InteropServices;
 namespace MyDomotik
 {
     /// <summary>
-    /// Page permettant d'accèder aux diverses options de réglages. \n
+    /// Page permettant d'accéder aux diverses options de réglages. \n
     /// Notamment, les réglages couleurs, réseau, taille et mode de sélection.
     /// </summary>
     public sealed partial class AdminPage : Page
@@ -43,7 +43,7 @@ namespace MyDomotik
         /// Elle permet d'accéder à la page principale "Utilisateur".
         /// </summary>
         /// <param name="sender">Bouton "Accueil".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>        
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>        
         private void exitAdmin(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
@@ -56,7 +56,7 @@ namespace MyDomotik
         /// Elle permet d'accéder à la page Admin.
         /// </summary>
         /// <param name="sender">Bouton "Configuration".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void menuAdmin(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AdminPage));
@@ -69,7 +69,7 @@ namespace MyDomotik
         /// Elle permet d'accéder à la page "Gestion Pièces".
         /// </summary>
         /// <param name="sender">Bouton "Gestion des icônes".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void gestionIcones(object sender, RoutedEventArgs e)  // remplace les boutons du menu Menu par le menu Gestion icônes
         {
             Frame.Navigate(typeof(GestionPieces));
@@ -82,7 +82,7 @@ namespace MyDomotik
         /// Elle change alors les options proposées par la page et propose trois nouvelles options: Couleurs, Tailles des icônes et Mode de défilement.
         /// </summary>
         /// <param name="sender">Bouton "Paramètres interface".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void accesParamInterface(object sender, RoutedEventArgs e)
         {
             admin_1.Text = "Couleurs";
@@ -108,7 +108,7 @@ namespace MyDomotik
         /// Elle permet d'accéder à la page "Réglages Couleurs".
         /// </summary>
         /// <param name="sender">Bouton "Couleurs".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void accesParamCouleur(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(ReglagesCouleur));
@@ -121,7 +121,7 @@ namespace MyDomotik
         /// Elle permet d'accéder à la page "Réglages Taille Icônes".
         /// </summary>
         /// <param name="sender">Bouton "Taille des icônes".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void accesParamTaille(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(ReglagesTailleIcones));
@@ -135,7 +135,7 @@ namespace MyDomotik
         /// Elle permet d'accéder à la page "Réglages mode de sélection".
         /// </summary>
         /// <param name="sender">Bouton "Paramètres de sélection".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void accesParamDefil(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(ReglagesModeSelection));
@@ -148,7 +148,7 @@ namespace MyDomotik
         /// Elle permet d'accéder à la page "Réglages réseau".
         /// </summary>
         /// <param name="sender">Bouton "Paramètres réseau".</param>
-        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void accesParamReseau(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Pages_Réglages.ReglagesReseau));

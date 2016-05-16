@@ -1,0 +1,233 @@
+\hypertarget{class_my_domotik_1_1_reglages_reseau}{}\section{My\+Domotik.\+Reglages\+Reseau Class Reference}
+\label{class_my_domotik_1_1_reglages_reseau}\index{My\+Domotik.\+Reglages\+Reseau@{My\+Domotik.\+Reglages\+Reseau}}
+
+
+Page permettant de modifier quatre paramètres réseau\+: adresse IP de la K\+I\+RA, adresse IP de la F\+I\+B\+A\+RO, mot de passe F\+I\+B\+A\+RO et login F\+I\+B\+A\+RO.  
+
+
+Inheritance diagram for My\+Domotik.\+Reglages\+Reseau\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_my_domotik_1_1_reglages_reseau}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_my_domotik_1_1_reglages_reseau_a557f04970aa7d6f793aec57d12bd525a}{Reglages\+Reseau} ()
+\begin{DoxyCompactList}\small\item\em Méthode principale appelée lors de l\textquotesingle{}ouverture de la page \+: initialise les objets et le Core (cf D\+LL). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_my_domotik_1_1_reglages_reseau_ac3106a07a35f5acf7b835968c7e6786f}{exit\+Admin} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Accueil\char`\"{}. ~\newline
+Elle permet d\textquotesingle{}accéder à la page principale \char`\"{}\+Utilisateur\char`\"{}. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_reglages_reseau_a1fab3fc3cea90aaef2e16adbdb61294a}{menu\+Admin} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Retour\char`\"{}. ~\newline
+Elle permet d\textquotesingle{}accéder à la page Admin. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_reglages_reseau_afcb9a7ae27270a4055daedd658e7aaff}{validation\+I\+P\+Kira} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Validation\char`\"{}, et cela après que l\textquotesingle{}utilisateur ait entré la nouvelle adresse IP K\+I\+RA. ~\newline
+Elle enregistre cette nouvelle adresse dans le fichier de sauvegarde (cf D\+LL). \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_reglages_reseau_acdda082cb32970fefeb68fa8e3b52e01}{validation\+I\+P\+Fibaro} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Validation\char`\"{}, et cela après que l\textquotesingle{}utilisateur ait entré la nouvelle adresse IP F\+I\+B\+A\+RO. ~\newline
+Elle enregistre cette nouvelle adresse dans le fichier de sauvegarde (cf D\+LL). \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_reglages_reseau_a1704cbfeb21fa4aeb821a5783dc72c4c}{validation\+Login\+Fibaro} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Validation\char`\"{}, et cela après que l\textquotesingle{}utilisateur ait entré le nouveau login F\+I\+B\+A\+RO. ~\newline
+Elle enregistre ce nouveau login dans le fichier de sauvegarde (cf D\+LL). \end{DoxyCompactList}\item 
+void \hyperlink{class_my_domotik_1_1_reglages_reseau_a320efe3c3ef3f4b18b36a6e9da5ddc1f}{validation\+M\+D\+P\+Fibaro} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Validation\char`\"{}, et cela après que l\textquotesingle{}utilisateur ait entré la nouveau mot de passe F\+I\+B\+A\+RO. ~\newline
+Elle enregistre cette nouvelle adresse dans le fichier de sauvegarde (cf D\+LL). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Int\+Ptr \hyperlink{class_my_domotik_1_1_reglages_reseau_a54bd091d62d190419ec8061307d0bc9e}{core}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Page permettant de modifier quatre paramètres réseau\+: adresse IP de la K\+I\+RA, adresse IP de la F\+I\+B\+A\+RO, mot de passe F\+I\+B\+A\+RO et login F\+I\+B\+A\+RO. 
+
+
+
+Definition at line 24 of file Reglages\+Reseau.\+xaml.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{My\+Domotik\+::\+Reglages\+Reseau@{My\+Domotik\+::\+Reglages\+Reseau}!Reglages\+Reseau@{Reglages\+Reseau}}
+\index{Reglages\+Reseau@{Reglages\+Reseau}!My\+Domotik\+::\+Reglages\+Reseau@{My\+Domotik\+::\+Reglages\+Reseau}}
+\subsubsection[{\texorpdfstring{Reglages\+Reseau()}{ReglagesReseau()}}]{\setlength{\rightskip}{0pt plus 5cm}My\+Domotik.\+Reglages\+Reseau.\+Reglages\+Reseau (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_my_domotik_1_1_reglages_reseau_a557f04970aa7d6f793aec57d12bd525a}{}\label{class_my_domotik_1_1_reglages_reseau_a557f04970aa7d6f793aec57d12bd525a}
+
+
+Méthode principale appelée lors de l\textquotesingle{}ouverture de la page \+: initialise les objets et le Core (cf D\+LL). 
+
+
+
+Definition at line 34 of file Reglages\+Reseau.\+xaml.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{My\+Domotik\+::\+Reglages\+Reseau@{My\+Domotik\+::\+Reglages\+Reseau}!exit\+Admin@{exit\+Admin}}
+\index{exit\+Admin@{exit\+Admin}!My\+Domotik\+::\+Reglages\+Reseau@{My\+Domotik\+::\+Reglages\+Reseau}}
+\subsubsection[{\texorpdfstring{exit\+Admin(object sender, Routed\+Event\+Args e)}{exitAdmin(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Reglages\+Reseau.\+exit\+Admin (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_reglages_reseau_ac3106a07a35f5acf7b835968c7e6786f}{}\label{class_my_domotik_1_1_reglages_reseau_ac3106a07a35f5acf7b835968c7e6786f}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Accueil\char`\"{}. ~\newline
+Elle permet d\textquotesingle{}accéder à la page principale \char`\"{}\+Utilisateur\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Accueil\char`\"{}.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file Reglages\+Reseau.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Reglages\+Reseau@{My\+Domotik\+::\+Reglages\+Reseau}!menu\+Admin@{menu\+Admin}}
+\index{menu\+Admin@{menu\+Admin}!My\+Domotik\+::\+Reglages\+Reseau@{My\+Domotik\+::\+Reglages\+Reseau}}
+\subsubsection[{\texorpdfstring{menu\+Admin(object sender, Routed\+Event\+Args e)}{menuAdmin(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Reglages\+Reseau.\+menu\+Admin (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_reglages_reseau_a1fab3fc3cea90aaef2e16adbdb61294a}{}\label{class_my_domotik_1_1_reglages_reseau_a1fab3fc3cea90aaef2e16adbdb61294a}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Retour\char`\"{}. ~\newline
+Elle permet d\textquotesingle{}accéder à la page Admin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Retour\char`\"{}.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file Reglages\+Reseau.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Reglages\+Reseau@{My\+Domotik\+::\+Reglages\+Reseau}!validation\+I\+P\+Fibaro@{validation\+I\+P\+Fibaro}}
+\index{validation\+I\+P\+Fibaro@{validation\+I\+P\+Fibaro}!My\+Domotik\+::\+Reglages\+Reseau@{My\+Domotik\+::\+Reglages\+Reseau}}
+\subsubsection[{\texorpdfstring{validation\+I\+P\+Fibaro(object sender, Routed\+Event\+Args e)}{validationIPFibaro(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Reglages\+Reseau.\+validation\+I\+P\+Fibaro (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_reglages_reseau_acdda082cb32970fefeb68fa8e3b52e01}{}\label{class_my_domotik_1_1_reglages_reseau_acdda082cb32970fefeb68fa8e3b52e01}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Validation\char`\"{}, et cela après que l\textquotesingle{}utilisateur ait entré la nouvelle adresse IP F\+I\+B\+A\+RO. ~\newline
+Elle enregistre cette nouvelle adresse dans le fichier de sauvegarde (cf D\+LL). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Validation\char`\"{}.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 90 of file Reglages\+Reseau.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Reglages\+Reseau@{My\+Domotik\+::\+Reglages\+Reseau}!validation\+I\+P\+Kira@{validation\+I\+P\+Kira}}
+\index{validation\+I\+P\+Kira@{validation\+I\+P\+Kira}!My\+Domotik\+::\+Reglages\+Reseau@{My\+Domotik\+::\+Reglages\+Reseau}}
+\subsubsection[{\texorpdfstring{validation\+I\+P\+Kira(object sender, Routed\+Event\+Args e)}{validationIPKira(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Reglages\+Reseau.\+validation\+I\+P\+Kira (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_reglages_reseau_afcb9a7ae27270a4055daedd658e7aaff}{}\label{class_my_domotik_1_1_reglages_reseau_afcb9a7ae27270a4055daedd658e7aaff}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Validation\char`\"{}, et cela après que l\textquotesingle{}utilisateur ait entré la nouvelle adresse IP K\+I\+RA. ~\newline
+Elle enregistre cette nouvelle adresse dans le fichier de sauvegarde (cf D\+LL). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Validation\char`\"{}.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file Reglages\+Reseau.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Reglages\+Reseau@{My\+Domotik\+::\+Reglages\+Reseau}!validation\+Login\+Fibaro@{validation\+Login\+Fibaro}}
+\index{validation\+Login\+Fibaro@{validation\+Login\+Fibaro}!My\+Domotik\+::\+Reglages\+Reseau@{My\+Domotik\+::\+Reglages\+Reseau}}
+\subsubsection[{\texorpdfstring{validation\+Login\+Fibaro(object sender, Routed\+Event\+Args e)}{validationLoginFibaro(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Reglages\+Reseau.\+validation\+Login\+Fibaro (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_reglages_reseau_a1704cbfeb21fa4aeb821a5783dc72c4c}{}\label{class_my_domotik_1_1_reglages_reseau_a1704cbfeb21fa4aeb821a5783dc72c4c}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Validation\char`\"{}, et cela après que l\textquotesingle{}utilisateur ait entré le nouveau login F\+I\+B\+A\+RO. ~\newline
+Elle enregistre ce nouveau login dans le fichier de sauvegarde (cf D\+LL). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Validation\char`\"{}.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file Reglages\+Reseau.\+xaml.\+cs.
+
+\index{My\+Domotik\+::\+Reglages\+Reseau@{My\+Domotik\+::\+Reglages\+Reseau}!validation\+M\+D\+P\+Fibaro@{validation\+M\+D\+P\+Fibaro}}
+\index{validation\+M\+D\+P\+Fibaro@{validation\+M\+D\+P\+Fibaro}!My\+Domotik\+::\+Reglages\+Reseau@{My\+Domotik\+::\+Reglages\+Reseau}}
+\subsubsection[{\texorpdfstring{validation\+M\+D\+P\+Fibaro(object sender, Routed\+Event\+Args e)}{validationMDPFibaro(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Domotik.\+Reglages\+Reseau.\+validation\+M\+D\+P\+Fibaro (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_reglages_reseau_a320efe3c3ef3f4b18b36a6e9da5ddc1f}{}\label{class_my_domotik_1_1_reglages_reseau_a320efe3c3ef3f4b18b36a6e9da5ddc1f}
+
+
+Méthode déclenchée lors du clic sur le bouton \char`\"{}\+Validation\char`\"{}, et cela après que l\textquotesingle{}utilisateur ait entré la nouveau mot de passe F\+I\+B\+A\+RO. ~\newline
+Elle enregistre cette nouvelle adresse dans le fichier de sauvegarde (cf D\+LL). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Bouton \char`\"{}\+Validation\char`\"{}.\\
+\hline
+{\em e} & Evénement ayant provoqué l\textquotesingle{}appel de la fonction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 118 of file Reglages\+Reseau.\+xaml.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\index{My\+Domotik\+::\+Reglages\+Reseau@{My\+Domotik\+::\+Reglages\+Reseau}!core@{core}}
+\index{core@{core}!My\+Domotik\+::\+Reglages\+Reseau@{My\+Domotik\+::\+Reglages\+Reseau}}
+\subsubsection[{\texorpdfstring{core}{core}}]{\setlength{\rightskip}{0pt plus 5cm}Int\+Ptr My\+Domotik.\+Reglages\+Reseau.\+core\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_my_domotik_1_1_reglages_reseau_a54bd091d62d190419ec8061307d0bc9e}{}\label{class_my_domotik_1_1_reglages_reseau_a54bd091d62d190419ec8061307d0bc9e}
+
+
+Definition at line 26 of file Reglages\+Reseau.\+xaml.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_reglages_reseau_8xaml_8cs}{Reglages\+Reseau.\+xaml.\+cs}\end{DoxyCompactItemize}
