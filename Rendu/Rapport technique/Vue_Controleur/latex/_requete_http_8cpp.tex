@@ -1,0 +1,70 @@
+\hypertarget{_requete_http_8cpp}{}\section{dll/\+Requete\+Http.cpp File Reference}
+\label{_requete_http_8cpp}\index{dll/\+Requete\+Http.\+cpp@{dll/\+Requete\+Http.\+cpp}}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include \char`\"{}Requete\+Http.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}happyhttp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Requete.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}base64.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_requete_http_8cpp_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export}~\+\_\+\+\_\+declspec(dllexport)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_requete_http_8cpp_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} \hyperlink{_requete_http_8cpp_aade1da46e511a08d213c2e2bc4533b43}{requete\+Http\+Kira} (char $\ast$s1, char $\ast$s2)
+\item 
+void \hyperlink{_requete_http_8cpp_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} \hyperlink{_requete_http_8cpp_a66d724ed666cdd836f78b75ba3fb0013}{requete\+Http\+Fibaro} (char $\ast$s1, char $\ast$s2, char $\ast$user, char $\ast$pass)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{Requete\+Http.\+cpp@{Requete\+Http.\+cpp}!Dll\+Export@{Dll\+Export}}
+\index{Dll\+Export@{Dll\+Export}!Requete\+Http.\+cpp@{Requete\+Http.\+cpp}}
+\subsubsection[{\texorpdfstring{Dll\+Export}{DllExport}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Dll\+Export~\+\_\+\+\_\+declspec(dllexport)}\hypertarget{_requete_http_8cpp_af83a0ad9d707a0bc5fe281b6e5c358a1}{}\label{_requete_http_8cpp_af83a0ad9d707a0bc5fe281b6e5c358a1}
+
+
+\subsection{Function Documentation}
+\index{Requete\+Http.\+cpp@{Requete\+Http.\+cpp}!requete\+Http\+Fibaro@{requete\+Http\+Fibaro}}
+\index{requete\+Http\+Fibaro@{requete\+Http\+Fibaro}!Requete\+Http.\+cpp@{Requete\+Http.\+cpp}}
+\subsubsection[{\texorpdfstring{requete\+Http\+Fibaro(char $\ast$s1, char $\ast$s2, char $\ast$user, char $\ast$pass)}{requeteHttpFibaro(char *s1, char *s2, char *user, char *pass)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Dll\+Import} requete\+Http\+Fibaro (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{s1, }
+\item[{char $\ast$}]{s2, }
+\item[{char $\ast$}]{user, }
+\item[{char $\ast$}]{pass}
+\end{DoxyParamCaption}
+)}\hypertarget{_requete_http_8cpp_a66d724ed666cdd836f78b75ba3fb0013}{}\label{_requete_http_8cpp_a66d724ed666cdd836f78b75ba3fb0013}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em char$\ast$} & s1 \+: IP \\
+\hline
+\mbox{\tt in}  & {\em char$\ast$} & s2 \+: reste de l\textquotesingle{}adresse \\
+\hline
+\mbox{\tt in}  & {\em char$\ast$} & user \+: login de la fibaro \\
+\hline
+\mbox{\tt in}  & {\em char$\ast$} & pass \+: mot de passe de la fibaro\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{Requete\+Http.\+cpp@{Requete\+Http.\+cpp}!requete\+Http\+Kira@{requete\+Http\+Kira}}
+\index{requete\+Http\+Kira@{requete\+Http\+Kira}!Requete\+Http.\+cpp@{Requete\+Http.\+cpp}}
+\subsubsection[{\texorpdfstring{requete\+Http\+Kira(char $\ast$s1, char $\ast$s2)}{requeteHttpKira(char *s1, char *s2)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Dll\+Import} requete\+Http\+Kira (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{s1, }
+\item[{char $\ast$}]{s2}
+\end{DoxyParamCaption}
+)}\hypertarget{_requete_http_8cpp_aade1da46e511a08d213c2e2bc4533b43}{}\label{_requete_http_8cpp_aade1da46e511a08d213c2e2bc4533b43}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em char$\ast$} & s1 IP \\
+\hline
+\mbox{\tt in}  & {\em char$\ast$} & s2 reste de l\textquotesingle{}adresse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
