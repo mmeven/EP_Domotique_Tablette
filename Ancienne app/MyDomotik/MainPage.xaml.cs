@@ -130,7 +130,7 @@ namespace MyDomotik
         }
 
 
-
+        
         /// <summary>
         /// Méthode déclenchée lors du clic sur un équipement. \n
         /// Selon le type de l'équipement choisi (Fibaro ou Kira), elle lance la requête adéquate. 
