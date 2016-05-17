@@ -1,0 +1,23 @@
+	
+IMAN	INTRO
+	RESTITUER
+		cahier des charges, l'an dernier, jusqu'à janvier
+MEVEN	ARCHITECTURE
+		diagrammes
+ENORA	PRESENTATION DE L'APP
+		ce qu'on a fait voir rapport
+CORENT	DEMO
+DIANE	ORGANISATION
+		ANALYSE PLANNIFICATION / TRAVAIL EN GROUPE 
+			commenté le diagramme
+		VERSIONING
+			git
+CORENT	ANALYSE CHOIX TECHNIQUES
+			respect ou non des choix, pourquoi, pertinence...
+MEVEN	CONCLUSION
+		CE QU ON A PAS FAIT
+		VOIR RAPPORT
+NIMP	SLIDES BONUS
+		celle de janvier + quoi faire pour migrer + DLL ? + Choix de l'année précédente, pourquoi pas tout en C++?
+	 
+
