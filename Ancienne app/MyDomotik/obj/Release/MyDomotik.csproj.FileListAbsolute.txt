@@ -266,6 +266,7 @@ C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\R
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Release\GestionPieces.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Release\GestionEquipements.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Release\MainPage.xbf
+C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Release\Pages_Réglages\ReglagesReseau.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Release\Pages_Réglages\ReglagesCouleur.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Release\Pages_Réglages\ReglagesModeSelection.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Release\Pages_Réglages\ReglagesTailleIcones.xbf
@@ -285,6 +286,8 @@ C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\R
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\GestionEquipements.g.cs
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\MainPage.g.i.cs
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\MainPage.g.cs
+C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\Pages_Réglages\ReglagesReseau.g.i.cs
+C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\Pages_Réglages\ReglagesReseau.g.cs
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\Pages_Réglages\ReglagesCouleur.g.i.cs
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\Pages_Réglages\ReglagesCouleur.g.cs
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\Pages_Réglages\ReglagesModeSelection.g.i.cs
@@ -309,6 +312,8 @@ C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\R
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\Pages_Réglages\ReglagesModeSelection.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\Pages_Réglages\ReglagesTailleIcones.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\XamlSaveStateFile.xml
+C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\Pages_Réglages\ReglagesReseau.xaml
+C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\Pages_Réglages\ReglagesReseau.xbf
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\MyDomotik.exe
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\MyDomotik.pdb
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\priconfig.xml

@@ -1,0 +1,430 @@
+\begin{theindex}
+
+  \item {\+\_\+stricmp}
+    \subitem {happyhttp.\+cpp}, \hyperpage{22}
+  \item {$\sim$\+Connection}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+  \item {$\sim$\+Requete}
+    \subitem {Requete}, \hyperpage{15}
+
+  \indexspace
+
+  \item {A\+C\+C\+E\+P\+T\+ED}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {atoaddr}
+    \subitem {happyhttp}, \hyperpage{11}
+
+  \indexspace
+
+  \item {B\+A\+D\+\_\+\+G\+A\+T\+E\+W\+AY}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {B\+A\+D\+\_\+\+R\+E\+Q\+U\+E\+ST}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {Bail\+On\+Socket\+Error}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {base64.\+cpp}
+    \subitem {base64\+\_\+decode}, \hyperpage{19}
+    \subitem {base64\+\_\+encode}, \hyperpage{19}
+  \item {base64.\+h}
+    \subitem {base64\+\_\+decode}, \hyperpage{20}
+    \subitem {base64\+\_\+encode}, \hyperpage{20}
+  \item {base64\+\_\+decode}
+    \subitem {base64.\+cpp}, \hyperpage{19}
+    \subitem {base64.\+h}, \hyperpage{20}
+  \item {base64\+\_\+encode}
+    \subitem {base64.\+cpp}, \hyperpage{19}
+    \subitem {base64.\+h}, \hyperpage{20}
+
+  \indexspace
+
+  \item {C\+O\+N\+F\+L\+I\+CT}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {C\+O\+N\+T\+I\+N\+UE}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {C\+R\+E\+A\+T\+ED}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {close}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+  \item {completed}
+    \subitem {happyhttp\+::\+Response}, \hyperpage{16}
+  \item {connect}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+  \item {Connection}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+    \subitem {happyhttp\+::\+Response}, \hyperpage{16}
+  \item {count}
+    \subitem {Requete.\+cpp}, \hyperpage{25}
+
+  \indexspace
+
+  \item {D\+L\+L\+\_\+\+E\+X\+P\+O\+RT}
+    \subitem {main.\+h}, \hyperpage{24}
+  \item {datawaiting}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {dll/\+Requete.\+cpp}, \hyperpage{24}
+  \item {dll/\+Requete.\+h}, \hyperpage{25}
+  \item {dll/\+Requete\+Http.\+cpp}, \hyperpage{26}
+  \item {dll/\+Requete\+Http.\+h}, \hyperpage{27}
+  \item {dll/base64.\+cpp}, \hyperpage{19}
+  \item {dll/base64.\+h}, \hyperpage{20}
+  \item {dll/happyhttp.\+cpp}, \hyperpage{21}
+  \item {dll/happyhttp.\+h}, \hyperpage{22}
+  \item {dll/main.\+cpp}, \hyperpage{23}
+  \item {dll/main.\+h}, \hyperpage{24}
+  \item {Dll\+Export}
+    \subitem {Requete\+Http.\+cpp}, \hyperpage{26}
+  \item {Dll\+Import}
+    \subitem {Requete\+Http.\+h}, \hyperpage{27}
+
+  \indexspace
+
+  \item {E\+X\+P\+E\+C\+T\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {endheaders}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+  \item {envoyer\+Requete}
+    \subitem {Requete}, \hyperpage{15}
+
+  \indexspace
+
+  \item {F\+A\+I\+L\+E\+D\+\_\+\+D\+E\+P\+E\+N\+D\+E\+N\+CY}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {F\+O\+R\+B\+I\+D\+D\+EN}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {F\+O\+U\+ND}
+    \subitem {happyhttp}, \hyperpage{10}
+
+  \indexspace
+
+  \item {G\+A\+T\+E\+W\+A\+Y\+\_\+\+T\+I\+M\+E\+O\+UT}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {G\+O\+NE}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {Getadresse}
+    \subitem {Requete}, \hyperpage{15}
+  \item {getheader}
+    \subitem {happyhttp\+::\+Response}, \hyperpage{16}
+  \item {getreason}
+    \subitem {happyhttp\+::\+Response}, \hyperpage{16}
+  \item {getstatus}
+    \subitem {happyhttp\+::\+Response}, \hyperpage{16}
+
+  \indexspace
+
+  \item {H\+T\+T\+P\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {happyhttp}, \hyperpage{9}
+    \subitem {A\+C\+C\+E\+P\+T\+ED}, \hyperpage{10}
+    \subitem {atoaddr}, \hyperpage{11}
+    \subitem {B\+A\+D\+\_\+\+G\+A\+T\+E\+W\+AY}, \hyperpage{11}
+    \subitem {B\+A\+D\+\_\+\+R\+E\+Q\+U\+E\+ST}, \hyperpage{10}
+    \subitem {Bail\+On\+Socket\+Error}, \hyperpage{11}
+    \subitem {C\+O\+N\+F\+L\+I\+CT}, \hyperpage{11}
+    \subitem {C\+O\+N\+T\+I\+N\+UE}, \hyperpage{10}
+    \subitem {C\+R\+E\+A\+T\+ED}, \hyperpage{10}
+    \subitem {datawaiting}, \hyperpage{11}
+    \subitem {E\+X\+P\+E\+C\+T\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED}, 
+		\hyperpage{11}
+    \subitem {F\+A\+I\+L\+E\+D\+\_\+\+D\+E\+P\+E\+N\+D\+E\+N\+CY}, 
+		\hyperpage{11}
+    \subitem {F\+O\+R\+B\+I\+D\+D\+EN}, \hyperpage{11}
+    \subitem {F\+O\+U\+ND}, \hyperpage{10}
+    \subitem {G\+A\+T\+E\+W\+A\+Y\+\_\+\+T\+I\+M\+E\+O\+UT}, 
+		\hyperpage{11}
+    \subitem {G\+O\+NE}, \hyperpage{11}
+    \subitem {H\+T\+T\+P\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}, 
+		\hyperpage{11}
+    \subitem {I\+M\+\_\+\+U\+S\+ED}, \hyperpage{10}
+    \subitem {I\+N\+S\+U\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+S\+T\+O\+R\+A\+GE}, 
+		\hyperpage{11}
+    \subitem {I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR}, 
+		\hyperpage{11}
+    \subitem {L\+E\+N\+G\+T\+H\+\_\+\+R\+E\+Q\+U\+I\+R\+ED}, 
+		\hyperpage{11}
+    \subitem {L\+O\+C\+K\+ED}, \hyperpage{11}
+    \subitem {M\+E\+T\+H\+O\+D\+\_\+\+N\+O\+T\+\_\+\+A\+L\+L\+O\+W\+ED}, 
+		\hyperpage{11}
+    \subitem {M\+O\+V\+E\+D\+\_\+\+P\+E\+R\+M\+A\+N\+E\+N\+T\+LY}, 
+		\hyperpage{10}
+    \subitem {M\+U\+L\+T\+I\+\_\+\+S\+T\+A\+T\+US}, \hyperpage{10}
+    \subitem {M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+C\+H\+O\+I\+C\+ES}, 
+		\hyperpage{10}
+    \subitem {N\+O\+\_\+\+C\+O\+N\+T\+E\+NT}, \hyperpage{10}
+    \subitem {N\+O\+N\+\_\+\+A\+U\+T\+H\+O\+R\+I\+T\+A\+T\+I\+V\+E\+\_\+\+I\+N\+F\+O\+R\+M\+A\+T\+I\+ON}, 
+		\hyperpage{10}
+    \subitem {N\+O\+T\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+LE}, 
+		\hyperpage{11}
+    \subitem {N\+O\+T\+\_\+\+E\+X\+T\+E\+N\+D\+ED}, \hyperpage{11}
+    \subitem {N\+O\+T\+\_\+\+F\+O\+U\+ND}, \hyperpage{11}
+    \subitem {N\+O\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED}, 
+		\hyperpage{11}
+    \subitem {N\+O\+T\+\_\+\+M\+O\+D\+I\+F\+I\+ED}, \hyperpage{10}
+    \subitem {OK}, \hyperpage{10}
+    \subitem {P\+A\+R\+T\+I\+A\+L\+\_\+\+C\+O\+N\+T\+E\+NT}, 
+		\hyperpage{10}
+    \subitem {P\+A\+Y\+M\+E\+N\+T\+\_\+\+R\+E\+Q\+U\+I\+R\+ED}, 
+		\hyperpage{10}
+    \subitem {P\+R\+E\+C\+O\+N\+D\+I\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED}, 
+		\hyperpage{11}
+    \subitem {P\+R\+O\+C\+E\+S\+S\+I\+NG}, \hyperpage{10}
+    \subitem {P\+R\+O\+X\+Y\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+R\+E\+Q\+U\+I\+R\+ED}, 
+		\hyperpage{11}
+    \subitem {R\+E\+Q\+U\+E\+S\+T\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+T\+O\+O\+\_\+\+L\+A\+R\+GE}, 
+		\hyperpage{11}
+    \subitem {R\+E\+Q\+U\+E\+S\+T\+\_\+\+T\+I\+M\+E\+O\+UT}, 
+		\hyperpage{11}
+    \subitem {R\+E\+Q\+U\+E\+S\+T\+\_\+\+U\+R\+I\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG}, 
+		\hyperpage{11}
+    \subitem {R\+E\+Q\+U\+E\+S\+T\+E\+D\+\_\+\+R\+A\+N\+G\+E\+\_\+\+N\+O\+T\+\_\+\+S\+A\+T\+I\+S\+F\+I\+A\+B\+LE}, 
+		\hyperpage{11}
+    \subitem {R\+E\+S\+E\+T\+\_\+\+C\+O\+N\+T\+E\+NT}, \hyperpage{10}
+    \subitem {Response\+Begin\+\_\+\+CB}, \hyperpage{10}
+    \subitem {Response\+Complete\+\_\+\+CB}, \hyperpage{10}
+    \subitem {Response\+Data\+\_\+\+CB}, \hyperpage{10}
+    \subitem {S\+E\+E\+\_\+\+O\+T\+H\+ER}, \hyperpage{10}
+    \subitem {S\+E\+R\+V\+I\+C\+E\+\_\+\+U\+N\+A\+V\+A\+I\+L\+A\+B\+LE}, 
+		\hyperpage{11}
+    \subitem {S\+W\+I\+T\+C\+H\+I\+N\+G\+\_\+\+P\+R\+O\+T\+O\+C\+O\+LS}, 
+		\hyperpage{10}
+    \subitem {T\+E\+M\+P\+O\+R\+A\+R\+Y\+\_\+\+R\+E\+D\+I\+R\+E\+CT}, 
+		\hyperpage{10}
+    \subitem {U\+N\+A\+U\+T\+H\+O\+R\+I\+Z\+ED}, \hyperpage{10}
+    \subitem {U\+N\+P\+R\+O\+C\+E\+S\+S\+A\+B\+L\+E\+\_\+\+E\+N\+T\+I\+TY}, 
+		\hyperpage{11}
+    \subitem {U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+E\+D\+I\+A\+\_\+\+T\+Y\+PE}, 
+		\hyperpage{11}
+    \subitem {U\+P\+G\+R\+A\+D\+E\+\_\+\+R\+E\+Q\+U\+I\+R\+ED}, 
+		\hyperpage{11}
+    \subitem {U\+S\+E\+\_\+\+P\+R\+O\+XY}, \hyperpage{10}
+  \item {happyhttp.\+cpp}
+    \subitem {\+\_\+stricmp}, \hyperpage{22}
+  \item {happyhttp\+::\+Connection}, \hyperpage{13}
+    \subitem {$\sim$\+Connection}, \hyperpage{14}
+    \subitem {close}, \hyperpage{14}
+    \subitem {connect}, \hyperpage{14}
+    \subitem {Connection}, \hyperpage{14}
+    \subitem {endheaders}, \hyperpage{14}
+    \subitem {m\+\_\+\+Response\+Begin\+CB}, \hyperpage{14}
+    \subitem {m\+\_\+\+Response\+Complete\+CB}, \hyperpage{14}
+    \subitem {m\+\_\+\+Response\+Data\+CB}, \hyperpage{14}
+    \subitem {m\+\_\+\+User\+Data}, \hyperpage{14}
+    \subitem {outstanding}, \hyperpage{14}
+    \subitem {pump}, \hyperpage{14}
+    \subitem {putheader}, \hyperpage{14}
+    \subitem {putrequest}, \hyperpage{14}
+    \subitem {request}, \hyperpage{14}
+    \subitem {Response}, \hyperpage{14}
+    \subitem {send}, \hyperpage{14}
+    \subitem {setcallbacks}, \hyperpage{14}
+  \item {happyhttp\+::\+Response}, \hyperpage{16}
+    \subitem {completed}, \hyperpage{16}
+    \subitem {Connection}, \hyperpage{16}
+    \subitem {getheader}, \hyperpage{16}
+    \subitem {getreason}, \hyperpage{16}
+    \subitem {getstatus}, \hyperpage{16}
+    \subitem {notifyconnectionclosed}, \hyperpage{16}
+    \subitem {pump}, \hyperpage{16}
+    \subitem {Response}, \hyperpage{16}
+    \subitem {willclose}, \hyperpage{16}
+  \item {happyhttp\+::\+Wobbly}, \hyperpage{17}
+    \subitem {m\+\_\+\+Message}, \hyperpage{17}
+    \subitem {M\+A\+X\+L\+EN}, \hyperpage{17}
+    \subitem {what}, \hyperpage{17}
+    \subitem {Wobbly}, \hyperpage{17}
+
+  \indexspace
+
+  \item {I\+M\+\_\+\+U\+S\+ED}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {I\+N\+S\+U\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+S\+T\+O\+R\+A\+GE}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR}
+    \subitem {happyhttp}, \hyperpage{11}
+
+  \indexspace
+
+  \item {L\+E\+N\+G\+T\+H\+\_\+\+R\+E\+Q\+U\+I\+R\+ED}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {L\+O\+C\+K\+ED}
+    \subitem {happyhttp}, \hyperpage{11}
+
+  \indexspace
+
+  \item {m\+\_\+\+Message}
+    \subitem {happyhttp\+::\+Wobbly}, \hyperpage{17}
+  \item {m\+\_\+\+Response\+Begin\+CB}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+  \item {m\+\_\+\+Response\+Complete\+CB}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+  \item {m\+\_\+\+Response\+Data\+CB}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+  \item {m\+\_\+\+User\+Data}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+  \item {M\+A\+X\+L\+EN}
+    \subitem {happyhttp\+::\+Wobbly}, \hyperpage{17}
+  \item {M\+E\+T\+H\+O\+D\+\_\+\+N\+O\+T\+\_\+\+A\+L\+L\+O\+W\+ED}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {M\+O\+V\+E\+D\+\_\+\+P\+E\+R\+M\+A\+N\+E\+N\+T\+LY}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {M\+U\+L\+T\+I\+\_\+\+S\+T\+A\+T\+US}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+C\+H\+O\+I\+C\+ES}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {main}
+    \subitem {main.\+cpp}, \hyperpage{23}
+  \item {main.\+cpp}
+    \subitem {main}, \hyperpage{23}
+  \item {main.\+h}
+    \subitem {D\+L\+L\+\_\+\+E\+X\+P\+O\+RT}, \hyperpage{24}
+    \subitem {Some\+Function}, \hyperpage{24}
+
+  \indexspace
+
+  \item {N\+O\+\_\+\+C\+O\+N\+T\+E\+NT}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {N\+O\+N\+\_\+\+A\+U\+T\+H\+O\+R\+I\+T\+A\+T\+I\+V\+E\+\_\+\+I\+N\+F\+O\+R\+M\+A\+T\+I\+ON}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {N\+O\+T\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+LE}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {N\+O\+T\+\_\+\+E\+X\+T\+E\+N\+D\+ED}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {N\+O\+T\+\_\+\+F\+O\+U\+ND}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {N\+O\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {N\+O\+T\+\_\+\+M\+O\+D\+I\+F\+I\+ED}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {notifyconnectionclosed}
+    \subitem {happyhttp\+::\+Response}, \hyperpage{16}
+
+  \indexspace
+
+  \item {OK}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {On\+Begin}
+    \subitem {Requete.\+cpp}, \hyperpage{25}
+  \item {On\+Complete}
+    \subitem {Requete.\+cpp}, \hyperpage{25}
+  \item {On\+Data}
+    \subitem {Requete.\+cpp}, \hyperpage{25}
+  \item {outstanding}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+
+  \indexspace
+
+  \item {P\+A\+R\+T\+I\+A\+L\+\_\+\+C\+O\+N\+T\+E\+NT}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {P\+A\+Y\+M\+E\+N\+T\+\_\+\+R\+E\+Q\+U\+I\+R\+ED}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {P\+R\+E\+C\+O\+N\+D\+I\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {P\+R\+O\+C\+E\+S\+S\+I\+NG}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {P\+R\+O\+X\+Y\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+R\+E\+Q\+U\+I\+R\+ED}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {pump}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+    \subitem {happyhttp\+::\+Response}, \hyperpage{16}
+  \item {putheader}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+  \item {putrequest}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+
+  \indexspace
+
+  \item {R\+E\+Q\+U\+E\+S\+T\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+T\+O\+O\+\_\+\+L\+A\+R\+GE}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {R\+E\+Q\+U\+E\+S\+T\+\_\+\+T\+I\+M\+E\+O\+UT}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {R\+E\+Q\+U\+E\+S\+T\+\_\+\+U\+R\+I\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {R\+E\+Q\+U\+E\+S\+T\+E\+D\+\_\+\+R\+A\+N\+G\+E\+\_\+\+N\+O\+T\+\_\+\+S\+A\+T\+I\+S\+F\+I\+A\+B\+LE}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {R\+E\+Q\+U\+E\+T\+E\+\_\+H}
+    \subitem {Requete.\+h}, \hyperpage{26}
+  \item {R\+E\+S\+E\+T\+\_\+\+C\+O\+N\+T\+E\+NT}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {request}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+  \item {Requete}, \hyperpage{15}
+    \subitem {$\sim$\+Requete}, \hyperpage{15}
+    \subitem {envoyer\+Requete}, \hyperpage{15}
+    \subitem {Getadresse}, \hyperpage{15}
+    \subitem {Requete}, \hyperpage{15}
+    \subitem {Setadresse}, \hyperpage{15}
+  \item {Requete.\+cpp}
+    \subitem {count}, \hyperpage{25}
+    \subitem {On\+Begin}, \hyperpage{25}
+    \subitem {On\+Complete}, \hyperpage{25}
+    \subitem {On\+Data}, \hyperpage{25}
+  \item {Requete.\+h}
+    \subitem {R\+E\+Q\+U\+E\+T\+E\+\_\+H}, \hyperpage{26}
+  \item {Requete\+Http.\+cpp}
+    \subitem {Dll\+Export}, \hyperpage{26}
+    \subitem {requete\+Http\+Fibaro}, \hyperpage{26}
+    \subitem {requete\+Http\+Kira}, \hyperpage{26}
+  \item {Requete\+Http.\+h}
+    \subitem {Dll\+Import}, \hyperpage{27}
+    \subitem {requete\+Http\+Fibaro}, \hyperpage{27}
+    \subitem {requete\+Http\+Kira}, \hyperpage{28}
+  \item {requete\+Http\+Fibaro}
+    \subitem {Requete\+Http.\+cpp}, \hyperpage{26}
+    \subitem {Requete\+Http.\+h}, \hyperpage{27}
+  \item {requete\+Http\+Kira}
+    \subitem {Requete\+Http.\+cpp}, \hyperpage{26}
+    \subitem {Requete\+Http.\+h}, \hyperpage{28}
+  \item {Response}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+    \subitem {happyhttp\+::\+Response}, \hyperpage{16}
+  \item {Response\+Begin\+\_\+\+CB}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {Response\+Complete\+\_\+\+CB}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {Response\+Data\+\_\+\+CB}
+    \subitem {happyhttp}, \hyperpage{10}
+
+  \indexspace
+
+  \item {S\+E\+E\+\_\+\+O\+T\+H\+ER}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {S\+E\+R\+V\+I\+C\+E\+\_\+\+U\+N\+A\+V\+A\+I\+L\+A\+B\+LE}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {S\+W\+I\+T\+C\+H\+I\+N\+G\+\_\+\+P\+R\+O\+T\+O\+C\+O\+LS}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {send}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+  \item {Setadresse}
+    \subitem {Requete}, \hyperpage{15}
+  \item {setcallbacks}
+    \subitem {happyhttp\+::\+Connection}, \hyperpage{14}
+  \item {Some\+Function}
+    \subitem {main.\+h}, \hyperpage{24}
+
+  \indexspace
+
+  \item {T\+E\+M\+P\+O\+R\+A\+R\+Y\+\_\+\+R\+E\+D\+I\+R\+E\+CT}
+    \subitem {happyhttp}, \hyperpage{10}
+
+  \indexspace
+
+  \item {U\+N\+A\+U\+T\+H\+O\+R\+I\+Z\+ED}
+    \subitem {happyhttp}, \hyperpage{10}
+  \item {U\+N\+P\+R\+O\+C\+E\+S\+S\+A\+B\+L\+E\+\_\+\+E\+N\+T\+I\+TY}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+E\+D\+I\+A\+\_\+\+T\+Y\+PE}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {U\+P\+G\+R\+A\+D\+E\+\_\+\+R\+E\+Q\+U\+I\+R\+ED}
+    \subitem {happyhttp}, \hyperpage{11}
+  \item {U\+S\+E\+\_\+\+P\+R\+O\+XY}
+    \subitem {happyhttp}, \hyperpage{10}
+
+  \indexspace
+
+  \item {what}
+    \subitem {happyhttp\+::\+Wobbly}, \hyperpage{17}
+  \item {willclose}
+    \subitem {happyhttp\+::\+Response}, \hyperpage{16}
+  \item {Wobbly}
+    \subitem {happyhttp\+::\+Wobbly}, \hyperpage{17}
+
+\end{theindex}

@@ -59,10 +59,10 @@
             </Grid.RowDefinitions>
 
             <Rectangle Fill="Gold" HorizontalAlignment="Center" Height="65" Grid.Row="0"  VerticalAlignment="Center" Width="832"/>
-            <RadioButton Foreground="Black" x:Name="SelectionClic" Grid.Row="0" Content="     Sélection par clic/tap" Height="40" Width="589" Checked="Selection" FontSize="24" Click="SelectionClic_Click"/>
+            <RadioButton Foreground="Black" x:Name="SelectionClic" Grid.Row="0" Content="     Sélection par clic/tap" Height="40" Width="589"  FontSize="24" Click="SelectionClic_Click"/>
             
             <Rectangle Fill="Gold" HorizontalAlignment="Center" Height="65" Grid.Row="1"  VerticalAlignment="Center" Width="832"/>
-            <RadioButton Foreground="Black" x:Name="SelectionDefil" Grid.Row="1" Content="     Sélection par défilement"  Height="40" Width="589" Checked="Selection" FontSize="24" Click="SelectionParDefilement"/>
+            <RadioButton Foreground="Black" x:Name="SelectionDefil" Grid.Row="1" Content="     Sélection par défilement"  Height="40" Width="589"  FontSize="24" Click="SelectionParDefilement"/>
             
             <Rectangle Fill="Gold" HorizontalAlignment="Center" Height="120" Grid.Row="2"  VerticalAlignment="Center" Width="832"/>
             <Slider  Foreground="Black" Height="50"  Width="412" Grid.Row="2" TickPlacement="None" Tag="Vitesse" LargeChange="8" FontSize="24" IsThumbToolTipEnabled="true"/>

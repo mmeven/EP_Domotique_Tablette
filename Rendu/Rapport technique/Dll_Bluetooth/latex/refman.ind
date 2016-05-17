@@ -1,0 +1,55 @@
+\begin{theindex}
+
+  \item {bluetooth.\+cpp}, \hyperpage{3}
+    \subitem {get\+Battery\+Lvl}, \hyperpage{4}
+    \subitem {get\+Joystick\+PositionX}, \hyperpage{4}
+    \subitem {get\+Joystick\+PositionY}, \hyperpage{4}
+    \subitem {get\+Maximum\+Speed}, \hyperpage{4}
+    \subitem {get\+Profile}, \hyperpage{4}
+    \subitem {get\+Speed}, \hyperpage{4}
+    \subitem {get\+Virtual\+Joystick\+PositionX}, \hyperpage{4}
+    \subitem {get\+Virtual\+Joystick\+PositionY}, \hyperpage{5}
+    \subitem {main}, \hyperpage{5}
+  \item {bluetooth.\+h}, \hyperpage{5}
+    \subitem {get\+Battery\+Lvl}, \hyperpage{5}
+    \subitem {get\+Joystick\+PositionX}, \hyperpage{5}
+    \subitem {get\+Joystick\+PositionY}, \hyperpage{6}
+    \subitem {get\+Maximum\+Speed}, \hyperpage{6}
+    \subitem {get\+Profile}, \hyperpage{6}
+    \subitem {get\+Speed}, \hyperpage{6}
+    \subitem {get\+Virtual\+Joystick\+PositionX}, \hyperpage{6}
+    \subitem {get\+Virtual\+Joystick\+PositionY}, \hyperpage{6}
+
+  \indexspace
+
+  \item {get\+Battery\+Lvl}
+    \subitem {bluetooth.\+cpp}, \hyperpage{4}
+    \subitem {bluetooth.\+h}, \hyperpage{5}
+  \item {get\+Joystick\+PositionX}
+    \subitem {bluetooth.\+cpp}, \hyperpage{4}
+    \subitem {bluetooth.\+h}, \hyperpage{5}
+  \item {get\+Joystick\+PositionY}
+    \subitem {bluetooth.\+cpp}, \hyperpage{4}
+    \subitem {bluetooth.\+h}, \hyperpage{6}
+  \item {get\+Maximum\+Speed}
+    \subitem {bluetooth.\+cpp}, \hyperpage{4}
+    \subitem {bluetooth.\+h}, \hyperpage{6}
+  \item {get\+Profile}
+    \subitem {bluetooth.\+cpp}, \hyperpage{4}
+    \subitem {bluetooth.\+h}, \hyperpage{6}
+  \item {get\+Speed}
+    \subitem {bluetooth.\+cpp}, \hyperpage{4}
+    \subitem {bluetooth.\+h}, \hyperpage{6}
+  \item {get\+Virtual\+Joystick\+PositionX}
+    \subitem {bluetooth.\+cpp}, \hyperpage{4}
+    \subitem {bluetooth.\+h}, \hyperpage{6}
+  \item {get\+Virtual\+Joystick\+PositionY}
+    \subitem {bluetooth.\+cpp}, \hyperpage{5}
+    \subitem {bluetooth.\+h}, \hyperpage{6}
+
+  \indexspace
+
+  \item {main}
+    \subitem {bluetooth.\+cpp}, \hyperpage{5}
+
+\end{theindex}

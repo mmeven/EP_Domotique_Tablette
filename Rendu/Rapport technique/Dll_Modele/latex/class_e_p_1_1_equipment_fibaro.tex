@@ -1,0 +1,103 @@
+\hypertarget{class_e_p_1_1_equipment_fibaro}{}\section{Référence de la classe EP\+:\+:Equipment\+Fibaro}
+\label{class_e_p_1_1_equipment_fibaro}\index{E\+P\+::\+Equipment\+Fibaro@{E\+P\+::\+Equipment\+Fibaro}}
+
+
+Représente un équipement lié à une Fibaro, hérite de \hyperlink{class_e_p_1_1_equipment}{Equipment}.  
+
+
+
+
+{\ttfamily \#include $<$Equipment.\+h$>$}
+
+Graphe d\textquotesingle{}héritage de EP\+:\+:Equipment\+Fibaro\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_e_p_1_1_equipment_fibaro}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_e_p_1_1_equipment_fibaro_a1aceacf1010faf9042e2a5a4c2f79ae8}{Equipment\+Fibaro} (char $\ast$name, char $\ast$ico, \hyperlink{class_e_p_1_1_node}{Node} $\ast$parent, int equipment\+Id, char $\ast$action)
+\begin{DoxyCompactList}\small\item\em Appelle le constructeur de \hyperlink{class_e_p_1_1_equipment}{Equipment} et initialise m\+\_\+equipment\+Id et m\+\_\+action. \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_e_p_1_1_equipment_fibaro_aff3a8468127e7915e1757d8b9b600587}{send\+Request} ()\hypertarget{class_e_p_1_1_equipment_fibaro_aff3a8468127e7915e1757d8b9b600587}{}\label{class_e_p_1_1_equipment_fibaro_aff3a8468127e7915e1757d8b9b600587}
+
+\begin{DoxyCompactList}\small\item\em Exécute la requête H\+T\+TP correspondant à cet équipement. \end{DoxyCompactList}\item 
+int \hyperlink{class_e_p_1_1_equipment_fibaro_abdd7cbd67d1f3a06dd57fa9dc3b33a59}{get\+Equipment\+Id} ()
+\item 
+char $\ast$ \hyperlink{class_e_p_1_1_equipment_fibaro_ad411fa6e04286c4b0eabf258226c95f3}{get\+Action} ()
+\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+Représente un équipement lié à une Fibaro, hérite de \hyperlink{class_e_p_1_1_equipment}{Equipment}. 
+
+Définition à la ligne 159 du fichier Equipment.\+h.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{E\+P\+::\+Equipment\+Fibaro@{E\+P\+::\+Equipment\+Fibaro}!Equipment\+Fibaro@{Equipment\+Fibaro}}
+\index{Equipment\+Fibaro@{Equipment\+Fibaro}!E\+P\+::\+Equipment\+Fibaro@{E\+P\+::\+Equipment\+Fibaro}}
+\subsubsection[{\texorpdfstring{Equipment\+Fibaro(char $\ast$name, char $\ast$ico, Node $\ast$parent, int equipment\+Id, char $\ast$action)}{EquipmentFibaro(char *name, char *ico, Node *parent, int equipmentId, char *action)}}]{\setlength{\rightskip}{0pt plus 5cm}E\+P\+::\+Equipment\+Fibaro\+::\+Equipment\+Fibaro (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{char $\ast$}]{ico, }
+\item[{{\bf Node} $\ast$}]{parent, }
+\item[{int}]{equipment\+Id, }
+\item[{char $\ast$}]{action}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_equipment_fibaro_a1aceacf1010faf9042e2a5a4c2f79ae8}{}\label{class_e_p_1_1_equipment_fibaro_a1aceacf1010faf9042e2a5a4c2f79ae8}
+
+
+Appelle le constructeur de \hyperlink{class_e_p_1_1_equipment}{Equipment} et initialise m\+\_\+equipment\+Id et m\+\_\+action. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em equipment\+Id} & L\textquotesingle{}identifiant correspondant à l\textquotesingle{}équipement dans l\textquotesingle{}interface web de la Fibaro. \\
+\hline
+{\em action} & L\textquotesingle{}action que l\textquotesingle{}équipement devra effectuer. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 113 du fichier Equipment.\+cpp.
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{E\+P\+::\+Equipment\+Fibaro@{E\+P\+::\+Equipment\+Fibaro}!get\+Action@{get\+Action}}
+\index{get\+Action@{get\+Action}!E\+P\+::\+Equipment\+Fibaro@{E\+P\+::\+Equipment\+Fibaro}}
+\subsubsection[{\texorpdfstring{get\+Action()}{getAction()}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ E\+P\+::\+Equipment\+Fibaro\+::get\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_equipment_fibaro_ad411fa6e04286c4b0eabf258226c95f3}{}\label{class_e_p_1_1_equipment_fibaro_ad411fa6e04286c4b0eabf258226c95f3}
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}action que l\textquotesingle{}équipement devra effectuer. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 138 du fichier Equipment.\+cpp.
+
+\index{E\+P\+::\+Equipment\+Fibaro@{E\+P\+::\+Equipment\+Fibaro}!get\+Equipment\+Id@{get\+Equipment\+Id}}
+\index{get\+Equipment\+Id@{get\+Equipment\+Id}!E\+P\+::\+Equipment\+Fibaro@{E\+P\+::\+Equipment\+Fibaro}}
+\subsubsection[{\texorpdfstring{get\+Equipment\+Id()}{getEquipmentId()}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Equipment\+Fibaro\+::get\+Equipment\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_equipment_fibaro_abdd7cbd67d1f3a06dd57fa9dc3b33a59}{}\label{class_e_p_1_1_equipment_fibaro_abdd7cbd67d1f3a06dd57fa9dc3b33a59}
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}identifiant correspondant à l\textquotesingle{}équipement dans l\textquotesingle{}interface web de la Fibaro. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 134 du fichier Equipment.\+cpp.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+include/Equipment.\+h\item 
+src/Equipment.\+cpp\end{DoxyCompactItemize}

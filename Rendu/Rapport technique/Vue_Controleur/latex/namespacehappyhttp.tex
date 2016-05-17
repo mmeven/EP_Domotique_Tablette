@@ -1,0 +1,247 @@
+\hypertarget{namespacehappyhttp}{}\section{happyhttp Namespace Reference}
+\label{namespacehappyhttp}\index{happyhttp@{happyhttp}}
+
+
+faire des requêtes http, voir \href{https://github.com/Zintinio/HappyHTTP}{\tt https\+://github.\+com/\+Zintinio/\+Happy\+H\+T\+TP}  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classhappyhttp_1_1_connection}{Connection}
+\item 
+class \hyperlink{classhappyhttp_1_1_response}{Response}
+\item 
+class \hyperlink{classhappyhttp_1_1_wobbly}{Wobbly}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{namespacehappyhttp_a1997a4fe11e48d3b2b6bedbb246e8975}{Response\+Begin\+\_\+\+CB}) (const \hyperlink{classhappyhttp_1_1_response}{Response} $\ast$r, void $\ast$userdata)
+\item 
+typedef void($\ast$ \hyperlink{namespacehappyhttp_a818d88091992f5d95f2c53708511fd49}{Response\+Data\+\_\+\+CB}) (const \hyperlink{classhappyhttp_1_1_response}{Response} $\ast$r, void $\ast$userdata, const unsigned char $\ast$data, int numbytes)
+\item 
+typedef void($\ast$ \hyperlink{namespacehappyhttp_ae70d6705a8684783ce996b296e181ede}{Response\+Complete\+\_\+\+CB}) (const \hyperlink{classhappyhttp_1_1_response}{Response} $\ast$r, void $\ast$userdata)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \\*
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a9f3ec0fb4e35471b5dedfe4f07724902}{C\+O\+N\+T\+I\+N\+UE} = 100, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a52912043feee28209e49c04a3d9e7869}{S\+W\+I\+T\+C\+H\+I\+N\+G\+\_\+\+P\+R\+O\+T\+O\+C\+O\+LS} = 101, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ac0d77cb61f7ed5caee79caf4ac5a8339}{P\+R\+O\+C\+E\+S\+S\+I\+NG} = 102, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ac8e21429d5c6646a1ea74b45610fcaaa}{OK} = 200, 
+\\*
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a0d220b4a1fa764a6acaad65b2a4f81c9}{C\+R\+E\+A\+T\+ED} = 201, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a1e7ae1d0317c359e4c611d18ff5240c3}{A\+C\+C\+E\+P\+T\+ED} = 202, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a355a63f5dae25bde771f098b41f06e7c}{N\+O\+N\+\_\+\+A\+U\+T\+H\+O\+R\+I\+T\+A\+T\+I\+V\+E\+\_\+\+I\+N\+F\+O\+R\+M\+A\+T\+I\+ON} = 203, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a7c813fec69e74d6edaced46c6ca9795c}{N\+O\+\_\+\+C\+O\+N\+T\+E\+NT} = 204, 
+\\*
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a8b9ef41c8ecabf288d75f651f167c24e}{R\+E\+S\+E\+T\+\_\+\+C\+O\+N\+T\+E\+NT} = 205, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251aca0267b38e005213986d009dcf3a46c5}{P\+A\+R\+T\+I\+A\+L\+\_\+\+C\+O\+N\+T\+E\+NT} = 206, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a1541da7f25fcdd526826c907be0b2d55}{M\+U\+L\+T\+I\+\_\+\+S\+T\+A\+T\+US} = 207, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a8a62b660b466920c8880eca78b131097}{I\+M\+\_\+\+U\+S\+ED} = 226, 
+\\*
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a9d2a60b69868106e5a41709734ac29f3}{M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+C\+H\+O\+I\+C\+ES} = 300, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a3d74aed157bdaf8b81b84c55f8a4f670}{M\+O\+V\+E\+D\+\_\+\+P\+E\+R\+M\+A\+N\+E\+N\+T\+LY} = 301, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ad33f03ecb56b18bfb1ed4c43d202f419}{F\+O\+U\+ND} = 302, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a8e42450022307bac57b634425884b26c}{S\+E\+E\+\_\+\+O\+T\+H\+ER} = 303, 
+\\*
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a40c2ee9bc23624ae2ca68acd678ceb32}{N\+O\+T\+\_\+\+M\+O\+D\+I\+F\+I\+ED} = 304, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a8d11984395b8e860dcaa819033b9a6c4}{U\+S\+E\+\_\+\+P\+R\+O\+XY} = 305, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a0cfe309bf161d7ae8801b176636791df}{T\+E\+M\+P\+O\+R\+A\+R\+Y\+\_\+\+R\+E\+D\+I\+R\+E\+CT} = 307, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a3d4e8d4bd7371cd19cc320e1091801b7}{B\+A\+D\+\_\+\+R\+E\+Q\+U\+E\+ST} = 400, 
+\\*
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a69140d3b91318e4ae1eff79d4953776c}{U\+N\+A\+U\+T\+H\+O\+R\+I\+Z\+ED} = 401, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a17c0442cdb455c75835f085be1bb3440}{P\+A\+Y\+M\+E\+N\+T\+\_\+\+R\+E\+Q\+U\+I\+R\+ED} = 402, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251aa2ba3f5cfdd2886a1bd1877cfd38ff83}{F\+O\+R\+B\+I\+D\+D\+EN} = 403, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ae7595f56d3d7f425c2bd45fd1bda20c6}{N\+O\+T\+\_\+\+F\+O\+U\+ND} = 404, 
+\\*
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a059799b71215308512d1d5fd0725a2d1}{M\+E\+T\+H\+O\+D\+\_\+\+N\+O\+T\+\_\+\+A\+L\+L\+O\+W\+ED} = 405, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a30c3c8b6f8d1def4561a6263b456f223}{N\+O\+T\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+LE} = 406, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a216bfd746f515778ddc4669d6fb30484}{P\+R\+O\+X\+Y\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+R\+E\+Q\+U\+I\+R\+ED} = 407, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ae8740ef5a379da22a91137bf2ca00fe9}{R\+E\+Q\+U\+E\+S\+T\+\_\+\+T\+I\+M\+E\+O\+UT} = 408, 
+\\*
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a0cb6d58c348ee83b022fca9d1883bcee}{C\+O\+N\+F\+L\+I\+CT} = 409, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a589be65fe6a288b259235f628a6352c3}{G\+O\+NE} = 410, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ab1304e449c508bf3f89be16f951eb213}{L\+E\+N\+G\+T\+H\+\_\+\+R\+E\+Q\+U\+I\+R\+ED} = 411, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a9c9f3254320eaa9a07f581b41b75e4df}{P\+R\+E\+C\+O\+N\+D\+I\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED} = 412, 
+\\*
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a583dc5cceedcdb842aa74dd1eda66145}{R\+E\+Q\+U\+E\+S\+T\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+T\+O\+O\+\_\+\+L\+A\+R\+GE} = 413, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a9ab42df1211085a682ea49c7cb39b3a7}{R\+E\+Q\+U\+E\+S\+T\+\_\+\+U\+R\+I\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG} = 414, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a718804bbcab920db3ed2e142582d0ed6}{U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+E\+D\+I\+A\+\_\+\+T\+Y\+PE} = 415, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251af2427e9e586cb036406bc1cb8491d9c7}{R\+E\+Q\+U\+E\+S\+T\+E\+D\+\_\+\+R\+A\+N\+G\+E\+\_\+\+N\+O\+T\+\_\+\+S\+A\+T\+I\+S\+F\+I\+A\+B\+LE} = 416, 
+\\*
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a809d70dbacb237a311ace45763db8c5c}{E\+X\+P\+E\+C\+T\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED} = 417, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ac34ef84c6829c3f289d6147a8281e855}{U\+N\+P\+R\+O\+C\+E\+S\+S\+A\+B\+L\+E\+\_\+\+E\+N\+T\+I\+TY} = 422, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251aac4b8d7a035a5121ad0faf15ec31c7f0}{L\+O\+C\+K\+ED} = 423, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251adb259c77c5531a576b4fbeb8f62c4290}{F\+A\+I\+L\+E\+D\+\_\+\+D\+E\+P\+E\+N\+D\+E\+N\+CY} = 424, 
+\\*
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a47738e7aede1f098eb7c7f5b581349e8}{U\+P\+G\+R\+A\+D\+E\+\_\+\+R\+E\+Q\+U\+I\+R\+ED} = 426, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a67df6aa838de5929d1aee2c227f5ee48}{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR} = 500, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ab36398f767988e07f82a50660060cd71}{N\+O\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED} = 501, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a07e06db07023052bcabe9d7e1db0b124}{B\+A\+D\+\_\+\+G\+A\+T\+E\+W\+AY} = 502, 
+\\*
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ac7129235df6c5b599c3659a33d9bf21e}{S\+E\+R\+V\+I\+C\+E\+\_\+\+U\+N\+A\+V\+A\+I\+L\+A\+B\+LE} = 503, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251aca73235902a483c41eaf39c00a324716}{G\+A\+T\+E\+W\+A\+Y\+\_\+\+T\+I\+M\+E\+O\+UT} = 504, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a4e58ffb789f8e1269930757ff18ac23a}{H\+T\+T\+P\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED} = 505, 
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a3af67bc8ef5b882efe3a9360cec3333d}{I\+N\+S\+U\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+S\+T\+O\+R\+A\+GE} = 507, 
+\\*
+\hyperlink{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251aabf59f47ddcee2b80fff229a08cca583}{N\+O\+T\+\_\+\+E\+X\+T\+E\+N\+D\+ED} = 510
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespacehappyhttp_a28d6e69df779b4079771aa26420078d1}{Bail\+On\+Socket\+Error} (const char $\ast$context)
+\item 
+bool \hyperlink{namespacehappyhttp_a6cda4ba9b251fc1140e89c1268d88bca}{datawaiting} (int sock)
+\item 
+struct in\+\_\+addr $\ast$ \hyperlink{namespacehappyhttp_ade5d16bd091558cb861802fbbfece7fd}{atoaddr} (const char $\ast$address)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+faire des requêtes http, voir \href{https://github.com/Zintinio/HappyHTTP}{\tt https\+://github.\+com/\+Zintinio/\+Happy\+H\+T\+TP} 
+
+\subsection{Typedef Documentation}
+\index{happyhttp@{happyhttp}!Response\+Begin\+\_\+\+CB@{Response\+Begin\+\_\+\+CB}}
+\index{Response\+Begin\+\_\+\+CB@{Response\+Begin\+\_\+\+CB}!happyhttp@{happyhttp}}
+\subsubsection[{\texorpdfstring{Response\+Begin\+\_\+\+CB}{ResponseBegin_CB}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ happyhttp\+::\+Response\+Begin\+\_\+\+CB) (const {\bf Response} $\ast$r, void $\ast$userdata)}\hypertarget{namespacehappyhttp_a1997a4fe11e48d3b2b6bedbb246e8975}{}\label{namespacehappyhttp_a1997a4fe11e48d3b2b6bedbb246e8975}
+\index{happyhttp@{happyhttp}!Response\+Complete\+\_\+\+CB@{Response\+Complete\+\_\+\+CB}}
+\index{Response\+Complete\+\_\+\+CB@{Response\+Complete\+\_\+\+CB}!happyhttp@{happyhttp}}
+\subsubsection[{\texorpdfstring{Response\+Complete\+\_\+\+CB}{ResponseComplete_CB}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ happyhttp\+::\+Response\+Complete\+\_\+\+CB) (const {\bf Response} $\ast$r, void $\ast$userdata)}\hypertarget{namespacehappyhttp_ae70d6705a8684783ce996b296e181ede}{}\label{namespacehappyhttp_ae70d6705a8684783ce996b296e181ede}
+\index{happyhttp@{happyhttp}!Response\+Data\+\_\+\+CB@{Response\+Data\+\_\+\+CB}}
+\index{Response\+Data\+\_\+\+CB@{Response\+Data\+\_\+\+CB}!happyhttp@{happyhttp}}
+\subsubsection[{\texorpdfstring{Response\+Data\+\_\+\+CB}{ResponseData_CB}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ happyhttp\+::\+Response\+Data\+\_\+\+CB) (const {\bf Response} $\ast$r, void $\ast$userdata, const unsigned char $\ast$data, int numbytes)}\hypertarget{namespacehappyhttp_a818d88091992f5d95f2c53708511fd49}{}\label{namespacehappyhttp_a818d88091992f5d95f2c53708511fd49}
+
+
+\subsection{Enumeration Type Documentation}
+\subsubsection[{\texorpdfstring{anonymous enum}{anonymous enum}}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\+O\+N\+T\+I\+N\+UE@{C\+O\+N\+T\+I\+N\+UE}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!C\+O\+N\+T\+I\+N\+UE@{C\+O\+N\+T\+I\+N\+UE}}\item[{\em 
+C\+O\+N\+T\+I\+N\+UE\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a9f3ec0fb4e35471b5dedfe4f07724902}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a9f3ec0fb4e35471b5dedfe4f07724902}
+}]\index{S\+W\+I\+T\+C\+H\+I\+N\+G\+\_\+\+P\+R\+O\+T\+O\+C\+O\+LS@{S\+W\+I\+T\+C\+H\+I\+N\+G\+\_\+\+P\+R\+O\+T\+O\+C\+O\+LS}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!S\+W\+I\+T\+C\+H\+I\+N\+G\+\_\+\+P\+R\+O\+T\+O\+C\+O\+LS@{S\+W\+I\+T\+C\+H\+I\+N\+G\+\_\+\+P\+R\+O\+T\+O\+C\+O\+LS}}\item[{\em 
+S\+W\+I\+T\+C\+H\+I\+N\+G\+\_\+\+P\+R\+O\+T\+O\+C\+O\+LS\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a52912043feee28209e49c04a3d9e7869}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a52912043feee28209e49c04a3d9e7869}
+}]\index{P\+R\+O\+C\+E\+S\+S\+I\+NG@{P\+R\+O\+C\+E\+S\+S\+I\+NG}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!P\+R\+O\+C\+E\+S\+S\+I\+NG@{P\+R\+O\+C\+E\+S\+S\+I\+NG}}\item[{\em 
+P\+R\+O\+C\+E\+S\+S\+I\+NG\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ac0d77cb61f7ed5caee79caf4ac5a8339}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ac0d77cb61f7ed5caee79caf4ac5a8339}
+}]\index{OK@{OK}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!OK@{OK}}\item[{\em 
+OK\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ac8e21429d5c6646a1ea74b45610fcaaa}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ac8e21429d5c6646a1ea74b45610fcaaa}
+}]\index{C\+R\+E\+A\+T\+ED@{C\+R\+E\+A\+T\+ED}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!C\+R\+E\+A\+T\+ED@{C\+R\+E\+A\+T\+ED}}\item[{\em 
+C\+R\+E\+A\+T\+ED\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a0d220b4a1fa764a6acaad65b2a4f81c9}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a0d220b4a1fa764a6acaad65b2a4f81c9}
+}]\index{A\+C\+C\+E\+P\+T\+ED@{A\+C\+C\+E\+P\+T\+ED}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!A\+C\+C\+E\+P\+T\+ED@{A\+C\+C\+E\+P\+T\+ED}}\item[{\em 
+A\+C\+C\+E\+P\+T\+ED\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a1e7ae1d0317c359e4c611d18ff5240c3}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a1e7ae1d0317c359e4c611d18ff5240c3}
+}]\index{N\+O\+N\+\_\+\+A\+U\+T\+H\+O\+R\+I\+T\+A\+T\+I\+V\+E\+\_\+\+I\+N\+F\+O\+R\+M\+A\+T\+I\+ON@{N\+O\+N\+\_\+\+A\+U\+T\+H\+O\+R\+I\+T\+A\+T\+I\+V\+E\+\_\+\+I\+N\+F\+O\+R\+M\+A\+T\+I\+ON}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!N\+O\+N\+\_\+\+A\+U\+T\+H\+O\+R\+I\+T\+A\+T\+I\+V\+E\+\_\+\+I\+N\+F\+O\+R\+M\+A\+T\+I\+ON@{N\+O\+N\+\_\+\+A\+U\+T\+H\+O\+R\+I\+T\+A\+T\+I\+V\+E\+\_\+\+I\+N\+F\+O\+R\+M\+A\+T\+I\+ON}}\item[{\em 
+N\+O\+N\+\_\+\+A\+U\+T\+H\+O\+R\+I\+T\+A\+T\+I\+V\+E\+\_\+\+I\+N\+F\+O\+R\+M\+A\+T\+I\+ON\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a355a63f5dae25bde771f098b41f06e7c}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a355a63f5dae25bde771f098b41f06e7c}
+}]\index{N\+O\+\_\+\+C\+O\+N\+T\+E\+NT@{N\+O\+\_\+\+C\+O\+N\+T\+E\+NT}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!N\+O\+\_\+\+C\+O\+N\+T\+E\+NT@{N\+O\+\_\+\+C\+O\+N\+T\+E\+NT}}\item[{\em 
+N\+O\+\_\+\+C\+O\+N\+T\+E\+NT\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a7c813fec69e74d6edaced46c6ca9795c}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a7c813fec69e74d6edaced46c6ca9795c}
+}]\index{R\+E\+S\+E\+T\+\_\+\+C\+O\+N\+T\+E\+NT@{R\+E\+S\+E\+T\+\_\+\+C\+O\+N\+T\+E\+NT}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!R\+E\+S\+E\+T\+\_\+\+C\+O\+N\+T\+E\+NT@{R\+E\+S\+E\+T\+\_\+\+C\+O\+N\+T\+E\+NT}}\item[{\em 
+R\+E\+S\+E\+T\+\_\+\+C\+O\+N\+T\+E\+NT\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a8b9ef41c8ecabf288d75f651f167c24e}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a8b9ef41c8ecabf288d75f651f167c24e}
+}]\index{P\+A\+R\+T\+I\+A\+L\+\_\+\+C\+O\+N\+T\+E\+NT@{P\+A\+R\+T\+I\+A\+L\+\_\+\+C\+O\+N\+T\+E\+NT}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!P\+A\+R\+T\+I\+A\+L\+\_\+\+C\+O\+N\+T\+E\+NT@{P\+A\+R\+T\+I\+A\+L\+\_\+\+C\+O\+N\+T\+E\+NT}}\item[{\em 
+P\+A\+R\+T\+I\+A\+L\+\_\+\+C\+O\+N\+T\+E\+NT\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251aca0267b38e005213986d009dcf3a46c5}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251aca0267b38e005213986d009dcf3a46c5}
+}]\index{M\+U\+L\+T\+I\+\_\+\+S\+T\+A\+T\+US@{M\+U\+L\+T\+I\+\_\+\+S\+T\+A\+T\+US}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!M\+U\+L\+T\+I\+\_\+\+S\+T\+A\+T\+US@{M\+U\+L\+T\+I\+\_\+\+S\+T\+A\+T\+US}}\item[{\em 
+M\+U\+L\+T\+I\+\_\+\+S\+T\+A\+T\+US\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a1541da7f25fcdd526826c907be0b2d55}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a1541da7f25fcdd526826c907be0b2d55}
+}]\index{I\+M\+\_\+\+U\+S\+ED@{I\+M\+\_\+\+U\+S\+ED}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!I\+M\+\_\+\+U\+S\+ED@{I\+M\+\_\+\+U\+S\+ED}}\item[{\em 
+I\+M\+\_\+\+U\+S\+ED\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a8a62b660b466920c8880eca78b131097}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a8a62b660b466920c8880eca78b131097}
+}]\index{M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+C\+H\+O\+I\+C\+ES@{M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+C\+H\+O\+I\+C\+ES}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+C\+H\+O\+I\+C\+ES@{M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+C\+H\+O\+I\+C\+ES}}\item[{\em 
+M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+C\+H\+O\+I\+C\+ES\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a9d2a60b69868106e5a41709734ac29f3}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a9d2a60b69868106e5a41709734ac29f3}
+}]\index{M\+O\+V\+E\+D\+\_\+\+P\+E\+R\+M\+A\+N\+E\+N\+T\+LY@{M\+O\+V\+E\+D\+\_\+\+P\+E\+R\+M\+A\+N\+E\+N\+T\+LY}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!M\+O\+V\+E\+D\+\_\+\+P\+E\+R\+M\+A\+N\+E\+N\+T\+LY@{M\+O\+V\+E\+D\+\_\+\+P\+E\+R\+M\+A\+N\+E\+N\+T\+LY}}\item[{\em 
+M\+O\+V\+E\+D\+\_\+\+P\+E\+R\+M\+A\+N\+E\+N\+T\+LY\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a3d74aed157bdaf8b81b84c55f8a4f670}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a3d74aed157bdaf8b81b84c55f8a4f670}
+}]\index{F\+O\+U\+ND@{F\+O\+U\+ND}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!F\+O\+U\+ND@{F\+O\+U\+ND}}\item[{\em 
+F\+O\+U\+ND\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ad33f03ecb56b18bfb1ed4c43d202f419}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ad33f03ecb56b18bfb1ed4c43d202f419}
+}]\index{S\+E\+E\+\_\+\+O\+T\+H\+ER@{S\+E\+E\+\_\+\+O\+T\+H\+ER}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!S\+E\+E\+\_\+\+O\+T\+H\+ER@{S\+E\+E\+\_\+\+O\+T\+H\+ER}}\item[{\em 
+S\+E\+E\+\_\+\+O\+T\+H\+ER\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a8e42450022307bac57b634425884b26c}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a8e42450022307bac57b634425884b26c}
+}]\index{N\+O\+T\+\_\+\+M\+O\+D\+I\+F\+I\+ED@{N\+O\+T\+\_\+\+M\+O\+D\+I\+F\+I\+ED}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!N\+O\+T\+\_\+\+M\+O\+D\+I\+F\+I\+ED@{N\+O\+T\+\_\+\+M\+O\+D\+I\+F\+I\+ED}}\item[{\em 
+N\+O\+T\+\_\+\+M\+O\+D\+I\+F\+I\+ED\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a40c2ee9bc23624ae2ca68acd678ceb32}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a40c2ee9bc23624ae2ca68acd678ceb32}
+}]\index{U\+S\+E\+\_\+\+P\+R\+O\+XY@{U\+S\+E\+\_\+\+P\+R\+O\+XY}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!U\+S\+E\+\_\+\+P\+R\+O\+XY@{U\+S\+E\+\_\+\+P\+R\+O\+XY}}\item[{\em 
+U\+S\+E\+\_\+\+P\+R\+O\+XY\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a8d11984395b8e860dcaa819033b9a6c4}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a8d11984395b8e860dcaa819033b9a6c4}
+}]\index{T\+E\+M\+P\+O\+R\+A\+R\+Y\+\_\+\+R\+E\+D\+I\+R\+E\+CT@{T\+E\+M\+P\+O\+R\+A\+R\+Y\+\_\+\+R\+E\+D\+I\+R\+E\+CT}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!T\+E\+M\+P\+O\+R\+A\+R\+Y\+\_\+\+R\+E\+D\+I\+R\+E\+CT@{T\+E\+M\+P\+O\+R\+A\+R\+Y\+\_\+\+R\+E\+D\+I\+R\+E\+CT}}\item[{\em 
+T\+E\+M\+P\+O\+R\+A\+R\+Y\+\_\+\+R\+E\+D\+I\+R\+E\+CT\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a0cfe309bf161d7ae8801b176636791df}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a0cfe309bf161d7ae8801b176636791df}
+}]\index{B\+A\+D\+\_\+\+R\+E\+Q\+U\+E\+ST@{B\+A\+D\+\_\+\+R\+E\+Q\+U\+E\+ST}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!B\+A\+D\+\_\+\+R\+E\+Q\+U\+E\+ST@{B\+A\+D\+\_\+\+R\+E\+Q\+U\+E\+ST}}\item[{\em 
+B\+A\+D\+\_\+\+R\+E\+Q\+U\+E\+ST\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a3d4e8d4bd7371cd19cc320e1091801b7}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a3d4e8d4bd7371cd19cc320e1091801b7}
+}]\index{U\+N\+A\+U\+T\+H\+O\+R\+I\+Z\+ED@{U\+N\+A\+U\+T\+H\+O\+R\+I\+Z\+ED}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!U\+N\+A\+U\+T\+H\+O\+R\+I\+Z\+ED@{U\+N\+A\+U\+T\+H\+O\+R\+I\+Z\+ED}}\item[{\em 
+U\+N\+A\+U\+T\+H\+O\+R\+I\+Z\+ED\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a69140d3b91318e4ae1eff79d4953776c}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a69140d3b91318e4ae1eff79d4953776c}
+}]\index{P\+A\+Y\+M\+E\+N\+T\+\_\+\+R\+E\+Q\+U\+I\+R\+ED@{P\+A\+Y\+M\+E\+N\+T\+\_\+\+R\+E\+Q\+U\+I\+R\+ED}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!P\+A\+Y\+M\+E\+N\+T\+\_\+\+R\+E\+Q\+U\+I\+R\+ED@{P\+A\+Y\+M\+E\+N\+T\+\_\+\+R\+E\+Q\+U\+I\+R\+ED}}\item[{\em 
+P\+A\+Y\+M\+E\+N\+T\+\_\+\+R\+E\+Q\+U\+I\+R\+ED\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a17c0442cdb455c75835f085be1bb3440}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a17c0442cdb455c75835f085be1bb3440}
+}]\index{F\+O\+R\+B\+I\+D\+D\+EN@{F\+O\+R\+B\+I\+D\+D\+EN}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!F\+O\+R\+B\+I\+D\+D\+EN@{F\+O\+R\+B\+I\+D\+D\+EN}}\item[{\em 
+F\+O\+R\+B\+I\+D\+D\+EN\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251aa2ba3f5cfdd2886a1bd1877cfd38ff83}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251aa2ba3f5cfdd2886a1bd1877cfd38ff83}
+}]\index{N\+O\+T\+\_\+\+F\+O\+U\+ND@{N\+O\+T\+\_\+\+F\+O\+U\+ND}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!N\+O\+T\+\_\+\+F\+O\+U\+ND@{N\+O\+T\+\_\+\+F\+O\+U\+ND}}\item[{\em 
+N\+O\+T\+\_\+\+F\+O\+U\+ND\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ae7595f56d3d7f425c2bd45fd1bda20c6}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ae7595f56d3d7f425c2bd45fd1bda20c6}
+}]\index{M\+E\+T\+H\+O\+D\+\_\+\+N\+O\+T\+\_\+\+A\+L\+L\+O\+W\+ED@{M\+E\+T\+H\+O\+D\+\_\+\+N\+O\+T\+\_\+\+A\+L\+L\+O\+W\+ED}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!M\+E\+T\+H\+O\+D\+\_\+\+N\+O\+T\+\_\+\+A\+L\+L\+O\+W\+ED@{M\+E\+T\+H\+O\+D\+\_\+\+N\+O\+T\+\_\+\+A\+L\+L\+O\+W\+ED}}\item[{\em 
+M\+E\+T\+H\+O\+D\+\_\+\+N\+O\+T\+\_\+\+A\+L\+L\+O\+W\+ED\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a059799b71215308512d1d5fd0725a2d1}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a059799b71215308512d1d5fd0725a2d1}
+}]\index{N\+O\+T\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+LE@{N\+O\+T\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+LE}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!N\+O\+T\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+LE@{N\+O\+T\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+LE}}\item[{\em 
+N\+O\+T\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+LE\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a30c3c8b6f8d1def4561a6263b456f223}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a30c3c8b6f8d1def4561a6263b456f223}
+}]\index{P\+R\+O\+X\+Y\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+R\+E\+Q\+U\+I\+R\+ED@{P\+R\+O\+X\+Y\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+R\+E\+Q\+U\+I\+R\+ED}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!P\+R\+O\+X\+Y\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+R\+E\+Q\+U\+I\+R\+ED@{P\+R\+O\+X\+Y\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+R\+E\+Q\+U\+I\+R\+ED}}\item[{\em 
+P\+R\+O\+X\+Y\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+R\+E\+Q\+U\+I\+R\+ED\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a216bfd746f515778ddc4669d6fb30484}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a216bfd746f515778ddc4669d6fb30484}
+}]\index{R\+E\+Q\+U\+E\+S\+T\+\_\+\+T\+I\+M\+E\+O\+UT@{R\+E\+Q\+U\+E\+S\+T\+\_\+\+T\+I\+M\+E\+O\+UT}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!R\+E\+Q\+U\+E\+S\+T\+\_\+\+T\+I\+M\+E\+O\+UT@{R\+E\+Q\+U\+E\+S\+T\+\_\+\+T\+I\+M\+E\+O\+UT}}\item[{\em 
+R\+E\+Q\+U\+E\+S\+T\+\_\+\+T\+I\+M\+E\+O\+UT\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ae8740ef5a379da22a91137bf2ca00fe9}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ae8740ef5a379da22a91137bf2ca00fe9}
+}]\index{C\+O\+N\+F\+L\+I\+CT@{C\+O\+N\+F\+L\+I\+CT}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!C\+O\+N\+F\+L\+I\+CT@{C\+O\+N\+F\+L\+I\+CT}}\item[{\em 
+C\+O\+N\+F\+L\+I\+CT\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a0cb6d58c348ee83b022fca9d1883bcee}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a0cb6d58c348ee83b022fca9d1883bcee}
+}]\index{G\+O\+NE@{G\+O\+NE}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!G\+O\+NE@{G\+O\+NE}}\item[{\em 
+G\+O\+NE\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a589be65fe6a288b259235f628a6352c3}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a589be65fe6a288b259235f628a6352c3}
+}]\index{L\+E\+N\+G\+T\+H\+\_\+\+R\+E\+Q\+U\+I\+R\+ED@{L\+E\+N\+G\+T\+H\+\_\+\+R\+E\+Q\+U\+I\+R\+ED}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!L\+E\+N\+G\+T\+H\+\_\+\+R\+E\+Q\+U\+I\+R\+ED@{L\+E\+N\+G\+T\+H\+\_\+\+R\+E\+Q\+U\+I\+R\+ED}}\item[{\em 
+L\+E\+N\+G\+T\+H\+\_\+\+R\+E\+Q\+U\+I\+R\+ED\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ab1304e449c508bf3f89be16f951eb213}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ab1304e449c508bf3f89be16f951eb213}
+}]\index{P\+R\+E\+C\+O\+N\+D\+I\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED@{P\+R\+E\+C\+O\+N\+D\+I\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!P\+R\+E\+C\+O\+N\+D\+I\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED@{P\+R\+E\+C\+O\+N\+D\+I\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED}}\item[{\em 
+P\+R\+E\+C\+O\+N\+D\+I\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a9c9f3254320eaa9a07f581b41b75e4df}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a9c9f3254320eaa9a07f581b41b75e4df}
+}]\index{R\+E\+Q\+U\+E\+S\+T\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+T\+O\+O\+\_\+\+L\+A\+R\+GE@{R\+E\+Q\+U\+E\+S\+T\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+T\+O\+O\+\_\+\+L\+A\+R\+GE}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!R\+E\+Q\+U\+E\+S\+T\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+T\+O\+O\+\_\+\+L\+A\+R\+GE@{R\+E\+Q\+U\+E\+S\+T\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+T\+O\+O\+\_\+\+L\+A\+R\+GE}}\item[{\em 
+R\+E\+Q\+U\+E\+S\+T\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+T\+O\+O\+\_\+\+L\+A\+R\+GE\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a583dc5cceedcdb842aa74dd1eda66145}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a583dc5cceedcdb842aa74dd1eda66145}
+}]\index{R\+E\+Q\+U\+E\+S\+T\+\_\+\+U\+R\+I\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG@{R\+E\+Q\+U\+E\+S\+T\+\_\+\+U\+R\+I\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!R\+E\+Q\+U\+E\+S\+T\+\_\+\+U\+R\+I\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG@{R\+E\+Q\+U\+E\+S\+T\+\_\+\+U\+R\+I\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG}}\item[{\em 
+R\+E\+Q\+U\+E\+S\+T\+\_\+\+U\+R\+I\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a9ab42df1211085a682ea49c7cb39b3a7}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a9ab42df1211085a682ea49c7cb39b3a7}
+}]\index{U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+E\+D\+I\+A\+\_\+\+T\+Y\+PE@{U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+E\+D\+I\+A\+\_\+\+T\+Y\+PE}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+E\+D\+I\+A\+\_\+\+T\+Y\+PE@{U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+E\+D\+I\+A\+\_\+\+T\+Y\+PE}}\item[{\em 
+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+E\+D\+I\+A\+\_\+\+T\+Y\+PE\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a718804bbcab920db3ed2e142582d0ed6}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a718804bbcab920db3ed2e142582d0ed6}
+}]\index{R\+E\+Q\+U\+E\+S\+T\+E\+D\+\_\+\+R\+A\+N\+G\+E\+\_\+\+N\+O\+T\+\_\+\+S\+A\+T\+I\+S\+F\+I\+A\+B\+LE@{R\+E\+Q\+U\+E\+S\+T\+E\+D\+\_\+\+R\+A\+N\+G\+E\+\_\+\+N\+O\+T\+\_\+\+S\+A\+T\+I\+S\+F\+I\+A\+B\+LE}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!R\+E\+Q\+U\+E\+S\+T\+E\+D\+\_\+\+R\+A\+N\+G\+E\+\_\+\+N\+O\+T\+\_\+\+S\+A\+T\+I\+S\+F\+I\+A\+B\+LE@{R\+E\+Q\+U\+E\+S\+T\+E\+D\+\_\+\+R\+A\+N\+G\+E\+\_\+\+N\+O\+T\+\_\+\+S\+A\+T\+I\+S\+F\+I\+A\+B\+LE}}\item[{\em 
+R\+E\+Q\+U\+E\+S\+T\+E\+D\+\_\+\+R\+A\+N\+G\+E\+\_\+\+N\+O\+T\+\_\+\+S\+A\+T\+I\+S\+F\+I\+A\+B\+LE\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251af2427e9e586cb036406bc1cb8491d9c7}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251af2427e9e586cb036406bc1cb8491d9c7}
+}]\index{E\+X\+P\+E\+C\+T\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED@{E\+X\+P\+E\+C\+T\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!E\+X\+P\+E\+C\+T\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED@{E\+X\+P\+E\+C\+T\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED}}\item[{\em 
+E\+X\+P\+E\+C\+T\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a809d70dbacb237a311ace45763db8c5c}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a809d70dbacb237a311ace45763db8c5c}
+}]\index{U\+N\+P\+R\+O\+C\+E\+S\+S\+A\+B\+L\+E\+\_\+\+E\+N\+T\+I\+TY@{U\+N\+P\+R\+O\+C\+E\+S\+S\+A\+B\+L\+E\+\_\+\+E\+N\+T\+I\+TY}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!U\+N\+P\+R\+O\+C\+E\+S\+S\+A\+B\+L\+E\+\_\+\+E\+N\+T\+I\+TY@{U\+N\+P\+R\+O\+C\+E\+S\+S\+A\+B\+L\+E\+\_\+\+E\+N\+T\+I\+TY}}\item[{\em 
+U\+N\+P\+R\+O\+C\+E\+S\+S\+A\+B\+L\+E\+\_\+\+E\+N\+T\+I\+TY\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ac34ef84c6829c3f289d6147a8281e855}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ac34ef84c6829c3f289d6147a8281e855}
+}]\index{L\+O\+C\+K\+ED@{L\+O\+C\+K\+ED}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!L\+O\+C\+K\+ED@{L\+O\+C\+K\+ED}}\item[{\em 
+L\+O\+C\+K\+ED\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251aac4b8d7a035a5121ad0faf15ec31c7f0}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251aac4b8d7a035a5121ad0faf15ec31c7f0}
+}]\index{F\+A\+I\+L\+E\+D\+\_\+\+D\+E\+P\+E\+N\+D\+E\+N\+CY@{F\+A\+I\+L\+E\+D\+\_\+\+D\+E\+P\+E\+N\+D\+E\+N\+CY}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!F\+A\+I\+L\+E\+D\+\_\+\+D\+E\+P\+E\+N\+D\+E\+N\+CY@{F\+A\+I\+L\+E\+D\+\_\+\+D\+E\+P\+E\+N\+D\+E\+N\+CY}}\item[{\em 
+F\+A\+I\+L\+E\+D\+\_\+\+D\+E\+P\+E\+N\+D\+E\+N\+CY\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251adb259c77c5531a576b4fbeb8f62c4290}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251adb259c77c5531a576b4fbeb8f62c4290}
+}]\index{U\+P\+G\+R\+A\+D\+E\+\_\+\+R\+E\+Q\+U\+I\+R\+ED@{U\+P\+G\+R\+A\+D\+E\+\_\+\+R\+E\+Q\+U\+I\+R\+ED}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!U\+P\+G\+R\+A\+D\+E\+\_\+\+R\+E\+Q\+U\+I\+R\+ED@{U\+P\+G\+R\+A\+D\+E\+\_\+\+R\+E\+Q\+U\+I\+R\+ED}}\item[{\em 
+U\+P\+G\+R\+A\+D\+E\+\_\+\+R\+E\+Q\+U\+I\+R\+ED\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a47738e7aede1f098eb7c7f5b581349e8}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a47738e7aede1f098eb7c7f5b581349e8}
+}]\index{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR@{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR@{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR}}\item[{\em 
+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a67df6aa838de5929d1aee2c227f5ee48}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a67df6aa838de5929d1aee2c227f5ee48}
+}]\index{N\+O\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED@{N\+O\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!N\+O\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED@{N\+O\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED}}\item[{\em 
+N\+O\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ab36398f767988e07f82a50660060cd71}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ab36398f767988e07f82a50660060cd71}
+}]\index{B\+A\+D\+\_\+\+G\+A\+T\+E\+W\+AY@{B\+A\+D\+\_\+\+G\+A\+T\+E\+W\+AY}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!B\+A\+D\+\_\+\+G\+A\+T\+E\+W\+AY@{B\+A\+D\+\_\+\+G\+A\+T\+E\+W\+AY}}\item[{\em 
+B\+A\+D\+\_\+\+G\+A\+T\+E\+W\+AY\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a07e06db07023052bcabe9d7e1db0b124}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a07e06db07023052bcabe9d7e1db0b124}
+}]\index{S\+E\+R\+V\+I\+C\+E\+\_\+\+U\+N\+A\+V\+A\+I\+L\+A\+B\+LE@{S\+E\+R\+V\+I\+C\+E\+\_\+\+U\+N\+A\+V\+A\+I\+L\+A\+B\+LE}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!S\+E\+R\+V\+I\+C\+E\+\_\+\+U\+N\+A\+V\+A\+I\+L\+A\+B\+LE@{S\+E\+R\+V\+I\+C\+E\+\_\+\+U\+N\+A\+V\+A\+I\+L\+A\+B\+LE}}\item[{\em 
+S\+E\+R\+V\+I\+C\+E\+\_\+\+U\+N\+A\+V\+A\+I\+L\+A\+B\+LE\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ac7129235df6c5b599c3659a33d9bf21e}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251ac7129235df6c5b599c3659a33d9bf21e}
+}]\index{G\+A\+T\+E\+W\+A\+Y\+\_\+\+T\+I\+M\+E\+O\+UT@{G\+A\+T\+E\+W\+A\+Y\+\_\+\+T\+I\+M\+E\+O\+UT}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!G\+A\+T\+E\+W\+A\+Y\+\_\+\+T\+I\+M\+E\+O\+UT@{G\+A\+T\+E\+W\+A\+Y\+\_\+\+T\+I\+M\+E\+O\+UT}}\item[{\em 
+G\+A\+T\+E\+W\+A\+Y\+\_\+\+T\+I\+M\+E\+O\+UT\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251aca73235902a483c41eaf39c00a324716}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251aca73235902a483c41eaf39c00a324716}
+}]\index{H\+T\+T\+P\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED@{H\+T\+T\+P\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!H\+T\+T\+P\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED@{H\+T\+T\+P\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}}\item[{\em 
+H\+T\+T\+P\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a4e58ffb789f8e1269930757ff18ac23a}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a4e58ffb789f8e1269930757ff18ac23a}
+}]\index{I\+N\+S\+U\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+S\+T\+O\+R\+A\+GE@{I\+N\+S\+U\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+S\+T\+O\+R\+A\+GE}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!I\+N\+S\+U\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+S\+T\+O\+R\+A\+GE@{I\+N\+S\+U\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+S\+T\+O\+R\+A\+GE}}\item[{\em 
+I\+N\+S\+U\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+S\+T\+O\+R\+A\+GE\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a3af67bc8ef5b882efe3a9360cec3333d}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251a3af67bc8ef5b882efe3a9360cec3333d}
+}]\index{N\+O\+T\+\_\+\+E\+X\+T\+E\+N\+D\+ED@{N\+O\+T\+\_\+\+E\+X\+T\+E\+N\+D\+ED}!happyhttp@{happyhttp}}\index{happyhttp@{happyhttp}!N\+O\+T\+\_\+\+E\+X\+T\+E\+N\+D\+ED@{N\+O\+T\+\_\+\+E\+X\+T\+E\+N\+D\+ED}}\item[{\em 
+N\+O\+T\+\_\+\+E\+X\+T\+E\+N\+D\+ED\hypertarget{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251aabf59f47ddcee2b80fff229a08cca583}{}\label{namespacehappyhttp_aa3b9ad683b0ddfdd10b65b3fcfbd6251aabf59f47ddcee2b80fff229a08cca583}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{happyhttp@{happyhttp}!atoaddr@{atoaddr}}
+\index{atoaddr@{atoaddr}!happyhttp@{happyhttp}}
+\subsubsection[{\texorpdfstring{atoaddr(const char $\ast$address)}{atoaddr(const char *address)}}]{\setlength{\rightskip}{0pt plus 5cm}struct in\+\_\+addr $\ast$ happyhttp\+::atoaddr (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{address}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacehappyhttp_ade5d16bd091558cb861802fbbfece7fd}{}\label{namespacehappyhttp_ade5d16bd091558cb861802fbbfece7fd}
+\index{happyhttp@{happyhttp}!Bail\+On\+Socket\+Error@{Bail\+On\+Socket\+Error}}
+\index{Bail\+On\+Socket\+Error@{Bail\+On\+Socket\+Error}!happyhttp@{happyhttp}}
+\subsubsection[{\texorpdfstring{Bail\+On\+Socket\+Error(const char $\ast$context)}{BailOnSocketError(const char *context)}}]{\setlength{\rightskip}{0pt plus 5cm}void happyhttp\+::\+Bail\+On\+Socket\+Error (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{context}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacehappyhttp_a28d6e69df779b4079771aa26420078d1}{}\label{namespacehappyhttp_a28d6e69df779b4079771aa26420078d1}
+\index{happyhttp@{happyhttp}!datawaiting@{datawaiting}}
+\index{datawaiting@{datawaiting}!happyhttp@{happyhttp}}
+\subsubsection[{\texorpdfstring{datawaiting(int sock)}{datawaiting(int sock)}}]{\setlength{\rightskip}{0pt plus 5cm}bool happyhttp\+::datawaiting (
+\begin{DoxyParamCaption}
+\item[{int}]{sock}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacehappyhttp_a6cda4ba9b251fc1140e89c1268d88bca}{}\label{namespacehappyhttp_a6cda4ba9b251fc1140e89c1268d88bca}

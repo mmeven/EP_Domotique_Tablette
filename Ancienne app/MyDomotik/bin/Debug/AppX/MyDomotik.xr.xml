@@ -20,8 +20,6 @@
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
-      <RootMethod Name="GetRowSpan" />
-      <RootMethod Name="SetRowSpan" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
@@ -40,6 +38,7 @@
       <RootProperty Name="Visibility" />
       <RootProperty Name="IsEnabled" />
       <RootProperty Name="FontWeight" />
+      <RootProperty Name="HorizontalContentAlignment" />
       <RootEvent Name="Click" />
       <RootEvent Name="DoubleTapped" />
     </RootType>

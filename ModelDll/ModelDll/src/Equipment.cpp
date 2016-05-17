@@ -87,6 +87,15 @@ namespace EP {
 		return m_buttonId;
 	}
 
+	int EquipmentKira::getPageNumber() {
+		return m_pageNumber;
+	}
+
+	int EquipmentKira::setButtonId(int new_id) {
+		m_buttonId = new_id;
+		return 0;
+	}
+
 	int EquipmentKira::setPageNumber(int new_pageNumber){
 		m_pageNumber = new_pageNumber;
 		return 0;
@@ -135,6 +144,30 @@ namespace EP {
 	}
 	extern "C" __declspec(dllexport) void EquipmentFibaro_Delete(EquipmentFibaro* eq) {
 		delete eq;
+	}
+	extern "C" __declspec(dllexport) int Equipment_setIpKira(char* new_ip) {
+		return Equipment::setIpKira(new_ip);
+	}
+	extern "C" __declspec(dllexport) int Equipment_setIpFibaro(char* new_ip) {
+		return Equipment::setIpFibaro(new_ip);
+	}
+	extern "C" __declspec(dllexport) int Equipment_setLoginFibaro(char* new_login) {
+		return Equipment::setLoginFibaro(new_login);
+	}
+	extern "C" __declspec(dllexport) int Equipment_setPasswordFibaro(char* new_password) {
+		return Equipment::setPasswordFibaro(new_password);
+	}
+	extern "C" __declspec(dllexport) char* Equipment_getPasswordFibaro() {
+		return Equipment::getPasswordFibaro();
+	}
+	extern "C" __declspec(dllexport) char* Equipment_getLoginFibaro() {
+		return Equipment::getLoginFibaro();
+	}
+	extern "C" __declspec(dllexport) char* Equipment_getIpFibaro() {
+		return Equipment::getIpFibaro();
+	}
+	extern "C" __declspec(dllexport) char* Equipment_getIpKira() {
+		return Equipment::getIpKira();
 	}
 }
 

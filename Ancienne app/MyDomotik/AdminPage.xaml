@@ -71,9 +71,9 @@
                 </TextBlock>
             </Button> -->
 
-            <Button x:Name="admin_button_4"  HorizontalAlignment="Left" Height="84" Grid.Row="2" VerticalAlignment="Top" Width="802" Background="#FFFFD700" FontSize="36" BorderBrush="{x:Null}" >
+            <Button x:Name="admin_button_4"  HorizontalAlignment="Left" Height="84" Grid.Row="2" VerticalAlignment="Top" Width="802" Background="#FFFFD700" FontSize="36" BorderBrush="{x:Null}" Click="accesParamReseau" >
                 <TextBlock x:Name="admin_4" TextWrapping="Wrap"  Foreground="Black" FontSize="30">
-                	<Run FontSize="30" Text="Autres"/>
+                	<Run FontSize="30" Text="Paramètres réseau"/>
                 </TextBlock>
             </Button>
 

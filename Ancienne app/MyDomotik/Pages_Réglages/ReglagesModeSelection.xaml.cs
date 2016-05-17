@@ -13,44 +13,77 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// Pour en savoir plus sur le modèle d'élément Page vierge, consultez la page http://go.microsoft.com/fwlink/?LinkId=234238
+
 
 namespace MyDomotik
 {
     /// <summary>
-    /// Une page vide peut être utilisée seule ou constituer une page de destination au sein d'un frame.
+    /// Page permettant de choisir le mode de sélection. \n
+    /// Les différents modes de sélection ne sont pas opérationnels pour le moment.
     /// </summary>
     public sealed partial class ReglagesModeSelection : Page
     {
+
+        
+        /// <summary>
+        /// Méthode principale appelée lors de l'ouverture de la page : initialise les objets.
+        /// </summary>
+        /// <param></param>
         public ReglagesModeSelection()
         {
             this.InitializeComponent();
         }
 
+
+
+        /// <summary>
+        /// Méthode déclenchée lors du clic sur le bouton "Retour". \n
+        /// Elle permet d'accéder à la page Admin.
+        /// </summary>
+        /// <param name="sender">Bouton "Retour".</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void retourAdminPage(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(AdminPage));
+            this.Frame.GoBack();
         }
 
-        private void Selection(object sender, RoutedEventArgs e)
-        {
 
-        }
 
+        /// <summary>
+        /// Méthode déclenchée lors du clic sur le bouton "Accueil". \n
+        /// Elle permet d'accéder à la page principale "Utilisateur".
+        /// </summary>
+        /// <param name="sender">Bouton "Accueil".</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param> 
         public void exitAdmin(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            this.Frame.GoBack();
         }
 
+
+
+        /// <summary>
+        /// Méthode déclenchée lors du clic sur le bouton "Sélection par clic". \n
+        /// Elle n'est pas encore codée.
+        /// </summary>
+        /// <param name="sender">Bouton ""Sélection par clic"".</param>
+        /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param> 
         private void SelectionClic_Click(object sender, RoutedEventArgs e)
         {
           
         }
 
+
+
+        /// <summary>
+        /// Méthode déclenchée lors du clic sur le bouton "Sélection par défilement". \n
+        /// Elle n'est pas encore codée.
+        /// </summary>
+        /// <param name="sender">Bouton "Sélection par défilement".</param>
+        /// <param name="e">Evenement ayant provoqué l'appel de la fonction.</param> 
         private void SelectionParDefilement(object sender, RoutedEventArgs e)
         {
           
         }
-
     }
 }
