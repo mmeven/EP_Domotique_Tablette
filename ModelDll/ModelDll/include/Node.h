@@ -1,53 +1,57 @@
 #ifndef NODE_H_INCLUDED
 #define NODE_H_INCLUDED
-#include <wchar.h>
+
+#ifndef DllExport
+#define DllExport  __declspec(dllexport)
+#endif
 
 namespace EP {
 
-	///<summary> Représente un noeud de l'arbre (une pièce ou un équipement)</br>
-	///Cette classe est spécialisée par les classes Equipment et Room, et n'est donc pas utilisée
-	///telle qu'elle.</summary>
-	class __declspec(dllexport) Node {
+	///\class Node
+	///\brief ReprÃ©sente un noeud de l'arbre (une piÃ¨ce ou un Ã©quipement).
+	///Cette classe est spÃ©cialisÃ©e par les classes Equipment et Room, et n'est donc pas utilisÃ©e
+	///telle qu'elle.
+	class DllExport Node {
 	public:
-		/// <summary>Constructeur, initialise les attributs m_name et m_ico</summary>
+		/// \brief Constructeur, initialise les attributs m_name et m_ico
 		Node(char* name, char* ico);
 
-		///<summary>Destructeur, ne fait rien de particulier</summary>
+		///\brief Destructeur, ne fait rien de particulier
 		virtual ~Node(void);
 
-		///<returns>Le nom du noeud.</returns>
+		///\return Le nom du noeud.
 		char* getName();
 
-		///<summary>Change le nom de ce noeud pour celui passé en paramètre.</summary>
-		///<param name="name">Le nouveau nom du noeud.</param>
+		///\brief Change le nom de ce noeud pour celui passÃ© en paramÃ¨tre.
+		///\param name Le nouveau nom du noeud.
 		void setName(char* name);
 
-		///<returns>Le nom du fichier correspondant à l'icône de ce noeud.</returns>
+		///\return Le nom du fichier correspondant Ã  l'icÃ´ne de ce noeud.
 		char* getIco();
 
-		///<summary>Change l'icône du noeud.</summary>
-		///<param name="name">La nouvelle icône du noeud.</param>
+		///\brief Change l'icÃ´ne du noeud.
+		///\param ico La nouvelle icÃ´ne du noeud.
 		void setIco(char* ico);
 
 	protected:
-		///<summary>Le nom du noeud.</summary>
+		///\brief Le nom du noeud.
 		char m_name[100];
 
-		///<summary>L'icône du noeud qui sera affichée dans l'application.</summary>
+		///\brief L'icÃ´ne du noeud qui sera affichÃ©e dans l'application.
 		char m_ico[100];
 
-		///<summary>Le noeud parent de celui-ci. Sera nul pour les pièces (Room),
-		///et correspondra à la pièce contenante dans le cas d'un équipement (Equipment).</summary>
+		///\brief Le noeud parent de celui-ci. Sera nul pour les piÃ¨ces (Room),
+		///et correspondra Ã  la piÃ¨ce contenante dans le cas d'un Ã©quipement (Equipment).
 		EP::Node* m_parent;
 	};
 
-	///<summary>Constructeur statique utilisé pour permettre l'utilisation des objets Node en
-	///passant par la DLL. Les paramètres sont les mêmes que ceux du constructeur.</summary>
-	///<returns>Un pointeur vers l'objet créé.</returns>
-	extern "C" __declspec(dllexport) Node* Node_New(char* name, char* ico);
+	///\brief Constructeur statique utilisÃ© pour permettre l'utilisation des objets Node en
+	///passant par la DLL. Les paramÃ¨tres sont les mÃªmes que ceux du constructeur.
+	///\return Un pointeur vers l'objet crÃ©Ã©.
+	extern "C" DllExport Node* Node_New(char* name, char* ico);
 
-	///<summary>Destructeur statique, pour permettre la destruction des objets Node en passant par la DLL.</summary>
-	///<param name="node">Un pointeur vers l'objet à détruire.</returns>
-	extern "C" __declspec(dllexport) void Node_Delete(Node* node);
+	///\brief Destructeur statique, pour permettre la destruction des objets Node en passant par la DLL.
+	///\param node Un pointeur vers l'objet Ã  dÃ©truire.
+	extern "C" DllExport void Node_Delete(Node* node);
 }
 #endif

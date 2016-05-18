@@ -1,37 +1,26 @@
-﻿La génération a démarré 12/05/2016 15:10:03.
-     1>Projet "C:\Users\abi\Documents\Cours\Cours_info\projet_info\ModelDll\ModelDll\ModelDll.vcxproj" sur le nœud 2 (Build cible(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D MODELDLL_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt src\Core.cpp src\Equipment.cpp src\Room.cpp
-         Core.cpp
-     1>c:\users\abi\documents\cours\cours_info\projet_info\modeldll\modeldll\include\Room.h(52): warning C4251: 'EP::Room::m_listEquipments' : class 'std::vector<EP::Equipment *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Room'
-                 with
-                 [
-                     _Ty=EP::Equipment *
-                 ]
-     1>c:\users\abi\documents\cours\cours_info\projet_info\modeldll\modeldll\src\../include/Core.h(76): warning C4251: 'EP::Core::m_listRooms' : class 'std::vector<EP::Room *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Core'
-                 with
-                 [
-                     _Ty=EP::Room *
-                 ]
-         Equipment.cpp
-         Room.cpp
-     1>c:\users\abi\documents\cours\cours_info\projet_info\modeldll\modeldll\src\../include/Room.h(52): warning C4251: 'EP::Room::m_listEquipments' : class 'std::vector<EP::Equipment *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Room'
-                 with
-                 [
-                     _Ty=EP::Equipment *
-                 ]
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\abi\Documents\Cours\Cours_info\projet_info\ModelDll\ModelDll\Release\ModelDll.dll" /INCREMENTAL:NO /NOLOGO libRequeteHttp.a kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\abi\Documents\Cours\Cours_info\projet_info\ModelDll\ModelDll\Release\ModelDll.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\abi\Documents\Cours\Cours_info\projet_info\ModelDll\ModelDll\Release\ModelDll.lib" /MACHINE:X86 /SAFESEH /DLL Release\Core.obj
-         Release\Node.obj
-         Release\Equipment.obj
-         Release\Room.obj
-            Création de la bibliothèque C:\Users\abi\Documents\Cours\Cours_info\projet_info\ModelDll\ModelDll\Release\ModelDll.lib et de l'objet C:\Users\abi\Documents\Cours\Cours_info\projet_info\ModelDll\ModelDll\Release\ModelDll.exp
-         Génération de code en cours
-         All 506 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-         Fin de la génération du code
-         ModelDll.vcxproj -> C:\Users\abi\Documents\Cours\Cours_info\projet_info\ModelDll\ModelDll\Release\ModelDll.dll
-     1>Génération du projet "C:\Users\abi\Documents\Cours\Cours_info\projet_info\ModelDll\ModelDll\ModelDll.vcxproj" terminée (Build cible(s)).
-
-La génération a réussi.
-
-Temps écoulé 00:00:04.09
+﻿  Core.cpp
+d:\etudepratique3a\ep_domotique_tablette\modeldll\modeldll\include\Room.h(58): warning C4251: 'EP::Room::m_listEquipments' : class 'std::vector<EP::Equipment *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Room'
+          with
+          [
+              _Ty=EP::Equipment *
+          ]
+d:\etudepratique3a\ep_domotique_tablette\modeldll\modeldll\src\../include/Core.h(96): warning C4251: 'EP::Core::m_listRooms' : class 'std::vector<EP::Room *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Core'
+          with
+          [
+              _Ty=EP::Room *
+          ]
+  Equipment.cpp
+  Node.cpp
+  Room.cpp
+d:\etudepratique3a\ep_domotique_tablette\modeldll\modeldll\src\../include/Room.h(58): warning C4251: 'EP::Room::m_listEquipments' : class 'std::vector<EP::Equipment *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Room'
+          with
+          [
+              _Ty=EP::Equipment *
+          ]
+     Création de la bibliothèque D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll\Release\ModelDll.lib et de l'objet D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll\Release\ModelDll.exp
+  Génération de code en cours
+  5 of 503 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    21 functions had inline decision re-evaluated but remain unchanged
+  Fin de la génération du code
+  ModelDll.vcxproj -> D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll\Release\ModelDll.dll

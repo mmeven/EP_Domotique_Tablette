@@ -79,6 +79,9 @@ namespace EP {
 
 		char* c1((char *) s1.c_str());
 		char* c2((char *) s2.c_str());
+
+		cout << c1 << " ; " << c2 << endl;
+
 		requeteHttpKira(c1, c2);
 		return 0;
 	}
@@ -125,6 +128,8 @@ namespace EP {
 		char* action("/api/callAction?deviceID=");
 		action += m_equipmentId;
 		action += s6 + m_action[300];
+
+		cout << getIpFibaro() << " ; " << action << " ; " << Fibaro_login << " ; " << Fibaro_password << endl;
 
 		requeteHttpFibaro(getIpFibaro(), action, Fibaro_login, Fibaro_password);
 

@@ -1,187 +1,195 @@
 #ifndef EQUIPMENT_H_INCLUDED
 #define EQUIPMENT_H_INCLUDED
+
+#ifndef DllExport
+#define DllExport  __declspec(dllexport)
+#endif
+
 #include "Node.h"
 
 namespace EP {
 
-	///<summary>Représente un équipement. Cette classe abstraite est spécialisée par EquipmentKira et EquipmentFibaro.</summary>
-	class __declspec(dllexport) Equipment : public Node {
+	///\class Equipment
+	///\brief ReprÃ©sente un Ã©quipement. Cette classe abstraite est spÃ©cialisÃ©e par EquipmentKira et EquipmentFibaro.
+	class DllExport Equipment : public Node {
 	public:
-		///<summary>Appelle le constructeur de Node, initialise m_roomParent et m_typeOf.</summary>
-		///<param name="parent">La pièce contenant l'équipement</param>
-		///<param name="typeOf">1: pour un équipement lié à la Kira, 2: pour un équipement lié à la Fibaro.</param>
+		///\brief Appelle le constructeur de Node, initialise m_roomParent et m_typeOf.
+		///\param parent La piÃ¨ce contenant l'Ã©quipement
+		///\param typeOf 1: pour un Ã©quipement liÃ© Ã  la Kira, 2: pour un Ã©quipement liÃ© Ã  la Fibaro.
 		Equipment(char* name, char* ico, Node* parent, int typeOf) : Node(name, ico), m_roomParent(parent), m_typeOf(typeOf) {};
 
 		virtual ~Equipment() {};
 
-		///<summary>Envoie la requête HTTP permettant d'intéragir avec l'équipement.</summary>
+		///\brief Envoie la requÃªte HTTP permettant d'intÃ©ragir avec l'Ã©quipement.
 		virtual int sendRequest() = 0;
 
-		///<returns>L'attribut m_typeOf.</returns>
+		///\return L'attribut m_typeOf.
 		int getTypeOf() { return m_typeOf; };
 
-		///<returns>L'attribut m_roomParent.</returns>
+		///\return L'attribut m_roomParent.
 		Node* getNodeParent() { return m_roomParent; };
 
-		///<returns>L'adresse IP de la Kira.</returns>
+		///\return L'adresse IP de la Kira.
 		static char* getIpKira() { return IP_Kira; };
 
-		///<returns>L'adresse IP de la Fibaro.</returns>
+		///\return L'adresse IP de la Fibaro.
 		static char* getIpFibaro() { return IP_Fibaro; };
 
-		///<returns>Le login de la Fibaro.</returns>
+		///\return Le login de la Fibaro.
 		static char* getLoginFibaro() { return Fibaro_login; };
 
-		///<returns>Le password de la Fibaro.</returns>
+		///\return Le password de la Fibaro.
 		static char* getPasswordFibaro() { return Fibaro_password; };
 
-		///<param name="new_ip">La nouvelle adresse IP de la Kira.</param>
-		///<returns>0 si l'adresse est incorrecte, 1 sinon.</returns>
+		///\param new_ip La nouvelle adresse IP de la Kira.
+		///\return 0 si l'adresse est incorrecte, 1 sinon.
 		static int setIpKira(char* new_ip);
 
-		///<param name="new_ip">La nouvelle adresse IP de la Fibaro.</param>
-		///<returns>0 si l'adresse est incorrecte, 1 sinon.</returns>
+		///\param new_ip La nouvelle adresse IP de la Fibaro.
+		///\return 0 si l'adresse est incorrecte, 1 sinon.
 		static int setIpFibaro(char* new_ip);
 
-		///<param name="new_login">Le nouveau login de la Fibaro.</param>
+		///\param new_login Le nouveau login de la Fibaro.
 		static int setLoginFibaro(char* new_login);
 
-		///<param name="new_password">Le nouveau password de la Fibaro.</param>
+		///\param new_password Le nouveau password de la Fibaro.
 		static int setPasswordFibaro(char* new_password);
 
 	protected:
-		///<summary>Un pointeur vers la pièce contenant l'équipement.</summary>
+		///\brief Un pointeur vers la piÃ¨ce contenant l'Ã©quipement.
 		Node* m_roomParent;
 
-		///<summary>1: pour un équipement lié à la Kira, 2: pour un équipement lié à la Fibaro.</summary>
+		///\brief 1: pour un Ã©quipement liÃ© Ã  la Kira, 2: pour un Ã©quipement liÃ© Ã  la Fibaro.
 		int m_typeOf;
 
-		///<summary>L'adresse IP de la Kira.</summary>
+		///\brief L'adresse IP de la Kira.
 		static char IP_Kira[15];
 
-		///<summary>L'adresse IP de la Fibaro.</summary>
+		///\brief L'adresse IP de la Fibaro.
 		static char IP_Fibaro[15];
 
-		///<summary>Le login de la Fibaro.</summary>
+		///\brief Le login de la Fibaro.
 		static char Fibaro_login[300];
 
-		///<summary>Le password de la Fibaro.</summary>
+		///\brief Le password de la Fibaro.
 		static char Fibaro_password[300];
 	};
 
-	///<summary>Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu'on passe par la DLL.</summary>
-	///<returns>L'adresse IP de la Kira.</returns>
-	extern "C" __declspec(dllexport) char* Equipment_getIpKira();
+	///\brief Utiliser cette mÃ©thode plutÃ´t que la mÃ©thode statique de la classe Ã©quipement lorsqu'on passe par la DLL.
+	///\return L'adresse IP de la Kira.
+	extern "C" DllExport char* Equipment_getIpKira();
 
-	///<summary>Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu'on passe par la DLL.</summary>
-	///<returns>L'adresse IP de la Fibaro.</returns>
-	extern "C" __declspec(dllexport) char* Equipment_getIpFibaro();
+	///\brief Utiliser cette mÃ©thode plutÃ´t que la mÃ©thode statique de la classe Ã©quipement lorsqu'on passe par la DLL.
+	///\return L'adresse IP de la Fibaro.
+	extern "C" DllExport char* Equipment_getIpFibaro();
 
-	///<summary>Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu'on passe par la DLL.</summary>
-	///<param name="new_ip">La nouvelle adresse IP de la Kira.</param>
-	///<returns>0 si l'adresse est incorrecte, 1 sinon.</returns>
-	extern "C" __declspec(dllexport) int Equipment_setIpKira(char* new_ip);
+	///\brief Utiliser cette mÃ©thode plutÃ´t que la mÃ©thode statique de la classe Ã©quipement lorsqu'on passe par la DLL.
+	///\param new_ip La nouvelle adresse IP de la Kira.
+	///\return 0 si l'adresse est incorrecte, 1 sinon.
+	extern "C" DllExport int Equipment_setIpKira(char* new_ip);
 
-	///<summary>Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu'on passe par la DLL.</summary>
-	///<param name="new_ip">La nouvelle adresse IP de la Fibaro.</param>
-	///<returns>0 si l'adresse est incorrecte, 1 sinon.</returns>
-	extern "C" __declspec(dllexport) int Equipment_setIpFibaro(char* new_ip);
+	///\brief Utiliser cette mÃ©thode plutÃ´t que la mÃ©thode statique de la classe Ã©quipement lorsqu'on passe par la DLL.
+	///\param new_ip La nouvelle adresse IP de la Fibaro.
+	///\return 0 si l'adresse est incorrecte, 1 sinon.
+	extern "C" DllExport int Equipment_setIpFibaro(char* new_ip);
 
-	///<summary>Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu'on passe par la DLL.</summary>
-	///<returns>Le login de la Fibaro.</returns>
-	extern "C" __declspec(dllexport) char* Equipment_getLoginFibaro();
+	///\brief Utiliser cette mÃ©thode plutÃ´t que la mÃ©thode statique de la classe Ã©quipement lorsqu'on passe par la DLL.
+	///\return Le login de la Fibaro.
+	extern "C" DllExport char* Equipment_getLoginFibaro();
 
-	///<summary>Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu'on passe par la DLL.</summary>
-	///<returns>Le password de la Fibaro.</returns>
-	extern "C" __declspec(dllexport) char* Equipment_getPasswordFibaro();
+	///\brief Utiliser cette mÃ©thode plutÃ´t que la mÃ©thode statique de la classe Ã©quipement lorsqu'on passe par la DLL.
+	///\return Le password de la Fibaro.
+	extern "C" DllExport char* Equipment_getPasswordFibaro();
 
-	///<summary>Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu'on passe par la DLL.</summary>
-	///<param name="new_login">Le nouveau login de la Fibaro.</param>
-	extern "C" __declspec(dllexport) int Equipment_setLoginFibaro(char* new_login);
+	///\brief Utiliser cette mÃ©thode plutÃ´t que la mÃ©thode statique de la classe Ã©quipement lorsqu'on passe par la DLL.
+	///\param new_login Le nouveau login de la Fibaro.
+	extern "C" DllExport int Equipment_setLoginFibaro(char* new_login);
 
-	///<summary>Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu'on passe par la DLL.</summary>
-	///<param name="new_password">Le nouveau password de la Fibaro.</param>
-	extern "C" __declspec(dllexport) int Equipment_setPasswordFibaro(char* new_password);
+	///\brief Utiliser cette mÃ©thode plutÃ´t que la mÃ©thode statique de la classe Ã©quipement lorsqu'on passe par la DLL.
+	///\param new_password Le nouveau password de la Fibaro.
+	extern "C" DllExport int Equipment_setPasswordFibaro(char* new_password);
 
-	///<summary>Représente un équipement lié à une Kira, hérite de Equipment.</summary>
-	class __declspec(dllexport) EquipmentKira : public Equipment
+	///\class EquipmentKira
+	///\brief ReprÃ©sente un Ã©quipement liÃ© Ã  une Kira, hÃ©rite de Equipment.
+	class DllExport EquipmentKira : public Equipment
 	{
 	public:
-		///<summary>Appelle le constructeur de Equipment et initialise m_buttonId et m_page.</summary>
-		///<param name="buttonId">Le numéro du bouton correspondant à l'équipement dans l'interface web de la Kira.</param>
-		///<param name="page">La page du bouton correspondant à l'équipement dans l'interface web de la Kira.</param>
+		///\brief Appelle le constructeur de Equipment et initialise m_buttonId et m_page.
+		///\param buttonId Le numÃ©ro du bouton correspondant Ã  l'Ã©quipement dans l'interface web de la Kira.
+		///\param page La page du bouton correspondant Ã  l'Ã©quipement dans l'interface web de la Kira.
 		EquipmentKira(char* name, char* ico, Node* parent, int buttonId, int page);
 
 		virtual ~EquipmentKira();
 
-		///<summary>Exécute la requête HTTP correspondant à cet équipement.</summary>
+		///\brief ExÃ©cute la requÃªte HTTP correspondant Ã  cet Ã©quipement.
 		virtual int sendRequest();
 
-		///<returns>Le numéro du bouton correspondant à l'équipement dans l'interface web de la Kira.</returns>
+		///\return Le numÃ©ro du bouton correspondant Ã  l'Ã©quipement dans l'interface web de la Kira.
 		int getButtonId();
 
-		///<returns>Le numéro de page du bouton correspondant à l'équipement dans l'interface web de la Kira.</returns>
+		///\return Le numÃ©ro de page du bouton correspondant Ã  l'Ã©quipement dans l'interface web de la Kira.
 		int getPageNumber();
 
-		///<param name="new_id">Le nouveau numéro du bouton.</param>
+		///\param new_id Le nouveau numÃ©ro du bouton.
 		int setButtonId(int new_id);
 
-		///<param name="new_PageNumber">Le nouveau numéro de page du bouton.</param>
+		///\param new_PageNumber Le nouveau numÃ©ro de page du bouton.
 		int setPageNumber(int new_PageNumber);
 	protected:
 
 	private:
-		///<summary>Le numéro du bouton correspondant à l'équipement dans l'interface web de la Kira.</summary>
+		///\brief Le numÃ©ro du bouton correspondant Ã  l'Ã©quipement dans l'interface web de la Kira.
 		int m_buttonId;
 
-		///<summary>Le numéro de page du bouton correspondant à l'équipement dans l'interface web de la Kira.</summary>
+		///\brief Le numÃ©ro de page du bouton correspondant Ã  l'Ã©quipement dans l'interface web de la Kira.
 		int m_pageNumber;
 	};
 
-	///<summary>Constructeur statique utilisé pour permettre l'utilisation des objets EquipmentKira en
-	///passant par la DLL. Les paramètres sont les mêmes que ceux du constructeur.</summary>
-	///<returns>Un pointeur vers l'objet créé.</returns>
-	extern "C" __declspec(dllexport) EquipmentKira* EquipmentKira_New(char* name, char* ico, Node* parent, int buttonId, int page);
+	///\brief Constructeur statique utilisÃ© pour permettre l'utilisation des objets EquipmentKira en
+	///passant par la DLL. Les paramÃ¨tres sont les mÃªmes que ceux du constructeur.
+	///\return Un pointeur vers l'objet crÃ©Ã©.
+	extern "C" DllExport EquipmentKira* EquipmentKira_New(char* name, char* ico, Node* parent, int buttonId, int page);
 
-	///<summary>Destructeur statique, pour permettre la destruction des objets EquipmentKira en passant par la DLL.</summary>
-	///<param name="eq">Un pointeur vers l'objet à détruire.</returns>
-	extern "C" __declspec(dllexport) void EquipmentKira_Delete(EquipmentKira* eq);
+	///\brief Destructeur statique, pour permettre la destruction des objets EquipmentKira en passant par la DLL.
+	///\param eq Un pointeur vers l'objet Ã  dÃ©truire.
+	extern "C" DllExport void EquipmentKira_Delete(EquipmentKira* eq);
 
-	///<summary>Représente un équipement lié à une Fibaro, hérite de Equipment</summary>
-	class __declspec(dllexport) EquipmentFibaro : public Equipment
+	///\class EquipmentFibaro
+	///\brief ReprÃ©sente un Ã©quipement liÃ© Ã  une Fibaro, hÃ©rite de Equipment
+	class DllExport EquipmentFibaro : public Equipment
 	{
 	public:
-		///<summary>Appelle le constructeur de Equipment et initialise m_equipmentId et m_action.</summary>
-		///<param name="buttonId">L'identifiant correspondant à l'équipement dans l'interface web de la Fibaro.</param>
-		///<param name="page">L'action que l'équipement devra effectuer.</param>
+		///\brief Appelle le constructeur de Equipment et initialise m_equipmentId et m_action.
+		///\param equipmentId L'identifiant correspondant Ã  l'Ã©quipement dans l'interface web de la Fibaro.
+		///\param action L'action que l'Ã©quipement devra effectuer.
 		EquipmentFibaro(char* name, char* ico, Node* parent, int equipmentId, char* action);
 
 		virtual ~EquipmentFibaro();
 
-		///<summary>Exécute la requête HTTP correspondant à cet équipement.</summary>
+		///\brief ExÃ©cute la requÃªte HTTP correspondant Ã  cet Ã©quipement.
 		virtual int sendRequest();
 
-		///<returns>L'identifiant correspondant à l'équipement dans l'interface web de la Fibaro.</returns>
+		///\return L'identifiant correspondant Ã  l'Ã©quipement dans l'interface web de la Fibaro.
 		int getEquipmentId();
 
-		///<returns>L'action que l'équipement devra effectuer.</returns>
+		///\return L'action que l'Ã©quipement devra effectuer.
 		char* getAction();
 	protected:
 	private:
-		///<summary>L'identifiant correspondant à l'équipement dans l'interface web de la Fibaro.</summary>
+		///\brief L'identifiant correspondant Ã  l'Ã©quipement dans l'interface web de la Fibaro.
 		int m_equipmentId;
 
-		///<summary>L'action que l'équipement devra effectuer.</summary>
+		///\brief L'action que l'Ã©quipement devra effectuer.
 		char m_action[300];
 	};
 
-	///<summary>Constructeur statique utilisé pour permettre l'utilisation des objets EquipmentFibaro en
-	///passant par la DLL. Les paramètres sont les mêmes que ceux du constructeur.</summary>
-	///<returns>Un pointeur vers l'objet créé.</returns>
-	extern "C" __declspec(dllexport) EquipmentFibaro* EquipmentFibaro_New(char* name, char* ico, Node* parent, int equipmentId, char* action);
+	///\brief Constructeur statique utilisÃ© pour permettre l'utilisation des objets EquipmentFibaro en
+	///passant par la DLL. Les paramÃ¨tres sont les mÃªmes que ceux du constructeur.
+	///\return Un pointeur vers l'objet crÃ©Ã©.
+	extern "C" DllExport EquipmentFibaro* EquipmentFibaro_New(char* name, char* ico, Node* parent, int equipmentId, char* action);
 
-	///<summary>Destructeur statique, pour permettre la destruction des objets EquipmentFibaro en passant par la DLL.</summary>
-	///<param name="eq">Un pointeur vers l'objet à détruire.</returns>
-	extern "C" __declspec(dllexport) void EquipmentFibaro_Delete(EquipmentFibaro* eq);
+	///\brief Destructeur statique, pour permettre la destruction des objets EquipmentFibaro en passant par la DLL.
+	///\param eq Un pointeur vers l'objet Ã  dÃ©truire.
+	extern "C" DllExport void EquipmentFibaro_Delete(EquipmentFibaro* eq);
 }
 #endif
