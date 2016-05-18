@@ -174,13 +174,18 @@ namespace MyDomotik
         /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void Menu1(object sender, RoutedEventArgs e)
         {
-            Button button = sender as Button; //Enregistrement du bouton choisi
-            indexPiece = (int)button.Tag;
-            Options.Visibility = Visibility.Visible;
-            Supprimer.IsEnabled = true;
-            ChangerNom.IsEnabled = true;
-            AjouterEquipements.IsEnabled = true;
-            message1.Text = "";
+            if (!nouvellePiece)
+            {
+            
+                Button button = sender as Button; //Enregistrement du bouton choisi
+                indexPiece = (int)button.Tag;
+                Options.Visibility = Visibility.Visible;
+                Supprimer.IsEnabled = true;
+                ChangerNom.IsEnabled = true;
+                AjouterEquipements.IsEnabled = true;
+                message1.Text = "";
+                message2.Text = "";
+            }
         }
 
 
@@ -232,7 +237,9 @@ namespace MyDomotik
         /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void changerNomIcone(object sender, RoutedEventArgs e)
         {
+
             message1.Text = "Veuillez attribuer un nom à l'icone:";
+            message2.Text = "";
             nomIcone.Visibility = Visibility.Visible;
             Valider.Visibility = Visibility.Visible;
             Options.Visibility = Visibility.Collapsed;
@@ -271,6 +278,7 @@ namespace MyDomotik
         /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void choixImage(object sender, RoutedEventArgs e)
         {
+            Options.Visibility = Visibility.Collapsed;
 
             // Affiche la boîte de dialogue permettant à l'utilisateur d'entrer le nom de l'icône
             message2.Text = "";
