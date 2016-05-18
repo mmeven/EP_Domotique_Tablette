@@ -85,8 +85,14 @@ namespace MyDomotik
             core = Core_NewFromSave(sf.Path + "\\load.txt");
 
             affichage = new Affichage();
+            /*Button b = new Button();
+            b.Background = new SolidColorBrush(Colors.Red); //Boutons grille
 
-            afficherPieces(); //gère l'affichage de la grille: boutons selon le format, affichage des pièces... 
+            b.SetValue(Button.HorizontalAlignmentProperty, HorizontalAlignment.Stretch);
+            b.SetValue(Button.VerticalAlignmentProperty, VerticalAlignment.Stretch);
+            cadre.Children.Add(b);*/
+
+                        afficherPieces(); //gère l'affichage de la grille: boutons selon le format, affichage des pièces... 
             affichage.afficheHeure(TimeBox); //affichage de l'heure en haut à gauche de la page d'accueil
         }
 
@@ -100,7 +106,7 @@ namespace MyDomotik
         public void afficherPieces()
         {
             vueEquipement = false;
-            List<Button> ListeBoutons = affichage.afficherPiecesGrille(pageActuelle, cadre, core);
+            List<Button> ListeBoutons = affichage.afficherPiecesGrille(pageActuelle, cadre, core);   
             int theme = Core_getThemeId(core);
             affichage.afficherCouleur(theme, ListeBoutons, MainGrid, Rect1, Rect2, Rect3, cadre, RectAccueil, RectSuivant, RectPrecedent, RectFauteuil);
             foreach (Button b in ListeBoutons)
@@ -117,6 +123,7 @@ namespace MyDomotik
         /// </summary>
         private void afficherEquipements()
         {
+
             IntPtr tmp = Node_getName(pieceSelectionnee);
             string nomPiece = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
             page_title.Text = nomPiece;
@@ -125,8 +132,8 @@ namespace MyDomotik
             {
                 b.Click += EquipementClick;
             }
-            int theme = Core_getThemeId(core);
-            affichage.afficherCouleur(theme, ListeBoutons, MainGrid, Rect1, Rect2, Rect3, cadre, RectAccueil, RectSuivant, RectPrecedent, RectFauteuil);
+            //int theme = Core_getThemeId(core);
+            //affichage.afficherCouleur(theme, ListeBoutons, MainGrid, Rect1, Rect2, Rect3, cadre, RectAccueil, RectSuivant, RectPrecedent, RectFauteuil);
         }
 
 

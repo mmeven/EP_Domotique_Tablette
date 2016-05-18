@@ -156,12 +156,24 @@ namespace MyDomotik
         /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void Menu1(object sender, RoutedEventArgs e)
         {
-            Button button = sender as Button; //Enregistrement du bouton choisi
-            indexEquipement = (int)button.Tag;
-            Options.Visibility = Visibility.Visible;
-            Supprimer.IsEnabled = true;
-            ChangerNom.IsEnabled = true;
-            Annuler.IsEnabled = true;
+            if (!nouvelleIcone & !choixFibaro & !choixKira)
+            {
+                //Disparition champs kira et fibaro
+                numBoutonOuAction.Visibility = Visibility.Collapsed;
+                champPageOuID.Visibility = Visibility.Collapsed;
+                numPageOuID.Visibility = Visibility.Collapsed;
+                champBoutonOuAction.Visibility = Visibility.Collapsed;
+                Fibaro.Visibility = Visibility.Collapsed;
+                Kira.Visibility = Visibility.Collapsed;
+                message1.Text = "";
+
+                Button button = sender as Button; //Enregistrement du bouton choisi
+                indexEquipement = (int)button.Tag;
+                Options.Visibility = Visibility.Visible;
+                Supprimer.IsEnabled = true;
+                ChangerNom.IsEnabled = true;
+                Annuler.IsEnabled = true;
+            }
         }
 
 
@@ -188,14 +200,9 @@ namespace MyDomotik
         /// <param name="sender">Bouton "Supprimer".</param>
         /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void enleverIcone(object sender, RoutedEventArgs e)
-        {
-            Room_deleteEquipmentByIndex(core, indexEquipement);
+        { 
+            Room_deleteEquipmentByIndex(piece, indexEquipement);
             Core_save(core);
-
-            Options.Visibility = Visibility.Collapsed;
-            Supprimer.IsEnabled = false;
-            ChangerNom.IsEnabled = false;
-            Annuler.IsEnabled = false;
 
             this.Frame.GoBack();
             this.Frame.GoForward();
@@ -213,7 +220,7 @@ namespace MyDomotik
         /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void changerNomIcone(object sender, RoutedEventArgs e)
         {
-            message1.Text = "Veuillez attribuer un nom à l'icone:";
+            message2.Text = "Veuillez attribuer un nom à l'icone:";
             nomIcone.Visibility = Visibility.Visible;
             Valider.Visibility = Visibility.Visible;
             Options.Visibility = Visibility.Collapsed;
@@ -283,9 +290,11 @@ namespace MyDomotik
         /// <param name="sender">Image choisie pour représenter le nouvel équipement.</param>
         /// <param name="e">Evénement ayant provoqué l'appel de la fonction.</param>
         private void choixImage(object sender, RoutedEventArgs e)
-        { 
+        {
+            Options.Visibility = Visibility.Collapsed;
             if (choixKira || choixFibaro)
             {                  
+
                 //Disparition champs kira et fibaro
                 numBoutonOuAction.Visibility = Visibility.Collapsed;
                 champPageOuID.Visibility = Visibility.Collapsed;

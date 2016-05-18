@@ -24,7 +24,7 @@ namespace MyDomotik
     public sealed partial class ReglagesModeSelection : Page
     {
 
-        
+       
         /// <summary>
         /// Méthode principale appelée lors de l'ouverture de la page : initialise les objets.
         /// </summary>

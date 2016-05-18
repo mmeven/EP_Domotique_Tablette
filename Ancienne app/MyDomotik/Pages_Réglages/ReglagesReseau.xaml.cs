@@ -24,20 +24,36 @@ namespace MyDomotik.Pages_Réglages
     public sealed partial class ReglagesReseau : Page
     {
         [DllImport("ModelDll.dll", EntryPoint = "Equipment_setIpKira",
-            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern int Equipment_setIpKira(String new_ip);
 
         [DllImport("ModelDll.dll", EntryPoint = "Equipment_setIpFibaro",
-            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern int Equipment_setIpFibaro(String new_ip);
 
         [DllImport("ModelDll.dll", EntryPoint = "Equipment_setLoginFibaro",
-            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern int Equipment_setLoginFibaro(String new_login);
 
         [DllImport("ModelDll.dll", EntryPoint = "Equipment_setPasswordFibaro",
-            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.ThisCall)]
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern int Equipment_setPasswordFibaro(String new_passord);
+
+        [DllImport("ModelDll.dll", EntryPoint = "Equipment_getIpKira",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr Equipment_getIpKira();
+
+        [DllImport("ModelDll.dll", EntryPoint = "Equipment_getIpFibaro",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr Equipment_getIpFibaro();
+
+        [DllImport("ModelDll.dll", EntryPoint = "Equipment_getLoginFibaro",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr Equipment_getLoginFibaro();
+
+        [DllImport("ModelDll.dll", EntryPoint = "Equipment_getPasswordFibaro",
+            CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr Equipment_getPasswordFibaro();
 
         [DllImport("ModelDll.dll", EntryPoint = "Core_NewFromSave",
             CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
@@ -60,6 +76,22 @@ namespace MyDomotik.Pages_Réglages
             this.InitializeComponent();
             Windows.Storage.StorageFolder sf = Windows.Storage.ApplicationData.Current.LocalFolder;
             core = Core_NewFromSave(sf.Path + "\\load.txt");
+
+            IntPtr tmp = Equipment_getIpFibaro();
+            string name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
+            champIPFibaro.Text = name + "";
+
+            tmp = Equipment_getPasswordFibaro();
+            name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
+            champMDPFibaro.Text = name + "";
+
+            tmp = Equipment_getLoginFibaro();
+            name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
+            champLoginFibaro.Text = name + "";
+
+            tmp = Equipment_getIpKira();
+            name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
+            champKira.Text = name + "";
         }
 
 
@@ -100,7 +132,10 @@ namespace MyDomotik.Pages_Réglages
         private void validationIPKira(object sender, RoutedEventArgs e)
         {
             Equipment_setIpKira(champKira.Text);
-            champKira.Text = "";
+ 
+            IntPtr tmp = Equipment_getIpKira();
+            String name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
+            champKira.Text = name + "";
         }
 
 
@@ -114,7 +149,10 @@ namespace MyDomotik.Pages_Réglages
         private void validationIPFibaro(object sender, RoutedEventArgs e)
         {
             Equipment_setIpFibaro(champIPFibaro.Text);
-            champIPFibaro.Text = "";
+
+            IntPtr tmp = Equipment_getIpFibaro();
+            string name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
+            champIPFibaro.Text = name + "";
         }
 
 
@@ -128,7 +166,9 @@ namespace MyDomotik.Pages_Réglages
         private void validationLoginFibaro(object sender, RoutedEventArgs e)
         {
             Equipment_setLoginFibaro(champLoginFibaro.Text);
-            champLoginFibaro.Text = "";
+            IntPtr tmp = Equipment_getLoginFibaro();
+            String name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
+            champLoginFibaro.Text = name + "";
         }
 
 
@@ -142,7 +182,10 @@ namespace MyDomotik.Pages_Réglages
         private void validationMDPFibaro(object sender, RoutedEventArgs e)
         {
             Equipment_setPasswordFibaro(champMDPFibaro.Text);
-            champMDPFibaro.Text = "";
+
+            IntPtr tmp = Equipment_getPasswordFibaro();
+            String name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
+            champMDPFibaro.Text = name + "";
         }
     }
 }
