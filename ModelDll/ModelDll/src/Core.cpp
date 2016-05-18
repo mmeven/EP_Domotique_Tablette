@@ -8,7 +8,7 @@ using namespace std;
 
 namespace EP {
 	Core::Core(char* file) : m_iconSize(2), m_themeId(1)	{
-		strcpy_s(m_coreSave, file);
+		strcpy(m_coreSave, file);
 	}
 
 	Core::~Core() {
