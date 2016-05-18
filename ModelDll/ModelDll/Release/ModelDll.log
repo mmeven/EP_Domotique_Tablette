@@ -1,8 +1,24 @@
-﻿  Equipment.cpp
+﻿  Core.cpp
+d:\etudepratique3a\ep_domotique_tablette\modeldll\modeldll\include\Room.h(58): warning C4251: 'EP::Room::m_listEquipments' : class 'std::vector<EP::Equipment *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Room'
+          with
+          [
+              _Ty=EP::Equipment *
+          ]
+d:\etudepratique3a\ep_domotique_tablette\modeldll\modeldll\src\../include/Core.h(96): warning C4251: 'EP::Core::m_listRooms' : class 'std::vector<EP::Room *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Core'
+          with
+          [
+              _Ty=EP::Room *
+          ]
+  Node.cpp
+  Equipment.cpp
+  Room.cpp
+d:\etudepratique3a\ep_domotique_tablette\modeldll\modeldll\src\../include/Room.h(58): warning C4251: 'EP::Room::m_listEquipments' : class 'std::vector<EP::Equipment *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Room'
+          with
+          [
+              _Ty=EP::Equipment *
+          ]
      Création de la bibliothèque D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll\Release\ModelDll.lib et de l'objet D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll\Release\ModelDll.exp
   Génération de code en cours
-  1 of 486 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  All 486 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Fin de la génération du code
   ModelDll.vcxproj -> D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll\Release\ModelDll.dll
