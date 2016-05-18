@@ -75,7 +75,10 @@ namespace EP {
 		string s3 = ".htm?button"; //impossible de le mettre directement dans la ligne suivante, je ne sais pas pourquoi
 
 		s2 += s3;
-		s2 += m_buttonId + "#";     // deuxieme partie de l'adresse  + 
+		// deuxieme partie de l'adresse 
+		if(m_buttonId < 10) s2+= "00" + m_buttonId;
+		else if (m_buttonId < 100) s2 += "0" + m_buttonId;
+		s2 += "#";
 
 		char* c1((char *) s1.c_str());
 		char* c2((char *) s2.c_str());
