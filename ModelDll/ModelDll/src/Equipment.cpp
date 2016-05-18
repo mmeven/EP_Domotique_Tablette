@@ -129,9 +129,9 @@ namespace EP {
 		char s6 = '&'; //impossible de le mettre directement dans la ligne suivante, je ne sais pas pourquoi
 		char action[500];
 
-		cerr << getIpFibaro() << " ; " << action << " ; " << Fibaro_login << " ; " << Fibaro_password << endl;
-
 		sprintf(action, "/api/callAction?deviceID=%d&name=%s", m_equipmentId, m_action);
+
+		cerr << getIpFibaro() << " ; " << action << " ; " << Fibaro_login << " ; " << Fibaro_password << endl;
 
 		requeteHttpFibaro(getIpFibaro(), action, Fibaro_login, Fibaro_password);
 
