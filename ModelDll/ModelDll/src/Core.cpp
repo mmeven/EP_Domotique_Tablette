@@ -29,7 +29,7 @@ namespace EP {
 			Room* room;
 			Equipment* eq;
 
-
+			
 			for (i = 0; i < getNumberRooms(); i++) {
 				room = m_listRooms[i];
 

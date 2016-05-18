@@ -45,4 +45,17 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Library Include="libRequeteHttp.a">
+      <Filter>Fichiers de ressources</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libRequeteHttp.def">
+      <Filter>Fichiers de ressources</Filter>
+    </None>
+    <None Include="RequeteHttp.dll">
+      <Filter>Fichiers de ressources</Filter>
+    </None>
+  </ItemGroup>
 </Project>

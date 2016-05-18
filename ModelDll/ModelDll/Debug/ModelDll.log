@@ -1,1 +1,24 @@
-﻿
+﻿  Room.cpp
+d:\etudepratique3a\ep_domotique_tablette\modeldll\modeldll\include\room.h(58): warning C4251: 'EP::Room::m_listEquipments' : class 'std::vector<EP::Equipment *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Room'
+          with
+          [
+              _Ty=EP::Equipment *
+          ]
+  Equipment.cpp
+  Node.cpp
+  Core.cpp
+d:\etudepratique3a\ep_domotique_tablette\modeldll\modeldll\include\room.h(58): warning C4251: 'EP::Room::m_listEquipments' : class 'std::vector<EP::Equipment *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Room'
+          with
+          [
+              _Ty=EP::Equipment *
+          ]
+d:\etudepratique3a\ep_domotique_tablette\modeldll\modeldll\include\core.h(96): warning C4251: 'EP::Core::m_listRooms' : class 'std::vector<EP::Room *,std::allocator<_Ty>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'EP::Core'
+          with
+          [
+              _Ty=EP::Room *
+          ]
+  Génération de code en cours...
+     Création de la bibliothèque D:\Downloads\App2\App2\Debug\ModelDll.lib et de l'objet D:\Downloads\App2\App2\Debug\ModelDll.exp
+Equipment.obj : error LNK2019: symbole externe non résolu __imp__requeteHttpKira référencé dans la fonction "public: virtual int __thiscall EP::EquipmentKira::sendRequest(void)" (?sendRequest@EquipmentKira@EP@@UAEHXZ)
+Equipment.obj : error LNK2019: symbole externe non résolu __imp__requeteHttpFibaro référencé dans la fonction "public: virtual int __thiscall EP::EquipmentFibaro::sendRequest(void)" (?sendRequest@EquipmentFibaro@EP@@UAEHXZ)
+D:\Downloads\App2\App2\Debug\ModelDll.dll : fatal error LNK1120: 2 externes non résolus
