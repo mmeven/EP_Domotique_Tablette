@@ -19,6 +19,7 @@ using Windows.UI.Xaml.Navigation;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
+using Windows.System.Threading;
 
 namespace MyDomotik
 {
@@ -38,7 +39,8 @@ namespace MyDomotik
         private IntPtr pieceSelectionnee; //Pièce choisie et dont il faut afficher les équipements
         private Affichage affichage;
         private bool modeSelectionAlternatif;
-
+        private static List<Button> boutons;
+        private Button b;
         //DLL
         [DllImport("ModelDll.dll", EntryPoint = "Core_NewFromSave",
         CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
@@ -87,13 +89,12 @@ namespace MyDomotik
             core = Core_NewFromSave(sf.Path + "\\load.txt");
 
             affichage = new Affichage();
-            modeSelectionAlternatif = false;
+            modeSelectionAlternatif = true;
             afficherPieces(); //gère l'affichage de la grille: boutons selon le format, affichage des pièces... 
             affichage.afficheHeure(TimeBox); //affichage de l'heure en haut à gauche de la page d'accueil
         }
 
-
-
+        
         /// <summary>
         /// Méthode permettant d'initialiser et d'afficher la grille de pièces. \n
         /// Elle associe la méthode PieceClick aux boutons non vides de la grille. \n
@@ -102,16 +103,12 @@ namespace MyDomotik
         public void afficherPieces()
         {
             vueEquipement = false;
-            List<Button> ListeBoutons = affichage.afficherPiecesGrille(pageActuelle, cadre, core);
+            boutons = affichage.afficherPiecesGrille(pageActuelle, cadre, core);
             int theme = Core_getThemeId(core);
-            affichage.afficherCouleur(theme, ListeBoutons, MainGrid, Rect1, Rect2, Rect3, cadre, RectAccueil, RectSuivant, RectPrecedent, RectFauteuil);
-            foreach (Button b in ListeBoutons)
+            affichage.afficherCouleur(theme, boutons, MainGrid, Rect1, Rect2, Rect3, cadre, RectAccueil, RectSuivant, RectPrecedent, RectFauteuil);
+            foreach (Button b in boutons)
             {
                 b.Click += PieceClick;
-            }
-            if (modeSelectionAlternatif)
-            {
-                modeSelectionPiecesAlternatif();
             }
         }
 
@@ -133,71 +130,9 @@ namespace MyDomotik
                 b.Click += EquipementClick;
             }
             int theme = Core_getThemeId(core);
-            affichage.afficherCouleur(theme, ListeBoutons, MainGrid, Rect1, Rect2, Rect3, cadre, RectAccueil, RectSuivant, RectPrecedent, RectFauteuil);
-            if (modeSelectionAlternatif)
-            {
-                modeSelectionEquipementsAlternatif();
-            }
+            affichage.afficherCouleur(theme, ListeBoutons, MainGrid, Rect1, Rect2, Rect3, cadre, RectAccueil, RectSuivant, RectPrecedent, RectFauteuil);    
         }
-        
-
-
-        public void modeSelectionPiecesAlternatif()
-        {
-            List<Button> ListeBoutons = affichage.afficherPiecesGrille(pageActuelle, cadre, core);
-
-            Stopwatch sw = new Stopwatch();
-            
-            foreach (Button b in ListeBoutons)
-            {
-                bool tmp = true;
-                Brush couleurInitial = b.Background;
-                b.Background = new SolidColorBrush(Colors.Red);
-                sw.Start();
-                while (tmp)
-                {
-                    if (sw.ElapsedMilliseconds > 3000)
-                    {
-                        tmp = false;
-                        sw.Reset();
-                    }
-                }
-                b.Background = couleurInitial;
-            }
-            modeSelectionPiecesAlternatif();
-        }
-        
-
-
-        public void modeSelectionEquipementsAlternatif()
-        {
-            IntPtr tmpNom = Node_getName(pieceSelectionnee);
-            string nomPiece = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmpNom);
-            List<Button> ListeBoutons = affichage.afficherEquipementsGrille(pageActuelle, nomPiece, cadre, core);
-
-            Stopwatch sw = new Stopwatch();
-
-
-            foreach (Button b in ListeBoutons)
-            {
-                bool tmp = true;
-                Brush couleurInitial = b.Background;
-                b.Background = new SolidColorBrush(Colors.Red);
-                sw.Start();
-                while (tmp)
-                {
-                    if (sw.ElapsedMilliseconds > 3000)
-                    {
-                        tmp = false;
-                        sw.Reset();
-                    }
-                }
-                b.Background = couleurInitial;
-            }
-            modeSelectionEquipementsAlternatif();
-        }
-
-
+                
 
 
         /// <summary>
@@ -236,6 +171,7 @@ namespace MyDomotik
             Button button = sender as Button; //Enregistrement du bouton choisi
             int indicePiece = (int)button.Tag;
             pieceSelectionnee = Core_getRoomByIndex(core, indicePiece);
+            modeSelectionAlternatif = true;
             afficherEquipements();
         }
 
