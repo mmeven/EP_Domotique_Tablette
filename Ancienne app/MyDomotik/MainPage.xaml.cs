@@ -18,6 +18,7 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace MyDomotik
 {
@@ -33,9 +34,10 @@ namespace MyDomotik
     {
         private static IntPtr core;       
         private int pageActuelle = 0; //indique le numéro de la page courante de la grille. Lorsque l'on appuie sur le bouton suivant : pageActuelle++
-        private Boolean vueEquipement; //Lorsque vueEquipement=true il faut afficher une grille d'équipements, sinon afficher la grille des pièces
+        private bool vueEquipement; //Lorsque vueEquipement=true il faut afficher une grille d'équipements, sinon afficher la grille des pièces
         private IntPtr pieceSelectionnee; //Pièce choisie et dont il faut afficher les équipements
         private Affichage affichage;
+        private bool modeSelectionAlternatif;
 
         //DLL
         [DllImport("ModelDll.dll", EntryPoint = "Core_NewFromSave",
@@ -85,7 +87,7 @@ namespace MyDomotik
             core = Core_NewFromSave(sf.Path + "\\load.txt");
 
             affichage = new Affichage();
-
+            modeSelectionAlternatif = false;
             afficherPieces(); //gère l'affichage de la grille: boutons selon le format, affichage des pièces... 
             affichage.afficheHeure(TimeBox); //affichage de l'heure en haut à gauche de la page d'accueil
         }
@@ -107,7 +109,12 @@ namespace MyDomotik
             {
                 b.Click += PieceClick;
             }
+            if (modeSelectionAlternatif)
+            {
+                modeSelectionPiecesAlternatif();
+            }
         }
+
 
 
         /// <summary>
@@ -127,10 +134,72 @@ namespace MyDomotik
             }
             int theme = Core_getThemeId(core);
             affichage.afficherCouleur(theme, ListeBoutons, MainGrid, Rect1, Rect2, Rect3, cadre, RectAccueil, RectSuivant, RectPrecedent, RectFauteuil);
+            if (modeSelectionAlternatif)
+            {
+                modeSelectionEquipementsAlternatif();
+            }
+        }
+        
+
+
+        public void modeSelectionPiecesAlternatif()
+        {
+            List<Button> ListeBoutons = affichage.afficherPiecesGrille(pageActuelle, cadre, core);
+
+            Stopwatch sw = new Stopwatch();
+            
+            foreach (Button b in ListeBoutons)
+            {
+                bool tmp = true;
+                Brush couleurInitial = b.Background;
+                b.Background = new SolidColorBrush(Colors.Red);
+                sw.Start();
+                while (tmp)
+                {
+                    if (sw.ElapsedMilliseconds > 3000)
+                    {
+                        tmp = false;
+                        sw.Reset();
+                    }
+                }
+                b.Background = couleurInitial;
+            }
+            modeSelectionPiecesAlternatif();
+        }
+        
+
+
+        public void modeSelectionEquipementsAlternatif()
+        {
+            IntPtr tmpNom = Node_getName(pieceSelectionnee);
+            string nomPiece = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmpNom);
+            List<Button> ListeBoutons = affichage.afficherEquipementsGrille(pageActuelle, nomPiece, cadre, core);
+
+            Stopwatch sw = new Stopwatch();
+
+
+            foreach (Button b in ListeBoutons)
+            {
+                bool tmp = true;
+                Brush couleurInitial = b.Background;
+                b.Background = new SolidColorBrush(Colors.Red);
+                sw.Start();
+                while (tmp)
+                {
+                    if (sw.ElapsedMilliseconds > 3000)
+                    {
+                        tmp = false;
+                        sw.Reset();
+                    }
+                }
+                b.Background = couleurInitial;
+            }
+            modeSelectionEquipementsAlternatif();
         }
 
 
-        
+
+
         /// <summary>
         /// Méthode déclenchée lors du clic sur un équipement. \n
         /// Selon le type de l'équipement choisi (Fibaro ou Kira), elle lance la requête adéquate. 

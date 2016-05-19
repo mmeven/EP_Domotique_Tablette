@@ -397,7 +397,6 @@ namespace MyDomotik
                     bouton.SetValue(Grid.RowProperty, 1);
                 }
                 cadre.Children.Add(bouton);
-                boutons.Add(bouton);
             }
             return boutons;
         }

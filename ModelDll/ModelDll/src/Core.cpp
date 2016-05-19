@@ -8,7 +8,7 @@ using namespace std;
 
 namespace EP {
 	Core::Core(char* file) : m_iconSize(2), m_themeId(1)	{
-		strcpy_s(m_coreSave, file);
+		strcpy(m_coreSave, file);
 	}
 
 	Core::~Core() {
@@ -29,7 +29,7 @@ namespace EP {
 			Room* room;
 			Equipment* eq;
 
-
+			
 			for (i = 0; i < getNumberRooms(); i++) {
 				room = m_listRooms[i];
 

@@ -16,10 +16,10 @@ namespace EP {
 
 	int Equipment::setIpKira(char* new_ip){
 		int a = 0, b = 0, c = 0, d = 0;
-		int success = sscanf_s(new_ip, "%i.%i.%i.%i", &a, &b, &c, &d);
+		int success = sscanf(new_ip, "%i.%i.%i.%i", &a, &b, &c, &d);
 		if (success == 4 && a >= 0 && b >= 0 && c >= 0 && d >= 0 && a<255 && b<255 && c<255 && d<255) {
 			success = 1;
-			strcpy_s(IP_Kira, new_ip);
+			strcpy(IP_Kira, new_ip);
 		}
 		else {
 			success = 0;
@@ -29,11 +29,11 @@ namespace EP {
 
 	int Equipment::setIpFibaro(char* new_ip) {
 		int a = 0, b = 0, c = 0, d = 0;
-		int success = sscanf_s(new_ip, "%i.%i.%i.%i", &a, &b, &c, &d);
+		int success = sscanf(new_ip, "%i.%i.%i.%i", &a, &b, &c, &d);
 
 		if (success == 4 && a >= 0 && b >= 0 && c >= 0 && d >= 0 && a<255 && b<255 && c<255 && d<255) {
 			success = 1;
-			strcpy_s(IP_Fibaro, new_ip);
+			strcpy(IP_Fibaro, new_ip);
 		}
 		else {
 			success = 0;
@@ -44,13 +44,13 @@ namespace EP {
 
 	int Equipment::setLoginFibaro(char* new_login) {
 		if(new_login[0] != '\0')
-			strcpy_s(Fibaro_login, new_login);
+			strcpy(Fibaro_login, new_login);
 		return 0;
 	}
 
 	int Equipment::setPasswordFibaro(char* new_password) {
 		if (new_password[0] != '\0')
-			strcpy_s(Fibaro_password, new_password);
+			strcpy(Fibaro_password, new_password);
 		return 0;
 	}
 
@@ -70,16 +70,23 @@ namespace EP {
 	}
 
 	int EquipmentKira::sendRequest() {
-		string s1(getIpKira()); //domaine, premiere partie de l'adree
-		string s2("/remote" + m_pageNumber);
-		string s3 = ".htm?button"; //impossible de le mettre directement dans la ligne suivante, je ne sais pas pourquoi
+		char* s1(getIpKira()); //domaine, premiere partie de l'adree
+		char s2[500];
 
-		s2 += s3;
-		s2 += m_buttonId + "#";     // deuxieme partie de l'adresse  + 
+		// deuxieme partie de l'adresse
+		if (m_buttonId < 10) {
+			sprintf(s2, "/remote%d.htm?button00%d#", m_pageNumber, m_buttonId);
+		}
+		else if (m_buttonId < 100) {
+			sprintf(s2, "/remote%d.htm?button0%d#", m_pageNumber, m_buttonId);
+		}
+		else {
+			sprintf(s2, "/remote%d.htm?button%d#", m_pageNumber, m_buttonId);
+		}
 
-		char* c1((char *) s1.c_str());
-		char* c2((char *) s2.c_str());
-		requeteHttpKira(c1, c2);
+		cerr << s1 << " ; " << s2 << endl;
+
+		requeteHttpKira(s1, s2);
 		return 0;
 	}
 
@@ -111,7 +118,7 @@ namespace EP {
 	// FIBARO
 
 	EquipmentFibaro::EquipmentFibaro(char* name, char* ico, Node* parent, int equipmentId, char* action) : Equipment(name, ico, parent, 2), m_equipmentId(equipmentId) {
-		strcpy_s(m_action, action);
+		strcpy(m_action, action);
 	}
 
 	EquipmentFibaro::~EquipmentFibaro() {
@@ -119,12 +126,12 @@ namespace EP {
 	}
 
 	int EquipmentFibaro::sendRequest() {
-		// simple simple GET
-
 		char s6 = '&'; //impossible de le mettre directement dans la ligne suivante, je ne sais pas pourquoi
-		char* action("/api/callAction?deviceID=");
-		action += m_equipmentId;
-		action += s6 + m_action[300];
+		char action[500];
+
+		sprintf(action, "/api/callAction?deviceID=%d&name=%s", m_equipmentId, m_action);
+
+		cerr << getIpFibaro() << " ; " << action << " ; " << Fibaro_login << " ; " << Fibaro_password << endl;
 
 		requeteHttpFibaro(getIpFibaro(), action, Fibaro_login, Fibaro_password);
 

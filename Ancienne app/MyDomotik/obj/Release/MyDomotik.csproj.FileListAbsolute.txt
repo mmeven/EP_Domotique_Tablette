@@ -328,3 +328,8 @@ C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\R
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\qualifiers.txt.intermediate
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\MultipleQualifiersPerDimensionFound.txt
 C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\ProjectArchitectures.txt
+C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\bin\Release\WheelchairFeedback.xbf
+C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\WheelchairFeedback.g.i.cs
+C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\WheelchairFeedback.g.cs
+C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\WheelchairFeedback.xaml
+C:\Users\abi\Documents\Cours\Cours_info\projet_info\Ancienne app\MyDomotik\obj\Release\WheelchairFeedback.xbf

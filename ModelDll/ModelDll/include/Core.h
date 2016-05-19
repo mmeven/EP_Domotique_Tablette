@@ -1,110 +1,129 @@
 #ifndef CORE_H_INCLUDED
 #define CORE_H_INCLUDED
 
+#define DllExport __declspec(dllexport)
 #define FILESAVE_NAME_SIZE 500
 #include "Room.h"
 
 namespace EP {
 
-	///<summary>Le coeur de l'application, contient la liste des pièces,
-	///les paramètres de l'application ainsi que les méthodes pour gérer ceux-ci.</summary>
-	class __declspec(dllexport) Core {
+	/// \class Core
+	/// \brief Le coeur de l'application, contient la liste des piÃ¨ces,
+	/// les paramÃ¨tres de l'application ainsi que les mÃ©thodes pour gÃ©rer ceux-ci.
+	class DllExport Core {
 	public:
-		///<summary>Le constructeur de Core.</summary>
-		///<param name="file">Le nom du fichier de sauvegarde.</param>
+
+		/// \brief Le constructeur de Core.summary
+		/// \param file Le nom du fichier de sauvegarde.
 		Core(char* file);
 
-		///<summary>Le destructeur de Core. Vide la liste de pièces.</summary>
+		///
+		///\brief Le destructeur de Core. Vide la liste de piÃ¨ces.
 		~Core();
 
-		///<summary>Sauvegarde l'état actuel de l'application dans le fichier de sauvegarde.</summary>
+		///
+		///\brief Sauvegarde l'Ã©tat actuel de l'application dans le fichier de sauvegarde.
 		int save();
 
-		///<summary>Charge l'application depuis le fichier de sauvegarde.</summary>
+		///
+		///\brief Charge l'application depuis le fichier de sauvegarde.
 		int load();
 
-		///<summary>Ajoute le pointeur d'une pièce donnée dans m_listRooms.
-		///Le nom d'une pièce doit être unique.</summary>
-		///<param name="equip">Le pointeur de la pièce à ajouter.</param>
-		///<returns>0 si tout s'est bien passé, 1 si le nom est déjà pris.</returns>
+		///\brief Ajoute le pointeur d'une piÃ¨ce donnÃ©e dans m_listRooms.
+		///Le nom d'une piÃ¨ce doit Ãªtre unique.
+		///\param room Le pointeur de la piÃ¨ce Ã  ajouter.
+		///\return 0 si tout s'est bien passÃ©, 1 si le nom est dÃ©jÃ  pris.
 		int addRoom(Room* room);
 
-		///<summary>Supprime la pièce dont l'index est donné en paramètre.</summary>
-		///<param name="index">L'index de la pièce à supprimer de m_listRooms.</param>
-		///<returns>0 si tout s'est bien passé, 1 si l'index ne correspond à aucune pièce.</returns>
+		///\brief Supprime la piÃ¨ce dont l'index est donnÃ© en paramÃ¨tre.
+		///\param index L'index de la piÃ¨ce Ã  supprimer de m_listRooms.
+		///\return 0 si tout s'est bien passÃ©, 1 si l'index ne correspond Ã  aucune piÃ¨ce.
 		int deleteRoomByIndex(int index);
 
-		///<summary>Supprime la pièce dont le nom est donné en paramètre.</summary>
-		///<param name="name">Le nom de la pièce à supprimer de m_listRooms.</param>
-		///<returns>0 si tout s'est bien passé, 1 si le nom ne correspond à aucune pièce.</returns>
+		///\brief Supprime la piÃ¨ce dont le nom est donnÃ© en paramÃ¨tre.
+		///\param name Le nom de la piÃ¨ce Ã  supprimer de m_listRooms.
+		///\return 0 si tout s'est bien passÃ©, 1 si le nom ne correspond Ã  aucune piÃ¨ce.
 		int deleteRoomByName(char* name);
 
-		///<summary>Ne pas utiliser cette méthode à partir de la DLL. A la place on peut itérer avec
-		/// getNumberRooms et getRoomByIndex.</summary>
-		///<returns>L'attribut m_listRooms.</returns>
+		///\brief Ne pas utiliser cette mÃ©thode Ã  partir de la DLL. A la place on peut itÃ©rer avec
+		/// getNumberRooms et getRoomByIndex.
+		///\return L'attribut m_listRooms.
 		std::vector<Room*>* getRooms();
 
-		///<summary>Donne un pointeur vers la pièce dont le nom est donné en paramètre.</summary>
-		///<param name="name">Le nom de la pièce qu'on veut récupérer.</param>
-		///<returns>Un pointeur vers l'équipement demandé, NULL si aucun ne correspond.</returns>
+		///\brief Donne un pointeur vers la piÃ¨ce dont le nom est donnÃ© en paramÃ¨tre.
+		///\param name Le nom de la piÃ¨ce qu'on veut rÃ©cupÃ©rer.
+		///\return Un pointeur vers l'Ã©quipement demandÃ©, NULL si aucun ne correspond.
 		Room* getRoomByName(char* name);
 
-		///<summary>Donne un pointeur vers la pièce dont l'index est donné en paramètre.</summary>
-		///<param name="index">L'index de la pièce qu'on veut récupérer.</param>
-		///<returns>Un pointeur vers l'équipement demandé, NULL si aucun ne correspond.</returns>
+		///\brief Donne un pointeur vers la piÃ¨ce dont l'index est donnÃ© en paramÃ¨tre.
+		///\param index L'index de la piÃ¨ce qu'on veut rÃ©cupÃ©rer.
+		///\return Un pointeur vers l'Ã©quipement demandÃ©, NULL si aucun ne correspond.
 		Room* getRoomByIndex(int index);
 
-		///<returns>Le nom du fichier de sauvegarde.</returns>
+		///
+		///\return Le nom du fichier de sauvegarde.
 		char* getFileSave();
 
-		///<returns>Le nombre de pièces de m_listRooms.</returns>
+		///
+		///\return Le nombre de piÃ¨ces de m_listRooms.
 		int getNumberRooms();
 
-		///<returns>L'identifiant du thème utilisé.</returns>
+		///
+		///\return L'identifiant du thÃ¨me utilisÃ©.
 		int getThemeId();
 
-		///<returns>L'identifiant pour la taille des icônes.</returns>
+		///
+		///\return L'identifiant pour la taille des icÃ´nes.
 		int getIconSize();
 
-		///<param name="id">L'identifiant du nouveau thème.</param>
+		///
+		///\brief Permet de changer le thÃ¨me utilisÃ©.
+		///\param id L'identifiant du nouveau thÃ¨me.
 		void setThemeId(int id);
 
-		///<param name="size">Un chiffre correspondant à la nouvelle taille des icônes.</param>
+		///
+		///\brief Permet de changer la taille des icÃ´nes.
+		///\param size Un chiffre correspondant Ã  la nouvelle taille des icÃ´nes.
 		void setIconSize(int size);
 	private:
-		///<summary>Le nom du fichier de sauvegarde.</summary>
+
+		///
+		///\brief Le nom du fichier de sauvegarde.
 		char m_coreSave[FILESAVE_NAME_SIZE];
 
-		///<summary>La liste des pièces.</summary>
+		///
+		///\brief La liste des piÃ¨ces.
 		std::vector<Room*> m_listRooms;
 
-		///<summary>L'identifiant du thème utilisé.</summary>
+		///
+		///\brief L'identifiant du thÃ¨me utilisÃ©.
 		int m_themeId;
 
-		///<summary>Un chiffre correspondant à la taille des icônes. Il ne s'agit pas de la taille exacte
-		///mais d'un identifiant !</summary>
+		///
+		///\brief Un chiffre correspondant Ã  la taille des icÃ´nes. Il ne s'agit pas de la taille exacte
+		///mais d'un identifiant !
 		int m_iconSize;
 	};
 
-	///<summary>Constructeur statique utilisé pour permettre l'utilisation des objets Core en
-	///passant par la DLL. Les paramètres sont les mêmes que ceux du constructeur.</summary>
-	///<returns>Un pointeur vers l'objet créé.</returns>
-	extern "C" __declspec(dllexport) Core* Core_New(char* file);
+	///\brief Constructeur statique utilisÃ© pour permettre l'utilisation des objets Core en
+	///passant par la DLL. Les paramÃ¨tres sont les mÃªmes que ceux du constructeur.
+	///\return Un pointeur vers l'objet crÃ©Ã©.
+	extern "C" DllExport Core* Core_New(char* file);
 
-	///<summary>Constructeur statique utilisé pour permettre l'utilisation des objets Core en
-	///passant par la DLL. Les paramètres sont les mêmes que ceux du constructeur.
-	///Après création de l'objet, la méthode Core::load() est appelée sur celui-ci.</summary>
-	///<returns>Un pointeur vers l'objet créé.</returns>
-	extern "C" __declspec(dllexport) Core* Core_NewFromSave(char* file);
+	///\brief Constructeur statique utilisÃ© pour permettre l'utilisation des objets Core en
+	///passant par la DLL. Les paramÃ¨tres sont les mÃªmes que ceux du constructeur.
+	///AprÃ¨s crÃ©ation de l'objet, la mÃ©thode Core::load() est appelÃ©e sur celui-ci.
+	///\return Un pointeur vers l'objet crÃ©Ã©.
+	extern "C" DllExport Core* Core_NewFromSave(char* file);
 
-	///<summary>Destructeur statique, pour permettre la destruction des objets Core en passant par la DLL.</summary>
-	///<param name="core">Un pointeur vers l'objet à détruire.</returns>
-	extern "C" __declspec(dllexport) void Core_Delete(Core* core);
+	///\brief Destructeur statique, pour permettre la destruction des objets Core en passant par la DLL.
+	///\param core Un pointeur vers l'objet Ã  dÃ©truire.
+	extern "C" DllExport void Core_Delete(Core* core);
 
-	///<summary>Destructeur statique, pour permettre la destruction des objets Core en passant par la DLL.
-	///La méthode Core::save() est appelée avant sa destruction.</summary>
-	///<param name="core">Un pointeur vers l'objet à détruire.</returns>
-	extern "C" __declspec(dllexport) void Core_SaveAndDelete(Core* core);
+	///\brief Destructeur statique, pour permettre la destruction des objets Core en passant par la DLL.
+	///La mÃ©thode Core::save() est appelÃ©e avant sa destruction.
+	///\param core Un pointeur vers l'objet Ã  dÃ©truire.
+	extern "C" DllExport void Core_SaveAndDelete(Core* core);
 }
 
 #endif // CORE_H_INCLUDED

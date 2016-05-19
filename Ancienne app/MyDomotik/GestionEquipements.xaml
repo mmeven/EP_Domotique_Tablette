@@ -64,22 +64,24 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50*"/>
                 <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
             </Grid.ColumnDefinitions>
 
             <!-- Bouton Kira et Fibaro-->
-            <Button x:Name="Kira" Content="Kira" Height="55" Width="300" Foreground="Black"  VerticalAlignment="Center"  HorizontalAlignment="Center" Grid.Column="0" Visibility="Visible" Background="#FFA49090" FontSize="30" Click="kira" BorderBrush="#FFA49090"/>
-            <Button x:Name="Fibaro" Content="Fibaro" Height="55" Width="300" Foreground="Black"  VerticalAlignment="Center"  HorizontalAlignment="Center" Grid.Column="1" Visibility="Visible" Background="#FFA49090" FontSize="30" Click="fibaro" BorderBrush="#FFA49090"/>
+            <Button x:Name="Kira" Content="Kira" Height="55" Width="300" Foreground="Black"  VerticalAlignment="Center"  HorizontalAlignment="Center" Grid.Column="1" Visibility="Visible" Background="#FFA49090" FontSize="30" Click="kira" BorderBrush="#FFA49090"/>
+            <Button x:Name="Fibaro" Content="Fibaro" Height="55" Width="300" Foreground="Black"  VerticalAlignment="Center"  HorizontalAlignment="Center" Grid.Column="2" Visibility="Visible" Background="#FFA49090" FontSize="30" Click="fibaro" BorderBrush="#FFA49090"/>
 
 
             <!-- Kira-->
             <!-- Champ pour écrire le numéro du bouton-->
-            <TextBox x:Name="numBoutonOuAction" Grid.Column="0" Visibility="Collapsed" HorizontalAlignment="Center" Margin="0,0,50,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="42" Width="300" Background="#FFA49090" FontSize="24" FontWeight="Bold" Text=""/>
+            <TextBox x:Name="numBoutonOuAction" Grid.Column="1" Visibility="Collapsed" HorizontalAlignment="Center" Margin="0,0,50,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="42" Width="300" Background="#FFA49090" FontSize="24" FontWeight="Bold" Text=""/>
             <!-- Affichage de "Numéro du Bouton"-->
-            <TextBlock x:Name="champBoutonOuAction" Grid.Column="0" Visibility="Collapsed" Text="Numéro bouton:" TextWrapping="Wrap"  Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold" TextAlignment="Center"/>
+            <TextBlock x:Name="champBoutonOuAction" Grid.Column="0" Visibility="Collapsed" Text="Numéro bouton:" TextWrapping="Wrap"  Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold" TextAlignment="Center"/>
             <!-- Champ pour écrire le numéro de la page-->
-            <TextBox x:Name="numPageOuID" Grid.Column="1" Visibility="Collapsed" HorizontalAlignment="Center" Margin="0,0,50,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="42" Width="300" Background="#FFA49090" FontSize="24" FontWeight="Bold" Text=""/>
+            <TextBox x:Name="numPageOuID" Grid.Column="3" Visibility="Collapsed" HorizontalAlignment="Center" Margin="0,0,50,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="42" Width="300" Background="#FFA49090" FontSize="24" FontWeight="Bold" Text=""/>
             <!-- Affichage de "Numéro de la page"-->
-            <TextBlock x:Name="champPageOuID" Grid.Column="1" Visibility="Collapsed" Text="Numéro page:" TextWrapping="Wrap"  Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold" TextAlignment="Center"/>
+            <TextBlock x:Name="champPageOuID" Grid.Column="2" Visibility="Collapsed" Text="Numéro page:" TextWrapping="Wrap"  Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" FontSize="32" FontWeight="Bold" TextAlignment="Center"/>
         </Grid>
 
         <Grid Grid.Row="2">

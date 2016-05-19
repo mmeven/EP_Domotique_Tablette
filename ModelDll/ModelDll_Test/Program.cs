@@ -274,7 +274,7 @@ namespace ModelDll_Test
 
         static void Main(string[] args)
         {
-            IntPtr core = Core_NewFromSave("./load.txt");
+            IntPtr eq = EquipmentFibaro_New("toast", "toast", IntPtr.Zero, 1, "lol");
 
             /*IntPtr room1 = Room_New("P1","ico1");
             IntPtr room2 = Room_New("P2", "ico2");
@@ -291,11 +291,11 @@ namespace ModelDll_Test
             name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
             Console.WriteLine(name);*/
 
-            Equipment_setLoginFibaro("Toast");
+            EquipmentFibaro_sendRequest(eq);
 
             Console.ReadKey();
 
-            Core_SaveAndDelete(core);
+            EquipmentKira_Delete(eq);
         }
     }   
 }
