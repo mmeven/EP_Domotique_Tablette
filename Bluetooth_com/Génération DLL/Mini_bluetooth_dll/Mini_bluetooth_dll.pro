@@ -1,7 +1,8 @@
-QT += core
-QT += widgets
-QT += serialport
 QT -= gui
+QT += serialport
+
+INCLUDEPATH += D:/Libs/boost_1_61_0/
+LIBS += "-LD:/Libs/boost_1_61_0/"
 
 CONFIG += dll
 
@@ -15,3 +16,4 @@ SOURCES += bluetooth.cpp
 
 HEADERS += \
     bluetooth.h
+
