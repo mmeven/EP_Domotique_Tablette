@@ -5,18 +5,19 @@
 #include <QtSerialPort/QSerialPort>
 #include <QtSerialPort/QSerialPortInfo>
 #include <QDebug>
+#include <QTimer>
 #include <iostream>
 #include <regex>
 #include <boost/lexical_cast.hpp>
-#include <boost/thread.hpp>
 #include "bluetooth.h"
 
 using namespace std;
 
+QSerialPort *port = new QSerialPort("COM9");
 void openPort(char *p){
-    QSerialPort *port = new QSerialPort(p);
-    port->open(QIODevice::ReadWrite);
-    cout << "Ouverture du port" << endl;
+    if(port->open(QIODevice::ReadWrite)){
+        cout << "Ouverture du port" << endl;
+    }
 }
 
 void closePort(char* p){
@@ -26,15 +27,22 @@ void closePort(char* p){
 
 int getVirtualJoystickPositionX(char* p){
     int x = 15;
-    QSerialPort *port = new QSerialPort(p);
+    if(!port->isOpen()){
+        cout << "Le port est ferme c'est con !" << endl;
+    }
     if(port->isOpen() && port->isWritable()){
         cout << "Port ouvert" << endl;
         const char output[10] = "AT+WGVP\r\n";
-        port->write(output);
-        port->flush();
+        if(port->write(output)){
+            cout << "Requete ecrite" << endl;
+        }
+        if(port->flush()){
+            cout << "Flush" << endl;
+        }
         QByteArray input = port->readAll();
         while (port->waitForReadyRead(2000)) {
            input.append(port->readAll());
+           cout << "Lu" << endl;
         }
         std::regex pattern { "(\\d+),\\d+" };
         std::string target { input.toStdString() };
@@ -48,6 +56,9 @@ int getVirtualJoystickPositionX(char* p){
 int getVirtualJoystickPositionY(char* p){
     int y = 15;
     QSerialPort *port = new QSerialPort(p);
+    if(!port->isOpen()){
+        cout << "Le port est ferme c'est con !" << endl;
+    }
     if(port->isOpen() && port->isWritable()){
         const char output[10] = "AT+WGVP\r\n";
         port->write(output);
@@ -193,16 +204,13 @@ int getJoystickPositionY(char* p){
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    openPort((char*)"COM11");
-    boost::this_thread::sleep( boost::posix_time::seconds(1) );
-    cout << "Virtual Joystick x : " << getVirtualJoystickPositionX((char*)"COM11") << endl;
-    boost::this_thread::sleep( boost::posix_time::seconds(1) );
-    cout << "Virtual Joystick y : " << getVirtualJoystickPositionY((char*)"COM11") << endl;
-    boost::this_thread::sleep( boost::posix_time::seconds(1) );
-    cout << "Vitesse max : " << getMaximumSpeed((char*)"COM11") << endl;
-    boost::this_thread::sleep( boost::posix_time::seconds(1) );
-    cout << "Vitesse : " << getSpeed((char*)"COM11") << endl;
-    closePort((char*)"COM11");
+    openPort((char*)"COM9");
+    //boost::this_thread::sleep( boost::posix_time::seconds(1) );
+    cout << "Virtual Joystick x : " << getVirtualJoystickPositionX((char*)"COM9") << endl;
+    cout << "Virtual Joystick y : " << getVirtualJoystickPositionY((char*)"COM9") << endl;
+    cout << "Vitesse max : " << getMaximumSpeed((char*)"COM9") << endl;
+    cout << "Vitesse : " << getSpeed((char*)"COM9") << endl;
+    closePort((char*)"COM9");
     a.quit();
 
 }
