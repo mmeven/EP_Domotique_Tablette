@@ -65,8 +65,20 @@ namespace EP {
 		char* getFileSave();
 
 		///
+		///\param name Le nouveau fichier de sauvegarde.
+		void setFileSave(char* name);
+
+		///
 		///\return Le nombre de pièces de m_listRooms.
 		int getNumberRooms();
+
+		///
+		///\return Le nom du port série utilisé pour communiquer avec le fauteuil.
+		char* getCOMPort();
+
+		///
+		///\param port Le nom du port série à utiliser pour communiquer avec le fauteuil.
+		void setCOMPort(char* port);
 
 		///
 		///\return L'identifiant du thème utilisé.
@@ -103,6 +115,10 @@ namespace EP {
 		///\brief Un chiffre correspondant à la taille des icônes. Il ne s'agit pas de la taille exacte
 		///mais d'un identifiant !
 		int m_iconSize;
+
+		///
+		///\brief Le nom du port série utilisé pour communiquer avec le fauteuil.
+		char* m_COMPort;
 	};
 
 	///\brief Constructeur statique utilisé pour permettre l'utilisation des objets Core en

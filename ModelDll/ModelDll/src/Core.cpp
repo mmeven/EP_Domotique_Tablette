@@ -7,7 +7,7 @@
 using namespace std;
 
 namespace EP {
-	Core::Core(char* file) : m_iconSize(2), m_themeId(1)	{
+	Core::Core(char* file) : m_iconSize(2), m_themeId(1), m_COMPort("COM3")	{
 		strcpy(m_coreSave, file);
 	}
 
@@ -20,7 +20,7 @@ namespace EP {
 
 		if (file) {
 			// Core attributes
-			file << m_themeId << "," << m_iconSize << "," << getNumberRooms() << "\n";
+			file << m_themeId << "," << m_iconSize << "," << getNumberRooms() << "," << m_COMPort << "\n";
 
 			file << Equipment::getIpKira() << "," << Equipment::getIpFibaro() << "," << Equipment::getLoginFibaro() << "," << Equipment::getPasswordFibaro() << "\n";
 
@@ -78,8 +78,10 @@ namespace EP {
 			file.getline(tmp, 100, ',');
 			m_iconSize = strtol(tmp, NULL, 10);
 
-			file.getline(tmp, 100);
+			file.getline(tmp, 100, ',');
 			nbRooms = strtol(tmp, NULL, 10);
+
+			file.getline(m_COMPort, 100);
 
 			// file >> ip kira >> ip fibaro >> login fibaro >> login mdp
 
@@ -204,8 +206,20 @@ namespace EP {
 		return m_coreSave;
 	}
 
+	void Core::setFileSave(char* name) {
+		strcpy(m_coreSave, name);
+	}
+
 	int Core::getNumberRooms() {
 		return m_listRooms.size();
+	}
+
+	char* Core::getCOMPort() {
+		return m_COMPort;
+	}
+
+	void Core::setCOMPort(char* port) {
+		strcpy(m_COMPort, port);
 	}
 
 	int Core::getThemeId() {
