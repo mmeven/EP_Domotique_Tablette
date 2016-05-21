@@ -272,7 +272,7 @@ namespace ModelDll_Test
         public static extern IntPtr EquipmentFibaro_getAction(IntPtr eq);
 
 
-        static void Main(string[] args)
+       /* static void Main(string[] args)
         {
             IntPtr eq = EquipmentFibaro_New("toast", "toast", IntPtr.Zero, 1, "lol");
 
@@ -289,13 +289,13 @@ namespace ModelDll_Test
             Console.WriteLine(Core_getNumberRooms(core));
 
             name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
-            Console.WriteLine(name);*/
+            Console.WriteLine(name);
 
             EquipmentFibaro_sendRequest(eq);
 
             Console.ReadKey();
 
             EquipmentKira_Delete(eq);
-        }
+        }*/
     }   
 }
