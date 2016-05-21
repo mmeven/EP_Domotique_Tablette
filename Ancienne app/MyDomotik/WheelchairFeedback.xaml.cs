@@ -42,11 +42,9 @@ namespace MyDomotik
             this.InitializeComponent();
             affichage = new Affichage();
             affichage.afficheHeure(timeBox);
-            /*
             IntPtr port = openPort("COM9");
-            speed.Text = getSpeed(port).ToString();
+            speed.Rotation = getSpeed(port);
             closePort(port);
-            */
 
         }
 

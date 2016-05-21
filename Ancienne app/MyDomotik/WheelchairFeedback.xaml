@@ -87,10 +87,10 @@
             Translate : bouge l'aiguille -->
             <Path Grid.Row="2" Grid.Column="1" Width="20.5" Height="150" Stretch="Fill" RenderTransformOrigin="0.5,1" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF" Data="F1 M 144.398,25.7652L 154,224.25L 144.9,263.25L 134.5,224.25L 144.398,25.7652 Z ">
                 <Path.RenderTransform>
-                    <CompositeTransform TranslateY="-70" Rotation="{Binding Value,ElementName=Slider}" ></CompositeTransform>
+                    <CompositeTransform x:Name="speed" ></CompositeTransform>
                 </Path.RenderTransform>
             </Path>
-            <Slider VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" x:Name="Slider" Minimum="-90" Maximum="90" Value="0" Width="300"></Slider>
+            <!--<Slider VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" x:Name="Slider" Minimum="-90" Maximum="90" Value="0" Width="300"></Slider>-->
 
             <Ellipse x:Name="Center" Grid.Row="2" Grid.Column="1" Height="25" Width="25" Fill="DimGray"></Ellipse>
         </Grid>
