@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -19,6 +20,21 @@ namespace MyDomotik
 {
     public sealed partial class WheelchairFeedback : Page
     {
+        [DllImport("Bluetooth_com.dll", EntryPoint = "openPort",
+        CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr openPort(String port);
+        [DllImport("Bluetooth_com.dll", EntryPoint = "closePort",
+        CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void closePort(IntPtr p);
+        [DllImport("Bluetooth_com.dll", EntryPoint = "getProfile",
+        CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int getProfile(IntPtr p);
+        [DllImport("Bluetooth_com.dll", EntryPoint = "getSpeed",
+        CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern float getSpeed(IntPtr p);
+        [DllImport("Bluetooth_com.dll", EntryPoint = "getMaximumSpeed",
+        CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int getMaximumSpeed(IntPtr p);
 
         Affichage affichage;
         public WheelchairFeedback()
@@ -26,10 +42,15 @@ namespace MyDomotik
             this.InitializeComponent();
             affichage = new Affichage();
             affichage.afficheHeure(timeBox);
+            /*
+            IntPtr port = openPort("COM9");
+            speed.Text = getSpeed(port).ToString();
+            closePort(port);
+            */
 
         }
 
-        private void exitAdmin(object sender, RoutedEventArgs e)
+        private void exitFeedback(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
         }
