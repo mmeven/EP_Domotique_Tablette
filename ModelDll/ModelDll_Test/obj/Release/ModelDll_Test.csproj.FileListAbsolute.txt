@@ -4,3 +4,11 @@ D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll_Test\bin\Release\Mode
 D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll_Test\bin\Release\ModelDll_Test.pdb
 D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll_Test\obj\Release\ModelDll_Test.exe
 D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll_Test\obj\Release\ModelDll_Test.pdb
+D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll_Test\bin\Release\Bluetooth_com.dll
+D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll_Test\bin\Release\libgcc_s_dw2-1.dll
+D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll_Test\bin\Release\libstdc++-6.dll
+D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll_Test\bin\Release\libwinpthread-1.dll
+D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll_Test\bin\Release\ModelDll.dll
+D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll_Test\bin\Release\RequeteHttp.dll
+D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll_Test\bin\Release\Qt5Core.dll
+D:\EtudePratique3A\EP_Domotique_Tablette\ModelDll\ModelDll_Test\bin\Release\Qt5SerialPort.dll
