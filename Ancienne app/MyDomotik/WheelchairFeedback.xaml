@@ -7,98 +7,126 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <Grid x:Name="MainGrid"  Background="#FFFFFFE0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="85*"/>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="500*"/>
-        </Grid.RowDefinitions>
-
-
-        <!-- Première ligne -->
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="270*"/>
-                <ColumnDefinition Width="845*"/>
-                <ColumnDefinition Width="251*"/>
-            </Grid.ColumnDefinitions>
+   
+        <Grid x:Name="MainGrid" Background="#FFFFFFE0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="85*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="350*"/>
+                <RowDefinition Height="100*"/>
+            </Grid.RowDefinitions>
 
 
-            <Rectangle Fill="Orange" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" Margin="5,0,0,0" Width="252"/>
+            <!-- Première ligne -->
+            <Grid Grid.Row="0" Background="Red">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="270*"/>
+                    <ColumnDefinition Width="845*"/>
+                    <ColumnDefinition Width="251*"/>
+                </Grid.ColumnDefinitions>
 
-            <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Width="700"/>
 
-            <Rectangle Fill="Orange" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="0,0,5,0" Width="241"/>
+                <Rectangle Fill="Orange" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" Margin="5,0,0,0" Width="252"/>
 
-            <!-- Rectangle Retour, en haut à droite -->
-            <TextBlock x:Name="timeBox" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold"/>
+                <Rectangle Fill="#FFFF8C00" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Width="700"/>
 
-            <!-- Rectangle Titre, en haut a centre -->
-            <TextBlock x:Name="page_title" HorizontalAlignment="Center" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="700" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Foreground="Black" Grid.Row="0" Grid.Column="1" FontWeight="Bold">
+                <Rectangle Fill="Orange" HorizontalAlignment="Center" Height="65" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="0,0,5,0" Width="241"/>
+
+                <!-- Rectangle Retour, en haut à droite -->
+                <TextBlock x:Name="timeBox" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold"/>
+
+                <!-- Rectangle Titre, en haut a centre -->
+                <TextBlock x:Name="page_title" HorizontalAlignment="Center" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="700" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Foreground="Black" Grid.Row="0" Grid.Column="1" FontWeight="Bold">
     			<Run Foreground="Black" Text="Informations fauteuil"/>
-            </TextBlock>
-
-
-            <!-- Rectangle Accueil, en haut à droite -->
-            <Button x:Name="quitterFeedback" BorderBrush="{x:Null}" Background="Transparent" FontSize="18"  Grid.Row="0" Grid.Column="2" Click="exitFeedback" HorizontalAlignment="Center" VerticalAlignment="Center" Width="252" Height="65">
-                <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
-                	<Run FontSize="30" Text="Accueil"/>
                 </TextBlock>
-            </Button>
 
-        </Grid>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="270*"/>
-                <ColumnDefinition Width="845*"/>
-                <ColumnDefinition Width="251*"/>
-            </Grid.ColumnDefinitions>
 
-            <!-- Image batterie du fauteuil -->
-            <Image Grid.Row="1" Grid.Column="2" x:Name="battery" Source="/Assets/ICONS_MDTOUCH/Status/batterylevel05_0.png" Width="60" Height="60"/>
-            
-        </Grid>
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="270*"/>
-                <ColumnDefinition Width="845*"/>
-                <ColumnDefinition Width="251*"/>
-            </Grid.ColumnDefinitions>
+                <!-- Rectangle Accueil, en haut à droite -->
+                <Button x:Name="quitterFeedback" BorderBrush="{x:Null}" Background="Transparent" FontSize="18"  Grid.Row="0" Grid.Column="2" Click="exitFeedback" HorizontalAlignment="Center" VerticalAlignment="Center" Width="252" Height="65">
+                    <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
+                	<Run FontSize="30" Text="Accueil"/>
+                    </TextBlock>
+                </Button>
+
+            </Grid>
+
+            <!-- Deuxième ligne -->
+            <Grid Grid.Row="1" Background="AliceBlue">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="270*"/>
+                    <ColumnDefinition Width="845*"/>
+                    <ColumnDefinition Width="251*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Image batterie du fauteuil -->
+                <Image Grid.Row="1" Grid.Column="2" x:Name="battery" Source="/Assets/ICONS_MDTOUCH/Status/batterylevel05_0.png" Width="60" Height="60"/>
+
+            </Grid>
+
             <!-- Troisième ligne -->
-            <!-- Nb de km parcourus -->
+            <Grid Grid.Row="2" Background="Beige">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="300*"/>
+                    <ColumnDefinition Width="450*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- Nb de km parcourus -->
+                <!--<TextBlock Grid.Row="2" Grid.Column="0" x:Name="kilometers" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Margin="7,21,6,16" Foreground="Black" Text="50 kilomètres"/>-->
 
-            <TextBlock Grid.Row="2" Grid.Column="0" x:Name="kilometers" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Margin="7,21,6,16" Foreground="Black" Text="50 kilomètres"/>
+                <Ellipse x:Name="Joystick" Grid.Row="2" Grid.Column="1" Height="200" Width="200" Fill="LightGray"></Ellipse>
+                <Ellipse  Grid.Row="2" Grid.Column="1" Height="25" Width="25" Fill="DimGray">
+                    <Ellipse.RenderTransform>
+                    <TranslateTransform x:Name="JoystickPosition"></TranslateTransform>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse Grid.Row="2" Grid.Column="1" Height="25" Width="25" Fill="Red">
+                <Ellipse.RenderTransform>
+                    <TranslateTransform x:Name="JoystickVirtualPosition"></TranslateTransform>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+
+
             <!-- Vitesse -->
-            <!-- <TextBlock x:Name="speed" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="1"  Margin="7,21,6,16" Foreground="Black" Text="5 km/h" />-->
-            <custom:RingSegment Grid.Row="2" Grid.Column="1" x:Name="SpeedGauge" HorizontalAlignment="Center" VerticalAlignment="Center" Radius="150" InnerRadius="100" StartAngle="-90" EndAngle="90">
-                <custom:RingSegment.Fill>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                        <GradientStop Offset="0" Color="Red"></GradientStop>
-                        <GradientStop Offset="1" Color="Green"></GradientStop>
-                        <GradientStop Offset="0.5" Color="Yellow"></GradientStop>
-                    </LinearGradientBrush>
-                </custom:RingSegment.Fill>
-            </custom:RingSegment>
-            <!-- Path : RenderTransformOrigin="0.5,1" pour que l'aiguille tourne autour de son point d'ancrage 
+            <custom:RingSegment Grid.Row="2" Grid.Column="2"  Margin="0,90,0,0" x:Name="Gauge" HorizontalAlignment="Center" VerticalAlignment="Center" Radius="150" InnerRadius="100" StartAngle="-90" EndAngle="90">
+                    <custom:RingSegment.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Offset="0" Color="Red"></GradientStop>
+                            <GradientStop Offset="1" Color="Green"></GradientStop>
+                            <GradientStop Offset="0.5" Color="Yellow"></GradientStop>
+                        </LinearGradientBrush>
+                    </custom:RingSegment.Fill>
+                </custom:RingSegment>
+                <!-- Path : RenderTransformOrigin="0.5,1" pour que l'aiguille tourne autour de son point d'ancrage 
             CenterX et Y : modifient RenderTransformOrigin, tourne autour d'un cercle
             ScaleX et Y : modifient la taille de l'aiguille 
             Skew : penche
             Translate : bouge l'aiguille -->
-            <Path Grid.Row="2" Grid.Column="1" Width="20.5" Height="150" Stretch="Fill" RenderTransformOrigin="0.5,1" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF" Data="F1 M 144.398,25.7652L 154,224.25L 144.9,263.25L 134.5,224.25L 144.398,25.7652 Z ">
-                <Path.RenderTransform>
-                    <CompositeTransform x:Name="speed" ></CompositeTransform>
-                </Path.RenderTransform>
-            </Path>
-            <!--<Slider VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" x:Name="Slider" Minimum="-90" Maximum="90" Value="0" Width="300"></Slider>-->
+            <Path Grid.Row="2" Grid.Column="2"  Margin="0,90,0,0" Width="20.5" Height="150" Stretch="Fill" RenderTransformOrigin="0.5,1" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF" Data="F1 M 144.398,25.7652L 154,224.25L 144.9,263.25L 134.5,224.25L 144.398,25.7652 Z ">
+                    <Path.RenderTransform>
+                        <CompositeTransform x:Name="SpeedGauge" TranslateY="-70" ></CompositeTransform>
+                    </Path.RenderTransform>
+                </Path>
+                <!--<Slider VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" x:Name="Slider" Minimum="-90" Maximum="90" Value="0" Width="300"></Slider>-->
+            <Ellipse x:Name="Center" Grid.Row="2"  Margin="0,90,0,0" Grid.Column="2" Height="25" Width="25" Fill="DimGray"></Ellipse>
+                <TextBlock Grid.Row="2" Grid.Column="2" x:Name="Speed"  Margin="0,145,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"  TextWrapping="Wrap"  FontSize="30" Foreground="Black"  />
+                <TextBlock Grid.Row="2" Grid.Column="2" x:Name="MaxSpeed" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="450,90,0,0" TextWrapping="Wrap" FontSize="30" Foreground="Red" />
 
-            <Ellipse x:Name="Center" Grid.Row="2" Grid.Column="1" Height="25" Width="25" Fill="DimGray"></Ellipse>
-        </Grid>
+            </Grid>
 
-        <!-- Deuxième ligne -->
-        <!-- Image joystick -->
-        <!--<Image x:Name="joystick" Source="/Assets/Images/..." Width="60" Height="60" Grid.Row="1"/>-->
+            <!-- Quatrième ligne -->
+            <Grid Grid.Row="3" Background="Aqua">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="270*"/>
+                    <ColumnDefinition Width="600*"/>
+                    <ColumnDefinition Width="251*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+
     </Grid>
+  
 
 </Page>
 

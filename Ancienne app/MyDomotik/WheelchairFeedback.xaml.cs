@@ -42,9 +42,18 @@ namespace MyDomotik
             this.InitializeComponent();
             affichage = new Affichage();
             affichage.afficheHeure(timeBox);
-            IntPtr port = openPort("COM9");
-            speed.Rotation = getSpeed(port);
-            closePort(port);
+            //IntPtr port = openPort("COM9");
+            double speed = 5;
+            double maxSpeed = 15;
+            Speed.Text = speed + " km/h";
+            double angle = ((speed / maxSpeed)*180 - 90);
+            MaxSpeed.Text =  maxSpeed + " km/h";
+            SpeedGauge.Rotation = angle;
+            JoystickPosition.X = 0;
+            JoystickPosition.Y = 0;
+            JoystickVirtualPosition.X = 10;
+            JoystickVirtualPosition.Y = 10;
+            //closePort(port);
 
         }
 
