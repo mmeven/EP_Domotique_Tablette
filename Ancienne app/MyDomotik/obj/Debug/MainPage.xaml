@@ -34,24 +34,22 @@
 
             <TextBlock x:Name="page_title" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="2" Margin="7,21,6,16" Foreground="Black" Text="Pièces de la maison"/>
 
-            <Button x:ConnectionId='4' x:Name="configButton" Content ="Configuration" HorizontalContentAlignment="Center" Background="Transparent" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="{x:Null}" Grid.Row="0" Grid.Column="4" FontSize="30"                             />
+            <Button x:ConnectionId='5' x:Name="configButton" Content ="Configuration" HorizontalContentAlignment="Center" Background="Transparent" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="{x:Null}" Grid.Row="0" Grid.Column="4" FontSize="30"                             />
 
 
         </Grid>
 
 
         <!--Grille des icones -->
-        <Grid  x:Name="cadre" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="1500" Height="500" Grid.Row="1">
-            
-            <!--   affichage dynamique grâce au x:Name="cadre" -->
-
-        </Grid>
+        <Grid  x:Name="cadre" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="1500" Height="500" Grid.Row="1"/>
 
 
 
         <Grid HorizontalAlignment="Center" Height="130" Grid.Row="2" VerticalAlignment="Center" Width="1346">
 
             <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="5*"/>
+                <ColumnDefinition  Width="60*"/>
                 <ColumnDefinition  Width="5*"/>
                 <ColumnDefinition  Width="60*"/>
                 <ColumnDefinition  Width="5*"/>
@@ -76,14 +74,17 @@
                 <Image  Source="Assets/acceuil.PNG"/>
             </Button>
 
+            <Rectangle x:Name ="RectFauteuil" Stroke="Black" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button x:ConnectionId='3' x:Name="fauteuil" BorderBrush="Transparent" Background="Transparent" Grid.Column="5"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                      >
+                <Image  Source="Assets/wheelchair_0.PNG"/>
+            </Button>
 
-            <Rectangle x:Name ="RectSuivant" Stroke="Black" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-            <Button x:ConnectionId='3' x:Name="suivant" Grid.Column="5" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                       >
+            <Rectangle x:Name ="RectSuivant" Stroke="Black" Grid.Column="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button x:ConnectionId='4' x:Name="suivant" Grid.Column="7" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                       >
                 <Image  Source="Assets/suivant.PNG"/>
             </Button>
 
         </Grid>
-
     </Grid>
 </Page>
 

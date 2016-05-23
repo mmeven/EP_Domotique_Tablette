@@ -115,6 +115,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RingSegment.cs" />
     <Compile Include="GestionEquipements.xaml.cs">
       <DependentUpon>GestionEquipements.xaml</DependentUpon>
     </Compile>

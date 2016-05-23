@@ -124,27 +124,43 @@ namespace MyDomotik.MyDomotik_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[9];
+            _typeNameTable = new string[17];
             _typeNameTable[0] = "MyDomotik.AdminPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "MyDomotik.GestionPieces";
             _typeNameTable[4] = "MyDomotik.GestionEquipements";
             _typeNameTable[5] = "MyDomotik.MainPage";
-            _typeNameTable[6] = "MyDomotik.ReglagesCouleur";
-            _typeNameTable[7] = "MyDomotik.ReglagesModeSelection";
-            _typeNameTable[8] = "MyDomotik.ReglagesTailleIcones";
+            _typeNameTable[6] = "MyDomotik.Pages_Réglages.ReglagesReseau";
+            _typeNameTable[7] = "MyDomotik.ReglagesCouleur";
+            _typeNameTable[8] = "MyDomotik.ReglagesModeSelection";
+            _typeNameTable[9] = "MyDomotik.ReglagesTailleIcones";
+            _typeNameTable[10] = "Template10.Controls.RingSegment";
+            _typeNameTable[11] = "Windows.UI.Xaml.Shapes.Path";
+            _typeNameTable[12] = "Double";
+            _typeNameTable[13] = "System.Nullable`1<Windows.Foundation.Point>";
+            _typeNameTable[14] = "System.ValueType";
+            _typeNameTable[15] = "Object";
+            _typeNameTable[16] = "MyDomotik.WheelchairFeedback";
 
-            _typeTable = new global::System.Type[9];
+            _typeTable = new global::System.Type[17];
             _typeTable[0] = typeof(global::MyDomotik.AdminPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::MyDomotik.GestionPieces);
             _typeTable[4] = typeof(global::MyDomotik.GestionEquipements);
             _typeTable[5] = typeof(global::MyDomotik.MainPage);
-            _typeTable[6] = typeof(global::MyDomotik.ReglagesCouleur);
-            _typeTable[7] = typeof(global::MyDomotik.ReglagesModeSelection);
-            _typeTable[8] = typeof(global::MyDomotik.ReglagesTailleIcones);
+            _typeTable[6] = typeof(global::MyDomotik.Pages_Réglages.ReglagesReseau);
+            _typeTable[7] = typeof(global::MyDomotik.ReglagesCouleur);
+            _typeTable[8] = typeof(global::MyDomotik.ReglagesModeSelection);
+            _typeTable[9] = typeof(global::MyDomotik.ReglagesTailleIcones);
+            _typeTable[10] = typeof(global::Template10.Controls.RingSegment);
+            _typeTable[11] = typeof(global::Windows.UI.Xaml.Shapes.Path);
+            _typeTable[12] = typeof(global::System.Double);
+            _typeTable[13] = typeof(global::System.Nullable<global::Windows.Foundation.Point>);
+            _typeTable[14] = typeof(global::System.ValueType);
+            _typeTable[15] = typeof(global::System.Object);
+            _typeTable[16] = typeof(global::MyDomotik.WheelchairFeedback);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -183,9 +199,12 @@ namespace MyDomotik.MyDomotik_XamlTypeInfo
         private object Activate_3_GestionPieces() { return new global::MyDomotik.GestionPieces(); }
         private object Activate_4_GestionEquipements() { return new global::MyDomotik.GestionEquipements(); }
         private object Activate_5_MainPage() { return new global::MyDomotik.MainPage(); }
-        private object Activate_6_ReglagesCouleur() { return new global::MyDomotik.ReglagesCouleur(); }
-        private object Activate_7_ReglagesModeSelection() { return new global::MyDomotik.ReglagesModeSelection(); }
-        private object Activate_8_ReglagesTailleIcones() { return new global::MyDomotik.ReglagesTailleIcones(); }
+        private object Activate_6_ReglagesReseau() { return new global::MyDomotik.Pages_Réglages.ReglagesReseau(); }
+        private object Activate_7_ReglagesCouleur() { return new global::MyDomotik.ReglagesCouleur(); }
+        private object Activate_8_ReglagesModeSelection() { return new global::MyDomotik.ReglagesModeSelection(); }
+        private object Activate_9_ReglagesTailleIcones() { return new global::MyDomotik.ReglagesTailleIcones(); }
+        private object Activate_10_RingSegment() { return new global::Template10.Controls.RingSegment(); }
+        private object Activate_16_WheelchairFeedback() { return new global::MyDomotik.WheelchairFeedback(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -233,23 +252,72 @@ namespace MyDomotik.MyDomotik_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 6:   //  MyDomotik.ReglagesCouleur
+            case 6:   //  MyDomotik.Pages_Réglages.ReglagesReseau
                 userType = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_ReglagesCouleur;
+                userType.Activator = Activate_6_ReglagesReseau;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  MyDomotik.ReglagesModeSelection
+            case 7:   //  MyDomotik.ReglagesCouleur
                 userType = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_ReglagesModeSelection;
+                userType.Activator = Activate_7_ReglagesCouleur;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  MyDomotik.ReglagesTailleIcones
+            case 8:   //  MyDomotik.ReglagesModeSelection
                 userType = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_ReglagesTailleIcones;
+                userType.Activator = Activate_8_ReglagesModeSelection;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 9:   //  MyDomotik.ReglagesTailleIcones
+                userType = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_9_ReglagesTailleIcones;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 10:   //  Template10.Controls.RingSegment
+                userType = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Shapes.Path"));
+                userType.Activator = Activate_10_RingSegment;
+                userType.AddMemberName("Radius");
+                userType.AddMemberName("InnerRadius");
+                userType.AddMemberName("StartAngle");
+                userType.AddMemberName("EndAngle");
+                userType.AddMemberName("Center");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 11:   //  Windows.UI.Xaml.Shapes.Path
+                xamlType = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 12:   //  Double
+                xamlType = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 13:   //  System.Nullable`1<Windows.Foundation.Point>
+                userType = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 14:   //  System.ValueType
+                userType = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                xamlType = userType;
+                break;
+
+            case 15:   //  Object
+                xamlType = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 16:   //  MyDomotik.WheelchairFeedback
+                userType = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_16_WheelchairFeedback;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -258,11 +326,100 @@ namespace MyDomotik.MyDomotik_XamlTypeInfo
         }
 
 
+        private object get_0_RingSegment_Radius(object instance)
+        {
+            var that = (global::Template10.Controls.RingSegment)instance;
+            return that.Radius;
+        }
+        private void set_0_RingSegment_Radius(object instance, object Value)
+        {
+            var that = (global::Template10.Controls.RingSegment)instance;
+            that.Radius = (global::System.Double)Value;
+        }
+        private object get_1_RingSegment_InnerRadius(object instance)
+        {
+            var that = (global::Template10.Controls.RingSegment)instance;
+            return that.InnerRadius;
+        }
+        private void set_1_RingSegment_InnerRadius(object instance, object Value)
+        {
+            var that = (global::Template10.Controls.RingSegment)instance;
+            that.InnerRadius = (global::System.Double)Value;
+        }
+        private object get_2_RingSegment_StartAngle(object instance)
+        {
+            var that = (global::Template10.Controls.RingSegment)instance;
+            return that.StartAngle;
+        }
+        private void set_2_RingSegment_StartAngle(object instance, object Value)
+        {
+            var that = (global::Template10.Controls.RingSegment)instance;
+            that.StartAngle = (global::System.Double)Value;
+        }
+        private object get_3_RingSegment_EndAngle(object instance)
+        {
+            var that = (global::Template10.Controls.RingSegment)instance;
+            return that.EndAngle;
+        }
+        private void set_3_RingSegment_EndAngle(object instance, object Value)
+        {
+            var that = (global::Template10.Controls.RingSegment)instance;
+            that.EndAngle = (global::System.Double)Value;
+        }
+        private object get_4_RingSegment_Center(object instance)
+        {
+            var that = (global::Template10.Controls.RingSegment)instance;
+            return that.Center;
+        }
+        private void set_4_RingSegment_Center(object instance, object Value)
+        {
+            var that = (global::Template10.Controls.RingSegment)instance;
+            that.Center = (global::System.Nullable<global::Windows.Foundation.Point>)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::MyDomotik.MyDomotik_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::MyDomotik.MyDomotik_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "Template10.Controls.RingSegment.Radius":
+                userType = (global::MyDomotik.MyDomotik_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.RingSegment");
+                xamlMember = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlMember(this, "Radius", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_0_RingSegment_Radius;
+                xamlMember.Setter = set_0_RingSegment_Radius;
+                break;
+            case "Template10.Controls.RingSegment.InnerRadius":
+                userType = (global::MyDomotik.MyDomotik_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.RingSegment");
+                xamlMember = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlMember(this, "InnerRadius", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_1_RingSegment_InnerRadius;
+                xamlMember.Setter = set_1_RingSegment_InnerRadius;
+                break;
+            case "Template10.Controls.RingSegment.StartAngle":
+                userType = (global::MyDomotik.MyDomotik_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.RingSegment");
+                xamlMember = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlMember(this, "StartAngle", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_2_RingSegment_StartAngle;
+                xamlMember.Setter = set_2_RingSegment_StartAngle;
+                break;
+            case "Template10.Controls.RingSegment.EndAngle":
+                userType = (global::MyDomotik.MyDomotik_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.RingSegment");
+                xamlMember = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlMember(this, "EndAngle", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_3_RingSegment_EndAngle;
+                xamlMember.Setter = set_3_RingSegment_EndAngle;
+                break;
+            case "Template10.Controls.RingSegment.Center":
+                userType = (global::MyDomotik.MyDomotik_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.RingSegment");
+                xamlMember = new global::MyDomotik.MyDomotik_XamlTypeInfo.XamlMember(this, "Center", "System.Nullable`1<Windows.Foundation.Point>");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_4_RingSegment_Center;
+                xamlMember.Setter = set_4_RingSegment_Center;
+                break;
+            }
             return xamlMember;
         }
     }

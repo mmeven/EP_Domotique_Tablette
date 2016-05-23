@@ -39,6 +39,7 @@
       <RootProperty Name="IsEnabled" />
       <RootProperty Name="FontWeight" />
       <RootProperty Name="HorizontalContentAlignment" />
+      <RootProperty Name="Name" />
       <RootEvent Name="Click" />
       <RootEvent Name="DoubleTapped" />
     </RootType>
@@ -120,6 +121,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.CompositeTransform">
       <RootProperty Name="Rotation" />
+      <RootProperty Name="TranslateY" />
     </RootType>
     <RootType FullName="MyDomotik.GestionPieces" />
     <RootType FullName="MyDomotik.GestionEquipements" />
@@ -146,6 +148,45 @@
     </RootType>
     <RootType FullName="MyDomotik.ReglagesModeSelection" />
     <RootType FullName="MyDomotik.ReglagesTailleIcones" />
+    <RootType FullName="Windows.UI.Xaml.Shapes.Ellipse">
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Fill" />
+      <RootProperty Name="RenderTransform" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Template10.Controls.RingSegment">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Radius" />
+      <RootProperty Name="InnerRadius" />
+      <RootProperty Name="StartAngle" />
+      <RootProperty Name="EndAngle" />
+      <RootProperty Name="Fill" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Shapes.Path">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Stretch" />
+      <RootProperty Name="RenderTransformOrigin" />
+      <RootProperty Name="StrokeLineJoin" />
+      <RootProperty Name="Stroke" />
+      <RootProperty Name="Fill" />
+      <RootProperty Name="Data" />
+      <RootProperty Name="RenderTransform" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.LinearGradientBrush">
+      <RootProperty Name="StartPoint" />
+      <RootProperty Name="EndPoint" />
+      <RootProperty Name="GradientStops" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.GradientStop">
+      <RootProperty Name="Offset" />
+      <RootProperty Name="Color" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.TranslateTransform" />
     <RootType FullName="MyDomotik.WheelchairFeedback" />
   </Roots.RootTypes>
 </Roots>
