@@ -49,7 +49,7 @@ namespace ModelDll_Test
             CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         public static extern int getJoystickPositionY(IntPtr port);
 
-        static void Main(string[] args)
+        /*static void Main(string[] args)
         {
             IntPtr port = openPort("COM3");
             Console.ReadKey();
@@ -67,7 +67,7 @@ namespace ModelDll_Test
             Console.ReadKey();
             closePort(port);
             Console.ReadKey();
-        }
+        }*/
 
         
     }

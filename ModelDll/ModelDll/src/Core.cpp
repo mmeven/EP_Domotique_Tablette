@@ -7,8 +7,9 @@
 using namespace std;
 
 namespace EP {
-	Core::Core(char* file) : m_iconSize(2), m_themeId(1), m_COMPort("COM3")	{
+	Core::Core(char* file) : m_iconSize(2), m_themeId(1){
 		strcpy(m_coreSave, file);
+		strcpy(m_COMPort, "COM3");
 	}
 
 	Core::~Core() {
@@ -81,7 +82,8 @@ namespace EP {
 			file.getline(tmp, 100, ',');
 			nbRooms = strtol(tmp, NULL, 10);
 
-			file.getline(m_COMPort, 100);
+			file.getline(tmp, 100);
+			strcpy(m_COMPort, tmp);
 
 			// file >> ip kira >> ip fibaro >> login fibaro >> login mdp
 

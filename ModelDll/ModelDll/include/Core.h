@@ -118,7 +118,7 @@ namespace EP {
 
 		///
 		///\brief Le nom du port série utilisé pour communiquer avec le fauteuil.
-		char* m_COMPort;
+		char m_COMPort[100];
 	};
 
 	///\brief Constructeur statique utilisé pour permettre l'utilisation des objets Core en

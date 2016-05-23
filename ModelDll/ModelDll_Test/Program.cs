@@ -270,11 +270,17 @@ namespace ModelDll_Test
         [DllImport("ModelDll.dll", EntryPoint = "?getAction@EquipmentFibaro@EP@@QAEPADXZ",
             CallingConvention = CallingConvention.ThisCall, CharSet = CharSet.Ansi)]
         public static extern IntPtr EquipmentFibaro_getAction(IntPtr eq);
+        
+
+        // Retourne string
+        [DllImport("ModelDll.dll", EntryPoint = "?getCOMPort@Core@EP@@QAEPADXZ",
+            CallingConvention = CallingConvention.ThisCall, CharSet = CharSet.Ansi)]
+        public static extern IntPtr Core_getCOMPort(IntPtr eq);
 
 
-       /* static void Main(string[] args)
+        static void Main(string[] args)
         {
-            IntPtr eq = EquipmentFibaro_New("toast", "toast", IntPtr.Zero, 1, "lol");
+            IntPtr core = Core_NewFromSave("load.txt");
 
             /*IntPtr room1 = Room_New("P1","ico1");
             IntPtr room2 = Room_New("P2", "ico2");
@@ -284,18 +290,13 @@ namespace ModelDll_Test
             Core_addRoom(core, room1);
             Core_addRoom(core, room2);
             Core_addRoom(core, room3);
-            Core_addRoom(core, room4);
+            Core_addRoom(core, room4);*/
             
-            Console.WriteLine(Core_getNumberRooms(core));
+            IntPtr tmp = Core_getCOMPort(core);
 
-            name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
+            string name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
             Console.WriteLine(name);
-
-            EquipmentFibaro_sendRequest(eq);
-
             Console.ReadKey();
-
-            EquipmentKira_Delete(eq);
-        }*/
+        }
     }   
 }
