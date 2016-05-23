@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="97355aa4-2e3b-49ef-86e2-896c75849b35" Publisher="CN=Diane" Version="0.1.0.2" />
+  <Identity Name="DomoticApp" Publisher="CN=Diane" Version="1.0.0.0" />
   <Properties>
-    <DisplayName>MyDomotique</DisplayName>
+    <DisplayName>DomoticApp</DisplayName>
     <PublisherDisplayName>Diane</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -14,9 +14,9 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MyDomotique.App">
-      <m2:VisualElements DisplayName="MyDomotique" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="MyDomotique" ForegroundText="dark" BackgroundColor="transparent">
-        <m2:DefaultTile ShortName="MyDomotique">
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="DomoticApp.app">
+      <m2:VisualElements DisplayName="DomoticApp" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="DomoticApp" ForegroundText="dark" BackgroundColor="transparent">
+        <m2:DefaultTile ShortName="DomoticApp">
         </m2:DefaultTile>
         <m2:SplashScreen Image="Assets\Splashscreen(2).png" BackgroundColor="#FFFFFF" />
       </m2:VisualElements>
@@ -24,5 +24,15 @@
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <m2:DeviceCapability Name="bluetooth.rfcomm">
+      <m2:Device Id="any">
+        <m2:Function Type="name:serialPort"/>
+      </m2:Device>
+    </m2:DeviceCapability>
+    <m2:DeviceCapability Name="serialcommunication">
+      <m2:Device Id="any">
+        <m2:Function Type="name:serialPort"/>
+      </m2:Device>
+    </m2:DeviceCapability>
   </Capabilities>
 </Package>

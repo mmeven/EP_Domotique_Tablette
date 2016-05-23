@@ -375,8 +375,6 @@ C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomot
 C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\obj\Release\Pages_Réglages\ReglagesTailleIcones.xbf
 C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\obj\Release\WheelchairFeedback.xbf
 C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\obj\Release\XamlSaveStateFile.xml
-C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\obj\Release\MyDomotik.exe
-C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\obj\Release\MyDomotik.pdb
 C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\App.xbf
 C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\AdminPage.xbf
 C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\GestionPieces.xbf
@@ -387,9 +385,6 @@ C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomot
 C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\Pages_Réglages\ReglagesModeSelection.xbf
 C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\Pages_Réglages\ReglagesTailleIcones.xbf
 C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\WheelchairFeedback.xbf
-C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\MyDomotik.xr.xml
-C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\MyDomotik.exe
-C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\MyDomotik.pdb
 C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\resources.pri
 C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\AppxManifest.xml
 C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\MyDomotik.build.appxrecipe
@@ -405,3 +400,8 @@ C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomot
 C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\obj\Release\qualifiers.txt.intermediate
 C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\obj\Release\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\obj\Release\ProjectArchitectures.txt
+C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\DomoticApp.xr.xml
+C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\DomoticApp.exe
+C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\DomoticApp.pdb
+C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\obj\Release\DomoticApp.exe
+C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\obj\Release\DomoticApp.pdb

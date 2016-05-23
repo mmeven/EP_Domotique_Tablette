@@ -8,27 +8,21 @@
     <TargetOsDescription>Windows 8.1</TargetOsDescription>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <PackageIdentityName>97355aa4-2e3b-49ef-86e2-896c75849b35</PackageIdentityName>
+    <PackageIdentityName>DomoticApp</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\obj\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>76F7400AB91078545C41C7090341F834B9A4E0AAB22A35BFF54120F5E9B602F2</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>97355aa4-2e3b-49ef-86e2-896c75849b35_0.1.0.2_neutral__4swy4hy1fwxzg</RegisteredPackageMoniker>
-    <RegisteredUserModeAppID>97355aa4-2e3b-49ef-86e2-896c75849b35_4swy4hy1fwxzg!App</RegisteredUserModeAppID>
-    <RegisteredPackageID>97355aa4-2e3b-49ef-86e2-896c75849b35</RegisteredPackageID>
-    <RegisteredPackagePublisher>CN=Diane</RegisteredPackagePublisher>
-    <RegisteredVersion>0.1.0.2</RegisteredVersion>
-    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+    <RegisteredManifestChecksum>265E5D16BCA5F7A38185AA65BE1D11FC301362184B0B75D6A329D1CF7FAF85F8</RegisteredManifestChecksum>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-21T08:56:18.230</Modified>
+      <Modified>2016-05-23T17:03:45.668</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\MyDomotik.exe">
-      <PackagePath>MyDomotik.exe</PackagePath>
-      <Modified>2016-05-23T06:52:46.350</Modified>
+    <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\DomoticApp.exe">
+      <PackagePath>DomoticApp.exe</PackagePath>
+      <Modified>2016-05-23T16:35:33.420</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\Assets\acceuil.PNG">
       <PackagePath>Assets\acceuil.PNG</PackagePath>
@@ -10502,9 +10496,45 @@
       <PackagePath>Assets\suivant.PNG</PackagePath>
       <Modified>2015-11-28T16:49:03.630</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\MyDomotik.xr.xml">
-      <PackagePath>MyDomotik.xr.xml</PackagePath>
-      <Modified>2016-05-22T09:39:49.552</Modified>
+    <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\Assets\wheelchair_0.png">
+      <PackagePath>Assets\wheelchair_0.png</PackagePath>
+      <Modified>2015-11-28T16:49:03.625</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\Bluetooth_com.dll">
+      <PackagePath>Bluetooth_com.dll</PackagePath>
+      <Modified>2016-05-23T16:34:42.550</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\libgcc_s_dw2-1.dll">
+      <PackagePath>libgcc_s_dw2-1.dll</PackagePath>
+      <Modified>2016-05-22T07:52:27.538</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\libstdc++-6.dll">
+      <PackagePath>libstdc++-6.dll</PackagePath>
+      <Modified>2016-05-22T07:52:27.580</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\libwinpthread-1.dll">
+      <PackagePath>libwinpthread-1.dll</PackagePath>
+      <Modified>2016-05-22T07:52:27.841</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\ModelDll.dll">
+      <PackagePath>ModelDll.dll</PackagePath>
+      <Modified>2016-05-23T09:09:34.421</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\Qt5Core.dll">
+      <PackagePath>Qt5Core.dll</PackagePath>
+      <Modified>2016-05-22T07:52:27.206</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\Qt5SerialPort.dll">
+      <PackagePath>Qt5SerialPort.dll</PackagePath>
+      <Modified>2016-05-22T07:52:27.296</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\RequeteHttp.dll">
+      <PackagePath>RequeteHttp.dll</PackagePath>
+      <Modified>2016-05-22T07:52:27.518</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\DomoticApp.xr.xml">
+      <PackagePath>DomoticApp.xr.xml</PackagePath>
+      <Modified>2016-05-23T13:05:32.224</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
@@ -10544,11 +10574,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\WheelchairFeedback.xbf">
       <PackagePath>WheelchairFeedback.xbf</PackagePath>
-      <Modified>2016-05-22T15:23:41.803</Modified>
+      <Modified>2016-05-23T13:05:32.270</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-05-21T08:56:17.349</Modified>
+      <Modified>2016-05-23T17:03:44.623</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

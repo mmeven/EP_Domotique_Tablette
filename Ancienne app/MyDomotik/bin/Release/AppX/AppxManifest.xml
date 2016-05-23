@@ -7,9 +7,9 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="97355aa4-2e3b-49ef-86e2-896c75849b35" Publisher="CN=Diane" Version="0.1.0.2" ProcessorArchitecture="neutral" />
+  <Identity Name="DomoticApp" Publisher="CN=Diane" Version="1.0.0.0" ProcessorArchitecture="neutral" />
   <Properties>
-    <DisplayName>MyDomotique</DisplayName>
+    <DisplayName>DomoticApp</DisplayName>
     <PublisherDisplayName>Diane</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -21,9 +21,9 @@
     <Resource Language="FR-FR" />
   </Resources>
   <Applications>
-    <Application Id="App" Executable="MyDomotik.exe" EntryPoint="MyDomotique.App">
-      <m2:VisualElements DisplayName="MyDomotique" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="MyDomotique" ForegroundText="dark" BackgroundColor="transparent">
-        <m2:DefaultTile ShortName="MyDomotique"></m2:DefaultTile>
+    <Application Id="App" Executable="DomoticApp.exe" EntryPoint="DomoticApp.app">
+      <m2:VisualElements DisplayName="DomoticApp" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="DomoticApp" ForegroundText="dark" BackgroundColor="transparent">
+        <m2:DefaultTile ShortName="DomoticApp"></m2:DefaultTile>
         <m2:SplashScreen Image="Assets\Splashscreen(2).png" BackgroundColor="#FFFFFF" />
       </m2:VisualElements>
     </Application>

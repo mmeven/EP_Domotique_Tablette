@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots xmlns="clr-namespace:Microsoft.Xaml.Tools.XamlCompiler.RootLog;assembly=Microsoft.Windows.UI.Xaml.81.Build.Tasks">
+  <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="MaxSpeed" />
+    <RootPropertyPathName Name="Speed" />
+    <RootPropertyPathName Name="Angle" />
+    <RootPropertyPathName Name="X2" />
+    <RootPropertyPathName Name="Y2" />
+    <RootPropertyPathName Name="X1" />
+    <RootPropertyPathName Name="Y1" />
+  </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application" />
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
@@ -177,6 +186,7 @@
       <RootProperty Name="Data" />
       <RootProperty Name="RenderTransform" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding" />
     <RootType FullName="Windows.UI.Xaml.Media.LinearGradientBrush">
       <RootProperty Name="StartPoint" />
       <RootProperty Name="EndPoint" />
@@ -186,7 +196,10 @@
       <RootProperty Name="Offset" />
       <RootProperty Name="Color" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Media.TranslateTransform" />
+    <RootType FullName="Windows.UI.Xaml.Media.TranslateTransform">
+      <RootProperty Name="X" />
+      <RootProperty Name="Y" />
+    </RootType>
     <RootType FullName="MyDomotik.WheelchairFeedback" />
   </Roots.RootTypes>
 </Roots>

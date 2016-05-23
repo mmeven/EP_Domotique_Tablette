@@ -1,2 +1,2 @@
-MainPackage=G:\Informatique\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\MyDomotik_0.1.0.2_AnyCPU.appx
-SymbolPackage=G:\Informatique\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\AppPackages\MyDomotik_0.1.0.2_Test\MyDomotik_0.1.0.2_AnyCPU.appxsym
+MainPackage=C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\bin\Release\DomoticApp_1.0.0.0_AnyCPU.appx
+SymbolPackage=C:\Users\Diane\Desktop\Etude pratique\EP_Domotique_Tablette\Ancienne app\MyDomotik\AppPackages\DomoticApp_1.0.0.0_Test\DomoticApp_1.0.0.0_AnyCPU.appxsym

@@ -102,6 +102,7 @@ namespace MyDomotik
         /// </summary>
         public void afficherPieces()
         {
+            page_title.Text = "Pièces de la maison";
             vueEquipement = false;
             boutons = affichage.afficherPiecesGrille(pageActuelle, cadre, core);
             int theme = Core_getThemeId(core);
