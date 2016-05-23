@@ -204,7 +204,6 @@ namespace MyDomotik
         }
 
 
-
         // Permet d'afficher les pièces dans la grille
         /// <summary>
         /// Cette méthode permet d'afficher toutes les pièces enregistrées dans le Core (cf DLL) sous forme d'icônes dans une grille. \n
@@ -229,6 +228,7 @@ namespace MyDomotik
                 IntPtr room = Core_getRoomByIndex(core, i);  //pièce a afficher
   
                 Button bouton = new Button(); //bouton associé a cette pièce
+                bouton.BorderBrush = new SolidColorBrush(Colors.DarkSalmon);
 
                 bouton.Tag = i; //tag permet de récupérer facilement l'indice de la pièce 
 
@@ -329,7 +329,8 @@ namespace MyDomotik
                 IntPtr equ = Room_getEquipmentByIndex(room, i);  //équipement à afficher
 
                 Button bouton = new Button(); //bouton associé a cet equipement
-            
+                bouton.BorderBrush = new SolidColorBrush(Colors.DarkSalmon);
+
                 bouton.Tag = i; //tag qui permet de récuperer facilement l'indice de l'équipement 
 
                 bouton.SetValue(Button.HorizontalAlignmentProperty, HorizontalAlignment.Stretch);

@@ -102,7 +102,7 @@ namespace MyDomotik
         /// </summary>
         public void afficherPieces()
         {
-            page_title.Text = "Pièces de la maison";
+            page_title.Text = "Pièces de la maison: page "+(pageActuelle+1);
             vueEquipement = false;
             boutons = affichage.afficherPiecesGrille(pageActuelle, cadre, core);
             int theme = Core_getThemeId(core);
@@ -124,7 +124,7 @@ namespace MyDomotik
         {
             IntPtr tmp = Node_getName(pieceSelectionnee);
             string nomPiece = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
-            page_title.Text = nomPiece;
+            page_title.Text = nomPiece+ ":  page" + (pageActuelle + 1); ;
             List<Button> ListeBoutons = affichage.afficherEquipementsGrille(pageActuelle, nomPiece, cadre, core);
             foreach (Button b in ListeBoutons)
             {

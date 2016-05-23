@@ -10,52 +10,74 @@
 
     <Grid x:Name="MainGrid" Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="85*"/>
+            <RowDefinition Height="100*"/>
             <RowDefinition Height="510*"/>
-            <RowDefinition Height="173*"/>
+            <RowDefinition Height="170*"/>
 
         </Grid.RowDefinitions>
-        <Grid>
+        
+        <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
                 <ColumnDefinition Width="270*"/>
-                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="10*"/>
                 <ColumnDefinition Width="845*"/>
-                <ColumnDefinition Width="20*"/>
-                <ColumnDefinition Width="251*"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="270*"/>
+                <ColumnDefinition Width="10*"/>
             </Grid.ColumnDefinitions>
 
-            <Rectangle Fill ="Azure" x:Name="Rect1" HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="2"  VerticalAlignment="Stretch"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="100*"/>
+            </Grid.RowDefinitions>
+                
+            <Rectangle Fill ="Azure" x:Name="Rect1" HorizontalAlignment="Stretch"  Grid.Row="1" Grid.Column="3"  VerticalAlignment="Stretch"/>
 
-            <Rectangle  x:Name="Rect2"  HorizontalAlignment="Stretch" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Stretch" />
+            <Rectangle  x:Name="Rect2"  HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1"  VerticalAlignment="Stretch" />
 
-            <Rectangle x:Name ="Rect3"  HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="4" VerticalAlignment="Stretch" />
+            <Rectangle x:Name ="Rect3"  HorizontalAlignment="Stretch"  Grid.Row="1" Grid.Column="5" VerticalAlignment="Stretch" />
 
-            <TextBlock x:Name="TimeBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch"  FontSize="30" FontWeight="Bold" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="0" Foreground="Black" Margin="9,19,9,1"/>
+            <TextBlock x:Name="TimeBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center"  FontSize="30" FontWeight="Bold" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="1" Grid.Column="1" Foreground="Black" />
 
-            <TextBlock x:Name="page_title" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="0" Grid.Column="2" Margin="7,21,6,16" Foreground="Black" Text="Pièces de la maison"/>
+            <TextBlock x:Name="page_title" HorizontalAlignment="Stretch" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="30" TextAlignment="Center" FontFamily="Segoe UI" Grid.Row="1" Grid.Column="3" Foreground="Black" Text="Pièces de la maison"/>
 
-            <Button x:Name="configButton" Content ="Configuration" HorizontalContentAlignment="Center" Background="Transparent" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="{x:Null}" Grid.Row="0" Grid.Column="4" FontSize="30"  DoubleTapped="adminSelect" />
-
+            <Button x:Name="configButton" Content ="Configuration" HorizontalContentAlignment="Center" Background="Transparent" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="{x:Null}" Grid.Row="1" Grid.Column="5" FontSize="30"  DoubleTapped="adminSelect" />
 
         </Grid>
 
 
         <!--Grille des icones -->
-        <Grid  x:Name="cadre" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="1500" Height="500" Grid.Row="1"/>
+        <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="300*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="cadre" Grid.Row="1" Grid.Column="1"/>
+        </Grid>
 
 
 
-        <Grid HorizontalAlignment="Center" Height="130" Grid.Row="2" VerticalAlignment="Center" Width="1346">
+
+        <Grid Height="130" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition  Width="5*"/>
-                <ColumnDefinition  Width="60*"/>
+                <ColumnDefinition  Width="80*"/>
                 <ColumnDefinition  Width="5*"/>
-                <ColumnDefinition  Width="60*"/>
+                <ColumnDefinition  Width="80*"/>
                 <ColumnDefinition  Width="5*"/>
-                <ColumnDefinition  Width="60*"/>
+                <ColumnDefinition  Width="80*"/>
                 <ColumnDefinition  Width="5*"/>
-                <ColumnDefinition  Width="60*"/>
+                <ColumnDefinition  Width="80*"/>
                 <ColumnDefinition  Width="5*"/>
 
             </Grid.ColumnDefinitions>
