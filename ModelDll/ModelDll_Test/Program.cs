@@ -278,7 +278,7 @@ namespace ModelDll_Test
         public static extern IntPtr Core_getCOMPort(IntPtr eq);
 
 
-        static void Main(string[] args)
+        /*static void Main(string[] args)
         {
             IntPtr core = Core_NewFromSave("load.txt");
 
@@ -292,11 +292,11 @@ namespace ModelDll_Test
             Core_addRoom(core, room3);
             Core_addRoom(core, room4);*/
             
-            IntPtr tmp = Core_getCOMPort(core);
+            /*IntPtr tmp = Core_getCOMPort(core);
 
             string name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(tmp);
             Console.WriteLine(name);
             Console.ReadKey();
-        }
+        }*/
     }   
 }

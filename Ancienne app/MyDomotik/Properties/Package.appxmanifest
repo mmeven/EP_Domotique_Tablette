@@ -18,21 +18,11 @@
       <m2:VisualElements DisplayName="DomoticApp" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="DomoticApp" ForegroundText="dark" BackgroundColor="transparent">
         <m2:DefaultTile ShortName="DomoticApp">
         </m2:DefaultTile>
-        <m2:SplashScreen Image="Assets\Splashscreen(2).png" BackgroundColor="#FFFFFF" />
+        <m2:SplashScreen Image="Assets\DomotIcApp_LoadingPage.png" BackgroundColor="#FFFFFF" />
       </m2:VisualElements>
     </Application>
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
-    <m2:DeviceCapability Name="bluetooth.rfcomm">
-      <m2:Device Id="any">
-        <m2:Function Type="name:serialPort"/>
-      </m2:Device>
-    </m2:DeviceCapability>
-    <m2:DeviceCapability Name="serialcommunication">
-      <m2:Device Id="any">
-        <m2:Function Type="name:serialPort"/>
-      </m2:Device>
-    </m2:DeviceCapability>
   </Capabilities>
 </Package>
