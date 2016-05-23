@@ -126,7 +126,7 @@
                     <ColumnDefinition Width="600*"/>
                     <ColumnDefinition Width="251*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="3" Grid.Column="2" Background="Red" Height="50" Width="50" Name="Refresh"></Button>
+                <Button Grid.Row="3" Grid.Column="2" Height="50" Width="50" Name="Refresh"></Button>
             </Grid>
 
 

@@ -60,8 +60,8 @@ namespace MyDomotik
         [DllImport("Bluetooth_com.dll", EntryPoint = "getVirtualJoystickPositionY",
         CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern int getVirtualJoystickPositionY(IntPtr p);
-        
-        
+
+       
         Affichage affichage;
         /*private Contexte contexte;
         public class Contexte : INotifyPropertyChanged
@@ -190,22 +190,34 @@ namespace MyDomotik
             this.InitializeComponent();
             affichage = new Affichage();
             affichage.afficheHeure(timeBox);
-            this.Refresh.Click += refreshReaction;
-            Debug.WriteLine("Coucou constructeur");
-
+            double maxSpeed = 15;
+            double speed = 5;
+            Speed.Text = speed + " km/h";
+            double angle = ((speed / maxSpeed) * 180 - 90);
+            MaxSpeed.Text =  maxSpeed + " km/h";
+            SpeedGauge.Rotation = angle;
+            int x1 = 10;
+            int y1 = 10;
+            int x2 = 30;
+            int y2 = 50;
+            int profil = 5;
+            JoystickPosition.X = x1;
+            JoystickPosition.Y = -y1;
+            JoystickVirtualPosition.X = x2;
+            JoystickVirtualPosition.Y = -y2;
+            profile_text.Text = "Profil : "+profil;
+            //this.Refresh.Click += refreshReaction;
             //refresh();
-            
+
         }
 
         public void refresh()
         {
-            string p = "COM12";
-            Debug.WriteLine("keukou");
-            IntPtr port = openPort(p);
+            /*
+            IntPtr port = openPort("COM12");
             if (!isOpen(port)) Debug.WriteLine(errorCode(port));
-            Debug.WriteLine("Coucou refresh");
-            /*double speed = getSpeed(port);
-            double maxSpeed = getMaximumSpeed(port);
+            Debug.WriteLine("Coucou refresh");*/
+            /*double maxSpeed = getMaximumSpeed(port);
             //Speed.Text = speed + " km/h";
             double angle = ((speed / maxSpeed) * 180 - 90);
             //MaxSpeed.Text =  maxSpeed + " km/h";
@@ -241,11 +253,11 @@ namespace MyDomotik
             JoystickVirtualPosition.X = x2;
             JoystickVirtualPosition.Y = -y2;*/
 
-            int profile = getBatteryLvl(port);
+            /*int profile = getBatteryLvl(port);
             Debug.WriteLine("La on tente getProfile");
             this.profile_text.Text = "Profil : "+profile;
             Debug.WriteLine("Et bim on trouve ça : "+profile);
-            closePort(port);
+            closePort(port);*/
         }
 
         public void refreshReaction(object sender, RoutedEventArgs args)
