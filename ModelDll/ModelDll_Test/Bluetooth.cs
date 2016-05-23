@@ -17,6 +17,10 @@ namespace ModelDll_Test
             CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         public static extern void closePort(IntPtr port);
 
+        [DllImport("Bluetooth_com.dll", EntryPoint = "isOpen",
+            CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        public static extern bool isOpen(IntPtr port);
+
         [DllImport("Bluetooth_com.dll", EntryPoint = "getVirtualJoystickPositionX",
             CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         public static extern int getVirtualJoystickPositionX(IntPtr port);
@@ -49,11 +53,10 @@ namespace ModelDll_Test
             CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         public static extern int getJoystickPositionY(IntPtr port);
 
-        /*static void Main(string[] args)
+        static void Main(string[] args)
         {
-            IntPtr port = openPort("COM3");
-            Console.ReadKey();
-            for (int i = 0; i<10; i++)
+            IntPtr port = openPort("COM12");
+            for (int i = 0; i<1; i++)
             {
                 Console.WriteLine("Vx = "+getVirtualJoystickPositionX(port));
                 Console.WriteLine("Vy = "+getVirtualJoystickPositionY(port));
@@ -63,11 +66,13 @@ namespace ModelDll_Test
                 Console.WriteLine("Speed (km/h) = "+getSpeed(port));
                 Console.WriteLine("Profile : "+getProfile(port));
                 Console.WriteLine("Battery Level (%) : "+getBatteryLvl(port));
+                Console.WriteLine("isOpen magueule : " + isOpen(port));
             }   
             Console.ReadKey();
             closePort(port);
+            Console.WriteLine("isOpen magueule : " + isOpen(port));
             Console.ReadKey();
-        }*/
+        }
 
         
     }
