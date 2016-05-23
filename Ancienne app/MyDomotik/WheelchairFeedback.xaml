@@ -40,7 +40,6 @@
     			<Run Foreground="Black" Text="Informations fauteuil"/>
                 </TextBlock>
 
-
                 <!-- Rectangle Accueil, en haut à droite -->
                 <Button x:Name="quitterFeedback" BorderBrush="{x:Null}" Background="Transparent" FontSize="18"  Grid.Row="0" Grid.Column="2" Click="exitFeedback" HorizontalAlignment="Center" VerticalAlignment="Center" Width="252" Height="65">
                     <TextBlock TextWrapping="Wrap"  Foreground="Black" FontSize="24" FontWeight="Bold">
