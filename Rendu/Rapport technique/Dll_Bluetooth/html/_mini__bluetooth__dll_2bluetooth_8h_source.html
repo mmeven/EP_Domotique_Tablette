@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Bluetooth_com:  Fichier source de Génération DLL/Mini_bluetooth_dll/bluetooth.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Bluetooth_com
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_15a09d4cd184dcb282c08e7a18d48b17.html">Génération DLL</a></li><li class="navelem"><a class="el" href="dir_8cd099c876aef977985afbdf08ec875a.html">Mini_bluetooth_dll</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">bluetooth.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_mini__bluetooth__dll_2bluetooth_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;QtSerialPort/qserialport.h&gt;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;QtSerialPort/QSerialPort&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;regex&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;boost/lexical_cast.hpp&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> Q_DECL_EXPORT <span class="keywordtype">int</span> <a class="code" href="bluetooth_8h.html#a7e23df5609a7ad37ddecf94f1f24656f">getMaximumSpeed</a>(QSerialPort* port);</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> Q_DECL_EXPORT <span class="keywordtype">float</span> <a class="code" href="bluetooth_8h.html#a443d1878062d4dbcf8733c41bd05f816">getSpeed</a>(QSerialPort* port);</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> Q_DECL_EXPORT <span class="keywordtype">int</span> <a class="code" href="bluetooth_8h.html#a3a73fef44bd1139cabc81e94103f9d8c">getProfile</a>(QSerialPort* port);</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> Q_DECL_EXPORT QSerialPort* <a class="code" href="bluetooth_8h.html#aa0206e2ec1ac495d417a7915bb657941">openPort</a>(<span class="keywordtype">char</span>* port);</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> Q_DECL_EXPORT <span class="keywordtype">void</span> <a class="code" href="bluetooth_8h.html#a310932c260b7bbbe9602b686f1677e02">closePort</a>(QSerialPort* port);</div><div class="ttc" id="bluetooth_8h_html_a7e23df5609a7ad37ddecf94f1f24656f"><div class="ttname"><a href="bluetooth_8h.html#a7e23df5609a7ad37ddecf94f1f24656f">getMaximumSpeed</a></div><div class="ttdeci">Q_DECL_EXPORT int getMaximumSpeed(QSerialPort *port)</div><div class="ttdoc">Cette méthode est utilisée pour récupérer la vitesse maximale du fauteuil, dans le profil actuel...</div><div class="ttdef"><b>Definition:</b> <a href="bluetooth_8cpp_source.html#l00076">bluetooth.cpp:76</a></div></div>
+<div class="ttc" id="bluetooth_8h_html_a3a73fef44bd1139cabc81e94103f9d8c"><div class="ttname"><a href="bluetooth_8h.html#a3a73fef44bd1139cabc81e94103f9d8c">getProfile</a></div><div class="ttdeci">Q_DECL_EXPORT int getProfile(QSerialPort *port)</div><div class="ttdoc">Cette méthode est utilisée pour récupérer l&amp;#39;identifiant du profil actuel du fauteuil. </div><div class="ttdef"><b>Definition:</b> <a href="bluetooth_8cpp_source.html#l00137">bluetooth.cpp:137</a></div></div>
+<div class="ttc" id="bluetooth_8h_html_aa0206e2ec1ac495d417a7915bb657941"><div class="ttname"><a href="bluetooth_8h.html#aa0206e2ec1ac495d417a7915bb657941">openPort</a></div><div class="ttdeci">Q_DECL_EXPORT QSerialPort * openPort(char *p)</div><div class="ttdoc">Ouvre un port série de nom p, et renvoie un pointeur vers ce port. </div><div class="ttdef"><b>Definition:</b> <a href="bluetooth_8cpp_source.html#l00005">bluetooth.cpp:5</a></div></div>
+<div class="ttc" id="bluetooth_8h_html_a443d1878062d4dbcf8733c41bd05f816"><div class="ttname"><a href="bluetooth_8h.html#a443d1878062d4dbcf8733c41bd05f816">getSpeed</a></div><div class="ttdeci">Q_DECL_EXPORT float getSpeed(QSerialPort *port)</div><div class="ttdoc">Cette méthode est utilisée pour récupérer la vitesse actuelle du fauteuil. </div><div class="ttdef"><b>Definition:</b> <a href="bluetooth_8cpp_source.html#l00104">bluetooth.cpp:104</a></div></div>
+<div class="ttc" id="bluetooth_8h_html_a310932c260b7bbbe9602b686f1677e02"><div class="ttname"><a href="bluetooth_8h.html#a310932c260b7bbbe9602b686f1677e02">closePort</a></div><div class="ttdeci">Q_DECL_EXPORT void closePort(QSerialPort *port)</div><div class="ttdoc">Ferme le port série passé en paramètre. </div><div class="ttdef"><b>Definition:</b> <a href="bluetooth_8cpp_source.html#l00011">bluetooth.cpp:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

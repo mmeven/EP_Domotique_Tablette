@@ -1,15 +1,24 @@
-\hypertarget{bluetooth_8h}{}\section{Référence du fichier bluetooth.\+h}
-\label{bluetooth_8h}\index{bluetooth.\+h@{bluetooth.\+h}}
+\hypertarget{bluetooth_8h}{}\section{Référence du fichier Génération D\+L\+L/bluetooth.h}
+\label{bluetooth_8h}\index{Génération D\+L\+L/bluetooth.\+h@{Génération D\+L\+L/bluetooth.\+h}}
+{\ttfamily \#include $<$Qt\+Serial\+Port/qserialport.\+h$>$}\\*
+{\ttfamily \#include $<$Qt\+Serial\+Port/\+Q\+Serial\+Port$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$regex$>$}\\*
+{\ttfamily \#include $<$boost/lexical\+\_\+cast.\+hpp$>$}\\*
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
+Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT Q\+Serial\+Port $\ast$ \hyperlink{bluetooth_8h_aa0206e2ec1ac495d417a7915bb657941}{open\+Port} (char $\ast$p)
+\begin{DoxyCompactList}\small\item\em Ouvre un port série de nom p, et renvoie un pointeur vers ce port. \end{DoxyCompactList}\item 
+Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{bluetooth_8h_a310932c260b7bbbe9602b686f1677e02}{close\+Port} (Q\+Serial\+Port $\ast$port)
+\begin{DoxyCompactList}\small\item\em Ferme le port série passé en paramètre. \end{DoxyCompactList}\item 
 Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{bluetooth_8h_a335e35b16430571589662c68446238b0}{get\+Virtual\+Joystick\+PositionX} (Q\+Serial\+Port $\ast$port)
 \begin{DoxyCompactList}\small\item\em Cette méthode est utilisée pour récupérer la position en abscisse du joystick virtuel du fauteuil. Cette information correspond à la position en abscisse que l\textquotesingle{}utilisateur devrait donner au joystick pour suivre une trajectoire optimale calculée par le fauteuil (pour éviter un obstacle par exemple). \end{DoxyCompactList}\item 
 Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{bluetooth_8h_ae64efa362de554ec1e495b86f7e36bed}{get\+Virtual\+Joystick\+PositionY} (Q\+Serial\+Port $\ast$port)
 \begin{DoxyCompactList}\small\item\em Cette méthode est utilisée pour récupérer la position en ordonnée du joystick virtuel du fauteuil. Cette information correspond à la position en ordonnée que l\textquotesingle{}utilisateur devrait donner au joystick pour suivre une trajectoire optimale calculée par le fauteuil (pour éviter un obstacle par exemple). \end{DoxyCompactList}\item 
 Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{bluetooth_8h_a7e23df5609a7ad37ddecf94f1f24656f}{get\+Maximum\+Speed} (Q\+Serial\+Port $\ast$port)
 \begin{DoxyCompactList}\small\item\em Cette méthode est utilisée pour récupérer la vitesse maximale du fauteuil, dans le profil actuel. \end{DoxyCompactList}\item 
-Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{bluetooth_8h_a3b99789c7a0b35e7951f16611870b5f9}{get\+Speed} (Q\+Serial\+Port $\ast$port)
+Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{bluetooth_8h_a443d1878062d4dbcf8733c41bd05f816}{get\+Speed} (Q\+Serial\+Port $\ast$port)
 \begin{DoxyCompactList}\small\item\em Cette méthode est utilisée pour récupérer la vitesse actuelle du fauteuil. \end{DoxyCompactList}\item 
 Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{bluetooth_8h_a3a73fef44bd1139cabc81e94103f9d8c}{get\+Profile} (Q\+Serial\+Port $\ast$port)
 \begin{DoxyCompactList}\small\item\em Cette méthode est utilisée pour récupérer l\textquotesingle{}identifiant du profil actuel du fauteuil. \end{DoxyCompactList}\item 
@@ -22,6 +31,26 @@ Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{bluetooth_8h_aa9ac31b79
 
 
 \subsection{Documentation des fonctions}
+\index{bluetooth.\+h@{bluetooth.\+h}!close\+Port@{close\+Port}}
+\index{close\+Port@{close\+Port}!bluetooth.\+h@{bluetooth.\+h}}
+\subsubsection[{\texorpdfstring{close\+Port(\+Q\+Serial\+Port $\ast$port)}{closePort(QSerialPort *port)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT void close\+Port (
+\begin{DoxyParamCaption}
+\item[{Q\+Serial\+Port $\ast$}]{port}
+\end{DoxyParamCaption}
+)}\hypertarget{bluetooth_8h_a310932c260b7bbbe9602b686f1677e02}{}\label{bluetooth_8h_a310932c260b7bbbe9602b686f1677e02}
+
+
+Ferme le port série passé en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em port} & Le port série à fermer. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 11 du fichier bluetooth.\+cpp.
+
 \index{bluetooth.\+h@{bluetooth.\+h}!get\+Battery\+Lvl@{get\+Battery\+Lvl}}
 \index{get\+Battery\+Lvl@{get\+Battery\+Lvl}!bluetooth.\+h@{bluetooth.\+h}}
 \subsubsection[{\texorpdfstring{get\+Battery\+Lvl(\+Q\+Serial\+Port $\ast$port)}{getBatteryLvl(QSerialPort *port)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT int get\+Battery\+Lvl (
@@ -33,9 +62,18 @@ Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{bluetooth_8h_aa9ac31b79
 
 Cette méthode est utilisée pour récupérer le niveau d\textquotesingle{}autonomie du fauteuil. 
 
+
+\begin{DoxyParams}{Paramètres}
+{\em port} & Le port sur lequel envoyer la requête. \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-Le niveau d\textquotesingle{}autonomie du fauteuil. 
+Le niveau de batterie du fauteuil, en pourcentage. 
 \end{DoxyReturn}
+
+
+Définition à la ligne 165 du fichier bluetooth.\+cpp.
+
 \index{bluetooth.\+h@{bluetooth.\+h}!get\+Joystick\+PositionX@{get\+Joystick\+PositionX}}
 \index{get\+Joystick\+PositionX@{get\+Joystick\+PositionX}!bluetooth.\+h@{bluetooth.\+h}}
 \subsubsection[{\texorpdfstring{get\+Joystick\+Position\+X(\+Q\+Serial\+Port $\ast$port)}{getJoystickPositionX(QSerialPort *port)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT int get\+Joystick\+PositionX (
@@ -47,9 +85,18 @@ Le niveau d\textquotesingle{}autonomie du fauteuil.
 
 Cette méthode est utilisée pour récupérer la position en abscisse du joystick du fauteuil. 
 
+
+\begin{DoxyParams}{Paramètres}
+{\em port} & Le port sur lequel envoyer la requête. \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-La position en abscisse du joystick du fauteuil. 
+La position en abscisse du joystick du fauteuil, entre -\/100 et 100. 
 \end{DoxyReturn}
+
+
+Définition à la ligne 193 du fichier bluetooth.\+cpp.
+
 \index{bluetooth.\+h@{bluetooth.\+h}!get\+Joystick\+PositionY@{get\+Joystick\+PositionY}}
 \index{get\+Joystick\+PositionY@{get\+Joystick\+PositionY}!bluetooth.\+h@{bluetooth.\+h}}
 \subsubsection[{\texorpdfstring{get\+Joystick\+Position\+Y(\+Q\+Serial\+Port $\ast$port)}{getJoystickPositionY(QSerialPort *port)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT int get\+Joystick\+PositionY (
@@ -61,9 +108,18 @@ La position en abscisse du joystick du fauteuil.
 
 Cette méthode est utilisée pour récupérer la position en ordonnée du joystick du fauteuil. 
 
+
+\begin{DoxyParams}{Paramètres}
+{\em port} & Le port sur lequel envoyer la requête. \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-La position en ordonnée du joystick du fauteuil. 
+La position en ordonnée du joystick du fauteuil, entre -\/100 et 100. 
 \end{DoxyReturn}
+
+
+Définition à la ligne 221 du fichier bluetooth.\+cpp.
+
 \index{bluetooth.\+h@{bluetooth.\+h}!get\+Maximum\+Speed@{get\+Maximum\+Speed}}
 \index{get\+Maximum\+Speed@{get\+Maximum\+Speed}!bluetooth.\+h@{bluetooth.\+h}}
 \subsubsection[{\texorpdfstring{get\+Maximum\+Speed(\+Q\+Serial\+Port $\ast$port)}{getMaximumSpeed(QSerialPort *port)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT int get\+Maximum\+Speed (
@@ -75,9 +131,18 @@ La position en ordonnée du joystick du fauteuil.
 
 Cette méthode est utilisée pour récupérer la vitesse maximale du fauteuil, dans le profil actuel. 
 
+
+\begin{DoxyParams}{Paramètres}
+{\em port} & Le port sur lequel envoyer la requête. \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
 La vitesse maximale du fauteuil dans le profil actuel. 
 \end{DoxyReturn}
+
+
+Définition à la ligne 76 du fichier bluetooth.\+cpp.
+
 \index{bluetooth.\+h@{bluetooth.\+h}!get\+Profile@{get\+Profile}}
 \index{get\+Profile@{get\+Profile}!bluetooth.\+h@{bluetooth.\+h}}
 \subsubsection[{\texorpdfstring{get\+Profile(\+Q\+Serial\+Port $\ast$port)}{getProfile(QSerialPort *port)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT int get\+Profile (
@@ -89,23 +154,41 @@ La vitesse maximale du fauteuil dans le profil actuel.
 
 Cette méthode est utilisée pour récupérer l\textquotesingle{}identifiant du profil actuel du fauteuil. 
 
+
+\begin{DoxyParams}{Paramètres}
+{\em port} & Le port sur lequel envoyer la requête. \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
 L\textquotesingle{}identifiant du profil actuel du fauteuil. 
 \end{DoxyReturn}
+
+
+Définition à la ligne 137 du fichier bluetooth.\+cpp.
+
 \index{bluetooth.\+h@{bluetooth.\+h}!get\+Speed@{get\+Speed}}
 \index{get\+Speed@{get\+Speed}!bluetooth.\+h@{bluetooth.\+h}}
-\subsubsection[{\texorpdfstring{get\+Speed(\+Q\+Serial\+Port $\ast$port)}{getSpeed(QSerialPort *port)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT int get\+Speed (
+\subsubsection[{\texorpdfstring{get\+Speed(\+Q\+Serial\+Port $\ast$port)}{getSpeed(QSerialPort *port)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT float get\+Speed (
 \begin{DoxyParamCaption}
 \item[{Q\+Serial\+Port $\ast$}]{port}
 \end{DoxyParamCaption}
-)}\hypertarget{bluetooth_8h_a3b99789c7a0b35e7951f16611870b5f9}{}\label{bluetooth_8h_a3b99789c7a0b35e7951f16611870b5f9}
+)}\hypertarget{bluetooth_8h_a443d1878062d4dbcf8733c41bd05f816}{}\label{bluetooth_8h_a443d1878062d4dbcf8733c41bd05f816}
 
 
 Cette méthode est utilisée pour récupérer la vitesse actuelle du fauteuil. 
 
+
+\begin{DoxyParams}{Paramètres}
+{\em port} & Le port sur lequel envoyer la requête. \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
 La vitesse actuelle du fauteuil. 
 \end{DoxyReturn}
+
+
+Définition à la ligne 104 du fichier bluetooth.\+cpp.
+
 \index{bluetooth.\+h@{bluetooth.\+h}!get\+Virtual\+Joystick\+PositionX@{get\+Virtual\+Joystick\+PositionX}}
 \index{get\+Virtual\+Joystick\+PositionX@{get\+Virtual\+Joystick\+PositionX}!bluetooth.\+h@{bluetooth.\+h}}
 \subsubsection[{\texorpdfstring{get\+Virtual\+Joystick\+Position\+X(\+Q\+Serial\+Port $\ast$port)}{getVirtualJoystickPositionX(QSerialPort *port)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT int get\+Virtual\+Joystick\+PositionX (
@@ -117,9 +200,18 @@ La vitesse actuelle du fauteuil.
 
 Cette méthode est utilisée pour récupérer la position en abscisse du joystick virtuel du fauteuil. Cette information correspond à la position en abscisse que l\textquotesingle{}utilisateur devrait donner au joystick pour suivre une trajectoire optimale calculée par le fauteuil (pour éviter un obstacle par exemple). 
 
+
+\begin{DoxyParams}{Paramètres}
+{\em port} & Le port sur lequel envoyer la requête. \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-La position en abscisse du joystick virtuel du fauteuil. 
+La position en abscisse du joystick virtuel du fauteuil, entre -\/100 et 100. 
 \end{DoxyReturn}
+
+
+Définition à la ligne 15 du fichier bluetooth.\+cpp.
+
 \index{bluetooth.\+h@{bluetooth.\+h}!get\+Virtual\+Joystick\+PositionY@{get\+Virtual\+Joystick\+PositionY}}
 \index{get\+Virtual\+Joystick\+PositionY@{get\+Virtual\+Joystick\+PositionY}!bluetooth.\+h@{bluetooth.\+h}}
 \subsubsection[{\texorpdfstring{get\+Virtual\+Joystick\+Position\+Y(\+Q\+Serial\+Port $\ast$port)}{getVirtualJoystickPositionY(QSerialPort *port)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT int get\+Virtual\+Joystick\+PositionY (
@@ -131,6 +223,38 @@ La position en abscisse du joystick virtuel du fauteuil.
 
 Cette méthode est utilisée pour récupérer la position en ordonnée du joystick virtuel du fauteuil. Cette information correspond à la position en ordonnée que l\textquotesingle{}utilisateur devrait donner au joystick pour suivre une trajectoire optimale calculée par le fauteuil (pour éviter un obstacle par exemple). 
 
+
+\begin{DoxyParams}{Paramètres}
+{\em port} & Le port sur lequel envoyer la requête. \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-La position en ordonnée du joystick virtuel du fauteuil. 
+La position en ordonnée du joystick virtuel du fauteuil, entre -\/100 et 100. 
 \end{DoxyReturn}
+
+
+Définition à la ligne 47 du fichier bluetooth.\+cpp.
+
+\index{bluetooth.\+h@{bluetooth.\+h}!open\+Port@{open\+Port}}
+\index{open\+Port@{open\+Port}!bluetooth.\+h@{bluetooth.\+h}}
+\subsubsection[{\texorpdfstring{open\+Port(char $\ast$p)}{openPort(char *p)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+\_\+\+D\+E\+C\+L\+\_\+\+E\+X\+P\+O\+RT Q\+Serial\+Port$\ast$ open\+Port (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{bluetooth_8h_aa0206e2ec1ac495d417a7915bb657941}{}\label{bluetooth_8h_aa0206e2ec1ac495d417a7915bb657941}
+
+
+Ouvre un port série de nom p, et renvoie un pointeur vers ce port. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & Le nom du port à ouvrir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Le port ouvert. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 5 du fichier bluetooth.\+cpp.
+

@@ -2,6 +2,7 @@ var searchData=
 [
   ['getaction',['getAction',['../class_e_p_1_1_equipment_fibaro.html#ad411fa6e04286c4b0eabf258226c95f3',1,'EP::EquipmentFibaro']]],
   ['getbuttonid',['getButtonId',['../class_e_p_1_1_equipment_kira.html#ae2ce7a10bf38a28b5c0c8f44420c3f10',1,'EP::EquipmentKira']]],
+  ['getcomport',['getCOMPort',['../class_e_p_1_1_core.html#a5962fad30852b23d5bfcb5737b92f51a',1,'EP::Core']]],
   ['getequipmentbyindex',['getEquipmentByIndex',['../class_e_p_1_1_room.html#a22185f0f9e75c03fe2fd61c958df3ead',1,'EP::Room']]],
   ['getequipmentbyname',['getEquipmentByName',['../class_e_p_1_1_room.html#a7f7aeb553f256013f1f54c245e238dfd',1,'EP::Room']]],
   ['getequipmentid',['getEquipmentId',['../class_e_p_1_1_equipment_fibaro.html#abdd7cbd67d1f3a06dd57fa9dc3b33a59',1,'EP::EquipmentFibaro']]],

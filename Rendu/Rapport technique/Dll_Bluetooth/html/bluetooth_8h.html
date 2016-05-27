@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Bluetooth_com: Référence du fichier bluetooth.h</title>
+<title>Bluetooth_com: Référence du fichier Génération DLL/bluetooth.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -77,6 +77,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_15a09d4cd184dcb282c08e7a18d48b17.html">Génération DLL</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
@@ -85,11 +89,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Référence du fichier bluetooth.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;QtSerialPort/qserialport.h&gt;</code><br />
+<code>#include &lt;QtSerialPort/QSerialPort&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;regex&gt;</code><br />
+<code>#include &lt;boost/lexical_cast.hpp&gt;</code><br />
+</div>
 <p><a href="bluetooth_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
+<tr class="memitem:aa0206e2ec1ac495d417a7915bb657941"><td class="memItemLeft" align="right" valign="top">Q_DECL_EXPORT QSerialPort *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bluetooth_8h.html#aa0206e2ec1ac495d417a7915bb657941">openPort</a> (char *p)</td></tr>
+<tr class="memdesc:aa0206e2ec1ac495d417a7915bb657941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ouvre un port série de nom p, et renvoie un pointeur vers ce port.  <a href="#aa0206e2ec1ac495d417a7915bb657941">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa0206e2ec1ac495d417a7915bb657941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a310932c260b7bbbe9602b686f1677e02"><td class="memItemLeft" align="right" valign="top">Q_DECL_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bluetooth_8h.html#a310932c260b7bbbe9602b686f1677e02">closePort</a> (QSerialPort *port)</td></tr>
+<tr class="memdesc:a310932c260b7bbbe9602b686f1677e02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ferme le port série passé en paramètre.  <a href="#a310932c260b7bbbe9602b686f1677e02">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a310932c260b7bbbe9602b686f1677e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a335e35b16430571589662c68446238b0"><td class="memItemLeft" align="right" valign="top">Q_DECL_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bluetooth_8h.html#a335e35b16430571589662c68446238b0">getVirtualJoystickPositionX</a> (QSerialPort *port)</td></tr>
 <tr class="memdesc:a335e35b16430571589662c68446238b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode est utilisée pour récupérer la position en abscisse du joystick virtuel du fauteuil. Cette information correspond à la position en abscisse que l'utilisateur devrait donner au joystick pour suivre une trajectoire optimale calculée par le fauteuil (pour éviter un obstacle par exemple).  <a href="#a335e35b16430571589662c68446238b0">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a335e35b16430571589662c68446238b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -99,9 +114,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a7e23df5609a7ad37ddecf94f1f24656f"><td class="memItemLeft" align="right" valign="top">Q_DECL_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bluetooth_8h.html#a7e23df5609a7ad37ddecf94f1f24656f">getMaximumSpeed</a> (QSerialPort *port)</td></tr>
 <tr class="memdesc:a7e23df5609a7ad37ddecf94f1f24656f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode est utilisée pour récupérer la vitesse maximale du fauteuil, dans le profil actuel.  <a href="#a7e23df5609a7ad37ddecf94f1f24656f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a7e23df5609a7ad37ddecf94f1f24656f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b99789c7a0b35e7951f16611870b5f9"><td class="memItemLeft" align="right" valign="top">Q_DECL_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bluetooth_8h.html#a3b99789c7a0b35e7951f16611870b5f9">getSpeed</a> (QSerialPort *port)</td></tr>
-<tr class="memdesc:a3b99789c7a0b35e7951f16611870b5f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode est utilisée pour récupérer la vitesse actuelle du fauteuil.  <a href="#a3b99789c7a0b35e7951f16611870b5f9">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a3b99789c7a0b35e7951f16611870b5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a443d1878062d4dbcf8733c41bd05f816"><td class="memItemLeft" align="right" valign="top">Q_DECL_EXPORT float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bluetooth_8h.html#a443d1878062d4dbcf8733c41bd05f816">getSpeed</a> (QSerialPort *port)</td></tr>
+<tr class="memdesc:a443d1878062d4dbcf8733c41bd05f816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode est utilisée pour récupérer la vitesse actuelle du fauteuil.  <a href="#a443d1878062d4dbcf8733c41bd05f816">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a443d1878062d4dbcf8733c41bd05f816"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a73fef44bd1139cabc81e94103f9d8c"><td class="memItemLeft" align="right" valign="top">Q_DECL_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bluetooth_8h.html#a3a73fef44bd1139cabc81e94103f9d8c">getProfile</a> (QSerialPort *port)</td></tr>
 <tr class="memdesc:a3a73fef44bd1139cabc81e94103f9d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode est utilisée pour récupérer l'identifiant du profil actuel du fauteuil.  <a href="#a3a73fef44bd1139cabc81e94103f9d8c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a3a73fef44bd1139cabc81e94103f9d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,6 +131,32 @@ Fonctions</h2></td></tr>
 <tr class="separator:aa9ac31b79072d7772c8bf6b091e13234"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a310932c260b7bbbe9602b686f1677e02"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Q_DECL_EXPORT void closePort </td>
+          <td>(</td>
+          <td class="paramtype">QSerialPort *&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ferme le port série passé en paramètre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>Le port série à fermer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="bluetooth_8cpp_source.html#l00011">11</a> du fichier <a class="el" href="bluetooth_8cpp_source.html">bluetooth.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="aa42bacb72bc07555644fd89d6902ec6f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -131,7 +172,15 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Cette méthode est utilisée pour récupérer le niveau d'autonomie du fauteuil. </p>
-<dl class="section return"><dt>Renvoie</dt><dd>Le niveau d'autonomie du fauteuil. </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>Le port sur lequel envoyer la requête. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le niveau de batterie du fauteuil, en pourcentage. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="bluetooth_8cpp_source.html#l00165">165</a> du fichier <a class="el" href="bluetooth_8cpp_source.html">bluetooth.cpp</a>.</p>
 
 </div>
 </div>
@@ -150,7 +199,15 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Cette méthode est utilisée pour récupérer la position en abscisse du joystick du fauteuil. </p>
-<dl class="section return"><dt>Renvoie</dt><dd>La position en abscisse du joystick du fauteuil. </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>Le port sur lequel envoyer la requête. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La position en abscisse du joystick du fauteuil, entre -100 et 100. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="bluetooth_8cpp_source.html#l00193">193</a> du fichier <a class="el" href="bluetooth_8cpp_source.html">bluetooth.cpp</a>.</p>
 
 </div>
 </div>
@@ -169,7 +226,15 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Cette méthode est utilisée pour récupérer la position en ordonnée du joystick du fauteuil. </p>
-<dl class="section return"><dt>Renvoie</dt><dd>La position en ordonnée du joystick du fauteuil. </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>Le port sur lequel envoyer la requête. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La position en ordonnée du joystick du fauteuil, entre -100 et 100. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="bluetooth_8cpp_source.html#l00221">221</a> du fichier <a class="el" href="bluetooth_8cpp_source.html">bluetooth.cpp</a>.</p>
 
 </div>
 </div>
@@ -188,7 +253,15 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Cette méthode est utilisée pour récupérer la vitesse maximale du fauteuil, dans le profil actuel. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>Le port sur lequel envoyer la requête. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Renvoie</dt><dd>La vitesse maximale du fauteuil dans le profil actuel. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="bluetooth_8cpp_source.html#l00076">76</a> du fichier <a class="el" href="bluetooth_8cpp_source.html">bluetooth.cpp</a>.</p>
 
 </div>
 </div>
@@ -207,16 +280,24 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Cette méthode est utilisée pour récupérer l'identifiant du profil actuel du fauteuil. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>Le port sur lequel envoyer la requête. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Renvoie</dt><dd>L'identifiant du profil actuel du fauteuil. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="bluetooth_8cpp_source.html#l00137">137</a> du fichier <a class="el" href="bluetooth_8cpp_source.html">bluetooth.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a3b99789c7a0b35e7951f16611870b5f9"></a>
+<a class="anchor" id="a443d1878062d4dbcf8733c41bd05f816"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Q_DECL_EXPORT int getSpeed </td>
+          <td class="memname">Q_DECL_EXPORT float getSpeed </td>
           <td>(</td>
           <td class="paramtype">QSerialPort *&#160;</td>
           <td class="paramname"><em>port</em></td><td>)</td>
@@ -226,7 +307,15 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Cette méthode est utilisée pour récupérer la vitesse actuelle du fauteuil. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>Le port sur lequel envoyer la requête. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Renvoie</dt><dd>La vitesse actuelle du fauteuil. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="bluetooth_8cpp_source.html#l00104">104</a> du fichier <a class="el" href="bluetooth_8cpp_source.html">bluetooth.cpp</a>.</p>
 
 </div>
 </div>
@@ -245,7 +334,15 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Cette méthode est utilisée pour récupérer la position en abscisse du joystick virtuel du fauteuil. Cette information correspond à la position en abscisse que l'utilisateur devrait donner au joystick pour suivre une trajectoire optimale calculée par le fauteuil (pour éviter un obstacle par exemple). </p>
-<dl class="section return"><dt>Renvoie</dt><dd>La position en abscisse du joystick virtuel du fauteuil. </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>Le port sur lequel envoyer la requête. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La position en abscisse du joystick virtuel du fauteuil, entre -100 et 100. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="bluetooth_8cpp_source.html#l00015">15</a> du fichier <a class="el" href="bluetooth_8cpp_source.html">bluetooth.cpp</a>.</p>
 
 </div>
 </div>
@@ -264,7 +361,42 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Cette méthode est utilisée pour récupérer la position en ordonnée du joystick virtuel du fauteuil. Cette information correspond à la position en ordonnée que l'utilisateur devrait donner au joystick pour suivre une trajectoire optimale calculée par le fauteuil (pour éviter un obstacle par exemple). </p>
-<dl class="section return"><dt>Renvoie</dt><dd>La position en ordonnée du joystick virtuel du fauteuil. </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>Le port sur lequel envoyer la requête. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La position en ordonnée du joystick virtuel du fauteuil, entre -100 et 100. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="bluetooth_8cpp_source.html#l00047">47</a> du fichier <a class="el" href="bluetooth_8cpp_source.html">bluetooth.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa0206e2ec1ac495d417a7915bb657941"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Q_DECL_EXPORT QSerialPort* openPort </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ouvre un port série de nom p, et renvoie un pointeur vers ce port. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Le nom du port à ouvrir. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le port ouvert. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="bluetooth_8cpp_source.html#l00005">5</a> du fichier <a class="el" href="bluetooth_8cpp_source.html">bluetooth.cpp</a>.</p>
 
 </div>
 </div>
