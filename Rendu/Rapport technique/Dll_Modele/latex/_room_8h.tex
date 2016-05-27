@@ -1,0 +1,32 @@
+\hypertarget{_room_8h}{}\section{Model\+Dll/include/\+Room.h File Reference}
+\label{_room_8h}\index{Model\+Dll/include/\+Room.\+h@{Model\+Dll/include/\+Room.\+h}}
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}Equipment.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_e_p_1_1_room}{E\+P\+::\+Room}
+\begin{DoxyCompactList}\small\item\em Représente une pièce de la maison ; Hérite de \hyperlink{class_e_p_1_1_node}{Node}. On peut y retrouver les différents équipements liés à une pièce et les gérer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_e_p}{EP}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export}~\+\_\+\+\_\+declspec(dllexport)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} Room $\ast$ \hyperlink{namespace_e_p_a6c71df3332887f6ad06b51555c7c8e65}{E\+P\+::\+Room\+\_\+\+New} (char $\ast$name, char $\ast$ico)
+\begin{DoxyCompactList}\small\item\em Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_room}{Room} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} void \hyperlink{namespace_e_p_a7ee5a22a99369106f6c70be865788bed}{E\+P\+::\+Room\+\_\+\+Delete} (Room $\ast$room)
+\begin{DoxyCompactList}\small\item\em Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_room}{Room} en passant par la D\+LL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{Room.\+h@{Room.\+h}!Dll\+Export@{Dll\+Export}}
+\index{Dll\+Export@{Dll\+Export}!Room.\+h@{Room.\+h}}
+\subsubsection[{\texorpdfstring{Dll\+Export}{DllExport}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Dll\+Export~\+\_\+\+\_\+declspec(dllexport)}\hypertarget{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{}\label{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}

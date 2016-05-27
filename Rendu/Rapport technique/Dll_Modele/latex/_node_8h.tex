@@ -1,0 +1,30 @@
+\hypertarget{_node_8h}{}\section{Model\+Dll/include/\+Node.h File Reference}
+\label{_node_8h}\index{Model\+Dll/include/\+Node.\+h@{Model\+Dll/include/\+Node.\+h}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_e_p_1_1_node}{E\+P\+::\+Node}
+\begin{DoxyCompactList}\small\item\em Représente un noeud de l\textquotesingle{}arbre (une pièce ou un équipement). Cette classe est spécialisée par les classes \hyperlink{class_e_p_1_1_equipment}{Equipment} et \hyperlink{class_e_p_1_1_room}{Room}, et n\textquotesingle{}est donc pas utilisée telle qu\textquotesingle{}elle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_e_p}{EP}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_node_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export}~\+\_\+\+\_\+declspec(dllexport)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} Node $\ast$ \hyperlink{namespace_e_p_ac7b7dbb1544b595e2b8f9cbe7ae72602}{E\+P\+::\+Node\+\_\+\+New} (char $\ast$name, char $\ast$ico)
+\begin{DoxyCompactList}\small\item\em Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_node}{Node} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} void \hyperlink{namespace_e_p_ad5a5c7aef69e7b3664ea88ceca6474ae}{E\+P\+::\+Node\+\_\+\+Delete} (Node $\ast$node)
+\begin{DoxyCompactList}\small\item\em Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_node}{Node} en passant par la D\+LL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{Node.\+h@{Node.\+h}!Dll\+Export@{Dll\+Export}}
+\index{Dll\+Export@{Dll\+Export}!Node.\+h@{Node.\+h}}
+\subsubsection[{\texorpdfstring{Dll\+Export}{DllExport}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Dll\+Export~\+\_\+\+\_\+declspec(dllexport)}\hypertarget{_node_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{}\label{_node_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}

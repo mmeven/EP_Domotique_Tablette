@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['deleteequipmentbyindex',['deleteEquipmentByIndex',['../class_e_p_1_1_room.html#a9d9a93b373460edb886a05e8942aa589',1,'EP::Room']]],
-  ['deleteequipmentbyname',['deleteEquipmentByName',['../class_e_p_1_1_room.html#a4879b1eeebccc1a3c2f5ece234f73da9',1,'EP::Room']]],
-  ['deleteroombyindex',['deleteRoomByIndex',['../class_e_p_1_1_core.html#a64f97c800663db86fc7b3626b4ce7d0f',1,'EP::Core']]],
-  ['deleteroombyname',['deleteRoomByName',['../class_e_p_1_1_core.html#a2cacc28f799c8bfbb5d9c50202346c55',1,'EP::Core']]]
+  ['core',['Core',['../class_e_p_1_1_core.html#acfb517a0b01ff278283e940b184fcea4',1,'EP::Core']]],
+  ['core_5fdelete',['Core_Delete',['../namespace_e_p.html#a34f1031ad31382a4320da08cb4fde987',1,'EP']]],
+  ['core_5fnew',['Core_New',['../namespace_e_p.html#ac69833e001e1a0be87289b0f414a849d',1,'EP']]],
+  ['core_5fnewfromsave',['Core_NewFromSave',['../namespace_e_p.html#a3d5379dbee3c6e24e1fd3dc7f1a29dd5',1,'EP']]],
+  ['core_5fsaveanddelete',['Core_SaveAndDelete',['../namespace_e_p.html#a3d24a1b2346db91ec2e21520fc88f62b',1,'EP']]]
 ];

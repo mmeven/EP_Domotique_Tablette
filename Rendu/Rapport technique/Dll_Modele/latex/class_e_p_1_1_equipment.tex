@@ -18,10 +18,11 @@ Inheritance diagram for EP\+:\+:Equipment\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_e_p_1_1_equipment_a7fce8df2fed82ae05a50f1489307e2ae}{Equipment} (char $\ast$name, char $\ast$ico, \hyperlink{class_e_p_1_1_node}{Node} $\ast$parent, int type\+Of)
+\hyperlink{class_e_p_1_1_equipment_a7fce8df2fed82ae05a50f1489307e2ae}{Equipment} (char $\ast$name, char $\ast$\hyperlink{namespace_e_p_a9bb18717237cbb94269e26c77cc04b05}{ico}, \hyperlink{class_e_p_1_1_node}{Node} $\ast$\hyperlink{namespace_e_p_ae54856cdea91964313d781ec414f88fc}{parent}, int type\+Of)
 \begin{DoxyCompactList}\small\item\em Appelle le constructeur de \hyperlink{class_e_p_1_1_node}{Node}, initialise m\+\_\+room\+Parent et m\+\_\+type\+Of. \end{DoxyCompactList}\item 
-virtual int \hyperlink{class_e_p_1_1_equipment_ab95a169fa00d4b7408bf30320f5b7ad8}{send\+Request} ()=0\hypertarget{class_e_p_1_1_equipment_ab95a169fa00d4b7408bf30320f5b7ad8}{}\label{class_e_p_1_1_equipment_ab95a169fa00d4b7408bf30320f5b7ad8}
-
+virtual \hyperlink{class_e_p_1_1_equipment_a599cde34c3ebe66ce00bd72a28253d66}{$\sim$\+Equipment} ()
+\item 
+virtual int \hyperlink{class_e_p_1_1_equipment_ab95a169fa00d4b7408bf30320f5b7ad8}{send\+Request} ()=0
 \begin{DoxyCompactList}\small\item\em Envoie la requête H\+T\+TP permettant d\textquotesingle{}intéragir avec l\textquotesingle{}équipement. \end{DoxyCompactList}\item 
 int \hyperlink{class_e_p_1_1_equipment_aac7c97005aec719e51483c9719386015}{get\+Type\+Of} ()
 \item 
@@ -49,26 +50,20 @@ static int \hyperlink{class_e_p_1_1_equipment_ad1abd0762bc1f17283307e6a102f0daa}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_e_p_1_1_node}{Node} $\ast$ \hyperlink{class_e_p_1_1_equipment_a826ee59574194978cd3e02e8824a0a5a}{m\+\_\+room\+Parent}\hypertarget{class_e_p_1_1_equipment_a826ee59574194978cd3e02e8824a0a5a}{}\label{class_e_p_1_1_equipment_a826ee59574194978cd3e02e8824a0a5a}
-
+\hyperlink{class_e_p_1_1_node}{Node} $\ast$ \hyperlink{class_e_p_1_1_equipment_a826ee59574194978cd3e02e8824a0a5a}{m\+\_\+room\+Parent}
 \begin{DoxyCompactList}\small\item\em Un pointeur vers la pièce contenant l\textquotesingle{}équipement. \end{DoxyCompactList}\item 
-int \hyperlink{class_e_p_1_1_equipment_abf8f83a01b6843ffc15cc8b77254dbe3}{m\+\_\+type\+Of}\hypertarget{class_e_p_1_1_equipment_abf8f83a01b6843ffc15cc8b77254dbe3}{}\label{class_e_p_1_1_equipment_abf8f83a01b6843ffc15cc8b77254dbe3}
-
+int \hyperlink{class_e_p_1_1_equipment_abf8f83a01b6843ffc15cc8b77254dbe3}{m\+\_\+type\+Of}
 \begin{DoxyCompactList}\small\item\em 1\+: pour un équipement lié à la Kira, 2\+: pour un équipement lié à la Fibaro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static char \hyperlink{class_e_p_1_1_equipment_a05245b7dd3a4b4e3fb7ab258e6bbe6a2}{I\+P\+\_\+\+Kira} \mbox{[}15\mbox{]} = \char`\"{}192.\+168.\+1.\+31\char`\"{}\hypertarget{class_e_p_1_1_equipment_a05245b7dd3a4b4e3fb7ab258e6bbe6a2}{}\label{class_e_p_1_1_equipment_a05245b7dd3a4b4e3fb7ab258e6bbe6a2}
-
+static char \hyperlink{class_e_p_1_1_equipment_a05245b7dd3a4b4e3fb7ab258e6bbe6a2}{I\+P\+\_\+\+Kira} \mbox{[}15\mbox{]} = \char`\"{}192.\+168.\+1.\+31\char`\"{}
 \begin{DoxyCompactList}\small\item\em L\textquotesingle{}adresse IP de la Kira. \end{DoxyCompactList}\item 
-static char \hyperlink{class_e_p_1_1_equipment_a76405ab4adccec1b32a1c874171749e6}{I\+P\+\_\+\+Fibaro} \mbox{[}15\mbox{]} = \char`\"{}192.\+168.\+81.\+1\char`\"{}\hypertarget{class_e_p_1_1_equipment_a76405ab4adccec1b32a1c874171749e6}{}\label{class_e_p_1_1_equipment_a76405ab4adccec1b32a1c874171749e6}
-
+static char \hyperlink{class_e_p_1_1_equipment_a76405ab4adccec1b32a1c874171749e6}{I\+P\+\_\+\+Fibaro} \mbox{[}15\mbox{]} = \char`\"{}192.\+168.\+81.\+1\char`\"{}
 \begin{DoxyCompactList}\small\item\em L\textquotesingle{}adresse IP de la Fibaro. \end{DoxyCompactList}\item 
-static char \hyperlink{class_e_p_1_1_equipment_a91662c50e9eac8a97c2eb5fcc0f1876c}{Fibaro\+\_\+login} \mbox{[}300\mbox{]} = \char`\"{}admin\char`\"{}\hypertarget{class_e_p_1_1_equipment_a91662c50e9eac8a97c2eb5fcc0f1876c}{}\label{class_e_p_1_1_equipment_a91662c50e9eac8a97c2eb5fcc0f1876c}
-
+static char \hyperlink{class_e_p_1_1_equipment_a91662c50e9eac8a97c2eb5fcc0f1876c}{Fibaro\+\_\+login} \mbox{[}300\mbox{]} = \char`\"{}admin\char`\"{}
 \begin{DoxyCompactList}\small\item\em Le login de la Fibaro. \end{DoxyCompactList}\item 
-static char \hyperlink{class_e_p_1_1_equipment_ad59ffc7e13909e5586601a1e9ce4f9ee}{Fibaro\+\_\+password} \mbox{[}300\mbox{]} = \char`\"{}admin\char`\"{}\hypertarget{class_e_p_1_1_equipment_ad59ffc7e13909e5586601a1e9ce4f9ee}{}\label{class_e_p_1_1_equipment_ad59ffc7e13909e5586601a1e9ce4f9ee}
-
+static char \hyperlink{class_e_p_1_1_equipment_ad59ffc7e13909e5586601a1e9ce4f9ee}{Fibaro\+\_\+password} \mbox{[}300\mbox{]} = \char`\"{}admin\char`\"{}
 \begin{DoxyCompactList}\small\item\em Le password de la Fibaro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -97,6 +92,13 @@ Appelle le constructeur de \hyperlink{class_e_p_1_1_node}{Node}, initialise m\+\
 {\em type\+Of} & 1\+: pour un équipement lié à la Kira, 2\+: pour un équipement lié à la Fibaro. \\
 \hline
 \end{DoxyParams}
+\index{E\+P\+::\+Equipment@{E\+P\+::\+Equipment}!````~Equipment@{$\sim$\+Equipment}}
+\index{````~Equipment@{$\sim$\+Equipment}!E\+P\+::\+Equipment@{E\+P\+::\+Equipment}}
+\subsubsection[{\texorpdfstring{$\sim$\+Equipment()}{~Equipment()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual E\+P\+::\+Equipment\+::$\sim$\+Equipment (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_e_p_1_1_equipment_a599cde34c3ebe66ce00bd72a28253d66}{}\label{class_e_p_1_1_equipment_a599cde34c3ebe66ce00bd72a28253d66}
 
 
 \subsection{Member Function Documentation}
@@ -160,6 +162,21 @@ Le password de la Fibaro.
 \begin{DoxyReturn}{Returns}
 L\textquotesingle{}attribut m\+\_\+type\+Of. 
 \end{DoxyReturn}
+\index{E\+P\+::\+Equipment@{E\+P\+::\+Equipment}!send\+Request@{send\+Request}}
+\index{send\+Request@{send\+Request}!E\+P\+::\+Equipment@{E\+P\+::\+Equipment}}
+\subsubsection[{\texorpdfstring{send\+Request()=0}{sendRequest()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual int E\+P\+::\+Equipment\+::send\+Request (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_e_p_1_1_equipment_ab95a169fa00d4b7408bf30320f5b7ad8}{}\label{class_e_p_1_1_equipment_ab95a169fa00d4b7408bf30320f5b7ad8}
+
+
+Envoie la requête H\+T\+TP permettant d\textquotesingle{}intéragir avec l\textquotesingle{}équipement. 
+
+
+
+Implemented in \hyperlink{class_e_p_1_1_equipment_fibaro_aff3a8468127e7915e1757d8b9b600587}{E\+P\+::\+Equipment\+Fibaro}, and \hyperlink{class_e_p_1_1_equipment_kira_ad59c93de1b98996ec273c5638cd7e47a}{E\+P\+::\+Equipment\+Kira}.
+
 \index{E\+P\+::\+Equipment@{E\+P\+::\+Equipment}!set\+Ip\+Fibaro@{set\+Ip\+Fibaro}}
 \index{set\+Ip\+Fibaro@{set\+Ip\+Fibaro}!E\+P\+::\+Equipment@{E\+P\+::\+Equipment}}
 \subsubsection[{\texorpdfstring{set\+Ip\+Fibaro(char $\ast$new\+\_\+ip)}{setIpFibaro(char *new_ip)}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Equipment\+::set\+Ip\+Fibaro (
@@ -216,7 +233,52 @@ L\textquotesingle{}attribut m\+\_\+type\+Of.
 \end{DoxyParams}
 
 
+\subsection{Member Data Documentation}
+\index{E\+P\+::\+Equipment@{E\+P\+::\+Equipment}!Fibaro\+\_\+login@{Fibaro\+\_\+login}}
+\index{Fibaro\+\_\+login@{Fibaro\+\_\+login}!E\+P\+::\+Equipment@{E\+P\+::\+Equipment}}
+\subsubsection[{\texorpdfstring{Fibaro\+\_\+login}{Fibaro_login}}]{\setlength{\rightskip}{0pt plus 5cm}char E\+P\+::\+Equipment\+::\+Fibaro\+\_\+login = \char`\"{}admin\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{class_e_p_1_1_equipment_a91662c50e9eac8a97c2eb5fcc0f1876c}{}\label{class_e_p_1_1_equipment_a91662c50e9eac8a97c2eb5fcc0f1876c}
+
+
+Le login de la Fibaro. 
+
+\index{E\+P\+::\+Equipment@{E\+P\+::\+Equipment}!Fibaro\+\_\+password@{Fibaro\+\_\+password}}
+\index{Fibaro\+\_\+password@{Fibaro\+\_\+password}!E\+P\+::\+Equipment@{E\+P\+::\+Equipment}}
+\subsubsection[{\texorpdfstring{Fibaro\+\_\+password}{Fibaro_password}}]{\setlength{\rightskip}{0pt plus 5cm}char E\+P\+::\+Equipment\+::\+Fibaro\+\_\+password = \char`\"{}admin\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{class_e_p_1_1_equipment_ad59ffc7e13909e5586601a1e9ce4f9ee}{}\label{class_e_p_1_1_equipment_ad59ffc7e13909e5586601a1e9ce4f9ee}
+
+
+Le password de la Fibaro. 
+
+\index{E\+P\+::\+Equipment@{E\+P\+::\+Equipment}!I\+P\+\_\+\+Fibaro@{I\+P\+\_\+\+Fibaro}}
+\index{I\+P\+\_\+\+Fibaro@{I\+P\+\_\+\+Fibaro}!E\+P\+::\+Equipment@{E\+P\+::\+Equipment}}
+\subsubsection[{\texorpdfstring{I\+P\+\_\+\+Fibaro}{IP_Fibaro}}]{\setlength{\rightskip}{0pt plus 5cm}char E\+P\+::\+Equipment\+::\+I\+P\+\_\+\+Fibaro = \char`\"{}192.\+168.\+81.\+1\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{class_e_p_1_1_equipment_a76405ab4adccec1b32a1c874171749e6}{}\label{class_e_p_1_1_equipment_a76405ab4adccec1b32a1c874171749e6}
+
+
+L\textquotesingle{}adresse IP de la Fibaro. 
+
+\index{E\+P\+::\+Equipment@{E\+P\+::\+Equipment}!I\+P\+\_\+\+Kira@{I\+P\+\_\+\+Kira}}
+\index{I\+P\+\_\+\+Kira@{I\+P\+\_\+\+Kira}!E\+P\+::\+Equipment@{E\+P\+::\+Equipment}}
+\subsubsection[{\texorpdfstring{I\+P\+\_\+\+Kira}{IP_Kira}}]{\setlength{\rightskip}{0pt plus 5cm}char E\+P\+::\+Equipment\+::\+I\+P\+\_\+\+Kira = \char`\"{}192.\+168.\+1.\+31\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{class_e_p_1_1_equipment_a05245b7dd3a4b4e3fb7ab258e6bbe6a2}{}\label{class_e_p_1_1_equipment_a05245b7dd3a4b4e3fb7ab258e6bbe6a2}
+
+
+L\textquotesingle{}adresse IP de la Kira. 
+
+\index{E\+P\+::\+Equipment@{E\+P\+::\+Equipment}!m\+\_\+room\+Parent@{m\+\_\+room\+Parent}}
+\index{m\+\_\+room\+Parent@{m\+\_\+room\+Parent}!E\+P\+::\+Equipment@{E\+P\+::\+Equipment}}
+\subsubsection[{\texorpdfstring{m\+\_\+room\+Parent}{m_roomParent}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$ E\+P\+::\+Equipment\+::m\+\_\+room\+Parent\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_e_p_1_1_equipment_a826ee59574194978cd3e02e8824a0a5a}{}\label{class_e_p_1_1_equipment_a826ee59574194978cd3e02e8824a0a5a}
+
+
+Un pointeur vers la pièce contenant l\textquotesingle{}équipement. 
+
+\index{E\+P\+::\+Equipment@{E\+P\+::\+Equipment}!m\+\_\+type\+Of@{m\+\_\+type\+Of}}
+\index{m\+\_\+type\+Of@{m\+\_\+type\+Of}!E\+P\+::\+Equipment@{E\+P\+::\+Equipment}}
+\subsubsection[{\texorpdfstring{m\+\_\+type\+Of}{m_typeOf}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Equipment\+::m\+\_\+type\+Of\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_e_p_1_1_equipment_abf8f83a01b6843ffc15cc8b77254dbe3}{}\label{class_e_p_1_1_equipment_abf8f83a01b6843ffc15cc8b77254dbe3}
+
+
+1\+: pour un équipement lié à la Kira, 2\+: pour un équipement lié à la Fibaro. 
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/Equipment.\+h\item 
-src/Equipment.\+cpp\end{DoxyCompactItemize}
+Model\+Dll/include/\hyperlink{_equipment_8h}{Equipment.\+h}\item 
+Model\+Dll/src/\hyperlink{_equipment_8cpp}{Equipment.\+cpp}\end{DoxyCompactItemize}

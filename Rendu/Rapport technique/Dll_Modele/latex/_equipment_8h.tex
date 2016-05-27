@@ -1,0 +1,55 @@
+\hypertarget{_equipment_8h}{}\section{Model\+Dll/include/\+Equipment.h File Reference}
+\label{_equipment_8h}\index{Model\+Dll/include/\+Equipment.\+h@{Model\+Dll/include/\+Equipment.\+h}}
+{\ttfamily \#include \char`\"{}Node.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_e_p_1_1_equipment}{E\+P\+::\+Equipment}
+\begin{DoxyCompactList}\small\item\em Représente un équipement. Cette classe abstraite est spécialisée par \hyperlink{class_e_p_1_1_equipment_kira}{Equipment\+Kira} et \hyperlink{class_e_p_1_1_equipment_fibaro}{Equipment\+Fibaro}. \end{DoxyCompactList}\item 
+class \hyperlink{class_e_p_1_1_equipment_kira}{E\+P\+::\+Equipment\+Kira}
+\begin{DoxyCompactList}\small\item\em Représente un équipement lié à une Kira, hérite de \hyperlink{class_e_p_1_1_equipment}{Equipment}. \end{DoxyCompactList}\item 
+class \hyperlink{class_e_p_1_1_equipment_fibaro}{E\+P\+::\+Equipment\+Fibaro}
+\begin{DoxyCompactList}\small\item\em Représente un équipement lié à une Fibaro, hérite de \hyperlink{class_e_p_1_1_equipment}{Equipment}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_e_p}{EP}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_equipment_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export}~\+\_\+\+\_\+declspec(dllexport)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} char $\ast$ \hyperlink{namespace_e_p_af97eff90050a49f7562745e5f2cffa5e}{E\+P\+::\+Equipment\+\_\+get\+Ip\+Kira} ()
+\begin{DoxyCompactList}\small\item\em Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} char $\ast$ \hyperlink{namespace_e_p_a18b583c6fd3512e964ff72883ade7a1d}{E\+P\+::\+Equipment\+\_\+get\+Ip\+Fibaro} ()
+\begin{DoxyCompactList}\small\item\em Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} int \hyperlink{namespace_e_p_a97a09c6c9a5de299d2284e5fab1d8fe5}{E\+P\+::\+Equipment\+\_\+set\+Ip\+Kira} (char $\ast$new\+\_\+ip)
+\begin{DoxyCompactList}\small\item\em Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} int \hyperlink{namespace_e_p_a39d3138ecfec2ff4c883e5d9f0ec710b}{E\+P\+::\+Equipment\+\_\+set\+Ip\+Fibaro} (char $\ast$new\+\_\+ip)
+\begin{DoxyCompactList}\small\item\em Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} char $\ast$ \hyperlink{namespace_e_p_affeb4f6aa0763cce27bdfc0a758ace8a}{E\+P\+::\+Equipment\+\_\+get\+Login\+Fibaro} ()
+\begin{DoxyCompactList}\small\item\em Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} char $\ast$ \hyperlink{namespace_e_p_af41fc4cfd8baff0841a5e5e9b8683707}{E\+P\+::\+Equipment\+\_\+get\+Password\+Fibaro} ()
+\begin{DoxyCompactList}\small\item\em Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} int \hyperlink{namespace_e_p_a7e0042ce73be5e3c82c2f6cf5c895c63}{E\+P\+::\+Equipment\+\_\+set\+Login\+Fibaro} (char $\ast$new\+\_\+login)
+\begin{DoxyCompactList}\small\item\em Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} int \hyperlink{namespace_e_p_a5f831818a0ad98813a95bde17cc0006e}{E\+P\+::\+Equipment\+\_\+set\+Password\+Fibaro} (char $\ast$new\+\_\+password)
+\begin{DoxyCompactList}\small\item\em Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} Equipment\+Kira $\ast$ \hyperlink{namespace_e_p_a20f61dbfa127f1979f29efdd0dbdb6a4}{E\+P\+::\+Equipment\+Kira\+\_\+\+New} (char $\ast$name, char $\ast$ico, Node $\ast$parent, int button\+Id, int page)
+\begin{DoxyCompactList}\small\item\em Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_equipment_kira}{Equipment\+Kira} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} void \hyperlink{namespace_e_p_a1c55c6edfd491299787f2fe87ed7a0a3}{E\+P\+::\+Equipment\+Kira\+\_\+\+Delete} (Equipment\+Kira $\ast$eq)
+\begin{DoxyCompactList}\small\item\em Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_equipment_kira}{Equipment\+Kira} en passant par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} Equipment\+Fibaro $\ast$ \hyperlink{namespace_e_p_a25932da8d7ad42a69040703010a7beb0}{E\+P\+::\+Equipment\+Fibaro\+\_\+\+New} (char $\ast$name, char $\ast$ico, Node $\ast$parent, int equipment\+Id, char $\ast$action)
+\begin{DoxyCompactList}\small\item\em Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_equipment_fibaro}{Equipment\+Fibaro} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} void \hyperlink{namespace_e_p_a25678b63737acb8852f497164fbeb884}{E\+P\+::\+Equipment\+Fibaro\+\_\+\+Delete} (Equipment\+Fibaro $\ast$eq)
+\begin{DoxyCompactList}\small\item\em Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_equipment_fibaro}{Equipment\+Fibaro} en passant par la D\+LL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{Equipment.\+h@{Equipment.\+h}!Dll\+Export@{Dll\+Export}}
+\index{Dll\+Export@{Dll\+Export}!Equipment.\+h@{Equipment.\+h}}
+\subsubsection[{\texorpdfstring{Dll\+Export}{DllExport}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Dll\+Export~\+\_\+\+\_\+declspec(dllexport)}\hypertarget{_equipment_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{}\label{_equipment_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}

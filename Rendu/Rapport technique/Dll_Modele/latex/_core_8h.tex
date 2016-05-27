@@ -1,0 +1,40 @@
+\hypertarget{_core_8h}{}\section{Model\+Dll/include/\+Core.h File Reference}
+\label{_core_8h}\index{Model\+Dll/include/\+Core.\+h@{Model\+Dll/include/\+Core.\+h}}
+{\ttfamily \#include \char`\"{}Room.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_e_p_1_1_core}{E\+P\+::\+Core}
+\begin{DoxyCompactList}\small\item\em Le coeur de l\textquotesingle{}application, contient la liste des pièces, les paramètres de l\textquotesingle{}application ainsi que les méthodes pour gérer ceux-\/ci. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_e_p}{EP}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_core_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export}~\+\_\+\+\_\+declspec(dllexport)
+\item 
+\#define \hyperlink{_core_8h_a431072645027cd4173b14e7dfa63fae8}{F\+I\+L\+E\+S\+A\+V\+E\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}~500
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} Core $\ast$ \hyperlink{namespace_e_p_ac69833e001e1a0be87289b0f414a849d}{E\+P\+::\+Core\+\_\+\+New} (char $\ast$file)
+\begin{DoxyCompactList}\small\item\em Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_core}{Core} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} Core $\ast$ \hyperlink{namespace_e_p_a3d5379dbee3c6e24e1fd3dc7f1a29dd5}{E\+P\+::\+Core\+\_\+\+New\+From\+Save} (char $\ast$file)
+\begin{DoxyCompactList}\small\item\em Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_core}{Core} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. Après création de l\textquotesingle{}objet, la méthode \hyperlink{class_e_p_1_1_core_ad7adeeffabb5c616d24a66bb10955149}{Core\+::load()} est appelée sur celui-\/ci. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} void \hyperlink{namespace_e_p_a34f1031ad31382a4320da08cb4fde987}{E\+P\+::\+Core\+\_\+\+Delete} (Core $\ast$core)
+\begin{DoxyCompactList}\small\item\em Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_core}{Core} en passant par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} void \hyperlink{namespace_e_p_a3d24a1b2346db91ec2e21520fc88f62b}{E\+P\+::\+Core\+\_\+\+Save\+And\+Delete} (Core $\ast$core)
+\begin{DoxyCompactList}\small\item\em Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_core}{Core} en passant par la D\+LL. La méthode \hyperlink{class_e_p_1_1_core_ab89918ae9811065fb1d7d6ff4521ed29}{Core\+::save()} est appelée avant sa destruction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{Core.\+h@{Core.\+h}!Dll\+Export@{Dll\+Export}}
+\index{Dll\+Export@{Dll\+Export}!Core.\+h@{Core.\+h}}
+\subsubsection[{\texorpdfstring{Dll\+Export}{DllExport}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Dll\+Export~\+\_\+\+\_\+declspec(dllexport)}\hypertarget{_core_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{}\label{_core_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}
+\index{Core.\+h@{Core.\+h}!F\+I\+L\+E\+S\+A\+V\+E\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE@{F\+I\+L\+E\+S\+A\+V\+E\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}}
+\index{F\+I\+L\+E\+S\+A\+V\+E\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE@{F\+I\+L\+E\+S\+A\+V\+E\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}!Core.\+h@{Core.\+h}}
+\subsubsection[{\texorpdfstring{F\+I\+L\+E\+S\+A\+V\+E\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}{FILESAVE_NAME_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+I\+L\+E\+S\+A\+V\+E\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE~500}\hypertarget{_core_8h_a431072645027cd4173b14e7dfa63fae8}{}\label{_core_8h_a431072645027cd4173b14e7dfa63fae8}

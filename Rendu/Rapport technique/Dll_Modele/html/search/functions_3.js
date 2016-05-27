@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['equipment',['Equipment',['../class_e_p_1_1_equipment.html#a7fce8df2fed82ae05a50f1489307e2ae',1,'EP::Equipment']]],
-  ['equipmentfibaro',['EquipmentFibaro',['../class_e_p_1_1_equipment_fibaro.html#a1aceacf1010faf9042e2a5a4c2f79ae8',1,'EP::EquipmentFibaro']]],
-  ['equipmentkira',['EquipmentKira',['../class_e_p_1_1_equipment_kira.html#a7b96ccdab1a7d69e656c9602fce99213',1,'EP::EquipmentKira']]]
+  ['deleteequipmentbyindex',['deleteEquipmentByIndex',['../class_e_p_1_1_room.html#a9d9a93b373460edb886a05e8942aa589',1,'EP::Room']]],
+  ['deleteequipmentbyname',['deleteEquipmentByName',['../class_e_p_1_1_room.html#a4879b1eeebccc1a3c2f5ece234f73da9',1,'EP::Room']]],
+  ['deleteroombyindex',['deleteRoomByIndex',['../class_e_p_1_1_core.html#a64f97c800663db86fc7b3626b4ce7d0f',1,'EP::Core']]],
+  ['deleteroombyname',['deleteRoomByName',['../class_e_p_1_1_core.html#a2cacc28f799c8bfbb5d9c50202346c55',1,'EP::Core']]]
 ];

@@ -14,14 +14,11 @@ Le coeur de l\textquotesingle{}application, contient la liste des pièces, les p
 \item 
 \hyperlink{class_e_p_1_1_core_acfb517a0b01ff278283e940b184fcea4}{Core} (char $\ast$file)
 \begin{DoxyCompactList}\small\item\em Le constructeur de Core.\+summary. \end{DoxyCompactList}\item 
-\hyperlink{class_e_p_1_1_core_a8e93bf6b84175f17fdbbce75f052a60a}{$\sim$\+Core} ()\hypertarget{class_e_p_1_1_core_a8e93bf6b84175f17fdbbce75f052a60a}{}\label{class_e_p_1_1_core_a8e93bf6b84175f17fdbbce75f052a60a}
-
+\hyperlink{class_e_p_1_1_core_a8e93bf6b84175f17fdbbce75f052a60a}{$\sim$\+Core} ()
 \begin{DoxyCompactList}\small\item\em Le destructeur de \hyperlink{class_e_p_1_1_core}{Core}. Vide la liste de pièces. \end{DoxyCompactList}\item 
-int \hyperlink{class_e_p_1_1_core_ab89918ae9811065fb1d7d6ff4521ed29}{save} ()\hypertarget{class_e_p_1_1_core_ab89918ae9811065fb1d7d6ff4521ed29}{}\label{class_e_p_1_1_core_ab89918ae9811065fb1d7d6ff4521ed29}
-
+int \hyperlink{class_e_p_1_1_core_ab89918ae9811065fb1d7d6ff4521ed29}{save} ()
 \begin{DoxyCompactList}\small\item\em Sauvegarde l\textquotesingle{}état actuel de l\textquotesingle{}application dans le fichier de sauvegarde. \end{DoxyCompactList}\item 
-int \hyperlink{class_e_p_1_1_core_ad7adeeffabb5c616d24a66bb10955149}{load} ()\hypertarget{class_e_p_1_1_core_ad7adeeffabb5c616d24a66bb10955149}{}\label{class_e_p_1_1_core_ad7adeeffabb5c616d24a66bb10955149}
-
+int \hyperlink{class_e_p_1_1_core_ad7adeeffabb5c616d24a66bb10955149}{load} ()
 \begin{DoxyCompactList}\small\item\em Charge l\textquotesingle{}application depuis le fichier de sauvegarde. \end{DoxyCompactList}\item 
 int \hyperlink{class_e_p_1_1_core_a881e587636b0333397101372d7c3f6d9}{add\+Room} (\hyperlink{class_e_p_1_1_room}{Room} $\ast$room)
 \begin{DoxyCompactList}\small\item\em Ajoute le pointeur d\textquotesingle{}une pièce donnée dans m\+\_\+list\+Rooms. Le nom d\textquotesingle{}une pièce doit être unique. \end{DoxyCompactList}\item 
@@ -75,6 +72,17 @@ Le constructeur de Core.\+summary.
 {\em file} & Le nom du fichier de sauvegarde. \\
 \hline
 \end{DoxyParams}
+\index{E\+P\+::\+Core@{E\+P\+::\+Core}!````~Core@{$\sim$\+Core}}
+\index{````~Core@{$\sim$\+Core}!E\+P\+::\+Core@{E\+P\+::\+Core}}
+\subsubsection[{\texorpdfstring{$\sim$\+Core()}{~Core()}}]{\setlength{\rightskip}{0pt plus 5cm}E\+P\+::\+Core\+::$\sim$\+Core (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_core_a8e93bf6b84175f17fdbbce75f052a60a}{}\label{class_e_p_1_1_core_a8e93bf6b84175f17fdbbce75f052a60a}
+
+
+Le destructeur de \hyperlink{class_e_p_1_1_core}{Core}. Vide la liste de pièces. 
+
 
 
 \subsection{Member Function Documentation}
@@ -237,6 +245,28 @@ L\textquotesingle{}attribut m\+\_\+list\+Rooms.
 \begin{DoxyReturn}{Returns}
 L\textquotesingle{}identifiant du thème utilisé. 
 \end{DoxyReturn}
+\index{E\+P\+::\+Core@{E\+P\+::\+Core}!load@{load}}
+\index{load@{load}!E\+P\+::\+Core@{E\+P\+::\+Core}}
+\subsubsection[{\texorpdfstring{load()}{load()}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Core\+::load (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_core_ad7adeeffabb5c616d24a66bb10955149}{}\label{class_e_p_1_1_core_ad7adeeffabb5c616d24a66bb10955149}
+
+
+Charge l\textquotesingle{}application depuis le fichier de sauvegarde. 
+
+\index{E\+P\+::\+Core@{E\+P\+::\+Core}!save@{save}}
+\index{save@{save}!E\+P\+::\+Core@{E\+P\+::\+Core}}
+\subsubsection[{\texorpdfstring{save()}{save()}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Core\+::save (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_e_p_1_1_core_ab89918ae9811065fb1d7d6ff4521ed29}{}\label{class_e_p_1_1_core_ab89918ae9811065fb1d7d6ff4521ed29}
+
+
+Sauvegarde l\textquotesingle{}état actuel de l\textquotesingle{}application dans le fichier de sauvegarde. 
+
 \index{E\+P\+::\+Core@{E\+P\+::\+Core}!set\+C\+O\+M\+Port@{set\+C\+O\+M\+Port}}
 \index{set\+C\+O\+M\+Port@{set\+C\+O\+M\+Port}!E\+P\+::\+Core@{E\+P\+::\+Core}}
 \subsubsection[{\texorpdfstring{set\+C\+O\+M\+Port(char $\ast$port)}{setCOMPort(char *port)}}]{\setlength{\rightskip}{0pt plus 5cm}void E\+P\+::\+Core\+::set\+C\+O\+M\+Port (
@@ -297,5 +327,5 @@ Permet de changer le thème utilisé.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/Core.\+h\item 
-src/Core.\+cpp\end{DoxyCompactItemize}
+Model\+Dll/include/\hyperlink{_core_8h}{Core.\+h}\item 
+Model\+Dll/src/\hyperlink{_core_8cpp}{Core.\+cpp}\end{DoxyCompactItemize}

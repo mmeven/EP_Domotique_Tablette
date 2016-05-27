@@ -1,0 +1,372 @@
+\begin{theindex}
+
+  \item {\+\_\+\+\_\+declspec}
+    \subitem {EP}, \hyperpage{11}
+  \item {$\sim$\+Core}
+    \subitem {E\+P\+::\+Core}, \hyperpage{20}
+  \item {$\sim$\+Equipment}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{25}
+  \item {$\sim$\+Equipment\+Fibaro}
+    \subitem {E\+P\+::\+Equipment\+Fibaro}, \hyperpage{28}
+  \item {$\sim$\+Equipment\+Kira}
+    \subitem {E\+P\+::\+Equipment\+Kira}, \hyperpage{29}
+  \item {$\sim$\+Node}
+    \subitem {E\+P\+::\+Node}, \hyperpage{31}
+  \item {$\sim$\+Room}
+    \subitem {E\+P\+::\+Room}, \hyperpage{34}
+
+  \indexspace
+
+  \item {action}
+    \subitem {EP}, \hyperpage{16}
+  \item {add\+Equipment}
+    \subitem {E\+P\+::\+Room}, \hyperpage{34}
+  \item {add\+Room}
+    \subitem {E\+P\+::\+Core}, \hyperpage{20}
+
+  \indexspace
+
+  \item {button\+Id}
+    \subitem {EP}, \hyperpage{16}
+
+  \indexspace
+
+  \item {Core}
+    \subitem {E\+P\+::\+Core}, \hyperpage{20}
+  \item {Core.\+h}
+    \subitem {Dll\+Export}, \hyperpage{38}
+    \subitem {F\+I\+L\+E\+S\+A\+V\+E\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}, 
+		\hyperpage{38}
+  \item {Core\+\_\+\+Delete}
+    \subitem {EP}, \hyperpage{11}
+  \item {Core\+\_\+\+New}
+    \subitem {EP}, \hyperpage{11}
+  \item {Core\+\_\+\+New\+From\+Save}
+    \subitem {EP}, \hyperpage{11}
+  \item {Core\+\_\+\+Save\+And\+Delete}
+    \subitem {EP}, \hyperpage{11}
+
+  \indexspace
+
+  \item {delete\+Equipment\+By\+Index}
+    \subitem {E\+P\+::\+Room}, \hyperpage{35}
+  \item {delete\+Equipment\+By\+Name}
+    \subitem {E\+P\+::\+Room}, \hyperpage{35}
+  \item {delete\+Room\+By\+Index}
+    \subitem {E\+P\+::\+Core}, \hyperpage{20}
+  \item {delete\+Room\+By\+Name}
+    \subitem {E\+P\+::\+Core}, \hyperpage{21}
+  \item {Dll\+Export}
+    \subitem {Core.\+h}, \hyperpage{38}
+    \subitem {Equipment.\+h}, \hyperpage{39}
+    \subitem {Node.\+h}, \hyperpage{39}
+    \subitem {Room.\+h}, \hyperpage{41}
+  \item {Dll\+Import}
+    \subitem {Requete\+Http.\+h}, \hyperpage{40}
+
+  \indexspace
+
+  \item {E\+P\+::\+Core}, \hyperpage{19}
+    \subitem {$\sim$\+Core}, \hyperpage{20}
+    \subitem {add\+Room}, \hyperpage{20}
+    \subitem {Core}, \hyperpage{20}
+    \subitem {delete\+Room\+By\+Index}, \hyperpage{20}
+    \subitem {delete\+Room\+By\+Name}, \hyperpage{21}
+    \subitem {get\+C\+O\+M\+Port}, \hyperpage{21}
+    \subitem {get\+File\+Save}, \hyperpage{21}
+    \subitem {get\+Icon\+Size}, \hyperpage{21}
+    \subitem {get\+Number\+Rooms}, \hyperpage{21}
+    \subitem {get\+Room\+By\+Index}, \hyperpage{21}
+    \subitem {get\+Room\+By\+Name}, \hyperpage{22}
+    \subitem {get\+Rooms}, \hyperpage{22}
+    \subitem {get\+Theme\+Id}, \hyperpage{22}
+    \subitem {load}, \hyperpage{22}
+    \subitem {save}, \hyperpage{22}
+    \subitem {set\+C\+O\+M\+Port}, \hyperpage{22}
+    \subitem {set\+File\+Save}, \hyperpage{23}
+    \subitem {set\+Icon\+Size}, \hyperpage{23}
+    \subitem {set\+Theme\+Id}, \hyperpage{23}
+  \item {E\+P\+::\+Equipment}, \hyperpage{23}
+    \subitem {$\sim$\+Equipment}, \hyperpage{25}
+    \subitem {Equipment}, \hyperpage{24}
+    \subitem {Fibaro\+\_\+login}, \hyperpage{26}
+    \subitem {Fibaro\+\_\+password}, \hyperpage{26}
+    \subitem {get\+Ip\+Fibaro}, \hyperpage{25}
+    \subitem {get\+Ip\+Kira}, \hyperpage{25}
+    \subitem {get\+Login\+Fibaro}, \hyperpage{25}
+    \subitem {get\+Node\+Parent}, \hyperpage{25}
+    \subitem {get\+Password\+Fibaro}, \hyperpage{25}
+    \subitem {get\+Type\+Of}, \hyperpage{25}
+    \subitem {I\+P\+\_\+\+Fibaro}, \hyperpage{26}
+    \subitem {I\+P\+\_\+\+Kira}, \hyperpage{26}
+    \subitem {m\+\_\+room\+Parent}, \hyperpage{27}
+    \subitem {m\+\_\+type\+Of}, \hyperpage{27}
+    \subitem {send\+Request}, \hyperpage{25}
+    \subitem {set\+Ip\+Fibaro}, \hyperpage{25}
+    \subitem {set\+Ip\+Kira}, \hyperpage{26}
+    \subitem {set\+Login\+Fibaro}, \hyperpage{26}
+    \subitem {set\+Password\+Fibaro}, \hyperpage{26}
+  \item {E\+P\+::\+Equipment\+Fibaro}, \hyperpage{27}
+    \subitem {$\sim$\+Equipment\+Fibaro}, \hyperpage{28}
+    \subitem {Equipment\+Fibaro}, \hyperpage{27}
+    \subitem {get\+Action}, \hyperpage{28}
+    \subitem {get\+Equipment\+Id}, \hyperpage{28}
+    \subitem {send\+Request}, \hyperpage{28}
+  \item {E\+P\+::\+Equipment\+Kira}, \hyperpage{28}
+    \subitem {$\sim$\+Equipment\+Kira}, \hyperpage{29}
+    \subitem {Equipment\+Kira}, \hyperpage{29}
+    \subitem {get\+Button\+Id}, \hyperpage{29}
+    \subitem {get\+Page\+Number}, \hyperpage{29}
+    \subitem {send\+Request}, \hyperpage{29}
+    \subitem {set\+Button\+Id}, \hyperpage{30}
+    \subitem {set\+Page\+Number}, \hyperpage{30}
+  \item {E\+P\+::\+Node}, \hyperpage{30}
+    \subitem {$\sim$\+Node}, \hyperpage{31}
+    \subitem {get\+Ico}, \hyperpage{31}
+    \subitem {get\+Name}, \hyperpage{31}
+    \subitem {m\+\_\+ico}, \hyperpage{33}
+    \subitem {m\+\_\+name}, \hyperpage{33}
+    \subitem {m\+\_\+parent}, \hyperpage{33}
+    \subitem {Node}, \hyperpage{31}
+    \subitem {set\+Ico}, \hyperpage{32}
+    \subitem {set\+Name}, \hyperpage{33}
+  \item {E\+P\+::\+Room}, \hyperpage{33}
+    \subitem {$\sim$\+Room}, \hyperpage{34}
+    \subitem {add\+Equipment}, \hyperpage{34}
+    \subitem {delete\+Equipment\+By\+Index}, \hyperpage{35}
+    \subitem {delete\+Equipment\+By\+Name}, \hyperpage{35}
+    \subitem {get\+Equipment\+By\+Index}, \hyperpage{35}
+    \subitem {get\+Equipment\+By\+Name}, \hyperpage{35}
+    \subitem {get\+Equipments}, \hyperpage{36}
+    \subitem {get\+Number\+Equipments}, \hyperpage{36}
+    \subitem {Room}, \hyperpage{34}
+  \item {EP}, \hyperpage{9}
+    \subitem {\+\_\+\+\_\+declspec}, \hyperpage{11}
+    \subitem {action}, \hyperpage{16}
+    \subitem {button\+Id}, \hyperpage{16}
+    \subitem {Core\+\_\+\+Delete}, \hyperpage{11}
+    \subitem {Core\+\_\+\+New}, \hyperpage{11}
+    \subitem {Core\+\_\+\+New\+From\+Save}, \hyperpage{11}
+    \subitem {Core\+\_\+\+Save\+And\+Delete}, \hyperpage{11}
+    \subitem {Equipment\+\_\+get\+Ip\+Fibaro}, \hyperpage{11}
+    \subitem {Equipment\+\_\+get\+Ip\+Kira}, \hyperpage{12}
+    \subitem {Equipment\+\_\+get\+Login\+Fibaro}, \hyperpage{12}
+    \subitem {Equipment\+\_\+get\+Password\+Fibaro}, \hyperpage{12}
+    \subitem {Equipment\+\_\+set\+Ip\+Fibaro}, \hyperpage{12}
+    \subitem {Equipment\+\_\+set\+Ip\+Kira}, \hyperpage{12}
+    \subitem {Equipment\+\_\+set\+Login\+Fibaro}, \hyperpage{13}
+    \subitem {Equipment\+\_\+set\+Password\+Fibaro}, \hyperpage{13}
+    \subitem {Equipment\+Fibaro\+\_\+\+Delete}, \hyperpage{13}
+    \subitem {Equipment\+Fibaro\+\_\+\+New}, \hyperpage{13}
+    \subitem {equipment\+Id}, \hyperpage{16}
+    \subitem {Equipment\+Kira\+\_\+\+Delete}, \hyperpage{13}
+    \subitem {Equipment\+Kira\+\_\+\+New}, \hyperpage{15}
+    \subitem {ico}, \hyperpage{16}
+    \subitem {Node\+\_\+\+Delete}, \hyperpage{15}
+    \subitem {Node\+\_\+\+New}, \hyperpage{15}
+    \subitem {page}, \hyperpage{16}
+    \subitem {parent}, \hyperpage{17}
+    \subitem {requete\+Http\+Fibaro}, \hyperpage{15}
+    \subitem {requete\+Http\+Kira}, \hyperpage{15}
+    \subitem {Room\+\_\+\+Delete}, \hyperpage{16}
+    \subitem {Room\+\_\+\+New}, \hyperpage{16}
+  \item {Equipment}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{24}
+  \item {Equipment.\+h}
+    \subitem {Dll\+Export}, \hyperpage{39}
+  \item {Equipment\+\_\+get\+Ip\+Fibaro}
+    \subitem {EP}, \hyperpage{11}
+  \item {Equipment\+\_\+get\+Ip\+Kira}
+    \subitem {EP}, \hyperpage{12}
+  \item {Equipment\+\_\+get\+Login\+Fibaro}
+    \subitem {EP}, \hyperpage{12}
+  \item {Equipment\+\_\+get\+Password\+Fibaro}
+    \subitem {EP}, \hyperpage{12}
+  \item {Equipment\+\_\+set\+Ip\+Fibaro}
+    \subitem {EP}, \hyperpage{12}
+  \item {Equipment\+\_\+set\+Ip\+Kira}
+    \subitem {EP}, \hyperpage{12}
+  \item {Equipment\+\_\+set\+Login\+Fibaro}
+    \subitem {EP}, \hyperpage{13}
+  \item {Equipment\+\_\+set\+Password\+Fibaro}
+    \subitem {EP}, \hyperpage{13}
+  \item {Equipment\+Fibaro}
+    \subitem {E\+P\+::\+Equipment\+Fibaro}, \hyperpage{27}
+  \item {Equipment\+Fibaro\+\_\+\+Delete}
+    \subitem {EP}, \hyperpage{13}
+  \item {Equipment\+Fibaro\+\_\+\+New}
+    \subitem {EP}, \hyperpage{13}
+  \item {equipment\+Id}
+    \subitem {EP}, \hyperpage{16}
+  \item {Equipment\+Kira}
+    \subitem {E\+P\+::\+Equipment\+Kira}, \hyperpage{29}
+  \item {Equipment\+Kira\+\_\+\+Delete}
+    \subitem {EP}, \hyperpage{13}
+  \item {Equipment\+Kira\+\_\+\+New}
+    \subitem {EP}, \hyperpage{15}
+
+  \indexspace
+
+  \item {F\+I\+L\+E\+S\+A\+V\+E\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}
+    \subitem {Core.\+h}, \hyperpage{38}
+  \item {Fibaro\+\_\+login}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{26}
+  \item {Fibaro\+\_\+password}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{26}
+
+  \indexspace
+
+  \item {get\+Action}
+    \subitem {E\+P\+::\+Equipment\+Fibaro}, \hyperpage{28}
+  \item {get\+Button\+Id}
+    \subitem {E\+P\+::\+Equipment\+Kira}, \hyperpage{29}
+  \item {get\+C\+O\+M\+Port}
+    \subitem {E\+P\+::\+Core}, \hyperpage{21}
+  \item {get\+Equipment\+By\+Index}
+    \subitem {E\+P\+::\+Room}, \hyperpage{35}
+  \item {get\+Equipment\+By\+Name}
+    \subitem {E\+P\+::\+Room}, \hyperpage{35}
+  \item {get\+Equipment\+Id}
+    \subitem {E\+P\+::\+Equipment\+Fibaro}, \hyperpage{28}
+  \item {get\+Equipments}
+    \subitem {E\+P\+::\+Room}, \hyperpage{36}
+  \item {get\+File\+Save}
+    \subitem {E\+P\+::\+Core}, \hyperpage{21}
+  \item {get\+Ico}
+    \subitem {E\+P\+::\+Node}, \hyperpage{31}
+  \item {get\+Icon\+Size}
+    \subitem {E\+P\+::\+Core}, \hyperpage{21}
+  \item {get\+Ip\+Fibaro}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{25}
+  \item {get\+Ip\+Kira}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{25}
+  \item {get\+Login\+Fibaro}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{25}
+  \item {get\+Name}
+    \subitem {E\+P\+::\+Node}, \hyperpage{31}
+  \item {get\+Node\+Parent}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{25}
+  \item {get\+Number\+Equipments}
+    \subitem {E\+P\+::\+Room}, \hyperpage{36}
+  \item {get\+Number\+Rooms}
+    \subitem {E\+P\+::\+Core}, \hyperpage{21}
+  \item {get\+Page\+Number}
+    \subitem {E\+P\+::\+Equipment\+Kira}, \hyperpage{29}
+  \item {get\+Password\+Fibaro}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{25}
+  \item {get\+Room\+By\+Index}
+    \subitem {E\+P\+::\+Core}, \hyperpage{21}
+  \item {get\+Room\+By\+Name}
+    \subitem {E\+P\+::\+Core}, \hyperpage{22}
+  \item {get\+Rooms}
+    \subitem {E\+P\+::\+Core}, \hyperpage{22}
+  \item {get\+Theme\+Id}
+    \subitem {E\+P\+::\+Core}, \hyperpage{22}
+  \item {get\+Type\+Of}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{25}
+
+  \indexspace
+
+  \item {I\+P\+\_\+\+Fibaro}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{26}
+  \item {I\+P\+\_\+\+Kira}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{26}
+  \item {ico}
+    \subitem {EP}, \hyperpage{16}
+
+  \indexspace
+
+  \item {load}
+    \subitem {E\+P\+::\+Core}, \hyperpage{22}
+
+  \indexspace
+
+  \item {m\+\_\+ico}
+    \subitem {E\+P\+::\+Node}, \hyperpage{33}
+  \item {m\+\_\+name}
+    \subitem {E\+P\+::\+Node}, \hyperpage{33}
+  \item {m\+\_\+parent}
+    \subitem {E\+P\+::\+Node}, \hyperpage{33}
+  \item {m\+\_\+room\+Parent}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{27}
+  \item {m\+\_\+type\+Of}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{27}
+  \item {Model\+Dll/include/\+Core.\+h}, \hyperpage{37}
+  \item {Model\+Dll/include/\+Equipment.\+h}, \hyperpage{38}
+  \item {Model\+Dll/include/\+Node.\+h}, \hyperpage{39}
+  \item {Model\+Dll/include/\+Requete\+Http.\+h}, \hyperpage{39}
+  \item {Model\+Dll/include/\+Room.\+h}, \hyperpage{40}
+  \item {Model\+Dll/src/\+Core.\+cpp}, \hyperpage{41}
+  \item {Model\+Dll/src/\+Equipment.\+cpp}, \hyperpage{41}
+  \item {Model\+Dll/src/\+Node.\+cpp}, \hyperpage{42}
+  \item {Model\+Dll/src/\+Room.\+cpp}, \hyperpage{42}
+
+  \indexspace
+
+  \item {Node}
+    \subitem {E\+P\+::\+Node}, \hyperpage{31}
+  \item {Node.\+h}
+    \subitem {Dll\+Export}, \hyperpage{39}
+  \item {Node\+\_\+\+Delete}
+    \subitem {EP}, \hyperpage{15}
+  \item {Node\+\_\+\+New}
+    \subitem {EP}, \hyperpage{15}
+
+  \indexspace
+
+  \item {page}
+    \subitem {EP}, \hyperpage{16}
+  \item {parent}
+    \subitem {EP}, \hyperpage{17}
+
+  \indexspace
+
+  \item {Requete\+Http.\+h}
+    \subitem {Dll\+Import}, \hyperpage{40}
+  \item {requete\+Http\+Fibaro}
+    \subitem {EP}, \hyperpage{15}
+  \item {requete\+Http\+Kira}
+    \subitem {EP}, \hyperpage{15}
+  \item {Room}
+    \subitem {E\+P\+::\+Room}, \hyperpage{34}
+  \item {Room.\+h}
+    \subitem {Dll\+Export}, \hyperpage{41}
+  \item {Room\+\_\+\+Delete}
+    \subitem {EP}, \hyperpage{16}
+  \item {Room\+\_\+\+New}
+    \subitem {EP}, \hyperpage{16}
+
+  \indexspace
+
+  \item {save}
+    \subitem {E\+P\+::\+Core}, \hyperpage{22}
+  \item {send\+Request}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{25}
+    \subitem {E\+P\+::\+Equipment\+Fibaro}, \hyperpage{28}
+    \subitem {E\+P\+::\+Equipment\+Kira}, \hyperpage{29}
+  \item {set\+Button\+Id}
+    \subitem {E\+P\+::\+Equipment\+Kira}, \hyperpage{30}
+  \item {set\+C\+O\+M\+Port}
+    \subitem {E\+P\+::\+Core}, \hyperpage{22}
+  \item {set\+File\+Save}
+    \subitem {E\+P\+::\+Core}, \hyperpage{23}
+  \item {set\+Ico}
+    \subitem {E\+P\+::\+Node}, \hyperpage{32}
+  \item {set\+Icon\+Size}
+    \subitem {E\+P\+::\+Core}, \hyperpage{23}
+  \item {set\+Ip\+Fibaro}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{25}
+  \item {set\+Ip\+Kira}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{26}
+  \item {set\+Login\+Fibaro}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{26}
+  \item {set\+Name}
+    \subitem {E\+P\+::\+Node}, \hyperpage{33}
+  \item {set\+Page\+Number}
+    \subitem {E\+P\+::\+Equipment\+Kira}, \hyperpage{30}
+  \item {set\+Password\+Fibaro}
+    \subitem {E\+P\+::\+Equipment}, \hyperpage{26}
+  \item {set\+Theme\+Id}
+    \subitem {E\+P\+::\+Core}, \hyperpage{23}
+
+\end{theindex}

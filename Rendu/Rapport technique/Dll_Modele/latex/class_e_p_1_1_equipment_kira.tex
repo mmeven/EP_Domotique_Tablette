@@ -18,10 +18,11 @@ Inheritance diagram for EP\+:\+:Equipment\+Kira\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_e_p_1_1_equipment_kira_a7b96ccdab1a7d69e656c9602fce99213}{Equipment\+Kira} (char $\ast$name, char $\ast$ico, \hyperlink{class_e_p_1_1_node}{Node} $\ast$parent, int button\+Id, int page)
+\hyperlink{class_e_p_1_1_equipment_kira_a7b96ccdab1a7d69e656c9602fce99213}{Equipment\+Kira} (char $\ast$name, char $\ast$\hyperlink{namespace_e_p_a9bb18717237cbb94269e26c77cc04b05}{ico}, \hyperlink{class_e_p_1_1_node}{Node} $\ast$\hyperlink{namespace_e_p_ae54856cdea91964313d781ec414f88fc}{parent}, int \hyperlink{namespace_e_p_af35e4c78a6ab0ddc628032ea5894199a}{button\+Id}, int \hyperlink{namespace_e_p_adb4f80317eaf1286f16eedd566da82ba}{page})
 \begin{DoxyCompactList}\small\item\em Appelle le constructeur de \hyperlink{class_e_p_1_1_equipment}{Equipment} et initialise m\+\_\+button\+Id et m\+\_\+page. \end{DoxyCompactList}\item 
-virtual int \hyperlink{class_e_p_1_1_equipment_kira_ad59c93de1b98996ec273c5638cd7e47a}{send\+Request} ()\hypertarget{class_e_p_1_1_equipment_kira_ad59c93de1b98996ec273c5638cd7e47a}{}\label{class_e_p_1_1_equipment_kira_ad59c93de1b98996ec273c5638cd7e47a}
-
+virtual \hyperlink{class_e_p_1_1_equipment_kira_a8c05775df3123050be8e676ce24ac8df}{$\sim$\+Equipment\+Kira} ()
+\item 
+virtual int \hyperlink{class_e_p_1_1_equipment_kira_ad59c93de1b98996ec273c5638cd7e47a}{send\+Request} ()
 \begin{DoxyCompactList}\small\item\em Exécute la requête H\+T\+TP correspondant à cet équipement. \end{DoxyCompactList}\item 
 int \hyperlink{class_e_p_1_1_equipment_kira_ae2ce7a10bf38a28b5c0c8f44420c3f10}{get\+Button\+Id} ()
 \item 
@@ -60,6 +61,13 @@ Appelle le constructeur de \hyperlink{class_e_p_1_1_equipment}{Equipment} et ini
 {\em page} & La page du bouton correspondant à l\textquotesingle{}équipement dans l\textquotesingle{}interface web de la Kira. \\
 \hline
 \end{DoxyParams}
+\index{E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}!````~Equipment\+Kira@{$\sim$\+Equipment\+Kira}}
+\index{````~Equipment\+Kira@{$\sim$\+Equipment\+Kira}!E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}}
+\subsubsection[{\texorpdfstring{$\sim$\+Equipment\+Kira()}{~EquipmentKira()}}]{\setlength{\rightskip}{0pt plus 5cm}E\+P\+::\+Equipment\+Kira\+::$\sim$\+Equipment\+Kira (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_e_p_1_1_equipment_kira_a8c05775df3123050be8e676ce24ac8df}{}\label{class_e_p_1_1_equipment_kira_a8c05775df3123050be8e676ce24ac8df}
 
 
 \subsection{Member Function Documentation}
@@ -83,6 +91,21 @@ Le numéro du bouton correspondant à l\textquotesingle{}équipement dans l\text
 \begin{DoxyReturn}{Returns}
 Le numéro de page du bouton correspondant à l\textquotesingle{}équipement dans l\textquotesingle{}interface web de la Kira. 
 \end{DoxyReturn}
+\index{E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}!send\+Request@{send\+Request}}
+\index{send\+Request@{send\+Request}!E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}}
+\subsubsection[{\texorpdfstring{send\+Request()}{sendRequest()}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Equipment\+Kira\+::send\+Request (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_e_p_1_1_equipment_kira_ad59c93de1b98996ec273c5638cd7e47a}{}\label{class_e_p_1_1_equipment_kira_ad59c93de1b98996ec273c5638cd7e47a}
+
+
+Exécute la requête H\+T\+TP correspondant à cet équipement. 
+
+
+
+Implements \hyperlink{class_e_p_1_1_equipment_ab95a169fa00d4b7408bf30320f5b7ad8}{E\+P\+::\+Equipment}.
+
 \index{E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}!set\+Button\+Id@{set\+Button\+Id}}
 \index{set\+Button\+Id@{set\+Button\+Id}!E\+P\+::\+Equipment\+Kira@{E\+P\+::\+Equipment\+Kira}}
 \subsubsection[{\texorpdfstring{set\+Button\+Id(int new\+\_\+id)}{setButtonId(int new_id)}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+P\+::\+Equipment\+Kira\+::set\+Button\+Id (
@@ -111,5 +134,5 @@ Le numéro de page du bouton correspondant à l\textquotesingle{}équipement dan
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/Equipment.\+h\item 
-src/Equipment.\+cpp\end{DoxyCompactItemize}
+Model\+Dll/include/\hyperlink{_equipment_8h}{Equipment.\+h}\item 
+Model\+Dll/src/\hyperlink{_equipment_8cpp}{Equipment.\+cpp}\end{DoxyCompactItemize}

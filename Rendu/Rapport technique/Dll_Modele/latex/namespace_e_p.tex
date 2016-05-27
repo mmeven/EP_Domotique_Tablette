@@ -1,0 +1,489 @@
+\hypertarget{namespace_e_p}{}\section{EP Namespace Reference}
+\label{namespace_e_p}\index{EP@{EP}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_e_p_1_1_core}{Core}
+\begin{DoxyCompactList}\small\item\em Le coeur de l\textquotesingle{}application, contient la liste des pièces, les paramètres de l\textquotesingle{}application ainsi que les méthodes pour gérer ceux-\/ci. \end{DoxyCompactList}\item 
+class \hyperlink{class_e_p_1_1_equipment}{Equipment}
+\begin{DoxyCompactList}\small\item\em Représente un équipement. Cette classe abstraite est spécialisée par \hyperlink{class_e_p_1_1_equipment_kira}{Equipment\+Kira} et \hyperlink{class_e_p_1_1_equipment_fibaro}{Equipment\+Fibaro}. \end{DoxyCompactList}\item 
+class \hyperlink{class_e_p_1_1_equipment_fibaro}{Equipment\+Fibaro}
+\begin{DoxyCompactList}\small\item\em Représente un équipement lié à une Fibaro, hérite de \hyperlink{class_e_p_1_1_equipment}{Equipment}. \end{DoxyCompactList}\item 
+class \hyperlink{class_e_p_1_1_equipment_kira}{Equipment\+Kira}
+\begin{DoxyCompactList}\small\item\em Représente un équipement lié à une Kira, hérite de \hyperlink{class_e_p_1_1_equipment}{Equipment}. \end{DoxyCompactList}\item 
+class \hyperlink{class_e_p_1_1_node}{Node}
+\begin{DoxyCompactList}\small\item\em Représente un noeud de l\textquotesingle{}arbre (une pièce ou un équipement). Cette classe est spécialisée par les classes \hyperlink{class_e_p_1_1_equipment}{Equipment} et \hyperlink{class_e_p_1_1_room}{Room}, et n\textquotesingle{}est donc pas utilisée telle qu\textquotesingle{}elle. \end{DoxyCompactList}\item 
+class \hyperlink{class_e_p_1_1_room}{Room}
+\begin{DoxyCompactList}\small\item\em Représente une pièce de la maison ; Hérite de \hyperlink{class_e_p_1_1_node}{Node}. On peut y retrouver les différents équipements liés à une pièce et les gérer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} \hyperlink{class_e_p_1_1_core}{Core} $\ast$ \hyperlink{namespace_e_p_ac69833e001e1a0be87289b0f414a849d}{Core\+\_\+\+New} (char $\ast$file)
+\begin{DoxyCompactList}\small\item\em Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_core}{Core} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} \hyperlink{class_e_p_1_1_core}{Core} $\ast$ \hyperlink{namespace_e_p_a3d5379dbee3c6e24e1fd3dc7f1a29dd5}{Core\+\_\+\+New\+From\+Save} (char $\ast$file)
+\begin{DoxyCompactList}\small\item\em Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_core}{Core} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. Après création de l\textquotesingle{}objet, la méthode \hyperlink{class_e_p_1_1_core_ad7adeeffabb5c616d24a66bb10955149}{Core\+::load()} est appelée sur celui-\/ci. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} void \hyperlink{namespace_e_p_a34f1031ad31382a4320da08cb4fde987}{Core\+\_\+\+Delete} (\hyperlink{class_e_p_1_1_core}{Core} $\ast$core)
+\begin{DoxyCompactList}\small\item\em Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_core}{Core} en passant par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} void \hyperlink{namespace_e_p_a3d24a1b2346db91ec2e21520fc88f62b}{Core\+\_\+\+Save\+And\+Delete} (\hyperlink{class_e_p_1_1_core}{Core} $\ast$core)
+\begin{DoxyCompactList}\small\item\em Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_core}{Core} en passant par la D\+LL. La méthode \hyperlink{class_e_p_1_1_core_ab89918ae9811065fb1d7d6ff4521ed29}{Core\+::save()} est appelée avant sa destruction. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} char $\ast$ \hyperlink{namespace_e_p_af97eff90050a49f7562745e5f2cffa5e}{Equipment\+\_\+get\+Ip\+Kira} ()
+\begin{DoxyCompactList}\small\item\em Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} char $\ast$ \hyperlink{namespace_e_p_a18b583c6fd3512e964ff72883ade7a1d}{Equipment\+\_\+get\+Ip\+Fibaro} ()
+\begin{DoxyCompactList}\small\item\em Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} int \hyperlink{namespace_e_p_a97a09c6c9a5de299d2284e5fab1d8fe5}{Equipment\+\_\+set\+Ip\+Kira} (char $\ast$new\+\_\+ip)
+\begin{DoxyCompactList}\small\item\em Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} int \hyperlink{namespace_e_p_a39d3138ecfec2ff4c883e5d9f0ec710b}{Equipment\+\_\+set\+Ip\+Fibaro} (char $\ast$new\+\_\+ip)
+\begin{DoxyCompactList}\small\item\em Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} char $\ast$ \hyperlink{namespace_e_p_affeb4f6aa0763cce27bdfc0a758ace8a}{Equipment\+\_\+get\+Login\+Fibaro} ()
+\begin{DoxyCompactList}\small\item\em Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} char $\ast$ \hyperlink{namespace_e_p_af41fc4cfd8baff0841a5e5e9b8683707}{Equipment\+\_\+get\+Password\+Fibaro} ()
+\begin{DoxyCompactList}\small\item\em Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} int \hyperlink{namespace_e_p_a7e0042ce73be5e3c82c2f6cf5c895c63}{Equipment\+\_\+set\+Login\+Fibaro} (char $\ast$new\+\_\+login)
+\begin{DoxyCompactList}\small\item\em Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} int \hyperlink{namespace_e_p_a5f831818a0ad98813a95bde17cc0006e}{Equipment\+\_\+set\+Password\+Fibaro} (char $\ast$new\+\_\+password)
+\begin{DoxyCompactList}\small\item\em Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} \hyperlink{class_e_p_1_1_equipment_kira}{Equipment\+Kira} $\ast$ \hyperlink{namespace_e_p_a20f61dbfa127f1979f29efdd0dbdb6a4}{Equipment\+Kira\+\_\+\+New} (char $\ast$name, char $\ast$\hyperlink{namespace_e_p_a9bb18717237cbb94269e26c77cc04b05}{ico}, \hyperlink{class_e_p_1_1_node}{Node} $\ast$\hyperlink{namespace_e_p_ae54856cdea91964313d781ec414f88fc}{parent}, int \hyperlink{namespace_e_p_af35e4c78a6ab0ddc628032ea5894199a}{button\+Id}, int \hyperlink{namespace_e_p_adb4f80317eaf1286f16eedd566da82ba}{page})
+\begin{DoxyCompactList}\small\item\em Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_equipment_kira}{Equipment\+Kira} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} void \hyperlink{namespace_e_p_a1c55c6edfd491299787f2fe87ed7a0a3}{Equipment\+Kira\+\_\+\+Delete} (\hyperlink{class_e_p_1_1_equipment_kira}{Equipment\+Kira} $\ast$eq)
+\begin{DoxyCompactList}\small\item\em Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_equipment_kira}{Equipment\+Kira} en passant par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} \hyperlink{class_e_p_1_1_equipment_fibaro}{Equipment\+Fibaro} $\ast$ \hyperlink{namespace_e_p_a25932da8d7ad42a69040703010a7beb0}{Equipment\+Fibaro\+\_\+\+New} (char $\ast$name, char $\ast$\hyperlink{namespace_e_p_a9bb18717237cbb94269e26c77cc04b05}{ico}, \hyperlink{class_e_p_1_1_node}{Node} $\ast$\hyperlink{namespace_e_p_ae54856cdea91964313d781ec414f88fc}{parent}, int \hyperlink{namespace_e_p_a720661c6f3b93cc86d108b686beac651}{equipment\+Id}, char $\ast$\hyperlink{namespace_e_p_a3f543204ed06fa87d908e9f15faf0c2a}{action})
+\begin{DoxyCompactList}\small\item\em Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_equipment_fibaro}{Equipment\+Fibaro} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} void \hyperlink{namespace_e_p_a25678b63737acb8852f497164fbeb884}{Equipment\+Fibaro\+\_\+\+Delete} (\hyperlink{class_e_p_1_1_equipment_fibaro}{Equipment\+Fibaro} $\ast$eq)
+\begin{DoxyCompactList}\small\item\em Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_equipment_fibaro}{Equipment\+Fibaro} en passant par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} \hyperlink{class_e_p_1_1_node}{Node} $\ast$ \hyperlink{namespace_e_p_ac7b7dbb1544b595e2b8f9cbe7ae72602}{Node\+\_\+\+New} (char $\ast$name, char $\ast$\hyperlink{namespace_e_p_a9bb18717237cbb94269e26c77cc04b05}{ico})
+\begin{DoxyCompactList}\small\item\em Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_node}{Node} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} void \hyperlink{namespace_e_p_ad5a5c7aef69e7b3664ea88ceca6474ae}{Node\+\_\+\+Delete} (\hyperlink{class_e_p_1_1_node}{Node} $\ast$node)
+\begin{DoxyCompactList}\small\item\em Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_node}{Node} en passant par la D\+LL. \end{DoxyCompactList}\item 
+void \hyperlink{_requete_http_8h_a3432717bdefebf74b3c408f8169a2274}{Dll\+Import} \hyperlink{namespace_e_p_aa7c44cc535092b61686502f6c790578f}{requete\+Http\+Kira} (char $\ast$s1, char $\ast$s2)
+\begin{DoxyCompactList}\small\item\em Cette méthode permet d\textquotesingle{}envoyer une requête H\+T\+TP pour un équipement lié à la Kira. Cette méthode est un import de la D\+LL Requete\+Http.\+dll et est utilisée uniquement par la méthode \hyperlink{class_e_p_1_1_equipment_kira_ad59c93de1b98996ec273c5638cd7e47a}{Equipment\+Kira\+::send\+Request()} ; les paramètres sont construits automatiquement à partir des informations du l\textquotesingle{}équipement. \end{DoxyCompactList}\item 
+void \hyperlink{_requete_http_8h_a3432717bdefebf74b3c408f8169a2274}{Dll\+Import} \hyperlink{namespace_e_p_ab887ba764b90de0284f1a84599772be6}{requete\+Http\+Fibaro} (char $\ast$s1, char $\ast$s2, char $\ast$user, char $\ast$pass)
+\begin{DoxyCompactList}\small\item\em Cette méthode permet d\textquotesingle{}envoyer une requête H\+T\+TP pour un équipement lié à la Fibaro. Cette méthode est un import de la D\+LL Requete\+Http.\+dll et est utilisée uniquement par la méthode \hyperlink{class_e_p_1_1_equipment_fibaro_aff3a8468127e7915e1757d8b9b600587}{Equipment\+Fibaro\+::send\+Request()} ; les paramètres sont construits automatiquement à partir des informations du l\textquotesingle{}équipement. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} \hyperlink{class_e_p_1_1_room}{Room} $\ast$ \hyperlink{namespace_e_p_a6c71df3332887f6ad06b51555c7c8e65}{Room\+\_\+\+New} (char $\ast$name, char $\ast$\hyperlink{namespace_e_p_a9bb18717237cbb94269e26c77cc04b05}{ico})
+\begin{DoxyCompactList}\small\item\em Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_room}{Room} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. \end{DoxyCompactList}\item 
+\hyperlink{_room_8h_af83a0ad9d707a0bc5fe281b6e5c358a1}{Dll\+Export} void \hyperlink{namespace_e_p_a7ee5a22a99369106f6c70be865788bed}{Room\+\_\+\+Delete} (\hyperlink{class_e_p_1_1_room}{Room} $\ast$room)
+\begin{DoxyCompactList}\small\item\em Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_room}{Room} en passant par la D\+LL. \end{DoxyCompactList}\item 
+\hyperlink{namespace_e_p_a3a79f1a0aa85ef9c55d70ae8225b2614}{\+\_\+\+\_\+declspec} (dllexport) \hyperlink{class_e_p_1_1_core}{Core} $\ast$\hyperlink{namespace_e_p_ac69833e001e1a0be87289b0f414a849d}{Core\+\_\+\+New}(char $\ast$file)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{namespace_e_p_a9bb18717237cbb94269e26c77cc04b05}{ico}
+\item 
+char \hyperlink{class_e_p_1_1_node}{Node} $\ast$ \hyperlink{namespace_e_p_ae54856cdea91964313d781ec414f88fc}{parent}
+\item 
+char \hyperlink{class_e_p_1_1_node}{Node} int \hyperlink{namespace_e_p_af35e4c78a6ab0ddc628032ea5894199a}{button\+Id}
+\item 
+char \hyperlink{class_e_p_1_1_node}{Node} int int \hyperlink{namespace_e_p_adb4f80317eaf1286f16eedd566da82ba}{page}
+\item 
+char \hyperlink{class_e_p_1_1_node}{Node} int \hyperlink{namespace_e_p_a720661c6f3b93cc86d108b686beac651}{equipment\+Id}
+\item 
+char \hyperlink{class_e_p_1_1_node}{Node} int char $\ast$ \hyperlink{namespace_e_p_a3f543204ed06fa87d908e9f15faf0c2a}{action}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{EP@{EP}!\+\_\+\+\_\+declspec@{\+\_\+\+\_\+declspec}}
+\index{\+\_\+\+\_\+declspec@{\+\_\+\+\_\+declspec}!EP@{EP}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+declspec(dllexport) Core $\ast$\+Core\+\_\+\+New(char $\ast$file)}{__declspec(dllexport) Core *Core_New(char *file)}}]{\setlength{\rightskip}{0pt plus 5cm}E\+P\+::\+\_\+\+\_\+declspec (
+\begin{DoxyParamCaption}
+\item[{dllexport}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [new]}}\hypertarget{namespace_e_p_a3a79f1a0aa85ef9c55d70ae8225b2614}{}\label{namespace_e_p_a3a79f1a0aa85ef9c55d70ae8225b2614}
+\index{EP@{EP}!Core\+\_\+\+Delete@{Core\+\_\+\+Delete}}
+\index{Core\+\_\+\+Delete@{Core\+\_\+\+Delete}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Core\+\_\+\+Delete(\+Core $\ast$core)}{Core_Delete(Core *core)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} void E\+P\+::\+Core\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Core} $\ast$}]{core}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_a34f1031ad31382a4320da08cb4fde987}{}\label{namespace_e_p_a34f1031ad31382a4320da08cb4fde987}
+
+
+Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_core}{Core} en passant par la D\+LL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em core} & Un pointeur vers l\textquotesingle{}objet à détruire. \\
+\hline
+\end{DoxyParams}
+\index{EP@{EP}!Core\+\_\+\+New@{Core\+\_\+\+New}}
+\index{Core\+\_\+\+New@{Core\+\_\+\+New}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Core\+\_\+\+New(char $\ast$file)}{Core_New(char *file)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} {\bf Core}$\ast$ E\+P\+::\+Core\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{file}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_ac69833e001e1a0be87289b0f414a849d}{}\label{namespace_e_p_ac69833e001e1a0be87289b0f414a849d}
+
+
+Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_core}{Core} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. 
+
+\begin{DoxyReturn}{Returns}
+Un pointeur vers l\textquotesingle{}objet créé. 
+\end{DoxyReturn}
+\index{EP@{EP}!Core\+\_\+\+New\+From\+Save@{Core\+\_\+\+New\+From\+Save}}
+\index{Core\+\_\+\+New\+From\+Save@{Core\+\_\+\+New\+From\+Save}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Core\+\_\+\+New\+From\+Save(char $\ast$file)}{Core_NewFromSave(char *file)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} {\bf Core}$\ast$ E\+P\+::\+Core\+\_\+\+New\+From\+Save (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{file}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_a3d5379dbee3c6e24e1fd3dc7f1a29dd5}{}\label{namespace_e_p_a3d5379dbee3c6e24e1fd3dc7f1a29dd5}
+
+
+Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_core}{Core} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. Après création de l\textquotesingle{}objet, la méthode \hyperlink{class_e_p_1_1_core_ad7adeeffabb5c616d24a66bb10955149}{Core\+::load()} est appelée sur celui-\/ci. 
+
+\begin{DoxyReturn}{Returns}
+Un pointeur vers l\textquotesingle{}objet créé. 
+\end{DoxyReturn}
+\index{EP@{EP}!Core\+\_\+\+Save\+And\+Delete@{Core\+\_\+\+Save\+And\+Delete}}
+\index{Core\+\_\+\+Save\+And\+Delete@{Core\+\_\+\+Save\+And\+Delete}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Core\+\_\+\+Save\+And\+Delete(\+Core $\ast$core)}{Core_SaveAndDelete(Core *core)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} void E\+P\+::\+Core\+\_\+\+Save\+And\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Core} $\ast$}]{core}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_a3d24a1b2346db91ec2e21520fc88f62b}{}\label{namespace_e_p_a3d24a1b2346db91ec2e21520fc88f62b}
+
+
+Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_core}{Core} en passant par la D\+LL. La méthode \hyperlink{class_e_p_1_1_core_ab89918ae9811065fb1d7d6ff4521ed29}{Core\+::save()} est appelée avant sa destruction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em core} & Un pointeur vers l\textquotesingle{}objet à détruire. \\
+\hline
+\end{DoxyParams}
+\index{EP@{EP}!Equipment\+\_\+get\+Ip\+Fibaro@{Equipment\+\_\+get\+Ip\+Fibaro}}
+\index{Equipment\+\_\+get\+Ip\+Fibaro@{Equipment\+\_\+get\+Ip\+Fibaro}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Equipment\+\_\+get\+Ip\+Fibaro()}{Equipment_getIpFibaro()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} char$\ast$ E\+P\+::\+Equipment\+\_\+get\+Ip\+Fibaro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_a18b583c6fd3512e964ff72883ade7a1d}{}\label{namespace_e_p_a18b583c6fd3512e964ff72883ade7a1d}
+
+
+Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. 
+
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}adresse IP de la Fibaro. 
+\end{DoxyReturn}
+\index{EP@{EP}!Equipment\+\_\+get\+Ip\+Kira@{Equipment\+\_\+get\+Ip\+Kira}}
+\index{Equipment\+\_\+get\+Ip\+Kira@{Equipment\+\_\+get\+Ip\+Kira}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Equipment\+\_\+get\+Ip\+Kira()}{Equipment_getIpKira()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} char$\ast$ E\+P\+::\+Equipment\+\_\+get\+Ip\+Kira (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_af97eff90050a49f7562745e5f2cffa5e}{}\label{namespace_e_p_af97eff90050a49f7562745e5f2cffa5e}
+
+
+Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. 
+
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}adresse IP de la Kira. 
+\end{DoxyReturn}
+\index{EP@{EP}!Equipment\+\_\+get\+Login\+Fibaro@{Equipment\+\_\+get\+Login\+Fibaro}}
+\index{Equipment\+\_\+get\+Login\+Fibaro@{Equipment\+\_\+get\+Login\+Fibaro}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Equipment\+\_\+get\+Login\+Fibaro()}{Equipment_getLoginFibaro()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} char$\ast$ E\+P\+::\+Equipment\+\_\+get\+Login\+Fibaro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_affeb4f6aa0763cce27bdfc0a758ace8a}{}\label{namespace_e_p_affeb4f6aa0763cce27bdfc0a758ace8a}
+
+
+Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. 
+
+\begin{DoxyReturn}{Returns}
+Le login de la Fibaro. 
+\end{DoxyReturn}
+\index{EP@{EP}!Equipment\+\_\+get\+Password\+Fibaro@{Equipment\+\_\+get\+Password\+Fibaro}}
+\index{Equipment\+\_\+get\+Password\+Fibaro@{Equipment\+\_\+get\+Password\+Fibaro}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Equipment\+\_\+get\+Password\+Fibaro()}{Equipment_getPasswordFibaro()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} char$\ast$ E\+P\+::\+Equipment\+\_\+get\+Password\+Fibaro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_af41fc4cfd8baff0841a5e5e9b8683707}{}\label{namespace_e_p_af41fc4cfd8baff0841a5e5e9b8683707}
+
+
+Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. 
+
+\begin{DoxyReturn}{Returns}
+Le password de la Fibaro. 
+\end{DoxyReturn}
+\index{EP@{EP}!Equipment\+\_\+set\+Ip\+Fibaro@{Equipment\+\_\+set\+Ip\+Fibaro}}
+\index{Equipment\+\_\+set\+Ip\+Fibaro@{Equipment\+\_\+set\+Ip\+Fibaro}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Equipment\+\_\+set\+Ip\+Fibaro(char $\ast$new\+\_\+ip)}{Equipment_setIpFibaro(char *new_ip)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} int E\+P\+::\+Equipment\+\_\+set\+Ip\+Fibaro (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{new\+\_\+ip}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_a39d3138ecfec2ff4c883e5d9f0ec710b}{}\label{namespace_e_p_a39d3138ecfec2ff4c883e5d9f0ec710b}
+
+
+Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+ip} & La nouvelle adresse IP de la Fibaro. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si l\textquotesingle{}adresse est incorrecte, 1 sinon. 
+\end{DoxyReturn}
+\index{EP@{EP}!Equipment\+\_\+set\+Ip\+Kira@{Equipment\+\_\+set\+Ip\+Kira}}
+\index{Equipment\+\_\+set\+Ip\+Kira@{Equipment\+\_\+set\+Ip\+Kira}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Equipment\+\_\+set\+Ip\+Kira(char $\ast$new\+\_\+ip)}{Equipment_setIpKira(char *new_ip)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} int E\+P\+::\+Equipment\+\_\+set\+Ip\+Kira (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{new\+\_\+ip}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_a97a09c6c9a5de299d2284e5fab1d8fe5}{}\label{namespace_e_p_a97a09c6c9a5de299d2284e5fab1d8fe5}
+
+
+Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+ip} & La nouvelle adresse IP de la Kira. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si l\textquotesingle{}adresse est incorrecte, 1 sinon. 
+\end{DoxyReturn}
+\index{EP@{EP}!Equipment\+\_\+set\+Login\+Fibaro@{Equipment\+\_\+set\+Login\+Fibaro}}
+\index{Equipment\+\_\+set\+Login\+Fibaro@{Equipment\+\_\+set\+Login\+Fibaro}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Equipment\+\_\+set\+Login\+Fibaro(char $\ast$new\+\_\+login)}{Equipment_setLoginFibaro(char *new_login)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} int E\+P\+::\+Equipment\+\_\+set\+Login\+Fibaro (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{new\+\_\+login}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_a7e0042ce73be5e3c82c2f6cf5c895c63}{}\label{namespace_e_p_a7e0042ce73be5e3c82c2f6cf5c895c63}
+
+
+Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+login} & Le nouveau login de la Fibaro. \\
+\hline
+\end{DoxyParams}
+\index{EP@{EP}!Equipment\+\_\+set\+Password\+Fibaro@{Equipment\+\_\+set\+Password\+Fibaro}}
+\index{Equipment\+\_\+set\+Password\+Fibaro@{Equipment\+\_\+set\+Password\+Fibaro}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Equipment\+\_\+set\+Password\+Fibaro(char $\ast$new\+\_\+password)}{Equipment_setPasswordFibaro(char *new_password)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} int E\+P\+::\+Equipment\+\_\+set\+Password\+Fibaro (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{new\+\_\+password}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_a5f831818a0ad98813a95bde17cc0006e}{}\label{namespace_e_p_a5f831818a0ad98813a95bde17cc0006e}
+
+
+Utiliser cette méthode plutôt que la méthode statique de la classe équipement lorsqu\textquotesingle{}on passe par la D\+LL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+password} & Le nouveau password de la Fibaro. \\
+\hline
+\end{DoxyParams}
+\index{EP@{EP}!Equipment\+Fibaro\+\_\+\+Delete@{Equipment\+Fibaro\+\_\+\+Delete}}
+\index{Equipment\+Fibaro\+\_\+\+Delete@{Equipment\+Fibaro\+\_\+\+Delete}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Equipment\+Fibaro\+\_\+\+Delete(\+Equipment\+Fibaro $\ast$eq)}{EquipmentFibaro_Delete(EquipmentFibaro *eq)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} void E\+P\+::\+Equipment\+Fibaro\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Equipment\+Fibaro} $\ast$}]{eq}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_a25678b63737acb8852f497164fbeb884}{}\label{namespace_e_p_a25678b63737acb8852f497164fbeb884}
+
+
+Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_equipment_fibaro}{Equipment\+Fibaro} en passant par la D\+LL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em eq} & Un pointeur vers l\textquotesingle{}objet à détruire. \\
+\hline
+\end{DoxyParams}
+\index{EP@{EP}!Equipment\+Fibaro\+\_\+\+New@{Equipment\+Fibaro\+\_\+\+New}}
+\index{Equipment\+Fibaro\+\_\+\+New@{Equipment\+Fibaro\+\_\+\+New}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Equipment\+Fibaro\+\_\+\+New(char $\ast$name, char $\ast$ico, Node $\ast$parent, int equipment\+Id, char $\ast$action)}{EquipmentFibaro_New(char *name, char *ico, Node *parent, int equipmentId, char *action)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} {\bf Equipment\+Fibaro}$\ast$ E\+P\+::\+Equipment\+Fibaro\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{char $\ast$}]{ico, }
+\item[{{\bf Node} $\ast$}]{parent, }
+\item[{int}]{equipment\+Id, }
+\item[{char $\ast$}]{action}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_a25932da8d7ad42a69040703010a7beb0}{}\label{namespace_e_p_a25932da8d7ad42a69040703010a7beb0}
+
+
+Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_equipment_fibaro}{Equipment\+Fibaro} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. 
+
+\begin{DoxyReturn}{Returns}
+Un pointeur vers l\textquotesingle{}objet créé. 
+\end{DoxyReturn}
+\index{EP@{EP}!Equipment\+Kira\+\_\+\+Delete@{Equipment\+Kira\+\_\+\+Delete}}
+\index{Equipment\+Kira\+\_\+\+Delete@{Equipment\+Kira\+\_\+\+Delete}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Equipment\+Kira\+\_\+\+Delete(\+Equipment\+Kira $\ast$eq)}{EquipmentKira_Delete(EquipmentKira *eq)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} void E\+P\+::\+Equipment\+Kira\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Equipment\+Kira} $\ast$}]{eq}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_a1c55c6edfd491299787f2fe87ed7a0a3}{}\label{namespace_e_p_a1c55c6edfd491299787f2fe87ed7a0a3}
+
+
+Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_equipment_kira}{Equipment\+Kira} en passant par la D\+LL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em eq} & Un pointeur vers l\textquotesingle{}objet à détruire. \\
+\hline
+\end{DoxyParams}
+\index{EP@{EP}!Equipment\+Kira\+\_\+\+New@{Equipment\+Kira\+\_\+\+New}}
+\index{Equipment\+Kira\+\_\+\+New@{Equipment\+Kira\+\_\+\+New}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Equipment\+Kira\+\_\+\+New(char $\ast$name, char $\ast$ico, Node $\ast$parent, int button\+Id, int page)}{EquipmentKira_New(char *name, char *ico, Node *parent, int buttonId, int page)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} {\bf Equipment\+Kira}$\ast$ E\+P\+::\+Equipment\+Kira\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{char $\ast$}]{ico, }
+\item[{{\bf Node} $\ast$}]{parent, }
+\item[{int}]{button\+Id, }
+\item[{int}]{page}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_a20f61dbfa127f1979f29efdd0dbdb6a4}{}\label{namespace_e_p_a20f61dbfa127f1979f29efdd0dbdb6a4}
+
+
+Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_equipment_kira}{Equipment\+Kira} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. 
+
+\begin{DoxyReturn}{Returns}
+Un pointeur vers l\textquotesingle{}objet créé. 
+\end{DoxyReturn}
+\index{EP@{EP}!Node\+\_\+\+Delete@{Node\+\_\+\+Delete}}
+\index{Node\+\_\+\+Delete@{Node\+\_\+\+Delete}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Node\+\_\+\+Delete(\+Node $\ast$node)}{Node_Delete(Node *node)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} void E\+P\+::\+Node\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_ad5a5c7aef69e7b3664ea88ceca6474ae}{}\label{namespace_e_p_ad5a5c7aef69e7b3664ea88ceca6474ae}
+
+
+Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_node}{Node} en passant par la D\+LL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Un pointeur vers l\textquotesingle{}objet à détruire. \\
+\hline
+\end{DoxyParams}
+\index{EP@{EP}!Node\+\_\+\+New@{Node\+\_\+\+New}}
+\index{Node\+\_\+\+New@{Node\+\_\+\+New}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Node\+\_\+\+New(char $\ast$name, char $\ast$ico)}{Node_New(char *name, char *ico)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} {\bf Node}$\ast$ E\+P\+::\+Node\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{char $\ast$}]{ico}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_ac7b7dbb1544b595e2b8f9cbe7ae72602}{}\label{namespace_e_p_ac7b7dbb1544b595e2b8f9cbe7ae72602}
+
+
+Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_node}{Node} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. 
+
+\begin{DoxyReturn}{Returns}
+Un pointeur vers l\textquotesingle{}objet créé. 
+\end{DoxyReturn}
+\index{EP@{EP}!requete\+Http\+Fibaro@{requete\+Http\+Fibaro}}
+\index{requete\+Http\+Fibaro@{requete\+Http\+Fibaro}!EP@{EP}}
+\subsubsection[{\texorpdfstring{requete\+Http\+Fibaro(char $\ast$s1, char $\ast$s2, char $\ast$user, char $\ast$pass)}{requeteHttpFibaro(char *s1, char *s2, char *user, char *pass)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Dll\+Import} E\+P\+::requete\+Http\+Fibaro (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{s1, }
+\item[{char $\ast$}]{s2, }
+\item[{char $\ast$}]{user, }
+\item[{char $\ast$}]{pass}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_ab887ba764b90de0284f1a84599772be6}{}\label{namespace_e_p_ab887ba764b90de0284f1a84599772be6}
+
+
+Cette méthode permet d\textquotesingle{}envoyer une requête H\+T\+TP pour un équipement lié à la Fibaro. Cette méthode est un import de la D\+LL Requete\+Http.\+dll et est utilisée uniquement par la méthode \hyperlink{class_e_p_1_1_equipment_fibaro_aff3a8468127e7915e1757d8b9b600587}{Equipment\+Fibaro\+::send\+Request()} ; les paramètres sont construits automatiquement à partir des informations du l\textquotesingle{}équipement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & L\textquotesingle{}adresse IP de la Fibaro. \\
+\hline
+{\em s2} & La deuxième partie de l\textquotesingle{}adresse correspondant à la requête H\+T\+TP. \\
+\hline
+{\em user} & Le login utilisé pour s\textquotesingle{}authentifier auprès de la Fibaro. \\
+\hline
+{\em pass} & Le login utilisé pour s\textquotesingle{}authentifier auprès de la Fibaro. \\
+\hline
+\end{DoxyParams}
+\index{EP@{EP}!requete\+Http\+Kira@{requete\+Http\+Kira}}
+\index{requete\+Http\+Kira@{requete\+Http\+Kira}!EP@{EP}}
+\subsubsection[{\texorpdfstring{requete\+Http\+Kira(char $\ast$s1, char $\ast$s2)}{requeteHttpKira(char *s1, char *s2)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Dll\+Import} E\+P\+::requete\+Http\+Kira (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{s1, }
+\item[{char $\ast$}]{s2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_aa7c44cc535092b61686502f6c790578f}{}\label{namespace_e_p_aa7c44cc535092b61686502f6c790578f}
+
+
+Cette méthode permet d\textquotesingle{}envoyer une requête H\+T\+TP pour un équipement lié à la Kira. Cette méthode est un import de la D\+LL Requete\+Http.\+dll et est utilisée uniquement par la méthode \hyperlink{class_e_p_1_1_equipment_kira_ad59c93de1b98996ec273c5638cd7e47a}{Equipment\+Kira\+::send\+Request()} ; les paramètres sont construits automatiquement à partir des informations du l\textquotesingle{}équipement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & L\textquotesingle{}adresse IP de la Kira. \\
+\hline
+{\em s2} & La deuxième partie de l\textquotesingle{}adresse correspondant à la requête H\+T\+TP. \\
+\hline
+\end{DoxyParams}
+\index{EP@{EP}!Room\+\_\+\+Delete@{Room\+\_\+\+Delete}}
+\index{Room\+\_\+\+Delete@{Room\+\_\+\+Delete}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Room\+\_\+\+Delete(\+Room $\ast$room)}{Room_Delete(Room *room)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} void E\+P\+::\+Room\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Room} $\ast$}]{room}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_a7ee5a22a99369106f6c70be865788bed}{}\label{namespace_e_p_a7ee5a22a99369106f6c70be865788bed}
+
+
+Destructeur statique, pour permettre la destruction des objets \hyperlink{class_e_p_1_1_room}{Room} en passant par la D\+LL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room} & Un pointeur vers l\textquotesingle{}objet à détruire. \\
+\hline
+\end{DoxyParams}
+\index{EP@{EP}!Room\+\_\+\+New@{Room\+\_\+\+New}}
+\index{Room\+\_\+\+New@{Room\+\_\+\+New}!EP@{EP}}
+\subsubsection[{\texorpdfstring{Room\+\_\+\+New(char $\ast$name, char $\ast$ico)}{Room_New(char *name, char *ico)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dll\+Export} {\bf Room}$\ast$ E\+P\+::\+Room\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{char $\ast$}]{ico}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_e_p_a6c71df3332887f6ad06b51555c7c8e65}{}\label{namespace_e_p_a6c71df3332887f6ad06b51555c7c8e65}
+
+
+Constructeur statique utilisé pour permettre l\textquotesingle{}utilisation des objets \hyperlink{class_e_p_1_1_room}{Room} en passant par la D\+LL. Les paramètres sont les mêmes que ceux du constructeur. 
+
+\begin{DoxyReturn}{Returns}
+Un pointeur vers l\textquotesingle{}objet créé. 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\index{EP@{EP}!action@{action}}
+\index{action@{action}!EP@{EP}}
+\subsubsection[{\texorpdfstring{action}{action}}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf Node} int char$\ast$ E\+P\+::action}\hypertarget{namespace_e_p_a3f543204ed06fa87d908e9f15faf0c2a}{}\label{namespace_e_p_a3f543204ed06fa87d908e9f15faf0c2a}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+        \textcolor{keywordflow}{return} \textcolor{keyword}{new} EquipmentFibaro(name, \hyperlink{namespace_e_p_a9bb18717237cbb94269e26c77cc04b05}{ico}, \hyperlink{namespace_e_p_ae54856cdea91964313d781ec414f88fc}{parent}, \hyperlink{namespace_e_p_a720661c6f3b93cc86d108b686beac651}{equipmentId}, 
+      \hyperlink{namespace_e_p_a3f543204ed06fa87d908e9f15faf0c2a}{action})
+\end{DoxyCode}
+\index{EP@{EP}!button\+Id@{button\+Id}}
+\index{button\+Id@{button\+Id}!EP@{EP}}
+\subsubsection[{\texorpdfstring{button\+Id}{buttonId}}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf Node} int E\+P\+::button\+Id}\hypertarget{namespace_e_p_af35e4c78a6ab0ddc628032ea5894199a}{}\label{namespace_e_p_af35e4c78a6ab0ddc628032ea5894199a}
+\index{EP@{EP}!equipment\+Id@{equipment\+Id}}
+\index{equipment\+Id@{equipment\+Id}!EP@{EP}}
+\subsubsection[{\texorpdfstring{equipment\+Id}{equipmentId}}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf Node} int E\+P\+::equipment\+Id}\hypertarget{namespace_e_p_a720661c6f3b93cc86d108b686beac651}{}\label{namespace_e_p_a720661c6f3b93cc86d108b686beac651}
+\index{EP@{EP}!ico@{ico}}
+\index{ico@{ico}!EP@{EP}}
+\subsubsection[{\texorpdfstring{ico}{ico}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ E\+P\+::ico}\hypertarget{namespace_e_p_a9bb18717237cbb94269e26c77cc04b05}{}\label{namespace_e_p_a9bb18717237cbb94269e26c77cc04b05}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+        \textcolor{keywordflow}{return} \textcolor{keyword}{new} Node(name, \hyperlink{namespace_e_p_a9bb18717237cbb94269e26c77cc04b05}{ico})
+\end{DoxyCode}
+\index{EP@{EP}!page@{page}}
+\index{page@{page}!EP@{EP}}
+\subsubsection[{\texorpdfstring{page}{page}}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf Node} int int E\+P\+::page}\hypertarget{namespace_e_p_adb4f80317eaf1286f16eedd566da82ba}{}\label{namespace_e_p_adb4f80317eaf1286f16eedd566da82ba}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+        \textcolor{keywordflow}{return} \textcolor{keyword}{new} EquipmentKira(name, \hyperlink{namespace_e_p_a9bb18717237cbb94269e26c77cc04b05}{ico}, \hyperlink{namespace_e_p_ae54856cdea91964313d781ec414f88fc}{parent}, \hyperlink{namespace_e_p_af35e4c78a6ab0ddc628032ea5894199a}{buttonId}, 
+      \hyperlink{namespace_e_p_adb4f80317eaf1286f16eedd566da82ba}{page})
+\end{DoxyCode}
+\index{EP@{EP}!parent@{parent}}
+\index{parent@{parent}!EP@{EP}}
+\subsubsection[{\texorpdfstring{parent}{parent}}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf Node} $\ast$ E\+P\+::parent}\hypertarget{namespace_e_p_ae54856cdea91964313d781ec414f88fc}{}\label{namespace_e_p_ae54856cdea91964313d781ec414f88fc}
