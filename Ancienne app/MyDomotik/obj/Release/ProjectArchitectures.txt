@@ -1,1 +1,0 @@
-D:\EtudePratique3A\EP_Domotique_Tablette\Ancienne app\MyDomotik\MyDomotik.csproj;neutral
