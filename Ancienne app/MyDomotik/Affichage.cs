@@ -87,9 +87,9 @@ namespace MyDomotik
             int nbColonnes;
             switch (format)
             {
-                case 3: nbCases = 4; nbColonnes = 2; break;
+                case 3: nbCases = 10; nbColonnes = 5; break;
                 case 2: nbCases = 6; nbColonnes = 3;  break;
-                default: nbCases = 10; nbColonnes = 5;  break;
+                default: nbCases = 4; nbColonnes = 2;  break;
             }
             
             cadre.RowDefinitions.Add(new RowDefinition()); //nb de lignes toujours égal à 2
@@ -215,13 +215,13 @@ namespace MyDomotik
         /// <returns>Liste des boutons associés aux pièces.</returns>
         public List<Button> afficherPiecesGrille(int pageActuelle, Grid cadre, IntPtr core)
         {
-            int format = Core_getIconSize(core); //format de la grille, 0: grande, 1: moyenne, 2: petite
+            int format = Core_getIconSize(core); //format de la grille, 1: grande, 2: moyenne, 3: petite
             nbCases = creerGrille(cadre, format); //crée le bon nombre de "grid" selon le format et retourne le nb de cases
 
             int nbRoom = Core_getNumberRooms(core);
 
             List<Button> boutons = new List<Button>();
-
+            int j = 0;
             //Crée un bouton pour chaque pièce et l'affiche dans la grille
             for (int i = pageActuelle * nbCases; i < nbRoom && i<nbCases*(pageActuelle+1); i++)
             {
@@ -262,9 +262,10 @@ namespace MyDomotik
                 }
                 cadre.Children.Add(bouton);
                 boutons.Add(bouton);
+                j++;
             }
 
-            //nbRoom : nombre de pièces qu'il reste à afficher
+           /* //nbRoom : nombre de pièces qu'il reste à afficher
             if (nbRoom - nbCases * pageActuelle < 0)
             {
                 nbRoom = 0;
@@ -294,6 +295,30 @@ namespace MyDomotik
                 else
                 {
                     bouton.SetValue(Grid.ColumnProperty, i % nbCases - nbCases / 2);
+                    bouton.SetValue(Grid.RowProperty, 1);
+                }
+                cadre.Children.Add(bouton);
+            }*/
+
+            for(; j< nbCases; j++)
+            {
+                Button bouton = new Button();
+                bouton.BorderBrush = new SolidColorBrush(Colors.DarkSalmon);
+
+                bouton.Tag = -1;
+
+                bouton.SetValue(Button.HorizontalAlignmentProperty, HorizontalAlignment.Stretch);
+                bouton.SetValue(Button.VerticalAlignmentProperty, VerticalAlignment.Stretch);
+
+                //Place le bouton dans la grille
+                if (j < (nbCases / 2))
+                {
+                    bouton.SetValue(Grid.ColumnProperty, j);
+                    bouton.SetValue(Grid.RowProperty, 0);
+                }
+                else
+                {
+                    bouton.SetValue(Grid.ColumnProperty, j - nbCases / 2);
                     bouton.SetValue(Grid.RowProperty, 1);
                 }
                 cadre.Children.Add(bouton);
